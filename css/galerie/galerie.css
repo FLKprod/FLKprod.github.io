@@ -1,0 +1,43 @@
+.galerie{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+galerie >h2{
+    color:aliceblue;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 200%;
+    text-decoration: underline;
+    
+}
+.photographie > img{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 1px solid rgb(17, 17, 17);
+    width: 350px;
+}
+.photographie > imput{
+    color:whitesmoke;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+}
+.photographie > h3 {
+    font-weight: normal;
+    color:whitesmoke;
+    text-align: center;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 800px){
+    .photographie > img{
+        width: 200px;
+        margin: 3px;
+    }
+    .photographie > h2 {
+        font-size:10px;
+    }
+}
