@@ -1230,6 +1230,7 @@ input, select, textarea {
 			z-index: 2;
 		}
 
+		 /* Icones < > lors de la selection d'une image, pour la navigation */
 		.poptrox-popup .nav-previous,
 		.poptrox-popup .nav-next {
 			-moz-transition: opacity 0.2s ease-in-out;
@@ -1285,6 +1286,8 @@ input, select, textarea {
 				color: #ffffff;
 			}
 
+
+			/* Chargement */
 		.poptrox-popup .loader {
 			-moz-animation: spinner 1s infinite linear !important;
 			-webkit-animation: spinner 1s infinite linear !important;
@@ -1368,6 +1371,21 @@ input, select, textarea {
 		-ms-transition: -moz-filter 0.5s ease, -webkit-filter 0.5s ease, -ms-filter 0.5s ease, -ms-filter 0.5s ease;
 		transition: -moz-filter 0.5s ease, -webkit-filter 0.5s ease, -ms-filter 0.5s ease, filter 0.5s ease;
 		position: relative;
+		
+	}
+	#title{
+		-moz-transition: opacity 1.25s ease-in-out;
+			-webkit-transition: opacity 1.25s ease-in-out;
+			-ms-transition: opacity 1.25s ease-in-out;
+			transition: opacity 1.25s ease-in-out;
+		margin-top: 2%;
+		width: 100%;
+		background-color:#707071;
+		opacity: 70%;
+		display: flex;
+		align-items: center;
+		flex-direction:column;
+
 	}
 
 		#wrapper:after {
@@ -1618,6 +1636,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		margin-top: 3em;
 		-moz-flex-wrap: wrap;
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
@@ -1720,7 +1739,6 @@ input, select, textarea {
 			pointer-events: none;
 			opacity: 0;
 		}
-
 		#main .thumb {
 			-moz-transition-delay: 2.525s;
 			-webkit-transition-delay: 2.525s;
