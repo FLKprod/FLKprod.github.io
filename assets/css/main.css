@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
 
-/*
-	Multiverse by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 @-moz-keyframes spinner {
 	0% {
 		-moz-transform: rotate(0deg);
@@ -212,7 +206,7 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #34a58e;
+		color: #1f2224;
 		text-decoration: none;
 	}
 
@@ -1251,6 +1245,9 @@ input, select, textarea {
 			z-index: 2;
 		}
 
+		#second{
+			left: 0%;
+		}
 		.poptrox-popup .nav-previous {
 			-moz-transform: scaleX(-1);
 			-webkit-transform: scaleX(-1);
@@ -1374,18 +1371,26 @@ input, select, textarea {
 		
 	}
 	#title{
-		-moz-transition: opacity 1.25s ease-in-out;
-			-webkit-transition: opacity 1.25s ease-in-out;
-			-ms-transition: opacity 1.25s ease-in-out;
-			transition: opacity 1.25s ease-in-out;
-		margin-top: 2%;
+		
 		width: 100%;
+		
 		background-color:#707071;
-		opacity: 70%;
 		display: flex;
 		align-items: center;
 		flex-direction:column;
-
+		animation-name: fadeInOpacity;
+		animation-iteration-count: 1;
+		animation-timing-function: ease-in;
+		animation-duration: 2s;
+		margin-top: 2%;
+	}	
+	@keyframes fadeInOpacity {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
 	}
 
 		#wrapper:after {
@@ -1490,6 +1495,7 @@ input, select, textarea {
 		bottom: -1em;
 		height: 5em;
 		left: 0;
+		margin-top: 5em;
 		line-height: 4em;
 		padding: 0 1.5em;
 		position: fixed;
@@ -1510,7 +1516,6 @@ input, select, textarea {
 			display: inline-block;
 			font-size: 1em;
 			left:0;
-			margin: 0;
 			vertical-align: middle;
 			padding: 0;
 		}
@@ -1536,7 +1541,6 @@ input, select, textarea {
 
 			#header nav > ul {
 				list-style: none;
-				margin: 0;
 				padding: 0;
 			}
 
@@ -1636,7 +1640,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		margin-top: 3em;
+		margin-bottom: 3em;
 		-moz-flex-wrap: wrap;
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
@@ -1684,13 +1688,17 @@ input, select, textarea {
 				top: 0;
 				width: 100%;
 			}
+			#annexe{
+				width: 100%;
+				visibility: visible;
+				background-color:#34a58e;
+			}
 
 			#main .thumb > h2 {
 				pointer-events: none;
 				bottom: 1.875em;
 				font-size: 0.8em;
 				left: 2.1875em;
-				margin: 0;
 				position: absolute;
 				z-index: 1;
 			}
