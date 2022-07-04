@@ -9,16 +9,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" href="images/icon.gif">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	</head>
 	<body class="is-preload">
 		
 			<div id="wrapper">
-			
+				<h1 id="title"><strong> FLKprod_</strong> Maxime Falkowski  <a class="icon brands fa fa-gg"></a></h1>
 					<header id="header">
 						<nav id="second">
 							<ul>
-								<li><a href="#pres" class="icon brands fa-stack-exchange"><strong>  FLKprod_ </strong> Maxime Falkowski</a></li>
+								<li><a href="#pres" class="icon brands fa-usb"><strong>  FLKprod_ </strong> Maxime Falkowski</a></li>
 							</ul>
 						</nav>
 						<nav>
@@ -131,7 +132,11 @@
 											</div>
 										</div>
 										<ul class="actions">
-											<li><input type="submit" value="Envoyer" id="Envoyer" class="primary" onclick="mail()"/></li>
+											<li><input type="submit" value="Envoyer" id="Envoyer" class="primary" onclick="var subject=document.getElementById('name').value;
+																														   var message=document.getElementById('message').value;
+																															console.log(subject+message);
+												location.href='mailto:contact.flkprod@gmail.com?subject='+subject+' &body='+message;
+												alert('Merci pour votre message.\n\nvous serez redirigé vers votre boite mail et le Menu principal du site');"/></li>
 											<li><input type="reset" value="Reset"/></li>
 										</ul>
 									</form>
@@ -139,16 +144,20 @@
 								</div>
 								<div>
 								<section>
-									<h2>Suivez Moi sur les réseaux</h2>
+									<h2>Suivez Moi sur les réseaux <i class="fa fa-hand-o-down"></i></h2>
 									<ul class="icons">
 										<!-- <li><a href="#" class="icon brands fa-twitter-square"><span class="label">Twitter</span></a></li> -->
 										<li><a href="https://www.facebook.com/flkprod_-100683854641312" class="icon brands fa-facebook-square"><span class="label">Facebook</span></a></li>
 										<li><a href="https://www.instagram.com/flkprod_/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="https://github.com/FLKprod" class="icon brands fa-github-square"><span class="label">GitHub</span></a></li>
-										<li><a href="https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg" class="icon brands fa fa-youtube-square"><span class="label">Youtube</span></a></li>
+										<li><a href="https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg" class="icon brands fa-youtube-square"><span class="label">Youtube</span></a></li>
 										<li><a href="https://www.tiktok.com/@flkprod" class="icon brands fa-tiktok"><span class="label">Tik Tok</span></a></li>
 										<li><a href="https://www.linkedin.com/in/maxime-falkowski-9a4607216/?originalSubdomain=fr" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-										<!-- <li><a href="#" class="icon brands fa fa-pinterest-square"><span class="label">Pinterest</span></a></li> -->
+									</ul>
+									<h2>Contacter moi via mes coordonnées</h2>
+									<ul class="icons">
+										<li><a href="mailto:contact.flkprod@gmail.com" class="fa fa-envelope-square" style="color:gray;font-size: 140%;"><span class="label"></span></a></li>
+										<li><a href="tel:+33782294631" class="fa fa-phone" style="color:gray;font-size: 130%;"><span class="label" ></span></a></li>
 									</ul>
 										<article class="thumb">
 											<a href="images/moi.JPG" class="image"><img id="annexe" src="images/moi.JPG" alt="" /></a>
@@ -170,22 +179,26 @@
 									</section>
 								</div>
 								<div id="wrapper">
-								<section>
-									<h2>Suivez Moi sur les réseaux</h2>
-									<ul class="icons">
-										<!-- <li><a href="#" class="icon brands fa-twitter-square"><span class="label">Twitter</span></a></li> -->
-										<li><a href="https://www.facebook.com/flkprod_-100683854641312" class="icon brands fa-facebook-square"><span class="label">Facebook</span></a></li>
-										<li><a href="https://www.instagram.com/flkprod_/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="https://github.com/FLKprod" class="icon brands fa-github-square"><span class="label">GitHub</span></a></li>
-										<li><a href="https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg" class="icon brands fa fa-youtube-square"><span class="label">Youtube</span></a></li>
-										<li><a href="https://www.tiktok.com/@flkprod" class="icon brands fa-tiktok"><span class="label">Tik Tok</span></a></li>
-										<li><a href="https://www.linkedin.com/in/maxime-falkowski-9a4607216/?originalSubdomain=fr" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-										<!-- <li><a href="#" class="icon brands fa fa-pinterest-square"><span class="label">Pinterest</span></a></li> -->
-									</ul>
-										<article class="thumb">
-											<a href="images/moi.JPG" class="image" ><img id="annexe" src="images/moi.JPG" alt="" /></a>
-										</article>
-								</section>
+									<section>
+										<h2>Suivez Moi sur les réseaux <i class="fa fa-hand-o-down"></i></h2>
+										<ul class="icons">
+											<!-- <li><a href="#" class="icon brands fa-twitter-square"><span class="label">Twitter</span></a></li> -->
+											<li><a href="https://www.facebook.com/flkprod_-100683854641312" class="icon brands fa-facebook-square"><span class="label">Facebook</span></a></li>
+											<li><a href="https://www.instagram.com/flkprod_/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+											<li><a href="https://github.com/FLKprod" class="icon brands fa-github-square"><span class="label">GitHub</span></a></li>
+											<li><a href="https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg" class="icon brands fa-youtube-square"><span class="label">Youtube</span></a></li>
+											<li><a href="https://www.tiktok.com/@flkprod" class="icon brands fa-tiktok"><span class="label">Tik Tok</span></a></li>
+											<li><a href="https://www.linkedin.com/in/maxime-falkowski-9a4607216/?originalSubdomain=fr" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										</ul>
+										<h2>Contacter moi via mes coordonnées</h2>
+										<ul class="icons">
+											<li><a href="mailto:contact.flkprod@gmail.com" class="fa fa-envelope-square" style="color:gray;font-size: 140%;"><span class="label"></span></a></li>
+											<li><a href="tel:+33782294631" class="fa fa-phone" style="color:gray;font-size: 130%;"><span class="label" ></span></a></li>
+										</ul>
+											<article class="thumb">
+												<a href="images/moi.JPG" class="image"><img id="annexe" src="images/moi.JPG" alt="" /></a>
+											</article>
+									</section>
 								</div>
 							</div>
 					</footer>
