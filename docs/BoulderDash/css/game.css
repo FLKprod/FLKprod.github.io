@@ -42,7 +42,7 @@ body{
 
 /* EMPLACEMENT DES DONNÉES UTILES AU JEU */
 #score{
-    font-size: 20px;
+    font-size: 1em;
     position :fixed;
     margin-left: 1%;
     color: aliceblue;
