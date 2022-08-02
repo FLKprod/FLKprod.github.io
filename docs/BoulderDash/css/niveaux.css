@@ -3,7 +3,6 @@
 
 niveaux{
     display: flex;
-    
     flex-direction:column;
     align-items: center;
     justify-content:center;
@@ -18,6 +17,18 @@ body > input{
     font-size: 1.7rem;
     cursor:pointer;
 }
+@media screen and (max-width: 480px) {
+    body > input{
+        background-color: whitesmoke;
+        border: 1px solid darkblue;
+        border-radius: 1%;
+        color:#5533ff;
+        font-size: 1rem;
+        cursor:pointer;
+    }
+}
+
+
 .importation {
     display: inline-block;
     position: relative;
@@ -29,7 +40,7 @@ body > input{
     top: 0;
     opacity: 0;
     position: absolute;
-    font-size: 90px;
+    font-size: 1em;
 }
 .btn{
     margin-bottom: 5%;
@@ -40,7 +51,7 @@ body > input{
 }
 h2{
     Font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino, serif;
-    font-size: 150%;
+    font-size: 1.5em;
     font-weight: bold;
     color: whitesmoke;
     text-align: center;
