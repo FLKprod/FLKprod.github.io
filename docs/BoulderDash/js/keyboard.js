@@ -18,7 +18,7 @@ console.log("Keyboard.js!");
 //----------------------- FONCTIONS DE DETECTION DES TOUCHES ET DES MOUVEMENTS EN FONCTION DE CES DERNIERES ------------------------------------------------------//
 
 export async function keyboard(){
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keyup", function(event) {
     if((event.keyCode == 90) || (event.keyCode == 83) || (event.keyCode == 81)||(event.keyCode == 68)||(event.keyCode == 27)||(event.keyCode == 82)||(event.keyCode == 37)||(event.keyCode == 38)||(event.keyCode == 39)||(event.keyCode == 40))
     {
         var _posjoueur = getPosjoueur();
