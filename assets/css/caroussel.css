@@ -18,7 +18,7 @@ img {vertical-align: middle;}
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev, .next{
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -94,6 +94,6 @@ img {vertical-align: middle;}
 }
 
 /* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 480px) {
   .prev, .next,.text {font-size: 11px}
 }
