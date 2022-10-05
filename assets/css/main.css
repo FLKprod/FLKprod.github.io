@@ -1261,7 +1261,7 @@ input, select, textarea {
 
 /* ------------------------------- Projets -------------------------------------- */
 
-#projets{
+#projets, #txtphoto{
 	width: 100%;
 	text-align: center;
 	display: flex;
@@ -1280,6 +1280,11 @@ input, select, textarea {
 	#projet > p{
 		margin-left: 5%;
 		margin-right: 5%;
+	}
+	#projet > img{
+		width:50%;
+		height:auto;
+		margin-bottom: 5%;
 	}
 }
 
