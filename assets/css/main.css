@@ -94,7 +94,7 @@ input::-moz-focus-inner {
 	body, input, select, textarea {
 		color: #a0a0a1;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 15pt;
+		font-size: 2em;
 		font-weight: 300;
 		letter-spacing: 0.025em;
 		line-height: 1.65;
@@ -616,7 +616,7 @@ input::-moz-focus-inner {
 	border-radius: 15px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 736px) {
 	#projet > p{
 		margin-left: 5%;
 		margin-right: 5%;
@@ -727,6 +727,9 @@ hr{
 		align-items: center;
 		flex-direction:column;
 		box-sizing: border-box;
+	}
+	.annexe{
+		height:50%;
 	}
 }
 
