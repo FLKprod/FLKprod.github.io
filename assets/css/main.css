@@ -197,6 +197,30 @@ input::-moz-focus-inner {
 
 	}
 
+	@media screen and (min-width: 1680px) {
+
+		h2 {
+			font-size: 3em;
+		}
+
+		h3 {
+			font-size: 2em;
+		}
+
+		h4 {
+			font-size: 1.3em;
+		}
+
+		h5 {
+			font-size: 1em;
+		}
+
+		h6 {
+			font-size: 1em;
+		}
+
+	}
+
 	sub {
 		font-size: 0.8em;
 		position: relative;
@@ -772,15 +796,3 @@ body{
 }
 
 /* ------------------------------------------------------------------------- */
-
-/* <div id=videos>
-				<iframe src="https://www.youtube.com/embed/gydycy1WcT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<h2>Video de présentation d'une équipe</h2>
-				<p>Vidéo de présentation pour un BDE ( Bureau Des Eleves ) en école d'ingénieur, imaginée, filmée et montée par mes soins</p>
-			</div>
-
-			<div id=videos>
-				<iframe src="https://www.youtube.com/embed/gydycy1WcT0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<h2>Video de présentation d'une équipe</h2>
-				<p>Vidéo de présentation pour un BDS ( Bureau Des Sports ) en école d'ingénieur, imaginée, filmée et montée par mes soins</p>
-			</div> */
