@@ -197,30 +197,6 @@ input::-moz-focus-inner {
 
 	}
 
-	@media screen and (min-width: 1680px) {
-
-		h2 {
-			font-size: 3em;
-		}
-
-		h3 {
-			font-size: 2em;
-		}
-
-		h4 {
-			font-size: 1.3em;
-		}
-
-		h5 {
-			font-size: 1em;
-		}
-
-		h6 {
-			font-size: 1em;
-		}
-
-	}
-
 	sub {
 		font-size: 0.8em;
 		position: relative;
