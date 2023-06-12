@@ -632,6 +632,7 @@ input::-moz-focus-inner {
 	color:#ffffff ;
 	font-size: 0.7em;
 	margin-bottom: 2em;
+	font-size: 1rem;
 }
 #projet > img{
 	width:50%;
