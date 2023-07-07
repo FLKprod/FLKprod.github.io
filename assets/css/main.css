@@ -200,19 +200,19 @@ input::-moz-focus-inner {
 	@media screen and (min-width: 1680px) {
 
 		h2 {
-			font-size: 1.5em;
+			font-size: 2em;
 		}
 
 		h3 {
-			font-size: 1.3em;
+			font-size: 1.7em;
 		}
 
 		h4 {
-			font-size: 1.1em;
+			font-size: 1.4em;
 		}
 
 		h5 {
-			font-size: 1em;
+			font-size: 1.1em;
 		}
 
 		h6 {
