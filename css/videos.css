@@ -1,0 +1,112 @@
+/*----------------------------------------- MULTIMEDIAS ------------------------------------------------------*/
+
+.videos-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.videos-container > h2 {
+    font-size: 2.5em;
+    letter-spacing: 0.08em;
+    font-weight: 100;
+    text-align: left; 
+}
+
+.videos-container > p {
+    margin-bottom: 3em;
+}
+
+.pelicule{
+    width: 100%;
+    height: auto;
+}
+.videos {
+    background-color: #000 !important;
+    width: auto;
+    height: min-content;
+    background-color:rgb(128, 128, 128);
+    background-size:contain;
+    background-position: center;
+    margin-left: 3em;
+    margin-right: 3em;
+    margin-bottom: 10em;
+}
+
+.video {
+    background-color:rgb(128, 128, 128);
+    border: 1em solid #000;
+    border-right: 1em solid #000;
+    flex-wrap: wrap;
+}
+
+  .video > p {
+    color:white;
+    font-size: 1em;
+    margin-left: 5em;
+    margin-right: 5em;
+    margin-bottom: 2em;
+  }
+
+  .video > iframe {
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 4em;
+    width: 30em;
+    height: 20em;
+    border-color: #18181a ;
+    border-radius: 3em;
+  }
+
+  .videos-text {
+    margin: 0 1em 1em 1em;
+    color: black;
+    width: 100%;
+  }
+
+  .fa {
+    margin: 0 5px;
+  }
+
+  .networks i {
+    font-size: 2em;
+    color:whitesmoke;
+}
+
+@media screen and (max-width: 900px) {
+
+    .videos-container > h2 {
+        font-size: 1.5em;
+    }
+    .videos-text > h4 {
+        font-size: 0.7em;
+    }
+
+    .video > iframe {
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-top: 4em;
+        width: 25em;
+        height: 15em;
+        border-color: #18181a;
+        border-radius: 3em;
+      }
+
+    .videos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    
+    .videos:nth-child(even) img {
+        box-shadow: 0 0 0 0.3em rgb(0, 5, 50), 0 0 0 0.4em whitesmoke;
+    }
+
+    .networks i {
+        font-size: 1em;
+    }
+
+}

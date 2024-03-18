@@ -1,0 +1,119 @@
+/*---------------------------------------------- PRESENTATION ----------------------------------------------------------------------*/
+
+.presentation-container{
+    font-family: 'Caudex';
+}
+
+.presentation-container > h2,h3 {
+    background-color: #4f0341;
+    border-radius: 1.5em;
+    padding: 0.5em;
+    margin-right: 0.5em;
+    font-size: 2.5em;
+    letter-spacing: 0.08em;
+    font-weight: 100;
+    margin-left: 0.5em;
+    color: whitesmoke;
+    text-align: left; 
+}
+
+.presentation-container > h3 {
+    font-size: 2em;
+}
+
+.presentation-container > h4 {
+    border-radius: 1.5em;
+    padding: 0.5em;
+    margin-right: 1em;
+    font-size: 2em;
+    letter-spacing: 0.08em;
+    font-weight: 100;
+    margin-left: 1em;
+    text-align: left; 
+}
+
+.presentation-container > img {
+    height: 20em;
+    width: auto;
+    margin-right: 1em;
+}
+
+.presentation-container > p {
+    margin-left: 5em;
+    font-family: 'Arial',sans-serif;
+    font-size: 1em;
+    margin-right: 5em;
+    text-align: justify; 
+    line-height: 3;
+}
+
+
+
+.presentation-container > .citation {
+    font-family:"Segoe Print", "Times New Roman", Verdana;
+    font-size: 1.5em;
+    color:whitesmoke;
+    background-image: url(/Photos/citation.JPG);
+    background-size: cover;
+    background-position: center; 
+    border-radius: 1em;
+}
+
+.presentation-container > .citation:before {
+    content:'“';
+    left:0;
+    color: whitesmoke;
+    margin-left: -1em;
+    top:1em;
+}
+
+.presentation-container > .citation:after {
+    content:'“';
+    left:0;
+    color: whitesmoke;
+    margin-left: -1em;
+    top:1em;
+}
+
+@media screen and (max-width: 900px) {
+    .contact-text{
+        display:flex;
+        flex-direction: column;
+    }
+
+    .presentation-container > h2 {
+        padding: 0.7em;
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .presentation-container > h3 {
+        padding: 0.7em;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .presentation-container > h4 {
+        padding: 0.7em;
+        font-size: 1.3em;
+        border-radius: 1.5em;
+        margin-left: 3em;
+    }
+
+    .presentation-container > img {
+        height: 10em;
+        width: auto;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+    .presentation-container > p {
+        font-size: 0.8em;
+        color: white;
+    }
+
+    .videos-container > h2 {
+        font-size: 0.5em;
+    }
+
+}

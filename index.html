@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/videos.css">
+    <link rel="stylesheet" href="css/presentation.css">
+    <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="icon" href="Photos/logourl.png" type="image/png">
     
@@ -19,10 +22,12 @@
         <div class="up">
             <div class="menu">
                 <img  alt="Logo" id="logo">
+                <p style="margin-right: 3em;">🚧 Ce site est actuellement en construction 🚧 </p>
                 <label class="switch">
                     <input id="daynight" type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
+                
                 <button id="presentation"><span class="text">Présentation</span><span>Présentation</span></button>
                 <button id="projets"><span class="text">Projets</span><span>Projets</span></button>
                 <button id="videos"><span class="text">Multimedia</span><span>Multimedia</span></button>
@@ -58,6 +63,11 @@
               .then(response => response.json())
               .then(data => {
                 const googleAnalyticsKey = data.googleAnalyticsKey;
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', googleAnalyticsKey);
               })
               .catch(error => console.error('Error loading config:', error));
             </script>

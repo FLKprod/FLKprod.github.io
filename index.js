@@ -115,7 +115,6 @@ function toggleTeamInfo(id) {
         presentationContainer.appendChild(createText('h2', "Moi, c'est Maxime"));
         presentationContainer.appendChild(createText('p',"Bonjour, je suis Maxime Falkowski, un étudiant en maîtrise informatique spécialisé en cybersécurité à l'Université du Québec à Chicoutimi (UQAC). En parallèle, je suis également étudiant à l'École Supérieure d'Ingénieurs de Recherche en Matériaux (ESIREM), où je me concentre sur l'ingénierie de la sécurité et la qualité des réseaux."));
         presentationContainer.appendChild(createText('p',"Ma passion pour la sécurité informatique se conjugue avec mon intérêt pour la photographie et la vidéo. En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques et vidéographiques."));
-
         presentationContainer.appendChild(createText('h3', 'Mon parcours'));
         presentationContainer.appendChild(createText('p', "Si je devais résumer ma vie et mon parcours en une phrase, ce serait la suivante."));
         var citation = document.createElement('blockquote');
