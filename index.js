@@ -12,6 +12,7 @@ setTimeout(function() {
 }, 0);
 
 /******************************* MODE NUIT  *****************************************************************/
+
 const daynightCheckbox = document.getElementById('daynight');
 const logo = document.getElementById('logo');
 function toggleModeNuit() {
