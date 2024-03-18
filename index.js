@@ -125,7 +125,7 @@ function toggleTeamInfo(id) {
 
         presentationContainer.appendChild(createText('h4', 'Grandir sous le Lys'));
         presentationContainer.appendChild(createText('p',"Originaire de la charmante ville de Dijon, j'y ai vécu jusqu'à mes 21 ans. Mon enfance s'est épanouie au cœur d'un quartier empreint de souvenirs, où chaque rue portait le récit de ma croissance. Les ruelles familiales ont été le théâtre de jeux insouciants, et les parcs, le refuge de découvertes infinies. Au fil des années, Dijon a été le témoin de mon évolution, de mes premiers pas à l'école jusqu'à ma maturité à l'aube de mes études supérieures. C'est dans cette cité chaleureuse que j'ai forgé mes premières aspirations et tissé des liens indéfectibles. Ma ville natale, imprégnée d'histoire et de charme, demeure le point d'ancrage de qui je suis, et ses rues résonnent encore des échos joyeux de mon passé."));
-        var imageSources = ["Photos/Dijon.jpg", "Photos/Dijon2.jpg", "Photos/Dijon3.jpg", "Photos/Dijon4.jpg"];
+        var imageSources = ["Photos/Dijon.jpg", "Photos/Dijon2.JPG", "Photos/Dijon3.JPG", "Photos/Dijon4.JPG"];
         imageSources.forEach(src => {
             const imgElement = createImage(src);
             presentationContainer.appendChild(imgElement);
@@ -133,7 +133,7 @@ function toggleTeamInfo(id) {
         presentationContainer.appendChild(createText('h4',"Partir sur les terres des chercheurs d'Or" ));
 
         presentationContainer.appendChild(createText('p',"Au cours de mes études, j'ai eu l'opportunité de réaliser un stage à Berkeley aux Lawrence Berkeley National Laboratory (LBNL), travaillant sur le projet FUEGO (Fire Urgency Estimator in Geostationary Orbit). Cette expérience captivante a été bien plus qu'une simple opportunité professionnelle ; elle a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."));
-        var imageSources = ["Photos/SF.jpg", "Photos/SF2.jpg", "Photos/SF3.jpg", "Photos/SF4.jpg"];
+        var imageSources = ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"];
         imageSources.forEach(src => {
             const imgElement = createImage(src);
             presentationContainer.appendChild(imgElement);
