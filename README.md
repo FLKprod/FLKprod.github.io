@@ -1,4 +1,4 @@
-![Image d'illustration](images/site.png)
+![Image d'illustration](Photos/site.png)
 
 My website : This website was created by myself, from start to finish.
 
