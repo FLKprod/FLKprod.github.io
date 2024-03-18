@@ -9,15 +9,26 @@ jobs:
       - run: npm run build
       - run: npm test
 
+workflows:
+  version: 2
+  build_and_notify:
+    jobs:
+      - build
+      - notify_success:
+          requires:
+            - build
+
   notify_success:
     docker:
-      - image: cibuilds/hub:2.11.0
+      - image: mcr.microsoft.com/powershell
     steps:
       - run:
           name: Notify Success
           command: |
-            curl -X POST \
-              -H "Content-Type: application/json" \
-              -d '{"text":"Build succeeded!"}' \
-              https://your-slack-webhook-url
-    when: on_success
+            $title = "Build succeeded!"
+            $message = "Your build has succeeded on CircleCI."
+            $code = @"
+            [Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+            [System.Windows.Forms.MessageBox]::Show("$message", "$title", "OK", "Information")
+            "@
+            powershell -Command $code
