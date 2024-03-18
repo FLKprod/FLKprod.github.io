@@ -8,3 +8,16 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm test
+
+  notify_success:
+    docker:
+      - image: cibuilds/hub:2.11.0
+    steps:
+      - run:
+          name: Notify Success
+          command: |
+            curl -X POST \
+              -H "Content-Type: application/json" \
+              -d '{"text":"Build succeeded!"}' \
+              https://your-slack-webhook-url
+    when: on_success
