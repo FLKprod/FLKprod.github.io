@@ -53,17 +53,14 @@
         <script type="module" src="index.js"></script>
         <script type="module" src="createElements.js"></script>
         <script async src="https://apis.google.com/js/api.js"></script>
-        
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHQ6QRPPG6"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-XHQ6QRPPG6');
-        </script>
-        
-
+            fetch('config.json')
+              .then(response => response.json())
+              .then(data => {
+                const googleAnalyticsKey = data.googleAnalyticsKey;
+              })
+              .catch(error => console.error('Error loading config:', error));
+            </script>
     </div>
 </body>
 </html>
