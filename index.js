@@ -1,4 +1,5 @@
 import { createTextElement, createImage, createText, createSocialLink, createInfoSection, createButton, createIcon, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay } from './createElements.js';
+document.addEventListener('contextmenu', event => event.preventDefault());
 
 toggleTeamInfo('presentation');
 var introGif = document.getElementById("introGif");
