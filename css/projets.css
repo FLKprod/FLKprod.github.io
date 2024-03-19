@@ -1,0 +1,84 @@
+/*-------------------------------- PROJET -------------------------------------------------------------------*/
+
+.menu3 {
+    position: relative;
+    bottom: 0;
+    width: 20%; 
+    height: 100%;
+    background-color: #4f0341;
+    border-radius: 1em;
+    color: whitesmoke;
+    animation: glisse 1s ease-out forwards;
+    box-sizing: border-box;
+}
+
+.menu3 ul {
+    padding:2em;
+    overflow: visible;
+    border-radius: 1em;
+}
+
+.menu3 ul:hover {
+    background-color: rgb(131, 125, 223);
+    cursor: pointer;
+    
+    border-radius: 1em;
+}
+
+.projets-container{
+    display: flex;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.projets-container > h2 {
+    font-size: 2.5em;
+    letter-spacing: 0.08em;
+    font-weight: 100;
+    text-align: left; 
+}
+
+.projets-container > p {
+    margin-bottom: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+.projets{
+    margin-left: 1em;
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+    height: auto;
+    width: calc(100% - 6em);
+    background-color: white;
+    border-radius: 1em;
+}
+
+.video-projet{
+    position: relative;
+    margin: 3em 3em 0 3em;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.video-projet > iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.video-projet > img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 25%;
+    height: auto;
+}

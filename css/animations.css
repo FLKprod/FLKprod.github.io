@@ -1,0 +1,18 @@
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes glisse {
+    from {
+        left: -15em;
+    }
+    to {
+        left: 0;
+    }
+}

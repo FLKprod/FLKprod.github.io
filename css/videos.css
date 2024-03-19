@@ -17,13 +17,15 @@
 
 .videos-container > p {
     margin-bottom: 3em;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 .pelicule{
     width: 100%;
     height: auto;
 }
-.videos {
+.galerie-videos {
     background-color: #000 !important;
     width: auto;
     height: min-content;
@@ -35,11 +37,17 @@
     margin-bottom: 10em;
 }
 
+.videos{
+    display: flex;
+    flex-direction: row;
+    align-items:baseline;
+}
+
+
 .video {
     background-color:rgb(128, 128, 128);
     border: 1em solid #000;
     border-right: 1em solid #000;
-    flex-wrap: wrap;
 }
 
   .video > p {
@@ -51,11 +59,9 @@
   }
 
   .video > iframe {
-    margin-left: 2em;
-    margin-right: 2em;
     margin-top: 4em;
-    width: 30em;
-    height: 20em;
+    width: 35em;
+    height: 30em;
     border-color: #18181a ;
     border-radius: 3em;
   }
@@ -94,11 +100,17 @@
         border-radius: 3em;
       }
 
-    .videos {
+    .galerie-videos {
         display: flex;
         flex-direction: column;
         align-items: center;
         height: auto;
+    }
+
+    .videos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .videos:nth-child(even) img {

@@ -1,0 +1,51 @@
+/*---------------------------------------- NOUS CONTACTER -----------------------------------------------------------*/
+
+.contact-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-container > h2 {
+    font-size: 2em;
+    font-style: italic;
+}
+
+.contact-text{
+    display: flex;
+}
+
+.info:nth-child(even) {
+    background-color: rgb(0, 5, 50);
+}
+
+.info > .bold-text {
+    color:whitesmoke;
+}
+
+@media screen and (max-width: 900px) {
+    .contact-container{
+        margin: 0;
+    }
+    .contact-container > h2 {
+        font-size: 1em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+    .contact-text{
+        display: flex;
+        flex-wrap:wrap;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .info {
+        margin:0.5em 0.5em 0.5em 0.5em;
+        padding: 0.6em;
+        gap: 0.1em;
+    }
+    .info i {
+        font-size: 2em;
+    }
+}
