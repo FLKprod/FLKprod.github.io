@@ -171,3 +171,12 @@ export function updateVideoElement(videoUrl) {
     videoElement.src = videoUrl;
 
 }
+
+export function updateImageElement(imageSrc) {
+    var imageElement = document.getElementsByClassName('overlay-image');
+    if (imageElement){
+        console.log('image trouvee' + imageElement.className);
+    }
+    imageElement.src = imageSrc;
+
+}

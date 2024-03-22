@@ -1,4 +1,4 @@
-import { createTextElement, createImage, createText, createSocialLink, createInfoSection, createButton, createIcon, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement } from './createElements.js';
+import { createTextElement, createImage, createText, createSocialLink, createInfoSection, createButton, createIcon, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 toggleTeamInfo('projets');
@@ -181,7 +181,7 @@ function toggleTeamInfo(id) {
                 { name: "ToDoList pour IOs", videoLink: "chemin_video_5.mp4", imageSrc: "chemin_image_5.jpg" },
                 { name: "Carte intéractive", videoLink: "chemin_video_6.mp4", imageSrc: "chemin_image_6.jpg" },
                 { name: "CyberSafe", videoLink: "chemin_video_7.mp4", imageSrc: "chemin_image_7.jpg" },
-                { name: "LanbdaCash", videoLink: "Photos/1216.mp4", imageSrc: "Photos/SF.jpg" }
+                { name: "LanbdaCash", videoLink: "Photos/1216.mp4", imageSrc: "Photos/landbacash.png" }
             ];
             for (let i = 0; i < menuList.length; i++) {
                 menuDiv.appendChild(createTextElement('ul',menuList[i].name));
@@ -189,7 +189,7 @@ function toggleTeamInfo(id) {
             projets.appendChild(menuDiv);
 
             var video=createVideoWithOverlay('','');
-            projets.appendChild(createVideoWithOverlay('',''));
+            projets.appendChild(createVideoWithOverlay('','Photos/landbacash.png'));
             projets.appendChild(createTextElement('h2', ''));
             projets.appendChild(createTextElement('p', 'Description du projet...'));
 
@@ -197,9 +197,11 @@ function toggleTeamInfo(id) {
                 if (event.target.tagName === 'UL') {
                     
                     var videoLink = menuList.find(item => item.name === event.target.textContent)?.videoLink;
-                    console.log("Changement de projet" + videoLink);
+                    var imageLink = menuList.find(item => item.name === event.target.textContent)?.imageSrc;
+                    console.log("Changement de projet" + videoLink + "  " + imageLink);
                     if (videoLink) {
                         updateVideoElement(videoLink);
+                        updateImageElement(imageLink);
                     }
                 }});
 
