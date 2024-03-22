@@ -57,9 +57,6 @@
             <p>Un site par Moi-meme</p>
             <i class="fab fa-github" onclick='window.open("https://github.com/FLKprod");'></i>
             <p><strong>&copy; 2024 SafeConnect. Tous droits réservés.</p>
-            <a href="#" class="link">Lien 1</a>
-            <a href="#" class="link">Lien 2</a>
-            <a href="#" class="link">Lien 3</a>
         </div>
         <script type="module" src="js/index.js"></script>
         <script type="module" src="js/createElements.js"></script>
@@ -69,11 +66,12 @@
               .then(response => response.json())
               .then(data => {
                 const googleAnalyticsKey = data.googleAnalyticsKey;
+                console.log(googleAnalyticsKey);
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', googleAnalyticsKey);
+                gtag('config', 'G-J6WB8D1GL7');
               })
               .catch(error => console.error('Error loading config:', error));
             </script>
