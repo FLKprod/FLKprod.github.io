@@ -1,7 +1,7 @@
 import { createTextElement, createImage, createText, createSocialLink, createInfoSection, createButton, createIcon, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 document.addEventListener('contextmenu', event => event.preventDefault());
 
-toggleTeamInfo('projets');
+toggleTeamInfo('presentation');
 var introGif = document.getElementById("introGif");
 var mainContent = document.getElementById("mainContent");
 setTimeout(function() {
@@ -41,6 +41,8 @@ buttonIds.forEach(buttonId => {
         toggleTeamInfo(buttonId);
     });
 });
+
+
 
 function toggleTeamInfo(id) {
     var buttons = document.querySelectorAll('.menu button');
@@ -83,7 +85,7 @@ function toggleTeamInfo(id) {
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
         presentationContainer.appendChild(createText('h2', "Moi, c'est Maxime"));
-        presentationContainer.appendChild(createText('p',"Bonjour, je suis Maxime Falkowski, un étudiant en maîtrise informatique spécialisé en cybersécurité à l'Université du Québec à Chicoutimi (UQAC). En parallèle, je suis également étudiant à l'École Supérieure d'Ingénieurs de Recherche en Matériaux (ESIREM), où je me concentre sur l'ingénierie de la sécurité et la qualité des réseaux."));
+        presentationContainer.appendChild(createText('p',"Moi, c’est Maxime. J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. La photographie est un domaine qui me passionne. On peut toujours chercher à faire la meilleure image, à prendre la photo au meilleur moment. De plus en plus de personnes cherchent à scénariser leurs photos pour les partager sur les réseaux sociaux. Personnellement, je cherche plutôt à créer tout ce qui me passe par l'esprit : dès qu'une idée me vient, que ce soit pour une vidéo plus ou moins longue ou une photo, je la note et cherche à la réaliser au mieux et le plus rapidement possible. Auparavant, je partageais mes créations sur mon compte Instagram @FLKPROD_, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées, ce qui me permet d'être plus libre et de ne pas chercher à augmenter mes statistiques, mais simplement de partager ce que j'aime."));
         presentationContainer.appendChild(createText('p',"Ma passion pour la sécurité informatique se conjugue avec mon intérêt pour la photographie et la vidéo. En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques et vidéographiques."));
         presentationContainer.appendChild(createText('h3', 'Mon parcours'));
         presentationContainer.appendChild(createText('p', "Si je devais résumer ma vie et mon parcours en une phrase, ce serait la suivante."));
