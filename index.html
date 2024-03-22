@@ -61,20 +61,7 @@
         <script type="module" src="js/index.js"></script>
         <script type="module" src="js/createElements.js"></script>
         <script async src="https://apis.google.com/js/api.js"></script>
-        <script>
-            fetch('config.json')
-              .then(response => response.json())
-              .then(data => {
-                const googleAnalyticsKey = data.googleAnalyticsKey;
-                console.log(googleAnalyticsKey);
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'G-J6WB8D1GL7');
-              })
-              .catch(error => console.error('Error loading config:', error));
-            </script>
+        <script type="module" src="js/state.js"></script>
     </div>
 </body>
 </html>
