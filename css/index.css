@@ -96,7 +96,7 @@ select.flag-select option {
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1100px) {
 
     body{
         justify-content: center;
