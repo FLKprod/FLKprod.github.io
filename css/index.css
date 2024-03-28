@@ -293,6 +293,11 @@ body.mode-nuit .menu >button {
     color: var(--text-color-night);
 }
 
+body.mode-nuit .social-networks > button {
+    background-color: var(--background-night);
+    color: var(--text-color-night);
+}
+
 body.mode-nuit .menu > .select {
     border-bottom: 3px solid #ffff01;
     margin-right: 0;

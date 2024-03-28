@@ -34,7 +34,7 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', fun
 
 document.getElementById('daynight').addEventListener('change', toggleModeNuit);
 
-const buttonIds = ['presentation', 'projets', 'videos', 'contact'];
+const buttonIds = ['presentation', 'projets', 'videos', 'photos'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
@@ -58,14 +58,14 @@ function toggleTeamInfo(id) {
     var presentationContainer = document.querySelector('.presentation-container');
     var videosContainer = document.querySelector('.videos-container');
     var projetsContainer = document.querySelector('.projets-container');
-    var contactContainer = document.querySelector('.contact-container');
+    var photosContainer = document.querySelector('.photos-container');
     presentationContainer.innerHTML = '';
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
-    contactContainer.innerHTML = '';
+    photosContainer.innerHTML = '';
     videosContainer.classList.remove('fade-in');
     projetsContainer.classList.remove('fade-in');
-    contactContainer.classList.remove('fade-in');
+    photosContainer.classList.remove('fade-in');
     presentationContainer.classList.remove('fade-in');
     if(id=== 'videos'){
         videosContainer.classList.add('fade-in');
@@ -120,58 +120,9 @@ function toggleTeamInfo(id) {
 
             
         }
-        else if(id === 'contact'){
-            contactContainer.classList.add('fade-in');
-            const itemscontactContainer = document.createElement("div");
-            itemscontactContainer.classList.add("contact-text");
-            contactContainer.appendChild(createText('h2', "Pour me contacter ? C'est par ici !"));
-
-            var infoSectionData = [
-                { type: 'icon', iconClass: "fa fa-envelope", clickHandler: function () {
-                    window.location.href = "mailto:maxime.falkowski@icloud.com";
-                }},
-                { type: 'paragraph', text: "Adresse courriel" },
-                { type: 'paragraph', text: "maxime.falkowski@icloud.com" }
-            ];
-            itemscontactContainer.appendChild(createInfoSection(infoSectionData));
-
-
-            infoSectionData = [
-                { type: 'icon', iconClass: "fab fa-github", clickHandler: function () {
-                    window.open("https://github.com/FLKprod", "_blank");
-                }}, { type: 'paragraph', text: "Github" },
-                { type: 'paragraph', text: "Page officielle" }
-            ];
-            itemscontactContainer.appendChild(createInfoSection(infoSectionData));
-            
-            infoSectionData = [
-                
-                { type: 'icon', iconClass: "fab fa-instagram", clickHandler: function () {
-                    window.open("https://www.instagram.com/flkprod_/", "_blank");
-                }},{ type: 'paragraph', text: "Instagram" },
-                { type: 'paragraph', text: "Page officielle" }
-            ];
-            itemscontactContainer.appendChild(createInfoSection(infoSectionData));
-
-            infoSectionData = [
-                { type: 'icon', iconClass: "fab fa-youtube", clickHandler: function () {
-                    window.open("https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg", "_blank");
-                }},{ type: 'paragraph', text: "Youtube" },
-                { type: 'paragraph', text: "Page officielle" }
-            ];
-            itemscontactContainer.appendChild(createInfoSection(infoSectionData));
-            /*
-            
-            infoSectionData = [
-                { type: 'icon', iconClass: "fab fa-tiktok", clickHandler: function () {
-                    window.open("https://www.tiktok.com/@flkprod", "_blank");
-                }}, { type: 'paragraph', text: "TikTok" },
-                { type: 'paragraph', text: "Page officielle" }
-            ];
-            itemscontactContainer.appendChild(createInfoSection(infoSectionData));
-            */
-            
-            contactContainer.appendChild(itemscontactContainer);
+        else if(id === 'photos'){
+            photosContainer.classList.add('fade-in');
+            photosContainer.appendChild(createText('h2'," 🚧 En creation... 🚧"));
         }
         else if(id === 'projets'){ 
             projetsContainer.classList.add('fade-in');

@@ -1,13 +1,13 @@
-/*---------------------------------------- NOUS CONTACTER -----------------------------------------------------------*/
+/*---------------------------------------- MES PHOTOS -----------------------------------------------------------*/
 
-.contact-container{
+.photos-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.contact-container > h2 {
+.photos-container > h2 {
     font-size: 2em;
     font-style: italic;
 }
@@ -25,10 +25,10 @@
 }
 
 @media screen and (max-width: 1100px) {
-    .contact-container{
+    .photos-container{
         margin: 0;
     }
-    .contact-container > h2 {
+    .photos-container > h2 {
         font-size: 1em;
         margin-left: 2em;
         margin-right: 2em;
