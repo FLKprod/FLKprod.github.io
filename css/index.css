@@ -1,7 +1,9 @@
 :root {
     --background-day: #ffffff;
-    --text-color-day: #333333;
-    --background-night: #333333;
+    /*--text-color-day: #333333;
+    --background-night: #333333;*/
+    --text-color-day: #000000;
+    --background-night: #000000;
     --text-color-night: #ffffff;
 }
 
@@ -63,7 +65,7 @@ button:active {
 }
 
 .down{
-    background-color: whitesmoke;
+    background-color: #eeeeee;
     padding-top: 1em;
     padding-bottom: 1em;
 }
