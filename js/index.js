@@ -76,7 +76,7 @@ function toggleTeamInfo(id) {
         galerie.appendChild(createImageElement("img", 'pelicule', "Photos/pelicule.jpg", "Description de l'image"));
 
         var videos = createElementWithClass("div","videos");
-        videos.appendChild(createVideoElement('https://www.youtube.com/embed/gydycy1WcT0', "Vidéo introductive pour une idée de court-métrage intitulé C.Y.B.E.R (Conscience Ybridée Brouillée, Exploration Radicale), explorant la conscience numérique et l'univers du hacking."));
+        videos.appendChild(createVideoElement('https://www.youtube.com/embed/sDuDS7t4UsU', "Création d'une introduction avec pour thème la montée en puissance de la menace cybernétique dans notre ère moderne."));
         galerie.appendChild(videos);
 
         galerie.appendChild(createImageElement("img", 'pelicule', "Photos/pelicule.jpg", "Description de l'image"));
@@ -124,14 +124,15 @@ function toggleTeamInfo(id) {
             contactContainer.classList.add('fade-in');
             const itemscontactContainer = document.createElement("div");
             itemscontactContainer.classList.add("contact-text");
+            contactContainer.appendChild(createText('h2', "Me contacter ? C'est par ici !"));
+
             var infoSectionData = [
                 { type: 'icon', iconClass: "fa fa-envelope", clickHandler: function () {
-                    window.location.href = "mailto:contact.flkprod@gmail.com";
+                    window.location.href = "mailto:maxime.falkowski@icloud.com";
                 }},
                 { type: 'paragraph', text: "Adresse courriel" },
-                { type: 'paragraph', text: "contact.flkprod@gmail.com" }
+                { type: 'paragraph', text: "maxime.falkowski@icloud.com" }
             ];
-            contactContainer.appendChild(createText('h2', "Me contacter ? C'est par ici !"));
             itemscontactContainer.appendChild(createInfoSection(infoSectionData));
 
 
@@ -151,13 +152,16 @@ function toggleTeamInfo(id) {
                 { type: 'paragraph', text: "Page officielle" }
             ];
             itemscontactContainer.appendChild(createInfoSection(infoSectionData));
+
             infoSectionData = [
-                { type: 'icon', iconClass: "fab fa-facebook", clickHandler: function () {
-                    window.open("https://www.facebook.com/profile.php?id=100070487814685", "_blank");
-                }},{ type: 'paragraph', text: "Facebook" },
+                { type: 'icon', iconClass: "fab fa-youtube", clickHandler: function () {
+                    window.open("https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg", "_blank");
+                }},{ type: 'paragraph', text: "Youtube" },
                 { type: 'paragraph', text: "Page officielle" }
             ];
             itemscontactContainer.appendChild(createInfoSection(infoSectionData));
+            /*
+            
             infoSectionData = [
                 { type: 'icon', iconClass: "fab fa-tiktok", clickHandler: function () {
                     window.open("https://www.tiktok.com/@flkprod", "_blank");
@@ -165,6 +169,8 @@ function toggleTeamInfo(id) {
                 { type: 'paragraph', text: "Page officielle" }
             ];
             itemscontactContainer.appendChild(createInfoSection(infoSectionData));
+            */
+            
             contactContainer.appendChild(itemscontactContainer);
         }
         else if(id === 'projets'){ 
