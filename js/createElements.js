@@ -156,10 +156,15 @@ export function createVideoWithOverlay(link, imageSrc) {
 export function createVideoElement(videoUrl, description) {
     var videoDiv = createElementWithClass("div", "video");
     var videoElement = createVideo(videoUrl);
+
+    // Ajouter l'attribut allowfullscreen à l'élément vidéo
+    videoElement.setAttribute('allowfullscreen', '');
+
     videoDiv.appendChild(videoElement);
     videoDiv.appendChild(createText('p', description));
     return videoDiv;
 }
+
 
 
 /************************** UPDATES  ******************************************/

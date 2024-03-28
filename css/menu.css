@@ -8,6 +8,11 @@
     height: 8em;
 }
 
+.menu > .select {
+    border-bottom: 3px solid #4f0341;
+    margin-right: 0;
+}
+
 .menu > img {
     height: 5em;
     margin-left: 4em;
