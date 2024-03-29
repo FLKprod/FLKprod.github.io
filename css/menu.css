@@ -135,6 +135,14 @@ border-radius: 50%;
         margin-right: 0em;
     }
 
+    .menu > img {
+        height: 3em;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
     .switch {
         width: 100%;
         display: inline-block;
