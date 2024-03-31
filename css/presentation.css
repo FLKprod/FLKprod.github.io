@@ -51,7 +51,6 @@
 .profil-presentation {
     background-color: #eeeeee;
     color: black;
-    font-family: Didot;
     display: flex;
     align-items: center;
     padding: 3em 2em;
@@ -67,11 +66,10 @@
 }
 
 .image-profil-presentation{
-    width: 20%;
+    width: 30%;
     height: auto;
     mix-blend-mode: normal;
-    margin-left:2em;
-    margin-right:1em;
+    margin: 3em 2em;
 }
 
 .image-profil-presentation > img{
@@ -142,4 +140,16 @@
         font-size: 0.8em;
     }
 
+    .profil-presentation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-profil-presentation{
+        width: 50%;
+        height: auto;
+        mix-blend-mode: normal;
+        margin: 1em 0;
+    }
 }

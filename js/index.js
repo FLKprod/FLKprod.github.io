@@ -84,7 +84,6 @@ function toggleTeamInfo(id) {
         }
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
-        presentationContainer.appendChild(createText('h4', "Moi, c'est Maxime"));
 
         var intro2presentation = createElementWithClass('div','profil-presentation');
         var image_intro2presentation = createElementWithClass('div','image-profil-presentation');
