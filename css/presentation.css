@@ -2,6 +2,7 @@
 
 .presentation-container{
     font-family: 'Caudex';
+    margin:0;
 }
 
 .presentation-container > h2,h3 {
@@ -47,16 +48,46 @@
     line-height: 3;
 }
 
+.profil-presentation {
+    background-color: #eeeeee;
+    color: black;
+    font-family: Didot;
+    display: flex;
+    align-items: center;
+    padding: 3em 2em;
+    height: auto;
+}
 
+.text-profil-presentation{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100%;
+    flex: 1;
+    line-height: 3;
+    padding: 0 2em;
+}
+
+.image-profil-presentation{
+    width: 20%;
+    height: auto;
+    mix-blend-mode: normal;
+    margin-left:2em;
+    margin-right:1em;
+}
+
+.image-profil-presentation > img{
+    border-radius: 2em;
+    width: 100%;
+    height: 100%;    
+}
 
 .presentation-container > .citation {
     font-family:"Segoe Print", "Times New Roman", Verdana;
     font-size: 1.5em;
+    margin:0;
     color:whitesmoke;
     background-image: url(/Photos/citation.JPG);
     background-size: cover;
     background-position: center; 
-    border-radius: 1em;
 }
 
 .presentation-container > .citation:before {
