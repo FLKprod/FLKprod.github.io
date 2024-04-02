@@ -19,6 +19,7 @@
     margin-bottom: 3em;
     margin-left: 3em;
     margin-right: 3em;
+    line-height: 3;
 }
 
 .pelicule{
@@ -30,7 +31,6 @@
     background-color: #000 !important;
     width: auto;
     height: min-content;
-    background-color:rgb(128, 128, 128);
     background-size:contain;
     background-position: center;
     margin-left: 3em;
@@ -46,17 +46,15 @@
 
 
 .video {
-    background-color:rgb(128, 128, 128);
+    background-color:white;
     border: 1em solid #000;
     border-right: 1em solid #000;
 }
 
   .video > p {
-    color:white;
+    color:black;
     font-size: 1em;
-    margin-left: 5em;
-    margin-right: 5em;
-    margin-bottom: 2em;
+    margin:3em 2em;
   }
 
   .video > iframe {

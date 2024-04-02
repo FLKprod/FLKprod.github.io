@@ -1,6 +1,6 @@
-export function createTextElement(tag, textContent) {
+export function createText(tag, textContent) {
     const element = document.createElement(tag);
-    element.textContent = textContent;
+    element.innerHTML  = textContent;
     return element;
 }
 
@@ -8,10 +8,6 @@ export function createImage(src) {
     const element = document.createElement('img');
     element.src = src;
     return element;
-}
-
-export function createText(tag, textContent) {
-    return createTextElement(tag, textContent);
 }
 
 export function createIcon(iconClass, fontSize, color, cursor, clickHandler) {
@@ -29,44 +25,6 @@ export function createButton(text, clickHandler) {
     button.textContent = text;
     button.onclick = clickHandler;
     return button;
-}
-
-export function createInfoSection(data) {
-    const infoDiv = document.createElement("div");
-    infoDiv.className = "info";
-
-    data.forEach((item, index) => {
-        if (item.type === 'paragraph') {
-            const paragraph = document.createElement("p");
-            paragraph.textContent = item.text;
-            if (index === 1) {
-                paragraph.classList.add('bold-text');
-            }
-            infoDiv.appendChild(paragraph);
-        } else if (item.type === 'icon') {
-            const icon = document.createElement("i");
-            icon.className = item.iconClass;
-            icon.style.fontSize = item.fontSize;
-            icon.style.color = item.color;
-            icon.style.cursor = item.cursor;
-            icon.onclick = item.clickHandler;
-            infoDiv.appendChild(icon);
-        } else if (item.type === 'button') {
-            const button = createButton(item.text, item.clickHandler);
-            infoDiv.appendChild(button);
-        }
-    });
-    return infoDiv;
-}
-
-export function createSocialLink(href, iconClass) {
-    const link = document.createElement("a");
-    link.href = href;
-    link.target = "_blank";
-    const icon = document.createElement("i");
-    icon.classList.add("fa", iconClass);
-    link.appendChild(icon);
-    return link;
 }
 
 export function createElementWithClass(tag, className) {
@@ -178,10 +136,12 @@ export function updateVideoElement(videoUrl) {
 }
 
 export function updateImageElement(imageSrc) {
-    var imageElement = document.getElementsByClassName('overlay-image');
-    if (imageElement){
-        console.log('image trouvee' + imageElement.className);
+    var divprojet = document.querySelector('.video-projet');
+    var imageElement = divprojet.querySelector('.overlay-image');
+    if (imageElement) {
+        console.log('Image trouvée ' + imageElement.src);
+        imageElement.src = imageSrc;
+    } else {
+        console.log('Image non trouvée');
     }
-    imageElement.src = imageSrc;
-
 }

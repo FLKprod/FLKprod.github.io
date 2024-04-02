@@ -2,10 +2,33 @@
 
 .presentation-container{
     font-family: 'Caudex';
+    width: 100%;
     margin:0;
 }
+.presentation-container > p {
+    margin-left: 5em;
+    font-family: 'Garamond',sans-serif;
+    font-size: 1em;
+    margin-right: 5em;
+    text-align: justify; 
+    line-height: 3;
+}
 
-.presentation-container > h2,h3 {
+.city-presentation {
+    background-color: #eeeeee;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    padding: 3em 2em;
+    height: auto;
+    text-align: justify;
+    line-height: 2;
+}
+
+.city-presentation > p {
+    margin: 1em;
+}
+.city-presentation > h2,h3 {
     background-color: #4f0341;
     border-radius: 1.5em;
     padding: 0.5em;
@@ -17,12 +40,11 @@
     color: whitesmoke;
     text-align: left; 
 }
-
-.presentation-container > h3 {
+.city-presentation > h3 {
     font-size: 2em;
+    text-align: left; 
 }
-
-.presentation-container > h4 {
+.city-presentation > h4 {
     border-radius: 1.5em;
     padding: 0.5em;
     margin-right: 1em;
@@ -33,20 +55,23 @@
     text-align: left; 
 }
 
-.presentation-container > img {
+.image_city_section{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
     height: 20em;
     width: auto;
-    margin-right: 1em;
 }
 
-.presentation-container > p {
-    margin-left: 5em;
-    font-family: 'Garamond',sans-serif;
-    font-size: 1em;
-    margin-right: 5em;
-    text-align: justify; 
-    line-height: 3;
+.image_city_section > img {
+    height: 100%;
+    margin-left:1em;
 }
+
+
+
+
 
 .profil-presentation {
     background-color: #eeeeee;
@@ -56,7 +81,6 @@
     padding: 3em 2em;
     height: auto;
 }
-
 .text-profil-presentation{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: 100%;
@@ -64,19 +88,21 @@
     line-height: 3;
     padding: 0 2em;
 }
-
 .image-profil-presentation{
     width: 30%;
     height: auto;
     mix-blend-mode: normal;
     margin: 3em 2em;
 }
-
 .image-profil-presentation > img{
     border-radius: 2em;
     width: 100%;
     height: 100%;    
 }
+
+
+
+
 
 .presentation-container > .citation {
     font-family:"Segoe Print", "Times New Roman", Verdana;

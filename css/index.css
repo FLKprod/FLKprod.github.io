@@ -57,6 +57,9 @@ button:active {
     animation: fadeIn 1s ease-out forwards;
 }
 
+.None{
+    display: none;
+}
 .up, .center, .down {
     text-align: center;
     width: 100%;
@@ -261,6 +264,7 @@ input{
 #mainContent {
     opacity: 0;
     transition: opacity 2s ease-in-out;
+    width: 100%;
 }
 
 
@@ -289,6 +293,8 @@ input{
 }
 
 
+
+
 /**************************** MODE NUIT *******************************/
 
 body.mode-nuit {
@@ -306,7 +312,17 @@ body.mode-nuit .social-networks > button {
     color: var(--text-color-night);
 }
 
-body.mode-nuit .menu > .select {
-    border-bottom: 3px solid #ffff01;
+body.mode-nuit .sections-menu > .select {
+    border-color: #ffff01;
     margin-right: 0;
+}
+
+body.mode-nuit .sections-menu {
+    background-color: var(--background-night);
+    color: var(--text-color-night);
+}
+
+body.mode-nuit .sections-menu > button {
+    background-color: var(--background-night);
+    color: var(--text-color-night);
 }

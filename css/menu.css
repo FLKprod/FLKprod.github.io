@@ -5,21 +5,25 @@
     align-items: center;
     flex-wrap: wrap;
     padding-right: 1em;
-    height: 8em;
+    height: 10em;
 }
 
-.menu > .select {
-    border-bottom: 3px solid #4f0341;
+.select {
+    padding-bottom: 5px;
+    border-bottom: 5px solid #4f0341;
     margin-right: 0;
 }
 
+.fondu{
+    animation: fadeIn 0.5s ease-out forwards;
+}
 .menu > img {
     height: 5em;
     margin-left: 4em;
     margin-right: auto;
 }
 
-.menu > button, .social-networks > button {
+.social-networks > button {
     background-color: var(--background-day);
     color: var(--text-color-day);
     position: relative;
@@ -28,24 +32,44 @@
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    height: 100%;
+    height: 100% !important;
     padding-left: 0.5em;
     padding-right: 0.5em;
     margin-left: 1em;
     border-radius: 0;
 }
 
-.menu > button:first-of-type button:last-of-type {
+.sections-menu{
+    height:100%;
+    background-color: var(--background-day);
+    color: var(--text-color-day);
+}
+.sections-menu > button{
+    background-color: var(--background-day);
+    color: var(--text-color-day);
+    margin-left: 0;
+    height: 100% !important;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 0;
+}
+
+.sections-menu > button:first-of-type button:last-of-type {
     margin-left: 0;
 }
-  
+
+.social-networks{
+    display: flex;
+    flex-direction: row;
+    margin-right: 2em;
+}
 
 .switch {
     position: relative;
     display: inline-block;
     width: 4em;
     height: 34px;
-    margin-right: 1em;
+    margin-right: 3em;
 
 }
 
@@ -72,8 +96,6 @@ input:checked + .slider {
     background-color: #c8c8c822;
 }
 
-
-
 input:checked + .slider:before {
     background-image: url('/Photos/moon.png');
     -webkit-transform: translateX(26px);
@@ -98,7 +120,25 @@ border-radius: 50%;
 }
 
 
+.menu-mobile{
+    display: none;
+}
+
 @media screen and (max-width:1100px) {
+    .menu-mobile{
+        display: block;
+        margin: 0;
+        animation: fadeIn 1s ease-out forwards;
+        background-color: var(--background-day);
+        color: var(--text-color-day);
+    }
+    .social-networks{
+        margin-right: 0;
+    }
+
+    .select{
+        border-width: 1px;
+    }
     .menu {
         display: flex;
         flex-direction: column;
@@ -112,31 +152,26 @@ border-radius: 50%;
         padding-bottom: 0.5em;
     }
 
-    .social-networks{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+    .sections-menu {
+        display: none;
     }
 
-    .menu > button, .social-networks > button {
-        padding-left: 1em;
-        padding-right: 1em;
+    .sections-menu > button, .social-networks > button {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
     }
 
-    .menu > button:first-of-type {
+    .sections-menu > button:first-of-type {
         margin-left: 0em;
     }
     
-    .menu > button:last-of-type{
+    .sections-menu > button:last-of-type{
         margin-right: 0em;
     }
 
     .menu > img {
-        height: 3em;
+        height: 5em;
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 1em;

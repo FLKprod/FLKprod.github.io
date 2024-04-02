@@ -29,12 +29,13 @@
                     <input id="daynight" type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
-                
-                <button id="presentation">Présentation</button>
-                <button id="projets">Projets</button>
-                <button id="videos">Multimedia</button>
-                <button id="photos">Photographies</button>
-
+                <button class='menu-mobile' onclick="toggleMenu()"><i class="fa fa-bars"></i></button>
+                <div class="sections-menu">
+                    <button id="presentation">Présentation</button>
+                    <button id="projets">Projets</button>
+                    <button id="videos">Multimedia</button>
+                    <button id="photos">Photographies</button>
+                </div>
                 <div class="social-networks">
                     <button onclick="window.location.href='mailto:maxime.falkowski@icloud.com';">
                         <i class="fa fa-envelope" ></i>
@@ -49,7 +50,20 @@
                         <i class="fab fa-github" ></i>
                     </button>
                 </div>
-            </div>
+                <script>
+                    function toggleMenu() {
+                        var menuMobile = document.querySelector('.menu-mobile');
+                        var menuDesktopButtons = document.querySelectorAll('.sections-menu');
+                        menuMobile.classList.toggle('active');
+                        menuDesktopButtons.forEach(button => {
+                            if (button !== menuMobile){
+                                button.style.display = menuMobile.classList.contains('active') ? 'block' : 'none';
+                                button.classList.add('fondu');
+                            }
+                        });
+                    }
+                    </script>
+                </div>
             <div class="logo">
                 <img src="Photos/baniere.JPG" alt="Logo">
             </div>

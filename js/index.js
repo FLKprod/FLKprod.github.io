@@ -1,4 +1,4 @@
-import { createTextElement, createImage, createText, createSocialLink, createInfoSection, createButton, createIcon, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createImage, createText, createButton, createIcon, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 toggleTeamInfo('presentation');
@@ -10,6 +10,7 @@ setTimeout(function() {
     mainContent.style.opacity = 1;
     mainContent.classList.remove('hidden');
 }, 0);
+document.getElementById("introContainer").style.display='none';
 
 /******************************* MODE NUIT  *****************************************************************/
 
@@ -51,7 +52,7 @@ function toggleTeamInfo(id) {
     });
     var selectedButton = document.getElementById(id);
     if (selectedButton) {
-        console.log(id);
+        console.log("section " + id);
         selectedButton.classList.add('select');
     }
 
@@ -91,7 +92,7 @@ function toggleTeamInfo(id) {
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-profil-presentation');
-        text_intro2presentation.appendChild(createText('p',"Moi, c’est Maxime. J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. La photographie est un domaine qui me passionne. On peut toujours chercher à faire la meilleure image, à prendre la photo au meilleur moment. De plus en plus de personnes cherchent à scénariser leurs photos pour les partager sur les réseaux sociaux. Personnellement, je cherche plutôt à créer tout ce qui me passe par l'esprit : dès qu'une idée me vient, que ce soit pour une vidéo plus ou moins longue ou une photo, je la note et cherche à la réaliser au mieux et le plus rapidement possible. Auparavant, je partageais mes créations sur mon compte Instagram @FLKPROD_, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées, ce qui me permet d'être plus libre et de ne pas chercher à augmenter mes statistiques, mais simplement de partager ce que j'aime."));
+        text_intro2presentation.appendChild(createText('p',"<strong>Moi, c’est Maxime.</strong> J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. La photographie est un domaine qui me passionne. On peut toujours chercher à faire la meilleure image, à prendre la photo au meilleur moment. De plus en plus de personnes cherchent à scénariser leurs photos pour les partager sur les réseaux sociaux. Personnellement, je cherche plutôt à créer tout ce qui me passe par l'esprit : dès qu'une idée me vient, que ce soit pour une vidéo plus ou moins longue ou une photo, je la note et cherche à la réaliser au mieux et le plus rapidement possible. Auparavant, je partageais mes créations sur mon compte Instagram @FLKPROD_, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées, ce qui me permet d'être plus libre et de ne pas chercher à augmenter mes statistiques, mais simplement de partager ce que j'aime."));
         text_intro2presentation.appendChild(createText('p',"Ma passion pour la sécurité informatique se conjugue avec mon intérêt pour la photographie et la vidéo. En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques et vidéographiques."));
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
@@ -102,14 +103,22 @@ function toggleTeamInfo(id) {
         citation.appendChild(createText('p', "Grandir sous le lys, partir chercher son or pour s'apaiser sous l'érable."));
         presentationContainer.appendChild(citation);
 
-        presentationContainer.appendChild(createText('h4', 'Grandir sous le Lys'));
-        presentationContainer.appendChild(createText('p',"Originaire de la charmante ville de Dijon, j'y ai vécu jusqu'à mes 21 ans. Mon enfance s'est épanouie au cœur d'un quartier empreint de souvenirs, où chaque rue portait le récit de ma croissance. Les ruelles familiales ont été le théâtre de jeux insouciants, et les parcs, le refuge de découvertes infinies. Au fil des années, Dijon a été le témoin de mon évolution, de mes premiers pas à l'école jusqu'à ma maturité à l'aube de mes études supérieures. C'est dans cette cité chaleureuse que j'ai forgé mes premières aspirations et tissé des liens indéfectibles. Ma ville natale, imprégnée d'histoire et de charme, demeure le point d'ancrage de qui je suis, et ses rues résonnent encore des échos joyeux de mon passé."));
+
+
+        var city_section =createElementWithClass("div","city-presentation");
+        city_section.appendChild(createText('h4', 'Grandir sous le Lys'));
+        
+        city_section.appendChild(createText('p',"Originaire de la charmante ville de <strong>Dijon</strong>, j'y ai vécu jusqu'à mes 21 ans. Mon enfance s'est épanouie au cœur d'un quartier empreint de souvenirs, où chaque rue portait le récit de ma croissance. Les ruelles familiales ont été le théâtre de jeux insouciants, et les parcs, le refuge de découvertes infinies. Au fil des années, Dijon a été le témoin de mon évolution, de mes premiers pas à l'école jusqu'à ma maturité à l'aube de mes études supérieures. C'est dans cette cité chaleureuse que j'ai forgé mes premières aspirations et tissé des liens indéfectibles. Ma ville natale, imprégnée d'histoire et de charme, demeure le point d'ancrage de qui je suis, et ses rues résonnent encore des échos joyeux de mon passé."));
         var imageSources = ["Photos/Dijon.jpg", "Photos/Dijon2.JPG", "Photos/Dijon3.JPG", "Photos/Dijon4.JPG"];
+        var image_city_section = createElementWithClass('div','image_city_section');
         imageSources.forEach(src => {
             const imgElement = createImage(src);
-            presentationContainer.appendChild(imgElement);
+            image_city_section.appendChild(imgElement);
         });
-        presentationContainer.appendChild(createText('h4',"Partir sur les terres des chercheurs d'Or" ));
+        city_section.appendChild(image_city_section)
+        presentationContainer.appendChild(city_section);
+
+        /*presentationContainer.appendChild(createText('h4',"Partir sur les terres des chercheurs d'Or" ));
 
         presentationContainer.appendChild(createText('p',"Au cours de mes études, j'ai eu l'opportunité de réaliser un stage à Berkeley aux Lawrence Berkeley National Laboratory (LBNL), travaillant sur le projet FUEGO (Fire Urgency Estimator in Geostationary Orbit). Cette expérience captivante a été bien plus qu'une simple opportunité professionnelle ; elle a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."));
         var imageSources = ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"];
@@ -126,7 +135,7 @@ function toggleTeamInfo(id) {
             presentationContainer.appendChild(imgElement);
         });
 
-            
+           */ 
         }
         else if(id === 'photos'){
             photosContainer.classList.add('fade-in');
@@ -151,14 +160,14 @@ function toggleTeamInfo(id) {
                 { name: "LanbdaCash", videoLink: "Photos/1216.mp4", imageSrc: "Photos/landbacash.png" }
             ];
             for (let i = 0; i < menuList.length; i++) {
-                menuDiv.appendChild(createTextElement('ul',menuList[i].name));
+                menuDiv.appendChild(createText('ul',menuList[i].name));
             }
             projets.appendChild(menuDiv);
 
             var video=createVideoWithOverlay('','');
-            projets.appendChild(createVideoWithOverlay('','Photos/landbacash.png'));
-            projets.appendChild(createTextElement('h2', ''));
-            projets.appendChild(createTextElement('p', 'Description du projet...'));
+            projets.appendChild(createVideoWithOverlay('',''));
+            projets.appendChild(createText('h2', ''));
+            projets.appendChild(createText('p', 'Description du projet...'));
 
             menuDiv.addEventListener('click', function(event) {
                 if (event.target.tagName === 'UL') {
@@ -175,3 +184,4 @@ function toggleTeamInfo(id) {
             projetsContainer.appendChild(projets);
         }
 }
+
