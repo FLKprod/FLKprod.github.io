@@ -128,6 +128,7 @@ function toggleTeamInfo(id) {
         var listescertifications = document.createElement("ul");
         listescertifications.appendChild(createText('li',"<strong>CCNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
         listescertifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
+        listescertifications.appendChild(createText('li',"Network Security By Cisco"));
         text_certifications.appendChild(listescertifications);
         certifications.appendChild(text_certifications);
 
@@ -142,46 +143,13 @@ function toggleTeamInfo(id) {
         var text_cv_section = createElementWithClass('div','text-section');
         
         text_cv_section.appendChild(createText('h2',"Plus d'infos sur mon profil ?"));
-        text_cv_section.appendChild(createText('p',"Ci-joint mon CV et mon Linkedin"));
-        text_cv_section.appendChild(createIconWithLink("fab fa-linkedin", "https://www.linkedin.com/in/maxime-falkowski-9a4607216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGJJZ%2FAWYSLGq0t%2BQS92TrQ%3D%3D"));
-        text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
+        text_cv_section.appendChild(createText('p',"Ci-joint mon CV en anglais et en francais"));
+        
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/Resume_Maxime_Falkowski.pdf"));
+        text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
         cv_section.appendChild(text_cv_section);
 
         presentationContainer.appendChild(cv_section);
-        
-        /*
-        presentationContainer.appendChild(createText('h3', 'Mon parcours'));
-        presentationContainer.appendChild(createText('p', "Si je devais résumer ma vie et mon parcours en une phrase, ce serait la suivante."));
-        var citation = document.createElement('blockquote');
-        citation.className='citation';
-        citation.appendChild(createText('p', "Grandir sous le lys, partir chercher son or pour s'apaiser sous l'érable."));
-        presentationContainer.appendChild(citation);
-
-
-
-        var city_section =createElementWithClass("div","city-presentation");
-        city_section.appendChild(createText('h4', 'Grandir sous le Lys'));
-        
-        city_section.appendChild(createText('p',"Originaire de la charmante ville de <strong>Dijon</strong>, j'y ai vécu jusqu'à mes 21 ans. Mon enfance s'est épanouie au cœur d'un quartier empreint de souvenirs, où chaque rue portait le récit de ma croissance. Les ruelles familiales ont été le théâtre de jeux insouciants, et les parcs, le refuge de découvertes infinies. Au fil des années, Dijon a été le témoin de mon évolution, de mes premiers pas à l'école jusqu'à ma maturité à l'aube de mes études supérieures. C'est dans cette cité chaleureuse que j'ai forgé mes premières aspirations et tissé des liens indéfectibles. Ma ville natale, imprégnée d'histoire et de charme, demeure le point d'ancrage de qui je suis, et ses rues résonnent encore des échos joyeux de mon passé."));
-        var imageSources = ["Photos/Dijon.jpg", "Photos/Dijon2.JPG", "Photos/Dijon3.JPG", "Photos/Dijon4.JPG"];
-        var image_city_section = createElementWithClass('div','image_city_section');
-        imageSources.forEach(src => {
-            const imgElement = createImage(src);
-            image_city_section.appendChild(imgElement);
-        });
-        city_section.appendChild(image_city_section)
-        presentationContainer.appendChild(city_section);
-        presentationContainer.appendChild(createText('h4',"Se reposer sous l'Erable" ));
-
-        presentationContainer.appendChild(createText('p',"Par la suite, j'ai choisi d'effectuer un parcours de double diplôme à Chicoutimi, à l'Université du Québec, et ma découverte du Canada n'a fait que renforcer mon appréciation pour ce pays. Le Canada m'a accueilli chaleureusement, offrant une qualité de vie exceptionnelle et une diversité culturelle qui a enrichi mon expérience académique. Cette expérience au Canada, combinée à mes voyages et expériences antérieurs, m'ont incontestablement ouvert l'esprit sur la diversité des approches et des perspectives en matière de technologie et de sécurité informatique. Voyager et vivre dans des endroits aussi différents a enrichi ma vision du monde, me dotant d'une compréhension approfondie des défis technologiques à l'échelle mondiale. Ainsi, mon parcours reflète ma volonté constante d'explorer, d'apprendre et de m'adapter aux évolutions de notre société de plus en plus interconnectée."));
-        var imageSources = ["Photos/Canada.JPG", "Photos/Canada2.JPG", "Photos/Canada3.JPG", "Photos/Canada4.JPG"];
-        imageSources.forEach(src => {
-            const imgElement = createImage(src);
-            presentationContainer.appendChild(imgElement);
-        });
-
-           */ 
         }
         else if(id === 'photos'){
             photosContainer.classList.add('fade-in');
