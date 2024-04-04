@@ -27,8 +27,6 @@
 
 .projets-container{
     display: flex;
-    padding-top: 2em;
-    padding-bottom: 2em;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;

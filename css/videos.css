@@ -28,7 +28,7 @@
 }
 
 .galerie-videos {
-    background-color: #000 !important;
+    background-color: black !important;
     width: auto;
     height: min-content;
     background-size:contain;
@@ -40,8 +40,8 @@
 
 .videos{
     display: flex;
-    flex-direction: row;
-    align-items:baseline;
+    flex-direction: column;
+    align-items:center;
 }
 
 
@@ -106,11 +106,7 @@
         height: auto;
     }
 
-    .videos{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+
     
     .videos:nth-child(even) img {
         box-shadow: 0 0 0 0.3em rgb(0, 5, 50), 0 0 0 0.4em whitesmoke;

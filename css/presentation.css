@@ -29,7 +29,6 @@
     margin: 1em;
 }
 .city-presentation > h2,h3 {
-    background-color: #4f0341;
     border-radius: 1.5em;
     padding: 0.5em;
     margin-right: 0.5em;
@@ -60,7 +59,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    height: 20em;
+    height: 10em;
     width: auto;
 }
 
@@ -73,7 +72,7 @@
 
 
 
-.profil-presentation {
+.section {
     background-color: #eeeeee;
     color: black;
     display: flex;
@@ -81,20 +80,32 @@
     padding: 3em 2em;
     height: auto;
 }
-.text-profil-presentation{
+.text-section{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: 100%;
     flex: 1;
     line-height: 3;
     padding: 0 2em;
 }
-.image-profil-presentation{
-    width: 30%;
+
+.text-section > h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2em;
+}
+
+.text-section > a{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2em;
+    color: whitesmoke;
+    margin-left: 2em;
+}
+.image-section{
+    width: 25%;
     height: auto;
     mix-blend-mode: normal;
     margin: 3em 2em;
 }
-.image-profil-presentation > img{
+.image-section > img{
     border-radius: 2em;
     width: 100%;
     height: 100%;    
@@ -105,9 +116,11 @@
 
 
 .presentation-container > .citation {
-    font-family:"Segoe Print", "Times New Roman", Verdana;
+    font-family: Garamond, serif;
+    letter-spacing: 0.08em;
     font-size: 1.5em;
-    margin:0;
+    padding-top:1em;
+    padding-bottom: 1em;
     color:whitesmoke;
     background-image: url(/Photos/citation.JPG);
     background-size: cover;
@@ -166,16 +179,26 @@
         font-size: 0.8em;
     }
 
-    .profil-presentation {
+    .section {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .image-profil-presentation{
+    .image-section{
         width: 50%;
         height: auto;
         mix-blend-mode: normal;
         margin: 1em 0;
     }
 }
+
+li{
+    text-align: left;
+    font-size: 1.4em;
+}
+li::before{
+    content: "👨‍💻";
+    padding-right: 1em;
+    color: green;
+  }

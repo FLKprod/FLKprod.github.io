@@ -1,6 +1,6 @@
 export function createText(tag, textContent) {
     const element = document.createElement(tag);
-    element.innerHTML  = textContent;
+    element.innerHTML = textContent;
     return element;
 }
 
@@ -12,12 +12,21 @@ export function createImage(src) {
 
 export function createIcon(iconClass, fontSize, color, cursor, clickHandler) {
     const icon = document.createElement("i");
-    icon.className = `fa ${iconClass}`;
+    icon.className = iconClass;
     icon.style.fontSize = fontSize;
     icon.style.color = color;
     icon.style.cursor = cursor;
     icon.onclick = clickHandler;
     return icon;
+}
+
+export function createIconWithLink(iconClass, link) {
+    const icon = createIcon(iconClass);
+    const iconLink = document.createElement("a");
+    iconLink.href = link;
+    iconLink.target = "_blank";
+    iconLink.appendChild(icon);
+    return iconLink;
 }
 
 export function createButton(text, clickHandler) {

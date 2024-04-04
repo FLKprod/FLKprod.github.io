@@ -10,44 +10,101 @@
 .photos-container > h2 {
     font-size: 2em;
     font-style: italic;
-    margin-bottom: 30em;
 }
 
-.contact-text{
+.categories_photos{
+    width: 100%;
+    margin-bottom: 5em;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.info:nth-child(even) {
-    background-color: rgb(0, 5, 50);
+.categorie_photos {
+    position: relative;
+    height: auto;
+    width: 30%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1em;
+    opacity: 0.7;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    
 }
 
-.info > .bold-text {
-    color:whitesmoke;
+.categorie_photos:hover {
+    opacity: 1;
 }
 
-@media screen and (max-width: 1100px) {
-    .photos-container{
-        margin: 0;
+.categorie_photos:hover .categorie_photo {
+    transform: translateY(0);
+}
+
+
+.categorie_photos > img{
+    width: 30%;
+    height: auto;
+    border-radius: 1em;
+}
+
+.carousel-container{
+    width: 100%;
+    position: relative;
+    opacity: 0.6;
+}
+
+.carousel-container:hover{
+    opacity:1;
+    transition: all 1s;
+}
+
+.carousel-container > img{
+    width: 100%;
+}
+
+.carousel-container i {
+    padding: 1em;
+}
+
+.categorie_photos h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-container i:active {
+    background-color: red !important;
+}
+.carousel-container > i:first-of-type{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(calc(-50% + 1em));
+    left: 0;
+    color:white !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+.carousel-container > i:last-of-type{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) translateX(calc(50% - 1em)); 
+    color:white !important;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+@media screen and (max-width:1100px) {
+    .categories_photos{
+        width: 100%;
+        margin-bottom: 5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .photos-container > h2 {
-        font-size: 1em;
+
+    .categorie_photos {
+        width: auto;
         margin-left: 2em;
         margin-right: 2em;
-    }
-    .contact-text{
-        display: flex;
-        flex-wrap:wrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .info {
-        margin:0.5em 0.5em 0.5em 0.5em;
-        padding: 0.6em;
-        gap: 0.1em;
-    }
-    .info i {
-        font-size: 2em;
     }
 }

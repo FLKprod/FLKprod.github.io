@@ -1,4 +1,6 @@
-import {createImage, createText, createButton, createIcon, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createImage, createText, createButton, createIconWithLink, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createCategoryWithCarousel,createCarousel} from './carroussel.js';
+
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 toggleTeamInfo('presentation');
@@ -11,6 +13,8 @@ setTimeout(function() {
     mainContent.classList.remove('hidden');
 }, 0);
 document.getElementById("introContainer").style.display='none';
+
+
 
 /******************************* MODE NUIT  *****************************************************************/
 
@@ -86,16 +90,48 @@ function toggleTeamInfo(id) {
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
 
-        var intro2presentation = createElementWithClass('div','profil-presentation');
-        var image_intro2presentation = createElementWithClass('div','image-profil-presentation');
+        var intro2presentation = createElementWithClass('div','section');
+        var image_intro2presentation = createElementWithClass('div','image-section');
         image_intro2presentation.appendChild(createImage('Photos/moi.JPG'));
         intro2presentation.appendChild(image_intro2presentation);
 
-        var text_intro2presentation = createElementWithClass('div','text-profil-presentation');
+        var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('p',"<strong>Moi, c’est Maxime.</strong> J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. La photographie est un domaine qui me passionne. On peut toujours chercher à faire la meilleure image, à prendre la photo au meilleur moment. De plus en plus de personnes cherchent à scénariser leurs photos pour les partager sur les réseaux sociaux. Personnellement, je cherche plutôt à créer tout ce qui me passe par l'esprit : dès qu'une idée me vient, que ce soit pour une vidéo plus ou moins longue ou une photo, je la note et cherche à la réaliser au mieux et le plus rapidement possible. Auparavant, je partageais mes créations sur mon compte Instagram @FLKPROD_, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées, ce qui me permet d'être plus libre et de ne pas chercher à augmenter mes statistiques, mais simplement de partager ce que j'aime."));
         text_intro2presentation.appendChild(createText('p',"Ma passion pour la sécurité informatique se conjugue avec mon intérêt pour la photographie et la vidéo. En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques et vidéographiques."));
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
+
+        var certifications = createElementWithClass('div','section');
+        certifications.style="background-color:lightblue;";
+
+        var text_certifications = createElementWithClass('div','text-section');
+        text_certifications.appendChild(createText('h2',"Mes Certifications Reseaux"));
+        var listescertifications = document.createElement("ul");
+        listescertifications.appendChild(createText('li',"<strong>CCsNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
+        listescertifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
+        text_certifications.appendChild(listescertifications);
+        certifications.appendChild(text_certifications);
+
+        var image_certifications = createElementWithClass('div','image-section');
+        image_certifications.appendChild(createImage('Photos/CCNA.png'));
+        certifications.appendChild(image_certifications);
+        
+        presentationContainer.appendChild(certifications);
+
+        var cv_section = createElementWithClass('div','section');
+        cv_section.style="background-color:#01556A;color:white;";
+        var text_cv_section = createElementWithClass('div','text-section');
+        
+        text_cv_section.appendChild(createText('h2',"Plus d'infos sur mon profil ?"));
+        text_cv_section.appendChild(createText('p',"Ci-joint mon CV et mon Linkedin"));
+        text_cv_section.appendChild(createIconWithLink("fab fa-linkedin", "https://www.linkedin.com/in/maxime-falkowski-9a4607216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGJJZ%2FAWYSLGq0t%2BQS92TrQ%3D%3D"));
+        text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
+        text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/Resume_Maxime_Falkowski.pdf"));
+        cv_section.appendChild(text_cv_section);
+
+        presentationContainer.appendChild(cv_section);
+        
+        /*
         presentationContainer.appendChild(createText('h3', 'Mon parcours'));
         presentationContainer.appendChild(createText('p', "Si je devais résumer ma vie et mon parcours en une phrase, ce serait la suivante."));
         var citation = document.createElement('blockquote');
@@ -118,7 +154,7 @@ function toggleTeamInfo(id) {
         city_section.appendChild(image_city_section)
         presentationContainer.appendChild(city_section);
 
-        /*presentationContainer.appendChild(createText('h4',"Partir sur les terres des chercheurs d'Or" ));
+        presentationContainer.appendChild(createText('h4',"Partir sur les terres des chercheurs d'Or" ));
 
         presentationContainer.appendChild(createText('p',"Au cours de mes études, j'ai eu l'opportunité de réaliser un stage à Berkeley aux Lawrence Berkeley National Laboratory (LBNL), travaillant sur le projet FUEGO (Fire Urgency Estimator in Geostationary Orbit). Cette expérience captivante a été bien plus qu'une simple opportunité professionnelle ; elle a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."));
         var imageSources = ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"];
@@ -139,7 +175,39 @@ function toggleTeamInfo(id) {
         }
         else if(id === 'photos'){
             photosContainer.classList.add('fade-in');
-            photosContainer.appendChild(createText('h2'," 🚧 En creation... 🚧"));
+
+            var intro2photographies = createElementWithClass('div','section');
+            var image_intro2photographies = createElementWithClass('div','image-section');
+            image_intro2photographies.appendChild(createImage('Photos/text-photo.JPG'));
+            intro2photographies.appendChild(image_intro2photographies);
+
+            var text_intro2photographies = createElementWithClass('div','text-section');
+            text_intro2photographies.appendChild(createText('p',"Toujours avec un appareil photo sur moi, la photographie est ma passion depuis mon enfance. L'idée de recréer des émotions à travers un fichier PNG me passionne depuis qu'on a mis une caméra entre mes mains. Depuis, je cherche toujours à créer de nouvelles œuvres, que vous pouvez trouver ici. <strong>Enjoy.</strong>"));
+            intro2photographies.appendChild(text_intro2photographies);
+            photosContainer.appendChild(intro2photographies);
+            var categories_photos = createElementWithClass('div','categories_photos');
+
+            
+            var citation = document.createElement('blockquote');
+            citation.className='citation';
+            citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
+            presentationContainer.appendChild(citation);
+
+            // Exemple de données (remplacez avec vos propres données)
+            const categoriesData = [
+            { name: 'Dijon', images: ["Photos/Dijon.jpg", "Photos/Dijon2.JPG", "Photos/Dijon3.JPG", "Photos/Dijon4.JPG"] },
+            { name: 'San Francisco', images: ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"] },
+            { name: 'Canada', images: ["Photos/Canada.JPG", "Photos/Canada2.JPG", "Photos/Canada3.JPG", "Photos/Canada4.JPG"] }
+            // Ajoutez plus de catégories avec leurs images au besoin
+            ];
+
+            // Créer et ajouter chaque catégorie avec son carrousel
+            categoriesData.forEach(categoryData => {
+                const { name, images } = categoryData;
+                const categoryElement = createCategoryWithCarousel(name, images);
+                categories_photos.appendChild(categoryElement);
+            });
+            photosContainer.appendChild(categories_photos);
         }
         else if(id === 'projets'){ 
             projetsContainer.classList.add('fade-in');
@@ -163,8 +231,6 @@ function toggleTeamInfo(id) {
                 menuDiv.appendChild(createText('ul',menuList[i].name));
             }
             projets.appendChild(menuDiv);
-
-            var video=createVideoWithOverlay('','');
             projets.appendChild(createVideoWithOverlay('',''));
             projets.appendChild(createText('h2', ''));
             projets.appendChild(createText('p', 'Description du projet...'));
