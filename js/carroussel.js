@@ -9,8 +9,8 @@ import {
 export function createCarousel(category, images) {
     const carouselContainer = createElementWithClass('div', 'carousel-container');
     const imageElement = createImage(images[0]);
-    const prevButton = createIcon('fa-arrow-left', '1em', 'white', 'pointer', () => prevImage());
-    const nextButton = createIcon('fa-arrow-right', '1em', 'white', 'pointer', () => nextImage());
+    const prevButton = createIcon('fa fa-arrow-left', '1em', 'white', 'pointer', () => prevImage());
+    const nextButton = createIcon('fa fa-arrow-right', '1em', 'white', 'pointer', () => nextImage());
   
     let currentIndex = 0;
   

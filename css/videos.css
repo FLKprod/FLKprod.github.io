@@ -33,9 +33,7 @@
     height: min-content;
     background-size:contain;
     background-position: center;
-    margin-left: 3em;
-    margin-right: 3em;
-    margin-bottom: 10em;
+    margin:3em;
 }
 
 .videos{
@@ -81,6 +79,10 @@
 }
 
 @media screen and (max-width: 1100px) {
+
+    .videos-container > p {
+        font-size: 0.8em;
+    }
 
     .videos-container > h2 {
         font-size: 1.5em;

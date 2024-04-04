@@ -74,8 +74,14 @@ function toggleTeamInfo(id) {
     presentationContainer.classList.remove('fade-in');
     if(id=== 'videos'){
         videosContainer.classList.add('fade-in');
-        videosContainer.appendChild(createText('h2',"Mes contenus vidéos"));
-        videosContainer.appendChild(createText('p',"Passionné par le montage vidéo et constamment à la recherche d'inspiration pour créer du contenu, je saute sur l'occasion de concrétiser une idée germeant dans mon esprit, à travers des vidéos captivantes et originales. Vous pouvez consulter toutes mes creations dans la rubrique ci-dessous. Enjoy."));
+
+        var intro2videos = createElementWithClass('div','section');
+
+        var text_intro2videos = createElementWithClass('div','text-section');
+        text_intro2videos.appendChild(createText('h2',"Mes contenus vidéos"));
+        text_intro2videos.appendChild(createText('p',"Passionné par le montage vidéo et constamment à la recherche d'inspiration pour créer du contenu, je saute sur l'occasion de concrétiser une idée germeant dans mon esprit, à travers des vidéos captivantes et originales. Auparavant, je partageais mes créations sur mon compte Instagram @FLKPROD_, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées. Vous pouvez consulter toutes mes creations dans la rubrique ci-dessous. <strong>Enjoy.</strong>"));
+        intro2videos.appendChild(text_intro2videos);
+        videosContainer.appendChild(intro2videos);
         
         var galerie =createElementWithClass("div","galerie-videos");
         galerie.appendChild(createImageElement("img", 'pelicule', "Photos/pelicule.jpg", "Description de l'image"));
@@ -96,10 +102,23 @@ function toggleTeamInfo(id) {
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
-        text_intro2presentation.appendChild(createText('p',"<strong>Moi, c’est Maxime.</strong> J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. La photographie est un domaine qui me passionne. On peut toujours chercher à faire la meilleure image, à prendre la photo au meilleur moment. De plus en plus de personnes cherchent à scénariser leurs photos pour les partager sur les réseaux sociaux. Personnellement, je cherche plutôt à créer tout ce qui me passe par l'esprit : dès qu'une idée me vient, que ce soit pour une vidéo plus ou moins longue ou une photo, je la note et cherche à la réaliser au mieux et le plus rapidement possible. Auparavant, je partageais mes créations sur mon compte Instagram @FLKPROD_, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées, ce qui me permet d'être plus libre et de ne pas chercher à augmenter mes statistiques, mais simplement de partager ce que j'aime."));
-        text_intro2presentation.appendChild(createText('p',"Ma passion pour la sécurité informatique se conjugue avec mon intérêt pour la photographie et la vidéo. En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques et vidéographiques."));
+        text_intro2presentation.appendChild(createText('p',"<strong>Moi, c’est Maxime.</strong> J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions comme la photographie, la video et l'informatique."));
+        text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques a titre personnel pour l'instant. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques, vidéographiques, mais aussi informatiques."));
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
+
+        var intro2lbnl = createElementWithClass('div','section');
+        intro2lbnl.style="background-color:#02323e;color:white;";
+        var text_intro2lbnl = createElementWithClass('div','text-section');
+        text_intro2lbnl.appendChild(createText('p',"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."));
+        intro2lbnl.appendChild(text_intro2lbnl);
+
+        var image_intro2lbnl = createElementWithClass('div','image-section');
+        image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
+        image_intro2lbnl.classList.style = "width:50%;"
+        intro2lbnl.appendChild(image_intro2lbnl);
+
+        presentationContainer.appendChild(intro2lbnl);
 
         var certifications = createElementWithClass('div','section');
         certifications.style="background-color:lightblue;";
@@ -107,7 +126,7 @@ function toggleTeamInfo(id) {
         var text_certifications = createElementWithClass('div','text-section');
         text_certifications.appendChild(createText('h2',"Mes Certifications Reseaux"));
         var listescertifications = document.createElement("ul");
-        listescertifications.appendChild(createText('li',"<strong>CCsNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
+        listescertifications.appendChild(createText('li',"<strong>CCNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
         listescertifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
         text_certifications.appendChild(listescertifications);
         certifications.appendChild(text_certifications);
@@ -153,15 +172,6 @@ function toggleTeamInfo(id) {
         });
         city_section.appendChild(image_city_section)
         presentationContainer.appendChild(city_section);
-
-        presentationContainer.appendChild(createText('h4',"Partir sur les terres des chercheurs d'Or" ));
-
-        presentationContainer.appendChild(createText('p',"Au cours de mes études, j'ai eu l'opportunité de réaliser un stage à Berkeley aux Lawrence Berkeley National Laboratory (LBNL), travaillant sur le projet FUEGO (Fire Urgency Estimator in Geostationary Orbit). Cette expérience captivante a été bien plus qu'une simple opportunité professionnelle ; elle a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."));
-        var imageSources = ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"];
-        imageSources.forEach(src => {
-            const imgElement = createImage(src);
-            presentationContainer.appendChild(imgElement);
-        });
         presentationContainer.appendChild(createText('h4',"Se reposer sous l'Erable" ));
 
         presentationContainer.appendChild(createText('p',"Par la suite, j'ai choisi d'effectuer un parcours de double diplôme à Chicoutimi, à l'Université du Québec, et ma découverte du Canada n'a fait que renforcer mon appréciation pour ce pays. Le Canada m'a accueilli chaleureusement, offrant une qualité de vie exceptionnelle et une diversité culturelle qui a enrichi mon expérience académique. Cette expérience au Canada, combinée à mes voyages et expériences antérieurs, m'ont incontestablement ouvert l'esprit sur la diversité des approches et des perspectives en matière de technologie et de sécurité informatique. Voyager et vivre dans des endroits aussi différents a enrichi ma vision du monde, me dotant d'une compréhension approfondie des défis technologiques à l'échelle mondiale. Ainsi, mon parcours reflète ma volonté constante d'explorer, d'apprendre et de m'adapter aux évolutions de notre société de plus en plus interconnectée."));
@@ -176,6 +186,12 @@ function toggleTeamInfo(id) {
         else if(id === 'photos'){
             photosContainer.classList.add('fade-in');
 
+            var citation = document.createElement('blockquote');
+            citation.className='citation';
+            citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
+            photosContainer.appendChild(citation);
+
+
             var intro2photographies = createElementWithClass('div','section');
             var image_intro2photographies = createElementWithClass('div','image-section');
             image_intro2photographies.appendChild(createImage('Photos/text-photo.JPG'));
@@ -188,10 +204,7 @@ function toggleTeamInfo(id) {
             var categories_photos = createElementWithClass('div','categories_photos');
 
             
-            var citation = document.createElement('blockquote');
-            citation.className='citation';
-            citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
-            presentationContainer.appendChild(citation);
+            
 
             // Exemple de données (remplacez avec vos propres données)
             const categoriesData = [
