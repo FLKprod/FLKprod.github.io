@@ -103,8 +103,8 @@ function toggleTeamInfo(id) {
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
-        text_intro2presentation.appendChild(createText('p'," J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions comme la photographie, la video et l'informatique."));
-        text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques a titre personnel pour l'instant. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques, vidéographiques, mais aussi informatiques."));
+        text_intro2presentation.appendChild(createText('p',"J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
+        text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques, vidéographiques, mais aussi informatiques."));
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
 
@@ -125,7 +125,7 @@ function toggleTeamInfo(id) {
         certifications.style="background-color:lightblue;";
 
         var text_certifications = createElementWithClass('div','text-section');
-        text_certifications.appendChild(createText('h2',"Mes Certifications Reseaux"));
+        text_certifications.appendChild(createText('h2',"Mes Certifications en réseaux"));
         var listescertifications = document.createElement("ul");
         listescertifications.appendChild(createText('li',"<strong>CCNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
         listescertifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
@@ -144,7 +144,7 @@ function toggleTeamInfo(id) {
         var text_cv_section = createElementWithClass('div','text-section');
         
         text_cv_section.appendChild(createText('h2',"Plus d'infos sur mon profil ?"));
-        text_cv_section.appendChild(createText('p',"Ci-joint mon CV en anglais et en francais"));
+        text_cv_section.appendChild(createText('p',"Ci-joint mon CV en anglais et en français"));
         
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/Resume_Maxime_Falkowski.pdf"));
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
