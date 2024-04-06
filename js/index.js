@@ -211,10 +211,12 @@ function toggleTeamInfo(id) {
             for (let i = 0; i < menuList.length; i++) {
                 menuDiv.appendChild(createText('ul',menuList[i].name));
             }
+
+            var projet = createElementWithClass('div','projet');
             projets.appendChild(menuDiv);
-            projets.appendChild(createVideoWithOverlay('',''));
-            projets.appendChild(createText('h2', ''));
-            projets.appendChild(createText('p', 'Description du projet...'));
+            projet.appendChild(createVideoWithOverlay('',''));
+            projet.appendChild(createText('h2', ''));
+            projet.appendChild(createText('p', 'Description du projet...'));
 
             menuDiv.addEventListener('click', function(event) {
                 if (event.target.tagName === 'UL') {
@@ -227,7 +229,7 @@ function toggleTeamInfo(id) {
                         updateImageElement(imageLink);
                     }
                 }});
-
+            projets.appendChild(projet);
             projetsContainer.appendChild(projets);
         }
 }

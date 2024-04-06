@@ -91,6 +91,10 @@
         font-size: 0.7em;
     }
 
+    .video > p {
+        font-size: 0.6em;
+    }
+
     .video > iframe {
         margin-left: 2em;
         margin-right: 2em;

@@ -23,13 +23,22 @@ export function createCarousel(category, images) {
     // Fonction pour afficher l'image suivante
     function nextImage() {
       currentIndex = (currentIndex + 1) % images.length;
+      imageElement.classList.add('fade-in');
+      setTimeout(() => {
+        imageElement.src = images[currentIndex];
+        imageElement.classList.remove('fade-in');
+      }, 500);
       imageElement.src = images[currentIndex];
     }
   
     // Fonction pour afficher l'image précédente
     function prevImage() {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
-      imageElement.addEventListener('fade-in');
+      imageElement.classList.add('fade-in');
+      setTimeout(() => {
+        imageElement.src = images[currentIndex];
+        imageElement.classList.remove('fade-in');
+      }, 500);
       imageElement.src = images[currentIndex];
     }
   }
