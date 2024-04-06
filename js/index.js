@@ -102,7 +102,8 @@ function toggleTeamInfo(id) {
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
-        text_intro2presentation.appendChild(createText('p',"<strong>Moi, c’est Maxime.</strong> J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions comme la photographie, la video et l'informatique."));
+        text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
+        text_intro2presentation.appendChild(createText('p'," J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions comme la photographie, la video et l'informatique."));
         text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques a titre personnel pour l'instant. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques, vidéographiques, mais aussi informatiques."));
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
@@ -166,6 +167,7 @@ function toggleTeamInfo(id) {
             intro2photographies.appendChild(image_intro2photographies);
 
             var text_intro2photographies = createElementWithClass('div','text-section');
+            text_intro2photographies.appendChild(createText('h2',"Mes contenus photographiques"));
             text_intro2photographies.appendChild(createText('p',"Toujours avec un appareil photo sur moi, la photographie est ma passion depuis mon enfance. L'idée de recréer des émotions à travers un fichier PNG me passionne depuis qu'on a mis une caméra entre mes mains. Depuis, je cherche toujours à créer de nouvelles œuvres, que vous pouvez trouver ici. <strong>Enjoy.</strong>"));
             intro2photographies.appendChild(text_intro2photographies);
             photosContainer.appendChild(intro2photographies);
@@ -192,21 +194,24 @@ function toggleTeamInfo(id) {
         }
         else if(id === 'projets'){ 
             projetsContainer.classList.add('fade-in');
-            projetsContainer.appendChild(createText('h2',"Mes contenus vidéos"));
-            projetsContainer.appendChild(createText('p',"Passionné par le montage vidéo et constamment à la recherche d'inspiration pour créer du contenu, je saute sur l'occasion de concrétiser une idée germeant dans mon esprit, à travers des vidéos captivantes et originales. Vous pouvez consulter toutes mes creations dans la rubrique ci-dessous. Enjoy."));
-            
+            var intro2projects = createElementWithClass('div','section');
+            var text_intro2projects = createElementWithClass('div','text-section');
+            text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
+            text_intro2projects.appendChild(createText('p',"Étant en école d'ingénieurs et en maîtrise en cybersécurité, j'ai eu de nombreux projets informatiques à réaliser durant toute ma scolarité. Certains ne sont que des créations que j'ai réalisées par passion pour le code. <strong>Enjoy.</strong>"));
+            intro2projects.appendChild(text_intro2projects);
+            projetsContainer.appendChild(intro2projects);
             var projets = createElementWithClass('div','projets');
             
             var menuDiv = createElementWithClass('div','menu3');
             var menuList = [
-                { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "chemin_image_1.jpg" },
-                { name: "BoulderDash", videoLink: "chemin_video_2.mp4", imageSrc: "chemin_image_2.jpg" },
-                { name: "94 Degrés", videoLink: "chemin_video_3.mp4", imageSrc: "chemin_image_3.jpg" },
-                { name: "TowerDefender", videoLink: "chemin_video_4.mp4", imageSrc: "chemin_image_4.jpg" },
-                { name: "ToDoList pour IOs", videoLink: "chemin_video_5.mp4", imageSrc: "chemin_image_5.jpg" },
-                { name: "Carte intéractive", videoLink: "chemin_video_6.mp4", imageSrc: "chemin_image_6.jpg" },
-                { name: "CyberSafe", videoLink: "chemin_video_7.mp4", imageSrc: "chemin_image_7.jpg" },
-                { name: "LanbdaCash", videoLink: "Photos/1216.mp4", imageSrc: "Photos/landbacash.png" }
+                { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "chemin_image_1.jpg",desc:""},
+                { name: "BoulderDash", videoLink: "chemin_video_2.mp4", imageSrc: "chemin_image_2.jpg" ,desc:""},
+                { name: "94 Degrés", videoLink: "chemin_video_3.mp4", imageSrc: "chemin_image_3.jpg",desc:"" },
+                { name: "TowerDefender", videoLink: "chemin_video_4.mp4", imageSrc: "chemin_image_4.jpg",desc:"" },
+                { name: "ToDoList pour IOs", videoLink: "chemin_video_5.mp4", imageSrc: "chemin_image_5.jpg",desc:"" },
+                { name: "Carte intéractive", videoLink: "chemin_video_6.mp4", imageSrc: "chemin_image_6.jpg",desc:"" },
+                { name: "CyberSafe", videoLink: "chemin_video_7.mp4", imageSrc: "chemin_image_7.jpg",desc:"" },
+                { name: "LanbdaCash", videoLink: "Photos/projets/landbacash.mp4", imageSrc: "Photos/projets/landbacash.png",desc:"Projet CLOUD Chicoutimi Wallah" }
             ];
             for (let i = 0; i < menuList.length; i++) {
                 menuDiv.appendChild(createText('ul',menuList[i].name));
@@ -215,16 +220,25 @@ function toggleTeamInfo(id) {
             var projet = createElementWithClass('div','projet');
             projets.appendChild(menuDiv);
             projet.appendChild(createVideoWithOverlay('',''));
-            projet.appendChild(createText('h2', ''));
-            projet.appendChild(createText('p', 'Description du projet...'));
 
+            var titre_projet=createText('h2', 'uiegguief')
+            projet.appendChild(titre_projet);
+
+            var description_projet = createText('p', 'Description du projet...')
+            projet.appendChild(description_projet);
+
+            
             menuDiv.addEventListener('click', function(event) {
                 if (event.target.tagName === 'UL') {
                     
                     var videoLink = menuList.find(item => item.name === event.target.textContent)?.videoLink;
                     var imageLink = menuList.find(item => item.name === event.target.textContent)?.imageSrc;
+                    var descLink = menuList.find(item => item.name === event.target.textContent)?.desc;
                     console.log("Changement de projet" + videoLink + "  " + imageLink);
                     if (videoLink) {
+                        projet.scrollIntoView({ behavior: 'smooth' });
+                        description_projet.innerHTML=descLink;
+                        titre_projet.innerHTML=event.target.textContent;
                         updateVideoElement(videoLink);
                         updateImageElement(imageLink);
                     }

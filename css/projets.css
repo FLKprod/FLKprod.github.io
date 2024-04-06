@@ -10,19 +10,27 @@
     color: whitesmoke;
     animation: glisse 1s ease-out forwards;
     box-sizing: border-box;
+    margin: 0;
+    
 }
 
 .menu3 ul {
     padding:2em;
     overflow: visible;
-    border-radius: 1em;
+    font-weight: normal;
+    
+    
+    transition: color 0.5s ease-in-out;
+    transition: font-weight 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+    
 }
 
 .menu3 ul:hover {
-    background-color: rgb(131, 125, 223);
+    background-color: rgb(218, 165, 32);
+    color: black;
+    font-weight: bold;
     cursor: pointer;
-    
-    border-radius: 1em;
 }
 
 .projets-container{
@@ -50,40 +58,58 @@
     margin-right: 3em;
 }
 .projets{
-    margin-left: 1em;
-    width: calc(100% - 2em) !important;
+    width: 100%;
     display: flex;
     flex-direction: row;
     margin-left: 0;
     height: auto;
     background-color: white;
-    border-radius: 1em;
     margin-bottom: 2em;
 }
 
 .projet{
     width: 100%;
+    color:black;
 }
 
 .video-projet{
     position: relative;
     margin-top: 1em;
     width: 100%;
-    height: 100%;
+    height: 70%;
     box-sizing: border-box;
 }
 
 .video-projet > iframe{
     width: calc(100% - 2em) !important;
-    height: 80%;
+    height: 100%;
 }
 
 .video-projet > img{
     position: relative;
-    bottom: 1.5em;
-    right: calc(50% - 2em) !important;
+    bottom:5em;
+    left: calc(50% - 3em) !important;
     width: 5em;
     height: auto;
+}
+
+.projet > h2 {
+    padding-top: 1em;
+    color:black;
+    font-size: 1em;
+    font-family: Copperplate, Papyrus, fantasy;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline overline;
+    text-decoration-color: #4f0341; /* Couleur du soulignement */
+    text-decoration-thickness: 10px; /* Épaisseur du soulignement */
+    text-decoration-style:solid; /* Style du soulignement */
+    
+}
+.projet > p {
+    color:black;
+    font-family:Calibri;
+    line-height: 2;
+    letter-spacing: 0.07em;
 }
 
 @media screen and (max-width: 1100px) {

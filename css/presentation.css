@@ -81,16 +81,17 @@
     height: auto;
 }
 .text-section{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.1em;
     height: 100%;
     flex: 1;
     line-height: 3;
-    padding: 0 1em;
+    padding: 0 2em;
 }
 
 .text-section > h2{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 2em;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-size: 1.5em;
 }
 
 .text-section > a{
@@ -100,8 +101,12 @@
     margin-left: 1em;
 }
 
+.text-section ul > li {
+    font-size: 1em;
+}
 .text-section > ul{
     line-height: 2;
+    
 }
 
 .text-section p > a{
