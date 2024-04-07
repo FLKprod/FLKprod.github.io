@@ -206,7 +206,7 @@ function toggleTeamInfo(id) {
             var menuList = [
                 { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "chemin_image_1.jpg",desc:""},
                 { name: "BoulderDash", videoLink: "chemin_video_2.mp4", imageSrc: "chemin_image_2.jpg" ,desc:""},
-                { name: "94 Degrés", videoLink: "chemin_video_3.mp4", imageSrc: "chemin_image_3.jpg",desc:"" },
+                { name: "94 Degrés", videoLink: "chemin_video_3.mp4", imageSrc: "Photos/projets/Logo201F.png",desc:"" },
                 { name: "TowerDefender", videoLink: "chemin_video_4.mp4", imageSrc: "chemin_image_4.jpg",desc:"" },
                 { name: "ToDoList pour IOs", videoLink: "chemin_video_5.mp4", imageSrc: "chemin_image_5.jpg",desc:"" },
                 { name: "Carte intéractive", videoLink: "chemin_video_6.mp4", imageSrc: "chemin_image_6.jpg",desc:"" },
