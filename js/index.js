@@ -204,7 +204,7 @@ function toggleTeamInfo(id) {
             
             var menuDiv = createElementWithClass('div','menu3');
             var menuList = [
-                { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "chemin_image_1.jpg",desc:""},
+                { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/logoneg.png",desc:""},
                 { name: "BoulderDash", videoLink: "chemin_video_2.mp4", imageSrc: "chemin_image_2.jpg" ,desc:""},
                 { name: "94 Degrés", videoLink: "chemin_video_3.mp4", imageSrc: "Photos/projets/Logo201F.png",desc:"" },
                 { name: "TowerDefender", videoLink: "chemin_video_4.mp4", imageSrc: "chemin_image_4.jpg",desc:"" },
