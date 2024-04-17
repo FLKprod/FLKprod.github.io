@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/videos.css">
     <link rel="stylesheet" href="css/presentation.css">
@@ -30,7 +31,7 @@
                     <span class="slider round"></span>
                 </label>
                 <button class='menu-mobile' onclick="toggleMenu()"><i class="fa fa-bars"></i></button>
-                <div class="sections-menu">
+                <div class="sections-menu" data-aos="zoom-in-up" data-aos-delay="300" data-aos-anchor-placement="top-center" data-aos-once="true">
                     <button id="presentation">Présentation</button>
                     <button id="projets">Projets</button>
                     <button id="videos">Multimedia</button>
@@ -91,6 +92,7 @@
         <script type="module" src="js/createElements.js"></script>
         <script type="module" src="js/carroussel.js"></script>
         <script type="text/javascript" src="js/state.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </div>
 </body>
 </html>

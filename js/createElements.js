@@ -1,3 +1,6 @@
+AOS.init({});
+
+
 export function createText(tag, textContent) {
     const element = document.createElement(tag);
     element.innerHTML = textContent;
@@ -39,6 +42,9 @@ export function createButton(text, clickHandler) {
 export function createElementWithClass(tag, className) {
     const element = document.createElement(tag);
     element.className = className;
+    element.setAttribute("data-aos", "zoom-out-up");
+    element.setAttribute("data-aos-anchor-placement", "top-center");
+    element.setAttribute("data-aos-easing", "ease-in-out-cubic");
     return element;
 }
 

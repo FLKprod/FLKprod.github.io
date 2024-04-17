@@ -1,6 +1,6 @@
 import {createImage, createText, createButton, createIconWithLink, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel,createCarousel} from './carroussel.js';
-
+AOS.init({});
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 toggleTeamInfo('presentation');
@@ -109,22 +109,32 @@ function toggleTeamInfo(id) {
         presentationContainer.appendChild(intro2presentation);
 
         var intro2lbnl = createElementWithClass('div','section');
-        intro2lbnl.style="background-color:#02323e;color:white;";
+
+        var image_intro2lbnl = createElementWithClass('div','berkeley-section');
+        image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
+
+        intro2lbnl.appendChild(image_intro2lbnl);
         var text_intro2lbnl = createElementWithClass('div','text-section');
-        text_intro2lbnl.appendChild(createText('p',"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."));
+        text_intro2lbnl.appendChild(createText('p',"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. J'en parle davantage dans la rubrique PROJETS du site. N'hésitez pas à aller voir !"));
         intro2lbnl.appendChild(text_intro2lbnl);
 
-        var image_intro2lbnl = createElementWithClass('div','image-section');
-        image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
-        image_intro2lbnl.classList.style = "width:50%;"
+        image_intro2lbnl = createElementWithClass('div','berkeley-section');
+        image_intro2lbnl.appendChild(createImage('Photos/Berkeley.jpg'));
         intro2lbnl.appendChild(image_intro2lbnl);
+
+        
 
         presentationContainer.appendChild(intro2lbnl);
 
         var certifications = createElementWithClass('div','section');
-        certifications.style="background-color:lightblue;";
 
         var text_certifications = createElementWithClass('div','text-section');
+
+        var image_certifications = createElementWithClass('div','image-section');
+        image_certifications.appendChild(createImage('Photos/CCNA.png'));
+        certifications.appendChild(image_certifications);
+        presentationContainer.appendChild(certifications);
+        
         text_certifications.appendChild(createText('h2',"Mes Certifications en réseaux"));
         var listescertifications = document.createElement("ul");
         listescertifications.appendChild(createText('li',"<strong>CCNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
@@ -133,14 +143,10 @@ function toggleTeamInfo(id) {
         text_certifications.appendChild(listescertifications);
         certifications.appendChild(text_certifications);
 
-        var image_certifications = createElementWithClass('div','image-section');
-        image_certifications.appendChild(createImage('Photos/CCNA.png'));
-        certifications.appendChild(image_certifications);
         
-        presentationContainer.appendChild(certifications);
 
         var cv_section = createElementWithClass('div','section');
-        cv_section.style="background-color:#01556A;color:white;";
+
         var text_cv_section = createElementWithClass('div','text-section');
         
         text_cv_section.appendChild(createText('h2',"Plus d'infos sur mon profil ?"));
@@ -205,8 +211,9 @@ function toggleTeamInfo(id) {
             var menuDiv = createElementWithClass('div','menu3');
             var menuList = [
                 { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/logoneg.png",desc:""},
+                { name: "FUEGO in Berkeley", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
                 { name: "BoulderDash", videoLink: "chemin_video_2.mp4", imageSrc: "chemin_image_2.jpg" ,desc:""},
-                { name: "94 Degrés", videoLink: "chemin_video_3.mp4", imageSrc: "Photos/projets/Logo201F.png",desc:"" },
+                { name: "201 Farehein", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",desc: "201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !" },
                 { name: "TowerDefender", videoLink: "chemin_video_4.mp4", imageSrc: "chemin_image_4.jpg",desc:"" },
                 { name: "ToDoList pour IOs", videoLink: "chemin_video_5.mp4", imageSrc: "chemin_image_5.jpg",desc:"" },
                 { name: "Carte intéractive", videoLink: "chemin_video_6.mp4", imageSrc: "chemin_image_6.jpg",desc:"" },
