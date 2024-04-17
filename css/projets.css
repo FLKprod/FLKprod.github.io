@@ -15,7 +15,7 @@
 }
 
 .menu3 ul {
-    padding:2em;
+    padding:1em 2em;
     overflow: visible;
     font-weight: normal;
     
@@ -29,7 +29,6 @@
 .menu3 ul:hover {
     background-color: rgb(218, 165, 32);
     color: black;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -59,17 +58,18 @@
 }
 .projets{
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
-    margin-left: 0;
-    height: auto;
-    background-color: white;
-    margin-bottom: 2em;
+    margin:2em;
+    border-radius: 1em;
 }
+
+
 
 .projet{
     width: 100%;
-    color:black;
+    color:whitesmoke;
 }
 
 .video-projet{
@@ -81,14 +81,15 @@
 }
 
 .video-projet > iframe{
-    width: calc(100% - 2em) !important;
-    height: 100%;
+    width: calc(100% - 10em) !important;
+    height: calc(100% - 1em) !important;
+    border: none;
 }
 
 .video-projet > img {
     position: absolute;
     bottom: 0;
-    right: 1em;
+    right: 4em;
     min-height: 5em;
     height: 10% !important;
     max-height: 10em;
@@ -98,7 +99,6 @@
 
 .projet > h2 {
     padding-top: 1em;
-    color:black;
     font-size: 1em;
     font-family: Copperplate, Papyrus, fantasy;
     letter-spacing: 0.03em;
@@ -109,7 +109,6 @@
     
 }
 .projet > p {
-    color:black;
     font-family:Calibri;
     line-height: 2;
     letter-spacing: 0.07em;
@@ -135,23 +134,22 @@
     .projets{
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         align-items: center;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        width: 100%;
+        width: auto;
+        height: auto;
     }
 
     .video-projet{
         position: relative;
-        width: 100%;
         box-sizing: border-box;
     }
 
     .projet{
         width: 100%;
-        height: 100vh;
+        height: 100vh !important;
     }
 }

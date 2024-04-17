@@ -99,6 +99,7 @@ body.mode-nuit .section:first-child{
 .section:nth-child(4){
     background-color:#01556A;
     color:white;
+    padding-bottom: 3em;
 }
 
 
@@ -240,9 +241,17 @@ body.mode-nuit .section:first-child{
 
     .image-section{
         width: 50%;
+        
         height: auto;
         mix-blend-mode: normal;
         margin: 1em 0;
+    }
+
+    .image-section > img {
+        height: 15em;
+        max-height: 15em;
+        width: auto;
+        margin: 0;
     }
 
     .text-section{

@@ -1,6 +1,6 @@
 import {createImage, createText, createButton, createIconWithLink, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel,createCarousel} from './carroussel.js';
-AOS.init({});
+
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 toggleTeamInfo('presentation');
