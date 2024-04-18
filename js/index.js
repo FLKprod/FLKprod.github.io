@@ -1,6 +1,8 @@
 import {createImage, createText, createButton, createIconWithLink, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel,createCarousel} from './carroussel.js';
 
+
+
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 toggleTeamInfo('presentation');
@@ -130,10 +132,7 @@ function toggleTeamInfo(id) {
 
         var text_certifications = createElementWithClass('div','text-section');
 
-        var image_certifications = createElementWithClass('div','image-section');
-        image_certifications.appendChild(createImage('Photos/CCNA.png'));
-        certifications.appendChild(image_certifications);
-        presentationContainer.appendChild(certifications);
+        
         
         text_certifications.appendChild(createText('h2',"Mes Certifications en réseaux"));
         var listescertifications = document.createElement("ul");
@@ -143,9 +142,16 @@ function toggleTeamInfo(id) {
         text_certifications.appendChild(listescertifications);
         certifications.appendChild(text_certifications);
 
-        
+        var image_certifications = createElementWithClass('div','image-section');
+        image_certifications.appendChild(createImage('Photos/CCNA.png'));
+        certifications.appendChild(image_certifications);
+        presentationContainer.appendChild(certifications);
 
         var cv_section = createElementWithClass('div','section');
+
+        var image_certifications = createElementWithClass('div','image-section');
+        image_certifications.appendChild(createImage('Photos/Photo_CV.jpg'));
+        cv_section.appendChild(image_certifications);
 
         var text_cv_section = createElementWithClass('div','text-section');
         
@@ -154,6 +160,8 @@ function toggleTeamInfo(id) {
         
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/Resume_Maxime_Falkowski.pdf"));
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
+
+        text_cv_section.appendChild(createText('p',"<strong>PS :</strong> Je suis actuellement à la <strong>recherche</strong> d'un <strong>stage</strong> en <strong>cybersécurité</strong> à partir de <strong>septembre 2024</strong>. Si vous avez des opportunités à me proposer, je suis preneur !"));
         cv_section.appendChild(text_cv_section);
 
         presentationContainer.appendChild(cv_section);
