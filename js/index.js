@@ -184,19 +184,45 @@ function toggleTeamInfo(id) {
 
             // Exemple de données (remplacez avec vos propres données)
             const categoriesData = [
-            { name: 'Dijon', images: ["Photos/Dijon.jpg", "Photos/Dijon2.JPG", "Photos/Dijon3.JPG", "Photos/Dijon4.JPG"] },
-            { name: 'San Francisco', images: ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"] },
-            { name: 'Canada', images: ["Photos/Canada.JPG", "Photos/Canada2.JPG", "Photos/Canada3.JPG", "Photos/Canada4.JPG"] }
+            { name: 'Dijon', images: ["Photos/Dijon.jpg", "Photos/Dijon2.JPG", "Photos/Dijon3.JPG", "Photos/Dijon4.JPG"], desc:"Bourgogne, France"},
+            { name: 'San Francisco', images: ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"],desc:"California, USA" },
+            { name: 'Quebec', images: ["Photos/Canada.JPG", "Photos/Canada2.JPG", "Photos/Canada3.JPG", "Photos/Canada4.JPG"],desc:"Quebec, Canada" }
             // Ajoutez plus de catégories avec leurs images au besoin
             ];
 
             // Créer et ajouter chaque catégorie avec son carrousel
-            categoriesData.forEach(categoryData => {
-                const { name, images } = categoryData;
+            var carousel_section;
+            categoriesData.forEach((categoryData, index) => {
+                const carousel_section = createElementWithClass('div', 'section');
+                const { name, images, desc } = categoryData;
                 const categoryElement = createCategoryWithCarousel(name, images);
-                categories_photos.appendChild(categoryElement);
-            });
-            photosContainer.appendChild(categories_photos);
+                if (window.innerWidth < 1100) {
+                    var phone = true;
+                }
+                else{
+                    var phone = false;
+                }
+                // Vérifier si l'indice est impair
+                if (index % 2 === 1 && phone===false) {
+                  // Si l'indice est impair, inverser les éléments
+                  const text_carousel_section = createElementWithClass('div', 'text-section');
+                  text_carousel_section.appendChild(createText('h2', name));
+                  text_carousel_section.appendChild(createText('p', desc));
+                  carousel_section.appendChild(text_carousel_section);
+                  carousel_section.appendChild(categoryElement);
+                } else {
+                  // Si l'indice est pair, ajouter les éléments normalement
+                  carousel_section.appendChild(categoryElement);
+                  const text_carousel_section = createElementWithClass('div', 'text-section');
+                  text_carousel_section.appendChild(createText('h2', name));
+                  text_carousel_section.appendChild(createText('p', desc));
+                  carousel_section.appendChild(text_carousel_section);
+                }
+                
+                // Ajouter la section au conteneur de photos
+                photosContainer.appendChild(carousel_section);
+              });
+            
         }
         else if(id === 'projets'){ 
             projetsContainer.classList.add('fade-in');

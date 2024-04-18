@@ -96,6 +96,10 @@ body.mode-nuit .section:first-child{
 .section:nth-child(3){
     background-color:lightblue;
 }
+.section:nth-child(3) .image-section > img{
+    margin: 5em 0 ;
+    width: 50%;
+}
 .section:nth-child(4){
     background-color:#01556A;
     color:white;
@@ -153,7 +157,7 @@ body.mode-nuit .section:first-child{
 
 .berkeley-section{
     width: auto;
-    height: 25em;
+    height: 30em;
     mix-blend-mode: normal;
     margin: 3em 1em;
 }
@@ -161,6 +165,10 @@ body.mode-nuit .section:first-child{
     border-radius: 2em;
     width: 100%;
     height: 100%;    
+}
+.section .berkeley-section:first-child {
+
+    height: 35em;    
 }
 
 
@@ -248,10 +256,10 @@ body.mode-nuit .section:first-child{
     }
 
     .image-section > img {
-        height: 15em;
+        height: auto;
         max-height: 15em;
-        width: auto;
         margin: 0;
+        
     }
 
     .text-section{
@@ -259,7 +267,7 @@ body.mode-nuit .section:first-child{
         flex: 1;
         line-height: 3;
         padding: 0 2em;
-        font-size: 0.7em;        
+      
     }
 
     .berkeley-section{
@@ -273,6 +281,16 @@ body.mode-nuit .section:first-child{
         width: 100%;
         height: 100%;    
     }
+
+    .section .text-section > ul{
+        line-height: 3;
+    }
+
+    .section:nth-child(4){
+        padding: 6em 0 ;
+    }
+    
+    
     
 }
 

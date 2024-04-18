@@ -103,9 +103,9 @@
     font-family: Copperplate, Papyrus, fantasy;
     letter-spacing: 0.03em;
     text-decoration-line: underline overline;
-    text-decoration-color: #4f0341; /* Couleur du soulignement */
-    text-decoration-thickness: 10px; /* Épaisseur du soulignement */
-    text-decoration-style:solid; /* Style du soulignement */
+    text-decoration-color: #4f0341; 
+    text-decoration-thickness: 10px;
+    text-decoration-style:solid;
     
 }
 .projet > p {

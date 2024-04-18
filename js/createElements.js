@@ -4,14 +4,14 @@ AOS.init({});
 export function createText(tag, textContent) {
     const element = document.createElement(tag);
     element.innerHTML = textContent;
-    element.setAttribute("data-aos", "zoom-out-up");
-
-    element.setAttribute("data-aos-easing", "ease-in-out-cubic");
     return element;
 }
 
 export function createImage(src) {
     const element = document.createElement('img');
+    element.setAttribute("data-aos", "zoom-out-up");
+    element.setAttribute("data-aos-anchor-placement", "top-center");
+    element.setAttribute("data-aos-easing", "ease-in-out-cubic");
     element.src = src;
     return element;
 }
@@ -45,9 +45,16 @@ export function createButton(text, clickHandler) {
 export function createElementWithClass(tag, className) {
     const element = document.createElement(tag);
     element.className = className;
-    element.setAttribute("data-aos", "zoom-out-up");
-    element.setAttribute("data-aos-anchor-placement", "top-center");
-    element.setAttribute("data-aos-easing", "ease-in-out-cubic");
+    if (window.innerWidth < 1100) {
+        element.setAttribute("data-aos", "zoom-out-up");
+        element.setAttribute("data-aos-anchor-placement", "top-bottom");
+        element.setAttribute("data-aos-easing", "ease-in-out-cubic");
+    }
+    else{
+        element.setAttribute("data-aos", "zoom-out-up");
+        element.setAttribute("data-aos-anchor-placement", "top-center");
+        element.setAttribute("data-aos-easing", "ease-in-out-cubic");
+    }
     return element;
 }
 

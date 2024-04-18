@@ -160,6 +160,7 @@ border-radius: 50%;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
+        padding: 1em;
     }
 
     .sections-menu > button:first-of-type {

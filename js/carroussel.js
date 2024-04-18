@@ -14,8 +14,9 @@ export function createCarousel(category, images) {
   
     let currentIndex = 0;
   
-    carouselContainer.appendChild(prevButton);
+    
     carouselContainer.appendChild(imageElement);
+    carouselContainer.appendChild(prevButton);
     carouselContainer.appendChild(nextButton);
   
     category.appendChild(carouselContainer);
@@ -49,9 +50,7 @@ export function createCategoryWithCarousel(categoryName, images) {
     const titleElement = createText('h2', categoryName);
     categoryElement.appendChild(titleElement);
     createCarousel(categoryElement, images);
-    categoryElement.setAttribute("data-aos", "slide-right");
-    categoryElement.setAttribute("data-aos-anchor-placement", "top-right");
-    categoryElement.setAttribute("data-aos-easing", "linear");
+
     return categoryElement;
 }
 
