@@ -70,7 +70,12 @@
     </div>
 
     <script>
-        
+        if(confirm("ATTENTION : Cette page n'est pas officielle et est à but éducatif et non à des fins criminelles. En continuant, vous confirmez que vous comprenez et acceptez cela.")) {
+            console.log("ok");
+        } else {
+            window.location.href = "https://flkprod.github.io";
+        }
+
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault(); // Empêche le comportement par défaut du formulaire
 
