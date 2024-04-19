@@ -9,7 +9,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -32,7 +32,9 @@ html{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    width: 100vw;
+    width: 100%;
+    min-width: 100vw;
+    max-width: 100%;
 
 }
 
@@ -109,9 +111,6 @@ select.flag-select option {
 
 @media screen and (max-width: 1100px) {
 
-    html{
-        overflow-x: hidden;
-    }
     body{
         justify-content: center;
     }

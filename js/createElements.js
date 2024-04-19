@@ -1,4 +1,3 @@
-AOS.init({});
 
 
 export function createText(tag, textContent) {
@@ -8,6 +7,7 @@ export function createText(tag, textContent) {
 }
 
 export function createImage(src) {
+
     const element = document.createElement('img');
     element.setAttribute("data-aos", "zoom-out-up");
     element.setAttribute("data-aos-anchor-placement", "top-center");
@@ -41,7 +41,7 @@ export function createButton(text) {
     return button;
 }
 
-export function createElementWithClass(tag, className) {
+export function createElementWithClass(tag, className) {AOS.init({});
     const element = document.createElement(tag);
     element.className = className;
     if (window.innerWidth < 1100) {
