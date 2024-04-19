@@ -113,7 +113,6 @@ body.mode-nuit .photos-container > .section{
 }
 
 .photos-container > .text-section{
-    
     font-family: 'Garamond',sans-serif;
     font-size: 1em;
     height: 100%;
@@ -126,6 +125,32 @@ body.mode-nuit .photos-container > .section{
     font-family: Copperplate, Papyrus, fantasy;
     font-size: 1.5em;
 }
+.photos-container >button{
+    width: 20%;
+    height: auto;
+}
+
+.menu_carrousels{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Voyages , .Sports{
+    width: 20em;
+    border: 1px solid white;
+    margin:0 1em;
+    height: 10em;
+    opacity: 0.6;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.Voyages:hover , .Sports:hover{
+    opacity: 1;
+    transition: all 1s;
+}
+
 
 @media screen and (max-width:1100px) {
     .categories_photos{
@@ -145,5 +170,12 @@ body.mode-nuit .photos-container > .section{
     }
     .photos-container .section:nth-child(even) > .categorie_photos{
         margin-right: 0;
+    }
+
+    .menu_carrousels{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 }

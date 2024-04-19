@@ -35,10 +35,9 @@ export function createIconWithLink(iconClass, link) {
     return iconLink;
 }
 
-export function createButton(text, clickHandler) {
+export function createButton(text) {
     const button = document.createElement("button");
     button.textContent = text;
-    button.onclick = clickHandler;
     return button;
 }
 
@@ -147,6 +146,38 @@ export function createVideoElement(videoUrl, description) {
     videoDiv.appendChild(createText('p', description));
     return videoDiv;
 }
+
+
+export function createDivImage(name, path) {
+    // Créer la div
+    const div = document.createElement('div');
+
+    div.style.position = 'relative';
+    div.className = name;
+    const h2 = document.createElement('h2');
+    h2.textContent=name;
+    h2.style.position = 'absolute';
+    h2.style.top = '50%'; 
+    h2.style.left = '50%'; 
+    h2.style.transform = 'translate(-50%, -50%)'; 
+    h2.style.color = 'white';
+    h2.id = name;
+    div.appendChild(h2);
+    // Créer l'image
+    const img = document.createElement('img');
+    img.src = path;
+    img.id = name;
+    img.style.width = '100%';
+    img.style.height = '100%';
+
+    // Ajouter l'image à la div
+    div.appendChild(img);
+    
+
+    // Retourner la div
+    return div;
+}
+
 
 
 

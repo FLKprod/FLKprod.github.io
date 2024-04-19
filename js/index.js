@@ -1,6 +1,5 @@
-import {createImage, createText, createButton, createIconWithLink, createElementWithClass, createInput, createLabel, createTableContainer, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
-import {createCategoryWithCarousel,createCarousel} from './carroussel.js';
-
+import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createLabel, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createCategoryWithCarousel} from './carroussel.js';
 
 
 document.addEventListener('contextmenu', event => event.preventDefault());
@@ -25,10 +24,10 @@ const logo = document.getElementById('logo');
 function toggleModeNuit() {
     if (daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
-        logo.src = "Photos/logo.png";
+        logo.src = "Photos/textures/logo.png";
     } else {
         document.body.classList.remove('mode-nuit');
-        logo.src = "Photos/logoneg.png";
+        logo.src = "Photos/textures/logoneg.png";
     }
 }
 
@@ -169,7 +168,7 @@ function toggleTeamInfo(id) {
         else if(id === 'photos'){
             photosContainer.classList.add('fade-in');
 
-            var citation = document.createElement('blockquote');
+            var citation = document.createElement('div');
             citation.className='citation';
             citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
             photosContainer.appendChild(citation);
@@ -187,14 +186,21 @@ function toggleTeamInfo(id) {
             photosContainer.appendChild(intro2photographies);
             var categories_photos = createElementWithClass('div','categories_photos');
 
-            
-            
-
+            var titre_categories = createElementWithClass('div','text-section');
+            titre_categories.appendChild(createText('h2',"Categories"));
+            photosContainer.appendChild(titre_categories);
+            var menu_carrousels = createElementWithClass('div','menu_carrousels');
+            menu_carrousels.appendChild(createDivImage("Voyages","Photos/voyages.png"));
+            menu_carrousels.appendChild(createDivImage("Sports","Photos/sports.png"));
+            photosContainer.appendChild(menu_carrousels);
             // Exemple de données (remplacez avec vos propres données)
             const categoriesData = [
-            { name: 'Dijon', images: ["Photos/Dijon.jpg", "Photos/Dijon2.JPG", "Photos/Dijon3.JPG", "Photos/Dijon4.JPG"], desc:"Bourgogne, France"},
-            { name: 'San Francisco', images: ["Photos/SF.JPG", "Photos/SF2.JPG", "Photos/SF3.JPG", "Photos/SF4.JPG"],desc:"California, USA" },
-            { name: 'Quebec', images: ["Photos/Canada.JPG", "Photos/Canada2.JPG", "Photos/Canada3.JPG", "Photos/Canada4.JPG"],desc:"Quebec, Canada" }
+            { name: 'Dijon', category:"Voyages", desc:"Bourgogne, France"},
+            { name: 'Strasbourg', category:"Voyages",desc:"Alsace, France"},
+            { name: 'San Francisco',category:"Voyages",desc:"California, USA" },
+            { name: 'Quebec', category:"Voyages",desc:"Quebec, Canada" },
+            { name: 'Baseball', category:"Sports",desc:"San Francisco Giants, USA, saison 2022-2023" },
+            { name: 'Basket', category:"Sports",desc:"Betclic elite saison 2022-2023" }
             // Ajoutez plus de catégories avec leurs images au besoin
             ];
 
@@ -202,8 +208,10 @@ function toggleTeamInfo(id) {
             var carousel_section;
             categoriesData.forEach((categoryData, index) => {
                 const carousel_section = createElementWithClass('div', 'section');
-                const { name, images, desc } = categoryData;
-                const categoryElement = createCategoryWithCarousel(name, images);
+                const { name, category, desc } = categoryData;
+                carousel_section.setAttribute("category", category);
+                const images = generateImagePaths(name);
+                const categoryElement = createCategoryWithCarousel(name, images, category);
                 if (window.innerWidth < 1100) {
                     var phone = true;
                 }
@@ -211,25 +219,40 @@ function toggleTeamInfo(id) {
                     var phone = false;
                 }
                 // Vérifier si l'indice est impair
-                if (index % 2 === 1 && phone===false) {
-                  // Si l'indice est impair, inverser les éléments
-                  const text_carousel_section = createElementWithClass('div', 'text-section');
+                const text_carousel_section = createElementWithClass('div', 'text-section');
                   text_carousel_section.appendChild(createText('h2', name));
                   text_carousel_section.appendChild(createText('p', desc));
+                if (index % 2 === 1 && phone===false) {
+                  // Si l'indice est impair, inverser les éléments
+                  
                   carousel_section.appendChild(text_carousel_section);
                   carousel_section.appendChild(categoryElement);
                 } else {
                   // Si l'indice est pair, ajouter les éléments normalement
                   carousel_section.appendChild(categoryElement);
-                  const text_carousel_section = createElementWithClass('div', 'text-section');
-                  text_carousel_section.appendChild(createText('h2', name));
-                  text_carousel_section.appendChild(createText('p', desc));
                   carousel_section.appendChild(text_carousel_section);
                 }
                 
                 // Ajouter la section au conteneur de photos
                 photosContainer.appendChild(carousel_section);
               });
+              menu_carrousels.addEventListener('click', (event) => {
+                const category = event.target.id.trim();
+                console.log(category);
+                if (category) {
+                    const allSections = document.querySelectorAll('.section');
+            
+                    // Parcourir chaque section et vérifier si son attribut category correspond à la catégorie sélectionnée
+                    allSections.forEach(section => {
+                        const sectionCategory = section.getAttribute('category');
+                        if (sectionCategory && sectionCategory !== category) {
+                            section.style.display = 'none';
+                        } else {
+                            section.style.display = 'flex';
+                        }
+                    });
+                }
+            });
             
         }
         else if(id === 'projets'){ 
@@ -289,3 +312,12 @@ function toggleTeamInfo(id) {
         }
 }
 
+// Pour recuperer toutes les images d'un dossier afin de gerer le nombres d'image dans les carrousels dynamiquement
+function generateImagePaths(folderName) {
+    const imagePaths = [];
+    const imageCount = 4; // Nombre d'images dans chaque dossier
+    for (let i = 1; i <= imageCount; i++) {
+        imagePaths.push(`Photos/Carrousel/${folderName}/${folderName}${i}.jpg`);
+    }
+    return imagePaths;
+}

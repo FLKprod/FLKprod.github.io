@@ -6,7 +6,7 @@ import {
   } from './createElements.js';
   
   // Fonction pour créer un carrousel pour une catégorie donnée
-export function createCarousel(category, images) {
+export function createCarousel(name, images, category) {
     const carouselContainer = createElementWithClass('div', 'carousel-container');
     const imageElement = createImage(images[0]);
     const prevButton = createIcon('fa fa-arrow-left', '1em', 'white', 'pointer', () => prevImage());
@@ -19,7 +19,7 @@ export function createCarousel(category, images) {
     carouselContainer.appendChild(prevButton);
     carouselContainer.appendChild(nextButton);
   
-    category.appendChild(carouselContainer);
+    name.appendChild(carouselContainer);
   
     // Fonction pour afficher l'image suivante
     function nextImage() {
@@ -45,12 +45,11 @@ export function createCarousel(category, images) {
   }
   
   // Fonction pour créer une catégorie avec son carrousel
-export function createCategoryWithCarousel(categoryName, images) {
-    const categoryElement = createElementWithClass('div', 'categorie_photos');
-    const titleElement = createText('h2', categoryName);
-    categoryElement.appendChild(titleElement);
-    createCarousel(categoryElement, images);
+export function createCategoryWithCarousel(name, images) {
+    const nameElement = createElementWithClass('div', 'categorie_photos');
+    const titleElement = createText('h2', name);
+    nameElement.appendChild(titleElement);
+    createCarousel(nameElement, images);
 
-    return categoryElement;
+    return nameElement;
 }
-
