@@ -40,8 +40,8 @@ export function createButton(text) {
     button.textContent = text;
     return button;
 }
-
-export function createElementWithClass(tag, className) {AOS.init({});
+AOS.init({});
+export function createElementWithClass(tag, className) {
     const element = document.createElement(tag);
     element.className = className;
     if (window.innerWidth < 1100) {

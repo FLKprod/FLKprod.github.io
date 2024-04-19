@@ -167,7 +167,6 @@ body.mode-nuit .section:first-child{
     height: 100%;    
 }
 .section .berkeley-section:first-child {
-
     height: 35em;    
 }
 
@@ -248,16 +247,15 @@ body.mode-nuit .section:first-child{
     }
 
     .image-section{
-        width: 50%;
-        
+        max-height: 15em;
         height: auto;
         mix-blend-mode: normal;
         margin: 1em 0;
     }
 
     .image-section > img {
-        height: auto;
-        max-height: 15em;
+        height: 100%;
+        width: 100%;
         margin: 0;
         
     }
