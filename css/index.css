@@ -9,7 +9,7 @@
 body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -20,7 +20,8 @@ body {
     color: var(--text-color-day);
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
     transition: background-color 0.3s ease;
 }
 
@@ -32,9 +33,7 @@ html{
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-    width: 100%;
-    min-width: 100vw;
-    max-width: 100%;
+    width: 100vw;
 
 }
 
@@ -110,6 +109,7 @@ select.flag-select option {
 
 
 @media screen and (max-width: 1100px) {
+
 
     body{
         justify-content: center;

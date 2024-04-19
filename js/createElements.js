@@ -40,7 +40,7 @@ export function createButton(text) {
     button.textContent = text;
     return button;
 }
-AOS.init({});
+
 export function createElementWithClass(tag, className) {
     const element = document.createElement(tag);
     element.className = className;

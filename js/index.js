@@ -1,6 +1,6 @@
 import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createLabel, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel} from './carroussel.js';
-
+AOS.init({});
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
