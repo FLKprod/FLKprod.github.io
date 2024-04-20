@@ -1,7 +1,7 @@
 import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createLabel, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel} from './carroussel.js';
 
-gsap.from('.logo',{scale:0,stagger:1, duration:2,stagger:1});
+gsap.from('.logo',{scale:0,stagger:1, duration:2});
 gsap.from('#logo',{opacity:0, x:"-20rem",duration:3});
 gsap.from('.switch',{opacity:0, y:"-10rem",duration:3});
 gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:4});
@@ -21,7 +21,6 @@ setTimeout(function() {
     mainContent.classList.remove('hidden');
 }, 0);
 document.getElementById("introContainer").style.display='none';
-
 
 
 /******************************* MODE NUIT  *****************************************************************/
@@ -73,11 +72,14 @@ function toggleTeamInfo(id) {
     var videosContainer = document.querySelector('.videos-container');
     var projetsContainer = document.querySelector('.projets-container');
     var photosContainer = document.querySelector('.photos-container');
+    
     presentationContainer.innerHTML = '';
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
     photosContainer.innerHTML = '';
+    
     if(id=== 'videos'){
+
         gsap.from('.videos-container',{scale:0,stagger:1, duration:2,stagger:1});
         videosContainer.classList.add('fade-in');
 
@@ -101,6 +103,7 @@ function toggleTeamInfo(id) {
         }
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
+        
         gsap.from('.presentation-container',{scale:0,stagger:1, duration:2,stagger:1});
         var intro2presentation = createElementWithClass('div','section');
         var image_intro2presentation = createElementWithClass('div','image-section');
@@ -169,9 +172,12 @@ function toggleTeamInfo(id) {
         cv_section.appendChild(text_cv_section);
 
         presentationContainer.appendChild(cv_section);
+
+        
+        
         }
         else if(id === 'photos'){
-            gsap.from('.photos-container',{scale:0,stagger:1, duration:2,stagger:1});
+            gsap.from('.photos-container',{scale:0,stagger:1, duration:2});
             photosContainer.classList.add('fade-in');
 
             var citation = document.createElement('div');
@@ -317,6 +323,44 @@ function toggleTeamInfo(id) {
             projets.appendChild(projet);
             projetsContainer.appendChild(projets);
         }
+        const sections = document.querySelectorAll('.section');
+
+sections.forEach((section, index) => {
+    const tl = gsap.timeline({ paused: true });
+    const imgsections = section.querySelectorAll('.image-section'); // Sélectionner les .image-section dans cette section
+
+    // Animation pour faire apparaître la section
+    tl.from(section, { opacity: 0, y: '-10rem', ease: 'elastic', duration: 3 });
+
+    // Animation pour les .image-section dans cette section
+    imgsections.forEach(imgsection => {
+        gsap.from(imgsection, {
+            opacity: 0,
+            scale: 0.5,
+            rotation: -180,
+            x: -100,
+            y: 100,
+            duration: 5,
+            ease: 'elastic.out(1, 0.3)'
+        });
+    });
+
+    // Déclencher l'animation lorsque la section est visible à l'écran
+    window.addEventListener("scroll", () => {
+        const sectionTop = section.offsetTop;
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+
+        if (scrollY > sectionTop - windowHeight * 0.001) {
+            tl.play();
+            // Pas besoin de jouer ims ici car il est déjà inclus dans la timeline tl
+        } else {
+            tl.reverse();
+        }
+    });
+});
+
+        
 }
 
 // Pour recuperer toutes les images d'un dossier afin de gerer le nombres d'image dans les carrousels dynamiquement
