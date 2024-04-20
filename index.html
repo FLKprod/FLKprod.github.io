@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/videos.css">
@@ -12,11 +12,10 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/projets.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    
     <link rel="icon" href="Photos/textures/logourl.png" type="image/png">
-    
-
     <title>FLKprod_</title>
+
+    
 </head>
 <body>
     <div id="introContainer">
@@ -25,13 +24,13 @@
     <div id="mainContent" >
         <div class="up">
             <div class="menu">
-                <img  alt="Logo" id="logo">
+                <img alt="Logo" id="logo">
                 <label class="switch">
                     <input id="daynight" type="checkbox" checked>
                     <span class="slider round"></span>
                 </label>
                 <button class='menu-mobile' onclick="toggleMenu()"><i class="fa fa-bars"></i></button>
-                <div class="sections-menu" data-aos="zoom-in-up" data-aos-delay="300" data-aos-anchor-placement="top-center" data-aos-once="true">
+                <div class="sections-menu">
                     <button id="presentation">Présentation</button>
                     <button id="projets">Projets</button>
                     <button id="videos">Multimedia</button>
@@ -74,6 +73,7 @@
         </div>
         <div class="center">
             <div id="presentation" class="presentation-container">
+                
                 <!-- Affichage de la page principale presentant le projet -->
             </div>
             <div id="projets" class="projets-container">
@@ -86,13 +86,15 @@
         <div class="down">
             <p>Un site par Moi-meme</p>
             <p style="font-size: 1.5em;">🚧 Ce site est actuellement en construction 🚧 </p>
-            <p><strong>&copy; 2024 SafeConnect. Tous droits réservés.</p>
+            <p><strong>&copy; 2024 SafeConnect. Tous droits réservés.</strong></p>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
         <script type="module" src="js/index.js"></script>
         <script type="module" src="js/createElements.js"></script>
         <script type="module" src="js/carroussel.js"></script>
         <script type="text/javascript" src="js/state.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     </div>
 </body>
 </html>

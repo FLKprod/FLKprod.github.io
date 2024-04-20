@@ -1,6 +1,13 @@
 import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createLabel, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel} from './carroussel.js';
-AOS.init({});
+
+gsap.from('.logo',{scale:0,stagger:1, duration:2,stagger:1});
+gsap.from('#logo',{opacity:0, x:"-20rem",duration:3});
+gsap.from('.switch',{opacity:0, y:"-10rem",duration:3});
+gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:4});
+gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:3});
+gsap.from('.down',{opacity:0, y:"-20rem",duration:3});
+
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
@@ -51,6 +58,7 @@ buttonIds.forEach(buttonId => {
 
 
 function toggleTeamInfo(id) {
+    
     var buttons = document.querySelectorAll('.menu button');
     buttons.forEach(function(button) {
         button.classList.remove('select');
@@ -69,11 +77,8 @@ function toggleTeamInfo(id) {
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
     photosContainer.innerHTML = '';
-    videosContainer.classList.remove('fade-in');
-    projetsContainer.classList.remove('fade-in');
-    photosContainer.classList.remove('fade-in');
-    presentationContainer.classList.remove('fade-in');
     if(id=== 'videos'){
+        gsap.from('.videos-container',{scale:0,stagger:1, duration:2,stagger:1});
         videosContainer.classList.add('fade-in');
 
         var intro2videos = createElementWithClass('div','section');
@@ -85,18 +90,18 @@ function toggleTeamInfo(id) {
         videosContainer.appendChild(intro2videos);
         
         var galerie =createElementWithClass("div","galerie-videos");
-        galerie.appendChild(createImageElement("img", 'pelicule', "Photos/pelicule.jpg", "Description de l'image"));
+        galerie.appendChild(createImageElement("img", 'pelicule', "Photos/textures/pelicule.jpg", "Description de l'image"));
 
         var videos = createElementWithClass("div","videos");
         videos.appendChild(createVideoElement('https://www.youtube.com/embed/sDuDS7t4UsU', "Création d'une introduction avec pour thème la montée en puissance de la menace cybernétique dans notre ère moderne."));
         galerie.appendChild(videos);
 
-        galerie.appendChild(createImageElement("img", 'pelicule', "Photos/pelicule.jpg", "Description de l'image"));
+        galerie.appendChild(createImageElement("img", 'pelicule', "Photos/textures/pelicule.jpg", "Description de l'image"));
         videosContainer.appendChild(galerie);
         }
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
-
+        gsap.from('.presentation-container',{scale:0,stagger:1, duration:2,stagger:1});
         var intro2presentation = createElementWithClass('div','section');
         var image_intro2presentation = createElementWithClass('div','image-section');
         image_intro2presentation.appendChild(createImage('Photos/moi.JPG'));
@@ -166,6 +171,7 @@ function toggleTeamInfo(id) {
         presentationContainer.appendChild(cv_section);
         }
         else if(id === 'photos'){
+            gsap.from('.photos-container',{scale:0,stagger:1, duration:2,stagger:1});
             photosContainer.classList.add('fade-in');
 
             var citation = document.createElement('div');
@@ -255,7 +261,8 @@ function toggleTeamInfo(id) {
             });
             
         }
-        else if(id === 'projets'){ 
+        else if(id === 'projets'){
+            gsap.from('.projets-container',{scale:0,stagger:1, duration:2,stagger:1});
             projetsContainer.classList.add('fade-in');
             var intro2projects = createElementWithClass('div','section');
             var text_intro2projects = createElementWithClass('div','text-section');
