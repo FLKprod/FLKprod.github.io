@@ -281,7 +281,7 @@ function toggleTeamInfo(id) {
             
             var menuDiv = createElementWithClass('div','menu3');
             var menuList = [
-                { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/logoneg.png",desc:""},
+                { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/textures/logoneg.png",desc:""},
                 { name: "FUEGO in Berkeley", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
                 { name: "BoulderDash", videoLink: "chemin_video_2.mp4", imageSrc: "chemin_image_2.jpg" ,desc:""},
                 { name: "201 Farehein", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",desc: "201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !" },
@@ -294,15 +294,16 @@ function toggleTeamInfo(id) {
             for (let i = 0; i < menuList.length; i++) {
                 menuDiv.appendChild(createText('ul',menuList[i].name));
             }
-
+            var firstItem = menuList[0]; // Récupération du premier élément
             var projet = createElementWithClass('div','projet');
             projets.appendChild(menuDiv);
-            projet.appendChild(createVideoWithOverlay('',''));
+            projet.appendChild(createVideoWithOverlay(firstItem.videoLink,firstItem.imageSrc));
 
-            var titre_projet=createText('h2', 'uiegguief')
+            
+            var titre_projet=createText('h2', firstItem.name)
             projet.appendChild(titre_projet);
 
-            var description_projet = createText('p', 'Description du projet...')
+            var description_projet = createText('p', firstItem.desc)
             projet.appendChild(description_projet);
 
             

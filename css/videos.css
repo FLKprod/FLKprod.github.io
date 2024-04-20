@@ -98,12 +98,11 @@
     .video > iframe {
         margin-left: 2em;
         margin-right: 2em;
-        margin-top: 4em;
-        width: 25em;
-        height: 15em;
+        width: auto;
+        height: calc(100% * (10 / 16)); /* ratio 16:10 */
         border-color: #18181a;
         border-radius: 3em;
-      }
+    }
 
     .galerie-videos {
         display: flex;
