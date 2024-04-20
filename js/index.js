@@ -6,6 +6,7 @@ gsap.from('#logo',{opacity:0, x:"-20rem",duration:3});
 gsap.from('.switch',{opacity:0, y:"-10rem",duration:3});
 gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:4});
 gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:3});
+gsap.from('.menu-mobile',{opacity:0, x:"-20rem",duration:2,delay:3});
 gsap.from('.down',{opacity:0, y:"-20rem",duration:3});
 
 
