@@ -1,13 +1,13 @@
-import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createLabel, createSelectElement, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
-import {createCategoryWithCarousel} from './carroussel.js';
+import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createIcon, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createCategoryWithCarousel, generateImagePaths} from './carroussel.js';
 
-gsap.from('.logo',{scale:0,stagger:1, duration:2});
-gsap.from('#logo',{opacity:0, x:"-20rem",duration:3});
-gsap.from('.switch',{opacity:0, y:"-10rem",duration:3});
-gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:4});
-gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:3});
-gsap.from('.menu-mobile',{opacity:0, x:"-20rem",duration:2,delay:3});
-gsap.from('.down',{opacity:0, y:"-20rem",duration:3});
+gsap.from('.logo',{scale:0,stagger:1, duration:1.5});
+gsap.from('#logo',{opacity:0, x:"-20rem",duration:2});
+gsap.from('.switch',{opacity:0, y:"-10rem",duration:2});
+gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:3});
+gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:2});
+gsap.from('.menu-mobile',{opacity:0, x:"-20rem",duration:1,delay:2});
+gsap.from('.down',{opacity:0, y:"-20rem",duration:2});
 
 
 document.addEventListener('contextmenu', event => event.preventDefault());
@@ -88,19 +88,42 @@ function toggleTeamInfo(id) {
 
         var text_intro2videos = createElementWithClass('div','text-section');
         text_intro2videos.appendChild(createText('h2',"Mes contenus vidéos"));
-        text_intro2videos.appendChild(createText('p',"Passionné par le montage vidéo et constamment à la recherche d'inspiration pour créer du contenu, je saute sur l'occasion de concrétiser une idée germeant dans mon esprit, à travers des vidéos captivantes et originales. Auparavant, je partageais mes créations sur mon compte Instagram @FLKPROD_, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées. Vous pouvez consulter toutes mes creations dans la rubrique ci-dessous. <strong>Enjoy.</strong>"));
+        text_intro2videos.appendChild(createText('p',"Passionné par le montage vidéo et constamment à la recherche d'inspiration pour créer du contenu, je saute sur l'occasion de concrétiser une idée germeant dans mon esprit, à travers des vidéos captivantes et originales. Auparavant, je partageais mes créations sur mon compte Instagram <a href='https://www.instagram.com/flkprod_/' target='_blank'>@FLKPROD_</a>, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées. Vous pouvez consulter toutes mes creations dans la rubrique ci-dessous. <strong>Enjoy.</strong>"));
         intro2videos.appendChild(text_intro2videos);
         videosContainer.appendChild(intro2videos);
-        
+  
+    
         var galerie =createElementWithClass("div","galerie-videos");
         galerie.appendChild(createImageElement("img", 'pelicule', "Photos/textures/pelicule.jpg", "Description de l'image"));
 
         var videos = createElementWithClass("div","videos");
         videos.appendChild(createVideoElement('https://www.youtube.com/embed/sDuDS7t4UsU', "Création d'une introduction avec pour thème la montée en puissance de la menace cybernétique dans notre ère moderne."));
+        videos.appendChild(createIcon('fa fa-arrow-left', '1em', 'white', 'pointer', () => prevImage()));
+        videos.appendChild(createIcon('fa fa-arrow-right', '1em', 'white', 'pointer', () => nextImage()));
+        videos.appendChild(createVideoElement('https://www.youtube.com/embed/fNdTNYmgD8o', "Création d'une vidéo humoristique pour une campagne du Bureau des Élèves de mon école d'ingénieurs."));
         galerie.appendChild(videos);
-
+        
         galerie.appendChild(createImageElement("img", 'pelicule', "Photos/textures/pelicule.jpg", "Description de l'image"));
         videosContainer.appendChild(galerie);
+        // Fonction pour afficher l'image suivante
+        function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        imageElement.src = images[currentIndex];
+        imageElement.classList.add('fade-in');
+        setTimeout(() => {
+          imageElement.classList.remove('fade-in');
+        }, 500);
+      }
+      
+      // Fonction pour afficher l'image précédente
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        imageElement.src = images[currentIndex];
+        imageElement.classList.add('fade-in');
+        setTimeout(() => {
+          imageElement.classList.remove('fade-in');
+        }, 500);
+      }
         }
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
@@ -270,6 +293,7 @@ function toggleTeamInfo(id) {
         }
         else if(id === 'projets'){
             gsap.from('.projets-container',{scale:0,stagger:1, duration:2,stagger:1});
+            gsap.from('.menu3',{scale:0,stagger:1, duration:2,stagger:1});
             projetsContainer.classList.add('fade-in');
             var intro2projects = createElementWithClass('div','section');
             var text_intro2projects = createElementWithClass('div','text-section');
@@ -283,7 +307,8 @@ function toggleTeamInfo(id) {
             var menuList = [
                 { name: "Flkprod.github.io", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/textures/logoneg.png",desc:""},
                 { name: "FUEGO in Berkeley", videoLink: "chemin_video_1.mp4", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
-                { name: "BoulderDash", videoLink: "chemin_video_2.mp4", imageSrc: "chemin_image_2.jpg" ,desc:""},
+                { name: "RockRush", videoLink: "chemin_video_2.mp4", imageSrc: "Photos/projets/RockRush.jpg" ,desc:"Version de Boulder Dash"},
+                { name: "Application DeepL", videoLink: "Photos/projets/DeepL.mp4", imageSrc: "Photos/projets/DeepL.png" ,desc:"Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur. Conçue en Java et XML à l'aide d'Android Studio, cette application tire parti de l'API DeepL. Son objectif principal est de fournir un service de traduction de texte efficace et convivial."},
                 { name: "201 Farehein", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",desc: "201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !" },
                 { name: "TowerDefender", videoLink: "chemin_video_4.mp4", imageSrc: "chemin_image_4.jpg",desc:"" },
                 { name: "ToDoList pour IOs", videoLink: "chemin_video_5.mp4", imageSrc: "chemin_image_5.jpg",desc:"" },
@@ -297,7 +322,8 @@ function toggleTeamInfo(id) {
             var firstItem = menuList[0]; // Récupération du premier élément
             var projet = createElementWithClass('div','projet');
             projets.appendChild(menuDiv);
-            projet.appendChild(createVideoWithOverlay(firstItem.videoLink,firstItem.imageSrc));
+            var video_iframe=createVideoWithOverlay(firstItem.videoLink,firstItem.imageSrc)
+            projet.appendChild(video_iframe);
 
             
             var titre_projet=createText('h2', firstItem.name)
@@ -342,7 +368,7 @@ sections.forEach((section, index) => {
             rotation: -180,
             x: -100,
             y: 100,
-            duration: 5,
+            duration: 3,
             ease: 'elastic.out(1, 0.3)'
         });
     });
@@ -365,12 +391,3 @@ sections.forEach((section, index) => {
         
 }
 
-// Pour recuperer toutes les images d'un dossier afin de gerer le nombres d'image dans les carrousels dynamiquement
-function generateImagePaths(folderName) {
-    const imagePaths = [];
-    const imageCount = 4; // Nombre d'images dans chaque dossier
-    for (let i = 1; i <= imageCount; i++) {
-        imagePaths.push(`Photos/Carrousel/${folderName}/${folderName}${i}.jpg`);
-    }
-    return imagePaths;
-}

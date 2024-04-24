@@ -42,7 +42,6 @@ export function createButton(text) {
 export function createElementWithClass(tag, className) {
     const element = document.createElement(tag);
     element.className = className;
-    element.section="section";
     return element;
 }
 
@@ -95,8 +94,9 @@ export function createVideo(link) {
     iframeElement.src = link;
     iframeElement.title = "YouTube video player";
     iframeElement.frameborder = "0";
-    iframeElement.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframeElement.allow = "accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframeElement.allowfullscreen = true;
+    iframeElement.loop = true;
     return iframeElement;
 }
 
@@ -116,7 +116,7 @@ export function createVideoWithOverlay(link, imageSrc) {
     const videoContainer = createElementWithClass('div', 'video-projet');
     const videoElement = createVideo(link);
     const overlayImage = createOverlayImage(imageSrc);
-
+    
     videoContainer.appendChild(videoElement);
     videoContainer.appendChild(overlayImage);
 
@@ -130,7 +130,7 @@ export function createVideoElement(videoUrl, description) {
 
     // Ajouter l'attribut allowfullscreen à l'élément vidéo
     videoElement.setAttribute('allowfullscreen', '');
-
+    videoElement.setAttribute('loop', '');
     videoDiv.appendChild(videoElement);
     videoDiv.appendChild(createText('p', description));
     return videoDiv;

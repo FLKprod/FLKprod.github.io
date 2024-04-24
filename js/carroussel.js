@@ -45,11 +45,22 @@ export function createCarousel(name, images, category) {
   }
   
   // Fonction pour créer une catégorie avec son carrousel
-export function createCategoryWithCarousel(name, images) {
+export function createCategoryWithCarousel(name, images,category) {
     const nameElement = createElementWithClass('div', 'categorie_photos');
     const titleElement = createText('h2', name);
+    nameElement.setAttribute("category", category);
     nameElement.appendChild(titleElement);
     createCarousel(nameElement, images);
 
     return nameElement;
+}
+
+// Pour recuperer toutes les images d'un dossier afin de gerer le nombres d'image dans les carrousels dynamiquement
+export function generateImagePaths(folderName) {
+  const imagePaths = [];
+  const imageCount = 4; // Nombre d'images dans chaque dossier
+  for (let i = 1; i <= imageCount; i++) {
+      imagePaths.push(`Photos/Carrousel/${folderName}/${folderName}${i}.jpg`);
+  }
+  return imagePaths;
 }
