@@ -132,7 +132,9 @@ export function createVideoElement(videoUrl, description) {
     videoElement.setAttribute('allowfullscreen', '');
     videoElement.setAttribute('loop', '');
     videoDiv.appendChild(videoElement);
-    videoDiv.appendChild(createText('p', description));
+    var videoElementDesc = createElementWithClass("p", "desc-video");
+    videoElementDesc.textContent=description;
+    videoDiv.appendChild(videoElementDesc);
     return videoDiv;
 }
 
@@ -177,6 +179,15 @@ export function updateVideoElement(videoUrl) {
         console.log('video trouvee' + videoElement.src);
     }
     videoElement.src = videoUrl;
+
+}
+
+export function updatedescVideo(desc) {
+    var descElement = document.querySelector('.desc-video');
+    if (descElement){
+        console.log('desc trouvee' + descElement.textContent);
+    }
+    descElement.textContent = desc;
 
 }
 

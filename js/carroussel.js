@@ -2,7 +2,10 @@ import {
     createImage,
     createElementWithClass,
     createIcon,
-    createText
+    createText,
+    createVideoElement,
+    updateVideoElement,
+    updatedescVideo
   } from './createElements.js';
   
   // Fonction pour créer un carrousel pour une catégorie donnée
@@ -43,6 +46,44 @@ export function createCarousel(name, images, category) {
     
     
   }
+
+  export function createVideoCarousel(videos) {
+    const carouselContainer = createElementWithClass('div', 'carousel-container');
+    const videoElement = createVideoElement(videos[0].url,videos[0].description);
+    const prevButton = createIcon('fa fa-arrow-left', '1em', 'white', 'pointer', () => prevVideo());
+    const nextButton = createIcon('fa fa-arrow-right', '1em', 'white', 'pointer', () => nextVideo());
+
+    let currentIndex = 0;
+
+    carouselContainer.appendChild(videoElement);
+    carouselContainer.appendChild(prevButton);
+    carouselContainer.appendChild(nextButton);
+    // Fonction pour afficher la vidéo suivante
+    function nextVideo() {
+        currentIndex = (currentIndex + 1) % videos.length;
+        updateVideoElement(videos[currentIndex].url)
+        updatedescVideo(videos[currentIndex].description)
+        videoElement.classList.add('fade-in');
+        setTimeout(() => {
+            videoElement.classList.remove('fade-in');
+        }, 500);
+    }
+
+    // Fonction pour afficher la vidéo précédente
+    function prevVideo() {
+        currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+        videoElement.src = videos[currentIndex].url;
+        videoElement.classList.add('fade-in');
+        setTimeout(() => {
+            videoElement.classList.remove('fade-in');
+        }, 500);
+    }
+
+    return carouselContainer; // Retourne le conteneur du carrousel
+}
+
+
+
   
   // Fonction pour créer une catégorie avec son carrousel
 export function createCategoryWithCarousel(name, images,category) {

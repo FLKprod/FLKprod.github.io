@@ -1,5 +1,5 @@
 import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createIcon, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
-import {createCategoryWithCarousel, generateImagePaths} from './carroussel.js';
+import {createCategoryWithCarousel, createVideoCarousel, generateImagePaths} from './carroussel.js';
 
 gsap.from('.logo',{scale:0,stagger:1, duration:1.5});
 gsap.from('#logo',{opacity:0, x:"-20rem",duration:2});
@@ -96,34 +96,23 @@ function toggleTeamInfo(id) {
         var galerie =createElementWithClass("div","galerie-videos");
         galerie.appendChild(createImageElement("img", 'pelicule', "Photos/textures/pelicule.jpg", "Description de l'image"));
 
+        const videosData = [
+            {
+                url: 'https://www.youtube.com/embed/sDuDS7t4UsU',
+                description: "Création d'une introduction avec pour thème la montée en puissance de la menace cybernétique dans notre ère moderne."
+            },
+            {
+                url: 'https://www.youtube.com/embed/fNdTNYmgD8o',
+                description: "Création d'une vidéo humoristique pour une campagne du Bureau des Élèves de mon école d'ingénieurs."
+            }
+        ];
+        
         var videos = createElementWithClass("div","videos");
-        videos.appendChild(createVideoElement('https://www.youtube.com/embed/sDuDS7t4UsU', "Création d'une introduction avec pour thème la montée en puissance de la menace cybernétique dans notre ère moderne."));
-        videos.appendChild(createIcon('fa fa-arrow-left', '1em', 'white', 'pointer', () => prevImage()));
-        videos.appendChild(createIcon('fa fa-arrow-right', '1em', 'white', 'pointer', () => nextImage()));
-        videos.appendChild(createVideoElement('https://www.youtube.com/embed/fNdTNYmgD8o', "Création d'une vidéo humoristique pour une campagne du Bureau des Élèves de mon école d'ingénieurs."));
+        videos.appendChild(createVideoCarousel(videosData));
         galerie.appendChild(videos);
         
         galerie.appendChild(createImageElement("img", 'pelicule', "Photos/textures/pelicule.jpg", "Description de l'image"));
         videosContainer.appendChild(galerie);
-        // Fonction pour afficher l'image suivante
-        function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        imageElement.src = images[currentIndex];
-        imageElement.classList.add('fade-in');
-        setTimeout(() => {
-          imageElement.classList.remove('fade-in');
-        }, 500);
-      }
-      
-      // Fonction pour afficher l'image précédente
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        imageElement.src = images[currentIndex];
-        imageElement.classList.add('fade-in');
-        setTimeout(() => {
-          imageElement.classList.remove('fade-in');
-        }, 500);
-      }
         }
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
@@ -360,7 +349,7 @@ sections.forEach((section, index) => {
     const imgsections = section.querySelectorAll('.image-section'); // Sélectionner les .image-section dans cette section
 
     // Animation pour faire apparaître la section
-    tl.from(section, { opacity: 0, y: '-10rem', ease: 'elastic', duration: 3 });
+    tl.from(section, { opacity: 0, x: '-10rem', ease: 'linear', duration: 0.3 });
 
     // Animation pour les .image-section dans cette section
     imgsections.forEach(imgsection => {
