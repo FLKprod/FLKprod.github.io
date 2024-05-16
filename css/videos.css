@@ -29,9 +29,9 @@
 
 .galerie-videos {
     background-color: black !important;
-    width: auto;
-    height: min-content;
-    background-size:contain;
+    width: 50%;
+    height: 50%;
+    background-size:cover;
     background-position: center;
     margin:3em;
 }
@@ -47,12 +47,14 @@
     background-color:white;
     border: 1em solid #000;
     border-right: 1em solid #000;
+    
 }
 
   .video > p {
     color:black;
     font-size: 1em;
     margin:3em 2em;
+    height: 3em;
   }
 
   .video > iframe {
@@ -66,7 +68,7 @@
   .videos-text {
     margin: 0 1em 1em 1em;
     color: black;
-    width: 100%;
+    width: auto;
   }
 
   .fa {

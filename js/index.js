@@ -126,7 +126,7 @@ function toggleTeamInfo(id) {
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
         text_intro2presentation.appendChild(createText('p',"J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
-        text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant. Vous pouvez explorer mes réalisations artistiques sur mon site internet, où je présente mes projets photographiques, vidéographiques, mais aussi informatiques."));
+        text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant. C'est sur ce site que vous trouverez toutes mes créations."));
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
 
@@ -189,159 +189,159 @@ function toggleTeamInfo(id) {
         
         
         }
-        else if(id === 'photos'){
-            gsap.from('.photos-container',{scale:0,stagger:1, duration:2});
-            photosContainer.classList.add('fade-in');
+    else if(id === 'photos'){
+        gsap.from('.photos-container',{scale:0,stagger:1, duration:2});
+        photosContainer.classList.add('fade-in');
 
-            var citation = document.createElement('div');
-            citation.className='citation';
-            citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
-            photosContainer.appendChild(citation);
+        var citation = document.createElement('div');
+        citation.className='citation';
+        citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
+        photosContainer.appendChild(citation);
 
 
-            var intro2photographies = createElementWithClass('div','section');
-            var image_intro2photographies = createElementWithClass('div','image-section');
-            image_intro2photographies.appendChild(createImage('Photos/text-photo.JPG'));
-            intro2photographies.appendChild(image_intro2photographies);
+        var intro2photographies = createElementWithClass('div','section');
+        var image_intro2photographies = createElementWithClass('div','image-section');
+        image_intro2photographies.appendChild(createImage('Photos/text-photo.JPG'));
+        intro2photographies.appendChild(image_intro2photographies);
 
-            var text_intro2photographies = createElementWithClass('div','text-section');
-            text_intro2photographies.appendChild(createText('h2',"Mes contenus photographiques"));
-            text_intro2photographies.appendChild(createText('p',"Toujours avec un appareil photo sur moi, la photographie est ma passion depuis mon enfance. L'idée de recréer des émotions à travers un fichier PNG me passionne depuis qu'on a mis une caméra entre mes mains. Depuis, je cherche toujours à créer de nouvelles œuvres, que vous pouvez trouver ici. <strong>Enjoy.</strong>"));
-            intro2photographies.appendChild(text_intro2photographies);
-            photosContainer.appendChild(intro2photographies);
-            var categories_photos = createElementWithClass('div','categories_photos');
+        var text_intro2photographies = createElementWithClass('div','text-section');
+        text_intro2photographies.appendChild(createText('h2',"Mes contenus photographiques"));
+        text_intro2photographies.appendChild(createText('p',"Toujours avec un appareil photo sur moi, la photographie est ma passion depuis mon enfance. L'idée de recréer des émotions à travers un fichier PNG me passionne depuis qu'on a mis une caméra entre mes mains. Depuis, je cherche toujours à créer de nouvelles œuvres, que vous pouvez trouver ici. <strong>Enjoy.</strong>"));
+        intro2photographies.appendChild(text_intro2photographies);
+        photosContainer.appendChild(intro2photographies);
+        var categories_photos = createElementWithClass('div','categories_photos');
 
-            var titre_categories = createElementWithClass('div','text-section');
-            titre_categories.appendChild(createText('h2',"Categories"));
-            photosContainer.appendChild(titre_categories);
-            var menu_carrousels = createElementWithClass('div','menu_carrousels');
-            menu_carrousels.appendChild(createDivImage("Voyages","Photos/voyages.png"));
-            menu_carrousels.appendChild(createDivImage("Sports","Photos/sports.png"));
-            photosContainer.appendChild(menu_carrousels);
-            // Exemple de données (remplacez avec vos propres données)
-            const categoriesData = [
-            { name: 'Dijon', category:"Voyages", desc:"Bourgogne, France"},
-            { name: 'Strasbourg', category:"Voyages",desc:"Alsace, France"},
-            { name: 'San Francisco',category:"Voyages",desc:"California, USA" },
-            { name: 'Quebec', category:"Voyages",desc:"Quebec, Canada" },
-            { name: 'Baseball', category:"Sports",desc:"San Francisco Giants, USA, saison 2022-2023" },
-            { name: 'Basket', category:"Sports",desc:"Betclic elite saison 2022-2023" }
-            // Ajoutez plus de catégories avec leurs images au besoin
-            ];
+        var titre_categories = createElementWithClass('div','text-section');
+        titre_categories.appendChild(createText('h2',"Categories"));
+        photosContainer.appendChild(titre_categories);
+        var menu_carrousels = createElementWithClass('div','menu_carrousels');
+        menu_carrousels.appendChild(createDivImage("Voyages","Photos/voyages.png"));
+        menu_carrousels.appendChild(createDivImage("Sports","Photos/sports.png"));
+        photosContainer.appendChild(menu_carrousels);
+        // Exemple de données (remplacez avec vos propres données)
+        const categoriesData = [
+        { name: 'Dijon', category:"Voyages", desc:"Bourgogne, France"},
+        { name: 'Strasbourg', category:"Voyages",desc:"Alsace, France"},
+        { name: 'San Francisco',category:"Voyages",desc:"California, USA" },
+        { name: 'Quebec', category:"Voyages",desc:"Quebec, Canada" },
+        { name: 'Baseball', category:"Sports",desc:"San Francisco Giants, USA, saison 2022-2023" },
+        { name: 'Basket', category:"Sports",desc:"Betclic elite saison 2022-2023" }
+        // Ajoutez plus de catégories avec leurs images au besoin
+        ];
 
-            // Créer et ajouter chaque catégorie avec son carrousel
-            var carousel_section;
-            categoriesData.forEach((categoryData, index) => {
-                const carousel_section = createElementWithClass('div', 'section');
-                const { name, category, desc } = categoryData;
-                carousel_section.setAttribute("category", category);
-                const images = generateImagePaths(name);
-                const categoryElement = createCategoryWithCarousel(name, images, category);
-                if (window.innerWidth < 1100) {
-                    var phone = true;
-                }
-                else{
-                    var phone = false;
-                }
-                // Vérifier si l'indice est impair
-                const text_carousel_section = createElementWithClass('div', 'text-section');
-                  text_carousel_section.appendChild(createText('h2', name));
-                  text_carousel_section.appendChild(createText('p', desc));
-                if (index % 2 === 1 && phone===false) {
-                  // Si l'indice est impair, inverser les éléments
-                  
-                  carousel_section.appendChild(text_carousel_section);
-                  carousel_section.appendChild(categoryElement);
-                } else {
-                  // Si l'indice est pair, ajouter les éléments normalement
-                  carousel_section.appendChild(categoryElement);
-                  carousel_section.appendChild(text_carousel_section);
-                }
-                
-                // Ajouter la section au conteneur de photos
-                photosContainer.appendChild(carousel_section);
-              });
-              menu_carrousels.addEventListener('click', (event) => {
-                const category = event.target.id.trim();
-                console.log(category);
-                if (category) {
-                    const allSections = document.querySelectorAll('.section');
-            
-                    // Parcourir chaque section et vérifier si son attribut category correspond à la catégorie sélectionnée
-                    allSections.forEach(section => {
-                        const sectionCategory = section.getAttribute('category');
-                        if (sectionCategory && sectionCategory !== category) {
-                            section.style.display = 'none';
-                        } else {
-                            section.style.display = 'flex';
-                        }
-                    });
-                }
-            });
-            
-        }
-        else if(id === 'projets'){
-            gsap.from('.projets-container',{scale:0,stagger:1, duration:2,stagger:1});
-            gsap.from('.menu3',{scale:0,stagger:1, duration:2,stagger:1});
-            projetsContainer.classList.add('fade-in');
-            var intro2projects = createElementWithClass('div','section');
-            var text_intro2projects = createElementWithClass('div','text-section');
-            text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
-            text_intro2projects.appendChild(createText('p',"Étant en école d'ingénieurs et en maîtrise en cybersécurité, j'ai eu de nombreux projets informatiques à réaliser durant toute ma scolarité. Certains ne sont que des créations que j'ai réalisées par passion pour le code. <strong>Enjoy.</strong>"));
-            intro2projects.appendChild(text_intro2projects);
-            projetsContainer.appendChild(intro2projects);
-            var projets = createElementWithClass('div','projets');
-            
-            var menuDiv = createElementWithClass('div','menu3');
-            var menuList = [
-                { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/textures/logoneg.png",desc:""},
-                { name: "FUEGO in Berkeley", videoLink: "wdwd", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
-                { name: "RockRush", videoLink: "Photos/projets/RockRush.mp4", imageSrc: "Photos/projets/RockRush.jpg" ,desc:"RockRush est un jeu en langage web créé durant ma formation ingénieur. C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres."},
-                { name: "Application DeepL", videoLink: "Photos/projets/DeepL.mp4", imageSrc: "Photos/projets/DeepL.png" ,desc:"Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur. Conçue en Java et XML à l'aide d'Android Studio, cette application tire parti de l'API DeepL. Son objectif principal est de fournir un service de traduction de texte efficace et convivial."},
-                { name: "201 Farehein", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",desc: "201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !" },
-                { name: "CyberSafe", videoLink: "Photos/projets/Cybersafe.mp4", imageSrc: "Photos/projets/Cybersafe.png",desc:"Une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés. Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés." },
-                /*
-                { name: "TowerDefender", videoLink: "", imageSrc: "",desc:"" },
-                { name: "ToDoList pour IOs", videoLink: "", imageSrc: "",desc:"" },
-                { name: "Carte intéractive", videoLink: "", imageSrc: "",desc:"" },*/
-                
-                { name: "LanbdaCash", videoLink: "Photos/projets/landbacash.mp4", imageSrc: "Photos/projets/landbacash.png",desc:"Projet CLOUD Chicoutimi " }
-            ];
-            for (let i = 0; i < menuList.length; i++) {
-                menuDiv.appendChild(createText('ul',menuList[i].name));
+        // Créer et ajouter chaque catégorie avec son carrousel
+        var carousel_section;
+        categoriesData.forEach((categoryData, index) => {
+            const carousel_section = createElementWithClass('div', 'section');
+            const { name, category, desc } = categoryData;
+            carousel_section.setAttribute("category", category);
+            const images = generateImagePaths(name);
+            const categoryElement = createCategoryWithCarousel(name, images, category);
+            if (window.innerWidth < 1100) {
+                var phone = true;
             }
-            var firstItem = menuList[0]; // Récupération du premier élément
-            var projet = createElementWithClass('div','projet');
-            projets.appendChild(menuDiv);
-            var video_iframe=createVideoWithOverlay(firstItem.videoLink,firstItem.imageSrc)
-            projet.appendChild(video_iframe);
-
+            else{
+                var phone = false;
+            }
+            // Vérifier si l'indice est impair
+            const text_carousel_section = createElementWithClass('div', 'text-section');
+                text_carousel_section.appendChild(createText('h2', name));
+                text_carousel_section.appendChild(createText('p', desc));
+            if (index % 2 === 1 && phone===false) {
+                // Si l'indice est impair, inverser les éléments
+                
+                carousel_section.appendChild(text_carousel_section);
+                carousel_section.appendChild(categoryElement);
+            } else {
+                // Si l'indice est pair, ajouter les éléments normalement
+                carousel_section.appendChild(categoryElement);
+                carousel_section.appendChild(text_carousel_section);
+            }
             
-            var titre_projet=createText('h2', firstItem.name)
-            projet.appendChild(titre_projet);
-
-            var description_projet = createText('p', firstItem.desc)
-            projet.appendChild(description_projet);
-
-            
-            menuDiv.addEventListener('click', function(event) {
-                if (event.target.tagName === 'UL') {
-                    
-                    var videoLink = menuList.find(item => item.name === event.target.textContent)?.videoLink;
-                    var imageLink = menuList.find(item => item.name === event.target.textContent)?.imageSrc;
-                    var descLink = menuList.find(item => item.name === event.target.textContent)?.desc;
-                    console.log("Changement de projet" + videoLink + "  " + imageLink);
-                    if (videoLink) {
-                        projet.scrollIntoView({ behavior: 'smooth' });
-                        description_projet.innerHTML=descLink;
-                        titre_projet.innerHTML=event.target.textContent;
-                        updateVideoElement(videoLink);
-                        updateImageElement(imageLink);
+            // Ajouter la section au conteneur de photos
+            photosContainer.appendChild(carousel_section);
+            });
+            menu_carrousels.addEventListener('click', (event) => {
+            const category = event.target.id.trim();
+            console.log(category);
+            if (category) {
+                const allSections = document.querySelectorAll('.section');
+        
+                // Parcourir chaque section et vérifier si son attribut category correspond à la catégorie sélectionnée
+                allSections.forEach(section => {
+                    const sectionCategory = section.getAttribute('category');
+                    if (sectionCategory && sectionCategory !== category) {
+                        section.style.display = 'none';
+                    } else {
+                        section.style.display = 'flex';
                     }
-                }});
-            projets.appendChild(projet);
-            projetsContainer.appendChild(projets);
+                });
+            }
+        });
+        
+    }
+    else if(id === 'projets'){
+        gsap.from('.projets-container',{scale:0,stagger:1, duration:2,stagger:1});
+        gsap.from('.menu3',{scale:0,stagger:1, duration:2,stagger:1});
+        projetsContainer.classList.add('fade-in');
+        var intro2projects = createElementWithClass('div','section');
+        var text_intro2projects = createElementWithClass('div','text-section');
+        text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
+        text_intro2projects.appendChild(createText('p',"Étant en école d'ingénieurs et en maîtrise en cybersécurité, j'ai eu de nombreux projets informatiques à réaliser durant toute ma scolarité. Certains ne sont que des créations que j'ai réalisées par passion pour le code. <strong>Enjoy.</strong>"));
+        intro2projects.appendChild(text_intro2projects);
+        projetsContainer.appendChild(intro2projects);
+        var projets = createElementWithClass('div','projets');
+        
+        var menuDiv = createElementWithClass('div','menu3');
+        var menuList = [
+            { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/textures/logoneg.png",desc:""},
+            { name: "FUEGO in Berkeley", videoLink: "wdwd", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
+            { name: "RockRush", videoLink: "Photos/projets/RockRush.mp4", imageSrc: "Photos/projets/RockRush.jpg" ,desc:"RockRush est un jeu en langage web créé durant ma formation ingénieur. C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres."},
+            { name: "Application DeepL", videoLink: "Photos/projets/DeepL.mp4", imageSrc: "Photos/projets/DeepL.png" ,desc:"Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur. Conçue en Java et XML à l'aide d'Android Studio, cette application tire parti de l'API DeepL. Son objectif principal est de fournir un service de traduction de texte efficace et convivial."},
+            { name: "201 Farehein", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",desc: "201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !" },
+            { name: "CyberSafe", videoLink: "Photos/projets/Cybersafe.mp4", imageSrc: "Photos/projets/Cybersafe.png",desc:"Une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés. Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés." },
+            /*
+            { name: "TowerDefender", videoLink: "", imageSrc: "",desc:"" },
+            { name: "ToDoList pour IOs", videoLink: "", imageSrc: "",desc:"" },
+            { name: "Carte intéractive", videoLink: "", imageSrc: "",desc:"" },*/
+            
+            { name: "LanbdaCash", videoLink: "Photos/projets/landbacash.mp4", imageSrc: "Photos/projets/landbacash.png",desc:"Projet CLOUD Chicoutimi " }
+        ];
+        for (let i = 0; i < menuList.length; i++) {
+            menuDiv.appendChild(createText('ul',menuList[i].name));
         }
+        var firstItem = menuList[0]; // Récupération du premier élément
+        var projet = createElementWithClass('div','projet');
+        projets.appendChild(menuDiv);
+        var video_iframe=createVideoWithOverlay(firstItem.videoLink,firstItem.imageSrc)
+        projet.appendChild(video_iframe);
+
+        
+        var titre_projet=createText('h2', firstItem.name)
+        projet.appendChild(titre_projet);
+
+        var description_projet = createText('p', firstItem.desc)
+        projet.appendChild(description_projet);
+
+        
+        menuDiv.addEventListener('click', function(event) {
+            if (event.target.tagName === 'UL') {
+                
+                var videoLink = menuList.find(item => item.name === event.target.textContent)?.videoLink;
+                var imageLink = menuList.find(item => item.name === event.target.textContent)?.imageSrc;
+                var descLink = menuList.find(item => item.name === event.target.textContent)?.desc;
+                console.log("Changement de projet" + videoLink + "  " + imageLink);
+                if (videoLink) {
+                    projet.scrollIntoView({ behavior: 'smooth' });
+                    description_projet.innerHTML=descLink;
+                    titre_projet.innerHTML=event.target.textContent;
+                    updateVideoElement(videoLink);
+                    updateImageElement(imageLink);
+                }
+            }});
+        projets.appendChild(projet);
+        projetsContainer.appendChild(projets);
+    }
         const sections = document.querySelectorAll('.section');
 
 sections.forEach((section, index) => {
