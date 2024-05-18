@@ -85,7 +85,7 @@ function toggleTeamInfo(id) {
     
     if(id=== 'videos'){
 
-        gsap.from('.videos-container',{scale:0,stagger:1, duration:2,stagger:1});
+        gsap.from('.videos-container',{scale:0,stagger:1, duration:1,stagger:1});
         videosContainer.classList.add('fade-in');
 
         var intro2videos = createElementWithClass('div','section');
@@ -121,7 +121,7 @@ function toggleTeamInfo(id) {
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
         
-        gsap.from('.presentation-container',{scale:0,stagger:1, duration:2,stagger:1});
+        gsap.from('.presentation-container',{scale:0,stagger:1, duration:1,stagger:1});
         var intro2presentation = createElementWithClass('div','section');
         var image_intro2presentation = createElementWithClass('div','image-section');
         image_intro2presentation.appendChild(createImage('Photos/moi.JPG'));
@@ -196,7 +196,7 @@ function toggleTeamInfo(id) {
             scrollTrigger: {
               trigger: ".line",
               scrub: true,
-              start: "75% bottom",
+              start: "90% bottom",
               end: "+100%"
             },
             scaleX: 0,
@@ -206,7 +206,7 @@ function toggleTeamInfo(id) {
         
         }
     else if(id === 'photos'){
-        gsap.from('.photos-container',{scale:0,stagger:1, duration:2});
+        gsap.from('.photos-container',{scale:0,stagger:1, duration:1});
         photosContainer.classList.add('fade-in');
 
         var citation = document.createElement('div');
@@ -297,7 +297,7 @@ function toggleTeamInfo(id) {
         
     }
     else if(id === 'projets'){
-        gsap.from('.projets-container',{scale:0,stagger:1, duration:2,stagger:1});
+        gsap.from('.projets-container',{scale:0,stagger:1, duration:1,stagger:1});
         gsap.from('.menu3',{scale:0,stagger:1, duration:2,stagger:1});
         projetsContainer.classList.add('fade-in');
         var intro2projects = createElementWithClass('div','section');
