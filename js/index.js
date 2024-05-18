@@ -1,6 +1,7 @@
-import {createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createIcon, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createLineSpan,createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createIcon, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel, createVideoCarousel, generateImagePaths} from './carroussel.js';
 
+gsap.registerPlugin(ScrollTrigger);
 gsap.from('.logo',{scale:0,stagger:1, duration:1.5});
 gsap.from('#logo',{opacity:0, x:"-20rem",duration:2});
 gsap.from('.switch',{opacity:0, y:"-10rem",duration:2});
@@ -8,6 +9,8 @@ gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:3});
 gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:2});
 gsap.from('.menu-mobile',{opacity:0, x:"-20rem",duration:1,delay:2});
 gsap.from('.down',{opacity:0, y:"-20rem",duration:2});
+gsap.from('#introGif',{scale:0,stagger:1, duration:0.5});
+
 
 
 document.addEventListener('contextmenu', event => event.preventDefault());
@@ -17,11 +20,12 @@ var introGif = document.getElementById("introGif");
 var mainContent = document.getElementById("mainContent");
 setTimeout(function() {
     introGif.style.opacity = 0;
-    introGif.removeAttribute("loop");
     mainContent.style.opacity = 1;
     mainContent.classList.remove('hidden');
-}, 0);
-document.getElementById("introContainer").style.display='none';
+    document.getElementById("introContainer").style.display='none';
+    console.log("time");
+}, 400);
+
 
 
 /******************************* MODE NUIT  *****************************************************************/
@@ -127,6 +131,8 @@ function toggleTeamInfo(id) {
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
         text_intro2presentation.appendChild(createText('p',"J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
         text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant. C'est sur ce site que vous trouverez toutes mes créations."));
+        text_intro2presentation.appendChild(createLineSpan());
+        
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
 
@@ -186,7 +192,17 @@ function toggleTeamInfo(id) {
 
         presentationContainer.appendChild(cv_section);
 
-        
+        gsap.from(".line", {
+            scrollTrigger: {
+              trigger: ".line",
+              scrub: true,
+              start: "75% bottom",
+              end: "+100%"
+            },
+            scaleX: 0,
+            transformOrigin: "left center", 
+            ease: "none"
+          });
         
         }
     else if(id === 'photos'){

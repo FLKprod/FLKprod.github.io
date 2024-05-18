@@ -169,6 +169,17 @@ export function createDivImage(name, path) {
     return div;
 }
 
+export function createLineSpan() {
+    // Créer l'élément span
+    const span = document.createElement('span');
+    
+    // Ajouter les classes "line" et "line-1"
+    span.classList.add('line');
+    
+    // Retourner l'élément span créé
+    return span;
+}
+
 
 
 
