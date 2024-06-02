@@ -76,7 +76,7 @@ async function toggleTeamInfo(id) {
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/Photo_CV.JPG'));
+        image_intro2presentation.appendChild(createImage('Photos/Photo_CV.jpg'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
@@ -143,7 +143,7 @@ async function toggleTeamInfo(id) {
         var cv_section = createElementWithClass('div','section','cv');
 
         var image_certifications = createElementWithClass('div','image-section');
-        image_certifications.appendChild(createImage('Photos/moi.jpg'));
+        image_certifications.appendChild(createImage('Photos/moi.JPG'));
         cv_section.appendChild(image_certifications);
 
         var text_cv_section = createElementWithClass('div','text-section');
