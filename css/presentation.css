@@ -1,9 +1,7 @@
 /*---------------------------------------------- PRESENTATION ----------------------------------------------------------------------*/
 
 .presentation-container{
-    font-family: 'Caudex';
-    width: 100%;
-    margin:0;
+    position: relative;
 }
 .presentation-container > p {
     margin-left: 5em;
@@ -14,95 +12,38 @@
     line-height: 3;
 }
 
-.city-presentation {
-    background-color: #eeeeee;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    padding: 3em 2em;
-    height: auto;
-    text-align: justify;
-    line-height: 2;
-}
-
-.city-presentation > p {
-    margin: 1em;
-}
-.city-presentation > h2,h3 {
-    border-radius: 1.5em;
-    padding: 0.5em;
-    margin-right: 0.5em;
-    font-size: 2.5em;
-    letter-spacing: 0.08em;
-    font-weight: 100;
-    margin-left: 0.5em;
-    color: whitesmoke;
-    text-align: left; 
-}
-.city-presentation > h3 {
-    font-size: 2em;
-    text-align: left; 
-}
-.city-presentation > h4 {
-    border-radius: 1.5em;
-    padding: 0.5em;
-    margin-right: 1em;
-    font-size: 2em;
-    letter-spacing: 0.08em;
-    font-weight: 100;
-    margin-left: 1em;
-    text-align: left; 
-}
-
-.image_city_section{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    height: 10em;
-    width: auto;
-}
-
-.image_city_section > img {
-    height: 100%;
-    margin-left:1em;
-}
-
-
-
-
-
 .section {
-    
+    width: 100%;
     background-color: #eeeeee;
     color: black;
     display: flex;
     align-items: center;
+    position: relative;
+    justify-content: center;
     padding: 1em 1em;
-    height: auto;
-}
-.section:first-child{
-    background-color:white;
-    color:black;
+    height: 100vh;
 }
 
-body.mode-nuit .section:first-child{
+
+.moicmaxime{
+    display: flex;
+    overflow: hidden;
     background-color:black;
     color:white;
 }
+
+
+
 .section:nth-child(2){
-    background-color:#02323e;
+
     color:white;
-}
-.section:nth-child(3){
-    background-color:lightblue;
 }
 .section:nth-child(3) .image-section > img{
     margin: 5em 0 ;
     width: 50%;
 }
 .section:nth-child(4){
-    background-color:#01556A;
+    background-color:#ADD8E6;
     color:white;
     padding-bottom: 3em;
 }
@@ -112,10 +53,10 @@ body.mode-nuit .section:first-child{
 .text-section{
     font-family: 'Times New Roman', serif;
     font-size: 1em;
-    height: 100%;
     flex: 1;
     line-height: 3;
     padding: 0 2em;
+    position: relative;
 }
 
 
@@ -132,17 +73,20 @@ body.mode-nuit .section:first-child{
     margin-left: 1em;
 }
 
+.certification .text-section > h2{
+    font-size: 3em;
+}
 .text-section ul > li {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 .text-section > ul{
-    line-height: 2;
+    line-height: 3;
     
 }
 
 .text-section p > a{
     font-family:'Courier New', Courier, monospace;
-    color: whitesmoke;
+
 }
 .image-section{
     width: 25%;
@@ -316,8 +260,30 @@ li::before{
     width: 100%;
     max-width: 800px;
     height: 5px;
-    margin: 0 0 10px 0;
+
     position: relative;
     display: inline-block;
-    background-color: purple;
+    background-color: transparent;
+  }.line1{
+    background-color: transparent;
   }
+  .line2{
+    background-color: #02323e;
+  }
+.desc-berkeley{
+    height: 100%;
+    margin-top: 5em;
+    width: 70%;
+    flex-direction: column;
+
+}
+.desc-berkeley > p{
+    width: 100%;
+    height: auto;
+}
+
+.section .moicmaxime{
+    opacity: 0;
+    overflow: hidden;
+    height: 100vh;
+}

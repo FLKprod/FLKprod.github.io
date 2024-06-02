@@ -1,56 +1,9 @@
-import {createLineSpan,createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createIcon, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createLineSpan,createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createGitHubLink, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel, createVideoCarousel, generateImagePaths} from './carroussel.js';
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.from('.logo',{scale:0,stagger:1, duration:1.5});
-gsap.from('#logo',{opacity:0, x:"-20rem",duration:2});
-gsap.from('.switch',{opacity:0, y:"-10rem",duration:2});
-gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:3});
-gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:2});
-gsap.from('.menu-mobile',{opacity:0, x:"-20rem",duration:1,delay:2});
-gsap.from('.down',{opacity:0, y:"-20rem",duration:2});
-gsap.from('#introGif',{scale:0,stagger:1, duration:0.5});
-
-
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-
-toggleTeamInfo('presentation');
-var introGif = document.getElementById("introGif");
-var mainContent = document.getElementById("mainContent");
-setTimeout(function() {
-    introGif.style.opacity = 0;
-    mainContent.style.opacity = 1;
-    mainContent.classList.remove('hidden');
-    document.getElementById("introContainer").style.display='none';
-    console.log("time");
-}, 400);
-
-
-
-/******************************* MODE NUIT  *****************************************************************/
-
-const daynightCheckbox = document.getElementById('daynight');
-const logo = document.getElementById('logo');
-function toggleModeNuit() {
-    if (daynightCheckbox.checked) {
-        document.body.classList.add('mode-nuit');
-        logo.src = "Photos/textures/logo.png";
-    } else {
-        document.body.classList.remove('mode-nuit');
-        logo.src = "Photos/textures/logoneg.png";
-    }
-}
-
-toggleModeNuit();
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-    daynightCheckbox.checked = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    toggleModeNuit();
-});
-
-document.getElementById('daynight').addEventListener('change', toggleModeNuit);
-
 const buttonIds = ['presentation', 'projets', 'videos', 'photos'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
@@ -58,10 +11,10 @@ buttonIds.forEach(buttonId => {
         toggleTeamInfo(buttonId);
     });
 });
+toggleTeamInfo('presentation');
 
 
-
-function toggleTeamInfo(id) {
+async function toggleTeamInfo(id) {
     
     var buttons = document.querySelectorAll('.menu button');
     buttons.forEach(function(button) {
@@ -77,7 +30,7 @@ function toggleTeamInfo(id) {
     var videosContainer = document.querySelector('.videos-container');
     var projetsContainer = document.querySelector('.projets-container');
     var photosContainer = document.querySelector('.photos-container');
-    
+    presentationContainer.classList.remove('fade-in');
     presentationContainer.innerHTML = '';
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
@@ -121,50 +74,64 @@ function toggleTeamInfo(id) {
     else if(id=== 'presentation'){
         presentationContainer.classList.add('fade-in');
         
-        gsap.from('.presentation-container',{scale:0,stagger:1, duration:1,stagger:1});
-        var intro2presentation = createElementWithClass('div','section');
+        var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/moi.JPG'));
+        image_intro2presentation.appendChild(createImage('Photos/Photo_CV.JPG'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
         text_intro2presentation.appendChild(createText('p',"J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
         text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant. C'est sur ce site que vous trouverez toutes mes créations."));
-        text_intro2presentation.appendChild(createLineSpan());
+        text_intro2presentation.appendChild(createLineSpan(0));
         
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
 
-        var intro2lbnl = createElementWithClass('div','section');
 
-        var image_intro2lbnl = createElementWithClass('div','berkeley-section');
-        image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
 
-        intro2lbnl.appendChild(image_intro2lbnl);
-        var text_intro2lbnl = createElementWithClass('div','text-section');
-        text_intro2lbnl.appendChild(createText('p',"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. J'en parle davantage dans la rubrique PROJETS du site. N'hésitez pas à aller voir !"));
-        intro2lbnl.appendChild(text_intro2lbnl);
-
-        image_intro2lbnl = createElementWithClass('div','berkeley-section');
-        image_intro2lbnl.appendChild(createImage('Photos/Berkeley.jpg'));
-        intro2lbnl.appendChild(image_intro2lbnl);
-
+        var intro2lbnl = createElementWithClass('div','section','berkeley');
         
+        var text_intro2lbnl = createElementWithClass('div','text-section','desc-berkeley');
+        text_intro2lbnl.appendChild(createText('h2',"Mon Experience a Berkeley"));
+        text_intro2lbnl.appendChild(createText('p',"Durant mon stage au Lawrence Berkeley National Laboratory, j'ai été immergé dans un environnement de recherche dynamique et stimulant. Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante. Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel."));
 
+        text_intro2lbnl.appendChild(createText('p',"En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants. La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides. Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes, stimulant ainsi ma créativité et ma résolution de problèmes."));
+
+        text_intro2lbnl.appendChild(createText('p',"Au-delà des aspects techniques, mon passage au LBNL m'a également permis de développer des compétences interpersonnelles essentielles. Travailler en équipe dans un environnement aussi diversifié a nécessité une communication claire et efficace, ainsi qu'une capacité à collaborer avec des personnes aux parcours variés. Ces compétences sont précieuses, non seulement dans le domaine de la recherche, mais dans tous les aspects de ma carrière future."));
+
+        text_intro2lbnl.appendChild(createText('p',"En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative. Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société. Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels."));
+
+        text_intro2lbnl.appendChild(createText('p',"Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel. Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement."));
+
+        text_intro2lbnl.appendChild(createText('p',"Durant mon stage au Lawrence Berkeley National Laboratory, j'ai été immergé dans un environnement de recherche dynamique et stimulant. Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante. Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel."));
+
+        text_intro2lbnl.appendChild(createText('p',"En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants. La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides. Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes, stimulant ainsi ma créativité et ma résolution de problèmes."));
+
+        text_intro2lbnl.appendChild(createText('p',"Au-delà des aspects techniques, mon passage au LBNL m'a également permis de développer des compétences interpersonnelles essentielles. Travailler en équipe dans un environnement aussi diversifié a nécessité une communication claire et efficace, ainsi qu'une capacité à collaborer avec des personnes aux parcours variés. Ces compétences sont précieuses, non seulement dans le domaine de la recherche, mais dans tous les aspects de ma carrière future."));
+
+        text_intro2lbnl.appendChild(createText('p',"En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative. Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société. Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels."));
+
+        text_intro2lbnl.appendChild(createText('p',"Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel. Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement."));
+        
+        intro2lbnl.appendChild(text_intro2lbnl);
+    
+        var image_intro2lbnl = createElementWithClass('div','image-section');
+        image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
+        intro2lbnl.appendChild(image_intro2lbnl);
         presentationContainer.appendChild(intro2lbnl);
 
-        var certifications = createElementWithClass('div','section');
+
+
+        var certifications = createElementWithClass('div','section','certifications');
 
         var text_certifications = createElementWithClass('div','text-section');
-
-        
-        
         text_certifications.appendChild(createText('h2',"Mes Certifications en réseaux"));
         var listescertifications = document.createElement("ul");
         listescertifications.appendChild(createText('li',"<strong>CCNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
         listescertifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
         listescertifications.appendChild(createText('li',"Network Security By Cisco"));
+        listescertifications.appendChild(createLineSpan(1));
         text_certifications.appendChild(listescertifications);
         certifications.appendChild(text_certifications);
 
@@ -173,10 +140,10 @@ function toggleTeamInfo(id) {
         certifications.appendChild(image_certifications);
         presentationContainer.appendChild(certifications);
 
-        var cv_section = createElementWithClass('div','section');
+        var cv_section = createElementWithClass('div','section','cv');
 
         var image_certifications = createElementWithClass('div','image-section');
-        image_certifications.appendChild(createImage('Photos/Photo_CV.jpg'));
+        image_certifications.appendChild(createImage('Photos/moi.jpg'));
         cv_section.appendChild(image_certifications);
 
         var text_cv_section = createElementWithClass('div','text-section');
@@ -188,23 +155,119 @@ function toggleTeamInfo(id) {
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
 
         text_cv_section.appendChild(createText('p',"<strong>PS :</strong> Je suis actuellement à la <strong>recherche</strong> d'un <strong>stage</strong> en <strong>cybersécurité</strong> à partir de <strong>septembre 2024</strong>. Si vous avez des opportunités à me proposer, je suis preneur !"));
+        text_cv_section.appendChild(createLineSpan(2));
         cv_section.appendChild(text_cv_section);
 
         presentationContainer.appendChild(cv_section);
 
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+        // Création de l'animation pour la ligne
         gsap.from(".line", {
-            scrollTrigger: {
-              trigger: ".line",
-              scrub: true,
-              start: "90% bottom",
-              end: "+100%"
-            },
-            scaleX: 0,
-            transformOrigin: "left center", 
-            ease: "none"
-          });
+        scaleX: 0,
+        transformOrigin: "left center", 
+        ease: "none"
+        });
         
-        }
+        const elements = document.querySelectorAll('.moicmaxime > *');
+
+        gsap.to(".line0", {
+            scaleX: 1,
+            ease: "none",
+            scrollTrigger: {
+            trigger: ".moicmaxime",
+            start: "top top",
+            end: "+==100%",
+            scrub: 1,
+            anticipatePin: 1,
+            }
+        });
+        
+        // Animation pour déplacer les éléments vers la droite au début (0% à 25% de la ligne)
+        gsap.to(elements, {
+            xPercent: 0,
+            ease: "none",
+            scrollTrigger: {
+            trigger: ".moicmaxime",
+            start: "0%",
+            end: "100%",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            }
+        });
+        
+        // Animation pour déplacer les éléments vers la gauche à la fin (75% à 100% de la ligne)
+        gsap.to(elements, {
+            xPercent: 0,
+            ease: "none",
+            scrollTrigger: {
+            trigger: ".moicmaxime",
+            start: "0%",
+            end: "100%",
+            scrub: true,
+            pin: true,
+            anticipatePin: 1,
+            }
+        });
+        
+        
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".certifications",
+                scrub: true,
+
+                start: "center center", // Ajuster la valeur de départ
+                end: "bottom top", // Ajuster la valeur de fin
+                anticipatePin: 1,
+            }});
+
+            tl.from(".certifications h2,.certifications li, .certifications img", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
+            .from(".line1", {scaleX: 0, ease: "none"}, 0)
+            .to(".certifications", {backgroundColor: "#ADD8E6"}, 0) // Changement de couleur
+            .to(".berkeley", {backgroundColor: "#ADD8E6"}, 0); // Changement de couleur pour presentation-container
+        
+        var tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".cv", // Déclencher lorsque la quatrième div est visible
+                start: "center top", // Ajuster la valeur de départ
+                end: "bottom top", // Ajuster la valeur de fin
+                scrub: true, // Pour une animation fluide
+
+
+
+            }
+        });
+
+        // Ajouter l'animation pour la ligne
+        tl2.to(".line2", { scaleX: 1, ease: "none" })
+        .to(".cv", { backgroundColor: "#ADD8E6", duration: 0 }, 0);
+
+        let largeElements = document.querySelectorAll(".desc-berkeley");
+
+        // Parcourez chaque élément et appliquez l'animation
+        largeElements.forEach(large => {
+            gsap.to(large, {
+                y: () => (window.innerHeight - large.clientHeight - 1000),
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '.berkeley ',
+                    pin: true,
+                    start: "top top",
+                    end: () => "+=75%",
+                    scrub: 0.5,
+                    invalidateOnRefresh: true,
+                    markers: {
+                        startColor: "transparent", // Couleur du marqueur de début
+                        endColor: "transparent",   // Couleur du marqueur de fin
+                        triggerColor: "transparent", // Couleur du marqueur de déclenchement
+                        fontSize: "0px"           // Taille de la police des marqueurs
+                    },
+                    anticipatePin: 1,
+                }
+            });
+        });
+  
+    }
     else if(id === 'photos'){
         gsap.from('.photos-container',{scale:0,stagger:1, duration:1});
         photosContainer.classList.add('fade-in');
@@ -310,18 +373,18 @@ function toggleTeamInfo(id) {
         
         var menuDiv = createElementWithClass('div','menu3');
         var menuList = [
-            { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/textures/logoneg.png",desc:""},
-            { name: "FUEGO in Berkeley", videoLink: "wdwd", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
-            { name: "RockRush", videoLink: "Photos/projets/RockRush.mp4", imageSrc: "Photos/projets/RockRush.jpg" ,desc:"RockRush est un jeu en langage web créé durant ma formation ingénieur. C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres."},
-            { name: "Application DeepL", videoLink: "Photos/projets/DeepL.mp4", imageSrc: "Photos/projets/DeepL.png" ,desc:"Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur. Conçue en Java et XML à l'aide d'Android Studio, cette application tire parti de l'API DeepL. Son objectif principal est de fournir un service de traduction de texte efficace et convivial."},
-            { name: "201 Farehein", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",desc: "201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !" },
-            { name: "CyberSafe", videoLink: "Photos/projets/Cybersafe.mp4", imageSrc: "Photos/projets/Cybersafe.png",desc:"Une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés. Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés." },
+            
+            { name: "RockRush", github:"https://github.com/FLKprod/RockRush", videoLink: "Photos/projets/RockRush.mp4", imageSrc: "Photos/projets/RockRush.jpg" ,desc:"RockRush est un jeu en langage web créé durant ma formation ingénieur. C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres."},
+            { name: "Application DeepL", github:"https://github.com/FLKprod/Appli_Android_Deepl", videoLink: "Photos/projets/DeepL.mp4", imageSrc: "Photos/projets/DeepL.png" ,desc:"Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur. Conçue en Java et XML à l'aide d'Android Studio, cette application tire parti de l'API DeepL. Son objectif principal est de fournir un service de traduction de texte efficace et convivial."},
+            { name: "201 Farehein", github: "https://github.com/FLKprod/201F", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",desc: "201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !" },
+            { name: "CyberSafe", github:"https://github.com/FLKprod/Projet-IOT", videoLink: "Photos/projets/Cybersafe.mp4", imageSrc: "Photos/projets/Cybersafe.png",desc:"Une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés. Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés." },
             /*
             { name: "TowerDefender", videoLink: "", imageSrc: "",desc:"" },
-            { name: "ToDoList pour IOs", videoLink: "", imageSrc: "",desc:"" },
-            { name: "Carte intéractive", videoLink: "", imageSrc: "",desc:"" },*/
-            
-            { name: "LanbdaCash", videoLink: "Photos/projets/landbacash.mp4", imageSrc: "Photos/projets/landbacash.png",desc:"Projet CLOUD Chicoutimi " }
+            { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/textures/logoneg.png",desc:""},
+            { name: "FUEGO in Berkeley", videoLink: "wdwd", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
+            { name: "ToDoList pour IOs", videoLink: "", imageSrc: "",desc:"" },*/
+            { name: "Carte intéractive", github:"https://github.com/FLKprod/MapEmblem", videoLink: "", imageSrc: "",desc:"Carte interactive pour les lieux partenaires de EMBLEM Dijon" },
+            { name: "LanbdaCash", github:"https://github.com/FLKprod/CloudProject", videoLink: "Photos/projets/landbacash.mp4", imageSrc: "Photos/projets/landbacash.png",desc:"Application pour tester un programme et l'executer avec differentes valeurs de RAM pour connaitre et comparer les prix d'execution d'AWS ( Amazon Web Services )." }
         ];
         for (let i = 0; i < menuList.length; i++) {
             menuDiv.appendChild(createText('ul',menuList[i].name));
@@ -338,6 +401,9 @@ function toggleTeamInfo(id) {
 
         var description_projet = createText('p', firstItem.desc)
         projet.appendChild(description_projet);
+
+        var github_projet = createGitHubLink(firstItem.github);
+        projet.appendChild(github_projet);
 
         
         menuDiv.addEventListener('click', function(event) {
@@ -358,43 +424,29 @@ function toggleTeamInfo(id) {
         projets.appendChild(projet);
         projetsContainer.appendChild(projets);
     }
-        const sections = document.querySelectorAll('.section');
+    const sections = document.querySelectorAll('.section');
+/*
+    sections.forEach((section, index) => {
+        const tl = gsap.timeline({ paused: true });
+        const imgsections = section.querySelectorAll('.image-section'); // Sélectionner les .image-section dans cette section
 
-sections.forEach((section, index) => {
-    const tl = gsap.timeline({ paused: true });
-    const imgsections = section.querySelectorAll('.image-section'); // Sélectionner les .image-section dans cette section
+        // Animation pour faire apparaître la section
+        tl.from(section, { opacity: 0, x: '-10rem', ease: 'linear', duration: 0.3 });
 
-    // Animation pour faire apparaître la section
-    tl.from(section, { opacity: 0, x: '-10rem', ease: 'linear', duration: 0.3 });
+        // Déclencher l'animation lorsque la section est visible à l'écran
+        window.addEventListener("scroll", () => {
+            const sectionTop = section.offsetTop;
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
 
-    // Animation pour les .image-section dans cette section
-    imgsections.forEach(imgsection => {
-        gsap.from(imgsection, {
-            opacity: 0,
-            scale: 0.5,
-            rotation: -180,
-            x: -100,
-            y: 100,
-            duration: 3,
-            ease: 'elastic.out(1, 0.3)'
+            if (scrollY > sectionTop - windowHeight * 0.001) {
+                tl.play();
+                // Pas besoin de jouer ims ici car il est déjà inclus dans la timeline tl
+            } else {
+                tl.reverse();
+            }
         });
     });
-
-    // Déclencher l'animation lorsque la section est visible à l'écran
-    window.addEventListener("scroll", () => {
-        const sectionTop = section.offsetTop;
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-
-        if (scrollY > sectionTop - windowHeight * 0.001) {
-            tl.play();
-            // Pas besoin de jouer ims ici car il est déjà inclus dans la timeline tl
-        } else {
-            tl.reverse();
-        }
-    });
-});
-
+    */
         
 }
-

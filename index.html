@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="icon" href="Photos/textures/logourl.png" type="image/png">
     <title>FLKprod_</title>
-
-    
 </head>
 <body>
     <div id="introContainer">
@@ -37,7 +35,7 @@
                     <button id="photos">Photographies</button>
                 </div>
                 <div class="social-networks">
-                    <button onclick="window.location.href='mailto:maxime.falkowski@icloud.com';">
+                    <button onclick="window.location.href='mailto:maxime.falkowski@free.fr';">
                         <i class="fa fa-envelope" ></i>
                     </button>
                     <button onclick="window.open('https://www.instagram.com/flkprod_/', '_blank');">
@@ -53,19 +51,6 @@
                         <i class="fab fa-linkedin" ></i>
                     </button>
                 </div>
-                <script>
-                    function toggleMenu() {
-                        var menuMobile = document.querySelector('.menu-mobile');
-                        var menuDesktopButtons = document.querySelectorAll('.sections-menu');
-                        menuMobile.classList.toggle('active');
-                        menuDesktopButtons.forEach(button => {
-                            if (button !== menuMobile){
-                                button.style.display = menuMobile.classList.contains('active') ? 'block' : 'none';
-                                button.classList.add('fondu');
-                            }
-                        });
-                    }
-                    </script>
                 </div>
             <div class="logo">
                 <img src="Photos/textures/baniere.JPG" alt="Logo">
@@ -73,8 +58,6 @@
         </div>
         <div class="center">
             <div id="presentation" class="presentation-container">
-                
-                <!-- Affichage de la page principale presentant le projet -->
             </div>
             <div id="projets" class="projets-container">
             </div>
@@ -89,10 +72,11 @@
             <p><strong>&copy; 2024 SafeConnect. Tous droits réservés.</strong></p>
             
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
         <script type="module" src="js/index.js"></script>
+        <script type="module" src="js/annimations.js"></script>
         <script type="module" src="js/createElements.js"></script>
         <script type="module" src="js/carroussel.js"></script>
         <script type="text/javascript" src="js/state.js"></script>

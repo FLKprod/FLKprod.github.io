@@ -12,6 +12,36 @@
     font-style: italic;
 }
 
+.citation {
+    font-family: Garamond, serif;
+    letter-spacing: 0.08em;
+    font-size: 1.5em;
+    padding-top:1em;
+    padding-bottom: 1em;
+    color:whitesmoke;
+    background-image: url(/Photos/citation.JPG);
+    background-size: cover;
+    background-position: center; 
+    width: 100%;
+    margin: 0;
+}
+
+.citation:before {
+    content:'“';
+    left:0;
+    color: whitesmoke;
+    margin-left: -1em;
+    top:1em;
+}
+
+.citation:after {
+    content:'“';
+    left:0;
+    color: whitesmoke;
+    margin-left: -1em;
+    top:1em;
+}
+
 .categorie_photos {
     position: relative;
     height: auto;
@@ -79,7 +109,7 @@
     top: 50%;
     width: 1em;
     height: 1em;
-    transform: translateY(-50%) translateX(calc(-50% + 1.5em));
+    transform: translateY(-50%) translateX(calc(-50% + 2em));
     left: 0;
     color:white !important;
     background-color: rgba(0, 0, 0, 0.7) !important;
@@ -91,7 +121,7 @@
     right: 0;
     width: 1em;
     height: 1em;
-    transform: translateY(-50%) translateX(calc(50% - 1.5em)); 
+    transform: translateY(-50%) translateX(calc(50% - 2em)); 
     color:white !important;
     background-color: rgba(0, 0, 0, 0.7) !important;
 }

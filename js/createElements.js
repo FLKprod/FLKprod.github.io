@@ -39,9 +39,9 @@ export function createButton(text) {
     return button;
 }
 
-export function createElementWithClass(tag, className) {
+export function createElementWithClass(tag, ...classNames) {
     const element = document.createElement(tag);
-    element.className = className;
+    element.classList.add(...classNames);
     return element;
 }
 
@@ -169,15 +169,41 @@ export function createDivImage(name, path) {
     return div;
 }
 
-export function createLineSpan() {
-    // Créer l'élément span
+export function createLineSpan(number) {
     const span = document.createElement('span');
-    
-    // Ajouter les classes "line" et "line-1"
     span.classList.add('line');
-    
-    // Retourner l'élément span créé
+    var linenumber = 'line' + String(number); // Utiliser String() pour convertir le nombre en chaîne de caractères
+    span.classList.add(linenumber);
     return span;
+}
+
+
+
+export function createGitHubLink(projectUrl) {
+    // Créer une nouvelle balise <p>
+    const paragraph = document.createElement('p');
+
+    // Créer une nouvelle balise <a>
+    const link = document.createElement('a');
+    link.href = projectUrl;
+    link.target = '_blank'; // Ouvrir le lien dans un nouvel onglet
+    link.rel = 'noopener noreferrer'; // Pour des raisons de sécurité
+
+    // Créer une balise <img> pour le logo GitHub
+    const img = document.createElement('img');
+    img.src = 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'; // URL du logo GitHub
+    img.alt = 'GitHub Logo';
+    img.width = 32; // Largeur de l'image (ajuster selon vos besoins)
+    img.height = 32; // Hauteur de l'image (ajuster selon vos besoins)
+    img.style.cursor = 'pointer'; // Curseur de la souris en forme de main pour indiquer que c'est cliquable
+
+    // Ajouter l'image à la balise <a>
+    link.appendChild(img);
+
+    // Ajouter la balise <a> à la balise <p>
+    paragraph.appendChild(link);
+
+    return paragraph;
 }
 
 
