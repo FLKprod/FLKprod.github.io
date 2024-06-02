@@ -232,9 +232,6 @@ async function toggleTeamInfo(id) {
                 start: "center top", // Ajuster la valeur de départ
                 end: "bottom top", // Ajuster la valeur de fin
                 scrub: true, // Pour une animation fluide
-
-
-
             }
         });
 
@@ -311,7 +308,7 @@ async function toggleTeamInfo(id) {
         // Créer et ajouter chaque catégorie avec son carrousel
         var carousel_section;
         categoriesData.forEach((categoryData, index) => {
-            const carousel_section = createElementWithClass('div', 'section');
+            const carousel_section = createElementWithClass('div', 'section',"photos");
             const { name, category, desc } = categoryData;
             carousel_section.setAttribute("category", category);
             const images = generateImagePaths(name);
@@ -344,7 +341,7 @@ async function toggleTeamInfo(id) {
             const category = event.target.id.trim();
             console.log(category);
             if (category) {
-                const allSections = document.querySelectorAll('.section');
+                const allSections = document.querySelectorAll('.section .photos');
         
                 // Parcourir chaque section et vérifier si son attribut category correspond à la catégorie sélectionnée
                 allSections.forEach(section => {
@@ -357,6 +354,32 @@ async function toggleTeamInfo(id) {
                 });
             }
         });
+
+        const sections = document.querySelectorAll('.section.photos');
+
+        sections.forEach((section, index) => {
+            const elements = section.querySelectorAll('.categorie_photos, .text-section');
+        
+            elements.forEach((element, index) => {
+                gsap.from(element, {
+                    autoAlpha: 0, // Départ de l'animation (opacité 0)
+                    y: 100,       // Départ de l'animation (décalage de 100px en y)
+                    ease: "power1.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 25%",   // Commencer l'animation lorsque le haut de l'élément atteint le bas de la fenêtre
+                        end: "bottom 75%",    // Arrêter l'animation lorsque le bas de l'élément atteint le haut de la fenêtre
+                        scrub: true,          // Animation lissée
+                    }
+                });
+            });
+        });
+        
+
+
+
+
+        
         
     }
     else if(id === 'projets'){
@@ -424,29 +447,18 @@ async function toggleTeamInfo(id) {
         projets.appendChild(projet);
         projetsContainer.appendChild(projets);
     }
+
+    const targetNode = document.querySelector('body'); // Choisissez le nœud que vous souhaitez observer
+    const config = { attributes: true, childList: true, subtree: true }; // Options d'observation
+
+    const callback = function(mutationsList, observer) {
+        for(let mutation of mutationsList) {
+        }
+    };
+
+    const observer = new MutationObserver(callback);
+
+    // Commence à observer le nœud cible pour les mutations spécifiées
+    observer.observe(targetNode, config);
     const sections = document.querySelectorAll('.section');
-/*
-    sections.forEach((section, index) => {
-        const tl = gsap.timeline({ paused: true });
-        const imgsections = section.querySelectorAll('.image-section'); // Sélectionner les .image-section dans cette section
-
-        // Animation pour faire apparaître la section
-        tl.from(section, { opacity: 0, x: '-10rem', ease: 'linear', duration: 0.3 });
-
-        // Déclencher l'animation lorsque la section est visible à l'écran
-        window.addEventListener("scroll", () => {
-            const sectionTop = section.offsetTop;
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-
-            if (scrollY > sectionTop - windowHeight * 0.001) {
-                tl.play();
-                // Pas besoin de jouer ims ici car il est déjà inclus dans la timeline tl
-            } else {
-                tl.reverse();
-            }
-        });
-    });
-    */
-        
 }

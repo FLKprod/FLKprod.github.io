@@ -42,6 +42,10 @@
     top:1em;
 }
 
+.section.photos{
+    height: 100%;
+}
+
 .categorie_photos {
     position: relative;
     height: auto;
