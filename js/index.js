@@ -286,6 +286,7 @@ async function toggleTeamInfo(id) {
         var menu_carrousels = createElementWithClass('div','menu_carrousels');
         menu_carrousels.appendChild(createDivImage("Voyages","Photos/voyages.png"));
         menu_carrousels.appendChild(createDivImage("Sports","Photos/sports.png"));
+        menu_carrousels.appendChild(createDivImage("All","Photos/textures/all.JPG"));
         photosContainer.appendChild(menu_carrousels);
         // Exemple de données (remplacez avec vos propres données)
         const categoriesData = [
@@ -331,42 +332,45 @@ async function toggleTeamInfo(id) {
             photosContainer.appendChild(carousel_section);
             });
             menu_carrousels.addEventListener('click', (event) => {
-            const category = event.target.id.trim();
-            console.log(category);
-            if (category) {
-                const allSections = document.querySelectorAll('.section .photos');
-        
-                // Parcourir chaque section et vérifier si son attribut category correspond à la catégorie sélectionnée
-                allSections.forEach(section => {
-                    const sectionCategory = section.getAttribute('category');
-                    if (sectionCategory && sectionCategory !== category) {
-                        section.style.display = 'none';
-                    } else {
-                        section.style.display = 'flex';
-                    }
-                });
-            }
+                const category = event.target.id.trim();
+                console.log(category);
+                if (category) {
+                    const allSections = document.querySelectorAll('.section.photos');
+            
+                    // Parcourir chaque section et vérifier si son attribut category correspond à la catégorie sélectionnée
+                    allSections.forEach(section => {
+                        const sectionCategory = section.getAttribute('category');
+                        if (sectionCategory && sectionCategory !== category && category !== 'All') {
+                            section.style.display = 'none';
+                        } else {
+                            section.style.display = 'flex';
+                        }
+                    });
+                }
+            
         });
 
         const sections = document.querySelectorAll('.section.photos');
 
-        sections.forEach((section, index) => {
-            const elements = section.querySelectorAll('.categorie_photos, .text-section');
-        
-            elements.forEach((element, index) => {
-                gsap.from(element, {
-                    autoAlpha: 0, // Départ de l'animation (opacité 0)
-                    y: 100,       // Départ de l'animation (décalage de 100px en y)
-                    ease: "power1.out",
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 25%",   // Commencer l'animation lorsque le haut de l'élément atteint le bas de la fenêtre
-                        end: "bottom 75%",    // Arrêter l'animation lorsque le bas de l'élément atteint le haut de la fenêtre
-                        scrub: true,          // Animation lissée
+        sections.forEach((element) => {
+                gsap.fromTo(element, 
+                    {
+                        autoAlpha: 0, // Départ de l'animation (opacité 0)
+                        x: 300       // Départ de l'animation (décalage de 100px en y)
+                    }, 
+                    {
+                        autoAlpha: 1, // Fin de l'animation (opacité 1)
+                        x: 0,         // Fin de l'animation (pas de décalage en y)
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 75%",   // Commencer l'animation lorsque le haut de l'élément atteint 80% de la hauteur de la fenêtre
+                            end: "bottom 60%",  // Arrêter l'animation lorsque le bas de l'élément atteint 20% de la hauteur de la fenêtre
+                            scrub: true         // Animation lissée
+                        }
                     }
-                });
+                );
             });
-        });
         
 
 
@@ -454,5 +458,4 @@ async function toggleTeamInfo(id) {
 
     // Commence à observer le nœud cible pour les mutations spécifiées
     observer.observe(targetNode, config);
-    const sections = document.querySelectorAll('.section');
 }

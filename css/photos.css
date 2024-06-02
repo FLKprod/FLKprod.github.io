@@ -168,8 +168,8 @@ body.mode-nuit .photos-container > .section{
     justify-content: space-between;
 }
 
-.Voyages , .Sports{
-    width: 20em;
+.Voyages , .Sports, .All{
+    width: 100%;
     border: 1px solid white;
     margin:0 1em;
     height: 10em;
