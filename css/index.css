@@ -74,21 +74,14 @@ button:active {
 }
 
 .down{
-    background-color: #eeeeee;
+    background-color: whitesmoke;
+    color: var(--text-color-day);
     padding-top: 1em;
     padding-bottom: 1em;
-}
-
-.down > p {
     font-size: 0.8em;
-    color: black;
+    line-height: 2;
 }
 
-.down > i {
-    font-size: 2em;
-    cursor: pointer;
-    color:#4f0341;
-}
 
 
 
@@ -124,6 +117,33 @@ button:active {
         color: black;
     }
 }
+
+#backToTopButton {
+    position: fixed;
+    border: 1px solid #e3d898;
+    bottom:1em;
+    display: none;
+    z-index: 999;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #4f0341;
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#backToTopButton:hover, #backToTopButton:focus {
+    background-color: whitesmoke;
+    color: #4f0341;
+}
+
+#backToTopButton i {
+    margin-left: -0.05em;
+    transform: translateY(-0.15em);
+}
+
 
 
 /*------------------------------------------- INTRO AVEC APPARITION DE LOGO -----------------------------------------*/
@@ -194,6 +214,11 @@ body.mode-nuit {
     color: var(--text-color-night);
 }
 
+body.mode-nuit .down {
+    background-color: #e3d898;
+    color: black;
+}
+
 body.mode-nuit .menu >button {
     background-color: var(--background-night);
     color: var(--text-color-night);
@@ -205,7 +230,7 @@ body.mode-nuit .social-networks > button {
 }
 
 body.mode-nuit .sections-menu > .select {
-    border-color: #ffff01;
+    border-color: #e3d898;
     margin-right: 0;
 }
 
@@ -216,5 +241,20 @@ body.mode-nuit .sections-menu {
 
 body.mode-nuit .sections-menu > button {
     background-color: var(--background-night);
+    color: var(--text-color-night);
+}
+
+body.mode-nuit .section{
+    background-color: var(--background-night);
+    color: var(--text-color-night);
+}
+
+body.mode-nuit .berkeley{
+    background-color: #4f0341;
+    color: var(--text-color-night);
+}
+
+body.mode-nuit .cv{
+    background-color: #e3d898;
     color: var(--text-color-night);
 }

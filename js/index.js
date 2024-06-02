@@ -41,7 +41,7 @@ async function toggleTeamInfo(id) {
         gsap.from('.videos-container',{scale:0,stagger:1, duration:1,stagger:1});
         videosContainer.classList.add('fade-in');
 
-        var intro2videos = createElementWithClass('div','section');
+        var intro2videos = createElementWithClass('div','section','section-videos');
 
         var text_intro2videos = createElementWithClass('div','text-section');
         text_intro2videos.appendChild(createText('h2',"Mes contenus vidéos"));
@@ -103,16 +103,6 @@ async function toggleTeamInfo(id) {
         text_intro2lbnl.appendChild(createText('p',"En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative. Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société. Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels."));
 
         text_intro2lbnl.appendChild(createText('p',"Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel. Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement."));
-
-        text_intro2lbnl.appendChild(createText('p',"Durant mon stage au Lawrence Berkeley National Laboratory, j'ai été immergé dans un environnement de recherche dynamique et stimulant. Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante. Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel."));
-
-        text_intro2lbnl.appendChild(createText('p',"En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants. La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides. Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes, stimulant ainsi ma créativité et ma résolution de problèmes."));
-
-        text_intro2lbnl.appendChild(createText('p',"Au-delà des aspects techniques, mon passage au LBNL m'a également permis de développer des compétences interpersonnelles essentielles. Travailler en équipe dans un environnement aussi diversifié a nécessité une communication claire et efficace, ainsi qu'une capacité à collaborer avec des personnes aux parcours variés. Ces compétences sont précieuses, non seulement dans le domaine de la recherche, mais dans tous les aspects de ma carrière future."));
-
-        text_intro2lbnl.appendChild(createText('p',"En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative. Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société. Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels."));
-
-        text_intro2lbnl.appendChild(createText('p',"Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel. Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement."));
         
         intro2lbnl.appendChild(text_intro2lbnl);
     
@@ -143,7 +133,7 @@ async function toggleTeamInfo(id) {
         var cv_section = createElementWithClass('div','section','cv');
 
         var image_certifications = createElementWithClass('div','image-section');
-        image_certifications.appendChild(createImage('Photos/moi.JPG'));
+        image_certifications.appendChild(createImage('Photos/textures/lence.JPG'));
         cv_section.appendChild(image_certifications);
 
         var text_cv_section = createElementWithClass('div','text-section');
@@ -223,21 +213,21 @@ async function toggleTeamInfo(id) {
 
             tl.from(".certifications h2,.certifications li, .certifications img", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
             .from(".line1", {scaleX: 0, ease: "none"}, 0)
-            .to(".certifications", {backgroundColor: "#ADD8E6"}, 0) // Changement de couleur
-            .to(".berkeley", {backgroundColor: "#ADD8E6"}, 0); // Changement de couleur pour presentation-container
+            .to(".certifications", {backgroundColor: "	#e3d898"}, 0) // Changement de couleur
+            .to(".berkeley", {backgroundColor: "	#e3d898"}, 0); // Changement de couleur pour presentation-container
         
         var tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".cv", // Déclencher lorsque la quatrième div est visible
-                start: "center top", // Ajuster la valeur de départ
-                end: "bottom top", // Ajuster la valeur de fin
+                start: "0%", // Ajuster la valeur de départ
+                end: "90%", // Ajuster la valeur de fin
                 scrub: true, // Pour une animation fluide
             }
         });
 
         // Ajouter l'animation pour la ligne
         tl2.to(".line2", { scaleX: 1, ease: "none" })
-        .to(".cv", { backgroundColor: "#ADD8E6", duration: 0 }, 0);
+        .to(".cv", { backgroundColor: "black"}, 0);
 
         let largeElements = document.querySelectorAll(".desc-berkeley");
 
@@ -269,10 +259,7 @@ async function toggleTeamInfo(id) {
         gsap.from('.photos-container',{scale:0,stagger:1, duration:1});
         photosContainer.classList.add('fade-in');
 
-        var citation = document.createElement('div');
-        citation.className='citation';
-        citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
-        photosContainer.appendChild(citation);
+        
 
 
         var intro2photographies = createElementWithClass('div','section');
@@ -285,6 +272,12 @@ async function toggleTeamInfo(id) {
         text_intro2photographies.appendChild(createText('p',"Toujours avec un appareil photo sur moi, la photographie est ma passion depuis mon enfance. L'idée de recréer des émotions à travers un fichier PNG me passionne depuis qu'on a mis une caméra entre mes mains. Depuis, je cherche toujours à créer de nouvelles œuvres, que vous pouvez trouver ici. <strong>Enjoy.</strong>"));
         intro2photographies.appendChild(text_intro2photographies);
         photosContainer.appendChild(intro2photographies);
+
+        var citation = document.createElement('div');
+        citation.className='citation';
+        citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
+        photosContainer.appendChild(citation);
+        
         var categories_photos = createElementWithClass('div','categories_photos');
 
         var titre_categories = createElementWithClass('div','text-section');
@@ -387,9 +380,10 @@ async function toggleTeamInfo(id) {
         gsap.from('.menu3',{scale:0,stagger:1, duration:2,stagger:1});
         projetsContainer.classList.add('fade-in');
         var intro2projects = createElementWithClass('div','section');
-        var text_intro2projects = createElementWithClass('div','text-section');
+        var text_intro2projects = createElementWithClass('div','text-section','mes-projets');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
         text_intro2projects.appendChild(createText('p',"Étant en école d'ingénieurs et en maîtrise en cybersécurité, j'ai eu de nombreux projets informatiques à réaliser durant toute ma scolarité. Certains ne sont que des créations que j'ai réalisées par passion pour le code. <strong>Enjoy.</strong>"));
+        text_intro2projects.appendChild(createText('p','<strong>Enjoy.</strong>'));
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
         var projets = createElementWithClass('div','projets');

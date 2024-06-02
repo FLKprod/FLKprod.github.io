@@ -139,9 +139,6 @@ body.mode-nuit .photos-container > .section{
     background-color: var(--background-night);
     color: var(--text-color-night);
 }
-.photos-container > .section:first-child{
-    color: blue !important;
-}
 .photos-container .image-section > img {
     max-height: none;
 }

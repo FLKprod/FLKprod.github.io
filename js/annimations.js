@@ -56,3 +56,25 @@ function toggleMenu() {
 
 const menuButton = document.querySelector('.menu-mobile');
 menuButton.addEventListener('click', toggleMenu);
+
+
+// Sélection du bouton
+const backToTopButton = document.getElementById('backToTopButton');
+
+// Ajout d'un écouteur d'événements au clic sur le bouton
+backToTopButton.addEventListener('click', () => {
+    // Faites défiler jusqu'au haut de la page
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Ajout d'un écouteur d'événements pour afficher ou masquer le bouton en fonction de la position de défilement de la page
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});

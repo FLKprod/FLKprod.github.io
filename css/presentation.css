@@ -1,4 +1,10 @@
 /*---------------------------------------------- PRESENTATION ----------------------------------------------------------------------*/
+:root {
+    --background-day: #ffffff;
+    --text-color-day: #000000;
+    --background-night: #000000;
+    --text-color-night: #ffffff;
+}
 
 .presentation-container{
     position: relative;
@@ -13,8 +19,9 @@
 }
 
 .section {
-    width: 100%;
-    background-color: #eeeeee;
+
+    background-color: var(--background-day);
+    color: var(--text-color-day);
     color: black;
     display: flex;
     align-items: center;
@@ -27,15 +34,21 @@
 
 .moicmaxime{
     display: flex;
+    background-color: #eeeeee;
     overflow: hidden;
-    background-color:black;
-    color:white;
+    height: 100vh;
+}
+
+
+.berkeley{
+    background-color: #4f0341;
+    color: white;
 }
 
 
 
-.section:nth-child(2){
 
+.section:nth-child(2){
     color:white;
 }
 .section:nth-child(3) .image-section > img{
@@ -43,7 +56,7 @@
     width: 50%;
 }
 .section:nth-child(4){
-    background-color:#ADD8E6;
+    background-color:	#e3d898;
     color:white;
     padding-bottom: 3em;
 }
@@ -59,7 +72,10 @@
     position: relative;
 }
 
-
+.text-section > p {
+    margin-left: 2em;
+    margin-right: 2em;
+}
 
 .text-section > h2{
     font-family: Copperplate, Papyrus, fantasy;
@@ -69,19 +85,26 @@
 .text-section > a{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 2em;
+    width: auto;
     color: whitesmoke;
     margin-left: 1em;
 }
 
 .certification .text-section > h2{
     font-size: 3em;
+    color: #000000;
 }
 .text-section ul > li {
     font-size: 1.5em;
+    color: #000000;
 }
 .text-section > ul{
     line-height: 3;
     
+}
+
+.cv{
+    background-color: #e3d898;
 }
 
 .text-section p > a{
@@ -96,23 +119,21 @@
 }
 .image-section > img{
     border-radius: 2em;
+    margin: 2em;
     width: 100%;
     height: 100%;    
 }
 
-.berkeley-section{
-    width: auto;
-    height: 30em;
-    mix-blend-mode: normal;
-    margin: 3em 1em;
+.desc-berkeley{
+    height: 100%;
+    max-width: 50%;
+
 }
-.berkeley-section > img{
-    border-radius: 2em;
+.desc-berkeley > p{
     width: 100%;
-    height: 100%;    
-}
-.section .berkeley-section:first-child {
-    height: 35em;    
+    height: auto;
+    padding-top: 3em;
+
 }
 
 
@@ -148,6 +169,8 @@
     margin-left: -1em;
     top:1em;
 }
+
+
 
 @media screen and (max-width: 1100px) {
     .contact-text{
@@ -219,17 +242,6 @@
         font-size: 0.6em;
     }
 
-    .berkeley-section{
-        width: auto;
-        height: 15em;
-        mix-blend-mode: normal;
-        margin: 3em 1em;
-    }
-    .berkeley-section > img{
-        border-radius: 2em;
-        width: 100%;
-        height: 100%;    
-    }
 
     .section .text-section > ul{
         line-height: 3;
@@ -277,22 +289,11 @@ li::before{
     background-color: transparent;
   }
   .line2{
-    background-color: #02323e;
+    background-color: white;
   }
-.desc-berkeley{
-    height: 100%;
-    margin-top: 5em;
-    width: 70%;
-    flex-direction: column;
 
-}
-.desc-berkeley > p{
-    width: 100%;
-    height: auto;
-}
 
-.section .moicmaxime{
-    opacity: 0;
-    overflow: hidden;
-    height: 100vh;
-}
+
+
+
+
