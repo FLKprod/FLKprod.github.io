@@ -53,3 +53,6 @@ function toggleMenu() {
         }
     });
 }
+
+const menuButton = document.querySelector('.menu-mobile');
+menuButton.addEventListener('click', toggleMenu);
