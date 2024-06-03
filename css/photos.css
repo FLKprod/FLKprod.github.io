@@ -177,7 +177,7 @@ body.mode-nuit .photos-container > .section{
     transition: opacity 0.5s ease-in-out;
 }
 
-.Voyages:hover , .Sports:hover{
+.Voyages:hover , .Sports:hover, .All:hover{
     opacity: 1;
     transition: all 1s;
 }
@@ -205,8 +205,14 @@ body.mode-nuit .photos-container > .section{
 
     .menu_carrousels{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
+    }
+    .Voyages,.All,.Sports{
+        margin: 0;
+    }
+    .citation{
+        margin: 5em 0;
     }
 }

@@ -106,7 +106,7 @@ async function toggleTeamInfo(id) {
         
         intro2lbnl.appendChild(text_intro2lbnl);
     
-        var image_intro2lbnl = createElementWithClass('div','image-section');
+        var image_intro2lbnl = createElementWithClass('div','image-section','portrait');
         image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
         intro2lbnl.appendChild(image_intro2lbnl);
         presentationContainer.appendChild(intro2lbnl);
@@ -125,14 +125,14 @@ async function toggleTeamInfo(id) {
         text_certifications.appendChild(listescertifications);
         certifications.appendChild(text_certifications);
 
-        var image_certifications = createElementWithClass('div','image-section');
+        var image_certifications = createElementWithClass('div','image-section','paysage');
         image_certifications.appendChild(createImage('Photos/CCNA.png'));
         certifications.appendChild(image_certifications);
         presentationContainer.appendChild(certifications);
 
         var cv_section = createElementWithClass('div','section','cv');
 
-        var image_certifications = createElementWithClass('div','image-section');
+        var image_certifications = createElementWithClass('div','image-section','portrait');
         image_certifications.appendChild(createImage('Photos/textures/lence.JPG'));
         cv_section.appendChild(image_certifications);
 
@@ -206,8 +206,8 @@ async function toggleTeamInfo(id) {
                 trigger: ".certifications",
                 scrub: true,
 
-                start: "center center", // Ajuster la valeur de départ
-                end: "bottom top", // Ajuster la valeur de fin
+                start: "top 50%", // Ajuster la valeur de départ
+                end: "bottom 100%", // Ajuster la valeur de fin
                 anticipatePin: 1,
             }});
 
@@ -219,8 +219,8 @@ async function toggleTeamInfo(id) {
         var tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".cv", // Déclencher lorsque la quatrième div est visible
-                start: "0%", // Ajuster la valeur de départ
-                end: "90%", // Ajuster la valeur de fin
+                start: "top 50%", // Ajuster la valeur de départ
+                end: "bottom 100%", // Ajuster la valeur de fin
                 scrub: true, // Pour une animation fluide
             }
         });
@@ -234,21 +234,15 @@ async function toggleTeamInfo(id) {
         // Parcourez chaque élément et appliquez l'animation
         largeElements.forEach(large => {
             gsap.to(large, {
-                y: () => (window.innerHeight - large.clientHeight - 1000),
+                y: () => (window.innerHeight - large.clientHeight - 800),
                 ease: "none",
                 scrollTrigger: {
-                    trigger: '.berkeley ',
+                    trigger: '.berkeley, .desc-berkeley ',
                     pin: true,
                     start: "top top",
-                    end: () => "+=75%",
+                    end: () => "bottom 100%",
                     scrub: 0.5,
                     invalidateOnRefresh: true,
-                    markers: {
-                        startColor: "transparent", // Couleur du marqueur de début
-                        endColor: "transparent",   // Couleur du marqueur de fin
-                        triggerColor: "transparent", // Couleur du marqueur de déclenchement
-                        fontSize: "0px"           // Taille de la police des marqueurs
-                    },
                     anticipatePin: 1,
                 }
             });
@@ -364,8 +358,8 @@ async function toggleTeamInfo(id) {
                         ease: "power2.out",
                         scrollTrigger: {
                             trigger: element,
-                            start: "top 75%",   // Commencer l'animation lorsque le haut de l'élément atteint 80% de la hauteur de la fenêtre
-                            end: "bottom 60%",  // Arrêter l'animation lorsque le bas de l'élément atteint 20% de la hauteur de la fenêtre
+                            start: "bottom 75%",   // Commencer l'animation lorsque le haut de l'élément atteint 80% de la hauteur de la fenêtre
+                            end: "top 25%",  // Arrêter l'animation lorsque le bas de l'élément atteint 20% de la hauteur de la fenêtre
                             scrub: true         // Animation lissée
                         }
                     }
@@ -402,7 +396,6 @@ async function toggleTeamInfo(id) {
             /*
             { name: "TowerDefender", videoLink: "", imageSrc: "",desc:"" },
             { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/textures/logoneg.png",desc:""},
-            { name: "FUEGO in Berkeley", videoLink: "wdwd", imageSrc: "Photos/projets/FUEGO.png",desc:"En 2023, j'ai eu l'opportunite et l'honneur d'effectuer un stage en tant que developpeur informatique a <strong>Berkeley</strong>, au sein des <strong>Lawrence Berkeley National Laboratory</strong> (LBNL). Ma mission portait sur le projet <strong>FUEGO</strong> (<a href='https://fuego.ssl.berkeley.edu/' target='_blank'>Fire Urgency Estimator in Geostationary Orbit</a>). Cette expérience captivante a été la concrétisation de mon rêve américain. Travailler au cœur de l'innovation technologique à Berkeley m'a offert une expérience unique, me permettant de contribuer au développement d'un outil de surveillance avancé pour estimer l'urgence des incendies. FUEGO exploite des technologies de pointe en télédétection pour évaluer en temps réel l'intensité et la propagation des incendies, combinant ces données avec des informations météorologiques et des modèles prédictifs. L'objectif est d'estimer rapidement la gravité des incendies, facilitant ainsi une réponse plus rapide et plus efficace des équipes d'intervention."},
             { name: "ToDoList pour IOs", videoLink: "", imageSrc: "",desc:"" },*/
             { name: "Carte intéractive", github:"https://github.com/FLKprod/MapEmblem", videoLink: "", imageSrc: "",desc:"Carte interactive pour les lieux partenaires de EMBLEM Dijon" },
             { name: "LanbdaCash", github:"https://github.com/FLKprod/CloudProject", videoLink: "Photos/projets/landbacash.mp4", imageSrc: "Photos/projets/landbacash.png",desc:"Application pour tester un programme et l'executer avec differentes valeurs de RAM pour connaitre et comparer les prix d'execution d'AWS ( Amazon Web Services )." }
