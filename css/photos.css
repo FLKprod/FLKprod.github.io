@@ -215,4 +215,14 @@ body.mode-nuit .photos-container > .section{
     .citation{
         margin: 5em 0;
     }
+
+    .carousel-container > i:first-of-type{
+        transform: translateY(-50%) translateX(calc(-50% + 1.5em));
+
+    }
+    
+    .carousel-container > i:last-of-type{
+        transform: translateY(-50%) translateX(calc(50% - 1.5em)); 
+
+    }
 }

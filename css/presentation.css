@@ -288,7 +288,7 @@
     }
 
     .berkeley{
-        width: 100%;
+        width: 100w !important;
         height: 100vh !important;
     }
     .desc-berkeley{
