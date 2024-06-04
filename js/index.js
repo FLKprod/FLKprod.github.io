@@ -205,7 +205,7 @@ async function toggleTeamInfo(id) {
             scrollTrigger: {
                 trigger: ".certifications",
                 scrub: true,
-                start: "top top", // Ajuster la valeur de départ
+                start: "top -25%", // Ajuster la valeur de départ
                 end: "bottom top", // Ajuster la valeur de fin
                 anticipatePin: 1,
             }
