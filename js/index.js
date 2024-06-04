@@ -205,11 +205,11 @@ async function toggleTeamInfo(id) {
             scrollTrigger: {
                 trigger: ".certifications",
                 scrub: true,
-
-                start: "top 50%", // Ajuster la valeur de départ
-                end: "bottom 100%", // Ajuster la valeur de fin
+                start: "top top", // Ajuster la valeur de départ
+                end: "bottom top", // Ajuster la valeur de fin
                 anticipatePin: 1,
-            }});
+            }
+        });
 
             tl.from(".certifications h2,.certifications li, .certifications img", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
             .from(".line1", {scaleX: 0, ease: "none"}, 0)
@@ -219,8 +219,8 @@ async function toggleTeamInfo(id) {
         var tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".cv", // Déclencher lorsque la quatrième div est visible
-                start: "top 50%", // Ajuster la valeur de départ
-                end: "bottom 100%", // Ajuster la valeur de fin
+                start: "center 25%", // Ajuster la valeur de départ
+                end: "bottom top", // Ajuster la valeur de fin
                 scrub: true, // Pour une animation fluide
             }
         });
@@ -234,19 +234,20 @@ async function toggleTeamInfo(id) {
         // Parcourez chaque élément et appliquez l'animation
         largeElements.forEach(large => {
             gsap.to(large, {
-                y: () => (window.innerHeight - large.clientHeight - 800),
+                y: () => (window.innerHeight - large.clientHeight - 500),
                 ease: "none",
                 scrollTrigger: {
-                    trigger: '.berkeley, .desc-berkeley ',
+                    trigger: '.berkeley',
                     pin: true,
                     start: "top top",
-                    end: () => "bottom 100%",
+                    end: () => `bottom ${document.querySelector('.berkeley').offsetHeight - large.clientHeight}px`,
                     scrub: 0.5,
                     invalidateOnRefresh: true,
                     anticipatePin: 1,
                 }
             });
         });
+
   
     }
     else if(id === 'photos'){
