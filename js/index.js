@@ -234,7 +234,7 @@ async function toggleTeamInfo(id) {
         // Parcourez chaque élément et appliquez l'animation
         largeElements.forEach(large => {
             gsap.to(large, {
-                y: () => (window.innerHeight - large.clientHeight - 500),
+                y: () => (window.innerHeight - large.clientHeight - 700),
                 ease: "none",
                 scrollTrigger: {
                     trigger: '.berkeley',
