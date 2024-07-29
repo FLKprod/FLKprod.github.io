@@ -102,7 +102,7 @@ async function toggleTeamInfo(id) {
 
         text_intro2lbnl.appendChild(createText('p',"En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative. Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société. Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels."));
 
-        text_intro2lbnl.appendChild(createText('p',"Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel. Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement."));
+        text_intro2lbnl.appendChild(createText('p',"Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel. Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.\n\n\n"));
         
         intro2lbnl.appendChild(text_intro2lbnl);
     
