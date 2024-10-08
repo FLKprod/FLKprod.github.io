@@ -181,8 +181,8 @@ export function createLineSpan(number) {
 
 export function createGitHubLink(projectUrl) {
     // Créer une nouvelle balise <p>
-    const paragraph = document.createElement('p');
-
+    var paragraph = createElementWithClass('div','githublink');
+    paragraph.appendChild(createText('p',"Le lien du Github si vous voulez"));
     // Créer une nouvelle balise <a>
     const link = document.createElement('a');
     link.href = projectUrl;
@@ -195,6 +195,7 @@ export function createGitHubLink(projectUrl) {
     img.alt = 'GitHub Logo';
     img.width = 32; // Largeur de l'image (ajuster selon vos besoins)
     img.height = 32; // Hauteur de l'image (ajuster selon vos besoins)
+    img.style.marginLeft='10px';
     img.style.cursor = 'pointer'; // Curseur de la souris en forme de main pour indiquer que c'est cliquable
 
     // Ajouter l'image à la balise <a>

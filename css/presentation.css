@@ -1,4 +1,4 @@
-/*---------------------------------------------- PRESENTATION ----------------------------------------------------------------------*/
+/*---------------------------------------------- PRESENTATION & A PROPOS DE MOI ----------------------------------------------------------*/
 :root {
     --background-day: #ffffff;
     --text-color-day: #000000;
@@ -6,10 +6,12 @@
     --text-color-night: #ffffff;
 }
 
-.presentation-container{
+/********************** A PROPOS DE MOI CSS ********************/
+.aproposdemoi-container{
     position: relative;
 }
-.presentation-container > p {
+
+.aproposdemoi-container > p {
     margin-left: 5em;
     font-family: 'Garamond',sans-serif;
     font-size: 1em;
@@ -19,7 +21,6 @@
 }
 
 .section {
-
     background-color: var(--background-day);
     color: var(--text-color-day);
     color: black;
@@ -31,7 +32,7 @@
     height: 100vh;
 }
 
-
+/*1ere section*/
 .moicmaxime{
     display: flex;
     background-color: #eeeeee;
@@ -39,14 +40,11 @@
     height: 100vh;
 }
 
-
+/*2e section*/
 .berkeley{
     background-color: #4f0341;
     color: white;
 }
-
-
-
 
 .section:nth-child(2){
     color:white;
@@ -137,6 +135,22 @@
 }
 
 
+.section-presentation{
+    width: 100%;
+    height: 30em;
+    margin-left: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.section-presentation > img {
+    width: auto;
+    height: 100%;
+}
+.section-presentation > h2 {
+    width: 100%;
+    right: 0;
+}
 
 
 
@@ -185,6 +199,18 @@
     background-color: white;
   }
 
+.githublink{
+    display: flex;
+    font-size: small;
+    align-items: center;
+    margin-bottom: 10em;
+
+}
+/************************************************************************/
+.espace-temporaire{
+    height: 10em;
+}
+/************************************************************************/
 
 @media screen and (max-width: 1100px) {
     .contact-text{
@@ -192,33 +218,33 @@
         flex-direction: column;
     }
 
-    .presentation-container > h2 {
+    .aproposdemoi-container > h2 {
         padding: 0.7em;
         font-size: 1.1em;
         text-align: center;
     }
 
-    .presentation-container > h3 {
+    .aproposdemoi-container > h3 {
         padding: 0.7em;
         font-size: 1.5em;
         text-align: center;
     }
 
-    .presentation-container > h4 {
+    .aproposdemoi-container > h4 {
         padding: 0.7em;
         font-size: 1.3em;
         border-radius: 1.5em;
         margin-left: 3em;
     }
 
-    .presentation-container > img {
+    .aproposdemoi-container > img {
         height: 10em;
         width: auto;
         margin-right: 1em;
         margin-bottom: 1em;
     }
 
-    .presentation-container > p {
+    .aproposdemoi-container > p {
         font-size: 0.8em;
     }
 
@@ -252,6 +278,8 @@
         margin: 0 2em;
       
     }
+
+
 
     .line1{
         display: none;
@@ -308,6 +336,9 @@
         margin: 0;
     }
     
+    .section-presentation{
+        height: 15em;
+    }
     
 }
 

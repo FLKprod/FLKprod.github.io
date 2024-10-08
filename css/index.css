@@ -9,7 +9,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Garamond';
     min-height: 100vh;
     height: 100%;
     background-color: var(--background-day);
@@ -127,8 +127,9 @@ button:active {
     width: 2em;
     height: 2em;
     border-radius: 50%;
-    background-color: #4f0341;
-    color: #fff;
+    background-color: black;
+    color:white;
+    opacity: 0.7;
     font-size: 2em;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -140,8 +141,8 @@ button:active {
 }
 
 #backToTopButton i {
-    margin-left: -0.05em;
-    transform: translateY(-0.15em);
+    margin: 0;
+    transform: translateY(-0.2em);
 }
 
 

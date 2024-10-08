@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -23,7 +23,6 @@
         <div class="up">
             <div class="menu">
                 <img alt="Logo" id="logo">
-                <p>🚧 Ce site est actuellement en construction 🚧 </p>
                 <label class="switch">
                     <input id="daynight" type="checkbox" checked>
                     <span class="slider round"></span>
@@ -35,6 +34,7 @@
                     <button id="projets">Projets</button>
                     <button id="videos">Multimedia</button>
                     <button id="photos">Photographies</button>
+                    <button id="aproposdemoi">A Propos de moi</button>
                 </div>
                 <div class="social-networks">
                     <button onclick="window.location.href='mailto:maxime.falkowski@free.fr';">
@@ -55,7 +55,7 @@
                 </div>
                 </div>
             <div class="logo">
-                <img src="Photos/textures/baniere.JPG" alt="Logo">
+                <img id="baniere" src="Photos/textures/baniere.png">
             </div>
         </div>
         <div class="center">
@@ -67,6 +67,8 @@
             </div>
             <div id="photos" class="photos-container">
             </div>
+            <div id="aproposdemoi" class="aproposdemoi-container">
+            </div>
         </div>
         <div class="down">
             <p>Un site créé par moi-même</p>
@@ -74,7 +76,7 @@
             <p><strong>&copy; 2024 SafeConnect. Tous droits réservés.</strong></p>
 
         </div>
-        <button id="backToTopButton"><i class="fa fa-arrow-up"></i></button>
+        <button id="backToTopButton"><i class="fa fa-angle-up"></i></button>
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>

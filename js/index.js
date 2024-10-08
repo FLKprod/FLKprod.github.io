@@ -4,7 +4,7 @@ import {createCategoryWithCarousel, createVideoCarousel, generateImagePaths} fro
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-const buttonIds = ['presentation', 'projets', 'videos', 'photos'];
+const buttonIds = ['presentation', 'projets', 'videos', 'photos','aproposdemoi'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
@@ -27,11 +27,13 @@ async function toggleTeamInfo(id) {
     }
 
     var presentationContainer = document.querySelector('.presentation-container');
+    var aproposdemoiContainer = document.querySelector('.aproposdemoi-container');
     var videosContainer = document.querySelector('.videos-container');
     var projetsContainer = document.querySelector('.projets-container');
     var photosContainer = document.querySelector('.photos-container');
-    presentationContainer.classList.remove('fade-in');
+    aproposdemoiContainer.classList.remove('fade-in');
     presentationContainer.innerHTML = '';
+    aproposdemoiContainer.innerHTML = '';
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
     photosContainer.innerHTML = '';
@@ -72,7 +74,34 @@ async function toggleTeamInfo(id) {
         videosContainer.appendChild(galerie);
         }
     else if(id=== 'presentation'){
+        gsap.from('.presentation-container',{scale:0,stagger:1, duration:1,stagger:1});
         presentationContainer.classList.add('fade-in');
+        
+        var intro2presentation = createElementWithClass('div','section-presentation');
+        var image2_presentation=createImage('Photos/textures/accueil2night.png');
+        image2_presentation.id='presentation-img-2';
+        intro2presentation.appendChild(image2_presentation);
+        intro2presentation.appendChild(createText('h2',"Bienvenue. Enjoy"));
+        presentationContainer.appendChild(intro2presentation);
+        var espacetemporaire = createElementWithClass('div','espace-temporaire');
+        presentationContainer.appendChild(espacetemporaire);
+
+        /*
+        gsap.to(".line4", {
+            scaleX: 1,
+            ease: "none",
+            scrollTrigger: {
+            trigger: ".section-presentation",
+            start: "top center",
+            end: "+==100%",
+            scrub: 1,
+            anticipatePin: 1,
+            }
+        });
+        */
+    }
+    else if(id=== 'aproposdemoi'){
+        aproposdemoiContainer.classList.add('fade-in');
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
@@ -81,12 +110,12 @@ async function toggleTeamInfo(id) {
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
-        text_intro2presentation.appendChild(createText('p',"J'ai 22 ans et j'étudie en école d'ingénieur en sécurité informatique à Dijon. Actuellement, je suis en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
+        text_intro2presentation.appendChild(createText('p',"J'ai 23 ans et je suis stagiaire en tant que consultant GRC SAP chez WIZYA, en terres parisiennes.j'ai étudié en école d'ingénieur en sécurité informatique à Dijon. J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
         text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant. C'est sur ce site que vous trouverez toutes mes créations."));
         text_intro2presentation.appendChild(createLineSpan(0));
         
         intro2presentation.appendChild(text_intro2presentation);
-        presentationContainer.appendChild(intro2presentation);
+        aproposdemoiContainer.appendChild(intro2presentation);
 
 
 
@@ -109,7 +138,7 @@ async function toggleTeamInfo(id) {
         var image_intro2lbnl = createElementWithClass('div','image-section','portrait');
         image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
         intro2lbnl.appendChild(image_intro2lbnl);
-        presentationContainer.appendChild(intro2lbnl);
+        aproposdemoiContainer.appendChild(intro2lbnl);
 
 
 
@@ -121,14 +150,18 @@ async function toggleTeamInfo(id) {
         listescertifications.appendChild(createText('li',"<strong>CCNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
         listescertifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
         listescertifications.appendChild(createText('li',"Network Security By Cisco"));
+        listescertifications.appendChild(createText('li',"Network Defense By Cisco"));
+        listescertifications.appendChild(createText('li',"Fortinet Certified Associate Cybersecurity"));
+        listescertifications.appendChild(createText('li',"Fortinet Certified Fundamentals Cybersecurity"));
         listescertifications.appendChild(createLineSpan(1));
         text_certifications.appendChild(listescertifications);
         certifications.appendChild(text_certifications);
 
         var image_certifications = createElementWithClass('div','image-section','paysage');
         image_certifications.appendChild(createImage('Photos/CCNA.png'));
+        image_certifications.appendChild(createImage('Photos/Fortinet.png'));
         certifications.appendChild(image_certifications);
-        presentationContainer.appendChild(certifications);
+        aproposdemoiContainer.appendChild(certifications);
 
         var cv_section = createElementWithClass('div','section','cv');
 
@@ -139,16 +172,16 @@ async function toggleTeamInfo(id) {
         var text_cv_section = createElementWithClass('div','text-section');
         
         text_cv_section.appendChild(createText('h2',"Plus d'infos sur mon profil ?"));
-        text_cv_section.appendChild(createText('p',"Ci-joint mon CV en anglais et en français"));
+        text_cv_section.appendChild(createText('p',"Vous pouvez consulter et télécharger mon CV dans les deux langues, anglaise et française, en cliquant sur les liens ci-dessous."));
         
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/Resume_Maxime_Falkowski.pdf"));
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
 
-        text_cv_section.appendChild(createText('p',"<strong>PS :</strong> Je suis actuellement à la <strong>recherche</strong> d'un <strong>stage</strong> en <strong>cybersécurité</strong> à partir de <strong>septembre 2024</strong>. Si vous avez des opportunités à me proposer, je suis preneur !"));
-        text_cv_section.appendChild(createLineSpan(2));
+        
+        
         cv_section.appendChild(text_cv_section);
 
-        presentationContainer.appendChild(cv_section);
+        aproposdemoiContainer.appendChild(cv_section);
 
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
         // Création de l'animation pour la ligne
@@ -214,7 +247,7 @@ async function toggleTeamInfo(id) {
             tl.from(".certifications h2,.certifications li, .certifications img", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
             .from(".line1", {scaleX: 0, ease: "none"}, 0)
             .to(".certifications", {backgroundColor: "	#e3d898"}, 0) // Changement de couleur
-            .to(".berkeley", {backgroundColor: "	#e3d898"}, 0); // Changement de couleur pour presentation-container
+            .to(".berkeley", {backgroundColor: "	#e3d898"}, 0); // Changement de couleur pour aproposdemoi-container
         
         var tl2 = gsap.timeline({
             scrollTrigger: {

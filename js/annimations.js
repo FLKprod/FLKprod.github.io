@@ -5,9 +5,20 @@ gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:3});
 gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:2});
 gsap.from('.menu-mobile',{opacity:0, x:"-20rem",duration:1,delay:2});
 gsap.from('#introGif',{scale:0,stagger:1, duration:0.4,yoyo: true,repeat: 1});
+/*
+var tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".section-presentation", // Déclencher lorsque la quatrième div est visible
+        start: "top center", // Ajuster la valeur de départ
+        end: "center bottom", // Ajuster la valeur de fin
+        scrub: true, // Pour une animation fluide
+    }
+});
 
-
-
+// Ajouter l'animation pour la ligne
+tl2.to(".line4", { scaleX: 1, ease: "none" })
+.to(".section-presentation", { backgroundColor: "red"}, 0);
+*/
 var introGif = document.getElementById("introGif");
 var mainContent = document.getElementById("mainContent");
 setTimeout(function() {
@@ -22,13 +33,19 @@ setTimeout(function() {
 
 const daynightCheckbox = document.getElementById('daynight');
 const logo = document.getElementById('logo');
+const baniere = document.getElementById('baniere');
+const photo2_presentation = document.getElementById('presentation-img-2');
 function toggleModeNuit() {
     if (daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
         logo.src = "Photos/textures/logo.png";
+        baniere.src = "Photos/textures/banierenight.png";
+        photo2_presentation.src = "Photos/textures/accueil2night.png";
     } else {
         document.body.classList.remove('mode-nuit');
         logo.src = "Photos/textures/logoneg.png";
+        baniere.src = "Photos/textures/baniereday.png";
+        photo2_presentation.src = "Photos/textures/accueil2day.png";
     }
 }
 
