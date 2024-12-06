@@ -39,13 +39,9 @@ function toggleModeNuit() {
     if (daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
         logo.src = "Photos/textures/logo.png";
-        baniere.src = "Photos/textures/banierenight.png";
-        photo2_presentation.src = "Photos/textures/accueil2night.png";
     } else {
         document.body.classList.remove('mode-nuit');
         logo.src = "Photos/textures/logoneg.png";
-        baniere.src = "Photos/textures/baniereday.png";
-        photo2_presentation.src = "Photos/textures/accueil2day.png";
     }
 }
 

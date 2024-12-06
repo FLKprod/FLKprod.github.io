@@ -1,15 +1,15 @@
 :root {
     --background-day: #ffffff;
     --text-color-day: #000000;
-    --background-night: #000000;
+    --background-night: #777777;
     --text-color-night: #ffffff;
 }
 
 
 body {
     margin: 0;
+    font-family: 'FLKpolicy',  sans-serif;
     padding: 0;
-    font-family: 'Garamond';
     min-height: 100vh;
     height: 100%;
     background-color: var(--background-day);
@@ -31,35 +31,20 @@ html{
     margin: 0;
     padding: 0;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
 }
 
-
-
-.bold-text {
-    font-weight: bold;
-}
+/* Entête de site */
 
 button {
     padding: 0.6em 0.6em;
     font-size: 1em;
     cursor: pointer;
     border: none;
+    font-family: 'FLKpolicy',  sans-serif;
     border-radius: 5px;
     margin-left: 1em;
 }
-
-button:hover {
-    background-color: #4f0341;
-    color: white;
-    border-radius: 1em;
-}
-
-button:active {
-    background-color: #4CAF50;
-    color: white;
-}
-
 
 .fade-in {
     animation: fadeIn 1s ease-out forwards;
@@ -68,10 +53,13 @@ button:active {
 .None{
     display: none;
 }
+
 .up, .center, .down {
     text-align: center;
     width: 100%;
 }
+
+/****************************** bar de site en bas **************************************/
 
 .down{
     background-color: whitesmoke;
@@ -82,25 +70,52 @@ button:active {
     line-height: 2;
 }
 
-
-
-
-.logo >img{
-    background-color: whitesmoke;
-    width: 100%;
-    height: auto;
+.down-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacement entre les éléments */
 }
 
-.logo{
+.down-menu p {
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0 5px; /* Ajoute un léger espacement autour des textes */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+}
+
+.down-menu p:hover {
+    cursor: pointer;
+}
+.down-menu p:not(:last-child)::after {
+    content: "|"; /* Insère la barre */
+    position: absolute;
+    right: -10px; /* Ajuste l'espacement entre le texte et la barre */
+    color: #333; /* Couleur de la barre */
+}
+
+/********************************************************************************/
+.image-entete{
+    margin: 0 3em;
+}
+.text-entete{
+    margin-left: 3em;
+}
+.image-entete >img{
+    background-color: transparent;
+    height: 100%;
+    max-height: 20em;
+    width: 100%;
+}
+
+.entete{
     display: flex;
+
     align-items:center;
     justify-content: space-between;
 }
 
 
 @media screen and (max-width: 1100px) {
-
-
     body{
         justify-content: center;
     }
@@ -181,10 +196,6 @@ button:active {
 }
 
 
-.container {
-    display: flex;
-    flex-direction: column;
-}
 
 .element {
     cursor: pointer;
@@ -204,9 +215,6 @@ button:active {
     background-color: #fff;
     z-index: 2;
 }
-
-
-
 
 /**************************** MODE NUIT *******************************/
 
@@ -258,4 +266,14 @@ body.mode-nuit .berkeley{
 body.mode-nuit .cv{
     background-color: #e3d898;
     color: var(--text-color-night);
+}
+
+
+/* Police d'écriture personnalisée */
+
+@font-face {
+    font-family: 'FLKpolicy';
+    src: url('css/flkpolicy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }

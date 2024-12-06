@@ -1,7 +1,12 @@
-import {createLineSpan,createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createGitHubLink, createOption, createVideo, createOverlayImage, createImageElement, createVideoWithOverlay, createVideoElement, updateVideoElement, updateImageElement } from './createElements.js';
+import {createLineSpan,createImage, createText, createDivImage, createIconWithLink, createElementWithClass, createGitHubLink, createImageElement, createVideoWithOverlay, updateVideoElement, updateImageElement } from './createElements.js';
 import {createCategoryWithCarousel, createVideoCarousel, generateImagePaths} from './carroussel.js';
 
 gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+/************************** GESTION DU MENU *********************************************/
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 const buttonIds = ['presentation', 'projets', 'videos', 'photos','aproposdemoi'];
@@ -11,6 +16,8 @@ buttonIds.forEach(buttonId => {
         toggleTeamInfo(buttonId);
     });
 });
+
+/***************************************************************************************/
 toggleTeamInfo('presentation');
 
 
@@ -76,12 +83,18 @@ async function toggleTeamInfo(id) {
     else if(id=== 'presentation'){
         gsap.from('.presentation-container',{scale:0,stagger:1, duration:1,stagger:1});
         presentationContainer.classList.add('fade-in');
-        
+    
         var intro2presentation = createElementWithClass('div','section-presentation');
-        var image2_presentation=createImage('Photos/textures/accueil2night.png');
-        image2_presentation.id='presentation-img-2';
-        intro2presentation.appendChild(image2_presentation);
-        intro2presentation.appendChild(createText('h2',"Bienvenue. Enjoy"));
+            var image_intro2presentation = createElementWithClass('div','image-section-presentation');
+                var image2_presentation=createImage('Photos/textures/logourl.png');
+                image2_presentation.id='presentation-img-2';
+                image_intro2presentation.appendChild(image2_presentation);
+            intro2presentation.appendChild(image_intro2presentation);
+            var text_intro2presentation = createElementWithClass('div','text-section-presentation');
+                text_intro2presentation.appendChild(createText('h2',"Bienvenue"));
+                text_intro2presentation.appendChild(createText('p',"Découvrez mon univers dédié à la photographie, à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique, je partage ici mes réalisations, mes inspirations, et mes collaborations."));
+                text_intro2presentation.appendChild(createText('h2',"Enjoy."));
+            intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
         var espacetemporaire = createElementWithClass('div','espace-temporaire');
         presentationContainer.appendChild(espacetemporaire);
@@ -105,12 +118,12 @@ async function toggleTeamInfo(id) {
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/Photo_CV.jpg'));
+        image_intro2presentation.appendChild(createImage('Photos/Maxime_WIZYA.jpg'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
-        text_intro2presentation.appendChild(createText('p',"J'ai 23 ans et je suis stagiaire en tant que consultant GRC SAP chez WIZYA, en terres parisiennes.j'ai étudié en école d'ingénieur en sécurité informatique à Dijon. J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
+        text_intro2presentation.appendChild(createText('p',"J'ai 23 ans et je suis consultant GRC SAP chez WIZYA, en terres parisiennes.j'ai étudié en école d'ingénieur en sécurité informatique à Dijon. J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec. J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique."));
         text_intro2presentation.appendChild(createText('p',"En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant. C'est sur ce site que vous trouverez toutes mes créations."));
         text_intro2presentation.appendChild(createLineSpan(0));
         
