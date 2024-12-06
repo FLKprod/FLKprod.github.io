@@ -273,7 +273,7 @@ body.mode-nuit .cv{
 
 @font-face {
     font-family: 'FLKpolicy';
-    src: url('css/flkpolicy.ttf') format('truetype');
+    src: url('flkpolicy.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
