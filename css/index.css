@@ -64,17 +64,53 @@ button {
 .down{
     background-color: whitesmoke;
     color: var(--text-color-day);
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 0;
     font-size: 0.8em;
-    line-height: 2;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: row;
+    height: 10em;
 }
 
 .down-menu {
     display: flex;
-    align-items: center;
-    justify-content: center;
+
+    text-align: left;
     gap: 10px; /* Espacement entre les éléments */
+}
+
+.down-menu > p:hover{
+    color: #4f0341;
+}
+
+.img-down{
+    width: 50%;
+    height: 100%;
+    text-align: right;
+    margin-right: 3em;
+    
+}
+
+.img-down > img{
+    width: 10em;
+    height: auto;
+    justify-content: right;
+    align-items:end;
+}
+
+.hr{
+    border-left: 2px solid black;
+    height: 10em;
+}
+
+.text-down{
+    width: 50%;
+    height: 100%;
+    margin-left: 2em;
+    text-align: left;
+    align-items: left;
+    justify-content: center;
+
 }
 
 .down-menu p {
@@ -116,15 +152,14 @@ button {
 
 
 @media screen and (max-width: 1100px) {
-    body{
-        justify-content: center;
-    }
 
-    .up{
-        display: flex;
+
+    .up, .entete, .text-entete{
+
         flex-direction: column;
         align-items: center;
         margin-bottom: 2em;
+        margin-left: 0;
     }
 
     .down > p {

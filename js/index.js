@@ -52,7 +52,7 @@ async function toggleTeamInfo(id) {
 
         var intro2videos = createElementWithClass('div','section','section-videos');
 
-        var text_intro2videos = createElementWithClass('div','text-section');
+        var text_intro2videos = createElementWithClass('div','text-section','video-section');
         text_intro2videos.appendChild(createText('h2',"Mes contenus vidéos"));
         text_intro2videos.appendChild(createText('p',"Passionné par le montage vidéo et constamment à la recherche d'inspiration pour créer du contenu, je saute sur l'occasion de concrétiser une idée germeant dans mon esprit, à travers des vidéos captivantes et originales. Auparavant, je partageais mes créations sur mon compte Instagram <a href='https://www.instagram.com/flkprod_/' target='_blank'>@FLKPROD_</a>, qui est toujours actif à ce jour. Maintenant, c'est sur ce site que toutes mes créations seront postées. Vous pouvez consulter toutes mes creations dans la rubrique ci-dessous. <strong>Enjoy.</strong>"));
         intro2videos.appendChild(text_intro2videos);
@@ -86,7 +86,7 @@ async function toggleTeamInfo(id) {
     
         var intro2presentation = createElementWithClass('div','section-presentation');
             var image_intro2presentation = createElementWithClass('div','image-section-presentation');
-                var image2_presentation=createImage('Photos/textures/logourl.png');
+                var image2_presentation=createImage('Photos/textures/flkwhite.png');
                 image2_presentation.id='presentation-img-2';
                 image_intro2presentation.appendChild(image2_presentation);
             intro2presentation.appendChild(image_intro2presentation);
@@ -424,7 +424,7 @@ async function toggleTeamInfo(id) {
         gsap.from('.projets-container',{scale:0,stagger:1, duration:1,stagger:1});
         gsap.from('.menu3',{scale:0,stagger:1, duration:2,stagger:1});
         projetsContainer.classList.add('fade-in');
-        var intro2projects = createElementWithClass('div','section');
+        var intro2projects = createElementWithClass('div','section','video-section');
         var text_intro2projects = createElementWithClass('div','text-section','mes-projets');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
         text_intro2projects.appendChild(createText('p',"Étant en école d'ingénieurs et en maîtrise en cybersécurité, j'ai eu de nombreux projets informatiques à réaliser durant toute ma scolarité. Certains ne sont que des créations que j'ai réalisées par passion pour le code. <strong>Enjoy.</strong>"));
