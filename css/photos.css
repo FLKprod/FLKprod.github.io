@@ -1,19 +1,105 @@
-/*---------------------------------------- MES PHOTOS -----------------------------------------------------------*/
+.photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espace entre les carrousels */
+    gap: 1em; /* Espacement horizontal et vertical entre les carrousels */
+    width: 100%;
+}
 
-.photos-container{
+.section.photos {
+    flex: 1 1 calc(50% - 1em); /* Chaque section prend 50% de la largeur moins l'espacement */
+    width: 100%;
+    height: 56.25%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.photos-container > h2 {
-    font-size: 2em;
-    font-style: italic;
+.categorie_photos{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.citation {
-    font-family: Garamond, serif;
+.image-wrapper {
+    left: 0;
+    top: 0;
+    position: relative; /* Nécessaire pour que l'image se comporte correctement */
+  }
+
+.carousel-container {
+    margin: 0;
+    padding: 0;
+    display: inline-block; /* Adapte la taille du conteneur à l'image */
+  }
+  
+  .image-wrapper img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 10;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .text-overlay {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: background-color 0.5s ease; /* Transition douce */
+  }
+  .text-overlay:hover  {
+    background-color: rgba(0, 0, 0, 0);
+    color: transparent;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide */
+  }
+  
+  .fa-arrow-right:hover ~ .text-overlay, 
+  .fa-arrow-left:hover ~ .text-overlay {
+    background-color: rgba(0, 0, 0, 0);
+    color: transparent;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide */
+}
+  
+  .carousel-container i {
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    cursor: pointer;
+    z-index: 20;
+  }
+  
+  .carousel-container .fa-arrow-left {
+    left: 0;
+    z-index: 2;
+  }
+  
+  .carousel-container .fa-arrow-right {
+    right: 0;
+    z-index: 2;
+  }
+
+  .citation {
     letter-spacing: 0.08em;
     font-size: 1.5em;
     padding-top:1em;
@@ -42,187 +128,14 @@
     top:1em;
 }
 
-.section.photos{
-    height: 100%;
-}
 
-.categorie_photos {
-    position: relative;
-    height: auto;
-    width: calc(100%/3);
-    margin-top: 1em;
-    opacity: 0.7;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    background-color: black;
-}
+/* Gestion responsive */
+@media screen and (max-width: 768px) {
+    .section.photos {
+        flex: 1 1 100%; /* Chaque carrousel prend toute la largeur sur mobile */
+    }
 
-.categorie_photos:hover {
-    opacity: 1;
-}
-
-.categorie_photos:hover .categorie_photo {
-    transform: translateY(0);
-}
-
-
-.categorie_photos > img{
-    width: 30%;
-    height: auto;
-    border-radius: 1em;
-}
-
-.carousel-container{
-    width: 100%;
-    position: relative;
-
-}
-
-.carousel-container:hover{
-    opacity:1;
-    transition: all 1s;
-}
-
-.carousel-container > img{
-    width: 100%;
-}
-
-.carousel-container i {
-    padding: 1em;
-}
-
-.categorie_photos h2 {
-    position: absolute;
-    top: 50%;
-    color:white;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.carousel-container > i{
-    margin: 0;
-}
-
-.photos-container .section:nth-child(odd) > .categorie_photos{
-    margin-left: 2em;
-}
-.photos-container .section:nth-child(even) > .categorie_photos{
-    margin-right: 2em;
-}
-.carousel-container > i:first-of-type{
-    position: absolute;
-    top: 50%;
-    width: 1em;
-    height: 1em;
-    transform: translateY(-50%) translateX(calc(-50% + 2em));
-    left: 0;
-    color:white !important;
-    background-color: rgba(0, 0, 0, 0.7) !important;
-}
-
-.carousel-container > i:last-of-type{
-    position: absolute;
-    top: 50%;
-    right: 0;
-    width: 1em;
-    height: 1em;
-    transform: translateY(-50%) translateX(calc(50% - 2em)); 
-    color:white !important;
-    background-color: rgba(0, 0, 0, 0.7) !important;
-}
-
-.photos-container > .section{
-    background-color: var(--background-day);
-    color: var(--text-color-day);
-}
-
-body.mode-nuit .photos-container > .section{
-    background-color: var(--background-night);
-    color: var(--text-color-night);
-}
-.photos-container .image-section > img {
-    max-height: none;
-}
-
-.photos-container > .text-section{
-    font-family: 'Garamond',sans-serif;
-    font-size: 1em;
-    height: 100%;
-    flex: 1;
-    line-height: 3;
-    padding: 0 2em;
-}
-
-.photos-container > .text-section > h2{
-    font-family: Copperplate, Papyrus, fantasy;
-    font-size: 1.5em;
-}
-.photos-container >button{
-    width: 20%;
-    height: auto;
-}
-
-.menu_carrousels{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.Voyages , .Sports, .All{
-    width: 100%;
-    border: 1px solid white;
-    margin:0 1em;
-    height: 10em;
-    opacity: 0.6;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.Voyages:hover , .Sports:hover, .All:hover{
-    opacity: 1;
-    transition: all 1s;
-}
-
-
-@media screen and (max-width:1100px) {
-    .categories_photos{
+    .carousel-container {
         width: 100%;
-        margin-bottom: 5em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .categorie_photos {
-        width: auto;
-    }
-
-    .photos-container .section:nth-child(odd) > .categorie_photos{
-        margin-left: 0;
-    }
-    .photos-container .section:nth-child(even) > .categorie_photos{
-        margin-right: 0;
-    }
-
-    .menu_carrousels{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-    .Voyages,.All,.Sports{
-        margin: 0;
-    }
-    .citation{
-        margin: 5em 0;
-    }
-
-    .carousel-container > i:first-of-type{
-        transform: translateY(-50%) translateX(calc(-50% + 1.5em));
-
-    }
-    
-    .carousel-container > i:last-of-type{
-        transform: translateY(-50%) translateX(calc(50% - 1.5em)); 
-
     }
 }

@@ -36,11 +36,13 @@ const logo = document.getElementById('presentation-img-2');
 const baniere = document.getElementById('baniere');
 const photo2_presentation = document.getElementById('presentation-img-2');
 function toggleModeNuit() {
+    const logo = document.getElementById('presentation-img-2');
     if (daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
         logo.src = "Photos/textures/flkwhite.png";
     } else {
         document.body.classList.remove('mode-nuit');
+        console.log("mode nuit")
         logo.src = "Photos/textures/flkblack.png";
     }
 }

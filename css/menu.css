@@ -5,7 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding-right: 1em;
-    height: 7em;
+    height: 5em;
 }
 
 .select {
@@ -93,7 +93,7 @@
 }
 
 input:checked + .slider {
-    background-color: #c8c8c822;
+    background-color: #191919;
 }
 
 input:checked + .slider:before {

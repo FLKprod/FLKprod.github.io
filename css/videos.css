@@ -1,12 +1,14 @@
 /*----------------------------------------- MULTIMEDIAS ------------------------------------------------------*/
 
 .videos-container {
-    display: flex;
+    display: flex !important;
+    align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
     width: 100%;
+    height: 100%;
 }
+
 
 .videos-container > h2 {
     font-size: 2.5em;
@@ -29,44 +31,55 @@
 }
 
 .galerie-videos {
-    background-color: black !important;
-    width: 70%;
-    height: 50%;
-    background-size:cover;
-    background-position: center;
-    margin:3em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes égales */
+    gap: 20px; /* Espacement entre les vidéos */
+    margin:0 3em;
+    margin-bottom: 5em;
+    align-items: center;
 }
 
-
-
-.videos{
+.video-container {
+    border-radius: 1em;
+    aspect-ratio: 16 / 9;
     display: flex;
     flex-direction: column;
-    align-items:center;
-}
-
-
-.video {
-    background-color:white;
-    border: 1em solid #000;
-    border-right: 1em solid #000;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: whitesmoke 1px solid;
+    background: linear-gradient(to bottom, #4f0341, #d3a4ca, #4f0341);
+    color:white;
     
 }
 
-  .video > p {
-    color:black;
+.video-container:nth-child(odd) {
+    align-self: end; /* Placer les impaires en bas */
+}
+
+.video-container:nth-child(even) {
+    align-self: start; /* Placer les paires en haut */
+}
+
+
+  .video-container > p {
     font-size: 1em;
-    margin:3em 2em;
-    height: 3em;
+    margin:1em;
   }
 
-  .video > iframe {
-    margin-top: 4em;
-    width:48rem;
-    height:30rem;
-    border-color: #18181a ;
-    border-radius: 3em;
+  .video-container  > iframe {
+    width: calc(100% - 0.9em);
+    margin:0.3em;
+    aspect-ratio: 16 / 9; 
+    border-color: none ;
+    border-radius:1em;
+    transition: transform 0.3s ease, box-shadow 0.2s ease;
   }
+
+  .video-container:hover iframe {
+    transform: scale(1.02) ; /* Zoom au survol */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
 
   .videos-text {
     margin: 0 1em 1em 1em;

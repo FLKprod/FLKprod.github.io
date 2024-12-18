@@ -92,16 +92,12 @@ export function createOption(value, text, disabled, selected) {
 export function createVideo(link) {
     const iframeElement = document.createElement('iframe');
     iframeElement.src = link;
-    iframeElement.title = "YouTube video player";
     iframeElement.frameborder = "0";
     iframeElement.allow = "accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframeElement.allowfullscreen = true;
     iframeElement.loop = true;
+    iframeElement.className ="custom-video";
     return iframeElement;
-}
-
-export function createOverlayImage(src) {
-    return createImageElement('img', 'overlay-image', src, 'Image de coin bas droit');
 }
 
 export function createImageElement(tag, className, src, alt) {
@@ -112,13 +108,10 @@ export function createImageElement(tag, className, src, alt) {
     return element;
 }
 
-export function createVideoWithOverlay(link, imageSrc) {
+export function createVideoProject(link) {
     const videoContainer = createElementWithClass('div', 'video-projet');
     const videoElement = createVideo(link);
-    const overlayImage = createOverlayImage(imageSrc);
-    
     videoContainer.appendChild(videoElement);
-    videoContainer.appendChild(overlayImage);
 
     return videoContainer;
 }
@@ -182,7 +175,7 @@ export function createLineSpan(number) {
 export function createGitHubLink(projectUrl) {
     // Créer une nouvelle balise <p>
     var paragraph = createElementWithClass('div','githublink');
-    paragraph.appendChild(createText('p',"Le lien du Github si vous voulez"));
+    paragraph.appendChild(createText('p',"Ce projet informatique est d'ailleurs disponible sur mon Github, que vou pouvez consulter en cliquant ici ->"));
     // Créer une nouvelle balise <a>
     const link = document.createElement('a');
     link.href = projectUrl;
@@ -207,9 +200,6 @@ export function createGitHubLink(projectUrl) {
     return paragraph;
 }
 
-
-
-
 /************************** UPDATES  ******************************************/
 export function updateVideoElement(videoUrl) {
     var videoElement = document.querySelector('iframe');
@@ -223,19 +213,55 @@ export function updateVideoElement(videoUrl) {
 export function updatedescVideo(desc) {
     var descElement = document.querySelector('.desc-video');
     if (descElement){
-        console.log('desc trouvee' + descElement.textContent);
+        console.log('desc trouvee : ' + descElement.textContent);
     }
     descElement.textContent = desc;
 
 }
 
 export function updateImageElement(imageSrc) {
-    var divprojet = document.querySelector('.video-projet');
-    var imageElement = divprojet.querySelector('.overlay-image');
+    var divprojet = document.querySelector('.title-projet');
+    if (divprojet){
+        console.log('title trouvée');}
+    var imageElement = divprojet.querySelector('.img-projet');
     if (imageElement) {
-        console.log('Image trouvée ' + imageElement.src);
+        console.log('Image trouvée : ' + imageElement.src);
         imageElement.src = imageSrc;
     } else {
         console.log('Image non trouvée');
     }
+}
+
+export function updateLinkGithub(githublink){
+    var divprojet = document.querySelector('.githublink a');
+    if (divprojet){
+        divprojet.href = githublink
+        console.log('link changed');
+    } else {
+            console.log('GIT non trouvée');
+        }
+}
+
+
+export function createMenuItem(id, className, text, description, imageUrl) {
+    // Create menu item container
+    const menuItem = createElementWithClass("div", "menu-item", className);
+    menuItem.id = id;
+
+    // Set background image
+    menuItem.style.backgroundImage = `url(${imageUrl})`;
+
+    // Create text element
+    const textElement = createElementWithClass("div", "menu-text");
+    textElement.textContent = text;
+
+    // Create description element
+    const descElement = createElementWithClass("div", "menu-desc");
+    descElement.textContent = description;
+
+    // Append text and description to the menu item
+    menuItem.appendChild(textElement);
+    menuItem.appendChild(descElement);
+
+    return menuItem;
 }
