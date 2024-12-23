@@ -19,7 +19,6 @@
 .moicmaxime{
     display: flex;
     overflow: hidden;
-    height: 50vh !important;
 }
 
 .moicmaxime > .text-section p{
@@ -69,6 +68,7 @@
     line-height: 3;
     padding: 0 2em;
     position: relative;
+    height: 100%;
 }
 
 
@@ -148,7 +148,7 @@
 .image-section > img{
     border-radius: 2em;
     margin: 2em;
-    width: 100%;
+
  
 }
 

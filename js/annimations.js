@@ -39,11 +39,11 @@ function toggleModeNuit() {
     const logo = document.getElementById('presentation-img-2');
     if (daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
-        logo.src = "Photos/textures/flkwhite.png";
+        logo.src = "Photos/logos/flkwhite.png";
     } else {
         document.body.classList.remove('mode-nuit');
         console.log("mode nuit")
-        logo.src = "Photos/textures/flkblack.png";
+        logo.src = "Photos/logos/flkblack.png";
     }
 }
 

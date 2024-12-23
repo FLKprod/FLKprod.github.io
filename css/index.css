@@ -112,7 +112,7 @@ button {
 
 }
 
-.down-menu button {
+.down-menu button, body.mode-nuit > .down-menu button {
     background-color: transparent;
     padding:0;
     margin: 0; /* Supprime les marges par défaut */
@@ -125,7 +125,7 @@ button {
 }
 
 .down-menu{
-    height: 2em !important;
+    height: 1em !important;
 }
 .down-menu button:not(:last-child)::after {
     content: "|"; /* Insère la barre */
@@ -293,7 +293,12 @@ body.mode-nuit .entete {
     color: white;
 }
 
-body.mode-nuit .menu >button {
+body.mode-nuit .menu > button {
+    background-color: var(--background-night);
+    color: var(--text-color-night);
+}
+
+body.mode-nuit .menu > button {
     background-color: var(--background-night);
     color: var(--text-color-night);
 }

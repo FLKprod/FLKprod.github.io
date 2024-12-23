@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 /************************** GESTION DU MENU *********************************************/
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-const buttonIds = ['presentation', 'projets', 'videos', 'photos','aproposdemoi'];
+const buttonIds = ['presentation', 'services','projets', 'videos', 'photos','aproposdemoi'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
@@ -48,15 +48,55 @@ async function toggleTeamInfo(id) {
     var presentationContainer = document.querySelector('.presentation-container');
     var aproposdemoiContainer = document.querySelector('.aproposdemoi-container');
     var videosContainer = document.querySelector('.videos-container');
+    var servicesContainer = document.querySelector('.services-container');
     var projetsContainer = document.querySelector('.projets-container');
     var photosContainer = document.querySelector('.photos-container');
     aproposdemoiContainer.classList.remove('fade-in');
     presentationContainer.innerHTML = '';
+    servicesContainer.innerHTML = '';
     aproposdemoiContainer.innerHTML = '';
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
     photosContainer.innerHTML = '';
-    
+    if(id=== 'services'){
+        gsap.from('.services-container',{scale:0,stagger:1, duration:1,stagger:1});
+        var intro2services = createElementWithClass('div','section-services');
+            
+            var text_intro2services = createElementWithClass('div','text-section-services');
+                text_intro2services.appendChild(createText('h2',"Et si on travaillais ensemble ? "));
+                text_intro2services.appendChild(createText('p',`Après avoir réalisé de nombreux projets dans des domaines variés, je suis prêt et motivé à collaborer avec vous.
+                    Que ce soit pour un projet informatique, vidéographique ou photographique, je serais ravi de mettre mon énergie et ma créativité au service de vos idées.`));
+                    text_intro2services.appendChild(createText('h2',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
+            intro2services.appendChild(text_intro2services);
+        servicesContainer.appendChild(intro2services);
+
+        var intro2services = createElementWithClass('div','section','service');
+        var image_intro2services = createElementWithClass('div','image-section');
+        image_intro2services.appendChild(createImage('Photos/portofolio.png'));
+        intro2services.appendChild(image_intro2services);
+
+        var text_intro2services = createElementWithClass('div','text-section');
+        text_intro2services.appendChild(createText('h2',"Création de Portfolios Personnalisés"));
+        text_intro2services.appendChild(createText('p',`Mettez votre talent en valeur avec un portfolio unique.
+        Un bon portfolio est plus qu'une simple vitrine : c'est une présentation percutante de votre travail et de votre personnalité. Que vous soyez artiste, photographe, designer ou professionnel dans un autre domaine créatif, je vous accompagne pour créer un portfolio qui reflète parfaitement votre style et vos aspirations.
+
+        Ce que je propose :
+
+            Design personnalisé : une mise en page qui met en avant vos projets de manière claire et esthétique.
+            Optimisation visuelle : sélection et traitement des images pour un rendu professionnel.
+            Structure efficace : une organisation intuitive pour capter l’attention dès les premières secondes.
+            Compatibilité multi-supports : un portfolio consultable sur ordinateur, tablette et smartphone.
+
+        Pourquoi choisir mon service ?
+        Chaque projet est unique, et je prends le temps de comprendre vos besoins et vos objectifs. Ensemble, nous créerons un portfolio qui impressionnera vos clients, recruteurs ou partenaires.
+
+        Prêt à valoriser votre talent ?
+        Contactez-moi dès maintenant pour discuter de votre projet !`));
+        
+        intro2services.appendChild(text_intro2services);
+        aproposdemoiContainer.appendChild(intro2services);
+
+    }
     if(id=== 'videos'){
 
         // Créer la section principale pour les vidéos
@@ -169,6 +209,9 @@ async function toggleTeamInfo(id) {
                 item.description,
                 item.imageUrl
             );
+            menuItem.onclick = function() {
+                toggleTeamInfo(item.id);
+            };
             intro2menupresentation.appendChild(menuItem);
         });
 
@@ -176,9 +219,9 @@ async function toggleTeamInfo(id) {
                 var image2_presentation=createImage();
                 image2_presentation.id='presentation-img-2';
                 if (daynightCheckbox.checked) {
-                    image2_presentation.src = "Photos/textures/flkwhite.png";
+                    image2_presentation.src = "Photos/logos/flkwhite.png";
                 } else {
-                    image2_presentation.src = "Photos/textures/flkblack.png";
+                    image2_presentation.src = "Photos/logos/flkblack.png";
                 }
                 image_intro2presentation.appendChild(image2_presentation);
 
@@ -229,8 +272,8 @@ async function toggleTeamInfo(id) {
             Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société.
             Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels.`));
 
-        text_intro2lbnl.appendChild(createText('p',`Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
-            Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.`));
+        //text_intro2lbnl.appendChild(createText('p',`Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
+            //Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.`));
         
         intro2lbnl.appendChild(text_intro2lbnl);
     
@@ -301,7 +344,7 @@ async function toggleTeamInfo(id) {
         var cv_section = createElementWithClass('div','section','cv');
 
         var image_certifications = createElementWithClass('div','image-section','portrait');
-        image_certifications.appendChild(createImage('Photos/textures/lence.JPG'));
+        image_certifications.appendChild(createImage('Photos/lence.JPG'));
         cv_section.appendChild(image_certifications);
 
         var text_cv_section = createElementWithClass('div','text-section','contact-section');
@@ -413,7 +456,7 @@ async function toggleTeamInfo(id) {
                 scrollTrigger: {
                     trigger: '.berkeley',
                     pin: true,
-                    start: "top top",
+                    start: "top 0%",
                     end: () => `bottom ${document.querySelector('.berkeley').offsetHeight - large.clientHeight}px`,
                     scrub: 0.5,
                     invalidateOnRefresh: true,
@@ -432,7 +475,7 @@ async function toggleTeamInfo(id) {
         /*****************************************************************************************************************************/
 
 
-        gsap.from('.citation',{scale:0,stagger:1, duration:1});
+        
 
 
         var citation = document.createElement('div');
@@ -440,8 +483,7 @@ async function toggleTeamInfo(id) {
         //citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
         citation.appendChild(createText('p', "Mes contenus photographiques"));
         photosContainer.appendChild(citation);
-        
-        var categories_photos = createElementWithClass('div','categories_photos');
+        gsap.from('.citation',{scale:0,stagger:1, duration:1});
 
         // Exemple de données (remplacez avec vos propres données)
         const categoriesData = [
@@ -538,7 +580,7 @@ async function toggleTeamInfo(id) {
                  Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés.`},
             /*
             { name: "TowerDefender", videoLink: "", imageSrc: "",desc:"" },
-            { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/textures/logoneg.png",desc:""},
+            { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/logos/logoneg.png",desc:""},
             { name: "ToDoList pour IOs", videoLink: "", imageSrc: "",desc:"" },
             { name: "Carte intéractive", github:"https://github.com/FLKprod/MapEmblem", videoLink: "", imageSrc: "",desc:"Carte interactive pour les lieux partenaires de EMBLEM Dijon" },
              */
@@ -605,3 +647,10 @@ async function toggleTeamInfo(id) {
     // Commence à observer le nœud cible pour les mutations spécifiées
     observer.observe(targetNode, config);
 }
+
+const menuButtons = document.querySelectorAll('.down-menu button');
+
+    // Ajouter un événement onclick à chaque bouton
+    menuButtons.forEach(button => {
+        button.onclick = () => toggleTeamInfo(button.id);
+    });

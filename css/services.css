@@ -1,0 +1,12 @@
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espace entre les carrousels */
+    gap: 1em; /* Espacement horizontal et vertical entre les carrousels */
+    width: 100%;
+}
+
+
+.service > .image-section {
+    width: 50%;
+}
