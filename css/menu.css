@@ -132,6 +132,7 @@ body.mode-nuit .hr {
 }
 .down-menu button, body.mode-nuit > .down-menu button {
     background-color: transparent;
+    color: black;
     padding:0;
     margin: 0; /* Supprime les marges par défaut */
     padding: 0 5px; /* Ajoute un léger espacement autour des textes */

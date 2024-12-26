@@ -6,7 +6,7 @@ import {
   } from './createElements.js';
   
   // Fonction pour créer un carrousel pour une catégorie donnée
-export function createCarousel(name, desc, images,index) {
+  export function createCarousel(name, desc, images, index) {
     const carouselContainer = createElementWithClass('div', 'carousel-container');
     const img_carrousel = createElementWithClass('div', 'image-wrapper');
     const imageElement = createImage(images[0]);
@@ -15,51 +15,56 @@ export function createCarousel(name, desc, images,index) {
     const textOverlay = createElementWithClass('div', 'text-overlay');
 
     let currentIndex = 0;
-    
+    let startX = 0;
+    let endX = 0;
+
+    // Ajout des images et du texte
     img_carrousel.appendChild(imageElement);
-    carouselContainer.appendChild(img_carrousel);       
+    carouselContainer.appendChild(img_carrousel);
     textOverlay.appendChild(createText('h2', name));
     textOverlay.appendChild(createText('p', desc));
-
-    // Vérifier si on est en mode mobile
-    /*const phone = window.innerWidth < 1100;
-    if (index % 2 === 1 && !phone) {
-      // Si l'indice est impair et qu'on n'est pas sur mobile, inverser les éléments
-      F
-      carouselContainer.appendChild(categoryElement);
-    } else {
-        // Sinon, ajouter dans l'ordre normal
-        carouselContainer.appendChild(categoryElement);
-        carouselContainer.appendChild(textOverlay);
-    }*/
     carouselContainer.appendChild(textOverlay);
     carouselContainer.appendChild(prevButton);
     carouselContainer.appendChild(nextButton);
-  
-    return carouselContainer;
-  
+
+    // Gestion du glissement (swipe)
+    img_carrousel.addEventListener('touchstart', (event) => {
+        startX = event.touches[0].clientX;
+    });
+
+    img_carrousel.addEventListener('touchend', (event) => {
+        endX = event.changedTouches[0].clientX;
+        if (startX > endX + 50) {
+            nextImage();
+        } else if (startX < endX - 50) {
+            prevImage();
+        }
+    });
+
     // Fonction pour afficher l'image suivante
     function nextImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      imageElement.src = images[currentIndex];
-      imageElement.classList.add('fade-in');
-      setTimeout(() => {
-        imageElement.classList.remove('fade-in');
-      }, 500);
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
     }
-    
+
     // Fonction pour afficher l'image précédente
     function prevImage() {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      imageElement.src = images[currentIndex];
-      imageElement.classList.add('fade-in');
-      setTimeout(() => {
-        imageElement.classList.remove('fade-in');
-      }, 500);
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
     }
-    
-    
-  }
+
+    // Fonction pour mettre à jour l'image affichée
+    function updateImage() {
+        imageElement.src = images[currentIndex];
+        imageElement.classList.add('fade-in');
+        setTimeout(() => {
+            imageElement.classList.remove('fade-in');
+        }, 500);
+    }
+
+    return carouselContainer;
+}
+
 
 
 // Pour recuperer toutes les images d'un dossier afin de gerer le nombres d'image dans les carrousels dynamiquement

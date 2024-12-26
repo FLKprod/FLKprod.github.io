@@ -130,15 +130,10 @@ export async function toggleTeamInfo(id) {
             Contactez-moi et organisons votre séance dès maintenant !`));
         
         intro2services.appendChild(text_intro2services);
-        
         servicesContainer.appendChild(intro2services);
 
-
-
         var intro2services = createElementWithClass('div','service');
-        var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/montage.png'));
-        intro2services.appendChild(image_intro2services);
+        
         
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Montage video"));
@@ -156,10 +151,45 @@ export async function toggleTeamInfo(id) {
             Contactez-moi dès maintenant pour discuter de votre montage vidéo ! 🎥`));
         
         intro2services.appendChild(text_intro2services);
+        var image_intro2services = createElementWithClass('div','image-section');
+        image_intro2services.appendChild(createImage('Photos/montage.png'));
+        intro2services.appendChild(image_intro2services);
         servicesContainer.appendChild(intro2services);
 
-        
+        var intro2services = createElementWithClass('div','service');
+        var text_intro2services = createElementWithClass('div','text-section');
+        var image_intro2services = createElementWithClass('div','image-section');
+        image_intro2services.appendChild(createImage('Photos/tournage.png'));
+        intro2services.appendChild(image_intro2services);
+        text_intro2services.appendChild(createText('h2', "Tournage vidéo"));
+        // Ajoutez une description du service
+        text_intro2services.appendChild(createText('p', `Des vidéos professionnelles qui captent l'essence de vos projets.
+        Que ce soit pour des vidéos événementielles, des projets créatifs ou des besoins professionnels, je vous accompagne pour réaliser des vidéos percutantes et sur mesure.
+
+        Ce que je propose :
+
+        <ul> - Un tournage vidéo personnalisé en fonction de vos besoins.</ul>
+        <ul> - Des vidéos adaptées à tout type d'événement : entreprises, mariages, événements privés, clips musicaux, etc.</ul>
+        <ul> - Des vidéos avec des techniques modernes pour un rendu de haute qualité.</ul>
+        <ul> - Une approche conviviale et professionnelle pour mettre à l'aise les participants.</ul>
+
+        Prêt à immortaliser vos moments en vidéo ?
+        Contactez-moi pour discuter de votre projet et organiser votre tournage vidéo !`));
+        intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
+
+        var intro2services = createElementWithClass('div','contact-services');
+            var text_intro2services = createElementWithClass('div','text-section-services');
+                text_intro2services.appendChild(createText('h2',"Intéréssé ?"));
+                text_intro2services.appendChild(createText('p',`Contactez moi directement par courriel ou sur mes réseaux sociaux !`));
+                var text_contact_intro2services = createElementWithClass('div','text-contacts-services');
+                    text_contact_intro2services.appendChild(createIconWithLink("fab fa-instagram", "https://www.instagram.com/flkprod_/"));
+                    text_contact_intro2services.appendChild(createIconWithLink("fab fa-linkedin", "https://www.linkedin.com/in/maxime-falkowski-9a4607216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGJJZ%2FAWYSLGq0t%2BQS92TrQ%3D%3D"));
+                    text_contact_intro2services.appendChild(createIconWithLink("fa fa-envelope", "window.location.href='mailto:maxime.falkowski@free.fr';"));
+                text_intro2services.appendChild(text_contact_intro2services);
+                intro2services.appendChild(text_intro2services);
+        servicesContainer.appendChild(intro2services);
+
         const sections = document.querySelectorAll(".service");
         /*
         sections.forEach((element, index) => {
@@ -347,6 +377,8 @@ export async function toggleTeamInfo(id) {
             Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante.
             Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel.`));
 
+        text_intro2lbnl.appendChild(createImage('Photos/carte_berkeley.png'));
+
         text_intro2lbnl.appendChild(createText('p',`En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants.
             La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides.
             Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes, stimulant ainsi ma créativité et ma résolution de problèmes.`));
@@ -359,8 +391,8 @@ export async function toggleTeamInfo(id) {
             Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société.
             Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels.`));
 
-        //text_intro2lbnl.appendChild(createText('p',`Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
-            //Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.`));
+        text_intro2lbnl.appendChild(createText('p',`Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
+            Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.`));
         
         intro2lbnl.appendChild(text_intro2lbnl);
     

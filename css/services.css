@@ -14,6 +14,7 @@
 }
 .text-section-services {
     height: auto;
+
     margin-bottom: 4em;
     display: flex;
     justify-content: center;
@@ -67,6 +68,26 @@
     list-style-type: disc;
   }
 
+  .contact-services{
+    width: 100%;
+  }
+
+  .text-contacts-services > a{
+    font-size: 2em;
+    width: auto;
+    color: #4f0341;
+    margin-left: 1em;
+}
+
+.text-contacts-services{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 3em;
+}
+
   @media screen and (max-width: 768px) {
     .service{
       flex-direction: column;
@@ -79,4 +100,11 @@
     .service > .image-section {
       width: 90%;
     }
+
+    .services-container .text-section {
+      width: 70%;
+      font-size: 0.8em;
+      height: auto;
+    }
+    
   }

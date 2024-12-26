@@ -32,8 +32,8 @@
 
 .galerie-videos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 colonnes égales */
-    gap: 20px; /* Espacement entre les vidéos */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1em; 
     margin:0 3em;
     margin-bottom: 5em;
     align-items: center;
@@ -76,6 +76,10 @@
     transition: transform 0.3s ease, box-shadow 0.2s ease;
   }
 
+  .videos-container > .section-videos { 
+    width: 70%;
+  }
+
   .video-container:hover iframe {
     transform: scale(1.02) ; /* Zoom au survol */
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
@@ -108,6 +112,10 @@
     .videos-text > h4 {
         font-size: 0.7em;
     }
+
+    .videos-container > .section-videos { 
+        width: 100%;
+      }
 
     .video > p {
         font-size: 0.6em;
