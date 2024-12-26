@@ -56,7 +56,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    background: rgba(128,128,128, 0.4);
     color: white;
     display: flex;
     flex-direction: column;
@@ -76,6 +76,10 @@
     background-color: rgba(0, 0, 0, 0);
     color: transparent;
     transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide */
+}
+
+body.mode-nuit .text-overlay{
+  background: rgba(0, 0, 0, 0.6);
 }
   
   .carousel-container i {
@@ -104,28 +108,23 @@
     font-size: 1.5em;
     padding-top:1em;
     padding-bottom: 1em;
-    color:whitesmoke;
-    background-image: url(/Photos/citation.JPG);
+    color:black;
+    background-color: transparent;
     background-size: cover;
     background-position: center; 
     width: 100%;
     margin: 0;
 }
 
-.citation:before {
-    content:'“';
-    left:0;
-    color: whitesmoke;
-    margin-left: -1em;
-    top:1em;
+body.mode-nuit .citation {
+  color: white;
 }
 
-.citation:after {
+
+.citation:before,.citation:after {
     content:'“';
     left:0;
-    color: whitesmoke;
-    margin-left: -1em;
-    top:1em;
+
 }
 
 

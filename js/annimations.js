@@ -33,17 +33,22 @@ setTimeout(function() {
 
 const daynightCheckbox = document.getElementById('daynight');
 const logo = document.getElementById('presentation-img-2');
+const downlogo=document.getElementById('down-logo')
 const baniere = document.getElementById('baniere');
 const photo2_presentation = document.getElementById('presentation-img-2');
 function toggleModeNuit() {
+    const daynightCheckbox = document.getElementById('daynight');
     const logo = document.getElementById('presentation-img-2');
-    if (daynightCheckbox.checked) {
+    const downlogo =document.getElementById('down-logo')
+    const baniere = document.getElementById('baniere');
+    const photo2_presentation = document.getElementById('presentation-img-2');
+    if (!daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
-        logo.src = "Photos/logos/flkwhite.png";
+        downlogo.src = "Photos/logos/flkwhite.png";
     } else {
         document.body.classList.remove('mode-nuit');
         console.log("mode nuit")
-        logo.src = "Photos/logos/flkblack.png";
+        downlogo.src = "Photos/logos/flkblack.png";
     }
 }
 
@@ -93,3 +98,5 @@ window.addEventListener('scroll', () => {
         backToTopButton.style.display = 'none';
     }
 });
+
+

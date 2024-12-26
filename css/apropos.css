@@ -62,7 +62,7 @@
     text-align: center !important;
 }
 
-.text-section{
+.aproposdemoi-container > .text-section{
     font-size: 1em;
     flex: 1;
     line-height: 3;
@@ -71,7 +71,9 @@
     height: 100%;
 }
 
-
+.text-section{
+    margin-right: 2em;
+}
 .text-section > h2{
     font-size: 3em;
     line-height: 1;
@@ -90,6 +92,7 @@
 }
 
 .certif-cisco, .ecoles_formations{
+    color: black;
     width: 50%;
     flex: 1;
 }
@@ -134,18 +137,15 @@
     background-color: #e3d898;
 }
 
-.text-section p > a{
-    font-family:'Courier New', Courier, monospace;
 
-}
-.image-section{
+.aproposdemoi-container .image-section{
     width: auto;
     display: flex;
     height: 100%;
     mix-blend-mode: normal;
     margin: 3em 1em;
 }
-.image-section > img{
+.aproposdemoi-container .image-section > img{
     border-radius: 2em;
     margin: 2em;
 
@@ -210,7 +210,7 @@
         margin-left: 3em;
     }
 
-    .aproposdemoi-container > img {
+    .aproposdemoi-container > .image-section img {
         height: 10em;
         width: auto;
         margin-right: 1em;
@@ -227,19 +227,16 @@
         align-items: center;
     }
 
-    .image-section{
-        width: 75%;
-        height: auto;
+    .aproposdemoi-container .image-section{
+        width: auto;
+        height: 50%;
+        display: flex;
+        justify-content: center;
         mix-blend-mode: normal;
         margin: 1em 0;
     }
 
-    .image-section > img {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        
-    }
+
 
     .section {
         height: auto;
@@ -269,7 +266,9 @@
         font-size: 0.6em;
     }
 
-
+    .ecoles_formations p {
+        margin-right: 1em;
+    }
     .section .text-section > ul{
         line-height: 3;
     }
@@ -291,7 +290,7 @@
         height: 100vh !important;
     }
     .desc-berkeley{
-        max-width: 80%;
+        min-height: auto;
         overflow: hidden;
     }
 
@@ -311,6 +310,9 @@
         height: 15em;
     }
     
+    .contact-section i {
+        margin : 1em;
+    }
 }
 
 

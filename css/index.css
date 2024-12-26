@@ -5,6 +5,13 @@
     --text-color-night: #ffffff;
 }
 
+html{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
 
 body {
     margin: 0;
@@ -26,25 +33,7 @@ body > img{
     pointer-events: none;
 }
 
-html{
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-}
-
 /* Entête de site */
-
-button {
-    padding: 0.6em 0.6em;
-    font-size: 1em;
-    cursor: pointer;
-    border: none;
-    font-family: 'FLKpolicy',  sans-serif;
-    border-radius: 5px;
-    margin-left: 1em;
-}
 
 .fade-in {
     animation: fadeIn 1s ease-out forwards;
@@ -54,6 +43,10 @@ button {
     display: none;
 }
 
+
+.up{
+    padding-top: 5em;
+}
 .up, .center, .down {
     text-align: center;
     width: 100%;
@@ -62,90 +55,34 @@ button {
 /****************************** bar de site en bas **************************************/
 
 .down{
-    background-color: whitesmoke;
+    background:  linear-gradient(white,rgba(79, 3, 65,0.6));
     color: var(--text-color-day);
     padding: 1em 0;
     font-size: 0.8em;
     line-height: 1.5;
     display: flex;
+    height: 10em;
     flex-direction: row;
 }
 
-.down-menu {
-    display: flex;
 
-    text-align: left;
-    gap: 10px; /* Espacement entre les éléments */
-}
-
-.down-menu > p:hover{
-    color: #4f0341;
-}
-
-.img-down{
-    width: 50%;
-    height: 100%;
-    text-align: right;
-    margin-right: 3em;
-    
-}
-
-.img-down > img{
-    width: 10em;
-    height: auto;
-    justify-content: right;
-    align-items:end;
-}
-
-.hr{
-    border-left: 2px solid black;
-    height: 10em;
-}
-
-.text-down{
-    width: 50%;
-    height: 100%;
-    margin-left: 2em;
-    text-align: left;
-    align-items: left;
-    justify-content: center;
-
-}
-
-.down-menu button, body.mode-nuit > .down-menu button {
-    background-color: transparent;
-    padding:0;
-    margin: 0; /* Supprime les marges par défaut */
-    padding: 0 5px; /* Ajoute un léger espacement autour des textes */
-    position: relative; /* Nécessaire pour le pseudo-élément */
-}
-
-.down-menu button:hover {
-    cursor: pointer;
-}
-
-.down-menu{
-    height: 1em !important;
-}
-.down-menu button:not(:last-child)::after {
-    content: "|"; /* Insère la barre */
-    position: absolute;
-    right: -10px; /* Ajuste l'espacement entre le texte et la barre */
-    color: #333; /* Couleur de la barre */
-}
 
 /********************************************************************************/
 .image-entete{
     margin: 0 3em;
+    position: relative;
+    display: inline-block;
 }
 .text-entete{
     margin-left: 3em;
 }
 .image-entete >img{
+    display: block;
     background-color: transparent;
     height: 100%;
     max-height: 20em;
     width: 100%;
+    
 }
 
 .entete{
@@ -154,7 +91,15 @@ button {
     background-color: whitesmoke;
     align-items:center;
     justify-content: space-between;
+    background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%, 
+    rgba(127, 67, 97, 0.5) 50%, 
+    rgba(255, 255, 255, 1) 100%
+    );
+
 }
+
 
 .section {
     background-color: var(--background-day);
@@ -192,8 +137,9 @@ button {
     bottom:1em;
     display: none;
     z-index: 999;
-    width: 2em;
-    height: 2em;
+    left: 1em;
+    width: 1.5em;
+    height: 1.5em;
     border-radius: 50%;
     background-color: black;
     color:white;
@@ -210,7 +156,6 @@ button {
 
 #backToTopButton i {
     margin: 0;
-    transform: translateY(-0.2em);
 }
 
 
@@ -244,6 +189,12 @@ button {
 
 .hidden {
     display: none;
+}
+
+.sections-menu > .select {
+    padding-bottom: 5px;
+    border-bottom: 5px solid #4f0341;
+    margin-right: 0;
 }
 
 #mainContent {
@@ -284,12 +235,12 @@ body.mode-nuit {
 }
 
 body.mode-nuit .down {
-    background-color: #e3d898;
-    color: black;
+    background:  linear-gradient(black, #4f0341);
+    color: white;
 }
 
 body.mode-nuit .entete {
-    background-color: black;
+    background:  linear-gradient(black, #4f0341,black);
     color: white;
 }
 
@@ -337,6 +288,12 @@ body.mode-nuit .cv{
     background-color: #e3d898;
     color: var(--text-color-night);
 }
+
+body.mode-nuit .down-menu > button, body.mode-nuit .down-menu button:not(:last-child)::after{
+    color:white;
+}
+
+
 
 
 /* Police d'écriture personnalisée */

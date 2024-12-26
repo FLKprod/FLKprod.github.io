@@ -1,25 +1,29 @@
 /*------------------------------------------------------------- MENU ------------------------------------------------------------------*/
 
 .menu {
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     padding-right: 1em;
     height: 5em;
+    width: 100%;
+    background-color: var(--background-day);
+    z-index: 1000;
 }
 
-.select {
-    padding-bottom: 5px;
-    border-bottom: 5px solid #4f0341;
-    margin-right: 0;
+body.mode-nuit .menu {
+    background-color: var(--background-night);
 }
 
 .fondu{
     animation: fadeIn 0.5s ease-out forwards;
 }
 .menu > img {
-    height: 5em;
-    margin-left: 4em;
+    height: 4em;
+    cursor: pointer;
+    margin-left: 2em;
     margin-right: auto;
 }
 
@@ -33,9 +37,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     height: 100% !important;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    margin-left: 1em;
+
     border-radius: 0;
 }
 
@@ -64,61 +66,178 @@
     margin-right: 2em;
 }
 
+.down-menu > button,.sections-menu > button, .social-networks > button, .menu-mobile {
+    padding: 0.6em 0.6em;
+    font-size: 1em;
+    font-family: 'FLKpolicy',  sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.down-menu {
+    display: flex;
+    text-align: left;
+    gap: o.2em; /* Espacement entre les éléments */
+}
+
+.down-menu > button:hover{
+    color: #4f0341;
+}
+
+.img-down{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    box-sizing: border-box;
+    text-align: right;
+    margin-right: 1em;
+    
+}
+
+.img-down > img{
+    width: auto;
+    height: 5em;
+    justify-content: right;
+    align-items:end;
+}
+
+.hr{
+    border-left: 2px solid black;
+    height: 10em;
+}
+
+body.mode-nuit .hr {
+    border-left: 2px solid white;
+}
+
+.text-down{
+    width: 50%;
+    height: 100%;
+    margin-left: 2em;
+    text-align: left;
+    align-items: left;
+    justify-content: center;
+
+}
+
+.down-menu button:first-child, body.mode-nuit .down-menu button:first-child {
+    padding-left:0;
+    padding-right: 5px;
+}
+.down-menu button, body.mode-nuit > .down-menu button {
+    background-color: transparent;
+    padding:0;
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0 5px; /* Ajoute un léger espacement autour des textes */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+}
+
+.down-menu button:hover {
+    cursor: pointer;
+}
+
+.down-menu{
+    height: 1em !important;
+}
+.down-menu button:not(:last-child)::after {
+    content: "|"; /* Insère la barre */
+    position: absolute;
+    right: -0.2em; /* Ajuste l'espacement entre le texte et la barre */
+    color: #333; /* Couleur de la barre */
+}
+
+/* Container du switch */
 .switch {
     position: relative;
     display: inline-block;
-    width: 4em;
-    height: 34px;
-    margin-right: 3em;
-
-}
-
-
-.switch input { 
+    width: 3em;
+    height: 1.5em;
+    margin-right: 2em;
+  }
+  
+  /* Input caché */
+  .switch input {
     opacity: 0;
     width: 0;
     height: 0;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-image: url('/Photos/menu/sun.png');
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #191919;
-}
-
-input:checked + .slider:before {
-    background-image: url('/Photos/menu/moon.png');
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-.slider.round {
+  }
+  
+  /* Slider principal */
+  .slider {
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-    border-radius: 34px;
+    border: 2px #2b3a47 solid;
+    background-color: #2b3a47; /* Couleur du fond */
+    border-radius: 1em; /* Bord arrondi */
+    transition: background-color 0.3s ease;
   }
   
-.slider.round:before {
-border-radius: 50%;
-}
+  /* Soleil et lune */
+  .slider .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sun {
+    left: 2px;
+    color: #2b3a47;
+  }
+  
+  .moon {
+    right: 2px;
+    opacity: 0; /* Caché par défaut */
+  }
+  
+  /* Rond du switch */
+  .slider::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%; /* Forme circulaire */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Lorsque le switch est activé */
+  .switch input:checked + .slider {
+    background-color: white; /* Couleur du fond activé */
+  }
+  
+  .switch input:checked + .slider::before {
+    transform: translateX(1.5em); /* Déplacement du cercle */
+    background-color: #2b3a47;
+    
+  }
+  
+  .switch input:checked + .slider .sun {
+    opacity: 1; /* Affiche le soleil */
+  }
+  .switch input:checked + .slider .moon {
+    opacity: 0; /* Cache la lune */
+  }
 
+  .switch input + .slider .moon {
+    opacity: 1; /* Affiche la lune */
+  }
+  .switch input + .slider .sun {
+    opacity: 0; /* Cache le soleil */
+  }
 
 .menu-mobile{
     display: none;
@@ -143,6 +262,7 @@ border-radius: 50%;
         border-width: 1px;
     }
     .menu {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -183,15 +303,20 @@ border-radius: 50%;
     }
 
     .switch {
-        width: 100%;
+
         display: inline-block;
-        width: 4em;
-        height: 2.3em;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 1em;
         margin-right: 0;
     
+    }
+
+    .img-down{
+        width: 25%;
+    }
+    .text-down{
+        width: 75%;
     }
 }

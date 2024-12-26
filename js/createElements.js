@@ -1,4 +1,4 @@
-
+import{toggleTeamInfo} from './index.js'
 
 export function createText(tag, textContent) {
     const element = document.createElement(tag);
@@ -93,7 +93,7 @@ export function createVideo(link) {
     const iframeElement = document.createElement('iframe');
     iframeElement.src = link;
     iframeElement.frameborder = "0";
-    iframeElement.allow = "accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframeElement.allow = "autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframeElement.allowfullscreen = true;
     iframeElement.loop = true;
     iframeElement.className ="custom-video";
@@ -175,24 +175,20 @@ export function createLineSpan(number) {
 export function createGitHubLink(projectUrl) {
     // Créer une nouvelle balise <p>
     var paragraph = createElementWithClass('div','githublink');
-    paragraph.appendChild(createText('p',"Ce projet informatique est d'ailleurs disponible sur mon Github, que vou pouvez consulter en cliquant ici ->"));
+    paragraph.appendChild(createText('p',`Ce projet informatique est d'ailleurs disponible sur mon Github,
+        que vous pouvez consulter en cliquant ici ->`));
     // Créer une nouvelle balise <a>
-    const link = document.createElement('a');
+    const link = document.createElement('i');
     link.href = projectUrl;
     link.target = '_blank'; // Ouvrir le lien dans un nouvel onglet
     link.rel = 'noopener noreferrer'; // Pour des raisons de sécurité
+    link.className="fab fa-github"
+    link.alt = 'GitHub Logo';
 
-    // Créer une balise <img> pour le logo GitHub
-    const img = document.createElement('img');
-    img.src = 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'; // URL du logo GitHub
-    img.alt = 'GitHub Logo';
-    img.width = 32; // Largeur de l'image (ajuster selon vos besoins)
-    img.height = 32; // Hauteur de l'image (ajuster selon vos besoins)
-    img.style.marginLeft='10px';
-    img.style.cursor = 'pointer'; // Curseur de la souris en forme de main pour indiquer que c'est cliquable
-
-    // Ajouter l'image à la balise <a>
-    link.appendChild(img);
+    link.style.fontWeight= 800
+    link.style.fontSize = "2em"
+    link.style.marginLeft='10px';
+    link.style.cursor = 'pointer'; // Curseur de la souris en forme de main pour indiquer que c'est cliquable
 
     // Ajouter la balise <a> à la balise <p>
     paragraph.appendChild(link);
@@ -247,7 +243,9 @@ export function createMenuItem(id, className, text, description, imageUrl) {
     // Create menu item container
     const menuItem = createElementWithClass("div", "menu-item", className);
     menuItem.id = id;
-
+    menuItem.onclick = function() {
+        toggleTeamInfo(id);
+    };
     // Set background image
     menuItem.style.backgroundImage = `url(${imageUrl})`;
 

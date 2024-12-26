@@ -11,6 +11,7 @@
     height: 10em;
 }
 
+
 .text-section-presentation{
     width: 50%;
     line-height: 3;
@@ -24,12 +25,11 @@
 .section-menu-presentation {
     display: grid;
     border-radius: 1em;
-    grid-template-columns: 1fr 1fr; /* 2 columns */
-    grid-template-rows: 1fr 1fr;  /* 2 rows */
-    width: 75%; /* 75% width of the viewport */
-    height: 75vh; /* Adjust height as needed (75% of viewport height here) */
-    margin: auto; /* Centers the grid horizontally and vertically */
-
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    width: 80%; 
+    height: 75vh;
+    margin: auto;
 }
 
 .presentation-container > .image-section-presentation {
@@ -113,21 +113,19 @@
 
         width: 100%;
     }
+
+    .section-menu-presentation {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        width: 80%; 
+        height: 100%;
+        margin: auto;
+    }
+
+    .menu-item {
+        height: 50vh;
+    }
 }
 
 
-@keyframes rotateZoom {
-    0% {
-        transform: scale(0.5) rotate(0deg);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.1) rotate(180deg);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0.5) rotate(360deg);
-        opacity: 0;
-    }
-}
 

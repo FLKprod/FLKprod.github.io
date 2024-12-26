@@ -3,47 +3,65 @@ import {createCarousel, generateImagePaths} from './carroussel.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
-/************************** GESTION DU MENU *********************************************/
+/************************** GESTION DU MENU EN ENTETE *********************************************/
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-const buttonIds = ['presentation', 'services','projets', 'videos', 'photos','aproposdemoi'];
+const buttonIds = ['services','projets', 'videos', 'photos','aproposdemoi'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
         toggleTeamInfo(buttonId);
     });
 });
+const logopresentation = document.getElementById('logo');
+logopresentation.addEventListener('click', () => {
+    toggleTeamInfo('presentation');
+});
 
+toggleTeamInfo('presentation'); // commence par afficher la page presentation quand on arrive sur le site
 
-/***************************************************************************************/
+/**************************************************************************************************/
 
+/**************************** RENVOIT AU HAUT DE LA PAGE ******************************************/
 function reveniralentete(){
-    // Sélectionner la div avec la classe "entete"
     const entete = document.querySelector('.entete');
-
-    // Calculer la position en bas de la div .entete
     const positionBasEntete = entete.offsetTop + entete.offsetHeight;
-
-    // Faire défiler jusqu'en bas de la div .entete
     window.scrollTo({
         top: positionBasEntete,
         behavior: 'smooth'
     });
 }
 
+/**************************************************************************************************/
 
-const daynightCheckbox = document.getElementById('daynight');
-toggleTeamInfo('presentation');
+export async function toggleTeamInfo(id) {
+    const daynightCheckbox = document.getElementById('daynight');
 
-async function toggleTeamInfo(id) {
-    var buttons = document.querySelectorAll('.menu button, down-menu button');
+    var buttons = document.querySelectorAll('.sections-menu button');
     buttons.forEach(function(button) {
+        console.log("delete selected");
         button.classList.remove('select');
     });
-    var selectedButton = document.getElementById(id);
-    if (selectedButton) {
-        console.log("section " + id);
-        selectedButton.classList.add('select');
+
+    var menu = document.getElementById('section-menu');
+    if (menu) {
+        var selectedButton = menu.querySelector(`#${id}`);
+        if (selectedButton) {
+            console.log("section " + id);
+            selectedButton.classList.add('select');
+        } else {
+            console.warn(`Aucun bouton trouvé avec l'ID : ${id}`);
+        }
+    }
+    var menu = document.getElementById('down-menu');
+    if (menu) {
+        var selectedButton = menu.querySelector(`#${id}`);
+        if (selectedButton) {
+            console.log("section " + id);
+            selectedButton.classList.add('select');
+        } else {
+            console.warn(`Aucun bouton trouvé avec l'ID : ${id}`);
+        }
     }
     var presentationContainer = document.querySelector('.presentation-container');
     var aproposdemoiContainer = document.querySelector('.aproposdemoi-container');
@@ -58,6 +76,7 @@ async function toggleTeamInfo(id) {
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
     photosContainer.innerHTML = '';
+
     if(id=== 'services'){
         gsap.from('.services-container',{scale:0,stagger:1, duration:1,stagger:1});
         var intro2services = createElementWithClass('div','section-services');
@@ -70,32 +89,99 @@ async function toggleTeamInfo(id) {
             intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
-        var intro2services = createElementWithClass('div','section','service');
-        var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/portofolio.png'));
-        intro2services.appendChild(image_intro2services);
+        var intro2services = createElementWithClass('div','service');
+        
 
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Création de Portfolios Personnalisés"));
-        text_intro2services.appendChild(createText('p',`Mettez votre talent en valeur avec un portfolio unique.
-        Un bon portfolio est plus qu'une simple vitrine : c'est une présentation percutante de votre travail et de votre personnalité. Que vous soyez artiste, photographe, designer ou professionnel dans un autre domaine créatif, je vous accompagne pour créer un portfolio qui reflète parfaitement votre style et vos aspirations.
+        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent.
+            Que vous soyez artiste, photographe, designer ou autre, je vous accompagne pour créer un portfolio unique et adapté à vos besoins.
 
-        Ce que je propose :
+            Ce que je propose :
 
-            Design personnalisé : une mise en page qui met en avant vos projets de manière claire et esthétique.
-            Optimisation visuelle : sélection et traitement des images pour un rendu professionnel.
-            Structure efficace : une organisation intuitive pour capter l’attention dès les premières secondes.
-            Compatibilité multi-supports : un portfolio consultable sur ordinateur, tablette et smartphone.
-
-        Pourquoi choisir mon service ?
-        Chaque projet est unique, et je prends le temps de comprendre vos besoins et vos objectifs. Ensemble, nous créerons un portfolio qui impressionnera vos clients, recruteurs ou partenaires.
-
-        Prêt à valoriser votre talent ?
-        Contactez-moi dès maintenant pour discuter de votre projet !`));
+            <ul> - Design sur mesure pour mettre en avant vos projets.</ul>
+            <ul> - Traitement des images pour un rendu professionnel.</ul>
+            <ul> - Organisation claire et intuitive.</ul>
+            <ul> - Compatible sur tous vos appareils (ordinateur, tablette, smartphone).</ul>
+            Chaque projet est différent. Ensemble, créons un portfolio qui impressionnera vos clients ou partenaires. Contactez-moi pour démarrer votre projet !`));
         
         intro2services.appendChild(text_intro2services);
-        aproposdemoiContainer.appendChild(intro2services);
+        var image_intro2services = createElementWithClass('div','image-section');
+        image_intro2services.appendChild(createImage('Photos/porto.png'));
+        intro2services.appendChild(image_intro2services);
+        servicesContainer.appendChild(intro2services);
 
+        var intro2services = createElementWithClass('div','service');
+        var image_intro2services = createElementWithClass('div','image-section');
+        image_intro2services.appendChild(createImage('Photos/shooting.png'));
+        intro2services.appendChild(image_intro2services);
+        var text_intro2services = createElementWithClass('div','text-section');
+        text_intro2services.appendChild(createText('h2',"Shooting photo"));
+        text_intro2services.appendChild(createText('p',`Des photos qui capturent vos plus beaux moments.
+            Que ce soit pour un événement, un projet ou des besoins pros, je m’adapte à vos envies pour créer des clichés qui vous ressemblent.
+
+            Ce que je propose :
+
+            <ul> - Une séance sur mesure, définie avec vous.</ul>
+            <ul> - Des idées originales pour des photos uniques.</ul>
+            <ul> - Des shootings pour tout type d’événement : portraits, groupes, mariages, anniversaires, etc.</ul>
+            <ul> - Un moment convivial pour des photos naturelles.</ul>
+            Prêt pour un shooting à votre image ?
+            Contactez-moi et organisons votre séance dès maintenant !`));
+        
+        intro2services.appendChild(text_intro2services);
+        
+        servicesContainer.appendChild(intro2services);
+
+
+
+        var intro2services = createElementWithClass('div','service');
+        var image_intro2services = createElementWithClass('div','image-section');
+        image_intro2services.appendChild(createImage('Photos/montage.png'));
+        intro2services.appendChild(image_intro2services);
+        
+        var text_intro2services = createElementWithClass('div','text-section');
+        text_intro2services.appendChild(createText('h2',"Montage video"));
+        text_intro2services.appendChild(createText('p',`Transformez vos idées en vidéos captivantes !
+
+            Que ce soit pour un projet personnel, professionnel, ou un événement particulier, je vous propose un montage vidéo sur mesure, adapté à vos besoins. Ensemble, nous donnerons vie à vos images et vidéos pour créer un contenu fluide, impactant et à votre image.
+
+            Ce que je vous propose :
+
+            <ul> - Un montage personnalisé : Une vidéo qui correspond parfaitement à votre vision et vos attentes.</ul>
+            <ul> - Des effets et transitions adaptés : Pour un rendu professionnel et dynamique.</ul>
+            <ul> - Un storytelling efficace : Une structure claire pour capter et maintenir l’attention.</ul>
+            <ul> - Flexibilité sur tous les formats : Adapté aux réseaux sociaux, présentations, événements, ou souvenirs personnels.</ul>
+            Prêt à donner vie à vos projets ?
+            Contactez-moi dès maintenant pour discuter de votre montage vidéo ! 🎥`));
+        
+        intro2services.appendChild(text_intro2services);
+        servicesContainer.appendChild(intro2services);
+
+        
+        servicesContainer.appendChild(intro2services);
+        const sections = document.querySelectorAll(".service");
+        /*
+        sections.forEach((element, index) => {
+            gsap.fromTo(element, 
+                {
+                    autoAlpha: 0,      // Départ de l'animation (opacité 0)
+                    x: index % 2 === 0 ? -300 : 300, // Si l'index est pair, il vient de la gauche (-300), sinon de la droite (300)
+                }, 
+                {
+                    autoAlpha: 1,      // Fin de l'animation (opacité 1)
+                    x: 0,              // Fin de l'animation (pas de décalage en x)
+                    ease: "power2.out", // Ease pour l'animation
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top center",  // Commencer l'animation lorsque le bas de l'élément atteint le centre de la fenêtre
+                        end: "75% bottom",    // Arrêter l'animation lorsque le bas de l'élément atteint le bas de la fenêtre
+                        scrub: true,             // Animation lissée
+                    }
+                }
+            );
+        });
+        */
     }
     if(id=== 'videos'){
 
@@ -156,7 +242,7 @@ async function toggleTeamInfo(id) {
             duration: 1
         });
 
-        }
+    }
     else if(id=== 'presentation'){
         gsap.from('.presentation-container',{scale:0,stagger:1, duration:1,stagger:1});
 
@@ -191,13 +277,22 @@ async function toggleTeamInfo(id) {
                 description: "Admirez mes meilleures photos.",
                 imageUrl: "Photos/menu/photos.JPG",
             },
+            ,
+            {
+                id: "services",
+                className: "services",
+                text: "Mes services",
+                description: "Travaillons ensemble !",
+                imageUrl: "Photos/shooting.JPG",
+            },
             {
                 id: "aproposdemoi",
                 className: "aproposdemoi",
                 text: "À Propos de Moi",
                 description: "Apprenez à mieux me connaître.",
                 imageUrl: "Photos/menu/moi.JPG",
-            },
+            }
+            
         ];
     
         // Create and append each menu item
@@ -209,21 +304,13 @@ async function toggleTeamInfo(id) {
                 item.description,
                 item.imageUrl
             );
-            menuItem.onclick = function() {
-                toggleTeamInfo(item.id);
-            };
             intro2menupresentation.appendChild(menuItem);
         });
 
         var image_intro2presentation = createElementWithClass('div','image-section-presentation');
-                var image2_presentation=createImage();
-                image2_presentation.id='presentation-img-2';
-                if (daynightCheckbox.checked) {
-                    image2_presentation.src = "Photos/logos/flkwhite.png";
-                } else {
-                    image2_presentation.src = "Photos/logos/flkblack.png";
-                }
-                image_intro2presentation.appendChild(image2_presentation);
+            var image2_presentation=createImage("Photos/logos/flkprod.png");
+            image2_presentation.id='presentation-img-2';
+            image_intro2presentation.appendChild(image2_presentation);
 
 
         presentationContainer.appendChild(intro2menupresentation);
@@ -239,7 +326,7 @@ async function toggleTeamInfo(id) {
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
-        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis consultant GRC SAP chez WIZYA, en terres parisiennes.
+        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis consultant GRC SAP chez <a href='https://wizya.fr/' target='_blank'>WIZYA</a>, en terres parisiennes.
             j'ai étudié en école d'ingénieur en sécurité informatique à Dijon.
             J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec.
             J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique.`));
@@ -480,7 +567,6 @@ async function toggleTeamInfo(id) {
 
         var citation = document.createElement('div');
         citation.className='citation';
-        //citation.appendChild(createText('p', "Ce que la photographie reproduit à l’infini n’a lieu qu’une fois"));
         citation.appendChild(createText('p', "Mes contenus photographiques"));
         photosContainer.appendChild(citation);
         gsap.from('.citation',{scale:0,stagger:1, duration:1});
@@ -490,9 +576,11 @@ async function toggleTeamInfo(id) {
         { name: 'Dijon', desc:"Bourgogne, France", nbrepictures:4},
         { name: 'Strasbourg', desc:"Alsace, France", nbrepictures:4},
         { name: 'San Francisco',desc:"California, USA", nbrepictures:4 },
+        { name: 'Paris',desc:"Ile-De-France, France", nbrepictures:6 },
         { name: 'Quebec', desc:"Quebec, Canada", nbrepictures:4},
         { name: 'Baseball', desc:"San Francisco Giants, USA, saison 2022-2023", nbrepictures:4 },
-        { name: 'Basket', desc:"Betclic elite saison 2022-2023", nbrepictures:4 }
+        { name: 'Basket', desc:"Betclic elite saison 2022-2023", nbrepictures:4 },
+        { name: 'Automobile',desc:"Circuit Dijon-Prenois, 2024", nbrepictures:6 }
         // Ajoutez plus de catégories avec leurs images au besoin
         ];
 
@@ -539,7 +627,7 @@ async function toggleTeamInfo(id) {
     }
     else if(id === 'projets'){
         gsap.from('.projets-container',{scale:0,stagger:1, duration:1,stagger:1});
-        gsap.from('.menu3',{scale:0,stagger:1, duration:2,stagger:1});
+        gsap.from('.menu-projets',{scale:0,stagger:1, duration:2,stagger:1});
 
         var intro2projects = createElementWithClass('div','section','video-section');
         var text_intro2projects = createElementWithClass('div','text-section','mes-projets');
@@ -549,8 +637,9 @@ async function toggleTeamInfo(id) {
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
         var projets = createElementWithClass('div','projets');
-        
-        var menuDiv = createElementWithClass('div','menu3');
+        var areamenuDiv = createElementWithClass('div','area-menu-projets');
+        var menuDiv = createElementWithClass('div','menu-projets');
+
         var menuList = [
             
             { name: "RockRush", github:"https://github.com/FLKprod/RockRush", videoLink: "Photos/projets/RockRush.mp4", imageSrc: "Photos/projets/RockRush.jpg" ,
@@ -592,7 +681,8 @@ async function toggleTeamInfo(id) {
         }
         var firstItem = menuList[0]; // Récupération du premier élément
         var projet = createElementWithClass('div','projet');
-        projets.appendChild(menuDiv);
+        areamenuDiv.appendChild(menuDiv)
+        projets.appendChild(areamenuDiv);
         var video_iframe=createVideoProject(firstItem.videoLink)
         projet.appendChild(video_iframe);
         
@@ -622,7 +712,7 @@ async function toggleTeamInfo(id) {
                 updateLinkGithub(githublink)
                 console.log("Changement de projet" + videoLink + "  " + imageLink + " " + githublink);
                 if (videoLink) {
-                    menuDiv.scrollIntoView({ behavior: 'smooth' }); // Scroll auto jusqu'au menu3 avec les noms des projets
+                    video_iframe.scrollIntoView({ behavior: 'smooth' }); // Scroll auto jusqu'au menu-projets avec les noms des projets
                     desc_projet.innerHTML=descLink;
                     title_text_projet.innerHTML=event.target.textContent;
                     updateVideoElement(videoLink);
@@ -633,24 +723,28 @@ async function toggleTeamInfo(id) {
         projets.appendChild(projet);
         projetsContainer.appendChild(projets);
     }
-    
-    const targetNode = document.querySelector('body'); // Choisissez le nœud que vous souhaitez observer
-    const config = { attributes: true, childList: true, subtree: true }; // Options d'observation
+    else if(id === 'plandusite'){
+
+    }
+
 
     const callback = function(mutationsList, observer) {
         for(let mutation of mutationsList) {
         }
     };
-
     const observer = new MutationObserver(callback);
+    const targetNode = document.querySelector('body');
+    const config = { attributes: true, childList: true, subtree: true };
     reveniralentete()
-    // Commence à observer le nœud cible pour les mutations spécifiées
     observer.observe(targetNode, config);
+    
 }
 
-const menuButtons = document.querySelectorAll('.down-menu button');
+const buttons = document.querySelectorAll('#down-menu button');
 
-    // Ajouter un événement onclick à chaque bouton
-    menuButtons.forEach(button => {
-        button.onclick = () => toggleTeamInfo(button.id);
+// Ajouter un gestionnaire d'événements "click" à chaque bouton
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        toggleTeamInfo(button.id);
     });
+});
