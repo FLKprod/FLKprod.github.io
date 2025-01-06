@@ -265,6 +265,7 @@ body.mode-nuit .hr {
     }
     .social-networks{
         margin-right: 0;
+        color:black;
     }
 
     .sections-menu > button{
@@ -298,6 +299,7 @@ body.mode-nuit .hr {
 
     .sections-menu > button, .social-networks > button {
         width: 100%;
+
         margin-left: 0;
         margin-right: 0;
         padding: 1em;

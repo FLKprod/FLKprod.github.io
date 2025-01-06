@@ -466,7 +466,7 @@ export async function toggleTeamInfo(id) {
         
         var text_ecoles_formations = createElementWithClass('div','ecoles_formations');
         text_ecoles_formations.appendChild(createText('h2',"Mes Formations"));
-        var liste_1_ecoles_formations = document.createElement("ul");
+        var liste_1_ecoles_formations = document.createElement("div");
         liste_1_ecoles_formations.appendChild(createText('p',"Formation au diplome d'ingénieur en Sécurité Qualité Réseaux informatiques"));
         liste_1_ecoles_formations.appendChild(createText('p',"Polytech Dijon, Dijon, Bourgogne, FRANCE"));
         liste_1_ecoles_formations.appendChild(createImage('Photos/Apropos/Polytech.png'));
@@ -474,7 +474,7 @@ export async function toggleTeamInfo(id) {
         
         
         text_ecoles_formations.appendChild(liste_1_ecoles_formations);
-        var liste_2_ecoles_formations = document.createElement("ul");
+        var liste_2_ecoles_formations = document.createElement("div");
         liste_2_ecoles_formations.appendChild(createText('p',"Maîtrise (Master) en cybersécurité"));
         liste_2_ecoles_formations.appendChild(createText('p',"UQAC (Université du Québèc à Chicoutimi, Chicoutimi, Québèc, CANADA)"));
         liste_2_ecoles_formations.appendChild(createImage('Photos/Apropos/UQAC.jpg'));
@@ -575,8 +575,8 @@ export async function toggleTeamInfo(id) {
                 scrollTrigger: {
                     trigger: ".formations",
                     scrub: true,
-                    start: "top -10%", // Ajuster la valeur de départ
-                    end: "bottom center", // Ajuster la valeur de fin
+                    start: "top center", // Ajuster la valeur de départ
+                    end: "centre centre", // Ajuster la valeur de fin
                     anticipatePin: 1,
                 }
             });

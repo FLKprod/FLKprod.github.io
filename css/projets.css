@@ -255,6 +255,19 @@ body.mode-nuit .projets-container .competences span {
         padding: 20px;
     }
 
+    .projets-container .projet h3 {
+        margin: 0.5em;
+    }
+
+    .projets-container .competences {
+        margin-bottom: 4em;
+    }
+
+    .projets-container .projets, .projets-container .projet {
+        gap: 0;
+        padding: 0;
+    }
+
     .projet > p {
         margin: 0 1em;
     }
