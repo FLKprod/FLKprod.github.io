@@ -6,21 +6,61 @@
     justify-content: center;
     align-items: center;
 }
+
+
 .image-section-presentation > img {
     width: auto;
     height: 10em;
 }
 
+#presentation-img-2 {
+    transition: transform 0.3s ease; /* Transition fluide pour l'effet */
+}
+
+#presentation-img-2:hover {
+    transform: scale(1.2); /* Agrandit l'image à 120% lors du survol */
+}
+
 
 .text-section-presentation{
     width: 50%;
-    line-height: 3;
     margin:0 3em;
 }
-.section-presentation > h2 {
-    width: 100%;
+.text-section-presentation > h2 {
+    font-size: 3em;
     right: 0;
+    color: white;
+    text-shadow: 
+                -1px -1px 0 black,  
+                4px -1px 0 black, 
+                1px 1px 0 black,   
+                1px 1px 0 black; 
+    transition: transform 0.3s ease;
 }
+.text-section-presentation > h2:hover {
+    transform: scale(1.2);
+}
+
+.text-section-presentation > h2:first-child{
+    text-align: left;
+}
+.text-section-presentation > h2:last-child{
+    text-align: right;
+    margin-bottom: 1em;
+}
+
+.text-section-presentation > p {
+    font-size: 2em;
+    text-align: justify;
+    right: 0;
+    color: white;
+    text-shadow: 
+                -1px -1px 0 black,  
+                1px -1px 0 black, 
+                -1px 1px 0 black,   
+                1px 1px 0 black; 
+}
+
 
 .section-menu-presentation {
     display: grid;
@@ -63,9 +103,15 @@
 }
 
 .menu-text {
-    font-size: 24px;
+    font-size: 3em;
     font-weight: bold;
     z-index: 2;
+    color: white;
+    text-shadow: 
+                -1px -1px 0 #4f0341,  
+                4px -1px 0 #4f0341, 
+                1px 1px 0 #4f0341,   
+                1px 1px 0 #4f0341; 
 }
 
 .menu-desc {
@@ -90,6 +136,7 @@
     .section-presentation {
         display: inline-block;
         width: 100%;
+        height: auto;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -109,9 +156,8 @@
     }
 
     .text-section-presentation{
-        margin:0;
-
-        width: 100%;
+        margin: 1em;
+        width: auto;
     }
 
     .section-menu-presentation {

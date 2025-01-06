@@ -1,0 +1,42 @@
+.plandusite-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+.plandusite-container > h2 {
+    margin-top: 1em;
+}
+
+.columns-container{
+    margin: 4em 0;
+    display: flex;
+    width: 75%;
+    text-align: left;
+    flex-direction: column;
+}
+
+.columns-container > h2 {
+    width:75%;
+    margin-top: 1em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.columns-container > h3 {
+    font-family: Courier, monospace;
+
+}
+
+.columns-container> p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.plandusite-container .hr-plan{
+    width: 25%;
+    margin-left: 0;
+    background-color: lightgray;
+}

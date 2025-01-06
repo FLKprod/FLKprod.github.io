@@ -1,5 +1,5 @@
 import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createGitHubLink, createImageElement, updateVideoElement, updateImageElement, updateLinkGithub, createVideoProject, createVideo, createMenuItem } from './createElements.js';
-import {createCarousel, generateImagePaths} from './carroussel.js';
+import {createCarousel, generateImagePaths, createProjetCarousel} from './carroussel.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +39,6 @@ export async function toggleTeamInfo(id) {
 
     var buttons = document.querySelectorAll('.sections-menu button');
     buttons.forEach(function(button) {
-        console.log("delete selected");
         button.classList.remove('select');
     });
 
@@ -68,9 +67,11 @@ export async function toggleTeamInfo(id) {
     var videosContainer = document.querySelector('.videos-container');
     var servicesContainer = document.querySelector('.services-container');
     var projetsContainer = document.querySelector('.projets-container');
+    var planContainer = document.querySelector('.plandusite-container');
     var photosContainer = document.querySelector('.photos-container');
     aproposdemoiContainer.classList.remove('fade-in');
     presentationContainer.innerHTML = '';
+    planContainer.innerHTML='';
     servicesContainer.innerHTML = '';
     aproposdemoiContainer.innerHTML = '';
     videosContainer.innerHTML = '';
@@ -78,14 +79,14 @@ export async function toggleTeamInfo(id) {
     photosContainer.innerHTML = '';
 
     if(id=== 'services'){
-        gsap.from('.services-container',{scale:0,stagger:1, duration:1,stagger:1});
+
         var intro2services = createElementWithClass('div','section-services');
             
             var text_intro2services = createElementWithClass('div','text-section-services');
                 text_intro2services.appendChild(createText('h2',"Et si on travaillais ensemble ? "));
                 text_intro2services.appendChild(createText('p',`Après avoir réalisé de nombreux projets dans des domaines variés, je suis prêt et motivé à collaborer avec vous.
                     Que ce soit pour un projet informatique, vidéographique ou photographique, je serais ravi de mettre mon énergie et ma créativité au service de vos idées.`));
-                    text_intro2services.appendChild(createText('h2',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
+                    text_intro2services.appendChild(createText('p',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
             intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
@@ -94,40 +95,38 @@ export async function toggleTeamInfo(id) {
 
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Création de Portfolios Personnalisés"));
-        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent.
-            Que vous soyez artiste, photographe, designer ou autre, je vous accompagne pour créer un portfolio unique et adapté à vos besoins.
+        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, designer ou autre.
+            Ce que je peux vous proposer :
 
-            Ce que je propose :
+            <ul> - Un design sur mesure pour mettre en avant vos projets.</ul>
+            <ul> - Du traitement des images pour un rendu professionnel.</ul>
+            <ul> - Une organisation claire et intuitive.</ul>
+            <ul> - Un portofolio compatible sur tous vos appareils (ordinateur, tablette, smartphone).</ul>
 
-            <ul> - Design sur mesure pour mettre en avant vos projets.</ul>
-            <ul> - Traitement des images pour un rendu professionnel.</ul>
-            <ul> - Organisation claire et intuitive.</ul>
-            <ul> - Compatible sur tous vos appareils (ordinateur, tablette, smartphone).</ul>
-            Chaque projet est différent. Ensemble, créons un portfolio qui impressionnera vos clients ou partenaires. Contactez-moi pour démarrer votre projet !`));
+            Chaque projet est différent. Ensemble, créons votre portfolio, rien que pour vous !`));
         
         intro2services.appendChild(text_intro2services);
         var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/porto.png'));
+        image_intro2services.appendChild(createImage('Photos/services/portofolio.jpg'));
         intro2services.appendChild(image_intro2services);
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
         var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/shooting.png'));
+        image_intro2services.appendChild(createImage('Photos/services/shooting.JPG'));
         intro2services.appendChild(image_intro2services);
         var text_intro2services = createElementWithClass('div','text-section');
-        text_intro2services.appendChild(createText('h2',"Shooting photo"));
-        text_intro2services.appendChild(createText('p',`Des photos qui capturent vos plus beaux moments.
-            Que ce soit pour un événement, un projet ou des besoins pros, je m’adapte à vos envies pour créer des clichés qui vous ressemblent.
+        text_intro2services.appendChild(createText('h2',"Shootings photo spécifiés"));
+        text_intro2services.appendChild(createText('p',`Des photos qui capturent vos plus beaux moments, que ce soit pour un événement, un projet ou des besoins profesionnels.Je m’adapte à vos envies pour créer des clichés qui vous ressemblent.
 
-            Ce que je propose :
+            Ce que je peux vous proposer :
 
             <ul> - Une séance sur mesure, définie avec vous.</ul>
             <ul> - Des idées originales pour des photos uniques.</ul>
             <ul> - Des shootings pour tout type d’événement : portraits, groupes, mariages, anniversaires, etc.</ul>
             <ul> - Un moment convivial pour des photos naturelles.</ul>
-            Prêt pour un shooting à votre image ?
-            Contactez-moi et organisons votre séance dès maintenant !`));
+
+            Prêt pour un shooting à votre image ? Organisons votre séance dès maintenant !`));
         
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
@@ -136,7 +135,7 @@ export async function toggleTeamInfo(id) {
         
         
         var text_intro2services = createElementWithClass('div','text-section');
-        text_intro2services.appendChild(createText('h2',"Montage video"));
+        text_intro2services.appendChild(createText('h2',"Montage Vidéo Sur Mesure : Courts & Longs Métrages"));
         text_intro2services.appendChild(createText('p',`Transformez vos idées en vidéos captivantes !
 
             Que ce soit pour un projet personnel, professionnel, ou un événement particulier, je vous propose un montage vidéo sur mesure, adapté à vos besoins. Ensemble, nous donnerons vie à vos images et vidéos pour créer un contenu fluide, impactant et à votre image.
@@ -147,22 +146,20 @@ export async function toggleTeamInfo(id) {
             <ul> - Des effets et transitions adaptés : Pour un rendu professionnel et dynamique.</ul>
             <ul> - Un storytelling efficace : Une structure claire pour capter et maintenir l’attention.</ul>
             <ul> - Flexibilité sur tous les formats : Adapté aux réseaux sociaux, présentations, événements, ou souvenirs personnels.</ul>
-            Prêt à donner vie à vos projets ?
-            Contactez-moi dès maintenant pour discuter de votre montage vidéo ! 🎥`));
+            Prêt à donner vie à vos projets ? Echangeons ensemble sur vos idée de vidéos ! 🎥`));
         
         intro2services.appendChild(text_intro2services);
         var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/montage.png'));
+        image_intro2services.appendChild(createImage('Photos/services/montage.jpg'));
         intro2services.appendChild(image_intro2services);
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
         var text_intro2services = createElementWithClass('div','text-section');
         var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/tournage.png'));
+        image_intro2services.appendChild(createImage('Photos/services/tournage_original.png'));
         intro2services.appendChild(image_intro2services);
         text_intro2services.appendChild(createText('h2', "Tournage vidéo"));
-        // Ajoutez une description du service
         text_intro2services.appendChild(createText('p', `Des vidéos professionnelles qui captent l'essence de vos projets.
         Que ce soit pour des vidéos événementielles, des projets créatifs ou des besoins professionnels, je vous accompagne pour réaliser des vidéos percutantes et sur mesure.
 
@@ -173,8 +170,7 @@ export async function toggleTeamInfo(id) {
         <ul> - Des vidéos avec des techniques modernes pour un rendu de haute qualité.</ul>
         <ul> - Une approche conviviale et professionnelle pour mettre à l'aise les participants.</ul>
 
-        Prêt à immortaliser vos moments en vidéo ?
-        Contactez-moi pour discuter de votre projet et organiser votre tournage vidéo !`));
+        Prêt à immortaliser vos moments en vidéo ? Organisons votre tournage vidéo !`));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
@@ -191,27 +187,29 @@ export async function toggleTeamInfo(id) {
         servicesContainer.appendChild(intro2services);
 
         const sections = document.querySelectorAll(".service");
-        /*
+        
         sections.forEach((element, index) => {
+            const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
+        
             gsap.fromTo(element, 
                 {
-                    autoAlpha: 0,      // Départ de l'animation (opacité 0)
-                    x: index % 2 === 0 ? -300 : 300, // Si l'index est pair, il vient de la gauche (-300), sinon de la droite (300)
+                    autoAlpha: 0,      
+                    x: index % 2 === 0 ? -offset : offset, 
                 }, 
                 {
-                    autoAlpha: 1,      // Fin de l'animation (opacité 1)
-                    x: 0,              // Fin de l'animation (pas de décalage en x)
-                    ease: "power2.out", // Ease pour l'animation
+                    autoAlpha: 1,     
+                    x: 0,            
+                    ease: "power2.out", 
                     scrollTrigger: {
                         trigger: element,
-                        start: "top center",  // Commencer l'animation lorsque le bas de l'élément atteint le centre de la fenêtre
-                        end: "75% bottom",    // Arrêter l'animation lorsque le bas de l'élément atteint le bas de la fenêtre
-                        scrub: true,             // Animation lissée
+                        start: "center bottom",  
+                        end: "center center", 
+                        scrub: true,         
                     }
                 }
             );
         });
-        */
+        
     }
     if(id=== 'videos'){
 
@@ -222,13 +220,12 @@ export async function toggleTeamInfo(id) {
         var text_intro2videos = createElementWithClass('div', 'text-section', 'video-section');
         text_intro2videos.appendChild(createText('h2', "Mes contenus vidéos"));
         text_intro2videos.appendChild(createText('p', `
-            Passionné par le montage vidéo et constamment à la recherche d'inspiration pour créer du contenu, 
-            je saute sur l'occasion de concrétiser une idée germeant dans mon esprit, à travers des vidéos captivantes et originales.
             Auparavant, je partageais mes créations sur mon compte Instagram 
             <a href='https://www.instagram.com/flkprod_/' target='_blank'>@FLKPROD_</a>, qui est toujours actif à ce jour. 
             Maintenant, c'est sur ce site que toutes mes créations seront postées.
-            Vous pouvez consulter toutes mes créations dans la rubrique ci-dessous. <strong>Enjoy.</strong>
+            Vous pouvez consulter toutes mes créations dans la rubrique ci-dessous.
         `));
+        text_intro2videos.appendChild(createText('h2', "Enjoy."));
         intro2videos.appendChild(text_intro2videos);
         videosContainer.appendChild(intro2videos);
 
@@ -239,11 +236,16 @@ export async function toggleTeamInfo(id) {
         const videosData = [
             {
                 url: 'https://www.youtube.com/embed/sDuDS7t4UsU',
-                description: "Création d'une introduction avec pour thème la montée en puissance de la menace cybernétique dans notre ère moderne."
+                title:'Creation #1',
+                description: `Création d'une introduction avec pour thème la montée en puissance de
+                la menace cybernétique dans notre ère moderne.`,
+                competences:"Montage vidéo , Tournage Vidéo , Scénarisation"
             },
             {
                 url: 'https://www.youtube.com/embed/fNdTNYmgD8o',
-                description: "Création d'une vidéo humoristique pour une campagne du Bureau des Élèves de mon école d'ingénieurs."
+                title:'Présentation BDE Lepus Sinapis',
+                description: "Création d'une vidéo humoristique pour une campagne du Bureau des Élèves de mon école d'ingénieurs, Polytech Dijon.",
+                competences:"Montage vidéo , Tournage Vidéo , Scénarisation"
             }
         ];
 
@@ -257,9 +259,21 @@ export async function toggleTeamInfo(id) {
             videoContainer.appendChild(iframe);
 
             // Ajouter la description de la vidéo
+            var videoTitle = createElementWithClass("h3", "video-description");
+            videoTitle.textContent = videoData.title;
+            videoContainer.appendChild(videoTitle);
             var videoDescription = createElementWithClass("p", "video-description");
             videoDescription.textContent = videoData.description;
             videoContainer.appendChild(videoDescription);
+            
+
+            const competences = createElementWithClass('div', 'competences');
+            videoData.competences.split(', ').forEach(skill => {
+                const skillTag = createElementWithClass('span', 'competence-tag');
+                skillTag.textContent = skill;
+                competences.appendChild(skillTag);
+            });
+            videoContainer.appendChild(competences);
             galerie.appendChild(videoContainer);
         });
 
@@ -280,7 +294,7 @@ export async function toggleTeamInfo(id) {
             
             var text_intro2presentation = createElementWithClass('div','text-section-presentation');
                 text_intro2presentation.appendChild(createText('h2',"Bienvenue"));
-                text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie, à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique, je partage ici mes réalisations, mes inspirations, et mes collaborations.`));
+                text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie, à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique, je partage ici mes réalisations, mes inspirations, mes collaborations.`));
                 text_intro2presentation.appendChild(createText('h2',"Enjoy."));
             intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
@@ -313,7 +327,7 @@ export async function toggleTeamInfo(id) {
                 className: "services",
                 text: "Mes services",
                 description: "Travaillons ensemble !",
-                imageUrl: "Photos/shooting.JPG",
+                imageUrl: "Photos/services/shooting.JPG",
             },
             {
                 id: "aproposdemoi",
@@ -351,7 +365,7 @@ export async function toggleTeamInfo(id) {
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/Maxime_WIZYA.jpg'));
+        image_intro2presentation.appendChild(createImage('Photos/Apropos/Maxime_WIZYA.jpg'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
@@ -363,7 +377,11 @@ export async function toggleTeamInfo(id) {
         text_intro2presentation.appendChild(createText('p',`En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant.
             C'est sur ce site que vous trouverez toutes mes créations.`));
         text_intro2presentation.appendChild(createLineSpan(0));
-        
+        text_intro2presentation.appendChild(createText('h2',"Pour résumer : "))
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-briefcase" aria-hidden="true"></i> Consultant SAP GRC`));
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-city"></i> WIZYA Consulting`));
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-map-marker"></i> Paris, France`));
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-camera"></i> <i class="fa fa-code"></i> <i class="fa fa-video"></i> Passioné`));
         intro2presentation.appendChild(text_intro2presentation);
         aproposdemoiContainer.appendChild(intro2presentation);
 
@@ -377,7 +395,7 @@ export async function toggleTeamInfo(id) {
             Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante.
             Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel.`));
 
-        text_intro2lbnl.appendChild(createImage('Photos/carte_berkeley.png'));
+        text_intro2lbnl.appendChild(createImage('Photos/Apropos/carte_berkeley.png'));
 
         text_intro2lbnl.appendChild(createText('p',`En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants.
             La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides.
@@ -397,7 +415,7 @@ export async function toggleTeamInfo(id) {
         intro2lbnl.appendChild(text_intro2lbnl);
     
         var image_intro2lbnl = createElementWithClass('div','image-section','portrait');
-        image_intro2lbnl.appendChild(createImage('Photos/LBNL.jpg'));
+        image_intro2lbnl.appendChild(createImage('Photos/Apropos/LBNL.jpg'));
         intro2lbnl.appendChild(image_intro2lbnl);
         aproposdemoiContainer.appendChild(intro2lbnl);
 
@@ -407,32 +425,41 @@ export async function toggleTeamInfo(id) {
 
         var text_certifications = createElementWithClass('div','certif-cisco');
         text_certifications.appendChild(createText('h2',"Mes Certifications en réseaux"));
+
+        var s1_certifications = createElementWithClass("div","class-certification");
+        s1_certifications.appendChild(createImage('Photos/Apropos/CCNA.png'));
         var liste_1_certifications = document.createElement("ul");
-        liste_1_certifications.appendChild(createImage('Photos/CCNA.png'));
-        liste_1_certifications.appendChild(createText('li',"<strong>CCNA</strong> (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
+        liste_1_certifications.appendChild(createText('li',"CCNA (<strong>C</strong>isco <strong>C</strong>ertified <strong>N</strong>etwork <strong>A</strong>ssociate) "));
         liste_1_certifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
         liste_1_certifications.appendChild(createText('li',"Network Security By Cisco"));
         liste_1_certifications.appendChild(createText('li',"Network Defense By Cisco"));
-        
-        text_certifications.appendChild(liste_1_certifications);
+        s1_certifications.appendChild(liste_1_certifications);
+        text_certifications.appendChild(s1_certifications);
+    
+        var s2_certifications = createElementWithClass("div","class-certification");
+        s2_certifications.appendChild(createImage('Photos/Apropos/Fortinet.png'));
         var liste_2_certifications = document.createElement("ul");
-        liste_2_certifications.appendChild(createImage('Photos/Fortinet.png'));
         liste_2_certifications.appendChild(createText('li',"Fortinet Certified Associate Cybersecurity"));
         liste_2_certifications.appendChild(createText('li',"Fortinet Certified Fundamentals Cybersecurity"));
         liste_2_certifications.appendChild(createLineSpan(1));
-        text_certifications.appendChild(liste_2_certifications);
+        s2_certifications.appendChild(liste_2_certifications);
+        text_certifications.appendChild(s2_certifications);
 
+        var s3_certifications = createElementWithClass("div","class-certification");
+        s3_certifications.appendChild(createImage('Photos/Apropos/linux.png'));
         var liste_3_certifications = document.createElement("ul");
-        liste_3_certifications.appendChild(createImage('Photos/linux.png'));
         liste_3_certifications.appendChild(createText('li',"BGD Linux Unhatched"));
         liste_3_certifications.appendChild(createText('li',"NDG Linux Essential"));
-        text_certifications.appendChild(liste_3_certifications);
+        s3_certifications.appendChild(liste_3_certifications);
+        text_certifications.appendChild(s3_certifications);
 
+        var  s4_certifications= createElementWithClass("div","class-certification");
+        s4_certifications.appendChild(createImage('Photos/Apropos/htmlcssjs.png'));
         var liste_4_certifications = document.createElement("ul");
-        liste_4_certifications.appendChild(createImage('Photos/htmlcssjs.png'));
         liste_4_certifications.appendChild(createText('li',"JSE - Certified Entry-level JavaScript Programmer"));
         liste_4_certifications.appendChild(createText('li',"JSA - Certified Associate JavaScript Programmer"));
-        text_certifications.appendChild(liste_4_certifications);
+        s4_certifications.appendChild(liste_4_certifications);
+        text_certifications.appendChild(s4_certifications);
 
 
         certifications.appendChild(text_certifications);
@@ -442,30 +469,27 @@ export async function toggleTeamInfo(id) {
         var liste_1_ecoles_formations = document.createElement("ul");
         liste_1_ecoles_formations.appendChild(createText('p',"Formation au diplome d'ingénieur en Sécurité Qualité Réseaux informatiques"));
         liste_1_ecoles_formations.appendChild(createText('p',"Polytech Dijon, Dijon, Bourgogne, FRANCE"));
-        liste_1_ecoles_formations.appendChild(createImage('Photos/Polytech.png'));
+        liste_1_ecoles_formations.appendChild(createImage('Photos/Apropos/Polytech.png'));
         
         
         
         text_ecoles_formations.appendChild(liste_1_ecoles_formations);
         var liste_2_ecoles_formations = document.createElement("ul");
         liste_2_ecoles_formations.appendChild(createText('p',"Maîtrise (Master) en cybersécurité"));
-        liste_2_ecoles_formations.appendChild(createText('p',"UQAC ( Université du Québèc à Chicoutimi, Chicoutimi, Québèc, CANADA"));
-        liste_2_ecoles_formations.appendChild(createImage('Photos/UQAC.jpg'));
+        liste_2_ecoles_formations.appendChild(createText('p',"UQAC (Université du Québèc à Chicoutimi, Chicoutimi, Québèc, CANADA)"));
+        liste_2_ecoles_formations.appendChild(createImage('Photos/Apropos/UQAC.jpg'));
         
         text_ecoles_formations.appendChild(liste_2_ecoles_formations);
         certifications.appendChild(text_ecoles_formations);
-
-
-
 
         aproposdemoiContainer.appendChild(certifications);
 
         var cv_section = createElementWithClass('div','section','cv');
 
         var image_certifications = createElementWithClass('div','image-section','portrait');
-        image_certifications.appendChild(createImage('Photos/lence.JPG'));
+        image_certifications.appendChild(createImage('Photos/Apropos/lence.JPG'));
         cv_section.appendChild(image_certifications);
-
+        
         var text_cv_section = createElementWithClass('div','text-section','contact-section');
         
         text_cv_section.appendChild(createText('h2',"Plus d'infos sur mon profil ?"));
@@ -473,7 +497,7 @@ export async function toggleTeamInfo(id) {
         
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/Resume_Maxime_Falkowski.pdf"));
         text_cv_section.appendChild(createIconWithLink("fa fa-file-pdf", "docs/CV_Maxime_Falkowski.pdf"));
-
+        text_cv_section.appendChild(createLineSpan(2));
         text_cv_section.appendChild(createText('h2',"Et pour me joindre ?"));
         text_cv_section.appendChild(createText('p',"Rien de plus simple, contactez moi par courriel ou via mes réseaux sociaux juste ici ! "));
         
@@ -535,54 +559,80 @@ export async function toggleTeamInfo(id) {
             }
         });
         
-        
+        if (window.innerWidth > 1100) {
         var tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ".formations",
                 scrub: true,
-                start: "top -25%", // Ajuster la valeur de départ
-                end: "bottom top", // Ajuster la valeur de fin
+                start: "top top", // Ajuster la valeur de départ
+                end: "center top", // Ajuster la valeur de fin
                 anticipatePin: 1,
             }
         });
+        }
+        else{
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".formations",
+                    scrub: true,
+                    start: "top -10%", // Ajuster la valeur de départ
+                    end: "bottom center", // Ajuster la valeur de fin
+                    anticipatePin: 1,
+                }
+            });
+        }
 
-            tl.from(".formations h2,.formations li, .formations img", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
+            tl.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
             .from(".line1", {scaleX: 0, ease: "none"}, 0)
             .to(".certif-cisco", {backgroundColor: "	#e3d898"}, 0) // Changement de couleur
             .to(".ecoles_formations", {backgroundColor: "	#ffffff"}, 0) // Changement de couleur
             .to(".berkeley", {backgroundColor: "	#e3d898"}, 0); // Changement de couleur pour aproposdemoi-container
         
-        var tl2 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".cv", // Déclencher lorsque la quatrième div est visible
-                start: "top 0%", // Ajuster la valeur de départ
-                end: "bottom top", // Ajuster la valeur de fin
-                scrub: true, // Pour une animation fluide
-            }
-        });
-
-        // Ajouter l'animation pour la ligne
-        tl2.to(".line2", { scaleX: 1, ease: "none" })
-        .to(".cv", { backgroundColor: "black"}, 0);
+            
+            
 
         let largeElements = document.querySelectorAll(".desc-berkeley");
-
-        // Parcourez chaque élément et appliquez l'animation
-        largeElements.forEach(large => {
-            gsap.to(large, {
-                y: () => (window.innerHeight - large.clientHeight - 750),
-                ease: "none",
-                scrollTrigger: {
-                    trigger: '.berkeley',
-                    pin: true,
-                    start: "top 0%",
-                    end: () => `bottom ${document.querySelector('.berkeley').offsetHeight - large.clientHeight}px`,
-                    scrub: 0.5,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1,
-                }
+        if (window.innerWidth > 1100) {
+            largeElements.forEach(large => {
+                gsap.to(large, {
+                    y: () => {
+                        const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
+                        return Math.min(0, window.innerHeight - large.clientHeight - berkeleyHeight);
+                    },
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: '.berkeley',
+                        pin: true,
+                        start: "top top",
+                        end: () => {
+                            const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
+                            const largeHeight = large.clientHeight;
+                            return `bottom ${Math.max(0, berkeleyHeight - largeHeight)}px`;
+                        },
+                        scrub: 0.5,
+                        invalidateOnRefresh: true,
+                        anticipatePin: 1,
+                        onUpdate: self => {
+                            // Optionnel : Débogage des valeurs
+                            console.log(`Progress: ${self.progress}, Direction: ${self.direction}`);
+                        },
+                    }
+                });
             });
+        }
+
+        var tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".cv",  
+                start: "top bottom", 
+                end: "top 15%",       
+                scrub: true,              
+            }
         });
+        
+        tl2.from(".line2", {scaleX: 0, backgroundColor: "#e3d898", ease: "none"}, 0)
+        .to(".cv",{scaleX: 1, backgroundColor: "black", ease: "none"})
+        
         
   
     }
@@ -599,7 +649,7 @@ export async function toggleTeamInfo(id) {
 
         var citation = document.createElement('div');
         citation.className='citation';
-        citation.appendChild(createText('p', "Mes contenus photographiques"));
+        citation.appendChild(createText('p', "Mes contenus photographiques (Scroll légèrement, cette section est loin d'être vide 😉)"));
         photosContainer.appendChild(citation);
         gsap.from('.citation',{scale:0,stagger:1, duration:1});
 
@@ -636,10 +686,13 @@ export async function toggleTeamInfo(id) {
         const sections = document.querySelectorAll('.section.photos');
 
         sections.forEach((element, index) => {
+            // Calcul de 50% de la largeur de la fenêtre moins 1em
+            const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
+        
             gsap.fromTo(element, 
                 {
                     autoAlpha: 0,      // Départ de l'animation (opacité 0)
-                    x: index % 2 === 0 ? -300 : 300, // Si l'index est pair, il vient de la gauche (-300), sinon de la droite (300)
+                    x: index % 2 === 0 ? -offset : offset, // Si l'index est pair, il vient de la gauche (-offset), sinon de la droite (offset)
                 }, 
                 {
                     autoAlpha: 1,      // Fin de l'animation (opacité 1)
@@ -648,7 +701,7 @@ export async function toggleTeamInfo(id) {
                     scrollTrigger: {
                         trigger: element,
                         start: "25% bottom",  // Commencer l'animation lorsque le bas de l'élément atteint le centre de la fenêtre
-                        end: "bottom bottom",    // Arrêter l'animation lorsque le bas de l'élément atteint le bas de la fenêtre
+                        end: "75% bottom",    // Arrêter l'animation lorsque le bas de l'élément atteint le bas de la fenêtre
                         scrub: true,             // Animation lissée
                     }
                 }
@@ -656,107 +709,142 @@ export async function toggleTeamInfo(id) {
         });
         
         
+        
     }
     else if(id === 'projets'){
         gsap.from('.projets-container',{scale:0,stagger:1, duration:1,stagger:1});
         gsap.from('.menu-projets',{scale:0,stagger:1, duration:2,stagger:1});
 
-        var intro2projects = createElementWithClass('div','section','video-section');
+        var intro2projects = createElementWithClass('div','section','projet-section');
         var text_intro2projects = createElementWithClass('div','text-section','mes-projets');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
-        text_intro2projects.appendChild(createText('p',`Étant en école d'ingénieurs et en maîtrise en cybersécurité, j'ai eu de nombreux projets informatiques à réaliser durant toute ma scolarité. Certains ne sont que des créations que j'ai réalisées par passion pour le code. <strong>Enjoy.</strong>`));
-        text_intro2projects.appendChild(createText('p','<strong>Enjoy.</strong>'));
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
-        var projets = createElementWithClass('div','projets');
-        var areamenuDiv = createElementWithClass('div','area-menu-projets');
-        var menuDiv = createElementWithClass('div','menu-projets');
+
+
+        var projets = createElementWithClass('div', 'projets');
 
         var menuList = [
-            
-            { name: "RockRush", github:"https://github.com/FLKprod/RockRush", videoLink: "Photos/projets/RockRush.mp4", imageSrc: "Photos/projets/RockRush.jpg" ,
-                desc:`RockRush est un jeu en langage web créé durant ma formation ingénieur.
+            {
+                name: "RockRush",
+                github: "https://github.com/FLKprod/RockRush",
+                videoLink: "Photos/projets/RockRush.mp4",
+                imageSrc: "Photos/projets/RockRush.jpg",
+                desc: `RockRush est un jeu en langage web créé durant ma formation ingénieur.
                 C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres. \n
                 les langages de programmation utilisés dans ce projet sont : 
                     <ul> - HTML </ul>
                     <ul> - CSS  </ul>
                     <ul> - Javascript </ul>
-                Ce projet, réalisé durant mon cursus d'ingénieur en informatique, fut un travail très utile à la création de ce site internet.
-                `},
-
-            { name: "Application DeepL", github:"https://github.com/FLKprod/Appli_Android_Deepl", videoLink: "Photos/projets/DeepL.mp4", imageSrc: "Photos/projets/DeepL.png" ,
-                desc:`Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur.
+                Ce projet, réalisé durant mon cursus d'ingénieur en informatique, fut un travail très utile à la création de ce site internet.`,
+                competences: "HTML / CSS, JavaScript"
+            },
+            {
+                name: "Application DeepL",
+                github: "https://github.com/FLKprod/Appli_Android_Deepl",
+                videoLink: "Photos/projets/DeepL.mp4",
+                imageSrc: "Photos/projets/DeepL.png",
+                desc: `Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur.
                 Réalisé à travers l'outil de développement d'application Android Studio, cette application tire parti de l'API DeepL, une API avec version gratuite permettant d'utiliser les fonctions de Deepl, traducteur mondialement connu.
                 Son objectif principal est de fournir un service de traduction de texte efficace et convivial.
                 les langages de programmation utilisés dans ce projet sont : 
                     <ul> - Java </ul>
-                    <ul> - XML  </ul>`},
-
-            { name: "201 Farehein", github: "https://github.com/FLKprod/201F", videoLink: "Photos/projets/201F.mp4", imageSrc: "Photos/projets/201F.png",
+                    <ul> - XML  </ul>`,
+                competences: "Programmation Mobile, API"
+            },
+            {
+                name: "201 Farehein",
+                github: "https://github.com/FLKprod/201F",
+                videoLink: "Photos/projets/201F.mp4",
+                imageSrc: "Photos/projets/201F.png",
                 desc: `201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. 
-                Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !` },
-
-            { name: "CyberSafe", github:"https://github.com/FLKprod/Projet-IOT", videoLink: "Photos/projets/Cybersafe.mp4", imageSrc: "Photos/projets/Cybersafe.png",
-                desc:`Une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés.
-                 Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés.`},
-            /*
-            { name: "TowerDefender", videoLink: "", imageSrc: "",desc:"" },
-            { name: "Flkprod.github.io", videoLink: "dwwd", imageSrc: "Photos/logos/logoneg.png",desc:""},
-            { name: "ToDoList pour IOs", videoLink: "", imageSrc: "",desc:"" },
-            { name: "Carte intéractive", github:"https://github.com/FLKprod/MapEmblem", videoLink: "", imageSrc: "",desc:"Carte interactive pour les lieux partenaires de EMBLEM Dijon" },
-             */
-            { name: "LanbdaCash", github:"https://github.com/FLKprod/CloudProject", videoLink: "Photos/projets/landbacash.mp4", imageSrc: "Photos/projets/landbacash.png",
-                desc:`Application pour tester un programme et l'executer avec differentes valeurs de RAM pour connaitre et comparer les prix d'execution d'AWS ( Amazon Web Services ).`}
+                Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !` ,
+                competences: "HTML, CSS, JavaScript"
+            },
+            {
+                name: "CyberSafe",
+                github: "https://github.com/FLKprod/Projet-IOT",
+                videoLink: "Photos/projets/Cybersafe.mp4",
+                imageSrc: "Photos/projets/Cybersafe.png",
+                desc: `Une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés.
+                 Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés.`,
+                competences: "HTML / CSS, JavaScript, IOT, JSON"
+            },
+            {
+                name: "LanbdaCash Tool",
+                github: "https://github.com/FLKprod/CloudProject",
+                videoLink: "Photos/projets/landbacash.mp4",
+                imageSrc: "Photos/projets/landbacash.png",
+                desc: `Application pour tester un programme et l'exécuter avec différentes valeurs de RAM pour comparer les prix d'exécution AWS (Amazon Web Services).`,
+                competences: "Cloud Computing, AWS, Python, Bash"
+            }
         ];
-        for (let i = 0; i < menuList.length; i++) {
-            menuDiv.appendChild(createText('ul',menuList[i].name));
-        }
-        var firstItem = menuList[0]; // Récupération du premier élément
-        var projet = createElementWithClass('div','projet');
-        areamenuDiv.appendChild(menuDiv)
-        projets.appendChild(areamenuDiv);
-        var video_iframe=createVideoProject(firstItem.videoLink)
-        projet.appendChild(video_iframe);
-        
-        var text_projet = createElementWithClass('div','text-projet')
-        var title_projet = createElementWithClass('div','title-projet')
-        var title_text_projet = createText('h2', firstItem.name);
-        title_text_projet.class="titre_projet";
-        var img_projet = createImageElement("img", 'img-projet', firstItem.imageSrc, "projet");
-        title_projet.appendChild(img_projet);
-        title_projet.appendChild(title_text_projet);
-        
-        var desc_projet = createText('p', firstItem.desc);
-        desc_projet.class="description_projet";
-        
-        text_projet.appendChild(title_projet);
-        text_projet.appendChild(desc_projet);
-        text_projet.appendChild(createGitHubLink(firstItem.github));
 
-        projet.appendChild(text_projet);
-        menuDiv.addEventListener('click', function(event) {
-            if (event.target.tagName === 'UL') {
-                
-                var videoLink = menuList.find(item => item.name === event.target.textContent)?.videoLink;
-                var imageLink = menuList.find(item => item.name === event.target.textContent)?.imageSrc;
-                var descLink = menuList.find(item => item.name === event.target.textContent)?.desc;
-                var githublink = menuList.find(item => item.name === event.target.textContent)?.github;
-                updateLinkGithub(githublink)
-                console.log("Changement de projet" + videoLink + "  " + imageLink + " " + githublink);
-                if (videoLink) {
-                    video_iframe.scrollIntoView({ behavior: 'smooth' }); // Scroll auto jusqu'au menu-projets avec les noms des projets
-                    desc_projet.innerHTML=descLink;
-                    title_text_projet.innerHTML=event.target.textContent;
-                    updateVideoElement(videoLink);
-                    updateImageElement(imageLink);
-                    
-                }
-            }});
-        projets.appendChild(projet);
+        // Création des carrousels pour chaque projet
+        menuList.forEach(item => {
+            const projet = createElementWithClass('div', 'projet');
+        
+            // Carrousel
+            const images = [item.imageSrc]; // Ajouter plus d'images si nécessaire
+            const carousel = createProjetCarousel(item.name, item.desc, images, item.videoLink, item.github);
+        
+            // Titre
+            const titleElement = createElementWithClass('h3', 'project-title');
+            titleElement.textContent = item.name;
+        
+            // Compétences
+            const competences = createElementWithClass('div', 'competences');
+            item.competences.split(', ').forEach(skill => {
+                const skillTag = createElementWithClass('span', 'competence-tag');
+                skillTag.textContent = skill;
+                competences.appendChild(skillTag);
+            });
+        
+            projet.appendChild(carousel);
+            projet.appendChild(titleElement);
+            projet.appendChild(competences);
+        
+            projets.appendChild(projet);
+        });
         projetsContainer.appendChild(projets);
     }
     else if(id === 'plandusite'){
+        planContainer.appendChild(createText('h2', "Plan du site"));
 
+        var columnsContainer = createElementWithClass('div', 'columns-container');
+        
+
+        // Données du plan de site pour les 3 colonnes
+        const planData = [
+            ["/","Bienvenue"],
+            ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés","Montage Vidéo Sur Mesure : Courts & Longs Métrages","Tournage vidéo"],
+            ["Projets", "RockRush", "Application Deepl","201 Farehein","Cybersafe","LandbaCash Tool"],
+            ["Multimedia","Création #1","Présentation BDE Lepus Sinapis"],
+            ["Photographie", "Dijon", "Strasbourg","San Francisco","Paris","Quebec","Baseball","Basket","Automobile"],
+            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mes certifications en réseaux","Mes formations","Informations sur mon profil"],
+            ["Plan du site"]
+        ];
+        
+        planData.forEach((items, index) => {            
+            // Ajout d'un conteneur pour chaque élément de la colonne
+            if(index !== 0 ){
+                columnsContainer.appendChild(createElementWithClass("hr","hr-plan"));
+            }
+            
+            items.forEach((item, i) => {
+                let element;
+                if (i === 0) {
+                    // Créer un h2 pour le premier élément
+                    element = createText('h3', item);
+                } else {
+                    // Créer un p pour les autres éléments
+                    element = createText('p', "- " + item);
+                }
+                columnsContainer.appendChild(element);
+            });
+            
+        });
+        planContainer.appendChild(columnsContainer);
     }
 
 

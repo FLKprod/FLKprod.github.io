@@ -173,24 +173,15 @@ export function createLineSpan(number) {
 
 
 export function createGitHubLink(projectUrl) {
-    // Créer une nouvelle balise <p>
     var paragraph = createElementWithClass('div','githublink');
     paragraph.appendChild(createText('p',`Ce projet informatique est d'ailleurs disponible sur mon Github,
-        que vous pouvez consulter en cliquant ici ->`));
-    // Créer une nouvelle balise <a>
-    const link = document.createElement('i');
+        que vous pouvez consulter en cliquant ici`));
+    const link = document.createElement('a');
     link.href = projectUrl;
     link.target = '_blank'; // Ouvrir le lien dans un nouvel onglet
     link.rel = 'noopener noreferrer'; // Pour des raisons de sécurité
     link.className="fab fa-github"
-    link.alt = 'GitHub Logo';
-
-    link.style.fontWeight= 800
-    link.style.fontSize = "2em"
-    link.style.marginLeft='10px';
     link.style.cursor = 'pointer'; // Curseur de la souris en forme de main pour indiquer que c'est cliquable
-
-    // Ajouter la balise <a> à la balise <p>
     paragraph.appendChild(link);
 
     return paragraph;
@@ -263,3 +254,4 @@ export function createMenuItem(id, className, text, description, imageUrl) {
 
     return menuItem;
 }
+

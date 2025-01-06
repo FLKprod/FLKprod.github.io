@@ -3,7 +3,14 @@ gsap.from('#logo',{opacity:0, x:"-20rem",duration:2});
 gsap.from('.switch',{opacity:0, y:"-10rem",duration:2});
 gsap.from('.social-networks',{opacity:0, y:"-10rem",duration:3});
 gsap.from('.sections-menu',{opacity:0, x:"20rem",duration:2});
-gsap.from('.menu-mobile',{opacity:0, x:"-20rem",duration:1,delay:2});
+const offset = window.innerWidth * 0.7; // 70% de la largeur de la fenêtre ( 20 de plus pour etre sur qu'il est bien caché)
+
+gsap.from('.menu-mobile', {
+    opacity: 0,
+    x: -offset,  // Utilisation de la valeur calculée
+    duration: 1,
+    delay: 2
+})
 gsap.from('#introGif',{scale:0,stagger:1, duration:0.4,yoyo: true,repeat: 1});
 /*
 var tl2 = gsap.timeline({

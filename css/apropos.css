@@ -10,58 +10,9 @@
 .aproposdemoi-container{
     position: relative;
 }
-
 .aproposdemoi-container > .section{
     height: 100vh;
 }
-
-/*1ere section*/
-.moicmaxime{
-    display: flex;
-    overflow: hidden;
-}
-
-.moicmaxime > .text-section p{
-    text-align: left;
-    margin-bottom: 1em;
-}
-
-.moicmaxime > .text-section h2{
-    text-align: left;
-    
-    margin:0;
-}
-
-
-.berkeley{
-    background-color: #4f0341;
-    color: white;
-    width: 100%;
-}
-
-.section:nth-child(2){
-    color:white;
-}
-.aproposdemoi-container .section:nth-child(4){
-    background-color:	#e3d898;
-    color:white;
-    padding-bottom: 3em;
-}
-
-.formations{
-    display: flex;
-    align-items: stretch;
-    gap : 0;
-    
-}
-
-.formations > h2{
-    font-size: 3em;
-    line-height: 1;
-    width: 100%;
-    text-align: center !important;
-}
-
 .aproposdemoi-container > .text-section{
     font-size: 1em;
     flex: 1;
@@ -70,7 +21,6 @@
     position: relative;
     height: 100%;
 }
-
 .text-section{
     margin-right: 2em;
 }
@@ -86,9 +36,148 @@
     margin-left: 1em;
 }
 
-.formations h2{
+.aproposdemoi-container .image-section{
+    width: auto;
+    display: flex;
+    height: 85%;
+    mix-blend-mode: normal;
+    margin: 3em 1em;
+}
+.aproposdemoi-container .image-section > img{
+    border-radius: 2em;
+    margin: 2em;
+
+ 
+}
+
+/*-------------- MOI C MAXIME -------------*/
+.moicmaxime{
+    display: flex;
+    overflow: hidden;
+}
+
+.moicmaxime .image-section{
+    width: auto;
+    height: 60%;
+}
+.moicmaxime > .text-section p{
+    text-align: left;
+    margin-bottom: 1em;
+}
+.moicmaxime > .text-section h2{
+    text-align: left;
+    margin:0;
+}
+.moicmaxime > .text-section h6{
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 3;
+    color:black;
+    font-weight: 200;
+    text-align: left;
+    line-height: 2;
+}
+
+body.mode-nuit .moicmaxime > .text-section h6{
+    color:white
+}
+
+.moicmaxime .text-section h6 > i{
+    color:#4f0341
+}
+
+body.mode-nuit .moicmaxime .text-section h6 > i{
+    color:#e3d898
+}
+
+
+
+/*-----------------------BERKELEY--------------------*/
+
+.berkeley{
+    background-color: #4f0341;
+    color: white;
+    overflow: hidden;
+    width: 100%;
+}
+
+.section:nth-child(2){
+    color:white;
+}
+.aproposdemoi-container .section:nth-child(4){
+    background-color:	#e3d898;
+    color:white;
+    padding-bottom: 3em;
+}
+.desc-berkeley{
+    height: 100%;
+    min-height: 100vh;
+    text-align: justify;
+    max-width: 50%;
+}
+
+
+.desc-berkeley > p{
+    width: 100%;
+    font-size: 1.5em;
+    height: auto;
+    padding-top: 3em;
+}
+.desc-berkeley > h2{
+    margin-top: 3em;
+}
+.desc-berkeley > img {
+    width: 50%;
+    border-radius: 1em;
+}
+
+
+/*----------------------FORMATIONS--------------------------*/
+.formations{
+    display: flex;
+    align-items: stretch;
+    gap : 0;
+    
+}
+
+.formations > h2{
     font-size: 3em;
-    color: #000000;
+    line-height: 1;
+    width: 100%;
+    text-align: center !important;
+}
+
+.formations h2{
+    margin-top: 3em;
+    font-size: 3em;
+}
+
+.class-certification{
+    display: flex;
+    margin-left: 2em;
+    align-items: center;
+}
+
+.class-certification ul {
+    margin-left: 1em;
+    padding-left: 0;
+    text-align: center;
+    list-style:none;
+}
+.class-certification ul li{
+    background-image: url('/Photos/icon_certif.png');
+    background-size: 1em 1em;
+    padding-left: 1.5em;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+
+.class-certification li  {
+    font-size: 1.25em;
+    line-height: 2;
+    color:black;
+    text-align: left;    
 }
 
 .certif-cisco, .ecoles_formations{
@@ -101,17 +190,7 @@
     color: black;
 }
 
-.certif-cisco ul {
-    text-align: center;
-}
 
-.certif-cisco li  {
-    font-size: 1em;
-    line-height: 2;
-    text-align: left;
-
-    
-}
 
 .certif-cisco img {
     width: 10%;
@@ -120,71 +199,35 @@
     align-items: center;
 }
 
-
 .ecoles_formations img{
     width: 70%;
+    border-radius: 2em;
     margin-bottom: 1em;
     height: auto;
     align-items: center;
 }
 
-.contact-section > p, .contact-section > h2{
-    line-height: 1;
-}
+/*--------------------------CONTACT--------------------*/
 
+.contact-section > p, .contact-section > h2{
+    line-height: 2;
+}
 
 .cv{
     background-color: #e3d898;
 }
 
 
-.aproposdemoi-container .image-section{
-    width: auto;
-    display: flex;
-    height: 100%;
-    mix-blend-mode: normal;
-    margin: 3em 1em;
-}
-.aproposdemoi-container .image-section > img{
-    border-radius: 2em;
-    margin: 2em;
-
- 
-}
-
-.desc-berkeley{
-    height: 100%;
-    min-height: 100vh;
-    max-width: 50%;
-}
-
-.desc-berkeley > p{
-    width: 100%;
-    height: auto;
-    padding-top: 3em;
-}
-
-.desc-berkeley > img {
-    width: 50%;
-    border-radius: 1em;
-}
-
-
-
 .line {
     width: 100%;
     max-width: 800px;
     height: 5px;
-
     position: relative;
     display: inline-block;
     background-color: transparent;
-  }.line1{
-    background-color: transparent;
-  }
-  .line2{
-    background-color: white;
-  }
+    transform-origin: center;
+    transform: scaleX(0);
+}
 
 
 /************************************************************************/
@@ -199,6 +242,24 @@
         padding: 0.7em;
         font-size: 1.1em;
         text-align: center;
+    }
+
+    .moicmaxime > .text-section h2:first-of-type{
+        font-size: 4em;
+        text-shadow: 
+                -1px -1px 0 black,
+                1px -2px 0 black,   
+                1px 1px 0 black,  
+                2px 1px 0 black; 
+    }
+
+    .moicmaxime > .text-section h2:last-of-type{
+        font-size: 2em;
+        text-shadow: 
+                -1px -1px 0 black,
+                1px -1px 0 black,   
+                1px 1px 0 black,  
+                1px 1px 0 black; 
     }
 
     .aproposdemoi-container > h3 {
@@ -232,8 +293,8 @@
     }
 
     .aproposdemoi-container .image-section{
-        width: auto;
-        height: 50%;
+        width: 75%;
+        height: auto;
         display: flex;
         justify-content: center;
         mix-blend-mode: normal;
@@ -278,7 +339,10 @@
     }
 
     .section:nth-child(4){
-        padding: 6em 0 ;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 0 ;
     }
     
     .certification .text-section > h2{
@@ -290,16 +354,24 @@
     }
 
     .berkeley{
-        width: 100w !important;
-        height: 100vh !important;
+        height: 100% !important;
     }
     .desc-berkeley{
         min-height: auto;
-        overflow: hidden;
+        font-size: 2em;
+        width: 100%;
+        max-width: 80%;
     }
 
-    .portrait {
-        width: 50%;
+    .desc-berkeley > img{
+        margin-top: 2em;
+        width: 100%;
+    }
+
+
+
+    .aproposdemoi-container .image-section > img{
+        width: 100%;
     }
 
     .paysage{

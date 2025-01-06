@@ -33,6 +33,21 @@ body > img{
     pointer-events: none;
 }
 
+h2{
+    margin: 0;
+    color:white;
+    font-size: 3em;
+    text-shadow: 
+                -1px -1px 0 black,  
+                5px -1px 0 black, 
+                1px 1px 0 black,   
+                1px 1px 0 black;
+    transition: transform 0.3s ease;
+}
+h2:hover {
+    transform: scale(1.2);
+}
+
 /* Entête de site */
 
 .fade-in {
@@ -45,8 +60,23 @@ body > img{
 
 
 .up{
+    font-weight: 900;
     padding-top: 5em;
 }
+
+.text-entete > h2 {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+.text-entete > h2:hover {
+    animation: slideRight 0.3s forwards;
+  }
+
+.text-entete > h2:not(:hover) {
+    animation: slideLeft 0.3s forwards;
+  }
+
 .up, .center, .down {
     text-align: center;
     width: 100%;
@@ -55,14 +85,22 @@ body > img{
 /****************************** bar de site en bas **************************************/
 
 .down{
-    background:  linear-gradient(white,rgba(79, 3, 65,0.6));
+    background-color: whitesmoke;
     color: var(--text-color-day);
     padding: 1em 0;
     font-size: 0.8em;
     line-height: 1.5;
     display: flex;
-    height: 10em;
+    height: 12em;
     flex-direction: row;
+}
+
+#down-logo {
+    transition: transform 0.3s ease;
+}
+
+#down-logo:hover {
+    transform: scale(1.2);
 }
 
 
@@ -75,6 +113,29 @@ body > img{
 }
 .text-entete{
     margin-left: 3em;
+    color:var(--text-color-night);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    font-weight:900;
+}
+
+.text-entete > hr {
+    border: 1px solid white;
+    color: white;
+}
+
+
+
+.text-entete > p{
+    letter-spacing: 0.06em;
+    font-weight:100;
+    font-size: 1em;
+    margin: 0;
+    text-shadow: 
+                -1px -1px 0 black,
+                1px -1px 0 black,   
+                1px 1px 0 black,  
+                1px 1px 0 black; 
 }
 .image-entete >img{
     display: block;
@@ -87,16 +148,21 @@ body > img{
 
 .entete{
     display: flex;
+    margin-top: 2em;
     padding: 1em 0;
-    background-color: whitesmoke;
     align-items:center;
     justify-content: space-between;
+    background-color: #4f0341;
     background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 1) 0%, 
-    rgba(127, 67, 97, 0.5) 50%, 
+    rgba(255, 255, 255, 1) 0%,
+    rgba(127, 67, 97, 0.25) 25%,
+    rgba(127, 67, 97, 0.5) 50%,
+    rgba(127, 67, 97, 0.25) 75%, 
     rgba(255, 255, 255, 1) 100%
     );
+    background-repeat: no-repeat;
+    background-size: cover;
 
 }
 
@@ -116,9 +182,7 @@ body > img{
 
 @media screen and (max-width: 1100px) {
 
-
     .up, .entete, .text-entete{
-
         flex-direction: column;
         align-items: center;
         margin-bottom: 2em;
@@ -129,11 +193,23 @@ body > img{
         font-size: 0.7em;
         color: black;
     }
+
+    .up{
+        padding-top: 0;
+    }
+
+      .up > h2:hover {
+        animation: scaleUp 0.3s forwards;
+      }
+
+      .text-entete > hr {
+        width: 50%;  
+      }
 }
 
 #backToTopButton {
     position: fixed;
-    border: 1px solid #e3d898;
+    border: 1px solid #4f0341;
     bottom:1em;
     display: none;
     z-index: 999;
@@ -141,7 +217,7 @@ body > img{
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
-    background-color: black;
+    background-color: #2b3a47;
     color:white;
     opacity: 0.7;
     font-size: 2em;
@@ -192,9 +268,9 @@ body > img{
 }
 
 .sections-menu > .select {
-    padding-bottom: 5px;
-    border-bottom: 5px solid #4f0341;
+    border-bottom: 2px solid #4f0341;
     margin-right: 0;
+    height: auto;
 }
 
 #mainContent {
@@ -240,22 +316,21 @@ body.mode-nuit .down {
 }
 
 body.mode-nuit .entete {
-    background:  linear-gradient(black, #4f0341,black);
+    background:  linear-gradient(black, rgba(127, 67, 97, 0.5) 25%,
+    rgba(127, 67, 97, 1) 50%,
+    rgba(127, 67, 97, 0.5) 75%,black);
     color: white;
 }
 
 body.mode-nuit .menu > button {
-    background-color: var(--background-night);
     color: var(--text-color-night);
 }
 
 body.mode-nuit .menu > button {
-    background-color: var(--background-night);
     color: var(--text-color-night);
 }
 
 body.mode-nuit .social-networks > button {
-    background-color: var(--background-night);
     color: var(--text-color-night);
 }
 
@@ -264,13 +339,13 @@ body.mode-nuit .sections-menu > .select {
     margin-right: 0;
 }
 
+
+
 body.mode-nuit .sections-menu {
-    background-color: var(--background-night);
     color: var(--text-color-night);
 }
 
 body.mode-nuit .sections-menu > button {
-    background-color: var(--background-night);
     color: var(--text-color-night);
 }
 
@@ -304,3 +379,31 @@ body.mode-nuit .down-menu > button, body.mode-nuit .down-menu button:not(:last-c
     font-weight: normal;
     font-style: normal;
 }
+
+@keyframes slideRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(2em);
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      transform: translateX(2em);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Animation pour les petits écrans */
+  @keyframes scaleUp {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }

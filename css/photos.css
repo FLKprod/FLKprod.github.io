@@ -6,10 +6,8 @@
     width: 100%;
 }
 
-.section.photos {
+.photos-container .section.photos {
     flex: 1 1 calc(50% - 1em); /* Chaque section prend 50% de la largeur moins l'espacement */
-    width: 100%;
-    height: 56.25%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -20,7 +18,7 @@
     padding: 0;
 }
 
-.categorie_photos{
+.photos-container .categorie_photos{
     display: flex;
     width: 100%;
     height: 100%;
@@ -28,19 +26,19 @@
     padding: 0;
 }
 
-.image-wrapper {
+.photos-container .image-wrapper {
     left: 0;
     top: 0;
     position: relative; /* Nécessaire pour que l'image se comporte correctement */
   }
 
-.carousel-container {
+  .photos-container .carousel-container {
     margin: 0;
     padding: 0;
     display: inline-block; /* Adapte la taille du conteneur à l'image */
   }
   
-  .image-wrapper img {
+  .photos-container .image-wrapper img {
     width: 100%;
     display: block;
     aspect-ratio: 16 / 10;
@@ -48,7 +46,7 @@
     overflow: hidden;
   }
   
-  .text-overlay {
+  .photos-container .text-overlay {
     margin: 0;
     padding: 0;
     position: absolute;
@@ -63,26 +61,24 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
-    transition: background-color 0.5s ease; /* Transition douce */
+    transition: background-color 0.5s ease;
   }
-  .text-overlay:hover  {
-    background-color: rgba(0, 0, 0, 0);
-    color: transparent;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide */
+
+  .photos-container .text-overlay > h4{
+    font-size: 7em;
   }
-  
-  .fa-arrow-right:hover ~ .text-overlay, 
-  .fa-arrow-left:hover ~ .text-overlay {
-    background-color: rgba(0, 0, 0, 0);
+
+  .photos-container:hover .text-overlay.hidden {
     color: transparent;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide */
+    background-color: rgba(0, 0, 0, 0);
 }
 
-body.mode-nuit .text-overlay{
+
+body.mode-nuit .photos-container .text-overlay{
   background: rgba(0, 0, 0, 0.6);
 }
   
-  .carousel-container i {
+.carousel-container i {
     position: absolute;
     width: 3em;
     height: 3em;
@@ -93,12 +89,12 @@ body.mode-nuit .text-overlay{
     z-index: 20;
   }
   
-  .carousel-container .fa-arrow-left {
+.fa-arrow-left {
     left: 0;
     z-index: 2;
   }
   
-  .carousel-container .fa-arrow-right {
+.fa-arrow-right {
     right: 0;
     z-index: 2;
   }
@@ -130,11 +126,15 @@ body.mode-nuit .citation {
 
 /* Gestion responsive */
 @media screen and (max-width: 768px) {
-    .section.photos {
+  .photos-container .section.photos {
         flex: 1 1 100%; /* Chaque carrousel prend toute la largeur sur mobile */
     }
 
     .carousel-container {
         width: 100%;
+    }
+
+    .photos-container .text-overlay >h4 {
+      font-size: 5em;
     }
 }
