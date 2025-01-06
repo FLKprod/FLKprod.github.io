@@ -216,15 +216,16 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 .cv{
     background-color: #e3d898;
 }
-
-
-.line {
+.line0{
+    background-color: transparent !important;
+}
+.line, .line1 {
     width: 100%;
     max-width: 800px;
     height: 5px;
     position: relative;
+    background-color: red;
     display: inline-block;
-    background-color: transparent;
     transform-origin: center;
     transform: scaleX(0);
 }
@@ -347,9 +348,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
 
-    .line1{
-        display: none;
-    }
+
     .text-section > h2{
         text-align: center;
         font-size: 1.2em;

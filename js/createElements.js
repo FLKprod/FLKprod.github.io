@@ -33,11 +33,13 @@ export function createIconWithLink(iconClass, link) {
     return iconLink;
 }
 
-export function createButton(text) {
+export function createButton(text, clickInstruction) {
     const button = document.createElement("button");
     button.textContent = text;
+    button.addEventListener("click", clickInstruction); // Utiliser addEventListener est une bonne pratique
     return button;
 }
+
 
 export function createElementWithClass(tag, ...classNames) {
     const element = document.createElement(tag);

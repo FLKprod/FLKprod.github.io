@@ -90,6 +90,14 @@
     text-transform: capitalize;
 }
 
+body.mode-nuit .video-container > h3, body.mode-nuit .video-container > p {
+  color: white;
+}
+body.mode-nuit .videos-container .competences span {
+  color: black;
+  background-color: #e3d898;
+}
+
   .videos-container > .section-videos { 
     width: 70%;
   }

@@ -1,4 +1,4 @@
-import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createGitHubLink, createImageElement, updateVideoElement, updateImageElement, updateLinkGithub, createVideoProject, createVideo, createMenuItem } from './createElements.js';
+import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createImageElement, updateVideoElement, updateImageElement, updateLinkGithub, createVideoProject, createVideo, createMenuItem } from './createElements.js';
 import {createCarousel, generateImagePaths, createProjetCarousel} from './carroussel.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -86,7 +86,7 @@ export async function toggleTeamInfo(id) {
                 text_intro2services.appendChild(createText('h2',"Et si on travaillais ensemble ? "));
                 text_intro2services.appendChild(createText('p',`Après avoir réalisé de nombreux projets dans des domaines variés, je suis prêt et motivé à collaborer avec vous.
                     Que ce soit pour un projet informatique, vidéographique ou photographique, je serais ravi de mettre mon énergie et ma créativité au service de vos idées.`));
-                    text_intro2services.appendChild(createText('p',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
+                    text_intro2services.appendChild(createText('h2',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
             intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
@@ -105,7 +105,9 @@ export async function toggleTeamInfo(id) {
 
             Chaque projet est différent. Ensemble, créons votre portfolio, rien que pour vous !`));
         
-        intro2services.appendChild(text_intro2services);
+            text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
+            intro2services.appendChild(text_intro2services);
+
         var image_intro2services = createElementWithClass('div','image-section');
         image_intro2services.appendChild(createImage('Photos/services/portofolio.jpg'));
         intro2services.appendChild(image_intro2services);
@@ -113,7 +115,7 @@ export async function toggleTeamInfo(id) {
 
         var intro2services = createElementWithClass('div','service');
         var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/services/shooting.JPG'));
+        image_intro2services.appendChild(createImage('Photos/services/shooting_pro.jpg'));
         intro2services.appendChild(image_intro2services);
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Shootings photo spécifiés"));
@@ -126,8 +128,8 @@ export async function toggleTeamInfo(id) {
             <ul> - Des shootings pour tout type d’événement : portraits, groupes, mariages, anniversaires, etc.</ul>
             <ul> - Un moment convivial pour des photos naturelles.</ul>
 
-            Prêt pour un shooting à votre image ? Organisons votre séance dès maintenant !`));
-        
+            Prêt pour un shooting à votre image ? Organisons votre séance dès maintenant !      `));
+            text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
@@ -135,42 +137,48 @@ export async function toggleTeamInfo(id) {
         
         
         var text_intro2services = createElementWithClass('div','text-section');
-        text_intro2services.appendChild(createText('h2',"Montage Vidéo Sur Mesure : Courts & Longs Métrages"));
-        text_intro2services.appendChild(createText('p',`Transformez vos idées en vidéos captivantes !
-
-            Que ce soit pour un projet personnel, professionnel, ou un événement particulier, je vous propose un montage vidéo sur mesure, adapté à vos besoins. Ensemble, nous donnerons vie à vos images et vidéos pour créer un contenu fluide, impactant et à votre image.
+        text_intro2services.appendChild(createText('h2',"Shootings pour vos événements"));
+        text_intro2services.appendChild(createText('p',`
+            Immortalisez vos événements avec des photos qui capturent chaque instant précieux.
+            Que ce soit un mariage, un anniversaire, une soirée ou tout autre moment important,
+            je vous accompagne pour créer des souvenirs inoubliables. Basé en région parisienne et à Dijon,
+            je peux également me déplacer partout en France pour répondre à vos besoins.
 
             Ce que je vous propose :
 
-            <ul> - Un montage personnalisé : Une vidéo qui correspond parfaitement à votre vision et vos attentes.</ul>
-            <ul> - Des effets et transitions adaptés : Pour un rendu professionnel et dynamique.</ul>
-            <ul> - Un storytelling efficace : Une structure claire pour capter et maintenir l’attention.</ul>
-            <ul> - Flexibilité sur tous les formats : Adapté aux réseaux sociaux, présentations, événements, ou souvenirs personnels.</ul>
-            Prêt à donner vie à vos projets ? Echangeons ensemble sur vos idée de vidéos ! 🎥`));
-        
-        intro2services.appendChild(text_intro2services);
+            <ul> - Une couverture adaptée à votre événement, pour ne rien manquer.</ul>
+            <ul> - Des idées originales, afin de refléter l’ambiance unique de votre journée.</ul>
+            <ul> - Des shootings variés : cérémonies, fêtes privées, événements d’entreprise, et bien plus.</ul>
+            <ul> - Des photos naturelles et authentiques, pour retranscrire vos émotions.</ul>
+
+            Prêt à immortaliser vos moments forts ? Contactez-moi et organisons votre shooting dès maintenant !         `));
+            text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
+            intro2services.appendChild(text_intro2services);
+
         var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/services/montage.jpg'));
+        image_intro2services.appendChild(createImage('Photos/services/shooting.JPG'));
         intro2services.appendChild(image_intro2services);
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
         var text_intro2services = createElementWithClass('div','text-section');
         var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/services/tournage_original.png'));
+        image_intro2services.appendChild(createImage('Photos/services/shooting_urbain.jpeg'));
         intro2services.appendChild(image_intro2services);
-        text_intro2services.appendChild(createText('h2', "Tournage vidéo"));
-        text_intro2services.appendChild(createText('p', `Des vidéos professionnelles qui captent l'essence de vos projets.
-        Que ce soit pour des vidéos événementielles, des projets créatifs ou des besoins professionnels, je vous accompagne pour réaliser des vidéos percutantes et sur mesure.
+        text_intro2services.appendChild(createText('h2', "Shooting photo en milieu urbain"));
+        text_intro2services.appendChild(createText('p', `Des photos authentiques au cœur de la ville, capturant l’essence de votre univers urbain.
+            Que ce soit à Paris, Dijon ou partout en France, je vous propose des shootings adaptés à vos envies et à votre style.
+            Ensemble, nous transformerons les rues, les architectures et les ambiances citadines en toile de fond unique pour vos clichés.
 
-        Ce que je propose :
+        Ce que je peux vous offrir :
 
-        <ul> - Un tournage vidéo personnalisé en fonction de vos besoins.</ul>
-        <ul> - Des vidéos adaptées à tout type d'événement : entreprises, mariages, événements privés, clips musicaux, etc.</ul>
-        <ul> - Des vidéos avec des techniques modernes pour un rendu de haute qualité.</ul>
-        <ul> - Une approche conviviale et professionnelle pour mettre à l'aise les participants.</ul>
+         <ul> - Une séance personnalisée, planifiée selon vos attentes.</ul>
+         <ul> - Des idées créatives pour sublimer l’énergie de la ville dans vos photos.</ul>
+         <ul> - Des shootings variés : portraits, mode, lifestyle, projets professionnels ou personnels.</ul>
+         <ul> - Une expérience conviviale, pour des photos spontanées et naturelles.</ul>
 
-        Prêt à immortaliser vos moments en vidéo ? Organisons votre tournage vidéo !`));
+        Prêt(e) à immortaliser vos moments dans un cadre urbain unique ? Contactez-moi pour organiser votre séance !        `));
+        text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
@@ -327,7 +335,7 @@ export async function toggleTeamInfo(id) {
                 className: "services",
                 text: "Mes services",
                 description: "Travaillons ensemble !",
-                imageUrl: "Photos/services/shooting.JPG",
+                imageUrl: "Photos/menu/services.jpeg",
             },
             {
                 id: "aproposdemoi",
@@ -441,7 +449,7 @@ export async function toggleTeamInfo(id) {
         var liste_2_certifications = document.createElement("ul");
         liste_2_certifications.appendChild(createText('li',"Fortinet Certified Associate Cybersecurity"));
         liste_2_certifications.appendChild(createText('li',"Fortinet Certified Fundamentals Cybersecurity"));
-        liste_2_certifications.appendChild(createLineSpan(1));
+        
         s2_certifications.appendChild(liste_2_certifications);
         text_certifications.appendChild(s2_certifications);
 
@@ -459,8 +467,9 @@ export async function toggleTeamInfo(id) {
         liste_4_certifications.appendChild(createText('li',"JSE - Certified Entry-level JavaScript Programmer"));
         liste_4_certifications.appendChild(createText('li',"JSA - Certified Associate JavaScript Programmer"));
         s4_certifications.appendChild(liste_4_certifications);
+        
         text_certifications.appendChild(s4_certifications);
-
+        text_certifications.appendChild(createLineSpan(1));
 
         certifications.appendChild(text_certifications);
         
@@ -560,16 +569,18 @@ export async function toggleTeamInfo(id) {
         });
         
         if (window.innerWidth > 1100) {
-        var tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".formations",
-                scrub: true,
-                start: "top top", // Ajuster la valeur de départ
-                end: "center top", // Ajuster la valeur de fin
-                anticipatePin: 1,
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".line2",
+                    scrub: true,
+                    start: "center bottom", // Ajuster la valeur de départ
+                    end: "top 40%", // Ajuster la valeur de fin
+                    anticipatePin: 1,
+                }
+            });
+
+            
             }
-        });
-        }
         else{
             var tl = gsap.timeline({
                 scrollTrigger: {
@@ -584,6 +595,7 @@ export async function toggleTeamInfo(id) {
 
             tl.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
             .from(".line1", {scaleX: 0, ease: "none"}, 0)
+            .to(".certif-cisco",{scaleX: 1, ease: "none"})
             .to(".certif-cisco", {backgroundColor: "	#e3d898"}, 0) // Changement de couleur
             .to(".ecoles_formations", {backgroundColor: "	#ffffff"}, 0) // Changement de couleur
             .to(".berkeley", {backgroundColor: "	#e3d898"}, 0); // Changement de couleur pour aproposdemoi-container
@@ -653,38 +665,57 @@ export async function toggleTeamInfo(id) {
         photosContainer.appendChild(citation);
         gsap.from('.citation',{scale:0,stagger:1, duration:1});
 
-        // Exemple de données (remplacez avec vos propres données)
+        // Photos Urbaines | Photos Sportives | Photos Événementielles | Shootings | Macrophotographie
         const categoriesData = [
-        { name: 'Dijon', desc:"Bourgogne, France", nbrepictures:4},
-        { name: 'Strasbourg', desc:"Alsace, France", nbrepictures:4},
-        { name: 'San Francisco',desc:"California, USA", nbrepictures:4 },
-        { name: 'Paris',desc:"Ile-De-France, France", nbrepictures:6 },
-        { name: 'Quebec', desc:"Quebec, Canada", nbrepictures:4},
-        { name: 'Baseball', desc:"San Francisco Giants, USA, saison 2022-2023", nbrepictures:4 },
-        { name: 'Basket', desc:"Betclic elite saison 2022-2023", nbrepictures:4 },
-        { name: 'Automobile',desc:"Circuit Dijon-Prenois, 2024", nbrepictures:6 }
-        // Ajoutez plus de catégories avec leurs images au besoin
+            { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'San Francisco', desc: "California, USA", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
+            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
+            { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
+            { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 6, category: 'Photos Événementielles' }
         ];
+        
+        // Fonction pour grouper les données par catégorie
+        const groupByCategory = (data) => {
+            return data.reduce((groups, item) => {
+                if (!groups[item.category]) {
+                    groups[item.category] = [];
+                }
+                groups[item.category].push(item);
+                return groups;
+            }, {});
+        };
+        const groupedData = groupByCategory(categoriesData);
 
-        categoriesData.forEach((categoryData, index) => {
-            const { name, desc, nbrepictures } = categoryData;
         
-            // Créer une section pour chaque catégorie
-            const carouselSection = createElementWithClass('div', 'section', 'photos');
-        
-            // Générer les images et le carrousel
-            const images = generateImagePaths(name, categoryData.nbrepictures);
-            const categoryElement = createCarousel(name, desc, images,index); 
-        
-            // Ajouter la section au conteneur principal
-            carouselSection.appendChild(categoryElement);
-            photosContainer.appendChild(carouselSection);
+        Object.entries(groupedData).forEach(([category, items]) => {
+            const categoryTitle = createElementWithClass('h2', 'category-title');
+            const categorySection = createElementWithClass('div', 'category-section');
+            categoryTitle.textContent = "- " + category;
+            photosContainer.appendChild(categoryTitle);
+            items.forEach((item, index) => {
+                const { name, desc, nbrepictures } = item;
+
+                // Créer une sous-section pour l'élément
+                const carouselSection = createElementWithClass('div', 'section', 'photos');
+
+                // Générer les images et le carrousel
+                const images = generateImagePaths(name, nbrepictures);
+                const categoryElement = createCarousel(name, desc, images, index);
+
+                // Ajouter l'élément à la section
+                carouselSection.appendChild(categoryElement);
+                categorySection.appendChild(carouselSection);
+            });
+
+            // Ajouter la section de la catégorie au conteneur principal
+            photosContainer.appendChild(categorySection);
         });
-
         
 
         const sections = document.querySelectorAll('.section.photos');
-
         sections.forEach((element, index) => {
             // Calcul de 50% de la largeur de la fenêtre moins 1em
             const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -707,6 +738,7 @@ export async function toggleTeamInfo(id) {
                 }
             );
         });
+        
         
         
         

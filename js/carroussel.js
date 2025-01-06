@@ -174,9 +174,6 @@ export function createProjetCarousel(name, desc, media, videoLink, githubLink) {
         }, 500);
     }
 
-
-
-
     return carouselContainer;
 }
 

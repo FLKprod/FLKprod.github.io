@@ -29,6 +29,10 @@ body {
     transition: background-color 0.3s ease;
 }
 
+button{
+    font-family: 'FLKpolicy',  sans-serif;
+}
+
 body > img{
     pointer-events: none;
 }

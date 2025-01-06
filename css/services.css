@@ -19,7 +19,6 @@
 
 .text-section-services {
     height: auto;
-    text-align: center;
     width: 60%;
     margin-bottom: 4em;
     display: flex;
@@ -29,14 +28,20 @@
     box-sizing: border-box;
     align-items: center;
   }
-
   .text-section-services h2{
+    width: 100%;
+  }
+  .text-section-services h2:first-of-type{
     margin-top: 2em;
+    left: 0;
+    text-align: left;
   }
   .text-section-services p{
     text-align: justify;
   }
-  
+  .text-section-services h2:last-of-type{
+    margin: 0;text-align: right;
+  }
   .service {
     display: flex;
     width: 100%;
@@ -86,8 +91,32 @@
 .services-container .text-section h2:hover {
     transform: scale(1.1);
 }
-  
-  
+
+body.mode-nuit .service > .text-section button {
+  background-color: #e3d898;
+  color: black;
+}
+
+.service > .text-section button {
+  margin-top: 0.5em;
+  border: none;
+  background-color: #4f0341;
+  border-radius: 2em;
+  color: white;
+  padding: 0.2em 1em;
+  font-size: 2em;
+  text-transform: capitalize;
+}
+
+.service > .text-section button:hover {
+  cursor: pointer;
+}
+
+
+body.mode-nuit .projets-container .competences span {
+  color: black;
+  background-color: #e3d898;
+}
   .services-container .text-section > p {
     line-height: 1.5;
     font-size: 1.5em;
