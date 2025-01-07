@@ -39,12 +39,14 @@
 .aproposdemoi-container .image-section{
     width: auto;
     display: flex;
-    height: 85%;
+    max-height: 50%;
     mix-blend-mode: normal;
     margin: 3em 1em;
 }
 .aproposdemoi-container .image-section > img{
     border-radius: 2em;
+    height: 50%;
+    width: auto;
     margin: 2em;
 
  
@@ -94,41 +96,81 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 /*-----------------------BERKELEY--------------------*/
 
-.berkeley{
+.berkeley {
     background-color: #4f0341;
     color: white;
-    overflow: hidden;
-    width: 100%;
+    height: 100vh !important; /* Occupe toute la hauteur de la fenêtre */
+    padding: 0 !important;
+    display: flex; /* Utilise Flexbox pour organiser le contenu */
+    flex-direction: row; /* Place le texte et l'image côte à côte */
+    position: relative;
+    overflow: hidden; /* Empêche les débordements */
 }
 
-.section:nth-child(2){
-    color:white;
+.berkeley .text-section {
+    flex: 1; /* Le texte occupe tout l'espace disponible */
+    width: 50%;
+    text-align: justify;
+    overflow-y: auto; /* Active le défilement si nécessaire */
+    padding: 2em;
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
 }
-.aproposdemoi-container .section:nth-child(4){
-    background-color:	#e3d898;
-    color:white;
+
+.berkeley .image-section {
+    flex: 0 0 50%; /* L'image occupe 50% de la largeur */
+    display: flex; /* Centre l'image verticalement et horizontalement */
+    justify-content: center;
+    align-items: center;
+    max-height: 100%; /* Empêche l'image de dépasser la hauteur de la section */
+    padding: 0 2em; /* Ajoute de l'espace autour de l'image */
+    box-sizing: border-box;
+}
+
+.berkeley .image-section > img {
+    height: auto; /* Conserve les proportions de l'image */
+    max-width: 100%; /* Empêche l'image de dépasser la largeur de son conteneur */
+    max-height: 90%; /* S'assure que l'image ne dépasse pas la hauteur de la section */
+    border-radius: 1em; /* Coins arrondis pour l'image */
+}
+
+.desc-berkeley {
+    width: 50%; /* Ajuste la largeur pour un meilleur équilibre */
+    margin: auto;
+    text-align: justify;
+    overflow-y: auto; /* Active le défilement si le contenu dépasse */
+    padding: 2em; /* Ajoute de l'espace autour du texte */
+    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+}
+
+.desc-berkeley > h2 {
+    margin-top: 1em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.desc-berkeley > p {
+    color: white;
+    font-size: 1.2em; /* Taille adaptée pour un texte lisible */
+    line-height: 1.6; /* Améliore l'espacement entre les lignes */
+    margin-bottom: 1.5em;
+}
+
+.desc-berkeley > img {
+    width: 100%;
+    margin: 1em 0;
+    border-radius: 1em;
+}
+
+.aproposdemoi-container .section:nth-child(4) {
+    background-color: #e3d898;
+    color: white;
+    height: 100%;
     padding-bottom: 3em;
 }
-.desc-berkeley{
-    height: 100%;
-    min-height: 100vh;
-    text-align: justify;
-    max-width: 50%;
-}
 
-
-.desc-berkeley > p{
-    width: 100%;
-    font-size: 1.5em;
-    height: auto;
-    padding-top: 3em;
-}
-.desc-berkeley > h2{
-    margin-top: 3em;
-}
-.desc-berkeley > img {
-    width: 50%;
-    border-radius: 1em;
+.section:nth-child(2) {
+    align-items: center;
+    color: white;
 }
 
 
@@ -215,6 +257,17 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 .cv{
     background-color: #e3d898;
+}
+
+.cv .image-section{
+    width: auto;
+    height: 100vh;
+}
+
+.cv .image-section > img{
+    margin: 3em 0;
+    width: 100%;
+    height: auto;
 }
 .line0{
     background-color: transparent !important;

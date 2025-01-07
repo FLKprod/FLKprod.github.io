@@ -129,11 +129,19 @@
 .video-slide{
     background-color: black !important;
 }
+.projet:nth-child(3) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:#095228 ;
+}
+.projet:nth-child(4) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:#432373 ;
+}
+.projet:nth-child(5) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:rgb(20,20,20) ;
+}
 
 body.mode-nuit .carousel-slide{
     background-color: #4f0341;
 }
-
 
 
 .githublink:hover > a{

@@ -69,6 +69,8 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', fun
 document.getElementById('daynight').addEventListener('change', toggleModeNuit);
 
 
+
+
 function toggleMenu() {
     var menuMobile = document.querySelector('.menu-mobile');
     var menuDesktopButtons = document.querySelectorAll('.sections-menu');

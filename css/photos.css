@@ -15,6 +15,38 @@
     padding: 0;
 }
 
+.photos-presentation{
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+}
+
+.photos-container .image-photos-presentation{
+  width: auto;
+  height: 20em;
+  margin: 0 2em;
+  
+}
+
+.photos-container .image-photos-presentation > img{
+  border-radius: 2em;
+  width: 100%;
+  height: 100%;
+}
+
+.photos-container .text-photos-presentation {
+  font-size: 2em;
+}
+.photos-container .sommaire-photos{
+  display: flex;
+  flex-direction: column;
+}
+.photos-container .sommaire-photos > a {
+  font-size: 2em;
+  text-align: left;
+}
+
 .section.photos {
   padding: 1em;
   display: flex;
@@ -32,7 +64,7 @@
 
 .category-title{
   margin-left: 3em;
-  margin-top: 4em;
+  margin-top: 2em;
   color:rgb(255, 210, 233);
   font-size: 5em;
 }
@@ -118,29 +150,7 @@ body.mode-nuit .photos-container .text-overlay{
     z-index: 2;
   }
 
-  .citation {
-    letter-spacing: 0.08em;
-    font-size: 1.5em;
-    padding-top:1em;
-    padding-bottom: 1em;
-    color:black;
-    background-color: transparent;
-    background-size: cover;
-    background-position: center; 
-    width: 100%;
-    margin: 0;
-}
 
-body.mode-nuit .citation {
-  color: white;
-}
-
-
-.citation:before,.citation:after {
-    content:'“';
-    left:0;
-
-}
 
 /* Gestion responsive */
 @media screen and (max-width: 768px) {

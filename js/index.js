@@ -1,4 +1,4 @@
-import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createImageElement, updateVideoElement, updateImageElement, updateLinkGithub, createVideoProject, createVideo, createMenuItem } from './createElements.js';
+import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createTextforSommaire, updateVideoElement, updateImageElement, updateLinkGithub, createVideoProject, createVideo, createMenuItem } from './createElements.js';
 import {createCarousel, generateImagePaths, createProjetCarousel} from './carroussel.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,6 +18,27 @@ logopresentation.addEventListener('click', () => {
     toggleTeamInfo('presentation');
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.sommaire-photos a');
+
+    items.forEach(item => {
+        item.addEventListener('click', function (event) {
+            event.preventDefault();  // Empêcher l'action par défaut du lien
+            const targetId = item.getAttribute('data-target');
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',  // Défilement fluide
+                    block: 'start'       // Aligner l'élément en haut de la fenêtre
+                });
+            }
+        });
+    });
+});
+
+
+
 toggleTeamInfo('presentation'); // commence par afficher la page presentation quand on arrive sur le site
 
 /**************************************************************************************************/
@@ -30,6 +51,16 @@ function reveniralentete(){
         top: positionBasEntete,
         behavior: 'smooth'
     });
+}
+
+function scrollToElement(targetClassName) {
+    const targetElement = document.querySelector(`.${targetClassName}`);
+    if (targetElement) {
+        window.scrollTo({
+            top: targetElement.offsetTop,  // Position verticale de l'élément
+            behavior: 'smooth'             // Pour un défilement en douceur
+        });
+    }
 }
 
 /**************************************************************************************************/
@@ -568,30 +599,20 @@ export async function toggleTeamInfo(id) {
             }
         });
         
-        if (window.innerWidth > 1100) {
-            var tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".line2",
-                    scrub: true,
-                    start: "center bottom", // Ajuster la valeur de départ
-                    end: "top 40%", // Ajuster la valeur de fin
-                    anticipatePin: 1,
-                }
-            });
+
 
             
-            }
-        else{
+            
             var tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".formations",
                     scrub: true,
-                    start: "top center", // Ajuster la valeur de départ
-                    end: "centre centre", // Ajuster la valeur de fin
+                    start: "top top", // Ajuster la valeur de départ
+                    end: "bottom top", // Ajuster la valeur de fin
                     anticipatePin: 1,
                 }
             });
-        }
+        
 
             tl.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
             .from(".line1", {scaleX: 0, ease: "none"}, 0)
@@ -615,7 +636,7 @@ export async function toggleTeamInfo(id) {
                     scrollTrigger: {
                         trigger: '.berkeley',
                         pin: true,
-                        start: "top top",
+                        start: "top 0%",
                         end: () => {
                             const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
                             const largeHeight = large.clientHeight;
@@ -632,6 +653,7 @@ export async function toggleTeamInfo(id) {
                 });
             });
         }
+        
 
         var tl2 = gsap.timeline({
             scrollTrigger: {
@@ -649,21 +671,27 @@ export async function toggleTeamInfo(id) {
   
     }
     else if(id === 'photos'){
-
-        /*****************************************************************************************************************************/
         /****************** PARTIE PHOTO  ********************************************************************************************/
-        /* rajouter soucis de transparence avec les boutons **************************************************************************/
-        /*****************************************************************************************************************************/
 
+        var intro_for_photos= createElementWithClass('div','photos-presentation');
+        var image_intro_for_photos = createElementWithClass('div','image-photos-presentation');
+        image_intro_for_photos.appendChild(createImage("Photos/sommaire_photos.JPG"))
+        var text_intro_for_photos = createElementWithClass('div','text-photos-presentation');
+       
+        intro_for_photos.appendChild(image_intro_for_photos)
+        text_intro_for_photos.appendChild(createText('h3', "Mes contenus photographiques"));
+        text_intro_for_photos.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide 😉"));
 
-        
+        intro_for_photos.appendChild(text_intro_for_photos)
+        /*var sommaire_photos = createElementWithClass('div','sommaire-photos');
+        sommaire_photos.id='sommaire-photos'
+        sommaire_photos.appendChild(createTextforSommaire('a','Photos Urbaines','Photos Urbaines'))
+        sommaire_photos.appendChild(createTextforSommaire('a','Photos Sportives','Photos Sportives'))
+        sommaire_photos.appendChild(createTextforSommaire('a','Photos Événementielles','Photos Événementielles'))
 
-
-        var citation = document.createElement('div');
-        citation.className='citation';
-        citation.appendChild(createText('p', "Mes contenus photographiques (Scroll légèrement, cette section est loin d'être vide 😉)"));
-        photosContainer.appendChild(citation);
-        gsap.from('.citation',{scale:0,stagger:1, duration:1});
+        intro_for_photos.appendChild(sommaire_photos)*/
+        photosContainer.appendChild(intro_for_photos);
+        gsap.from('.photos-presentation',{scale:0,stagger:1, duration:1});
 
         // Photos Urbaines | Photos Sportives | Photos Événementielles | Shootings | Macrophotographie
         const categoriesData = [
@@ -692,7 +720,9 @@ export async function toggleTeamInfo(id) {
         
         Object.entries(groupedData).forEach(([category, items]) => {
             const categoryTitle = createElementWithClass('h2', 'category-title');
-            const categorySection = createElementWithClass('div', 'category-section');
+            categoryTitle.id=category
+            const categorySection = createElementWithClass('div', 'category-section',String.category);
+            
             categoryTitle.textContent = "- " + category;
             photosContainer.appendChild(categoryTitle);
             items.forEach((item, index) => {
@@ -900,3 +930,4 @@ buttons.forEach(button => {
         toggleTeamInfo(button.id);
     });
 });
+

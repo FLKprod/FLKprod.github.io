@@ -6,6 +6,13 @@ export function createText(tag, textContent) {
     return element;
 }
 
+export function createTextforSommaire(tag, textContent, href) {
+    const element = document.createElement(tag);
+    element.innerHTML = textContent;
+    element.setAttribute('data-target', href);
+    return element;
+}
+
 export function createImage(src) {
 
     const element = document.createElement('img');
