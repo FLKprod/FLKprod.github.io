@@ -135,8 +135,17 @@
 .projet:nth-child(4) > .carousel-container .carousel-images .carousel-slide:first-of-type{
     background-color:#432373 ;
 }
+
 .projet:nth-child(5) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:#1e0c36 ;
+}
+
+.projet:nth-child(6) > .carousel-container .carousel-images .carousel-slide:first-of-type{
     background-color:rgb(20,20,20) ;
+}
+
+.projet:nth-child(7) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:lightgray;
 }
 
 body.mode-nuit .carousel-slide{

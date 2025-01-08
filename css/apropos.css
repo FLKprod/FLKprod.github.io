@@ -117,20 +117,19 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 .berkeley .image-section {
-    flex: 0 0 50%; /* L'image occupe 50% de la largeur */
-    display: flex; /* Centre l'image verticalement et horizontalement */
+    flex: 0 0 calc(50% - 1em);
+    display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100%; /* Empêche l'image de dépasser la hauteur de la section */
-    padding: 0 2em; /* Ajoute de l'espace autour de l'image */
+    max-height: 100%;
     box-sizing: border-box;
 }
 
 .berkeley .image-section > img {
-    height: auto; /* Conserve les proportions de l'image */
-    max-width: 100%; /* Empêche l'image de dépasser la largeur de son conteneur */
-    max-height: 90%; /* S'assure que l'image ne dépasse pas la hauteur de la section */
-    border-radius: 1em; /* Coins arrondis pour l'image */
+    height: auto;
+    max-width: 100%; 
+    max-height: 90%; 
+    border-radius: 1em;
 }
 
 .desc-berkeley {

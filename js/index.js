@@ -821,7 +821,7 @@ export async function toggleTeamInfo(id) {
                 imageSrc: "Photos/projets/201F.png",
                 desc: `201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. 
                 Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !` ,
-                competences: "HTML, CSS, JavaScript"
+                competences: "Python, Pygame"
             },
             {
                 name: "CyberSafe",
@@ -833,12 +833,31 @@ export async function toggleTeamInfo(id) {
                 competences: "HTML / CSS, JavaScript, IOT, JSON"
             },
             {
+                name: "Verifile",
+                github: "https://github.com/FLKprod/Verifile",
+                videoLink: "Photos/projets/Verifile.mp4",
+                imageSrc: "Photos/projets/Verifile.png",
+                desc: `Verifile est un site permettant de scanner des URLs et des documents
+                afin de déterminer leur fiabilité. Elle permet ainsi de protéger les utilisateurs des menaces sur le Web.
+                Si le site ou le document n'a jamais été scanné par Verifile, un système de question réponse permet à l'utilisateur
+                de prendre la meilleur décision quant a la fiabilité de ce dernier. Verifile est disponible sur internet en version d'essai juste <a href='https://verifileapp.fr/' target='_blank'>ici</a> `,
+                competences: "HTML / CSS, JavaScript, Python, API"
+            },
+            {
                 name: "LanbdaCash Tool",
                 github: "https://github.com/FLKprod/CloudProject",
                 videoLink: "Photos/projets/landbacash.mp4",
                 imageSrc: "Photos/projets/landbacash.png",
                 desc: `Application pour tester un programme et l'exécuter avec différentes valeurs de RAM pour comparer les prix d'exécution AWS (Amazon Web Services).`,
                 competences: "Cloud Computing, AWS, Python, Bash"
+            },
+            {
+                name: "FLKprod.github.io",
+                github: "https://github.com/FLKprod/FLKprod.github.io",
+                videoLink: "Photos/projets/Flkprod.mp4",
+                imageSrc: "Photos/projets/Flkprod.png",
+                desc: `Ce site internet, tout simplement, créé de A à Z par moi-même.`,
+                competences: "HTML / CSS, JavaScript"
             }
         ];
 
