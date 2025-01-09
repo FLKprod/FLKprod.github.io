@@ -55,6 +55,47 @@ import {
         }
     });
 
+    // Variables pour suivre la position initiale et finale du doigt
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+
+
+    // Détecter le début du toucher
+    carouselContainer.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX; // Position initiale
+    });
+
+    // Détecter la fin du toucher
+    carouselContainer.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].screenX; // Position finale
+        handleSwipeDirection(); // Analyser la direction
+    });
+
+
+    function handleSwipeDirection() {
+        const deltaX = touchEndX - touchStartX;
+    
+        if (Math.abs(deltaX) > 50) { // Seulement si le mouvement est significatif
+            if (deltaX > 0) {
+                handleSwipe('right'); // Swipe à droite
+            } else {
+                handleSwipe('left'); // Swipe à gauche
+            }
+        }
+    }
+
+    // Fonction appelée lors d'un swipe détecté
+    function handleSwipe(direction) {
+        if (direction === 'left') {
+            nextImage()
+            // Ajoutez ici votre logique pour un swipe vers la gauche
+        } else if (direction === 'right') {
+            prevImage()
+            // Ajoutez ici votre logique pour un swipe vers la droite
+        }
+    }
+
     // Fonction pour afficher l'image suivante
     function nextImage() {
         currentIndex = (currentIndex + 1) % images.length;
@@ -89,6 +130,8 @@ export function generateImagePaths(folderName,nbrepictures) {
   }
   return imagePaths;
 }
+
+
 
 
 export function createProjetCarousel(name, desc, media, videoLink, githubLink) {

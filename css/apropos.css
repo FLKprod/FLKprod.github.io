@@ -440,6 +440,9 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         width: 100%;
         max-width: 80%;
     }
+    .berkeley .text-section {
+        width: 100%;
+    }
 
     .desc-berkeley > img{
         margin-top: 2em;
@@ -449,7 +452,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 
     .aproposdemoi-container .image-section > img{
-        width: 100%;
+        width: auto;
+        height: 100%;
     }
 
     .paysage{

@@ -1,6 +1,7 @@
 .photos-container {
     display: flex;
     flex-wrap: wrap;
+    overflow-x: hidden;
     justify-content: space-between;
     gap: 1em; 
     width: 100%;
@@ -102,6 +103,7 @@
     padding: 0;
     position: absolute;
     top: 0;
+    height: 100%;
     left: 0;
     right: 0;
     bottom: 0;
@@ -117,6 +119,7 @@
 
   .photos-container .text-overlay > h4{
     font-size: 7em;
+    margin: 0;
   }
 
   .photos-container:hover .text-overlay.hidden {
@@ -157,6 +160,28 @@ body.mode-nuit .photos-container .text-overlay{
   .photos-container .section.photos {
         flex: 1 1 100%; /* Chaque carrousel prend toute la largeur sur mobile */
     }
+
+    .photos-container .photos-presentation{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photos-container .image-photos-presentation > img {
+      height: 100%;
+      width: auto;
+    }
+
+    .category-section{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);   
+      gap: 1em;
+  }
+
+  .category-title {
+    margin: 0;
+    font-size: 3em;
+  }
 
     .carousel-container {
         width: 100%;

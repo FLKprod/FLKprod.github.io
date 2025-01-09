@@ -161,9 +161,9 @@ h2:hover {
     background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 1) 0%,
-    rgba(127, 67, 97, 0.25) 25%,
-    rgba(127, 67, 97, 0.5) 50%,
-    rgba(127, 67, 97, 0.25) 75%, 
+    rgba(114, 11, 63, 0.25) 25%,
+    rgba(130, 10, 70, 0.5) 50%,
+    rgba(114, 10, 62, 0.25) 75%, 
     rgba(255, 255, 255, 1) 100%
     );
     background-repeat: no-repeat;
@@ -323,9 +323,9 @@ body.mode-nuit .down {
 }
 
 body.mode-nuit .entete {
-    background:  linear-gradient(black, rgba(127, 67, 97, 0.5) 25%,
-    rgba(127, 67, 97, 1) 50%,
-    rgba(127, 67, 97, 0.5) 75%,black);
+    background:  linear-gradient(black, rgba(124, 12, 68, 0.5) 25%,
+    rgb(124, 15, 70) 50%,
+    rgba(124, 12, 68, 0.5) 75%,black);
     color: white;
 }
 
