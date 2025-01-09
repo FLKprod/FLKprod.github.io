@@ -41,13 +41,12 @@
     display: flex;
     max-width: 50%;
     mix-blend-mode: normal;
-    margin: 3em 1em;
+    margin: 3em;
 }
 .aproposdemoi-container .image-section > img{
     border-radius: 2em;
     height: 50%;
     width: auto;
-    margin: 2em;
 
  
 }
@@ -56,6 +55,12 @@
 .moicmaxime{
     display: flex;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.moicmaxime .image-section{
+    max-width: 25%;
 }
 
 
@@ -93,28 +98,29 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     color:#e3d898
 }
 
-
-
 /*-----------------------BERKELEY--------------------*/
 
 .berkeley {
     background-color: #4f0341;
     color: white;
-    height: 100vh !important; /* Occupe toute la hauteur de la fenêtre */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh !important;
     padding: 0 !important;
-    display: flex; /* Utilise Flexbox pour organiser le contenu */
-    flex-direction: row; /* Place le texte et l'image côte à côte */
+    display: flex; 
+    flex-direction: row;
     position: relative;
-    overflow: hidden; /* Empêche les débordements */
+    overflow: hidden; 
 }
 
 .berkeley .text-section {
-    flex: 1; /* Le texte occupe tout l'espace disponible */
+    flex: 1; 
     width: 50%;
     text-align: justify;
-    overflow-y: auto; /* Active le défilement si nécessaire */
+    overflow-y: auto;
     padding: 2em;
-    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    box-sizing: border-box; 
 }
 
 .berkeley .image-section {
@@ -135,12 +141,12 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 .desc-berkeley {
-    width: 50%; /* Ajuste la largeur pour un meilleur équilibre */
+    width: 50%;
     margin: auto;
     text-align: justify;
-    overflow-y: auto; /* Active le défilement si le contenu dépasse */
-    padding: 2em; /* Ajoute de l'espace autour du texte */
-    box-sizing: border-box; /* Inclut le padding dans la largeur totale */
+    overflow-y: auto;
+    padding: 2em; 
+    box-sizing: border-box; 
 }
 
 .desc-berkeley > h2 {
@@ -151,8 +157,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 .desc-berkeley > p {
     color: white;
-    font-size: 1.2em; /* Taille adaptée pour un texte lisible */
-    line-height: 1.6; /* Améliore l'espacement entre les lignes */
+    font-size: 1.2em;
+    line-height: 1.6;
     margin-bottom: 2em;
 }
 

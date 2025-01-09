@@ -559,18 +559,6 @@ export async function toggleTeamInfo(id) {
         
         const elements = document.querySelectorAll('.moicmaxime > *');
 
-        gsap.to(".line0", {
-            scaleX: 1,
-            ease: "none",
-            scrollTrigger: {
-            trigger: ".moicmaxime",
-            start: "top top",
-            end: "+==100%",
-            scrub: 1,
-            anticipatePin: 1,
-            }
-        });
-        
         // Animation pour déplacer les éléments vers la droite au début (0% à 25% de la ligne)
         gsap.to(elements, {
             xPercent: 0,
@@ -686,6 +674,11 @@ export async function toggleTeamInfo(id) {
         /****************** PARTIE PHOTO  ********************************************************************************************/
 
         var intro_for_photos= createElementWithClass('div','photos-presentation');
+        var modal= createElementWithClass('div','modal');
+        modal.id="carousel-modal";
+        var modal_content= createElementWithClass('div','modal-content');
+        modal_content.id="modal-content";
+        modal.appendChild(modal_content);
         var image_intro_for_photos = createElementWithClass('div','image-photos-presentation');
         var img_for_image_intro_for_photos = createImage("");
         img_for_image_intro_for_photos.id="image-intro-for-photo";
@@ -701,7 +694,7 @@ export async function toggleTeamInfo(id) {
         intro_for_photos.appendChild(image_intro_for_photos)
         text_intro_for_photos.appendChild(createText('h3', "Mes contenus photographiques"));
         text_intro_for_photos.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide 😉"));
-
+        photosContainer.appendChild(modal);
         intro_for_photos.appendChild(text_intro_for_photos)
         /*var sommaire_photos = createElementWithClass('div','sommaire-photos');
         sommaire_photos.id='sommaire-photos'
@@ -740,34 +733,62 @@ export async function toggleTeamInfo(id) {
             }, {});
         };
         const groupedData = groupByCategory(categoriesData);
+        var modal = createElementWithClass('div', 'modal');
+        modal.id = "carousel-modal";
+        var modal_content = createElementWithClass('div', 'modal-content');
+        modal_content.id = "modal-content";
+        modal.appendChild(modal_content);
+        photosContainer.appendChild(modal);
+
+        // Fonction pour ouvrir le modal
+        const openModal = (carouselContent) => {
+            modal_content.innerHTML = ''; // Vider le contenu précédent
+            modal_content.appendChild(carouselContent); // Ajouter le contenu du carrousel
+            modal.classList.add('active');
+        };
+
+        const closeModal = (event) => {
+            // Vérifie si le clic est en dehors du contenu du modal
+            if (event.target === modal) {
+                modal.classList.remove('active');
+            }
+        };
+        
+        // Ajouter un écouteur pour fermer le modal en cliquant à côté
+        modal.addEventListener('click', closeModal);
 
         
         Object.entries(groupedData).forEach(([category, items]) => {
             const categoryTitle = createElementWithClass('h2', 'category-title');
-            categoryTitle.id=category
-            const categorySection = createElementWithClass('div', 'category-section',String.category);
-            
+            categoryTitle.id = category;
+            const categorySection = createElementWithClass('div', 'category-section', String.category);
+        
             categoryTitle.textContent = "- " + category;
             photosContainer.appendChild(categoryTitle);
             items.forEach((item, index) => {
                 const { name, desc, nbrepictures } = item;
-
+        
                 // Créer une sous-section pour l'élément
                 const carouselSection = createElementWithClass('div', 'section', 'photos');
-
+        
                 // Générer les images et le carrousel
                 const images = generateImagePaths(name, nbrepictures);
-                const categoryElement = createCarousel(name, desc, images, index);
-
+                const categoryElement = createCarousel(name, desc, images, index,true);
+        
+                // Ajouter un événement pour ouvrir le modal au clic sur le carrousel
+                categoryElement.addEventListener('click', () => {
+                    const enlargedCarousel = createCarousel(name, desc, images, index,false);
+                    openModal(enlargedCarousel);
+                });
+        
                 // Ajouter l'élément à la section
                 carouselSection.appendChild(categoryElement);
                 categorySection.appendChild(carouselSection);
             });
-
+        
             // Ajouter la section de la catégorie au conteneur principal
             photosContainer.appendChild(categorySection);
         });
-        
 
         const sections = document.querySelectorAll('.section.photos');
         sections.forEach((element, index) => {
@@ -792,10 +813,6 @@ export async function toggleTeamInfo(id) {
                 }
             );
         });
-        
-        
-        
-        
     }
     else if(id === 'projets'){
         gsap.from('.projets-container',{scale:0,stagger:1, duration:1,stagger:1});
@@ -857,7 +874,7 @@ export async function toggleTeamInfo(id) {
                 competences: "HTML / CSS, JavaScript, IOT, JSON"
             },
             {
-                name: "Verifile",
+                name: "Dijon Paris USA Canada",
                 github: "https://github.com/FLKprod/Verifile",
                 videoLink: "Photos/projets/Verifile.mp4",
                 imageSrc: "Photos/projets/Verifile.png",

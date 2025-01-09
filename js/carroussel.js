@@ -6,7 +6,7 @@ import {
     createGitHubLink
   } from './createElements.js';
   
-  export function createCarousel(name, desc, images, index) {
+  export function createCarousel(name, desc, images, index,textoverlay) {
     const carouselContainer = createElementWithClass('div', 'carousel-container');
     const img_carrousel = createElementWithClass('div', 'image-wrapper');
     const imageElement = createImage(images[0]);
@@ -21,11 +21,72 @@ import {
     // Ajout des images et du texte
     img_carrousel.appendChild(imageElement);
     carouselContainer.appendChild(img_carrousel);
-    textOverlay.appendChild(createText('h4', name));
-    textOverlay.appendChild(createText('p', desc));
-    carouselContainer.appendChild(textOverlay);
-    carouselContainer.appendChild(prevButton);
-    carouselContainer.appendChild(nextButton);
+    // CARROUSEL POUR LE MENU
+    if(textoverlay === true){
+        textOverlay.appendChild(createText('h4', name));
+        textOverlay.appendChild(createText('p', desc));
+        carouselContainer.appendChild(textOverlay);
+        
+    }
+    // CAROUSSEL POUR LE MODAL
+    else{
+        carouselContainer.appendChild(prevButton);
+        carouselContainer.appendChild(nextButton);
+    }
+
+    // Modal global
+    const modal = document.getElementById('carousel-modal');
+    const modalContent = document.getElementById('modal-content');
+
+    // Gestion de l'ouverture d'un modal
+    function openModal(content) {
+        const modal = document.getElementById('carousel-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        // Vérifie si le modal est déjà visible
+        if (modal.style.display === 'flex') {
+            return; 
+        }
+
+        // Configure et affiche le modal
+        modalContent.innerHTML = '';
+        modalContent.appendChild(content.cloneNode(true)); 
+        modal.style.display = 'flex';
+    }
+
+    // Gestion de la fermeture du modal
+    document.addEventListener('click', (event) => {
+        const modal = document.getElementById('carousel-modal');
+        const modalContent = document.getElementById('modal-content');
+
+        // Vérifie si le modal est visible
+        if (modal.style.display === 'flex') {
+            // Si le clic est à l'extérieur du contenu du modal, fermer
+            if (!modalContent.contains(event.target)) {
+                modal.style.display = 'none'; // Ferme le modal
+                modalContent.innerHTML = ''; // Nettoie le contenu du modal
+            }
+        }
+    });
+
+    // Exemple d'utilisation pour ouvrir un modal
+    document.querySelectorAll('.carousel-container').forEach((carousel) => {
+        carousel.addEventListener('click', () => {
+            openModal(carousel);
+        });
+    });
+
+
+    // Fonction pour fermer le modal
+    const closeModal = (event) => {
+        if (event.target === modal) {
+            modal.classList.remove('active');
+        }
+    };
+
+    // Écouteurs pour ouvrir et fermer le modal
+    img_carrousel.addEventListener('click', openModal);
+    modal.addEventListener('click', closeModal);
 
     // Gestion du hover sur les boutons
     const hideTextOverlay = () => textOverlay.classList.add('hidden');
@@ -116,16 +177,62 @@ import {
 
     // Fonction pour mettre à jour l'image affichée
     function updateImage() {
-        imageElement.src = images[currentIndex];
-        imageElement.classList.add('fade-in');
+        // Crée un nouvel élément d'image pour la transition
+        const nextImageElement = createImage(images[currentIndex]);
+        nextImageElement.style.position = "absolute";
+        nextImageElement.style.top = "0";
+        nextImageElement.style.left = "0";
+        nextImageElement.style.width = "100%";
+        nextImageElement.style.height = "100%";
+        nextImageElement.style.opacity = "0"; // Nouvelle image commence invisible
+        nextImageElement.style.transition = "opacity 0.5s ease";
+    
+        // Ajoute la nouvelle image par-dessus l'image actuelle
+        img_carrousel.appendChild(nextImageElement);
+    
+        // Lance l'animation en fondu
         setTimeout(() => {
-            imageElement.classList.remove('fade-in');
-        }, 500);
+            nextImageElement.style.opacity = "1"; // Nouvelle image devient visible
+        }, 0);
+    
+        // Une fois l'animation terminée, remplace l'image principale et nettoie
+        setTimeout(() => {
+            // Supprime l'ancienne image de transition
+            
+    
+            // Met à jour la référence de l'image principale
+            imageElement = nextImageElement;
+            img_carrousel.removeChild(imageElement);
+        }, 500); // Délai égal à la durée de la transition
     }
+    
+    
+    
 
     return carouselContainer;
 }
 
+// Fonction pour ouvrir un carrousel en grand
+function openCarousel(carrousel) {
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+  
+    // Copier le contenu du carrousel cliqué dans le modal
+    modalContent.innerHTML = carrousel.innerHTML;
+  
+    // Afficher le modal
+    modal.classList.add('active');
+  }
+  
+  // Fonction pour fermer le modal
+  function closeCarousel(event) {
+    const modal = document.getElementById('modal');
+  
+    // Vérifier si l'utilisateur clique en dehors du contenu
+    if (event.target === modal) {
+      modal.classList.remove('active');
+    }
+  }
 
 
 // Pour recuperer toutes les images d'un dossier afin de gerer le nombres d'image dans les carrousels dynamiquement
@@ -136,6 +243,25 @@ export function generateImagePaths(folderName,nbrepictures) {
   }
   return imagePaths;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -173,9 +299,6 @@ export function createProjetCarousel(name, desc, media, videoLink, githubLink) {
         videoSlide.appendChild(videoElement);
         imageWrapper.appendChild(videoSlide);
     }
-
-    
-    
 
     // Ajout du lien GitHub (Page 4)
     const githubSlide = createElementWithClass('div', 'carousel-slide', 'text-slide');
