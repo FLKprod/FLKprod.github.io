@@ -151,7 +151,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     color: white;
     font-size: 1.2em; /* Taille adaptée pour un texte lisible */
     line-height: 1.6; /* Améliore l'espacement entre les lignes */
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
 }
 
 .desc-berkeley > img {
@@ -296,29 +296,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         font-size: 1.1em;
         text-align: center;
     }
-
-    .moicmaxime > .text-section {
-        padding-bottom: 5em;
-    }
-
-    .moicmaxime > .text-section h2:first-of-type{
-        font-size: 4em;
-        text-shadow: 
-                -1px -1px 0 black,
-                1px -2px 0 black,   
-                1px 1px 0 black,  
-                2px 1px 0 black; 
-    }
-
-    .moicmaxime > .text-section h2:last-of-type{
-        font-size: 2em;
-        text-shadow: 
-                -1px -1px 0 black,
-                1px -1px 0 black,   
-                1px 1px 0 black,  
-                1px 1px 0 black; 
-    }
-
     .aproposdemoi-container > h3 {
         padding: 0.7em;
         font-size: 1.5em;
@@ -347,6 +324,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: auto;
     }
 
     .aproposdemoi-container .image-section{
@@ -358,18 +336,56 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         margin: 1em 0;
     }
 
-
-
-    .section {
-        height: auto;
-    }
     .text-section{
         flex: 1;
-
         padding: 0 ;
         margin: 0 2em;
-      
     }
+
+    .text-section > h2{
+        text-align: center;
+        font-size: 1.2em;
+    }
+    .text-section > p{
+        font-size: 0.6em;
+        margin: 0;
+    }
+
+    .aproposdemoi-container .image-section > img{
+        width: auto;
+        height: 100%;
+    }
+
+    
+    .section:nth-child(3) .image-section > img {
+        margin: 0;
+    }
+    
+
+    /* moi c maxime -------------------------------------------------------*/
+    .moicmaxime > .text-section {
+        padding-bottom: 5em;
+    }
+
+    .moicmaxime > .text-section h2:first-of-type{
+        font-size: 4em;
+        text-shadow: 
+                -1px -1px 0 black,
+                1px -2px 0 black,   
+                1px 1px 0 black,  
+                2px 1px 0 black; 
+    }
+
+    .moicmaxime > .text-section h2:last-of-type{
+        font-size: 2em;
+        text-shadow: 
+                -1px -1px 0 black,
+                1px -1px 0 black,   
+                1px 1px 0 black,  
+                1px 1px 0 black; 
+    }
+
+    /* Certifications section ----------------------------------------------- */
 
     .certif-cisco img {
         width: 30%;
@@ -399,16 +415,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         width: 90%;
     }
 
-
-
-    .text-section > h2{
-        text-align: center;
-        font-size: 1.2em;
-    }
-    .text-section > p{
-        font-size: 0.6em;
-    }
-
     .ecoles_formations p {
         margin-right: 1em;
     }
@@ -427,11 +433,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         font-size: 3em;
     }
 
-    .text-section > p {
-        margin: 0;
-    }
+    /* BERKELEY SECTION ************************************************************/
 
     .berkeley{
+        width: 100%;
         height: 100% !important;
     }
     .desc-berkeley{
@@ -440,8 +445,14 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         width: 100%;
         max-width: 80%;
     }
+
+    .desc-berkeley > h2 {
+        margin: 2em 0;
+    }
     .berkeley .text-section {
         width: 100%;
+        padding: 0;
+        margin: 0;
     }
 
     .desc-berkeley > img{
@@ -449,23 +460,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         width: 100%;
     }
 
-
-
-    .aproposdemoi-container .image-section > img{
-        width: auto;
-        height: 100%;
-    }
-
-    .paysage{
-        width: calc(50% * (16 / 10));
-    }
-    
-    .section:nth-child(3) .image-section > img {
-        margin: 0;
-    }
-    
-    .section-presentation{
-        height: 15em;
+    .cv .image-section > img{
+        height: 50vh;
     }
     
     .contact-section i {
@@ -480,7 +476,24 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 }
 
+@media screen and (max-width: 768px) {
+    .contact-section > h2 {
+        font-size: 2em;
+    }
 
+    .contact-section > p {
+        font-size: 1em;
+    }
+
+    .class-certification li {
+        font-size: 1em;
+    }
+
+    .text-section > p {
+        font-size: 0.4em;
+        margin-bottom: 3em;
+    }
+}
 
 
 

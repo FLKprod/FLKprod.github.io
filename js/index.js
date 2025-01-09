@@ -602,7 +602,7 @@ export async function toggleTeamInfo(id) {
 
 
             
-            
+        if (window.innerWidth > 1100) {
             var tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".formations",
@@ -612,6 +612,18 @@ export async function toggleTeamInfo(id) {
                     anticipatePin: 1,
                 }
             });
+        }
+        else{
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".formations",
+                    scrub: true,
+                    start: "top center", // Ajuster la valeur de départ
+                    end: "bottom top", // Ajuster la valeur de fin
+                    anticipatePin: 1,
+                }
+            });
+        }
         
 
             tl.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
@@ -624,12 +636,12 @@ export async function toggleTeamInfo(id) {
             
             
 
-        let largeElements = document.querySelectorAll(".desc-berkeley");
+        let largeElements = aproposdemoiContainer.querySelectorAll(".desc-berkeley");
         if (window.innerWidth > 1100) {
             largeElements.forEach(large => {
                 gsap.to(large, {
                     y: () => {
-                        const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
+                        const berkeleyHeight = aproposdemoiContainer.querySelector('.berkeley').offsetHeight;
                         return Math.min(0, window.innerHeight - large.clientHeight - berkeleyHeight);
                     },
                     ease: "none",

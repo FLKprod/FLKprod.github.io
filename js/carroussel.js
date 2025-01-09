@@ -60,7 +60,6 @@ import {
     let touchEndX = 0;
 
 
-
     // Détecter le début du toucher
     carouselContainer.addEventListener('touchstart', (event) => {
         touchStartX = event.changedTouches[0].screenX; // Position initiale
@@ -75,18 +74,25 @@ import {
 
     function handleSwipeDirection() {
         const deltaX = touchEndX - touchStartX;
-    
+        textOverlay.classList.add('hidden');
         if (Math.abs(deltaX) > 50) { // Seulement si le mouvement est significatif
             if (deltaX > 0) {
                 handleSwipe('right'); // Swipe à droite
             } else {
                 handleSwipe('left'); // Swipe à gauche
             }
+
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden'); // Afficher si caché
+            } else {
+                element.classList.add('hidden'); // Cacher si visible
+            }
         }
     }
 
     // Fonction appelée lors d'un swipe détecté
     function handleSwipe(direction) {
+        
         if (direction === 'left') {
             nextImage()
             // Ajoutez ici votre logique pour un swipe vers la gauche

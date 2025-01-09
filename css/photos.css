@@ -152,7 +152,10 @@ body.mode-nuit .photos-container .text-overlay{
     right: 0;
     z-index: 2;
   }
-
+  .hidden {
+    color: transparent !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
 
 
 /* Gestion responsive */
