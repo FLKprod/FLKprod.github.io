@@ -39,23 +39,39 @@ setTimeout(function() {
 /******************************* MODE NUIT  *****************************************************************/
 
 const daynightCheckbox = document.getElementById('daynight');
-const logo = document.getElementById('presentation-img-2');
 const downlogo=document.getElementById('down-logo')
-const baniere = document.getElementById('baniere');
-const photo2_presentation = document.getElementById('presentation-img-2');
+const image_intro_for_photo = document.getElementById('image-intro-for-photo');
 function toggleModeNuit() {
     const daynightCheckbox = document.getElementById('daynight');
-    const logo = document.getElementById('presentation-img-2');
-    const downlogo =document.getElementById('down-logo')
-    const baniere = document.getElementById('baniere');
-    const photo2_presentation = document.getElementById('presentation-img-2');
+    const downlogo =document.getElementById('down-logo');
+    const image_intro_for_photo = document.getElementById('image-intro-for-photo');
     if (!daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
-        downlogo.src = "Photos/logos/flkwhite.png";
+        if (downlogo) {
+            downlogo.src = "Photos/logos/flkwhite.png";
+        } else {
+            console.warn("L'élément #down-logo est introuvable pour le mode nuit.");
+        }
+
+        if (image_intro_for_photo) {
+            image_intro_for_photo.src = "Photos/dark_sommaire_photos.jpg";
+        } else {
+            console.warn("L'élément #image-intro-for-photo est introuvable pour le mode nuit.");
+        }
     } else {
         document.body.classList.remove('mode-nuit');
-        console.log("mode nuit")
-        downlogo.src = "Photos/logos/flkblack.png";
+        
+        if (downlogo) {
+            downlogo.src = "Photos/logos/flkblack.png";
+        } else {
+            console.warn("L'élément #down-logo est introuvable pour le mode jour.");
+        }
+
+        if (image_intro_for_photo) {
+            image_intro_for_photo.src = "Photos/sommaire_photos.JPG";
+        } else {
+            console.warn("L'élément #image-intro-for-photo est introuvable pour le mode jour.");
+        }
     }
 }
 

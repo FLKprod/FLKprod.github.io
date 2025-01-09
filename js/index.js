@@ -687,7 +687,15 @@ export async function toggleTeamInfo(id) {
 
         var intro_for_photos= createElementWithClass('div','photos-presentation');
         var image_intro_for_photos = createElementWithClass('div','image-photos-presentation');
-        image_intro_for_photos.appendChild(createImage("Photos/sommaire_photos.JPG"))
+        var img_for_image_intro_for_photos = createImage("");
+        img_for_image_intro_for_photos.id="image-intro-for-photo";
+        if (!daynightCheckbox.checked) {
+            img_for_image_intro_for_photos.src = "Photos/dark_sommaire_photos.jpg";
+        }
+        else{
+            img_for_image_intro_for_photos.src = "Photos/sommaire_photos.jpg";
+        }
+        image_intro_for_photos.appendChild(img_for_image_intro_for_photos)
         var text_intro_for_photos = createElementWithClass('div','text-photos-presentation');
        
         intro_for_photos.appendChild(image_intro_for_photos)
@@ -953,7 +961,6 @@ export async function toggleTeamInfo(id) {
         planContainer.appendChild(columnsContainer);
 
     }
-
 
     const callback = function(mutationsList, observer) {
         for(let mutation of mutationsList) {
