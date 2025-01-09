@@ -1,6 +1,8 @@
 .plandusite-container{
     display: flex;
     width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
     align-items: center;
     flex-direction: column;
     text-align: left;
@@ -8,6 +10,7 @@
 
 .plandusite-container > h2 {
     margin-top: 1em;
+    font-weight: 100;
 }
 
 .columns-container{

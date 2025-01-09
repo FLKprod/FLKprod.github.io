@@ -909,39 +909,49 @@ export async function toggleTeamInfo(id) {
         planContainer.appendChild(createText('h2', "Plan du site"));
 
         var columnsContainer = createElementWithClass('div', 'columns-container');
-        
 
-        // Données du plan de site pour les 3 colonnes
+        // Données du plan de site pour les colonnes
         const planData = [
-            ["/","Bienvenue"],
-            ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés","Montage Vidéo Sur Mesure : Courts & Longs Métrages","Tournage vidéo"],
-            ["Projets", "RockRush", "Application Deepl","201 Farehein","Cybersafe","LandbaCash Tool"],
-            ["Multimedia","Création #1","Présentation BDE Lepus Sinapis"],
-            ["Photographie", "Dijon", "Strasbourg","San Francisco","Paris","Quebec","Baseball","Basket","Automobile"],
-            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mes certifications en réseaux","Mes formations","Informations sur mon profil"],
+            ["/", "Bienvenue"],
+            ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés", "Montage Vidéo Sur Mesure : Courts & Longs Métrages", "Tournage vidéo"],
+            ["Projets", "RockRush", "Application Deepl", "201 Farehein", "Cybersafe", "Verifile", "LandbaCash Tool", "Flkprod.github.io"],
+            ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
+            ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile"]],
+            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley", "Mes certifications en réseaux", "Mes formations", "Informations sur mon profil"],
             ["Plan du site"]
         ];
-        
-        planData.forEach((items, index) => {            
-            // Ajout d'un conteneur pour chaque élément de la colonne
-            if(index !== 0 ){
-                columnsContainer.appendChild(createElementWithClass("hr","hr-plan"));
-            }
-            
-            items.forEach((item, i) => {
-                let element;
-                if (i === 0) {
-                    // Créer un h2 pour le premier élément
-                    element = createText('h3', item);
+
+        // Fonction pour créer des éléments imbriqués si une sous-section est détectée
+        function appendItems(container, items, level = 0) {
+            items.forEach((item) => {
+                if (Array.isArray(item)) {
+                    // Créer une sous-liste si l'élément est un tableau
+                    const subContainer = createElementWithClass('div', 'sub-section','sub-section-level-${level}');
+                    appendItems(subContainer, item, level + 1); // Appel récursif pour les sous-éléments
+                    container.appendChild(subContainer);
                 } else {
-                    // Créer un p pour les autres éléments
-                    element = createText('p', "- " + item);
+                    // Créer un élément de texte pour les éléments simples
+                    const elementTag = level === 0 ? 'h3' : 'p'; // Niveau 0 : h3, sinon : p
+                    const prefix = level > 0 ? "- " : ""; // Ajouter un tiret pour les sous-sections
+                    const element = createText(elementTag, prefix + item);
+                    container.appendChild(element);
                 }
-                columnsContainer.appendChild(element);
             });
-            
+        }
+
+        // Générer le contenu pour chaque section
+        planData.forEach((items, index) => {
+            if (index !== 0) {
+                columnsContainer.appendChild(createElementWithClass("hr", "hr-plan"));
+            }
+
+            // Appeler la fonction pour ajouter les éléments (et sous-éléments)
+            appendItems(columnsContainer, items);
         });
+
+        // Ajouter les colonnes au conteneur principal
         planContainer.appendChild(columnsContainer);
+
     }
 
 
