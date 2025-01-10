@@ -193,6 +193,16 @@ body.mode-nuit .projets-container .competences span {
     transition: transform 0.5s ease;
 }
 
+.projets-container .carousel-container > .fa-arrow-left{
+    left: 0;
+    text-align: center;
+}
+
+.projets-container .carousel-container > .fa-arrow-right{
+    right: 0;
+    text-align: center;
+}
+
 .projets-container .text-projet{
     text-align: center;
     padding: 0 2em;

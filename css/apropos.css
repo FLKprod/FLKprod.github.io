@@ -58,12 +58,15 @@
 .moicmaxime{
     display: flex;
     overflow: hidden;
+    position: relative;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 .moicmaxime .image-section{
     max-width: 25%;
+    position: relative;
 }
 
 
@@ -104,7 +107,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 /*-----------------------BERKELEY--------------------*/
 
 .berkeley {
-    background-color: #4f0341;
+    background-color: #192841  ;
     color: white;
     width: 100%;
     margin: 0;
@@ -153,7 +156,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 .desc-berkeley > h2 {
-    margin-top: 1em;
+    margin-top: 6em;
     font-size: 2em;
     text-align: center;
 }
@@ -183,6 +186,76 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     color: white;
 }
 
+
+/*---------------------QUEBEC------------------------------*/
+
+.quebec {
+    background-color: #192841;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100vh !important;
+    padding: 0 !important;
+    display: flex; 
+    flex-direction: row;
+    position: relative;
+    overflow: hidden; 
+}
+
+.quebec .text-section {
+    flex: 1; 
+    width: 50%;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 2em;
+    box-sizing: border-box; 
+}
+
+.quebec .image-section {
+    flex: 0 0 50%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    box-sizing: border-box;
+}
+
+.quebec .image-section > img {
+    height: auto;
+    max-width: 100%; 
+    max-height: 90%; 
+    border-radius: 1em;
+}
+
+.desc-quebec {
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+    overflow-y: auto;
+    padding: 2em; 
+    box-sizing: border-box; 
+}
+
+.desc-quebec > h2 {
+    margin-top: 6em;
+    font-size: 2em;
+    text-align: center;
+}
+
+.desc-quebec > p {
+    color: white;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 2em;
+}
+
+.desc-quebec > img {
+    width: 100%;
+    margin: 1em 0;
+    border-radius: 1em;
+}
 
 /*----------------------FORMATIONS--------------------------*/
 .formations{
@@ -263,24 +336,30 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 .contact-section > p, .contact-section > h2{
     line-height: 2;
+    color:white
 }
 
-.cv{
+.cv {
     background-color: #e3d898;
 }
 
 .cv .image-section{
-    width: auto;
+    margin: 3em 0;
+    width: 50%;
     height: 100%;
-    max-height: 50%;
+    margin:0;
+    justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
 }
 
 .cv .image-section > img{
-    margin: 3em 0;
-    width: 50%;
+    
+    width: auto;
     position: relative;
-    height: auto;
-    max-height: 50%;
+    height: 70%;
 }
 .line0{
     background-color: transparent !important;
@@ -290,7 +369,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     max-width: 800px;
     height: 5px;
     position: relative;
-    background-color: red;
     display: inline-block;
     transform-origin: center;
     transform: scaleX(0);
@@ -315,6 +393,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         font-size: 1.5em;
         text-align: center;
     }
+
+    .aproposdemoi-container > .section {
+        height: 100%;
+      }
 
     .aproposdemoi-container > h4 {
         padding: 0.7em;
@@ -387,12 +469,15 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
     .moicmaxime .image-section {
         max-width: 60%;
+        width: auto;
       }
 
     .moicmaxime .image-section > img{
         width: 100%;
         height: auto;
     }
+
+
 
     .moicmaxime > .text-section h2:first-of-type{
         font-size: 4em;
@@ -490,6 +575,39 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     .desc-berkeley.text-section > p {
         font-size: 0.5em;
     }
+
+    /**************** QUEBEC ************************/
+
+    .quebec{
+        width: 100%;
+        height: 100% !important;
+    }
+    .desc-quebec{
+        min-height: auto;
+        font-size: 2em;
+        width: 100%;
+        max-width: 80%;
+    }
+
+    .desc-quebec > h2 {
+        margin: 2em 0;
+    }
+    .quebec .text-section {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .desc-quebec > img{
+        margin-top: 2em;
+        width: 100%;
+    }
+
+    .desc-quebec.text-section > p {
+        font-size: 0.5em;
+    }
+
+    /****************** CONTACT ************************/
 
     .cv .image-section > img{
         height: 50vh;

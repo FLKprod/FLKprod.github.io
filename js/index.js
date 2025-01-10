@@ -426,38 +426,66 @@ export async function toggleTeamInfo(id) {
 
 
         var intro2lbnl = createElementWithClass('div','section','berkeley');
+            var text_intro2lbnl = createElementWithClass('div','text-section','desc-berkeley');
+            text_intro2lbnl.appendChild(createText('h2',"Mon Experience à Berkeley"));
+            text_intro2lbnl.appendChild(createText('p',`Durant mon stage au Lawrence Berkeley National Laboratory, j'ai été immergé dans un environnement de recherche dynamique et stimulant.
+                Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante.
+                Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel.`));
+
+            text_intro2lbnl.appendChild(createImage('Photos/Apropos/carte_berkeley.png'));
+
+            text_intro2lbnl.appendChild(createText('p',`En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants.
+                La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides.
+                Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes, stimulant ainsi ma créativité et ma résolution de problèmes.`));
+
+            text_intro2lbnl.appendChild(createText('p',`Au-delà des aspects techniques, mon passage au LBNL m'a également permis de développer des compétences interpersonnelles essentielles.
+                Travailler en équipe dans un environnement aussi diversifié a nécessité une communication claire et efficace, ainsi qu'une capacité à collaborer avec des personnes aux parcours variés.
+                Ces compétences sont précieuses, non seulement dans le domaine de la recherche, mais dans tous les aspects de ma carrière future.`));
+
+            text_intro2lbnl.appendChild(createText('p',`En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative.
+                Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société.
+                Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels.`));
+
+            text_intro2lbnl.appendChild(createText('p',`Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
+                Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.`));
+            text_intro2lbnl.appendChild(createImage('Photos/Apropos/LBNL.jpg'));
+            intro2lbnl.appendChild(text_intro2lbnl);
         
-        var text_intro2lbnl = createElementWithClass('div','text-section','desc-berkeley');
-        text_intro2lbnl.appendChild(createText('h2',"Mon Experience a Berkeley"));
-        text_intro2lbnl.appendChild(createText('p',`Durant mon stage au Lawrence Berkeley National Laboratory, j'ai été immergé dans un environnement de recherche dynamique et stimulant.
-            Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante.
-            Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel.`));
-
-        text_intro2lbnl.appendChild(createImage('Photos/Apropos/carte_berkeley.png'));
-
-        text_intro2lbnl.appendChild(createText('p',`En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants.
-            La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides.
-            Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes, stimulant ainsi ma créativité et ma résolution de problèmes.`));
-
-        text_intro2lbnl.appendChild(createText('p',`Au-delà des aspects techniques, mon passage au LBNL m'a également permis de développer des compétences interpersonnelles essentielles.
-            Travailler en équipe dans un environnement aussi diversifié a nécessité une communication claire et efficace, ainsi qu'une capacité à collaborer avec des personnes aux parcours variés.
-            Ces compétences sont précieuses, non seulement dans le domaine de la recherche, mais dans tous les aspects de ma carrière future.`));
-
-        text_intro2lbnl.appendChild(createText('p',`En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative.
-            Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société.
-            Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels.`));
-
-        text_intro2lbnl.appendChild(createText('p',`Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
-            Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.`));
-        
-        intro2lbnl.appendChild(text_intro2lbnl);
-    
-        var image_intro2lbnl = createElementWithClass('div','image-section','portrait');
-        image_intro2lbnl.appendChild(createImage('Photos/Apropos/LBNL.jpg'));
-        intro2lbnl.appendChild(image_intro2lbnl);
+            var image_intro2lbnl = createElementWithClass('div','image-section','portrait');
+            image_intro2lbnl.appendChild(createImage('Photos/Apropos/berkeley.jpg'));
+            intro2lbnl.appendChild(image_intro2lbnl);
         aproposdemoiContainer.appendChild(intro2lbnl);
 
+        var intro2quebec = createElementWithClass('div','section','quebec');
+        var image_intro2quebec = createElementWithClass('div','image-section','portrait');
+        image_intro2quebec.appendChild(createImage('Photos/Apropos/fjord.jpg'));
+        intro2quebec.appendChild(image_intro2quebec);
+        var text_intro2quebec = createElementWithClass('div','text-section','desc-quebec');
+        text_intro2quebec.appendChild(createText('h2',"Mon Experience au Québèc"));
+        text_intro2quebec.appendChild(createText('p',`Deux mois après mon expérience enrichissante à Berkeley,
+            j'ai décidé de retourner en Amérique pour poursuivre un double diplôme dans le cadre d’un partenariat entre l’Université du Québec à Chicoutimi (UQAC)
+            et mon école française, Polytech Dijon. `));
 
+        text_intro2quebec.appendChild(createImage('Photos/Apropos/carte_quebec.png'));
+
+        text_intro2quebec.appendChild(createText('p',`J'ai ainsi passé 10 mois à l'UQAC, où j'ai suivi une maîtrise (l'équivalent d’un master en France) en cybersécurité.
+           Ce qui m'a particulièrement motivé, c'est l'approche pédagogique unique de l'UQAC, axée sur les projets concrets, bien plus nombreux que les cours traditionnels.
+           Cette méthodologie m'a permis de travailler sur des projets très intéressants, ce qui a considérablement enrichi mon apprentissage et renforcé
+           ma passion pour la cybersécurité.`));
+
+        text_intro2quebec.appendChild(createText('p',`Durant ce cursus, j'ai développé des compétences approfondies dans des domaines clés tels que la gestion des incidents
+            de sécurité, l'infonuagique, l'analyse forensique et la sécurité informatique. Cette expérience m'a également permis de découvrir la beauté exceptionnelle du Québec,
+            une région où la chaleur humaine des habitants compense largement la rudesse des hivers glacials.`));
+
+        text_intro2quebec.appendChild(createText('p',`En résumé, cette expérience a été aussi enrichissante sur le plan personnel que professionnel,
+            et je la recommande vivement à tous ceux qui souhaitent conjuguer apprentissage et découverte culturelle.`));
+        text_intro2quebec.appendChild(createImage('Photos/Apropos/UQAC_Quebec.jpg'));
+
+
+        intro2quebec.appendChild(text_intro2quebec);
+    
+        
+        aproposdemoiContainer.appendChild(intro2quebec);
 
         var certifications = createElementWithClass('div','formations');
 
@@ -585,45 +613,8 @@ export async function toggleTeamInfo(id) {
             anticipatePin: 1,
             }
         });
-        
 
-
-            
-        if (window.innerWidth > 1100) {
-            var tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".formations",
-                    scrub: true,
-                    start: "top top", // Ajuster la valeur de départ
-                    end: "bottom top", // Ajuster la valeur de fin
-                    anticipatePin: 1,
-                }
-            });
-        }
-        else{
-            var tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".formations",
-                    scrub: true,
-                    start: "top 75%", // Ajuster la valeur de départ
-                    end: "bottom top", // Ajuster la valeur de fin
-                    anticipatePin: 1,
-                }
-            });
-        }
-        
-
-            tl.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {scale: 0, rotation:45, autoAlpha: 0, ease: "power2"})
-            .from(".line1", {scaleX: 0, ease: "none"}, 0)
-            .to(".certif-cisco",{scaleX: 1, ease: "none"})
-            .to(".certif-cisco", {backgroundColor: "	#e3d898"}, 0) // Changement de couleur
-            .to(".ecoles_formations", {backgroundColor: "	#ffffff"}, 0) // Changement de couleur
-            .to(".berkeley", {backgroundColor: "	#e3d898"}, 0); // Changement de couleur pour aproposdemoi-container
-        
-            
-            
-
-        let largeElements = aproposdemoiContainer.querySelectorAll(".desc-berkeley");
+        var largeElements = aproposdemoiContainer.querySelectorAll(".desc-berkeley");
         if (window.innerWidth > 1100) {
             largeElements.forEach(large => {
                 gsap.to(large, {
@@ -635,7 +626,7 @@ export async function toggleTeamInfo(id) {
                     scrollTrigger: {
                         trigger: '.berkeley',
                         pin: true,
-                        start: "top 0%",
+                        start: "top ${6}em`",
                         end: () => {
                             const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
                             const largeHeight = large.clientHeight;
@@ -652,22 +643,90 @@ export async function toggleTeamInfo(id) {
                 });
             });
         }
+
+        var largeElements = aproposdemoiContainer.querySelectorAll(".desc-quebec");
+        if (window.innerWidth > 1100) {
+            largeElements.forEach(large => {
+                gsap.to(large, {
+                    y: () => {
+                        const quebecHeight = aproposdemoiContainer.querySelector('.quebec').offsetHeight;
+                        return Math.min(0, window.innerHeight - large.clientHeight - quebecHeight);
+                    },
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: '.quebec',
+                        pin: true,
+                        // Ajuste le début de la transition pour commencer après le menu
+                        start: `top ${6}em`, // Le menu est de 6em, on commence 6em après le haut de la fenêtre
+                        end: () => {
+                            const quebecHeight = document.querySelector('.quebec').offsetHeight;
+                            const largeHeight = large.clientHeight;
+                            return `bottom ${Math.max(0, quebecHeight - largeHeight)}px`;
+                        },
+                        scrub: 0.5,
+                        invalidateOnRefresh: true,
+                        anticipatePin: 1,
+                        onUpdate: self => {
+                            // Optionnel : Débogage des valeurs
+                            console.log(`Progress: ${self.progress}, Direction: ${self.direction}`);
+                        },
+                    }
+                });
+            });
+        }
         
+        
+
+
+            
+        if (window.innerWidth > 1100) {
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".formations",
+                    scrub: true,
+                    start: "top bottom",
+                    end: "bottom top",
+                    anticipatePin: 1,
+                }
+            });
+        }
+        else{
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".formations",
+                    scrub: true,
+                    start: "top 75%", 
+                    end: "bottom top",
+                    anticipatePin: 1,
+                }
+            });
+        }
+        
+        tl.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {
+            scale: 0, 
+            rotation: 45, 
+            autoAlpha: 0, 
+            ease: "power2"
+        },0)  // Ajoute un délai de 2 secondes avant cette animation
+        .from(".line1", {scaleX: 0, ease: "none"}, 0)
+        .to(".certif-cisco", {scaleX: 1, ease: "none"})
+        .to(".certif-cisco", {backgroundColor: "#e3d898"}, 0)
+        .to(".ecoles_formations", {backgroundColor: "#ffffff"}, 0)
+        .to(".quebec", {backgroundColor: "#e3d898"},0
+        );
+
+
 
         var tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".cv",  
                 start: "top bottom", 
-                end: "top 15%",       
+                end: "top 25%",       
                 scrub: true,              
             }
         });
-        
         tl2.from(".line2", {scaleX: 0, backgroundColor: "#e3d898", ease: "none"}, 0)
         .to(".cv",{scaleX: 1, backgroundColor: "black", ease: "none"})
-        
-        
-  
     }
     else if(id === 'photos'){
         /****************** PARTIE PHOTO  ********************************************************************************************/
@@ -941,7 +1000,7 @@ export async function toggleTeamInfo(id) {
             ["Projets", "RockRush", "Application Deepl", "201 Farehein", "Cybersafe", "Verifile", "LandbaCash Tool", "Flkprod.github.io"],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile"]],
-            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley", "Mes certifications en réseaux", "Mes formations", "Informations sur mon profil"],
+            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Mes certifications en réseaux", "Mes formations", "Informations sur mon profil"],
             ["Plan du site"]
         ];
 
