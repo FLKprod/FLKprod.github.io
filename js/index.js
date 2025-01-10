@@ -228,24 +228,44 @@ export async function toggleTeamInfo(id) {
         
         sections.forEach((element, index) => {
             const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
-        
-            gsap.fromTo(element, 
-                {
-                    autoAlpha: 0,      
-                    x: index % 2 === 0 ? -offset : offset, 
-                }, 
-                {
-                    autoAlpha: 1,     
-                    x: 0,            
-                    ease: "power2.out", 
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "center bottom",  
-                        end: "center center", 
-                        scrub: true,         
+            if (window.innerWidth > 1100) {
+                gsap.fromTo(element, 
+                    {
+                        autoAlpha: 0,      
+                        x: index % 2 === 0 ? -offset : offset, 
+                    }, 
+                    {
+                        autoAlpha: 1,     
+                        x: 0,            
+                        ease: "power2.out", 
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "center bottom",  
+                            end: "center center", 
+                            scrub: true,         
+                        }
                     }
-                }
-            );
+                );
+            }
+            else{
+                gsap.fromTo(element, 
+                    {
+                        autoAlpha: 0,      
+                        x: index % 2 === 0 ? -offset : offset, 
+                    }, 
+                    {
+                        autoAlpha: 1,     
+                        x: 0,            
+                        ease: "power2.out", 
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top bottom",  
+                            end: "top 75%", 
+                            scrub: true,         
+                        }
+                    }
+                );
+        }
         });
         
     }

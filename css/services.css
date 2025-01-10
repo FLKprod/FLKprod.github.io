@@ -171,6 +171,10 @@ body.mode-nuit .text-contacts-services > a{
       width: 50%;
     }
 
+    .section-services .text-section-services {
+      width: 80%;
+    }
+
     .service{
       flex-direction: column;
       margin: 0;
@@ -202,7 +206,7 @@ body.mode-nuit .text-contacts-services > a{
 
 
     .services-container .text-section {
-      width: 70%;
+      width: 100%;
       font-size: 0.8em;
       height: auto;
     }
