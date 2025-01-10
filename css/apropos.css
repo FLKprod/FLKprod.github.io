@@ -38,13 +38,16 @@
 
 .aproposdemoi-container .image-section{
     width: auto;
-    display: flex;
+    display: block;
+    object-fit: contain; 
+    position: relative;
     max-width: 50%;
     mix-blend-mode: normal;
     margin: 3em;
 }
 .aproposdemoi-container .image-section > img{
     border-radius: 2em;
+    object-fit: cover;
     height: 50%;
     width: auto;
 
@@ -268,13 +271,16 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 .cv .image-section{
     width: auto;
-    height: 100vh;
+    height: 100%;
+    max-height: 50%;
 }
 
 .cv .image-section > img{
     margin: 3em 0;
-    width: 100%;
+    width: 50%;
+    position: relative;
     height: auto;
+    max-height: 50%;
 }
 .line0{
     background-color: transparent !important;
@@ -319,6 +325,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
     .aproposdemoi-container > .image-section img {
         height: 10em;
+        
         width: auto;
         margin-right: 1em;
         margin-bottom: 1em;
@@ -339,8 +346,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         width: 75%;
         height: auto;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         mix-blend-mode: normal;
+        max-height: max-content;
         margin: 1em 0;
     }
 
@@ -361,6 +370,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
     .aproposdemoi-container .image-section > img{
         width: auto;
+        object-fit: contain;
         height: 100%;
     }
 
@@ -375,8 +385,13 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         padding-bottom: 5em;
     }
 
-    .moicmaxime .image-section{
-        max-width: 50%;
+    .moicmaxime .image-section {
+        max-width: 60%;
+      }
+
+    .moicmaxime .image-section > img{
+        width: 100%;
+        height: auto;
     }
 
     .moicmaxime > .text-section h2:first-of-type{
@@ -472,8 +487,13 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         width: 100%;
     }
 
+    .desc-berkeley.text-section > p {
+        font-size: 0.5em;
+    }
+
     .cv .image-section > img{
         height: 50vh;
+        max-width: auto; 
     }
     
     .contact-section i {
@@ -502,7 +522,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .text-section > p {
-        font-size: 0.4em;
+        font-size: 1em;
         margin-bottom: 3em;
     }
 }

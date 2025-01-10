@@ -84,6 +84,15 @@
     position: relative;
   }
 
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Remplit tout le conteneur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
   .photos-container .carousel-container {
     margin: 0;
     padding: 0;
@@ -91,10 +100,10 @@
   }
   
   .photos-container .image-wrapper img {
-    width: 100%;
+    width: 100% !important;
     display: block;
     aspect-ratio: 16 / 10;
-    height: 100%;
+    height: 100% !important;
     overflow: hidden;
   }
   
@@ -143,15 +152,30 @@ body.mode-nuit .photos-container .text-overlay{
     z-index: 20;
   }
   
-.fa-arrow-left {
+  .gauche-icon, .droite-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px; /* Taille des icônes, ajustez selon vos besoins */
+    height: auto;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8; /* Légèrement transparent */
+    transition: opacity 0.3s ease;
+}
+
+.gauche-icon:hover, .droite-icon:hover {
+    opacity: 1; /* Pleine opacité au survol */
+}
+
+.gauche-icon {
     left: 0;
-    z-index: 2;
-  }
-  
-.fa-arrow-right {
+}
+
+.droite-icon {
     right: 0;
-    z-index: 2;
-  }
+}
+
   .hidden {
     color: transparent !important;
     background-color: rgba(0, 0, 0, 0) !important;
@@ -181,8 +205,10 @@ body.mode-nuit .photos-container .text-overlay{
 
 .modal-content {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
+  margin: 3em;
+  border-radius: 2em;
+  width: 100%;
+  height: 100%;
   max-width: 90%;
   max-height: 90%;
   display: flex;
@@ -193,16 +219,39 @@ body.mode-nuit .photos-container .text-overlay{
 }
 
 .modal-content .image-wrapper img {
-  max-width: 100%;
-  max-height: 90vh;
   width: auto;
   height: auto;
   object-fit: contain;
 }
 
+.modal-content p, .modal-content h2{
+  text-align: center;
+}
+
+.text-content {
+  position: absolute;
+  bottom: 1em;
+  width: 100%;
+  text-align: center; 
+  color: white;
+  padding: 0.5em 0;
+}
+
+.modal-content.text-content h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.text-content p {
+  margin: 0;
+  font-size: 1em;
+}
+
 .image-wrapper img {
   width: 100%;
-  height: auto;
+  height: auto; 
+  max-height: 100%; 
+  object-fit: cover; 
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
@@ -214,8 +263,7 @@ body.mode-nuit .photos-container .text-overlay{
   justify-content: center;
   max-width: 80%;
   max-height: 80%;
-  background-color: white;
-  border-radius: 8px;
+  background-color: black;
   overflow: hidden;
   padding: 20px;
 }
@@ -235,18 +283,9 @@ body.mode-nuit .photos-container .text-overlay{
   transition: opacity 0.5s ease;
 }
 
-
-.modal-content .fa-arrow-left, .modal-content .fa-arrow-right {
-  color: black !important;
-}
-
 .modal.active .modal-content {
   transform: scale(1);
 }
-
-
-
-
 
 /* Gestion responsive */
 @media screen and (max-width: 768px) {
@@ -282,5 +321,12 @@ body.mode-nuit .photos-container .text-overlay{
 
     .photos-container .text-overlay >h4 {
       font-size: 5em;
+    }
+
+    .modal-content {
+      margin: 0.5em;
+      max-width: 100%;
+      max-height: 62.5%;
+
     }
 }

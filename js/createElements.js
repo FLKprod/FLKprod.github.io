@@ -31,6 +31,14 @@ export function createIcon(iconClass, fontSize, color, cursor, clickHandler) {
     return icon;
 }
 
+export function createIconImage(src, classname, clickHandler) {
+    const icon = document.createElement("img");
+    icon.src = src;
+    icon.className = classname;
+    icon.onclick = clickHandler;
+    return icon;
+}
+
 export function createIconWithLink(iconClass, link) {
     const icon = createIcon(iconClass);
     const iconLink = document.createElement("a");

@@ -6,17 +6,16 @@ gsap.registerPlugin(ScrollTrigger);
 /************************** GESTION DU MENU EN ENTETE *********************************************/
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-const buttonIds = ['services','projets', 'videos', 'photos','aproposdemoi'];
+const buttonIds = ['presentation','services','projets', 'videos', 'photos','aproposdemoi'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
+
     button.addEventListener('click', function() {
         toggleTeamInfo(buttonId);
+        reveniralentete()
     });
 });
-const logopresentation = document.getElementById('logo');
-logopresentation.addEventListener('click', () => {
-    toggleTeamInfo('presentation');
-});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.sommaire-photos a');
@@ -874,7 +873,7 @@ export async function toggleTeamInfo(id) {
                 competences: "HTML / CSS, JavaScript, IOT, JSON"
             },
             {
-                name: "Dijon Paris USA Canada",
+                name: "Verifile",
                 github: "https://github.com/FLKprod/Verifile",
                 videoLink: "Photos/projets/Verifile.mp4",
                 imageSrc: "Photos/projets/Verifile.png",
@@ -986,7 +985,6 @@ export async function toggleTeamInfo(id) {
     const observer = new MutationObserver(callback);
     const targetNode = document.querySelector('body');
     const config = { attributes: true, childList: true, subtree: true };
-    reveniralentete()
     observer.observe(targetNode, config);
     
 }
@@ -997,6 +995,7 @@ const buttons = document.querySelectorAll('#down-menu button');
 buttons.forEach(button => {
     button.addEventListener('click', function() {
         toggleTeamInfo(button.id);
+        reveniralentete()
     });
 });
 

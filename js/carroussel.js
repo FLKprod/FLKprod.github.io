@@ -3,15 +3,16 @@ import {
     createElementWithClass,
     createIcon,
     createText,
-    createGitHubLink
+    createGitHubLink,
+    createIconImage
   } from './createElements.js';
   
   export function createCarousel(name, desc, images, index,textoverlay) {
     const carouselContainer = createElementWithClass('div', 'carousel-container');
     const img_carrousel = createElementWithClass('div', 'image-wrapper');
     const imageElement = createImage(images[0]);
-    const prevButton = createIcon('fa fa-arrow-left', '1em', 'white', 'pointer', () => prevImage());
-    const nextButton = createIcon('fa fa-arrow-right', '1em', 'white', 'pointer', () => nextImage());
+    const prevButton = createIconImage('Photos/gauche.png','gauche-icon' ,() => prevImage());
+    const nextButton = createIconImage('Photos/droite.png','droite-icon' , () => nextImage());
     const textOverlay = createElementWithClass('div', 'text-overlay');
 
     let currentIndex = 0;
@@ -30,6 +31,10 @@ import {
     }
     // CAROUSSEL POUR LE MODAL
     else{
+        var text_content_carrousel = createElementWithClass('div','text-content')
+        text_content_carrousel.appendChild(createText('h2', name));
+        text_content_carrousel.appendChild(createText('p', desc));
+        carouselContainer.appendChild(text_content_carrousel);
         carouselContainer.appendChild(prevButton);
         carouselContainer.appendChild(nextButton);
     }
@@ -197,18 +202,11 @@ import {
     
         // Une fois l'animation terminée, remplace l'image principale et nettoie
         setTimeout(() => {
-            // Supprime l'ancienne image de transition
-            
-    
             // Met à jour la référence de l'image principale
             imageElement = nextImageElement;
             img_carrousel.removeChild(imageElement);
         }, 500); // Délai égal à la durée de la transition
     }
-    
-    
-    
-
     return carouselContainer;
 }
 
