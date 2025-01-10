@@ -68,7 +68,7 @@ function toggleModeNuit() {
         }
 
         if (image_intro_for_photo) {
-            image_intro_for_photo.src = "Photos/sommaire_photos.JPG";
+            image_intro_for_photo.src = "Photos/sommaire_photos.jpg";
         } else {
             console.warn("L'élément #image-intro-for-photo est introuvable pour le mode jour.");
         }

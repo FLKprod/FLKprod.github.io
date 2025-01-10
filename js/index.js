@@ -606,7 +606,7 @@ export async function toggleTeamInfo(id) {
                 scrollTrigger: {
                     trigger: ".formations",
                     scrub: true,
-                    start: "top center", // Ajuster la valeur de départ
+                    start: "top 75%", // Ajuster la valeur de départ
                     end: "bottom top", // Ajuster la valeur de fin
                     anticipatePin: 1,
                 }
@@ -938,7 +938,7 @@ export async function toggleTeamInfo(id) {
         // Données du plan de site pour les colonnes
         const planData = [
             ["/", "Bienvenue"],
-            ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés", "Montage Vidéo Sur Mesure : Courts & Longs Métrages", "Tournage vidéo"],
+            ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain"],
             ["Projets", "RockRush", "Application Deepl", "201 Farehein", "Cybersafe", "Verifile", "LandbaCash Tool", "Flkprod.github.io"],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile"]],

@@ -375,6 +375,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         padding-bottom: 5em;
     }
 
+    .moicmaxime .image-section{
+        max-width: 50%;
+    }
+
     .moicmaxime > .text-section h2:first-of-type{
         font-size: 4em;
         text-shadow: 
