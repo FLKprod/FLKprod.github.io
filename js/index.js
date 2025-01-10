@@ -679,7 +679,7 @@ export async function toggleTeamInfo(id) {
         modal_content.id="modal-content";
         modal.appendChild(modal_content);
         var image_intro_for_photos = createElementWithClass('div','image-photos-presentation');
-        var img_for_image_intro_for_photos = createImage("");
+        var img_for_image_intro_for_photos = createImage("Photos/sommaire_photos.jpg");
         img_for_image_intro_for_photos.id="image-intro-for-photo";
         if (!daynightCheckbox.checked) {
             img_for_image_intro_for_photos.src = "Photos/dark_sommaire_photos.jpg";

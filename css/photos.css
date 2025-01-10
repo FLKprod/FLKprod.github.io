@@ -156,11 +156,11 @@ body.mode-nuit .photos-container .text-overlay{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px; /* Taille des icônes, ajustez selon vos besoins */
+    width: 2em;
     height: auto;
     cursor: pointer;
     z-index: 10;
-    opacity: 0.8; /* Légèrement transparent */
+    opacity: 0.8;
     transition: opacity 0.3s ease;
 }
 
