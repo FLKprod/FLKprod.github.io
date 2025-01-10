@@ -711,7 +711,7 @@ export async function toggleTeamInfo(id) {
         .from(".line1", {scaleX: 0, ease: "none"}, 0)
         .to(".certif-cisco", {scaleX: 1, ease: "none"})
         .to(".certif-cisco", {backgroundColor: "#e3d898"}, 0)
-        .to(".ecoles_formations", {backgroundColor: "#ffffff"}, 0)
+        .to(".ecoles_formations", {backgroundColor: "#192841"}, 0)
         .to(".quebec", {backgroundColor: "#e3d898"},0
         );
 

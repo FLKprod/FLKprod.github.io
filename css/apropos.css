@@ -44,6 +44,11 @@
     max-width: 50%;
     mix-blend-mode: normal;
     margin: 3em;
+    width: 100%;                /* L'image prendra toute la largeur de la div */
+    height: 100%;               /* L'image prendra toute la hauteur de la div */
+    object-fit: cover;          /* L'image couvre toute la div sans déformation */
+    object-position: center;    /* Centrer l'image à l'intérieur de la div */
+    overflow: hidden;  
 }
 .aproposdemoi-container .image-section > img{
     border-radius: 2em;
@@ -66,6 +71,8 @@
 
 .moicmaxime .image-section{
     max-width: 25%;
+    width: auto;
+  height: auto;
     position: relative;
 }
 
@@ -141,8 +148,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 .berkeley .image-section > img {
     height: auto;
-    max-width: 100%; 
-    max-height: 90%; 
+
     border-radius: 1em;
 }
 
@@ -224,8 +230,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 .quebec .image-section > img {
     height: auto;
-    max-width: 100%; 
-    max-height: 90%; 
+
     border-radius: 1em;
 }
 
@@ -305,14 +310,16 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     text-align: left;    
 }
 
-.certif-cisco, .ecoles_formations{
+.certif-cisco{
     color: black;
     width: 50%;
     flex: 1;
 }
 
-.ecoles_formations > p {
-    color: black;
+.ecoles_formations{
+    width: 50%;
+    flex: 1;
+    color: white;
 }
 
 
@@ -377,7 +384,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 /************************************************************************/
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 768px) {
     .contact-text{
         display:flex;
         flex-direction: column;
