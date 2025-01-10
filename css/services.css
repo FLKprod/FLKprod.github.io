@@ -16,7 +16,6 @@
   justify-content: center;
 }
 
-
 .text-section-services {
     height: auto;
     width: 60%;
@@ -28,58 +27,60 @@
     box-sizing: border-box;
     align-items: center;
   }
-  .text-section-services h2{
+
+.text-section-services h2{
     width: 100%;
-  }
-  .text-section-services h2:first-of-type{
+}
+.text-section-services h2:first-of-type{
     margin-top: 2em;
     left: 0;
     text-align: left;
-  }
-  .text-section-services p{
+}
+.text-section-services p{
     text-align: justify;
-  }
-  .text-section-services h2:nth-of-type(2){
+}
+.text-section-services h2:nth-of-type(2){
     margin: 0;text-align: right;
-  }
-  .text-section-services h2:last-of-type{
+}
+.text-section-services h2:last-of-type{
     text-align: center;
-  }
-  .service {
+}
+
+.service {
     display: flex;
     width: 100%;
     margin: 3em 0;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-  }
+}
   
-  .service > .image-section {
+.service > .image-section {
     width: 40%;
     overflow: hidden;
     height: auto;
-  }
+}
   
-  .services-container .image-section > img {
+.services-container .image-section > img {
     width: 100%;
     height: auto;
     object-fit: contain;
     border-radius: 1em;
     transition: transform 0.3s ease;
-  }
+}
 
-  .services-container .image-section > img:hover {
+.services-container .image-section > img:hover {
     transform: scale(1.03);
 }
   
-  .services-container .text-section {
+.services-container .text-section {
     width: 40%;
     box-sizing: border-box;
     font-size: 0.8em;
     height: auto;
-  }
+}
   
-  .services-container .text-section > h2 {
+.services-container .text-section > h2 {
     font-size: 3em;
     margin-bottom: 1em;
     right: 0;
@@ -120,25 +121,26 @@ body.mode-nuit .projets-container .competences span {
   color: black;
   background-color: #e3d898;
 }
-  .services-container .text-section > p {
+
+.services-container .text-section > p {
     line-height: 1.5;
     font-size: 1.5em;
     margin:0 2em;
     text-align: left;
-  }
+}
   
-  .text-section ul {
+.text-section ul {
     list-style-type: disc;
-  }
+}
 
-  .contact-services{
+.contact-services{
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .text-contacts-services > a{
+.text-contacts-services > a{
     font-size: 2em;
     width: auto;
     color: #4f0341;
@@ -166,7 +168,7 @@ body.mode-nuit .text-contacts-services > a{
   transform: scale(1.2);
 }
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .service .text-section{
       width: 50%;
     }
@@ -179,10 +181,12 @@ body.mode-nuit .text-contacts-services > a{
       flex-direction: column;
       margin: 0;
     }
+
     .image-section{
       margin-top: 1em;
       margin-bottom: 0;
     }
+
     .service > .image-section {
       width: 90%;
     }
@@ -204,7 +208,6 @@ body.mode-nuit .text-contacts-services > a{
       font-size: 2em ;
     }
 
-
     .services-container .text-section {
       width: 100%;
       font-size: 0.8em;
@@ -212,7 +215,7 @@ body.mode-nuit .text-contacts-services > a{
     }
     
   }
-  @media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
     .service > .image-section {
       width: 50%;
     }
@@ -220,4 +223,4 @@ body.mode-nuit .text-contacts-services > a{
     .service{
       width: 80%;
     }
-  }
+}

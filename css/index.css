@@ -152,12 +152,8 @@ h2:hover {
     margin-right: 3em;
     background-color: transparent;
     height: 100%;
-
     width: auto;
-    
 }
-
-
 
 .text-entete > h2 {
     display: inline-block;
@@ -166,14 +162,13 @@ h2:hover {
 
 .text-entete > h2:hover {
     animation: scaleUp 0.3s forwards;
-  }
-
-
+}
 
 .scrolling-text {
-    font-size: 2em; /* Ajustez la taille du texte */
+    overflow-x: hidden;
+    font-size: 2em;
     display: inline-block;
-    white-space: nowrap; /* Évite que le texte ne se casse en plusieurs lignes */
+    white-space: nowrap;
     animation: scroll-left-to-right 10s linear infinite alternate;
 }
 
@@ -183,20 +178,8 @@ h2:hover {
 
 .separator::after {
     content: " / ";
-    margin: 0 1em; /* Contrôle l'espacement entre les mots */
+    margin: 0 1em;
 }
-
-/* Animation de défilement de gauche à droite */
-@keyframes scroll-left-to-right {
-    0% {
-        transform: translateX(-10%); /* Déplace le texte à gauche */
-    }
-    100% {
-        transform: translateX(10%); /* Déplace le texte à droite */
-    }
-}
-
-
 
 /****************************** bar de site en bas **************************************/
 
@@ -219,11 +202,7 @@ h2:hover {
     transform: scale(1.2);
 }
 
-
-
 /********************************************************************************/
-
-
 
 .section {
     background-color: var(--background-day);
@@ -291,7 +270,7 @@ h2:hover {
       }
 
       .text-entete > hr {
-        width: 50%;  
+        width: 50%; 
       }
 }
 
@@ -322,8 +301,6 @@ h2:hover {
     margin: 0;
 }
 
-
-
 /*------------------------------------------- INTRO AVEC APPARITION DE LOGO -----------------------------------------*/
 
 #introContainer {
@@ -351,7 +328,7 @@ h2:hover {
     transition: opacity 2s ease-in-out;
 }
 
-
+/*****************************************************************************/
 
 .sections-menu > .select {
     border-bottom: 2px solid #4f0341;
@@ -367,8 +344,6 @@ h2:hover {
     width: 100vw;
     height: 100vh;
 }
-
-
 
 .element {
     cursor: pointer;
@@ -389,7 +364,7 @@ h2:hover {
     z-index: 2;
 }
 
-/**************************** MODE NUIT *******************************/
+/************************************* MODE NUIT ****************************************/
 
 body.mode-nuit {
     background-color: var(--background-night);
@@ -425,8 +400,6 @@ body.mode-nuit .sections-menu > .select {
     margin-right: 0;
 }
 
-
-
 body.mode-nuit .sections-menu {
     color: var(--text-color-night);
 }
@@ -435,61 +408,16 @@ body.mode-nuit .sections-menu > button {
     color: var(--text-color-night);
 }
 
-body.mode-nuit .section{
+/*body.mode-nuit .section{
     background-color: var(--background-night);
     color: var(--text-color-night);
-}
+}*/
 
-body.mode-nuit .berkeley{
-    background-color: #4f0341;
-    color: var(--text-color-night);
-}
-
-body.mode-nuit .cv{
-    background-color: #e3d898;
+body.mode-nuit .moicmaxime, body.mode-nuit .projet-section, body.mode-nuit .section-videos{
+    background-color: var(--background-night);
     color: var(--text-color-night);
 }
 
 body.mode-nuit .down-menu > button, body.mode-nuit .down-menu button:not(:last-child)::after{
     color:white;
 }
-
-
-
-
-/* Police d'écriture personnalisée */
-
-@font-face {
-    font-family: 'FLKpolicy';
-    src: url('flkpolicy.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@keyframes slideRight {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(2em);
-    }
-  }
-
-  @keyframes slideLeft {
-    from {
-      transform: translateX(2em);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  /* Animation pour les petits écrans */
-  @keyframes scaleUp {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.2);
-    }
-  }

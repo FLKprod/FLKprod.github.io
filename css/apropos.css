@@ -1,4 +1,4 @@
-/*---------------------------------------------- PRESENTATION & A PROPOS DE MOI ----------------------------------------------------------*/
+/*---------------------------------------------- A PROPOS DE MOI ----------------------------------------------------------*/
 :root {
     --background-day: #ffffff;
     --text-color-day: #000000;
@@ -6,7 +6,6 @@
     --text-color-night: #ffffff;
 }
 
-/********************** A PROPOS DE MOI CSS ********************/
 .aproposdemoi-container{
     position: relative;
 }
@@ -44,10 +43,10 @@
     max-width: 50%;
     mix-blend-mode: normal;
     margin: 3em;
-    width: 100%;                /* L'image prendra toute la largeur de la div */
-    height: 100%;               /* L'image prendra toute la hauteur de la div */
-    object-fit: cover;          /* L'image couvre toute la div sans déformation */
-    object-position: center;    /* Centrer l'image à l'intérieur de la div */
+    width: 100%;                
+    height: 100%;             
+    object-fit: cover;  
+    object-position: center;
     overflow: hidden;  
 }
 .aproposdemoi-container .image-section > img{
@@ -55,11 +54,9 @@
     object-fit: cover;
     height: 50%;
     width: auto;
-
- 
 }
 
-/*-------------- MOI C MAXIME -------------*/
+/*------------------------ MOI C MAXIME -----------------------*/
 .moicmaxime{
     display: flex;
     overflow: hidden;
@@ -111,10 +108,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     color:#e3d898
 }
 
-/*-----------------------BERKELEY--------------------*/
+/*---------------------------- BERKELEY ----------------------------*/
 
 .berkeley {
-    background-color: #192841  ;
+    background-color: #192841;
     color: white;
     width: 100%;
     margin: 0;
@@ -193,7 +190,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 
-/*---------------------QUEBEC------------------------------*/
+/*----------------------------------- QUEBEC ------------------------------*/
 
 .quebec {
     background-color: #192841;
@@ -262,7 +259,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     border-radius: 1em;
 }
 
-/*----------------------FORMATIONS--------------------------*/
+/*------------------------------- FORMATIONS --------------------------*/
+
 .formations{
     display: flex;
     align-items: stretch;
@@ -339,7 +337,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     align-items: center;
 }
 
-/*--------------------------CONTACT--------------------*/
+/*--------------------------CONTACT-------------------------------*/
 
 .contact-section > p, .contact-section > h2{
     line-height: 2;
@@ -380,7 +378,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     transform-origin: center;
     transform: scaleX(0);
 }
-
 
 /************************************************************************/
 
@@ -565,6 +562,13 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         max-width: 80%;
     }
 
+    .berkeley .image-section {
+        flex:none;
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+    }
+
     .desc-berkeley > h2 {
         margin: 2em 0;
     }
@@ -598,6 +602,13 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
     .desc-quebec > h2 {
         margin: 2em 0;
+    }
+
+    .quebec .image-section {
+        flex:none;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
     }
     .quebec .text-section {
         width: 100%;
@@ -651,14 +662,3 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         margin-bottom: 3em;
     }
 }
-
-
-
-
-
-
-
-
-
-
-

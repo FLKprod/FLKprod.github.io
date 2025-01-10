@@ -109,7 +109,6 @@ body.mode-nuit .menu {
     box-sizing: border-box;
     text-align: right;
     margin-right: 1em;
-    
 }
 
 .img-down > img{
@@ -135,7 +134,6 @@ body.mode-nuit .hr {
     text-align: left;
     align-items: left;
     justify-content: center;
-
 }
 
 .down-menu button:first-child, body.mode-nuit .down-menu button:first-child {
@@ -165,7 +163,7 @@ body.mode-nuit .hr {
     color: black; 
 }
 
-/* Container du switch */
+/* SWITCH FOR DAY/NIGHT MODE */
 .switch {
     position: relative;
     display: inline-block;
@@ -173,15 +171,11 @@ body.mode-nuit .hr {
     height: 1.5em;
     margin-right: 2em;
   }
-  
-  /* Input caché */
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
-  
-  /* Slider principal */
   .slider {
     position: absolute;
     cursor: pointer;
@@ -203,18 +197,14 @@ body.mode-nuit .hr {
     font-size: 1em;
     transition: opacity 0.3s ease;
   }
-  
   .sun {
     left: 2px;
     color: #2b3a47;
   }
-  
   .moon {
     right: 2px;
     opacity: 0; 
   }
-  
-  /* Rond du switch */
   .slider::before {
     content: "";
     background-color: white;
@@ -226,16 +216,12 @@ body.mode-nuit .hr {
     border-radius: 50%;
     transition: transform 0.3s ease;
   }
-  
-  /* Lorsque le switch est activé */
   .switch input:checked + .slider {
     background-color: white; 
-  }
-  
+  }  
   .switch input:checked + .slider::before {
     transform: translateX(1.5em); 
     background-color: #2b3a47;
-    
   }
   
   .switch input:checked + .slider .sun {
@@ -244,7 +230,6 @@ body.mode-nuit .hr {
   .switch input:checked + .slider .moon {
     opacity: 0; /* Cache la lune */
   }
-
   .switch input + .slider .moon {
     opacity: 1; /* Affiche la lune */
   }
@@ -295,7 +280,6 @@ body.mode-nuit .hr {
 
     .sections-menu > button{
         width: 25%;
-        
     }
 
     .sections-menu > button, .social-networks > button {
@@ -323,14 +307,12 @@ body.mode-nuit .hr {
     }
 
     .switch {
-
         display: inline-block;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-bottom: 1em;
         margin-right: 0;
-    
     }
 
     .img-down{

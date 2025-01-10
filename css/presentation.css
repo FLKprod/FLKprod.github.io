@@ -7,20 +7,18 @@
     align-items: center;
 }
 
-
 .image-section-presentation > img {
     width: auto;
     height: 10em;
 }
 
 #presentation-img-2 {
-    transition: transform 0.3s ease; /* Transition fluide pour l'effet */
+    transition: transform 0.3s ease;
 }
 
 #presentation-img-2:hover {
-    transform: scale(1.2); /* Agrandit l'image à 120% lors du survol */
+    transform: scale(1.2);
 }
-
 
 .text-section-presentation{
     width: 50%;
@@ -60,7 +58,6 @@
                 -1px 1px 0 black,   
                 1px 1px 0 black; 
 }
-
 
 .section-menu-presentation {
     display: grid;

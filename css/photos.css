@@ -27,7 +27,6 @@
   width: auto;
   height: 20em;
   margin: 0 2em;
-  
 }
 
 .photos-container .image-photos-presentation > img{
@@ -39,10 +38,12 @@
 .photos-container .text-photos-presentation {
   font-size: 2em;
 }
+
 .photos-container .sommaire-photos{
   display: flex;
   flex-direction: column;
 }
+
 .photos-container .sommaire-photos > a {
   font-size: 2em;
   text-align: left;
@@ -70,8 +71,7 @@
   font-size: 5em;
 }
 
-.photos-container .categorie_photos {
-  
+.photos-container .categorie_photos {  
     width: 100%;
     height: 100%;
     margin: 0;
@@ -87,7 +87,7 @@
   .image-wrapper {
     position: relative;
     width: 100%;
-    height: 100%; /* Remplit tout le conteneur */
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +96,7 @@
   .photos-container .carousel-container {
     margin: 0;
     padding: 0;
-    display: inline-block; /* Adapte la taille du conteneur à l'image */
+    display: inline-block;
   }
   
   .photos-container .image-wrapper img {
@@ -165,7 +165,7 @@ body.mode-nuit .photos-container .text-overlay{
 }
 
 .gauche-icon:hover, .droite-icon:hover {
-    opacity: 1; /* Pleine opacité au survol */
+    opacity: 1; 
 }
 
 .gauche-icon {
@@ -181,7 +181,6 @@ body.mode-nuit .photos-container .text-overlay{
     background-color: rgba(0, 0, 0, 0) !important;
   }
 
-/* Modal */
 .modal {
   position: fixed;
   top: 0;
@@ -255,7 +254,8 @@ body.mode-nuit .photos-container .text-overlay{
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Styles pour le modal */
+/* MODAL---------------------------------------------------- */
+
 .modal-content {
   display: flex;
   flex-direction: column;
@@ -279,7 +279,7 @@ body.mode-nuit .photos-container .text-overlay{
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Assure un bon rendu des images */
+  object-fit: cover;
   transition: opacity 0.5s ease;
 }
 
@@ -287,10 +287,9 @@ body.mode-nuit .photos-container .text-overlay{
   transform: scale(1);
 }
 
-/* Gestion responsive */
 @media screen and (max-width: 768px) {
   .photos-container .section.photos {
-        flex: 1 1 100%; /* Chaque carrousel prend toute la largeur sur mobile */
+        flex: 1 1 100%;
     }
 
     .photos-container .photos-presentation{
@@ -327,6 +326,5 @@ body.mode-nuit .photos-container .text-overlay{
       margin: 0.5em;
       max-width: 100%;
       max-height: 62.5%;
-
     }
 }

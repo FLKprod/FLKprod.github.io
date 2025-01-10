@@ -65,8 +65,7 @@
 .projets-container .projet h4 {
     width: 100%;
     margin: 0.5em;
-    font-size: 2em;
-    
+    font-size: 2em;    
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
@@ -152,7 +151,6 @@ body.mode-nuit .carousel-slide{
     background-color: #4f0341;
 }
 
-
 .githublink:hover > a{
     text-decoration: underline;
 }
@@ -188,7 +186,6 @@ body.mode-nuit .projets-container .competences span {
     transition: transform 0.2s ease;
 }
 
-/* Transition fluide des slides */
 .projets-container .slide-transition {
     transition: transform 0.5s ease;
 }
@@ -217,7 +214,6 @@ body.mode-nuit .projets-container .competences span {
     flex-direction: row;
     justify-content: left;
     align-items: center;
-
 }
 
 .projets-container .title-projet > h2 {
@@ -230,7 +226,6 @@ body.mode-nuit .projets-container .competences span {
     line-height: 2;
     width: 100%;
 }
-
 
 .projets-container .carousel-video {
     width: 100%;
@@ -253,6 +248,7 @@ body.mode-nuit .projets-container .competences span {
     height: 100%;
     border: none;
 }
+
 @media screen and (max-width: 1100px) {
     .projets-container .section{
         height: auto;
@@ -266,6 +262,7 @@ body.mode-nuit .projets-container .competences span {
         font-size: 2em;
         margin: 0;
     }
+
     .projets-container .projets {
         width: 75%;
         display: grid;
@@ -301,5 +298,4 @@ body.mode-nuit .projets-container .competences span {
     .projet > h2 {
         font-size: 1.5em;
     }
-
 }

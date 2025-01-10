@@ -1,4 +1,4 @@
-import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createTextforSommaire, updateVideoElement, updateImageElement, updateLinkGithub, createVideoProject, createVideo, createMenuItem } from './createElements.js';
+import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createTextforSommaire, createVideo, createMenuItem } from './createElements.js';
 import {createCarousel, generateImagePaths, createProjetCarousel} from './carroussel.js';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -9,34 +9,30 @@ document.addEventListener('contextmenu', event => event.preventDefault());
 const buttonIds = ['presentation','services','projets', 'videos', 'photos','aproposdemoi'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
-
     button.addEventListener('click', function() {
         toggleTeamInfo(buttonId);
         reveniralentete()
     });
 });
 
-
+/* PARTIE EN DEV : CREATION DU SOMMAIRE POUR LES PHOTOS -> LIGNE 755
 document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.sommaire-photos a');
 
     items.forEach(item => {
         item.addEventListener('click', function (event) {
-            event.preventDefault();  // Empêcher l'action par défaut du lien
+            event.preventDefault(); 
             const targetId = item.getAttribute('data-target');
             const targetElement = document.getElementById(targetId);
-
             if (targetElement) {
                 targetElement.scrollIntoView({
-                    behavior: 'smooth',  // Défilement fluide
-                    block: 'start'       // Aligner l'élément en haut de la fenêtre
+                    behavior: 'smooth',
+                    block: 'start'     
                 });
             }
         });
     });
-});
-
-
+});*/
 
 toggleTeamInfo('presentation'); // commence par afficher la page presentation quand on arrive sur le site
 
@@ -56,8 +52,8 @@ function scrollToElement(targetClassName) {
     const targetElement = document.querySelector(`.${targetClassName}`);
     if (targetElement) {
         window.scrollTo({
-            top: targetElement.offsetTop,  // Position verticale de l'élément
-            behavior: 'smooth'             // Pour un défilement en douceur
+            top: targetElement.offsetTop,  
+            behavior: 'smooth'             
         });
     }
 }
@@ -82,6 +78,7 @@ export async function toggleTeamInfo(id) {
             console.warn(`Aucun bouton trouvé avec l'ID : ${id}`);
         }
     }
+
     var menu = document.getElementById('down-menu');
     if (menu) {
         var selectedButton = menu.querySelector(`#${id}`);
@@ -92,6 +89,7 @@ export async function toggleTeamInfo(id) {
             console.warn(`Aucun bouton trouvé avec l'ID : ${id}`);
         }
     }
+
     var presentationContainer = document.querySelector('.presentation-container');
     var aproposdemoiContainer = document.querySelector('.aproposdemoi-container');
     var videosContainer = document.querySelector('.videos-container');
@@ -270,11 +268,8 @@ export async function toggleTeamInfo(id) {
         
     }
     if(id=== 'videos'){
-
-        // Créer la section principale pour les vidéos
         var intro2videos = createElementWithClass('div', 'section', 'section-videos');
 
-        // Texte d'introduction
         var text_intro2videos = createElementWithClass('div', 'text-section', 'video-section');
         text_intro2videos.appendChild(createText('h2', "Mes contenus vidéos"));
         text_intro2videos.appendChild(createText('p', `
@@ -287,10 +282,8 @@ export async function toggleTeamInfo(id) {
         intro2videos.appendChild(text_intro2videos);
         videosContainer.appendChild(intro2videos);
 
-        // Conteneur galerie
         var galerie = createElementWithClass("div", "galerie-videos");
 
-        // Données des vidéos
         const videosData = [
             {
                 url: 'https://www.youtube.com/embed/sDuDS7t4UsU',
@@ -307,16 +300,11 @@ export async function toggleTeamInfo(id) {
             }
         ];
 
-        // Boucle pour créer chaque vidéo et sa description
         videosData.forEach(videoData => {
-            // Créer le conteneur de la vidéo
             var videoContainer = createElementWithClass("div", "video-container");
-
-            // Ajouter l'iframe pour la vidéo
             var iframe = createVideo(videoData.url);
             videoContainer.appendChild(iframe);
 
-            // Ajouter la description de la vidéo
             var videoTitle = createElementWithClass("h3", "video-description");
             videoTitle.textContent = videoData.title;
             videoContainer.appendChild(videoTitle);
@@ -324,7 +312,6 @@ export async function toggleTeamInfo(id) {
             videoDescription.textContent = videoData.description;
             videoContainer.appendChild(videoDescription);
             
-
             const competences = createElementWithClass('div', 'competences');
             videoData.competences.split(', ').forEach(skill => {
                 const skillTag = createElementWithClass('span', 'competence-tag');
@@ -337,7 +324,7 @@ export async function toggleTeamInfo(id) {
 
         videosContainer.appendChild(galerie);
 
-        // Animation GSAP
+        // Animation d'apparition de la section vidéo entière
         gsap.from('.videos-container', {
             scale: 0,
             stagger: 1,
@@ -347,14 +334,14 @@ export async function toggleTeamInfo(id) {
     }
     else if(id=== 'presentation'){
         gsap.from('.presentation-container',{scale:0,stagger:1, duration:1,stagger:1});
-
         var intro2presentation = createElementWithClass('div','section-presentation');
             
-            var text_intro2presentation = createElementWithClass('div','text-section-presentation');
-                text_intro2presentation.appendChild(createText('h2',"Bienvenue"));
-                text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie, à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique, je partage ici mes réalisations, mes inspirations, mes collaborations.`));
-                text_intro2presentation.appendChild(createText('h2',"Enjoy."));
-            intro2presentation.appendChild(text_intro2presentation);
+        var text_intro2presentation = createElementWithClass('div','text-section-presentation');
+            text_intro2presentation.appendChild(createText('h2',"Bienvenue"));
+            text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie, à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique, je partage ici mes réalisations, mes inspirations, mes collaborations.`));
+            text_intro2presentation.appendChild(createText('h2',"Enjoy."));
+        intro2presentation.appendChild(text_intro2presentation);
+
         presentationContainer.appendChild(intro2presentation);
         var intro2menupresentation = createElementWithClass('div','section-menu-presentation');
         const menuData = [
@@ -397,7 +384,6 @@ export async function toggleTeamInfo(id) {
             
         ];
     
-        // Create and append each menu item
         menuData.forEach(item => {
             const menuItem = createMenuItem(
                 item.id,
@@ -413,7 +399,6 @@ export async function toggleTeamInfo(id) {
             var image2_presentation=createImage("Photos/logos/flkprod.png");
             image2_presentation.id='presentation-img-2';
             image_intro2presentation.appendChild(image2_presentation);
-
 
         presentationContainer.appendChild(intro2menupresentation);
         presentationContainer.appendChild(image_intro2presentation);
@@ -591,13 +576,12 @@ export async function toggleTeamInfo(id) {
         text_cv_section.appendChild(createIconWithLink("fab fa-instagram", "https://www.instagram.com/flkprod_/"));
         text_cv_section.appendChild(createIconWithLink("fab fa-linkedin", "https://www.linkedin.com/in/maxime-falkowski-9a4607216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGJJZ%2FAWYSLGq0t%2BQS92TrQ%3D%3D"));
         text_cv_section.appendChild(createIconWithLink("fa fa-envelope", "window.location.href='mailto:maxime.falkowski@free.fr';"));
-
         cv_section.appendChild(text_cv_section);
-
         aproposdemoiContainer.appendChild(cv_section);
         
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-        // Création de l'animation pour la ligne
+
+        // Création de l'animation pour la ligne dans section Moi c'est Maxime
         gsap.from(".line", {
         scaleX: 0,
         transformOrigin: "left center", 
@@ -606,7 +590,7 @@ export async function toggleTeamInfo(id) {
         
         const elements = document.querySelectorAll('.moicmaxime > *');
 
-        // Animation pour déplacer les éléments vers la droite au début (0% à 25% de la ligne)
+        // Animation pour moi c'est Maxime
         gsap.to(elements, {
             xPercent: 0,
             ease: "none",
@@ -619,8 +603,6 @@ export async function toggleTeamInfo(id) {
             anticipatePin: 1,
             }
         });
-        
-        // Animation pour déplacer les éléments vers la gauche à la fin (75% à 100% de la ligne)
         gsap.to(elements, {
             xPercent: 0,
             ease: "none",
@@ -656,7 +638,6 @@ export async function toggleTeamInfo(id) {
                         invalidateOnRefresh: true,
                         anticipatePin: 1,
                         onUpdate: self => {
-                            // Optionnel : Débogage des valeurs
                             console.log(`Progress: ${self.progress}, Direction: ${self.direction}`);
                         },
                     }
@@ -676,8 +657,7 @@ export async function toggleTeamInfo(id) {
                     scrollTrigger: {
                         trigger: '.quebec',
                         pin: true,
-                        // Ajuste le début de la transition pour commencer après le menu
-                        start: `top ${6}em`, // Le menu est de 6em, on commence 6em après le haut de la fenêtre
+                        start: `top ${6}em`, 
                         end: () => {
                             const quebecHeight = document.querySelector('.quebec').offsetHeight;
                             const largeHeight = large.clientHeight;
@@ -687,18 +667,14 @@ export async function toggleTeamInfo(id) {
                         invalidateOnRefresh: true,
                         anticipatePin: 1,
                         onUpdate: self => {
-                            // Optionnel : Débogage des valeurs
                             console.log(`Progress: ${self.progress}, Direction: ${self.direction}`);
                         },
                     }
                 });
             });
         }
-        
-        
 
-
-            
+        // TRANSITION POUR LA SECTION FORMATION            
         if (window.innerWidth > 1100) {
             var tl = gsap.timeline({
                 scrollTrigger: {
@@ -710,7 +686,7 @@ export async function toggleTeamInfo(id) {
                 }
             });
         }
-        else{
+        else if (window.innerWidth > 768){
             var tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".formations",
@@ -727,7 +703,8 @@ export async function toggleTeamInfo(id) {
             rotation: 45, 
             autoAlpha: 0, 
             ease: "power2"
-        },0)  // Ajoute un délai de 2 secondes avant cette animation
+        },0)
+
         .from(".line1", {scaleX: 0, ease: "none"}, 0)
         .to(".certif-cisco", {scaleX: 1, ease: "none"})
         .to(".certif-cisco", {backgroundColor: "#e3d898"}, 0)
@@ -735,8 +712,7 @@ export async function toggleTeamInfo(id) {
         .to(".quebec", {backgroundColor: "#e3d898"},0
         );
 
-
-
+        // TRANSITION POUR SECTION CV
         var tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".cv",  
@@ -749,7 +725,8 @@ export async function toggleTeamInfo(id) {
         .to(".cv",{scaleX: 1, backgroundColor: "black", ease: "none"})
     }
     else if(id === 'photos'){
-        /****************** PARTIE PHOTO  ********************************************************************************************/
+
+        /************************************************* PARTIE PHOTO  ********************************************/
 
         var intro_for_photos= createElementWithClass('div','photos-presentation');
         var modal= createElementWithClass('div','modal');
@@ -774,17 +751,20 @@ export async function toggleTeamInfo(id) {
         text_intro_for_photos.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide 😉"));
         photosContainer.appendChild(modal);
         intro_for_photos.appendChild(text_intro_for_photos)
+
+        // PARTIE A FAIRE : FAIRE UN SOMMAIRE POUR LES CATEGORIES DE PHOTOS ET DESCENDRE DIRECT AU BON TRUC SI ON CLIQUE
+
         /*var sommaire_photos = createElementWithClass('div','sommaire-photos');
         sommaire_photos.id='sommaire-photos'
         sommaire_photos.appendChild(createTextforSommaire('a','Photos Urbaines','Photos Urbaines'))
         sommaire_photos.appendChild(createTextforSommaire('a','Photos Sportives','Photos Sportives'))
         sommaire_photos.appendChild(createTextforSommaire('a','Photos Événementielles','Photos Événementielles'))
-
         intro_for_photos.appendChild(sommaire_photos)*/
+
         photosContainer.appendChild(intro_for_photos);
         gsap.from('.photos-presentation',{scale:0,stagger:1, duration:1});
 
-        // Photos Urbaines | Photos Sportives | Photos Événementielles | Shootings | Macrophotographie
+        // SECTIONS / Photos Urbaines | Photos Sportives | Photos Événementielles | Shootings | Macrophotographie
         const categoriesData = [
             { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
@@ -800,7 +780,7 @@ export async function toggleTeamInfo(id) {
             { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' }
         ];
         
-        // Fonction pour grouper les données par catégorie
+        // TRIE DES SECTIONS EN CATEGORIES POUR FACILITER LE TOUT
         const groupByCategory = (data) => {
             return data.reduce((groups, item) => {
                 if (!groups[item.category]) {
@@ -818,23 +798,19 @@ export async function toggleTeamInfo(id) {
         modal.appendChild(modal_content);
         photosContainer.appendChild(modal);
 
-        // Fonction pour ouvrir le modal
+        // OUVERTURE ET FERMETURE DU MODAL POUR VOIR ET DEFILER DANS LES IMAGES
         const openModal = (carouselContent) => {
-            modal_content.innerHTML = ''; // Vider le contenu précédent
-            modal_content.appendChild(carouselContent); // Ajouter le contenu du carrousel
+            modal_content.innerHTML = '';
+            modal_content.appendChild(carouselContent);
             modal.classList.add('active');
         };
 
         const closeModal = (event) => {
-            // Vérifie si le clic est en dehors du contenu du modal
             if (event.target === modal) {
                 modal.classList.remove('active');
             }
         };
-        
-        // Ajouter un écouteur pour fermer le modal en cliquant à côté
         modal.addEventListener('click', closeModal);
-
         
         Object.entries(groupedData).forEach(([category, items]) => {
             const categoryTitle = createElementWithClass('h2', 'category-title');
@@ -845,48 +821,38 @@ export async function toggleTeamInfo(id) {
             photosContainer.appendChild(categoryTitle);
             items.forEach((item, index) => {
                 const { name, desc, nbrepictures } = item;
-        
-                // Créer une sous-section pour l'élément
                 const carouselSection = createElementWithClass('div', 'section', 'photos');
-        
-                // Générer les images et le carrousel
                 const images = generateImagePaths(name, nbrepictures);
                 const categoryElement = createCarousel(name, desc, images, index,true);
         
-                // Ajouter un événement pour ouvrir le modal au clic sur le carrousel
                 categoryElement.addEventListener('click', () => {
                     const enlargedCarousel = createCarousel(name, desc, images, index,false);
                     openModal(enlargedCarousel);
                 });
-        
-                // Ajouter l'élément à la section
+    
                 carouselSection.appendChild(categoryElement);
                 categorySection.appendChild(carouselSection);
             });
-        
-            // Ajouter la section de la catégorie au conteneur principal
             photosContainer.appendChild(categorySection);
         });
 
         const sections = document.querySelectorAll('.section.photos');
         sections.forEach((element, index) => {
-            // Calcul de 50% de la largeur de la fenêtre moins 1em
             const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
         
             gsap.fromTo(element, 
                 {
-                    autoAlpha: 0,      // Départ de l'animation (opacité 0)
-                    x: index % 2 === 0 ? -offset : offset, // Si l'index est pair, il vient de la gauche (-offset), sinon de la droite (offset)
+                    autoAlpha: 0,x: index % 2 === 0 ? -offset : offset, 
                 }, 
                 {
-                    autoAlpha: 1,      // Fin de l'animation (opacité 1)
-                    x: 0,              // Fin de l'animation (pas de décalage en x)
-                    ease: "power2.out", // Ease pour l'animation
+                    autoAlpha: 1,     
+                    x: 0,   
+                    ease: "power2.out", 
                     scrollTrigger: {
                         trigger: element,
-                        start: "25% bottom",  // Commencer l'animation lorsque le bas de l'élément atteint le centre de la fenêtre
-                        end: "75% bottom",    // Arrêter l'animation lorsque le bas de l'élément atteint le bas de la fenêtre
-                        scrub: true,             // Animation lissée
+                        start: "25% bottom",
+                        end: "75% bottom",  
+                        scrub: true,  
                     }
                 }
             );
@@ -902,9 +868,7 @@ export async function toggleTeamInfo(id) {
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
 
-
         var projets = createElementWithClass('div', 'projets');
-
         var menuList = [
             {
                 name: "RockRush",
@@ -984,26 +948,22 @@ export async function toggleTeamInfo(id) {
         menuList.forEach(item => {
             const projet = createElementWithClass('div', 'projet');
         
-            // Carrousel
-            const images = [item.imageSrc]; // Ajouter plus d'images si nécessaire
+            const images = [item.imageSrc];
             const carousel = createProjetCarousel(item.name, item.desc, images, item.videoLink, item.github);
         
-            // Titre
             const titleElement = createElementWithClass('h3', 'project-title');
             titleElement.textContent = item.name;
         
-            // Compétences
             const competences = createElementWithClass('div', 'competences');
             item.competences.split(', ').forEach(skill => {
                 const skillTag = createElementWithClass('span', 'competence-tag');
                 skillTag.textContent = skill;
                 competences.appendChild(skillTag);
             });
-        
             projet.appendChild(carousel);
             projet.appendChild(titleElement);
             projet.appendChild(competences);
-        
+
             projets.appendChild(projet);
         });
         projetsContainer.appendChild(projets);
@@ -1012,8 +972,6 @@ export async function toggleTeamInfo(id) {
         planContainer.appendChild(createText('h2', "Plan du site"));
 
         var columnsContainer = createElementWithClass('div', 'columns-container');
-
-        // Données du plan de site pour les colonnes
         const planData = [
             ["/", "Bienvenue"],
             ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain"],
@@ -1024,37 +982,28 @@ export async function toggleTeamInfo(id) {
             ["Plan du site"]
         ];
 
-        // Fonction pour créer des éléments imbriqués si une sous-section est détectée
         function appendItems(container, items, level = 0) {
             items.forEach((item) => {
                 if (Array.isArray(item)) {
-                    // Créer une sous-liste si l'élément est un tableau
+                    
                     const subContainer = createElementWithClass('div', 'sub-section','sub-section-level-${level}');
-                    appendItems(subContainer, item, level + 1); // Appel récursif pour les sous-éléments
+                    appendItems(subContainer, item, level + 1); 
                     container.appendChild(subContainer);
                 } else {
-                    // Créer un élément de texte pour les éléments simples
-                    const elementTag = level === 0 ? 'h3' : 'p'; // Niveau 0 : h3, sinon : p
-                    const prefix = level > 0 ? "- " : ""; // Ajouter un tiret pour les sous-sections
+                    const elementTag = level === 0 ? 'h3' : 'p';
+                    const prefix = level > 0 ? "- " : ""; 
                     const element = createText(elementTag, prefix + item);
                     container.appendChild(element);
                 }
             });
         }
-
-        // Générer le contenu pour chaque section
         planData.forEach((items, index) => {
             if (index !== 0) {
                 columnsContainer.appendChild(createElementWithClass("hr", "hr-plan"));
             }
-
-            // Appeler la fonction pour ajouter les éléments (et sous-éléments)
             appendItems(columnsContainer, items);
         });
-
-        // Ajouter les colonnes au conteneur principal
         planContainer.appendChild(columnsContainer);
-
     }
 
     const callback = function(mutationsList, observer) {
@@ -1065,16 +1014,13 @@ export async function toggleTeamInfo(id) {
     const targetNode = document.querySelector('body');
     const config = { attributes: true, childList: true, subtree: true };
     observer.observe(targetNode, config);
-    
 }
 
 const buttons = document.querySelectorAll('#down-menu button');
 
-// Ajouter un gestionnaire d'événements "click" à chaque bouton
 buttons.forEach(button => {
     button.addEventListener('click', function() {
         toggleTeamInfo(button.id);
         reveniralentete()
     });
 });
-

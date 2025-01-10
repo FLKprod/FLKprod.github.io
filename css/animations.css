@@ -16,3 +16,50 @@
         left: 0;
     }
 }
+
+@keyframes slideRight {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(2em);
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      transform: translateX(2em);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Animation pour les petits écrans */
+  @keyframes scaleUp {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+
+  /* Animation de défilement de gauche à droite */
+@keyframes scroll-left-to-right {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(10%);
+    }
+}
+
+/* Police d'écriture personnalisée */
+
+@font-face {
+    font-family: 'FLKpolicy';
+    src: url('flkpolicy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
