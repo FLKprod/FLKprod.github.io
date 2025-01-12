@@ -20,15 +20,11 @@
   width: 100%;
   margin-top: 2em;
   display: flex;
-  flex:1 1 50%;
   flex-direction: row;
 }
 
-
-
 .photos-container .image-photos-presentation{
   width: 50%;
-
   height: auto;
   margin: 0 2em;
 }
@@ -52,8 +48,15 @@
 }
 
 .photos-container .sommaire-photos > a {
-  font-size: 2em;
+  font-size: 1em;
+  color: #e3d898;
+  font-style: italic;
   text-align: left;
+}
+
+.photos-container .sommaire-photos > a::before {
+  content: " -"; /* Ajoute " -" avant chaque lien */
+  margin-right: 5px; /* Ajoute un espacement entre le tiret et le texte */
 }
 
 .section.photos {

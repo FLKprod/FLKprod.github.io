@@ -746,12 +746,12 @@ export async function toggleTeamInfo(id) {
 
         // PARTIE A FAIRE : FAIRE UN SOMMAIRE POUR LES CATEGORIES DE PHOTOS ET DESCENDRE DIRECT AU BON TRUC SI ON CLIQUE
 
-        /*var sommaire_photos = createElementWithClass('div','sommaire-photos');
+        var sommaire_photos = createElementWithClass('div','sommaire-photos');
         sommaire_photos.id='sommaire-photos'
         sommaire_photos.appendChild(createTextforSommaire('a','Photos Urbaines','Photos Urbaines'))
         sommaire_photos.appendChild(createTextforSommaire('a','Photos Sportives','Photos Sportives'))
         sommaire_photos.appendChild(createTextforSommaire('a','Photos Événementielles','Photos Événementielles'))
-        intro_for_photos.appendChild(sommaire_photos)*/
+        text_intro_for_photos.appendChild(sommaire_photos)
 
         photosContainer.appendChild(intro_for_photos);
         gsap.from('.photos-presentation',{scale:0,stagger:1, duration:1});
