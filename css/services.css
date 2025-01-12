@@ -168,14 +168,26 @@ body.mode-nuit .text-contacts-services > a{
   transform: scale(1.2);
 }
 
+@media screen and (max-width: 1100px) {
+  .service > .image-section {
+    width: 50%;
+  }
+
+  .service{
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 768px) {
-
-
     .section-services .text-section-services {
       width: 80%;
     }
 
+    .service > .text-section button {
+      font-size: 1em;
+    }
     .service{
+      width: 100%;
       flex-direction: column;
       margin: 0;
     }
@@ -203,7 +215,7 @@ body.mode-nuit .text-contacts-services > a{
     }
 
     .service > .text-section p{
-      font-size: 2em ;
+      font-size: 1em ;
     }
 
     .services-container .text-section {
@@ -211,14 +223,9 @@ body.mode-nuit .text-contacts-services > a{
       font-size: 0.8em;
       height: auto;
     }
+
+    .text-section-services {
+      width: 100%;
+    }
     
   }
-@media screen and (max-width: 1100px) {
-    .service > .image-section {
-      width: 50%;
-    }
-
-    .service{
-      width: 80%;
-    }
-}

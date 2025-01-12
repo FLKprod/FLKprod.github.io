@@ -61,6 +61,7 @@ function scrollToElement(targetClassName) {
 /**************************************************************************************************/
 
 export async function toggleTeamInfo(id) {
+    gsap.registerPlugin(ScrollTrigger);
     const daynightCheckbox = document.getElementById('daynight');
 
     var buttons = document.querySelectorAll('.sections-menu button');
