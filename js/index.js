@@ -761,7 +761,7 @@ export async function toggleTeamInfo(id) {
         const categoriesData = [
             { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 1, category: 'Photos Urbaines' },
+            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 5, category: 'Photos Urbaines' },
             { name: 'San Francisco', desc: "California, USA", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 2, category: 'Photos Urbaines' },
             { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
