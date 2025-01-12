@@ -89,6 +89,14 @@
     text-transform: capitalize;
 }
 
+.videos-container .text-section p > a {
+    color:var(--cassis)
+}
+
+body.mode-nuit .videos-container .text-section p > a {
+    color:#e3d898
+}
+
 body.mode-nuit .video-container > h3, body.mode-nuit .video-container > p {
   color: white;
 }

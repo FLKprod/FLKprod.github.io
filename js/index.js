@@ -68,27 +68,19 @@ export async function toggleTeamInfo(id) {
         button.classList.remove('select');
     });
 
-    var menu = document.getElementById('section-menu');
-    if (menu) {
-        var selectedButton = menu.querySelector(`#${id}`);
-        if (selectedButton) {
-            console.log("section " + id);
-            selectedButton.classList.add('select');
-        } else {
-            console.warn(`Aucun bouton trouvé avec l'ID : ${id}`);
+    ['section-menu', 'down-menu'].forEach(menuId => {
+        var menu = document.getElementById(menuId);
+        if (menu) {
+            var selectedButton = menu.querySelector(`#${id}`);
+            if (selectedButton) {
+                console.log("section " + id);
+                selectedButton.classList.add('select');
+            } else {
+                console.warn(`Aucun bouton trouvé avec l'ID : ${id} dans ${menuId}`);
+            }
         }
-    }
-
-    var menu = document.getElementById('down-menu');
-    if (menu) {
-        var selectedButton = menu.querySelector(`#${id}`);
-        if (selectedButton) {
-            console.log("section " + id);
-            selectedButton.classList.add('select');
-        } else {
-            console.warn(`Aucun bouton trouvé avec l'ID : ${id}`);
-        }
-    }
+    });
+    
 
     var presentationContainer = document.querySelector('.presentation-container');
     var aproposdemoiContainer = document.querySelector('.aproposdemoi-container');
@@ -978,7 +970,7 @@ export async function toggleTeamInfo(id) {
             ["Projets", "RockRush", "Application Deepl", "201 Farehein", "Cybersafe", "Verifile", "LandbaCash Tool", "Flkprod.github.io"],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile"]],
-            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Mes certifications en réseaux", "Mes formations", "Informations sur mon profil"],
+            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma formations",["Mes certifications en réseaux", "Mes formations"], "Informations sur mon profil"],
             ["Plan du site"]
         ];
 

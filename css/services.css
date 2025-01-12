@@ -169,9 +169,7 @@ body.mode-nuit .text-contacts-services > a{
 }
 
 @media screen and (max-width: 768px) {
-    .service .text-section{
-      width: 50%;
-    }
+
 
     .section-services .text-section-services {
       width: 80%;

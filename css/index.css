@@ -202,12 +202,15 @@ h2:hover {
     transform: scale(1.2);
 }
 
+.social-networks > button {
+    color: var(--text-color-day);
+}
+
 /********************************************************************************/
 
 .section {
     background-color: var(--background-day);
     color: var(--text-color-day);
-    color: black;
     display: flex;
     align-items: center;
     position: relative;
@@ -272,6 +275,19 @@ h2:hover {
       .text-entete > hr {
         width: 50%; 
       }
+
+      .title-entete {
+        max-height: 100vw;
+        margin-left: 0;
+    }
+
+    .scrolling-text-wrapper, .scrolling-text{
+        overflow: hidden;
+        clip-path: inset(0);
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        max-width: 100vw;
+    }
 }
 
 #backToTopButton {
