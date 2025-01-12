@@ -167,15 +167,16 @@ h2:hover {
 
 .scrolling-text {
     overflow-x: hidden;
+    white-space: nowrap;
     font-size: 2em;
     display: inline-block;
     white-space: nowrap;
-    animation: scroll-left-to-right 10s linear infinite alternate;
+    animation: scroll 10s linear infinite alternate;
 }
 
 .scrolling-container{
-
     margin: 1em 0;
+    overflow: clip;
 }
 
 .separator::after {
@@ -288,9 +289,12 @@ h2:hover {
         clip-path: inset(0);
         -webkit-overflow-scrolling: touch;
         position: relative;
+        
         max-width: 100vw;
     }
-
+    .scrolling-text{
+        animation: scroll-left-to-right 5s linear infinite alternate;
+    }
     .scrolling-container{
         width: 100vw;
     }

@@ -46,14 +46,14 @@
   }
 
   /* Animation de défilement de gauche à droite */
-@keyframes scroll-left-to-right {
-    0% {
-        transform: translateX(-10%);
+  @keyframes scroll {
+    from {
+      transform: translate3d(-5em, 0, 0); /* Démarre en dehors à droite */
     }
-    100% {
-        transform: translateX(10%);
+    to {
+      transform: translate3d(5em, 0, 0); /* Finit en dehors à gauche */
     }
-}
+  }
 
 /* Police d'écriture personnalisée */
 
