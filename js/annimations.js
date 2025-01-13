@@ -100,7 +100,7 @@ backToTopButton.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-        backToTopButton.Style.display = 'block';
+        backToTopButton.style.display = 'block';
     } else {
         backToTopButton.style.display = 'none';
     }

@@ -1,37 +1,28 @@
 /*-------------------------------- PROJET -------------------------------------------------------------------*/
 
-.projets-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+.projets-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 100%;
-}
-
-.projets-container > .projet-section {
-    height: 25vh;
-  }
-
-.projets-container > h2 {
-    font-size: 2.5em;
-    letter-spacing: 0.08em;
-    font-weight: 100;
-    text-align: left; 
-}
-
-.projets-container .projets {
-    width: 60%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px; 
     padding: 20px;
 }
 
+.category-container {
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-title {
+    width: 100%;
+    font-size: 3em;
+    margin-left: 3em;
+    font-weight: bold;
+    text-align: left;
+}
 .projets-container .projet {
     overflow: hidden;
     max-height: 100vh;
@@ -41,37 +32,36 @@
     padding: 15px;
 }
 
-
-.projets .carousel-container {
+  .projet .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
     width: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 2em;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
-
-.carousel-slide > img{
-    width: 100%;
-    display: block;
+    aspect-ratio: 1/1;
     height: 100%;
-    overflow: hidden;
-    aspect-ratio:1/1;
-}
+    object-fit: contain;
+    object-position: center;
+  }
 
-.projets-container .projet h4 {
-    width: 100%;
-    margin: 0.5em;
-    font-size: 2em;    
-    font-weight: bold;
+  .projet .carousel-images > .text-slide p {
+    margin: 0 3em;
+  }
+
+  .projet .carousel-images > .text-slide, .githublink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
     text-align: center;
-    text-transform: uppercase;
+    color: white;
+  }
+.projet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
 }
 
-.projets-container .projet h3 {
+.projet .project-title {
     width: 100%;
     font-size: 2em;
     font-weight: bold;
@@ -79,24 +69,40 @@
     text-transform: uppercase;
 }
 
-.projet .carousel-images {
+.projet .competences {
     display: flex;
-    transition: transform 0.5s ease;
-    width: 100%; 
-    aspect-ratio: 1/1;
-    height: 100%;
-    object-fit: contain; 
-    object-position: center; 
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.projet .carousel-images > .text-slide, .githublink{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    text-align: center;
+.projet .competence-tag {
+    background-color: #007bff;
     color: white;
+    border-radius: 5px;
+    font-size: 0.9em;
 }
+
+.carousel-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2em;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-slide img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    aspect-ratio: 16/9;
+}
+
 
 .githublink {
     display: flex;
@@ -128,16 +134,24 @@
 .video-slide{
     background-color: black !important;
 }
-.projet:nth-child(3) > .carousel-container .carousel-images .carousel-slide:first-of-type{
-    background-color:#095228 ;
-}
-.projet:nth-child(4) > .carousel-container .carousel-images .carousel-slide:first-of-type{
-    background-color:#432373 ;
-}
 
-.projet:nth-child(5) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+
+.projet:nth-child(1) > .carousel-container .carousel-images .carousel-slide:first-of-type{
     background-color:#1e0c36 ;
 }
+.projet:nth-child(2) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:#432373 ;
+}
+.projet:nth-child(5) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:#095228 ;
+}
+.projet:nth-child(3) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:#1e0c36; ;
+}
+.projet:nth-child(4) > .carousel-container .carousel-images .carousel-slide:first-of-type{
+    background-color:lightgray;
+}
+
 
 .projet:nth-child(6) > .carousel-container .carousel-images .carousel-slide:first-of-type{
     background-color:rgb(20,20,20) ;

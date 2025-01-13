@@ -865,6 +865,7 @@ export async function toggleTeamInfo(id) {
         var menuList = [
             {
                 name: "RockRush",
+                category:"Projet Web",
                 github: "https://github.com/FLKprod/RockRush",
                 videoLink: "Photos/projets/RockRush.mp4",
                 imageSrc: "Photos/projets/RockRush.jpg",
@@ -879,6 +880,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "Application DeepL",
+                category:"Projets de Programmation Avancée",
                 github: "https://github.com/FLKprod/Appli_Android_Deepl",
                 videoLink: "Photos/projets/DeepL.mp4",
                 imageSrc: "Photos/projets/DeepL.png",
@@ -892,6 +894,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "201 Farehein",
+                category:"Projets de Programmation Avancée",
                 github: "https://github.com/FLKprod/201F",
                 videoLink: "Photos/projets/201F.mp4",
                 imageSrc: "Photos/projets/201F.png",
@@ -901,6 +904,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "CyberSafe",
+                category:"Projet Web",
                 github: "https://github.com/FLKprod/Projet-IOT",
                 videoLink: "Photos/projets/Cybersafe.mp4",
                 imageSrc: "Photos/projets/Cybersafe.png",
@@ -910,6 +914,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "Verifile",
+                category:"Projet Web",
                 github: "https://github.com/FLKprod/Verifile",
                 videoLink: "Photos/projets/Verifile.mp4",
                 imageSrc: "Photos/projets/Verifile.png",
@@ -921,6 +926,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "LanbdaCash Tool",
+                category:"Projets de Programmation Avancée",
                 github: "https://github.com/FLKprod/CloudProject",
                 videoLink: "Photos/projets/landbacash.mp4",
                 imageSrc: "Photos/projets/landbacash.png",
@@ -929,37 +935,81 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "FLKprod.github.io",
+                category:"Projet Web",
                 github: "https://github.com/FLKprod/FLKprod.github.io",
                 videoLink: "Photos/projets/Flkprod.mp4",
                 imageSrc: "Photos/projets/Flkprod.png",
                 desc: `Ce site internet, tout simplement, créé de A à Z par moi-même.`,
                 competences: "HTML / CSS, JavaScript"
+            },
+            {
+                name: "aleskflkphotos.github.io",
+                category:"Projet Web",
+                github: "https://github.com/aleskflkphotos/aleskflkphotos.github.io",
+                videoLink: "Photos/projets/Flkprod.mp4",
+                imageSrc: "Photos/projets/aleskflkphotos.png",
+                desc: `Ce site internet, créé de A à Z par moi-même, pour une connaissance, photographe indépendante.`,
+                competences: "HTML / CSS, JavaScript"
             }
         ];
 
-        // Création des carrousels pour chaque projet
-        menuList.forEach(item => {
-            const projet = createElementWithClass('div', 'projet');
+        const groupByCategory = (data) => {
+            return data.reduce((groups, item) => {
+                if (!groups[item.category]) {
+                    groups[item.category] = [];
+                }
+                groups[item.category].push(item);
+                return groups;
+            }, {});
+        };
         
-            const images = [item.imageSrc];
-            const carousel = createProjetCarousel(item.name, item.desc, images, item.videoLink, item.github);
+        // Récupère les projets regroupés par catégorie
+        const menuListGrouped = groupByCategory(menuList);
         
-            const titleElement = createElementWithClass('h3', 'project-title');
-            titleElement.textContent = item.name;
+        // Création des carrousels pour chaque catégorie
+        Object.entries(menuListGrouped).forEach(([category, projects]) => {
+            // Conteneur pour une catégorie
+            const categoryTitle = createElementWithClass('h2', 'category-title');
+            categoryTitle.textContent = category;
+            projetsContainer.appendChild(categoryTitle);
+            const categoryContainer = createElementWithClass('div', 'category-container');
         
-            const competences = createElementWithClass('div', 'competences');
-            item.competences.split(', ').forEach(skill => {
-                const skillTag = createElementWithClass('span', 'competence-tag');
-                skillTag.textContent = skill;
-                competences.appendChild(skillTag);
+            // Titre de la catégorie
+            
+        
+            // Ajout des projets de la catégorie
+            projects.forEach(project => {
+                const projet = createElementWithClass('div', 'projet');
+        
+                // Carousel pour le projet
+                const images = [project.imageSrc];
+                const carousel = createProjetCarousel(project.name, project.desc, images, project.videoLink, project.github);
+        
+                // Titre du projet
+                const titleElement = createElementWithClass('h3', 'project-title');
+                titleElement.textContent = project.name;
+        
+                // Compétences associées au projet
+                const competences = createElementWithClass('div', 'competences');
+                project.competences.split(', ').forEach(skill => {
+                    const skillTag = createElementWithClass('span', 'competence-tag');
+                    skillTag.textContent = skill;
+                    competences.appendChild(skillTag);
+                });
+        
+                // Ajout des éléments dans le conteneur projet
+                projet.appendChild(carousel);
+                projet.appendChild(titleElement);
+                projet.appendChild(competences);
+        
+                // Ajout du projet dans le conteneur de la catégorie
+                categoryContainer.appendChild(projet);
             });
-            projet.appendChild(carousel);
-            projet.appendChild(titleElement);
-            projet.appendChild(competences);
-
-            projets.appendChild(projet);
+        
+            // Ajout du conteneur de catégorie dans le conteneur principal
+            projetsContainer.appendChild(categoryContainer);
         });
-        projetsContainer.appendChild(projets);
+        
     }
     else if(id === 'plandusite'){
         planContainer.appendChild(createText('h2', "Plan du site"));
