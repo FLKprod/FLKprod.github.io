@@ -90,7 +90,6 @@ export async function toggleTeamInfo(id) {
     var projetsContainer = document.querySelector('.projets-container');
     var planContainer = document.querySelector('.plandusite-container');
     var photosContainer = document.querySelector('.photos-container');
-    aproposdemoiContainer.classList.remove('fade-in');
     presentationContainer.innerHTML = '';
     planContainer.innerHTML='';
     servicesContainer.innerHTML = '';
@@ -317,16 +316,11 @@ export async function toggleTeamInfo(id) {
 
         videosContainer.appendChild(galerie);
 
-        // Animation d'apparition de la section vidéo entière
-        gsap.from('.videos-container', {
-            scale: 0,
-            stagger: 1,
-            duration: 1
-        });
+        gsap.from('.videos-container > *',{scale:0,stagger:1, duration:1});
 
     }
     else if(id=== 'presentation'){
-        gsap.from('.presentation-container',{scale:0,stagger:1, duration:1,stagger:1});
+        
         var intro2presentation = createElementWithClass('div','section-presentation');
             
         var text_intro2presentation = createElementWithClass('div','text-section-presentation');
@@ -395,6 +389,7 @@ export async function toggleTeamInfo(id) {
 
         presentationContainer.appendChild(intro2menupresentation);
         presentationContainer.appendChild(image_intro2presentation);
+        gsap.from('.presentation-container > *',{scale:0,stagger:1, duration:1,stagger:1});
 
     }
     else if(id=== 'aproposdemoi'){
@@ -852,12 +847,15 @@ export async function toggleTeamInfo(id) {
         });
     }
     else if(id === 'projets'){
-        gsap.from('.projets-container',{scale:0,stagger:1, duration:1,stagger:1});
-        gsap.from('.menu-projets',{scale:0,stagger:1, duration:2,stagger:1});
-
         var intro2projects = createElementWithClass('div','section','projet-section');
-        var text_intro2projects = createElementWithClass('div','text-section','mes-projets');
+        var image_intro2projects = createElementWithClass('div','image-projet-presentation');
+        var img_for_image_intro_for_projets = createImage("Photos/image-projet.jpg");
+        img_for_image_intro_for_projets.id="image-intro-for-projet";
+        image_intro2projects.appendChild(img_for_image_intro_for_projets);
+        var text_intro2projects = createElementWithClass('div','text-section');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
+        text_intro2projects.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide 😉"));
+        intro2projects.appendChild(image_intro2projects);
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
 
@@ -865,7 +863,7 @@ export async function toggleTeamInfo(id) {
         var menuList = [
             {
                 name: "RockRush",
-                category:"Projet Web",
+                category:"Projets Web",
                 github: "https://github.com/FLKprod/RockRush",
                 videoLink: "Photos/projets/RockRush.mp4",
                 imageSrc: "Photos/projets/RockRush.jpg",
@@ -904,7 +902,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "CyberSafe",
-                category:"Projet Web",
+                category:"Projets Web",
                 github: "https://github.com/FLKprod/Projet-IOT",
                 videoLink: "Photos/projets/Cybersafe.mp4",
                 imageSrc: "Photos/projets/Cybersafe.png",
@@ -914,7 +912,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "Verifile",
-                category:"Projet Web",
+                category:"Projets Web",
                 github: "https://github.com/FLKprod/Verifile",
                 videoLink: "Photos/projets/Verifile.mp4",
                 imageSrc: "Photos/projets/Verifile.png",
@@ -935,7 +933,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "FLKprod.github.io",
-                category:"Projet Web",
+                category:"Projets Web",
                 github: "https://github.com/FLKprod/FLKprod.github.io",
                 videoLink: "Photos/projets/Flkprod.mp4",
                 imageSrc: "Photos/projets/Flkprod.png",
@@ -944,7 +942,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "aleskflkphotos.github.io",
-                category:"Projet Web",
+                category:"Projets Web",
                 github: "https://github.com/aleskflkphotos/aleskflkphotos.github.io",
                 videoLink: "Photos/projets/Flkprod.mp4",
                 imageSrc: "Photos/projets/aleskflkphotos.png",
@@ -965,50 +963,34 @@ export async function toggleTeamInfo(id) {
         
         // Récupère les projets regroupés par catégorie
         const menuListGrouped = groupByCategory(menuList);
-        
-        // Création des carrousels pour chaque catégorie
         Object.entries(menuListGrouped).forEach(([category, projects]) => {
-            // Conteneur pour une catégorie
             const categoryTitle = createElementWithClass('h2', 'category-title');
             categoryTitle.textContent = category;
             projetsContainer.appendChild(categoryTitle);
             const categoryContainer = createElementWithClass('div', 'category-container');
         
-            // Titre de la catégorie
-            
-        
-            // Ajout des projets de la catégorie
             projects.forEach(project => {
                 const projet = createElementWithClass('div', 'projet');
         
-                // Carousel pour le projet
                 const images = [project.imageSrc];
                 const carousel = createProjetCarousel(project.name, project.desc, images, project.videoLink, project.github);
-        
-                // Titre du projet
                 const titleElement = createElementWithClass('h3', 'project-title');
                 titleElement.textContent = project.name;
         
-                // Compétences associées au projet
                 const competences = createElementWithClass('div', 'competences');
                 project.competences.split(', ').forEach(skill => {
                     const skillTag = createElementWithClass('span', 'competence-tag');
                     skillTag.textContent = skill;
                     competences.appendChild(skillTag);
                 });
-        
-                // Ajout des éléments dans le conteneur projet
                 projet.appendChild(carousel);
                 projet.appendChild(titleElement);
                 projet.appendChild(competences);
-        
-                // Ajout du projet dans le conteneur de la catégorie
                 categoryContainer.appendChild(projet);
             });
-        
-            // Ajout du conteneur de catégorie dans le conteneur principal
             projetsContainer.appendChild(categoryContainer);
         });
+        gsap.from('.projets-container > *',{scale:0,x:"50%", duration:1});
         
     }
     else if(id === 'plandusite'){
@@ -1018,7 +1000,7 @@ export async function toggleTeamInfo(id) {
         const planData = [
             ["/", "Bienvenue"],
             ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain"],
-            ["Projets", "RockRush", "Application Deepl", "201 Farehein", "Cybersafe", "Verifile", "LandbaCash Tool", "Flkprod.github.io"],
+            ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Flkprod.github.io", "aleskflkphotos.github.io"  ],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile"]],
             ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma formations",["Mes certifications en réseaux", "Mes formations"], "Informations sur mon profil"],
