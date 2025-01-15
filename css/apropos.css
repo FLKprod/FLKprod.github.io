@@ -8,6 +8,7 @@
 
 .aproposdemoi-container{
     position: relative;
+    background-color: black;
 }
 .aproposdemoi-container > .section{
     height: 100vh;
@@ -120,6 +121,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 .berkeley {
     background-color: #192841;
     color: white;
+    border-top-left-radius: 2em; 
+    border-top-right-radius: 2em;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -272,7 +275,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     display: flex;
     align-items: stretch;
     gap : 0;
-    
+    border-bottom-left-radius: 2em; 
+    border-bottom-right-radius: 2em;
 }
 
 .formations > h2{
@@ -316,12 +320,15 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 .certif-cisco{
+    border-bottom-left-radius: 2em; 
     color: black;
+
     width: 50%;
     flex: 1;
 }
 
 .ecoles_formations{
+    border-bottom-right-radius: 2em;
     width: 50%;
     flex: 1;
     color: white;
