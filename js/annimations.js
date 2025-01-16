@@ -1,3 +1,8 @@
+import{scrollauto} from './index.js'
+
+
+
+
 gsap.from('.logo',{scale:0,stagger:1, duration:1.5 });
 gsap.from('#logo',{opacity:0, x:"-20rem",duration:2});
 gsap.from('.switch',{opacity:0, y:"-10rem",duration:2});
@@ -95,33 +100,7 @@ menuButton.addEventListener('click', toggleMenu);
 const backToTopButton = document.getElementById('backToTopButton');
 
 backToTopButton.addEventListener('click', () => {
-    const startPosition = window.scrollY; // Position actuelle de défilement
-    const targetPosition = 0; // Haut de la page
-    const distance = targetPosition - startPosition; // Distance à parcourir
-    const duration = 1000; // Durée totale de l'animation en millisecondes
-    const startTime = performance.now();
-
-    // Fonction d'animation
-    function animateScroll(currentTime) {
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / duration, 1); // Normalise entre 0 et 1
-
-        // Courbe d'accélération et de ralentissement (easeInOutQuad)
-        const easeInOutQuad = progress < 0.5
-            ? 2 * progress * progress
-            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-        // Nouvelle position
-        const newPosition = startPosition + distance * easeInOutQuad;
-        window.scrollTo(0, newPosition);
-
-        // Continue l'animation si le temps n'est pas écoulé
-        if (elapsedTime < duration) {
-            requestAnimationFrame(animateScroll);
-        }
-    }
-
-    requestAnimationFrame(animateScroll);
+    scrollauto(".up");
 });
 
 

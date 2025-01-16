@@ -64,7 +64,7 @@
     border-radius: 1em;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-    width: 90%; 
+    width: 95%; 
     height: 75vh;
     margin: auto;
 }

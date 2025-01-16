@@ -1,4 +1,4 @@
-import{toggleTeamInfo,reveniralentete} from './index.js'
+import{toggleTeamInfo,scrollauto} from './index.js'
 
 export function createText(tag, textContent) {
     const element = document.createElement(tag);
@@ -130,7 +130,7 @@ export function createMenuItem(id, className, text, description, imageUrl) {
     const menuItem = createElementWithClass("div", "menu-item", className);
     menuItem.id = id;
     menuItem.onclick = function() {
-        reveniralentete()
+        scrollauto()
         toggleTeamInfo(id);
     };
     // Set background image

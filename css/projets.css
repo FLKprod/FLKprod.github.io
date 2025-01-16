@@ -20,6 +20,24 @@
     margin: 0 2em;
   }
 
+  .projets-container .sommaire-projets{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .projets-container .sommaire-projets > li {
+    font-size: 2em;
+    color: #e3d898;
+    font-style: italic;
+    text-align: left;
+    transition: color 0.5s ease-in-out;
+  }
+  
+  .projets-container .sommaire-projets > li:hover {
+    cursor: pointer;
+    color:#4f0341;
+  }
+
   
 
 .category-container {
@@ -38,6 +56,7 @@
     color:whitesmoke;
     text-align: left;
 }
+
 
 
 .projets-container .projet {

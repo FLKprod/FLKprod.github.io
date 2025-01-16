@@ -11,21 +11,9 @@ buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
         toggleTeamInfo(buttonId);
-        reveniralentete()
+        scrollauto(".entete")
     });
 });
-
-
-function scrollToElement(targetClassName) {
-    const targetElement = document.querySelector(`.${targetClassName}`);
-    if (targetElement) {
-        window.scrollTo({
-            top: targetElement.offsetTop,  
-            behavior: 'smooth'             
-        });
-    }
-}
-
 
 toggleTeamInfo('presentation'); // commence par afficher la page presentation quand on arrive sur le site
 
@@ -33,8 +21,8 @@ toggleTeamInfo('presentation'); // commence par afficher la page presentation qu
 
 /**************************** RENVOIT AU HAUT DE LA PAGE ******************************************/
 
-export function reveniralentete() {
-    const entete = document.querySelector('.entete');
+export function scrollauto(div) {
+    const entete = document.querySelector(div);
     const positionHautEntete = entete.offsetTop;
 
     const startPosition = window.scrollY; // Position actuelle
@@ -88,7 +76,6 @@ export async function toggleTeamInfo(id) {
             }
         }
     });
-    
 
     var presentationContainer = document.querySelector('.presentation-container');
     var aproposdemoiContainer = document.querySelector('.aproposdemoi-container');
@@ -301,7 +288,9 @@ export async function toggleTeamInfo(id) {
             
         var text_intro2presentation = createElementWithClass('div','text-section-presentation');
             text_intro2presentation.appendChild(createText('h2',"Bienvenue"));
-            text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie, à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique, je partage ici mes réalisations, mes inspirations, mes collaborations.`));
+            text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie,
+                 à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique,
+                  je partage ici mes réalisations, mes inspirations, mes collaborations, bref, ce qui me passionne dans la vie.`));
             text_intro2presentation.appendChild(createText('h2',"Enjoy."));
         intro2presentation.appendChild(text_intro2presentation);
 
@@ -312,21 +301,21 @@ export async function toggleTeamInfo(id) {
                 id: "projets",
                 className: "projets",
                 text: "Projets",
-                description: "Découvrez mes projets récents.",
+                description: "entre créations web et programmation avancée",
                 imageUrl: "Photos/menu/projet.jpeg",
             },
             {
                 id: "videos",
                 className: "videos",
                 text: "Multimedia",
-                description: "Explorez mes créations multimédia.",
+                description: "Découvrez mes créations vidéos",
                 imageUrl: "Photos/menu/videos.JPG",
             },
             {
                 id: "photos",
                 className: "photos",
                 text: "Photographies",
-                description: "Admirez mes meilleures photos.",
+                description: "Admirez mes meilleures photos",
                 imageUrl: "Photos/menu/photos.JPG",
             },
             ,
@@ -341,7 +330,7 @@ export async function toggleTeamInfo(id) {
                 id: "aproposdemoi",
                 className: "aproposdemoi",
                 text: "À Propos de Moi",
-                description: "Apprenez à mieux me connaître.",
+                description: "Afin de mieux me connaître",
                 imageUrl: "Photos/menu/moi.JPG",
             }
             
@@ -711,9 +700,9 @@ export async function toggleTeamInfo(id) {
 
         var sommaire_photos = createElementWithClass('ul', 'sommaire-photos');
 
-        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Urbaines', 'Photos Urbaines'));
-        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Sportives', 'Photos Sportives'));
-        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Événementielles', 'Photos Événementielles'));
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Urbaines', 'Photos-Urbaines'));
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Sportives', 'Photos-Sportives'));
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Événementielles', 'Photos-Evenementielles'));
 
         text_intro_for_photos.appendChild(sommaire_photos);
 
@@ -727,13 +716,10 @@ export async function toggleTeamInfo(id) {
                 console.log("Cible de l'élément cliqué (data-target) :", item.getAttribute('data-target'));
                 const targetId = item.getAttribute('data-target');
                 const targetElement = document.getElementById(targetId);
-                
+                var textID="#"+targetId
                 if (targetElement) {
                     console.log("Élément cible trouvé :", targetElement);
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth', 
-                        block: 'center'  
-                    });
+                    scrollauto(textID);
                 } else {
                     console.log("Élément cible non trouvé:", targetId);
                 }
@@ -746,18 +732,18 @@ export async function toggleTeamInfo(id) {
 
         // SECTIONS / Photos Urbaines | Photos Sportives | Photos Événementielles | Shootings | Macrophotographie
         const categoriesData = [
-            { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 5, category: 'Photos Urbaines' },
-            { name: 'San Francisco', desc: "California, USA", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 2, category: 'Photos Urbaines' },
-            { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
-            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 14, category: 'Photos Urbaines' },
-            { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
-            { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
-            { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
-            { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
-            { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' }
+            { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos-Urbaines' },
+            { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos-Urbaines' },
+            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 5, category: 'Photos-Urbaines' },
+            { name: 'San Francisco', desc: "California, USA", nbrepictures: 4, category: 'Photos-Urbaines' },
+            { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 2, category: 'Photos-Urbaines' },
+            { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos-Urbaines' },
+            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 14, category: 'Photos-Urbaines' },
+            { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos-Sportives' },
+            { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos-Sportives' },
+            { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 5, category: 'Photos-Sportives' },
+            { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 5, category: 'Photos-Sportives' },
+            { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Evenementielles' }
         ];
         
         // TRIE DES SECTIONS EN CATEGORIES POUR FACILITER LE TOUT
@@ -795,6 +781,7 @@ export async function toggleTeamInfo(id) {
         Object.entries(groupedData).forEach(([category, items]) => {
             const categoryTitle = createElementWithClass('h2', 'category-title');
             categoryTitle.id = category;
+            categoryTitle.setAttribute('data-target', category);
             const categorySection = createElementWithClass('div', 'category-section', String.category);
         
             categoryTitle.textContent = "- " + category;
@@ -848,54 +835,78 @@ export async function toggleTeamInfo(id) {
         image_intro2projects.appendChild(img_for_image_intro_for_projets);
         var text_intro2projects = createElementWithClass('div','text-section');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
-        text_intro2projects.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide"));
+        text_intro2projects.appendChild(createText('p',"j'aime toujours développer de nouveaux programmes, que ce soit à titre personnel ou pour de potentiels clients"));
+        text_intro2projects.appendChild(createText('p',"(Scroll légèrement, cette section est loin d'être vide)"));
         text_intro2projects.appendChild(createImage('Photos/scrolling.gif'));
+
+        var sommaire_projets = createElementWithClass('ul', 'sommaire-projets');
+        sommaire_projets.appendChild(createTextforSommaire('li', 'Projets Web', 'Projets-Web'));
+        sommaire_projets.appendChild(createTextforSommaire('li', 'Projets de Programmation Avancée', 'Projets-de-Programmation-Avancée'));
+        text_intro2projects.appendChild(sommaire_projets);
+
+        sommaire_projets.addEventListener('click', function (event) {
+            console.log("Clic détecté sur : ", event.target);
+            var item = event.target;
+            
+            if (item.tagName.toLowerCase() === 'a') {
+                event.preventDefault();
+                
+                console.log("Cible de l'élément cliqué (data-target) :", item.getAttribute('data-target'));
+                const targetId = item.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                var textID="#"+targetId
+                if(targetElement) {
+                    console.log("Élément cible trouvé :", targetElement);
+                    console.log(textID)
+                    scrollauto(textID);
+                } else {
+                    console.log("Élément cible non trouvé:", targetId);
+                }
+            }
+            
+        });
+
         intro2projects.appendChild(image_intro2projects);
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
         var menuList = [
             {
                 name: "RockRush",
-                category:"Projets Web",
+                category:"Projets-Web",
                 github: "https://github.com/FLKprod/RockRush",
                 videoLink: "Photos/projets/RockRush.mp4",
                 imageSrc: "Photos/projets/RockRush.jpg",
                 desc: `RockRush est un jeu en langage web créé durant ma formation ingénieur.
                 C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres. \n
-                les langages de programmation utilisés dans ce projet sont : 
-                    <ul> - HTML </ul>
-                    <ul> - CSS  </ul>
-                    <ul> - Javascript </ul>
                 Ce projet, réalisé durant mon cursus d'ingénieur en informatique, fut un travail très utile à la création de ce site internet.`,
                 competences: "HTML / CSS, JavaScript"
             },
             {
                 name: "Application DeepL",
-                category:"Projets de Programmation Avancée",
+                category:"Projets-de-Programmation-Avancée",
                 github: "https://github.com/FLKprod/Appli_Android_Deepl",
                 videoLink: "Photos/projets/DeepL.mp4",
                 imageSrc: "Photos/projets/DeepL.png",
                 desc: `Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur.
-                Réalisé à travers l'outil de développement d'application Android Studio, cette application tire parti de l'API DeepL, une API avec version gratuite permettant d'utiliser les fonctions de Deepl, traducteur mondialement connu.
-                Son objectif principal est de fournir un service de traduction de texte efficace et convivial.
-                les langages de programmation utilisés dans ce projet sont : 
-                    <ul> - Java </ul>
-                    <ul> - XML  </ul>`,
+                Réalisé à travers l'outil de développement d'application Android Studio, cette application tire parti de l'API DeepL,
+                une API avec version gratuite permettant d'utiliser les fonctionnalités de Deepl, traducteur mondialement connu.
+                Son objectif principal est de fournir un service de traduction de texte efficace et convivial.`,
                 competences: "Programmation Mobile, API"
             },
             {
                 name: "201 Farehein",
-                category:"Projets de Programmation Avancée",
+                category:"Projets-de-Programmation-Avancée",
                 github: "https://github.com/FLKprod/201F",
                 videoLink: "Photos/projets/201F.mp4",
                 imageSrc: "Photos/projets/201F.png",
-                desc: `201 Farehein est une parodie du célèbre jeu de mots '94 degrees'. 
-                Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes. Testez vos connaissances géographiques tout en vous amusant !` ,
+                desc: `201 Farehein est une parodie du célèbre jeu mobile '94 degrees'. 
+                Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes.
+                Testez vos connaissances géographiques tout en vous amusant !` ,
                 competences: "Python, Pygame"
             },
             {
                 name: "CyberSafe",
-                category:"Projets Web",
+                category:"Projets-Web",
                 github: "https://github.com/FLKprod/Projet-IOT",
                 videoLink: "Photos/projets/Cybersafe.mp4",
                 imageSrc: "Photos/projets/Cybersafe.png",
@@ -905,7 +916,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "Verifile",
-                category:"Projets Web",
+                category:"Projets-Web",
                 github: "https://github.com/FLKprod/Verifile",
                 videoLink: "Photos/projets/Verifile.mp4",
                 imageSrc: "Photos/projets/Verifile.png",
@@ -917,16 +928,17 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "LanbdaCash Tool",
-                category:"Projets de Programmation Avancée",
+                category:"Projets-de-Programmation-Avancée",
                 github: "https://github.com/FLKprod/CloudProject",
                 videoLink: "Photos/projets/landbacash.mp4",
                 imageSrc: "Photos/projets/landbacash.png",
-                desc: `Application pour tester un programme et l'exécuter avec différentes valeurs de RAM pour comparer les prix d'exécution AWS (Amazon Web Services).`,
+                desc: `LanbdaCash Tool est une application pour tester un programme et l'exécuter avec différentes valeurs de RAM afin comparer les prix d'exécution AWS (Amazon Web Services).
+                Elle a pour simple but de guider un utilisateur sur la quantité de RAM nécésaire à emprunter pour avoir une bonne qualité d'éxécution tout en gardant un bon rapport qualité/prix.`,
                 competences: "Cloud Computing, AWS, Python, Bash"
             },
             {
                 name: "FLKprod.github.io",
-                category:"Projets Web",
+                category:"Projets-Web",
                 github: "https://github.com/FLKprod/FLKprod.github.io",
                 videoLink: "",
                 imageSrc: "Photos/projets/Flkprod.png",
@@ -935,7 +947,7 @@ export async function toggleTeamInfo(id) {
             },
             {
                 name: "aleskflkphotos.github.io",
-                category:"Projets Web",
+                category:"Projets-Web",
                 github: "https://github.com/aleskflkphotos/aleskflkphotos.github.io",
                 videoLink: "",
                 imageSrc: "Photos/projets/aleskflkphotos.png",
@@ -959,6 +971,8 @@ export async function toggleTeamInfo(id) {
         Object.entries(menuListGrouped).forEach(([category, projects]) => {
             const categoryTitle = createElementWithClass('h2', 'category-title');
             categoryTitle.textContent = category;
+            categoryTitle.id = category;
+            categoryTitle.setAttribute('data-target', category);
             projetsContainer.appendChild(categoryTitle);
             const categoryContainer = createElementWithClass('div', 'category-container');
         
@@ -1038,7 +1052,7 @@ const buttons = document.querySelectorAll('#down-menu button');
 buttons.forEach(button => {
     button.addEventListener('click', function() {
         toggleTeamInfo(button.id);
-        reveniralentete()
+        scrollauto(".entete")
     });
 });
 
