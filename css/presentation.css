@@ -91,6 +91,16 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.menu-item:first-of-type {
+    border-top-left-radius: 2em; 
+    border-bottom-left-radius: 2em; 
+}
+
+.menu-item:last-of-type {
+    border-top-right-radius: 2em; 
+    border-bottom-right-radius: 2em; 
+}
+
 .menu-item:hover {
     transform: scale(1.05);
     z-index: 1000;

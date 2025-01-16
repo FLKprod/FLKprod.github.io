@@ -203,7 +203,6 @@ export async function toggleTeamInfo(id) {
                     scrub: true,  
                 }
             });
-        
             tl.from(service.querySelectorAll(".service > *"), { 
                 opacity: 0,
                 y: "100%", 
@@ -708,12 +707,13 @@ export async function toggleTeamInfo(id) {
                     console.log("Élément cible trouvé :", targetElement);
                     targetElement.scrollIntoView({
                         behavior: 'smooth', 
-                        block: 'start'      
+                        block: 'center'  
                     });
                 } else {
                     console.log("Élément cible non trouvé:", targetId);
                 }
             }
+            
         });
         photosContainer.appendChild(intro_for_photos);
 
