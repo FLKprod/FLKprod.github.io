@@ -228,11 +228,10 @@ export async function toggleTeamInfo(id) {
         var text_intro2videos = createElementWithClass('div', 'text-section', 'video-section');
         text_intro2videos.appendChild(createText('h2', "Mes contenus vidéos"));
         text_intro2videos.appendChild(createText('p', `
-            Auparavant, je partageais mes créations sur mon compte Instagram 
-            <a href='https://www.instagram.com/flkprod_/' target='_blank'>@FLKPROD_</a>, qui est toujours actif à ce jour. 
-            Maintenant, c'est sur ce site que toutes mes créations seront postées.
-            Vous pouvez consulter toutes mes créations dans la rubrique ci-dessous.
-        `));
+            Jusqu'à présent, je partageais mes créations sur mon compte Instagram
+            <a href='https://www.instagram.com/flkprod_/' target='_blank'>@FLKPROD_</a>, qui reste actif aujourd'hui.
+            Désormais, c'est sur ce site que vous pourrez découvrir l'intégralité de mes réalisations.
+            Explorez-les dans la section ci-dessous !`));
         text_intro2videos.appendChild(createText('h2', "Enjoy."));
         intro2videos.appendChild(text_intro2videos);
         videosContainer.appendChild(intro2videos);
@@ -351,9 +350,45 @@ export async function toggleTeamInfo(id) {
             var image2_presentation=createImage("Photos/logos/flkprod.png");
             image2_presentation.id='presentation-img-2';
             image_intro2presentation.appendChild(image2_presentation);
+            image2_presentation = createElementWithClass('div','yellow-dot');
+            image_intro2presentation.appendChild(image2_presentation);
 
         presentationContainer.appendChild(intro2menupresentation);
         presentationContainer.appendChild(image_intro2presentation);
+
+        const hoverArea = document.querySelector('.image-section-presentation');
+        const yellowDot = document.querySelector('.yellow-dot');
+
+        let mouseX = 0, mouseY = 0;  // Position de la souris
+
+        // Suivre la position de la souris uniquement quand on survole la zone
+        hoverArea.addEventListener('mousemove', function(event) {
+            const rect = hoverArea.getBoundingClientRect();
+            mouseX = event.clientX - rect.left;
+            mouseY = event.clientY - rect.top;
+        });
+
+        // Déplacement du point avec un léger retard
+        function moveDot() {
+            const dotX = (mouseX - yellowDot.offsetLeft); 
+            const dotY =  (mouseY - yellowDot.offsetTop); 
+
+            yellowDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+            requestAnimationFrame(moveDot);
+        }
+
+        // Démarre le mouvement du point dès que la souris survole la zone
+        hoverArea.addEventListener('mouseenter', () => {
+            yellowDot.style.opacity = 1;  // Rendre le point visible lorsqu'on entre dans la zone
+            moveDot();  // Démarre l'animation du point
+        });
+
+        // Masque le point lorsque la souris quitte la zone
+        hoverArea.addEventListener('mouseleave', () => {
+            yellowDot.style.opacity = 0;  // Masque le point
+        });
+
+
         gsap.from('.presentation-container > *',{scale:0,stagger:1, duration:1,stagger:1});
 
     }
@@ -370,8 +405,10 @@ export async function toggleTeamInfo(id) {
             j'ai étudié en école d'ingénieur en sécurité informatique à Dijon.
             J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec.
             J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique.`));
-        text_intro2presentation.appendChild(createText('p',`En dehors des salles de cours, je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux, ainsi que dans des projets informatiques à titre personnel pour l'instant.
-            C'est sur ce site que vous trouverez toutes mes créations.`));
+        text_intro2presentation.appendChild(createText('p',`En dehors de mon travail de consultant,
+             je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux,
+            ainsi que dans des projets informatiques à titre personnel ou profesionnel.
+            C'est sur ce site que vous trouverez toutes mes créations, aussi bien visuelles que informatiques.`));
         text_intro2presentation.appendChild(createLineSpan(0));
         text_intro2presentation.appendChild(createText('h2',"Pour résumer : "))
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-briefcase" aria-hidden="true"></i> Consultant SAP GRC`));
@@ -384,19 +421,23 @@ export async function toggleTeamInfo(id) {
         var intro2lbnl = createElementWithClass('div','section','berkeley');
             var text_intro2lbnl = createElementWithClass('div','text-section','desc-berkeley');
             text_intro2lbnl.appendChild(createText('h2',"Mon Experience à Berkeley"));
-            text_intro2lbnl.appendChild(createText('p',`Durant mon stage au Lawrence Berkeley National Laboratory, j'ai été immergé dans un environnement de recherche dynamique et stimulant.
-                Les échanges avec des chercheurs de calibre mondial ont été une source d'inspiration constante.
+            text_intro2lbnl.appendChild(createText('p',`En 2023, j'ai eu le privilège d'éfféctuer un stage de 3 mois au Lawrence Berkeley National Laboratory, dans la préstigieuse université de Californie.
+                j'ai été immergé dans un environnement de recherche dynamique et stimulant.
+                Les échanges avec des chercheurs de calibre mondial, comme Carlton Pennypacker, ont été une source d'inspiration constante pour moi.
                 Le Laboratoire national de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel.`));
 
             text_intro2lbnl.appendChild(createImage('Photos/Apropos/carte_berkeley.png'));
 
-            text_intro2lbnl.appendChild(createText('p',`En intégrant l'équipe FUEGO, j'ai été confronté à des défis technologiques passionnants.
-                La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides.
-                Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes, stimulant ainsi ma créativité et ma résolution de problèmes.`));
+            text_intro2lbnl.appendChild(createText('p',`J'ai eu ainsi l'occasion d'intégrer l'équipe <a href='https://fuego.ssl.berkeley.edu/' target='_blank'>FUEGO</a>, une equipe travaillant sur un projet
+                 très innovant. Leur but ultime : concevoir un sattelite,
+                 en partenariat avec la NASA, afin de détécter les incendies de forêt dans l'ouest américain.
+                La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides, comme celle ci.
+                Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes,
+                stimulant ainsi ma créativité et ma résolution de problèmes.`));
 
             text_intro2lbnl.appendChild(createText('p',`Au-delà des aspects techniques, mon passage au LBNL m'a également permis de développer des compétences interpersonnelles essentielles.
-                Travailler en équipe dans un environnement aussi diversifié a nécessité une communication claire et efficace, ainsi qu'une capacité à collaborer avec des personnes aux parcours variés.
-                Ces compétences sont précieuses, non seulement dans le domaine de la recherche, mais dans tous les aspects de ma carrière future.`));
+                Travailler en équipe dans un environnement aussi diversifié, avec des personnes ne parlant pas la même langue et aux parcours variés,
+                 m'a permis de développer mon anglais au maximum et d'être capable de parler courament cette langue.`));
 
             text_intro2lbnl.appendChild(createText('p',`En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative.
                 Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société.
@@ -693,6 +734,7 @@ export async function toggleTeamInfo(id) {
        
         intro_for_photos.appendChild(image_intro_for_photos)
         text_intro_for_photos.appendChild(createText('h3', "Mes contenus photographiques"));
+        text_intro_for_photos.appendChild(createText('p', "Découvrez mes clichés qui reflètent ma passion pour la photographie et la créativité."));
         text_intro_for_photos.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide"));
         text_intro_for_photos.appendChild(createImage('Photos/scrolling.gif'));
         photosContainer.appendChild(modal);
@@ -702,7 +744,7 @@ export async function toggleTeamInfo(id) {
 
         sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Urbaines', 'Photos-Urbaines'));
         sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Sportives', 'Photos-Sportives'));
-        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Événementielles', 'Photos-Evenementielles'));
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Événementielles', 'Photos-Événementielles'));
 
         text_intro_for_photos.appendChild(sommaire_photos);
 
@@ -732,18 +774,18 @@ export async function toggleTeamInfo(id) {
 
         // SECTIONS / Photos Urbaines | Photos Sportives | Photos Événementielles | Shootings | Macrophotographie
         const categoriesData = [
-            { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos-Urbaines' },
-            { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos-Urbaines' },
-            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 5, category: 'Photos-Urbaines' },
-            { name: 'San Francisco', desc: "California, USA", nbrepictures: 4, category: 'Photos-Urbaines' },
-            { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 2, category: 'Photos-Urbaines' },
-            { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos-Urbaines' },
-            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 14, category: 'Photos-Urbaines' },
-            { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos-Sportives' },
-            { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos-Sportives' },
-            { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 5, category: 'Photos-Sportives' },
-            { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 5, category: 'Photos-Sportives' },
-            { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Evenementielles' }
+            { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 5, category: 'Photos Urbaines' },
+            { name: 'San Francisco', desc: "California, USA", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 2, category: 'Photos Urbaines' },
+            { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
+            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 14, category: 'Photos Urbaines' },
+            { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
+            { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos  Sportives' },
+            { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
+            { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
+            { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' }
         ];
         
         // TRIE DES SECTIONS EN CATEGORIES POUR FACILITER LE TOUT
@@ -778,9 +820,12 @@ export async function toggleTeamInfo(id) {
         };
         modal.addEventListener('click', closeModal);
         
+        function replaceSpacesWithHyphens(input) {
+            return input.replace(/\s+/g, '-');
+        }
         Object.entries(groupedData).forEach(([category, items]) => {
             const categoryTitle = createElementWithClass('h2', 'category-title');
-            categoryTitle.id = category;
+            categoryTitle.id = replaceSpacesWithHyphens(category);;
             categoryTitle.setAttribute('data-target', category);
             const categorySection = createElementWithClass('div', 'category-section', String.category);
         
@@ -910,8 +955,9 @@ export async function toggleTeamInfo(id) {
                 github: "https://github.com/FLKprod/Projet-IOT",
                 videoLink: "Photos/projets/Cybersafe.mp4",
                 imageSrc: "Photos/projets/Cybersafe.png",
-                desc: `Une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés.
-                 Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité des objets connectés.`,
+                desc: `CyberSafe est une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés.
+                 Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité
+                  des objets connectés.`,
                 competences: "HTML / CSS, JavaScript, IOT, JSON"
             },
             {
