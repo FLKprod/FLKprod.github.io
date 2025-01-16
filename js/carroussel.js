@@ -192,7 +192,7 @@ export function createProjetCarousel(name, desc, media, videoLink, githubLink) {
     const nextButton = createIcon('fa fa-arrow-right', '1em', 'white', 'pointer', () => changePage(1));
 
     let currentPage = 0; // Page actuelle
-    const totalPages = 4; // Quatre pages: image, vidéo, description, lien GitHub
+    let totalPages = 1;
 
     // Ajout des médias (images)
     media.forEach((mediaSrc) => {
@@ -202,11 +202,14 @@ export function createProjetCarousel(name, desc, media, videoLink, githubLink) {
         imageWrapper.appendChild(slide);
     });
     
-    // Ajout de la description sur une page dédiée (Page 2)
-    const descriptionSlide = createElementWithClass('div', 'carousel-slide', 'text-slide');
-    const descText = createText('p', desc);
-    descriptionSlide.appendChild(descText);
-    imageWrapper.appendChild(descriptionSlide);
+    // Si la description est disponible, ajouter une page de description (Page 2)
+    if (desc) {
+        const descriptionSlide = createElementWithClass('div', 'carousel-slide', 'text-slide');
+        const descText = createText('p', desc);
+        descriptionSlide.appendChild(descText);
+        imageWrapper.appendChild(descriptionSlide);
+        totalPages++;  // Ajouter 1 page pour la description
+    }
 
     // Ajout de la vidéo comme page 3 si disponible
     if (videoLink) {
@@ -217,12 +220,16 @@ export function createProjetCarousel(name, desc, media, videoLink, githubLink) {
         videoElement.className = 'carousel-video';
         videoSlide.appendChild(videoElement);
         imageWrapper.appendChild(videoSlide);
+        totalPages++;  // Ajouter 1 page pour la vidéo
     }
 
-    // Ajout du lien GitHub (Page 4)
-    const githubSlide = createElementWithClass('div', 'carousel-slide', 'text-slide');
-    githubSlide.appendChild(createGitHubLink(githubLink));
-    imageWrapper.appendChild(githubSlide);
+    // Ajout du lien GitHub (Page 4 si disponible)
+    if (githubLink) {
+        const githubSlide = createElementWithClass('div', 'carousel-slide', 'text-slide');
+        githubSlide.appendChild(createGitHubLink(githubLink));
+        imageWrapper.appendChild(githubSlide);
+        totalPages++;  // Ajouter 1 page pour GitHub
+    }
 
     carouselContainer.appendChild(imageWrapper);
 
@@ -267,4 +274,3 @@ export function createProjetCarousel(name, desc, media, videoLink, githubLink) {
 
     return carouselContainer;
 }
-

@@ -212,51 +212,20 @@ export async function toggleTeamInfo(id) {
                 intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
-        const sections = document.querySelectorAll(".service");
-        
-        sections.forEach((element, index) => {
-            const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
-            if (window.innerWidth > 1100) {
-                console.log("grand ecran");
-                gsap.fromTo(element, 
-                    {
-                        autoAlpha: 0,      
-                        x: index % 2 === 0 ? -offset : offset, 
-                    }, 
-                    {
-                        autoAlpha: 1,     
-                        x: 0,            
-                        ease: "power2.out", 
-                        scrollTrigger: {
-                            trigger: element,
-                            start: "center bottom",  
-                            end: "center center", 
-                            scrub: true,         
-                        }
-                    }
-                );
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".service",
+                start: "top center", 
+                end: "bottom bottom",  
+                scrub: true,            
             }
-            else{
-                console.log("petit ecran");
-                gsap.fromTo(element, 
-                    {
-                        autoAlpha: 0,      
-                        x: index % 2 === 0 ? -offset : offset, 
-                    }, 
-                    {
-                        autoAlpha: 1,     
-                        x: 0,            
-                        ease: "power2.out", 
-                        scrollTrigger: {
-                            trigger: element,
-                            start: "top bottom",  
-                            end: "top 75%", 
-                            scrub: true,         
-                        }
-                    }
-                );
-        }
-        }); 
+        });
+        
+        tl.from(".service > *", { 
+            opacity: 0, 
+            duration: 1, 
+            y:"100%"
+        });
     }
     if(id=== 'videos'){
         var intro2videos = createElementWithClass('div', 'section', 'section-videos');
@@ -934,7 +903,7 @@ export async function toggleTeamInfo(id) {
                 name: "FLKprod.github.io",
                 category:"Projets Web",
                 github: "https://github.com/FLKprod/FLKprod.github.io",
-                videoLink: "Photos/projets/Flkprod.mp4",
+                videoLink: "",
                 imageSrc: "Photos/projets/Flkprod.png",
                 desc: `Ce site internet, tout simplement, créé de A à Z par moi-même.`,
                 competences: "HTML / CSS, JavaScript"
@@ -943,9 +912,9 @@ export async function toggleTeamInfo(id) {
                 name: "aleskflkphotos.github.io",
                 category:"Projets Web",
                 github: "https://github.com/aleskflkphotos/aleskflkphotos.github.io",
-                videoLink: "Photos/projets/Flkprod.mp4",
+                videoLink: "",
                 imageSrc: "Photos/projets/aleskflkphotos.png",
-                desc: `Ce site internet, créé de A à Z par moi-même, pour une connaissance, photographe indépendante.`,
+                desc: `Ce site internet, créé de A à Z par moi-même, pour une connaissance, photographe indépendante. Son instagram est disponible juste ici pour les plus curieux : <a class="fab fa-instagram" onclick="window.open('https://www.instagram.com/aleskflkphotos/', '_blank'"></a>`,
                 competences: "HTML / CSS, JavaScript"
             }
         ];

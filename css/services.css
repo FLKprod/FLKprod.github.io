@@ -9,6 +9,7 @@
 .section-services{
   height: auto;
   margin: 0;
+  margin-bottom: 6em;
   padding: 0;
   width: 100%;
   display: flex;
@@ -54,6 +55,34 @@
     flex-direction: row;
     justify-content: center;
 }
+
+.service:first-of-type{
+  margin-top: 0;
+}
+
+.service{
+  margin-top: -6em;
+  border-top-left-radius: 2em; 
+  border-top-right-radius: 2em;
+  padding-top: 2em;
+  padding-bottom: 6em;
+}
+
+.service:nth-child(even) {
+  background-color: white;
+  color: black;
+}
+
+.service:nth-child(odd) {
+  background-color: black;
+  color: white;
+}
+
+
+.service:nth-child(5) {
+  border-radius: 2em;
+}
+
   
 .service > .image-section {
     width: 40%;
@@ -100,6 +129,7 @@ body.mode-nuit .service > .text-section button {
   background-color: #e3d898;
   color: black;
 }
+
 
 .service > .text-section button {
   margin-top: 0.5em;
