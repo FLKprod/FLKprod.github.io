@@ -50,11 +50,11 @@ toggleTeamInfo('presentation'); // commence par afficher la page presentation qu
 /**************************************************************************************************/
 
 /**************************** RENVOIT AU HAUT DE LA PAGE ******************************************/
-function reveniralentete(){
+export function reveniralentete() {
     const entete = document.querySelector('.entete');
-    const positionBasEntete = entete.offsetTop + entete.offsetHeight;
+    const positionHautEntete = entete.offsetTop;
     window.scrollTo({
-        top: positionBasEntete,
+        top: positionHautEntete,
         behavior: 'smooth'
     });
 }

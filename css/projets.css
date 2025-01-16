@@ -28,13 +28,16 @@
     padding: 20px;
 }
 
-.category-title {
+.projets-container .category-title {
     width: auto;
     font-size: 4em;
-    margin:0;
+    margin: 0;
     font-weight: bold;
+    color:whitesmoke;
     text-align: left;
 }
+
+
 .projets-container .projet {
     overflow: hidden;
     max-height: 100vh;
@@ -86,7 +89,10 @@
     margin: 2em 0;
     display: flex;
     flex-direction: row;
+    text-align: left;
   }
+
+
 
 .projet .competences {
     display: flex;

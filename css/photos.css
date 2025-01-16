@@ -55,8 +55,8 @@
 }
 
 .photos-container .sommaire-photos > a::before {
-  content: " -"; /* Ajoute " -" avant chaque lien */
-  margin-right: 5px; /* Ajoute un espacement entre le tiret et le texte */
+  content: " -"; 
+  margin-right: 5px; 
 }
 
 .section.photos {
@@ -74,10 +74,10 @@
     gap: 1em;
 }
 
-.category-title{
+.photos-container  .category-title{
   margin-left: 3em;
   margin-top: 2em;
-  color:rgb(255, 210, 233);
+  color:whitesmoke;
   font-size: 5em;
 }
 
