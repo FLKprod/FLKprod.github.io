@@ -30,6 +30,8 @@ setTimeout(function() {
 const daynightCheckbox = document.getElementById('daynight');
 const downlogo=document.getElementById('down-logo')
 const image_intro_for_photo = document.getElementById('image-intro-for-photo');
+
+
 function toggleModeNuit() {
     const daynightCheckbox = document.getElementById('daynight');
     const downlogo =document.getElementById('down-logo');
@@ -91,12 +93,37 @@ menuButton.addEventListener('click', toggleMenu);
 
 // BOUTON POUR RETOURNER TOUT EN HAUT DE L'ECRAN
 const backToTopButton = document.getElementById('backToTopButton');
+
 backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    const startPosition = window.scrollY; // Position actuelle de défilement
+    const targetPosition = 0; // Haut de la page
+    const distance = targetPosition - startPosition; // Distance à parcourir
+    const duration = 1000; // Durée totale de l'animation en millisecondes
+    const startTime = performance.now();
+
+    // Fonction d'animation
+    function animateScroll(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1); // Normalise entre 0 et 1
+
+        // Courbe d'accélération et de ralentissement (easeInOutQuad)
+        const easeInOutQuad = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        // Nouvelle position
+        const newPosition = startPosition + distance * easeInOutQuad;
+        window.scrollTo(0, newPosition);
+
+        // Continue l'animation si le temps n'est pas écoulé
+        if (elapsedTime < duration) {
+            requestAnimationFrame(animateScroll);
+        }
+    }
+
+    requestAnimationFrame(animateScroll);
 });
+
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {

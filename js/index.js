@@ -32,13 +32,37 @@ toggleTeamInfo('presentation'); // commence par afficher la page presentation qu
 /**************************************************************************************************/
 
 /**************************** RENVOIT AU HAUT DE LA PAGE ******************************************/
+
 export function reveniralentete() {
     const entete = document.querySelector('.entete');
     const positionHautEntete = entete.offsetTop;
-    window.scrollTo({
-        top: positionHautEntete,
-        behavior: 'smooth'
-    });
+
+    const startPosition = window.scrollY; // Position actuelle
+    const distance = positionHautEntete - startPosition; // Distance à parcourir
+    const duration = 1000; // Durée totale de l'animation en millisecondes
+    const startTime = performance.now();
+
+    // Fonction d'animation
+    function animateScroll(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1); // Normalise entre 0 et 1
+
+        // Courbe d'accélération et de ralentissement (easeInOutQuad)
+        const easeInOutQuad = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        // Nouvelle position
+        const newPosition = startPosition + distance * easeInOutQuad;
+        window.scrollTo(0, newPosition);
+
+        // Continue l'animation si le temps n'est pas écoulé
+        if (elapsedTime < duration) {
+            requestAnimationFrame(animateScroll);
+        }
+    }
+
+    requestAnimationFrame(animateScroll);
 }
 
 /**************************************************************************************************/
@@ -680,7 +704,8 @@ export async function toggleTeamInfo(id) {
        
         intro_for_photos.appendChild(image_intro_for_photos)
         text_intro_for_photos.appendChild(createText('h3', "Mes contenus photographiques"));
-        text_intro_for_photos.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide 😉"));
+        text_intro_for_photos.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide"));
+        text_intro_for_photos.appendChild(createImage('Photos/scrolling.gif'));
         photosContainer.appendChild(modal);
         intro_for_photos.appendChild(text_intro_for_photos)
 
@@ -823,7 +848,8 @@ export async function toggleTeamInfo(id) {
         image_intro2projects.appendChild(img_for_image_intro_for_projets);
         var text_intro2projects = createElementWithClass('div','text-section');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
-        text_intro2projects.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide 😉"));
+        text_intro2projects.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide"));
+        text_intro2projects.appendChild(createImage('Photos/scrolling.gif'));
         intro2projects.appendChild(image_intro2projects);
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
@@ -1015,4 +1041,5 @@ buttons.forEach(button => {
         reveniralentete()
     });
 });
+
 

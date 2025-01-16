@@ -20,6 +20,8 @@
     margin: 0 2em;
   }
 
+  
+
 .category-container {
     width: 60%;
     display: grid;
@@ -57,6 +59,7 @@
     object-position: center;
   }
 
+  
   .projet .carousel-images > .text-slide p {
     margin: 0 3em;
   }
@@ -90,6 +93,11 @@
     display: flex;
     flex-direction: row;
     text-align: left;
+  }
+
+  .projet-section .text-section img{
+    width: 6em;
+    height: auto;
   }
 
 
@@ -304,7 +312,7 @@ body.mode-nuit .projets-container .competences span {
         height: 25vh;
         margin: 2em 0;
     }
-    
+
     .projet-section .text-section {
         margin: 0;
         height: 100%;

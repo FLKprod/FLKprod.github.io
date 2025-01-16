@@ -42,6 +42,11 @@
   font-size: 2em;
 }
 
+.photos-container .text-photos-presentation img {
+  width: 3em;
+  height: auto;
+}
+
 .photos-container .sommaire-photos{
   display: flex;
   flex-direction: column;
