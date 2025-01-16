@@ -165,4 +165,8 @@
     .menu-item {
         height: 50vh;
     }
+    .text-section-presentation > h2:hover {
+        transform: none;
+    }
+    
 }

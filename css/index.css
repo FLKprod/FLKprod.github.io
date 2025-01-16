@@ -222,6 +222,10 @@ h2:hover {
     height: 50vh;
 }
 @media screen and (max-width: 768px) {
+
+    html,body{
+        width: 100vw;
+    }
     h2:hover {
         transform: none;
     }
