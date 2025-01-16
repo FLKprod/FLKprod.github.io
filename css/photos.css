@@ -24,7 +24,7 @@
 }
 
 .photos-container .image-photos-presentation{
-  width: 50%;
+  width: 25%;
   height: auto;
   margin: 0 2em;
 }
@@ -36,7 +36,7 @@
 }
 
 .photos-container .text-photos-presentation {
-  width: 50%;
+  width: 75%;
   text-align: left;
   margin:0 1em;
   font-size: 2em;
@@ -47,16 +47,17 @@
   flex-direction: column;
 }
 
-.photos-container .sommaire-photos > a {
+.photos-container .sommaire-photos > li {
   font-size: 1em;
   color: #e3d898;
   font-style: italic;
   text-align: left;
+  transition: color 0.5s ease-in-out;
 }
 
-.photos-container .sommaire-photos > a::before {
-  content: " -"; 
-  margin-right: 5px; 
+.photos-container .sommaire-photos > li:hover {
+  cursor: pointer;
+  color:black;
 }
 
 .section.photos {

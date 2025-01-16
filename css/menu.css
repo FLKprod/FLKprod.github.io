@@ -62,17 +62,17 @@ body.mode-nuit .menu {
 }
 
 .sections-menu > .select {
-    border-bottom: 2px solid rgba(79, 3, 65, 1);  /* Bordure invisible par défaut */
+    border-bottom: 2px solid rgba(79, 3, 65, 1); 
     margin-right: 0;
     height: auto;
-    transition: border-bottom 0.3s ease; /* Ajoute une transition pour le changement de bordure */
+    transition: border-bottom 0.3s ease; 
   }
 
 body.mode-nuit .sections-menu > .select {
-    border-bottom: 2px solid rgba(227, 216, 152, 1);  /* Bordure invisible par défaut */
+    border-bottom: 2px solid rgba(227, 216, 152, 1);  
     margin-right: 0;
     height: auto;
-    transition: border-bottom 0.3s ease; /* Ajoute une transition pour le changement de bordure */
+    transition: border-bottom 0.3s ease;
   }
 
 .sections-menu > .select {

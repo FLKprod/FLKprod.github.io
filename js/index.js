@@ -15,24 +15,6 @@ buttonIds.forEach(buttonId => {
     });
 });
 
-/* PARTIE EN DEV : CREATION DU SOMMAIRE POUR LES PHOTOS -> LIGNE 755
-document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('.sommaire-photos a');
-
-    items.forEach(item => {
-        item.addEventListener('click', function (event) {
-            event.preventDefault(); 
-            const targetId = item.getAttribute('data-target');
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'     
-                });
-            }
-        });
-    });
-});
 
 function scrollToElement(targetClassName) {
     const targetElement = document.querySelector(`.${targetClassName}`);
@@ -43,7 +25,7 @@ function scrollToElement(targetClassName) {
         });
     }
 }
-*/
+
 
 toggleTeamInfo('presentation'); // commence par afficher la page presentation quand on arrive sur le site
 
@@ -708,16 +690,38 @@ export async function toggleTeamInfo(id) {
         photosContainer.appendChild(modal);
         intro_for_photos.appendChild(text_intro_for_photos)
 
-        // PARTIE A FAIRE : FAIRE UN SOMMAIRE POUR LES CATEGORIES DE PHOTOS ET DESCENDRE DIRECT AU BON TRUC SI ON CLIQUE
+        var sommaire_photos = createElementWithClass('ul', 'sommaire-photos');
 
-        var sommaire_photos = createElementWithClass('div','sommaire-photos');
-        sommaire_photos.id='sommaire-photos'
-        sommaire_photos.appendChild(createTextforSommaire('a','Photos Urbaines','Photos Urbaines'))
-        sommaire_photos.appendChild(createTextforSommaire('a','Photos Sportives','Photos Sportives'))
-        sommaire_photos.appendChild(createTextforSommaire('a','Photos Événementielles','Photos Événementielles'))
-        text_intro_for_photos.appendChild(sommaire_photos)
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Urbaines', 'Photos Urbaines'));
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Sportives', 'Photos Sportives'));
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Événementielles', 'Photos Événementielles'));
 
+        text_intro_for_photos.appendChild(sommaire_photos);
+        
+        sommaire_photos.addEventListener('click', function (event) {
+            console.log("Clic détecté sur : ", event.target);
+            var item = event.target;
+            
+            if (item.tagName.toLowerCase() === 'a') {
+                event.preventDefault();
+                
+                console.log("Cible de l'élément cliqué (data-target) :", item.getAttribute('data-target'));
+                const targetId = item.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    console.log("Élément cible trouvé :", targetElement);
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth', 
+                        block: 'start'      
+                    });
+                } else {
+                    console.log("Élément cible non trouvé:", targetId);
+                }
+            }
+        });
         photosContainer.appendChild(intro_for_photos);
+
         gsap.from('.photos-presentation',{scale:0,stagger:1, duration:1});
 
         // SECTIONS / Photos Urbaines | Photos Sportives | Photos Événementielles | Shootings | Macrophotographie
@@ -793,6 +797,8 @@ export async function toggleTeamInfo(id) {
         });
 
         const sections = document.querySelectorAll('.section.photos');
+        
+        
         sections.forEach((element, index) => {
             const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
         
@@ -812,7 +818,7 @@ export async function toggleTeamInfo(id) {
                     }
                 }
             );
-        });
+        });        
     }
     else if(id === 'projets'){
         var intro2projects = createElementWithClass('div','section','projet-section');
@@ -826,8 +832,6 @@ export async function toggleTeamInfo(id) {
         intro2projects.appendChild(image_intro2projects);
         intro2projects.appendChild(text_intro2projects);
         projetsContainer.appendChild(intro2projects);
-
-        var projets = createElementWithClass('div', 'projets');
         var menuList = [
             {
                 name: "RockRush",
@@ -958,8 +962,7 @@ export async function toggleTeamInfo(id) {
             });
             projetsContainer.appendChild(categoryContainer);
         });
-        gsap.from('.projets-container > *',{scale:0,x:"50%", duration:1});
-        
+        gsap.from('.projets-container > *',{scale:0,x:"50%", duration:1});        
     }
     else if(id === 'plandusite'){
         planContainer.appendChild(createText('h2', "Plan du site"));
@@ -1017,3 +1020,4 @@ buttons.forEach(button => {
         reveniralentete()
     });
 });
+
