@@ -194,20 +194,23 @@ export async function toggleTeamInfo(id) {
                 intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
-        var tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".service",
-                start: "top center", 
-                end: "bottom bottom",  
-                scrub: true,            
-            }
+        gsap.utils.toArray(".service").forEach(service => {
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: service,
+                    start: "top center",  
+                    end: "bottom bottom", 
+                    scrub: true,  
+                }
+            });
+        
+            tl.from(service.querySelectorAll(".service > *"), { 
+                opacity: 0,
+                y: "100%", 
+                duration: 1 
+            });
         });
         
-        tl.from(".service > *", { 
-            opacity: 0, 
-            duration: 1, 
-            y:"100%"
-        });
     }
     if(id=== 'videos'){
         var intro2videos = createElementWithClass('div', 'section', 'section-videos');
@@ -366,8 +369,6 @@ export async function toggleTeamInfo(id) {
         intro2presentation.appendChild(text_intro2presentation);
         aproposdemoiContainer.appendChild(intro2presentation);
 
-
-
         var intro2lbnl = createElementWithClass('div','section','berkeley');
             var text_intro2lbnl = createElementWithClass('div','text-section','desc-berkeley');
             text_intro2lbnl.appendChild(createText('h2',"Mon Experience à Berkeley"));
@@ -424,10 +425,8 @@ export async function toggleTeamInfo(id) {
             et je la recommande vivement à tous ceux qui souhaitent conjuguer apprentissage et découverte culturelle.`));
         text_intro2quebec.appendChild(createImage('Photos/Apropos/UQAC_Quebec.jpg'));
 
-
         intro2quebec.appendChild(text_intro2quebec);
     
-        
         aproposdemoiContainer.appendChild(intro2quebec);
 
         var certifications = createElementWithClass('div','formations');
@@ -481,8 +480,6 @@ export async function toggleTeamInfo(id) {
         liste_1_ecoles_formations.appendChild(createText('p',"Polytech Dijon, Dijon, Bourgogne, FRANCE"));
         liste_1_ecoles_formations.appendChild(createImage('Photos/Apropos/Polytech.png'));
         
-        
-        
         text_ecoles_formations.appendChild(liste_1_ecoles_formations);
         var liste_2_ecoles_formations = document.createElement("div");
         liste_2_ecoles_formations.appendChild(createText('p',"Maîtrise (Master) en cybersécurité"));
@@ -519,7 +516,7 @@ export async function toggleTeamInfo(id) {
         
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-        // Création de l'animation pour la ligne dans section Moi c'est Maxime
+
         gsap.from(".line", {
         scaleX: 0,
         transformOrigin: "left center", 
@@ -527,8 +524,6 @@ export async function toggleTeamInfo(id) {
         });
         
         const elements = document.querySelectorAll('.moicmaxime > *');
-
-        // Animation pour moi c'est Maxime
         gsap.to(elements, {
             xPercent: 0,
             ease: "none",
@@ -697,7 +692,7 @@ export async function toggleTeamInfo(id) {
         sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Événementielles', 'Photos Événementielles'));
 
         text_intro_for_photos.appendChild(sommaire_photos);
-        
+
         sommaire_photos.addEventListener('click', function (event) {
             console.log("Clic détecté sur : ", event.target);
             var item = event.target;
