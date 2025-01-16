@@ -32,7 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});*/
+});
+
+function scrollToElement(targetClassName) {
+    const targetElement = document.querySelector(`.${targetClassName}`);
+    if (targetElement) {
+        window.scrollTo({
+            top: targetElement.offsetTop,  
+            behavior: 'smooth'             
+        });
+    }
+}
+*/
 
 toggleTeamInfo('presentation'); // commence par afficher la page presentation quand on arrive sur le site
 
@@ -46,16 +57,6 @@ function reveniralentete(){
         top: positionBasEntete,
         behavior: 'smooth'
     });
-}
-
-function scrollToElement(targetClassName) {
-    const targetElement = document.querySelector(`.${targetClassName}`);
-    if (targetElement) {
-        window.scrollTo({
-            top: targetElement.offsetTop,  
-            behavior: 'smooth'             
-        });
-    }
 }
 
 /**************************************************************************************************/
@@ -101,7 +102,6 @@ export async function toggleTeamInfo(id) {
     if(id=== 'services'){
 
         var intro2services = createElementWithClass('div','section-services');
-            
             var text_intro2services = createElementWithClass('div','text-section-services');
                 text_intro2services.appendChild(createText('h2',"Et si on travaillais ensemble ? "));
                 text_intro2services.appendChild(createText('p',`Après avoir réalisé de nombreux projets dans des domaines variés, je suis prêt et motivé à collaborer avec vous.
@@ -111,8 +111,6 @@ export async function toggleTeamInfo(id) {
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
-        
-
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Création de Portfolios Personnalisés"));
         text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, designer ou autre.
@@ -219,6 +217,7 @@ export async function toggleTeamInfo(id) {
         sections.forEach((element, index) => {
             const offset = (window.innerWidth * 0.5) - parseFloat(getComputedStyle(document.documentElement).fontSize);
             if (window.innerWidth > 1100) {
+                console.log("grand ecran");
                 gsap.fromTo(element, 
                     {
                         autoAlpha: 0,      
@@ -238,6 +237,7 @@ export async function toggleTeamInfo(id) {
                 );
             }
             else{
+                console.log("petit ecran");
                 gsap.fromTo(element, 
                     {
                         autoAlpha: 0,      
@@ -256,8 +256,7 @@ export async function toggleTeamInfo(id) {
                     }
                 );
         }
-        });
-        
+        }); 
     }
     if(id=== 'videos'){
         var intro2videos = createElementWithClass('div', 'section', 'section-videos');

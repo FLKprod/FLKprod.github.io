@@ -168,17 +168,8 @@ body.mode-nuit .text-contacts-services > a{
   transform: scale(1.2);
 }
 
+
 @media screen and (max-width: 1100px) {
-  .service > .image-section {
-    width: 50%;
-  }
-
-  .service{
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 768px) {
     .section-services .text-section-services {
       width: 80%;
     }
