@@ -289,11 +289,47 @@ body.mode-nuit .projets-container .competences span {
 
 }
 @media screen and (max-width: 768px) {
-
+    .projets-container {
+        padding: 0;
+    }
     .projets-container .section{
-        height: auto;
+        height: 100%;
+        width: 100vw;
         font-size: 2em;
         margin: 0;
+        padding: 0;
+    }
+
+    .projets-container .projet-section{
+        height: 25vh;
+        margin: 2em 0;
+    }
+    
+    .projet-section .text-section {
+        margin: 0;
+        height: 100%;
+        width: auto;
+
+        margin-right: 1em;
+        margin-left: 5px;
+    }
+
+    .projets-container .text-section h2{
+        text-align: left;
+    }
+    .image-projet-presentation {
+        width: 50%;
+        overflow: hidden;
+        height:100%;
+        margin: 0;
+        margin-left: 1em;
+    }
+    .image-projet-presentation img{
+        border-radius: 0;
+        width: 100%;
+        height:100%;
+        border-top-left-radius: 2em; 
+        border-bottom-left-radius: 2em;
     }
 
     .projets-container .projets {

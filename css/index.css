@@ -4,6 +4,7 @@
     --background-night: #777777;
     --text-color-night: #ffffff;
     --cassis: #4f0341;
+    --or:rgb(227, 216, 152);
 }
 
 html{
@@ -364,12 +365,6 @@ h2:hover {
 
 /*****************************************************************************/
 
-.sections-menu > .select {
-    border-bottom: 2px solid #4f0341;
-    margin-right: 0;
-    height: auto;
-}
-
 #mainContent {
     margin: 0;
     padding: 0;
@@ -429,10 +424,7 @@ body.mode-nuit .social-networks > button {
     color: var(--text-color-night);
 }
 
-body.mode-nuit .sections-menu > .select {
-    border-color: #e3d898;
-    margin-right: 0;
-}
+
 
 body.mode-nuit .sections-menu {
     color: var(--text-color-night);
@@ -442,10 +434,6 @@ body.mode-nuit .sections-menu > button {
     color: var(--text-color-night);
 }
 
-/*body.mode-nuit .section{
-    background-color: var(--background-night);
-    color: var(--text-color-night);
-}*/
 
 body.mode-nuit .moicmaxime, body.mode-nuit .projet-section, body.mode-nuit .section-videos{
     background-color: var(--background-night);
