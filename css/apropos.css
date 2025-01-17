@@ -154,9 +154,9 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 .berkeley .image-section > img {
-    height: auto;
-
-    border-radius: 1em;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
 }
 
 .desc-berkeley {
@@ -236,9 +236,9 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 .quebec .image-section > img {
-    height: auto;
-
-    border-radius: 1em;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
 }
 
 .desc-quebec {

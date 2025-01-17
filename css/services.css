@@ -18,12 +18,11 @@
 }
 
 .text-section-services {
-    height: auto;
+    height: 50vh;
     width: 60%;
     margin-bottom: 4em;
     display: flex;
     box-sizing: border-box;
-    justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
     align-items: center;
@@ -31,6 +30,8 @@
 
 .text-section-services h2{
     width: 100%;
+    margin: 1em 0;
+    transition: transform 0.3s ease;
 }
 .text-section-services h2:first-of-type{
     margin-top: 2em;
@@ -39,6 +40,8 @@
 }
 .text-section-services p{
     text-align: justify;
+    font-size: 1.5em;
+    line-height: 2;
 }
 .text-section-services h2:nth-of-type(2){
     margin: 0;text-align: right;
@@ -50,23 +53,20 @@
 .service {
     display: flex;
     width: 100%;
-    margin: 3em 0;
+    margin: 5em 0;
     align-items: center;
     flex-direction: row;
     justify-content: center;
+    margin-top: -6em;
+    border-top-left-radius: 2em; 
+    border-top-right-radius: 2em;
+    padding: 6em 0;
 }
 
 .service:first-of-type{
   margin-top: 0;
 }
 
-.service{
-  margin-top: -6em;
-  border-top-left-radius: 2em; 
-  border-top-right-radius: 2em;
-  padding-top: 2em;
-  padding-bottom: 6em;
-}
 
 .service:nth-child(even) {
   background-color: white;
@@ -94,16 +94,17 @@
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 1em;
+    border-radius: 2em;
     transition: transform 0.3s ease;
 }
 
 .services-container .image-section > img:hover {
     transform: scale(1.03);
+    border-radius: 1em;
 }
   
 .services-container .text-section {
-    width: 40%;
+    width: 50%;
     box-sizing: border-box;
     font-size: 0.8em;
     height: auto;
@@ -121,6 +122,8 @@
                 1px 1px 0 black; 
     transition: transform 0.3s ease;
 }
+
+
 .services-container .text-section h2:hover {
     transform: scale(1.1);
 }
@@ -153,7 +156,7 @@ body.mode-nuit .projets-container .competences span {
 }
 
 .services-container .text-section > p {
-    line-height: 1.5;
+    line-height: 2;
     font-size: 1.5em;
     margin:0 2em;
     text-align: left;

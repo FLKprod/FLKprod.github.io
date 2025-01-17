@@ -98,6 +98,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
+
 .menu-item:first-of-type {
     border-top-left-radius: 2em; 
     border-bottom-left-radius: 2em; 
@@ -146,15 +148,21 @@
 
 .yellow-dot {
     position: absolute;
-    width: 12px;  /* Taille légèrement augmentée */
-    height: 12px;
-    background: radial-gradient(circle, rgba(255, 255, 0, 0.9), rgba(255, 255, 0, 0.5)); /* Dégradé de jaune */
+    width: 1em;
+    height: 1em;
+    background: radial-gradient(circle, rgba(79, 3, 65, 0.9), rgba(79, 3, 65, 0.2));
     border-radius: 50%;
-    pointer-events: none;  /* Le point ne bloque pas les événements */
+    pointer-events: none;
     opacity: 0;
-    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out, box-shadow 0.2s ease-out; /* Transition pour un effet plus fluide */
-    box-shadow: 0 0 10px rgba(255, 255, 0, 0.6), 0 0 20px rgba(255, 255, 0, 0.4); /* Ombre portée pour donner un effet de profondeur */
+    transition: transform 0.2s ease-out, width 0.2s ease-out, height 0.2s ease-out, box-shadow 0.2s ease-out; 
+    box-shadow: 0 0 10px rgba(79, 3, 65, 0.6), 0 0 20px rgba(79, 3, 65, 0.4);
 }
+
+body.mode-nuit .yellow-dot {
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.9), rgba(255, 255, 0, 0.2));
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.6), 0 0 20px rgba(255, 255, 0, 0.4);
+}
+
 
 @media screen and (max-width: 1100px) {
     .section-presentation {

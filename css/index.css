@@ -4,7 +4,7 @@
     --background-night: #777777;
     --text-color-night: #ffffff;
     --cassis: #4f0341;
-    --or:rgb(227, 216, 152);
+    --or:#e3d898;
 }
 
 html{
@@ -30,7 +30,8 @@ body {
     min-width: 100vw;
     width: 100%;
     pointer-events: auto;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
+    
 }
 
 button{
@@ -49,6 +50,7 @@ h2{
                 1px 1px 0 black,   
                 1px 1px 0 black;
     transition: transform 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 h2:hover {
     transform: scale(1.2);
@@ -67,11 +69,13 @@ h2:hover {
 .up{
     font-weight: 900;
     padding-top: 5em;
+    
 }
 
 .up, .center, .down {
     text-align: center;
     width: 100%;
+    transition: background-color 0.5s ease;
 }
 
 /* ----------------- Entete ---------------------- */
@@ -83,20 +87,34 @@ h2:hover {
     align-items:center;
     flex-direction: column;
     justify-content: center;
-    background-color: #4f0341;
-    background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(0, 0, 0, 0.35) 25%,
-    rgba(0, 0, 0, 0.6) 40%,
-    rgba(0, 0, 0, 0.6) 50%,
-    rgba(0, 0, 0, 0.35) 75%, 
-    rgba(255, 255, 255, 1) 100%
-    );
+    background: linear-gradient(150deg, #4f0341, #fad0c4,#71d3a9, #472a8b);
+    background-size: 600% 600%; 
     background-repeat: no-repeat;
     background-size: cover;
-
+    animation: gradient-animation 10s ease infinite;
 }
+
+
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+
+
+
+
+
+
 .title-entete{
     display: flex;
     width: 100%;
@@ -167,15 +185,24 @@ h2:hover {
 }
 
 .scrolling-text {
+    text-shadow:none;
+    mix-blend-mode: difference; /* Inverse les couleurs par rapport à l'arrière-plan */
+    color: white;
     overflow-x: hidden;
     white-space: nowrap;
     font-size: 2em;
     display: inline-block;
     white-space: nowrap;
     animation: scroll 10s linear infinite alternate;
+    transition: color 0.5s ease-in-out;
+}
+
+body.mode-nuit .scrolling-text {
+    color: white;
 }
 
 .scrolling-container{
+    width: 100%;
     margin: 1em 0;
     overflow: clip;
 }

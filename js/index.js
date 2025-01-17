@@ -25,31 +25,26 @@ export function scrollauto(div) {
     const entete = document.querySelector(div);
     const positionHautEntete = entete.offsetTop;
 
-    const startPosition = window.scrollY; // Position actuelle
-    const distance = positionHautEntete - startPosition; // Distance à parcourir
-    const duration = 1000; // Durée totale de l'animation en millisecondes
+    const startPosition = window.scrollY;
+    const distance = positionHautEntete - startPosition;
+    const duration = 1000;
     const startTime = performance.now();
 
-    // Fonction d'animation
     function animateScroll(currentTime) {
         const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / duration, 1); // Normalise entre 0 et 1
+        const progress = Math.min(elapsedTime / duration, 1); 
 
-        // Courbe d'accélération et de ralentissement (easeInOutQuad)
         const easeInOutQuad = progress < 0.5
             ? 2 * progress * progress
             : 1 - Math.pow(-2 * progress + 2, 2) / 2;
 
-        // Nouvelle position
         const newPosition = startPosition + distance * easeInOutQuad;
         window.scrollTo(0, newPosition);
 
-        // Continue l'animation si le temps n'est pas écoulé
         if (elapsedTime < duration) {
             requestAnimationFrame(animateScroll);
         }
     }
-
     requestAnimationFrame(animateScroll);
 }
 
@@ -97,24 +92,20 @@ export async function toggleTeamInfo(id) {
         var intro2services = createElementWithClass('div','section-services');
             var text_intro2services = createElementWithClass('div','text-section-services');
                 text_intro2services.appendChild(createText('h2',"Et si on travaillais ensemble ? "));
-                text_intro2services.appendChild(createText('p',`Après avoir réalisé de nombreux projets dans des domaines variés, je suis prêt et motivé à collaborer avec vous.
-                    Que ce soit pour un projet informatique, vidéographique ou photographique, je serais ravi de mettre mon énergie et ma créativité au service de vos idées.`));
+                text_intro2services.appendChild(createText('p',`Fort de nombreuses réalisations dans des domaines variés, 
+                    je suis enthousiaste à l'idée de collaborer avec vous. Que ce soit pour un projet informatique ou pour la 
+                    création de contenus photographiques, personnels ou professionnels, je mets mon énergie, ma créativité et 
+                    mon savoir-faire au service de vos idées pour leur donner vie.`));
                     text_intro2services.appendChild(createText('h2',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
             intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
         var text_intro2services = createElementWithClass('div','text-section');
-        text_intro2services.appendChild(createText('h2',"Création de Portfolios Personnalisés"));
-        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, designer ou autre.
-            Ce que je peux vous proposer :
-
-            <ul> - Un design sur mesure pour mettre en avant vos projets.</ul>
-            <ul> - Du traitement des images pour un rendu professionnel.</ul>
-            <ul> - Une organisation claire et intuitive.</ul>
-            <ul> - Un portofolio compatible sur tous vos appareils (ordinateur, tablette, smartphone).</ul>
-
-            Chaque projet est différent. Ensemble, créons votre portfolio, rien que pour vous !`));
+        text_intro2services.appendChild(createText('h2',"Création de Portfolio Personnalisé"));
+        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, entrepreneur ou autre.
+            Que ce soit pour un portfolio élégant, un site vitrine ou une présence en ligne unique, je peux vous concevoir des designs esthétiques et optimisés pour une navigation fluide.
+            Ensemble, mettons en valeur votre image et vos projets avec un site qui vous distingue, et rien que pour vous !`));
         
             text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
             intro2services.appendChild(text_intro2services);
@@ -129,17 +120,10 @@ export async function toggleTeamInfo(id) {
         image_intro2services.appendChild(createImage('Photos/services/shooting_pro.jpg'));
         intro2services.appendChild(image_intro2services);
         var text_intro2services = createElementWithClass('div','text-section');
-        text_intro2services.appendChild(createText('h2',"Shootings photo spécifiés"));
-        text_intro2services.appendChild(createText('p',`Des photos qui capturent vos plus beaux moments, que ce soit pour un événement, un projet ou des besoins profesionnels.Je m’adapte à vos envies pour créer des clichés qui vous ressemblent.
-
-            Ce que je peux vous proposer :
-
-            <ul> - Une séance sur mesure, définie avec vous.</ul>
-            <ul> - Des idées originales pour des photos uniques.</ul>
-            <ul> - Des shootings pour tout type d’événement : portraits, groupes, mariages, anniversaires, etc.</ul>
-            <ul> - Un moment convivial pour des photos naturelles.</ul>
-
-            Prêt pour un shooting à votre image ? Organisons votre séance dès maintenant !      `));
+        text_intro2services.appendChild(createText('h2',"Shooting Photo Professionnel"));
+        text_intro2services.appendChild(createText('p',`Offrez-vous un shooting photo professionnel pour sublimer votre image et valoriser vos projets. 
+            Que ce soit pour des portraits, des photos corporate, ou des visuels destinés à votre marque, je vous accompagne avec une approche personnalisée et créative. 
+            Avec des prises de vue soignées et un rendu de haute qualité, mettez votre meilleur atout en lumière.`));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
@@ -150,19 +134,10 @@ export async function toggleTeamInfo(id) {
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Shootings pour vos événements"));
         text_intro2services.appendChild(createText('p',`
-            Immortalisez vos événements avec des photos qui capturent chaque instant précieux.
-            Que ce soit un mariage, un anniversaire, une soirée ou tout autre moment important,
-            je vous accompagne pour créer des souvenirs inoubliables. Basé en région parisienne et à Dijon,
-            je peux également me déplacer partout en France pour répondre à vos besoins.
-
-            Ce que je vous propose :
-
-            <ul> - Une couverture adaptée à votre événement, pour ne rien manquer.</ul>
-            <ul> - Des idées originales, afin de refléter l’ambiance unique de votre journée.</ul>
-            <ul> - Des shootings variés : cérémonies, fêtes privées, événements d’entreprise, et bien plus.</ul>
-            <ul> - Des photos naturelles et authentiques, pour retranscrire vos émotions.</ul>
-
-            Prêt à immortaliser vos moments forts ? Contactez-moi et organisons votre shooting dès maintenant !         `));
+            Immortalisez vos moments précieux avec des photos naturelles et authentiques. Basé en région parisienne et à Dijon, je me déplace partout en France pour capturer mariages, 
+            anniversaires, événements privés ou professionnels. Je vous propose une couverture complète,
+             des idées originales et des shootings adaptés pour refléter l’ambiance unique de votre journée.
+              Contactez-moi pour créer ensemble des souvenirs inoubliables !     `));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
             intro2services.appendChild(text_intro2services);
 
@@ -176,19 +151,10 @@ export async function toggleTeamInfo(id) {
         var image_intro2services = createElementWithClass('div','image-section');
         image_intro2services.appendChild(createImage('Photos/services/shooting_urbain.jpeg'));
         intro2services.appendChild(image_intro2services);
-        text_intro2services.appendChild(createText('h2', "Shooting photo en milieu urbain"));
-        text_intro2services.appendChild(createText('p', `Des photos authentiques au cœur de la ville, capturant l’essence de votre univers urbain.
+        text_intro2services.appendChild(createText('h2', "Shooting photo à titre personnel"));
+        text_intro2services.appendChild(createText('p', `Des photos authentiques au cœur de la ville, ou en pleine nature, capturant l’essence de votre univers.
             Que ce soit à Paris, Dijon ou partout en France, je vous propose des shootings adaptés à vos envies et à votre style.
-            Ensemble, nous transformerons les rues, les architectures et les ambiances citadines en toile de fond unique pour vos clichés.
-
-        Ce que je peux vous offrir :
-
-         <ul> - Une séance personnalisée, planifiée selon vos attentes.</ul>
-         <ul> - Des idées créatives pour sublimer l’énergie de la ville dans vos photos.</ul>
-         <ul> - Des shootings variés : portraits, mode, lifestyle, projets professionnels ou personnels.</ul>
-         <ul> - Une expérience conviviale, pour des photos spontanées et naturelles.</ul>
-
-        Prêt(e) à immortaliser vos moments dans un cadre urbain unique ? Contactez-moi pour organiser votre séance !        `));
+            Prêt(e) à immortaliser vos moments dans un cadre urbain unique ? Contactez-moi pour organiser votre séance !        `));
         text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
@@ -315,7 +281,7 @@ export async function toggleTeamInfo(id) {
                 className: "photos",
                 text: "Photographies",
                 description: "Admirez mes meilleures photos",
-                imageUrl: "Photos/menu/photos.JPG",
+                imageUrl: "Photos/menu/photos.gif",
             },
             ,
             {
