@@ -1,12 +1,14 @@
 import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createTextforSommaire, createVideo, createMenuItem } from './createElements.js';
 import {createCarousel, generateImagePaths, createProjetCarousel} from './carroussel.js';
+import { loadFAQFromXML, searchQuestions} from './faq.js';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
 /************************** GESTION DU MENU EN ENTETE *********************************************/
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-const buttonIds = ['presentation','services','projets', 'videos', 'photos','aproposdemoi'];
+const buttonIds = ['presentation','services','projets', 'videos', 'photos','aproposdemoi','faq'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
@@ -79,6 +81,7 @@ export async function toggleTeamInfo(id) {
     var projetsContainer = document.querySelector('.projets-container');
     var planContainer = document.querySelector('.plandusite-container');
     var photosContainer = document.querySelector('.photos-container');
+    var faqContainer = document.querySelector('.faq-container');
     presentationContainer.innerHTML = '';
     planContainer.innerHTML='';
     servicesContainer.innerHTML = '';
@@ -86,6 +89,7 @@ export async function toggleTeamInfo(id) {
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
     photosContainer.innerHTML = '';
+    faqContainer.innerHTML = '';
 
     if(id=== 'services'){
 
@@ -955,7 +959,7 @@ export async function toggleTeamInfo(id) {
                 videoLink: "",
                 imageSrc: "Photos/projets/Flkprod.png",
                 desc: `Ce site internet, tout simplement, créé de A à Z par moi-même.`,
-                competences: "HTML / CSS, JavaScript"
+                competences: "HTML / CSS, JavaScript, XML"
             },
             {
                 name: "aleskflkphotos.github.io",
@@ -1047,6 +1051,23 @@ export async function toggleTeamInfo(id) {
             appendItems(columnsContainer, items);
         });
         planContainer.appendChild(columnsContainer);
+    }
+    else if(id === 'faq'){
+        const faqContainer = document.querySelector('.faq-container');
+
+        faqContainer.appendChild(createText('h2','FAQ Photographie - Conseils et Astuces'));
+
+        const searchInput = document.createElement('input');
+        searchInput.id = 'search';
+        searchInput.placeholder = 'Rechercher une question...';
+        searchInput.addEventListener('input', searchQuestions);
+        faqContainer.appendChild(searchInput);
+
+        const questionsContainer = document.createElement('div');
+        questionsContainer.className = 'faq-questions';
+        faqContainer.appendChild(questionsContainer);
+
+        loadFAQFromXML('/xml/faq.xml', faqContainer, searchInput);
     }
 
     const callback = function(mutationsList, observer) {

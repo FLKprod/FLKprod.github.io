@@ -1,0 +1,117 @@
+.faq-container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+.faq-container > h2 {
+    text-shadow: 
+    -1px -1px 0 black,  
+    3px -1px 0 black, 
+    1px 1px 0 black,   
+    1px 1px 0 black;
+    margin-top: 1em;
+    font-weight: 100;
+}
+
+.columns-container{
+    margin: 4em 0;
+    display: flex;
+    width: 75%;
+    text-align: left;
+    flex-direction: column;
+}
+
+.columns-container > h2 {
+    width:75%;
+    margin-top: 1em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.columns-container > h3 {
+    font-family: Courier, monospace;
+
+}
+
+.columns-container> p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.faq-container .hr-plan{
+    width: 25%;
+    margin-left: 0;
+    background-color: lightgray;
+}
+
+.question {
+    cursor: pointer;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.answer {
+    display: none;
+    margin-left: 20px;
+    color: #555;
+}
+
+
+.faq-questions{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+}
+.question {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+}
+
+.question-details{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+}
+.question-details p{
+    margin: 3em 0;
+    text-align: center;
+}
+.question-details .faq-image {
+    width: 30%;
+    margin: 2em 0;
+    height: auto;
+    border-radius: 2em;
+}
+#search {
+    width: 90%;
+    padding: 10px;
+    margin: 2em 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.question:hover {
+    background-color: #f9f9f9;
+}
+
+.question h3 {
+    width: 100%;
+    margin: 0;
+    font-size: 2em;
+    text-align: left;
+}
