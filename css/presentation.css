@@ -10,6 +10,7 @@
 .image-section-presentation > img {
     width: auto;
     height: 10em;
+    margin: 5em 0;
 }
 
 #presentation-img-2 {
@@ -70,9 +71,8 @@
 }
 
 .presentation-container > .image-section-presentation {
-    margin: 5em 0 ;
     width: 100%;
-    height: 400px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;

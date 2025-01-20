@@ -130,7 +130,7 @@ export function createMenuItem(id, className, text, description, imageUrl) {
     const menuItem = createElementWithClass("div", "menu-item", className);
     menuItem.id = id;
     menuItem.onclick = function() {
-        scrollauto()
+        scrollauto(".entete")
         toggleTeamInfo(id);
     };
     // Set background image

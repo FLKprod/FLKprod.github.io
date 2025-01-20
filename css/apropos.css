@@ -93,6 +93,7 @@ body.mode-nuit .moicmaxime .text-section p > a {
 .moicmaxime > .text-section h2{
     text-align: left;
     margin:0;
+    transition: transform 0.3s ease;
 }
 .moicmaxime > .text-section h6{
     font-size: 1.5em;
@@ -172,6 +173,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     margin-top: 6em;
     font-size: 2em;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .desc-berkeley > p {
@@ -254,6 +256,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     margin-top: 6em;
     font-size: 2em;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .desc-quebec > p {
@@ -289,6 +292,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 .formations h2{
     margin-top: 3em;
     font-size: 3em;
+    transition: transform 0.3s ease;
 }
 
 .class-certification{
@@ -353,9 +357,15 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 /*--------------------------CONTACT-------------------------------*/
 
-.contact-section > p, .contact-section > h2{
+.contact-section > p{
     line-height: 2;
-    color:white
+    color:white;
+}
+
+.contact-section > h2{
+    line-height: 2;
+    color:white;
+    transition: transform 0.3s ease-in-out;
 }
 
 .cv {

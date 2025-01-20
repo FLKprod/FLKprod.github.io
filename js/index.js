@@ -176,7 +176,7 @@ export async function toggleTeamInfo(id) {
         servicesContainer.appendChild(intro2services);
 
         gsap.utils.toArray(".service").forEach(service => {
-            var tl = gsap.timeline({
+            var tl1 = gsap.timeline({
                 scrollTrigger: {
                     trigger: service,
                     start: "top center",  
@@ -184,7 +184,7 @@ export async function toggleTeamInfo(id) {
                     scrub: true,  
                 }
             });
-            tl.from(service.querySelectorAll(".service > *"), { 
+            tl1.from(service.querySelectorAll(".service > *"), { 
                 opacity: 0,
                 y: "100%", 
                 duration: 1 
@@ -331,7 +331,7 @@ export async function toggleTeamInfo(id) {
 
         let mouseX = 0, mouseY = 0;  // Position de la souris
 
-        // Suivre la position de la souris uniquement quand on survole la zone
+        // Suivre la position de la souris 
         hoverArea.addEventListener('mousemove', function(event) {
             const rect = hoverArea.getBoundingClientRect();
             mouseX = event.clientX - rect.left;
@@ -342,20 +342,19 @@ export async function toggleTeamInfo(id) {
         function moveDot() {
             const dotX = (mouseX - yellowDot.offsetLeft); 
             const dotY =  (mouseY - yellowDot.offsetTop); 
-
             yellowDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
             requestAnimationFrame(moveDot);
         }
 
         // Démarre le mouvement du point dès que la souris survole la zone
         hoverArea.addEventListener('mouseenter', () => {
-            yellowDot.style.opacity = 1;  // Rendre le point visible lorsqu'on entre dans la zone
-            moveDot();  // Démarre l'animation du point
+            yellowDot.style.opacity = 1;
+            moveDot();
         });
 
         // Masque le point lorsque la souris quitte la zone
         hoverArea.addEventListener('mouseleave', () => {
-            yellowDot.style.opacity = 0;  // Masque le point
+            yellowDot.style.opacity = 0;
         });
 
 
@@ -374,7 +373,7 @@ export async function toggleTeamInfo(id) {
         text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis consultant GRC SAP chez <a href='https://wizya.fr/' target='_blank'>WIZYA</a>, en terres parisiennes.
             j'ai étudié en école d'ingénieur en sécurité informatique à Dijon.
             J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec.
-            J'ai plusieurs grandes passions telles que la photographie, la vidéo et l'informatique.`));
+            J'ai plusieurs grandes passions telles que la cybersécurité, dommaine dans lequel j'y exerce ma profession, mais aussi la photographie, la vidéo et l'informatique.`));
         text_intro2presentation.appendChild(createText('p',`En dehors de mon travail de consultant,
              je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux,
             ainsi que dans des projets informatiques à titre personnel ou profesionnel.
@@ -384,7 +383,7 @@ export async function toggleTeamInfo(id) {
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-briefcase" aria-hidden="true"></i> Consultant SAP GRC`));
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-city"></i> WIZYA Consulting`));
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-map-marker"></i> Paris, France`));
-        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-camera"></i> <i class="fa fa-code"></i> <i class="fa fa-video"></i> Passioné`));
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-camera"></i> <i class="fa fa-code"></i> <i class="fa fa-video"></i> <i class="fa fa-shield-alt" aria-hidden="true"></i> Passioné`));
         intro2presentation.appendChild(text_intro2presentation);
         aproposdemoiContainer.appendChild(intro2presentation);
 
@@ -632,7 +631,7 @@ export async function toggleTeamInfo(id) {
 
         // TRANSITION POUR LA SECTION FORMATION            
         if (window.innerWidth > 1100) {
-            var tl = gsap.timeline({
+            var tl2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".formations",
                     scrub: true,
@@ -643,7 +642,7 @@ export async function toggleTeamInfo(id) {
             });
         }
         else if (window.innerWidth > 768){
-            var tl = gsap.timeline({
+            var tl2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".formations",
                     scrub: true,
@@ -654,7 +653,7 @@ export async function toggleTeamInfo(id) {
             });
         }
         
-        tl.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {
+        tl2.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {
             scale: 0, 
             rotation: 45, 
             autoAlpha: 0, 
@@ -669,7 +668,7 @@ export async function toggleTeamInfo(id) {
         );
 
         // TRANSITION POUR SECTION CV
-        var tl2 = gsap.timeline({
+        var tl3 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".cv",  
                 start: "top bottom", 
@@ -677,7 +676,7 @@ export async function toggleTeamInfo(id) {
                 scrub: true,              
             }
         });
-        tl2.from(".line2", {scaleX: 0, backgroundColor: "#e3d898", ease: "none"}, 0)
+        tl3.from(".line2", {scaleX: 0, backgroundColor: "#e3d898", ease: "none"}, 0)
         .to(".cv",{scaleX: 1, backgroundColor: "black", ease: "none"})
     }
     else if(id === 'photos'){
