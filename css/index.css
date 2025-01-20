@@ -82,13 +82,12 @@ h2:hover {
 
 .entete{
     display: flex;
-    margin-top: 2em;
     padding: 1em 0;
     align-items:center;
     flex-direction: column;
     justify-content: center;
     font-family: 'FLKpolicyEntete',  sans-serif;
-    background: linear-gradient(150deg, #4f0341, #fad0c4,#71d3a9, #472a8b);
+    background: linear-gradient(150deg, #4f0341, lightgray,white, #472a8b);
     background-size: 600% 600%; 
     background-repeat: no-repeat;
     background-size: cover;
@@ -272,6 +271,10 @@ body.mode-nuit .scrolling-text {
     .text-entete h2:hover {
         transform: none;
         animation:none;
+    }
+
+    .text-entete h2{
+        font-size: 2em;
     }
 
     .text-entete > h2:not(:hover) {
