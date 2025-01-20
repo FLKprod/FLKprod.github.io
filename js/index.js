@@ -552,7 +552,7 @@ export async function toggleTeamInfo(id) {
             scrollTrigger: {
             trigger: ".moicmaxime",
             start: "0%",
-            end: "100%",
+            end: "+=100%",
             scrub: true,
             pin: true,
             anticipatePin: 1,
@@ -564,7 +564,7 @@ export async function toggleTeamInfo(id) {
             scrollTrigger: {
             trigger: ".moicmaxime",
             start: "0%",
-            end: "100%",
+            end: "+=100%",
             scrub: true,
             pin: true,
             anticipatePin: 1,

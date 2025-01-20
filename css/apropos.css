@@ -479,7 +479,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .aproposdemoi-container .image-section > img{
-        width: auto;
+        width: 100%;
         object-fit: contain;
         height: 100%;
     }
@@ -546,6 +546,23 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         flex-direction: column;
         align-items: stretch;
         gap: 0;
+        border-radius: 3em;
+        background-color: #e3d898;
+        border-top-left-radius: 2em;
+        border-top-right-radius: 2em;
+        margin-top: -6em;
+        margin-bottom: 6em;
+        position: relative;
+        z-index: 10000;
+    }
+
+    .certif-cisco{
+        z-index: 1000;
+        margin-bottom: 6em;
+        border-top-left-radius: 2em;
+        border-top-right-radius: 2em;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     .certif-cisco, .ecoles_formations {
         width: 100%;
@@ -553,6 +570,12 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
     .ecoles_formations img {
         width: 90%;
+    }
+
+    .ecoles_formations{
+        margin-top: -6em;
+        background-color: #4f0341;
+        border-radius: 2em;
     }
 
     .ecoles_formations p {
@@ -578,6 +601,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     .berkeley{
         width: 100%;
         height: 100% !important;
+        
     }
     .desc-berkeley{
         min-height: auto;
@@ -616,6 +640,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     .quebec{
         width: 100%;
         height: 100% !important;
+        margin-bottom: 4em;
+        z-index: 1;
     }
     .desc-quebec{
         min-height: auto;
@@ -650,10 +676,16 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     /****************** CONTACT ************************/
-
+    .cv{
+        background-color: black;
+    }
     .cv .image-section > img{
-        height: 50vh;
-        max-width: auto; 
+        height: 50%;
+        max-height: 50vh;
+        border-radius: 2em;
+    }
+    .cv .image-section {
+        border-radius: 2em;
     }
     
     .contact-section i {
