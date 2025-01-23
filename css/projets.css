@@ -99,6 +99,7 @@
 
 .projet .project-title {
     width: 100%;
+    height: auto;
     font-size: 2em;
     font-weight: bold;
     text-align: left;
@@ -327,35 +328,58 @@ body.mode-nuit .projets-container .competences span {
     }
 
     .projets-container .projet-section{
-        height: 25vh;
         margin: 2em 0;
+    }
+
+    
+    .projet-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-projet-presentation {
+        margin-left: 0 ;
     }
 
     .projet-section .text-section {
         margin: 0;
         height: 100%;
-        width: auto;
+        width: 80%;
+    }
+    .projet-section .text-section img {
+        width: 3em;
+        height: auto;
+    }
 
-        margin-right: 1em;
-        margin-left: 5px;
+    .projets-container .sommaire-projets > ul {
+        line-height: 1;
+    }
+
+    .projets-container .sommaire-projets > li {
+        font-size: 1em;
     }
 
     .projets-container .text-section h2{
         text-align: left;
+        font-size: 2em;
     }
+    .projets-container .text-section p{
+        font-size: 1em;
+    }
+
     .image-projet-presentation {
         width: 50%;
         overflow: hidden;
         height:100%;
         margin: 0;
-        margin-left: 1em;
+        margin-bottom: 2em;
     }
     .image-projet-presentation img{
         border-radius: 0;
         width: 100%;
         height:100%;
-        border-top-left-radius: 2em; 
-        border-bottom-left-radius: 2em;
+        
+        border-radius: 2em;
     }
 
     .projets-container .projets {

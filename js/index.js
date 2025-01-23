@@ -583,7 +583,7 @@ export async function toggleTeamInfo(id) {
                     scrollTrigger: {
                         trigger: '.berkeley',
                         pin: true,
-                        start: "top ${6}em`",
+                        start: "top top`",
                         end: () => {
                             const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
                             const largeHeight = large.clientHeight;

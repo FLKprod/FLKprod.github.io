@@ -142,11 +142,11 @@ body.mode-nuit .videos-container .competences span {
     }
 
     .videos-container > .section-videos { 
-        width: 100%;
+        width: 90%;
       }
 
       .video-container:nth-child(odd),.video-container:nth-child(even)  {
-        width: 100%;
+        width: 90%;
         align-self:auto;
     }
 
