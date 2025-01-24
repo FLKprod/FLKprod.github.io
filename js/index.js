@@ -267,14 +267,15 @@ export async function toggleTeamInfo(id) {
 
 
         var apropos2presentation = createElementWithClass('div','presentation-apropos-presentation');
-        var image_apropos2presentation = createElementWithClass('div','image-section-presentation');
-        image_apropos2presentation.appendChild(createImage("Photos/menu/moi.jpg"));
-        var text_apropos2presentation = createElementWithClass('div','text-section-a-propos-presentation');
+        var image_apropos2presentation = createElementWithClass('div','image-presentation');
+        image_apropos2presentation.appendChild(createImage("Photos/menu/moi.JPG"));
+        var text_apropos2presentation = createElementWithClass('div','text-section-presentation');
         text_apropos2presentation.appendChild(createText('h2',"Moi c'est Maxime"));
         text_apropos2presentation.appendChild(createText('p',`Découvrez qui je suis et ce que je partage sur ce site !`));
                   text_apropos2presentation.appendChild(createText('h2',"Enjoy."));
-        apropos2presentation.appendChild(image_apropos2presentation);
+        
         apropos2presentation.appendChild(text_apropos2presentation);
+        apropos2presentation.appendChild(image_apropos2presentation);
         presentationContainer.appendChild(apropos2presentation);
 
         
