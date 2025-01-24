@@ -254,7 +254,6 @@ export async function toggleTeamInfo(id) {
     else if(id=== 'presentation'){
         
         var intro2presentation = createElementWithClass('div','section-presentation');
-            
         var text_intro2presentation = createElementWithClass('div','text-section-presentation');
             text_intro2presentation.appendChild(createText('h2',"Bienvenue"));
             text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie,
@@ -262,8 +261,25 @@ export async function toggleTeamInfo(id) {
                   je partage ici mes réalisations, mes inspirations, mes collaborations, bref, ce qui me passionne dans la vie.`));
             text_intro2presentation.appendChild(createText('h2',"Enjoy."));
         intro2presentation.appendChild(text_intro2presentation);
-
         presentationContainer.appendChild(intro2presentation);
+
+
+
+
+        var apropos2presentation = createElementWithClass('div','presentation-apropos-presentation');
+        var image_apropos2presentation = createElementWithClass('div','image-section-presentation');
+        image_apropos2presentation.appendChild(createImage("Photos/menu/moi.jpg"));
+        var text_apropos2presentation = createElementWithClass('div','text-section-a-propos-presentation');
+        text_apropos2presentation.appendChild(createText('h2',"Moi c'est Maxime"));
+        text_apropos2presentation.appendChild(createText('p',`Découvrez qui je suis et ce que je partage sur ce site !`));
+                  text_apropos2presentation.appendChild(createText('h2',"Enjoy."));
+        apropos2presentation.appendChild(image_apropos2presentation);
+        apropos2presentation.appendChild(text_apropos2presentation);
+        apropos2presentation.appendChild(createElementWithClass('ins','adsbygoogle'));
+        presentationContainer.appendChild(apropos2presentation);
+
+        
+
         var intro2menupresentation = createElementWithClass('div','section-menu-presentation');
         const menuData = [
             {
@@ -296,11 +312,11 @@ export async function toggleTeamInfo(id) {
                 imageUrl: "Photos/menu/services.jpeg",
             },
             {
-                id: "aproposdemoi",
-                className: "aproposdemoi",
-                text: "À Propos de Moi",
-                description: "Afin de mieux me connaître",
-                imageUrl: "Photos/menu/moi.JPG",
+                id: "faq",
+                className: "faq",
+                text: "Questions / Réponses",
+                description: "FAQ sur la photographie",
+                imageUrl: "Photos/menu/photos.JPG",
             }
             
         ];
