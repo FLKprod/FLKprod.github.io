@@ -116,6 +116,13 @@
     text-align: left;
 }
 
+.faq-pubs{
+    width: 95%;
+    margin: 2em;
+    height: 25vh;
+    background-color: whitesmoke;
+}
+
 @media screen and (max-width: 768px) {
     .faq-container > *{
         width: 80%;

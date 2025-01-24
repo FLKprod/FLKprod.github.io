@@ -275,7 +275,6 @@ export async function toggleTeamInfo(id) {
                   text_apropos2presentation.appendChild(createText('h2',"Enjoy."));
         apropos2presentation.appendChild(image_apropos2presentation);
         apropos2presentation.appendChild(text_apropos2presentation);
-        apropos2presentation.appendChild(createElementWithClass('ins','adsbygoogle'));
         presentationContainer.appendChild(apropos2presentation);
 
         
