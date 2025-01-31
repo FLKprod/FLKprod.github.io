@@ -14,6 +14,7 @@
     1px 1px 0 black;
     margin-top: 1em;
     font-weight: 100;
+    transition: transform 0.3s ease;
 }
 
 .columns-container{
@@ -70,12 +71,14 @@
 }
 .question {
     width: 100%;
+    padding: 1em;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 1em;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .question-details{
@@ -103,10 +106,11 @@
     margin: 2em 0;
     border: 1px solid #ccc;
     border-radius: 4px;
+    
 }
 
 .question:hover {
-    background-color: #f9f9f9;
+    background-color: gray;
 }
 
 .question h3 {
