@@ -27,6 +27,7 @@
 .text-section > h2{
     font-size: 3em;
     line-height: 1;
+    transition: transform 0.3s ease;
 }
 
 .text-section > a{

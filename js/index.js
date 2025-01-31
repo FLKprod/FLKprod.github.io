@@ -568,7 +568,7 @@ export async function toggleTeamInfo(id) {
             scrollTrigger: {
             trigger: ".moicmaxime",
             start: "0%",
-            end: "+=100%",
+            end: "100%",
             scrub: true,
             pin: true,
             anticipatePin: 1,
@@ -580,7 +580,7 @@ export async function toggleTeamInfo(id) {
             scrollTrigger: {
             trigger: ".moicmaxime",
             start: "0%",
-            end: "+=100%",
+            end: "100%",
             scrub: true,
             pin: true,
             anticipatePin: 1,
@@ -657,7 +657,7 @@ export async function toggleTeamInfo(id) {
                 }
             });
         }
-        else if (window.innerWidth > 768){
+        else { // if (window.innerWidth > 768)
             var tl2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".formations",
