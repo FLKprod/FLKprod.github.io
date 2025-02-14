@@ -482,16 +482,16 @@ export async function toggleTeamInfo(id) {
         var  s5_certifications= createElementWithClass("div","class-certification");
         s5_certifications.appendChild(createImage('Photos/Apropos/cyberark.png'));
         var liste_5_certifications = document.createElement("ul");
-        liste_5_certifications.appendChild(createText('li',"JSE - Certified Entry-level JavaScript Programmer"));
-        liste_5_certifications.appendChild(createText('li',"JSA - Certified Associate JavaScript Programmer"));
+        liste_5_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
+        liste_5_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
         s5_certifications.appendChild(liste_5_certifications);
         text_certifications.appendChild(s5_certifications);
     
         var s2_certifications = createElementWithClass("div","class-certification");
         s2_certifications.appendChild(createImage('Photos/Apropos/Fortinet.png'));
         var liste_2_certifications = document.createElement("ul");
-        liste_2_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
-        liste_2_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
+        liste_2_certifications.appendChild(createText('li',"Fortinet Certified Associate Cybersecurity"));
+        liste_2_certifications.appendChild(createText('li',"Fortinet Certified Fundamentals Cybersecurity"));
         
         s2_certifications.appendChild(liste_2_certifications);
         text_certifications.appendChild(s2_certifications);
