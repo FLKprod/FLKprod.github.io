@@ -165,7 +165,6 @@ h2:hover {
     font-family: 'FLKpolicyEntete';
     display: inline-block;
     font-size: 4em;
-    line-height: 2;
     width: 100%;
     transform: none;
     text-shadow: none;
@@ -248,7 +247,7 @@ body.mode-nuit .scrolling-text {
     }
 
     .text-entete, .image-entete{
-        width: 50%;
+        width: 75%;
     }
     .text-entete h2:hover {
         transform: none;
