@@ -33,8 +33,6 @@ setTimeout(function() {
 /******************************* MODE NUIT  *****************************************************************/
 
 const daynightCheckbox = document.getElementById('daynight');
-const downlogo=document.getElementById('down-logo')
-const image_intro_for_photo = document.getElementById('image-intro-for-photo');
 
 
 function toggleModeNuit() {
@@ -71,12 +69,16 @@ function toggleModeNuit() {
     }
 }
 
-toggleModeNuit();
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
-    daynightCheckbox.checked = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (isDarkMode) {
+    console.log("Mode sombre actif")
     toggleModeNuit();
-});
+    daynightCheckbox.checked = checked;
+
+}
+
 
 document.getElementById('daynight').addEventListener('change', toggleModeNuit);
 
