@@ -28,6 +28,7 @@ setTimeout(function() {
     mainContent.classList.remove('hidden');
     document.getElementById("introContainer").style.display='none';
     console.log("time");
+
 }, 800);
 
 /******************************* MODE NUIT  *****************************************************************/
@@ -67,15 +68,17 @@ function toggleModeNuit() {
             console.warn("L'élément #image-intro-for-photo est introuvable pour le mode jour.");
         }
     }
+
 }
 
 
 const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
 if (isDarkMode) {
     console.log("Mode sombre actif")
+    daynightCheckbox.checked = false;
     toggleModeNuit();
 }
+
 
 
 document.getElementById('daynight').addEventListener('change', toggleModeNuit);
