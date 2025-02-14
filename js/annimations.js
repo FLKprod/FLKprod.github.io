@@ -75,8 +75,6 @@ const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 if (isDarkMode) {
     console.log("Mode sombre actif")
     toggleModeNuit();
-    daynightCheckbox.checked = checked;
-
 }
 
 
