@@ -96,11 +96,7 @@ export async function toggleTeamInfo(id) {
         var intro2services = createElementWithClass('div','section-services');
             var text_intro2services = createElementWithClass('div','text-section-services');
                 text_intro2services.appendChild(createText('h2',"Et si on travaillais ensemble ? "));
-                text_intro2services.appendChild(createText('p',`Fort de nombreuses réalisations dans des domaines variés, 
-                    je suis enthousiaste à l'idée de collaborer avec vous. Que ce soit pour un projet informatique ou pour la 
-                    création de contenus photographiques, personnels ou professionnels, je mets mon énergie, ma créativité et 
-                    mon savoir-faire au service de vos idées pour leur donner vie.`));
-                    text_intro2services.appendChild(createText('h2',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
+                    text_intro2services.appendChild(createText('p',"Ensemble, faisons quelque chose d’unique et à vos attentes !"));
             intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
@@ -268,7 +264,7 @@ export async function toggleTeamInfo(id) {
 
         var apropos2presentation = createElementWithClass('div','presentation-apropos-presentation');
         var image_apropos2presentation = createElementWithClass('div','image-presentation');
-        image_apropos2presentation.appendChild(createImage("Photos/menu/cyber.JPG"));
+        image_apropos2presentation.appendChild(createImage("Photos/cyber.png"));
         var text_apropos2presentation = createElementWithClass('div','text-section-presentation');
         text_apropos2presentation.appendChild(createText('h2',"Moi c'est Maxime"));
         text_apropos2presentation.appendChild(createText('p',`Découvrez qui je suis et ce que je partage sur ce site !`));
@@ -479,14 +475,23 @@ export async function toggleTeamInfo(id) {
         liste_1_certifications.appendChild(createText('li',"Cybersecurity Essentials By Cisco"));
         liste_1_certifications.appendChild(createText('li',"Network Security By Cisco"));
         liste_1_certifications.appendChild(createText('li',"Network Defense By Cisco"));
+        liste_1_certifications.appendChild(createText('li',"Junior Cybersecurity Analyst Career"));
         s1_certifications.appendChild(liste_1_certifications);
         text_certifications.appendChild(s1_certifications);
+
+        var  s5_certifications= createElementWithClass("div","class-certification");
+        s5_certifications.appendChild(createImage('Photos/Apropos/cyberark.png'));
+        var liste_5_certifications = document.createElement("ul");
+        liste_5_certifications.appendChild(createText('li',"JSE - Certified Entry-level JavaScript Programmer"));
+        liste_5_certifications.appendChild(createText('li',"JSA - Certified Associate JavaScript Programmer"));
+        s5_certifications.appendChild(liste_5_certifications);
+        text_certifications.appendChild(s5_certifications);
     
         var s2_certifications = createElementWithClass("div","class-certification");
         s2_certifications.appendChild(createImage('Photos/Apropos/Fortinet.png'));
         var liste_2_certifications = document.createElement("ul");
-        liste_2_certifications.appendChild(createText('li',"Fortinet Certified Associate Cybersecurity"));
-        liste_2_certifications.appendChild(createText('li',"Fortinet Certified Fundamentals Cybersecurity"));
+        liste_2_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
+        liste_2_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
         
         s2_certifications.appendChild(liste_2_certifications);
         text_certifications.appendChild(s2_certifications);
@@ -505,6 +510,8 @@ export async function toggleTeamInfo(id) {
         liste_4_certifications.appendChild(createText('li',"JSE - Certified Entry-level JavaScript Programmer"));
         liste_4_certifications.appendChild(createText('li',"JSA - Certified Associate JavaScript Programmer"));
         s4_certifications.appendChild(liste_4_certifications);
+
+        
         
         text_certifications.appendChild(s4_certifications);
         text_certifications.appendChild(createLineSpan(1));
@@ -515,13 +522,13 @@ export async function toggleTeamInfo(id) {
         text_ecoles_formations.appendChild(createText('h2',"Mes Formations"));
         var liste_1_ecoles_formations = document.createElement("div");
         liste_1_ecoles_formations.appendChild(createText('p',"Formation au diplome d'ingénieur en Sécurité Qualité Réseaux informatiques"));
-        liste_1_ecoles_formations.appendChild(createText('p',"Polytech Dijon, Dijon, Bourgogne, FRANCE"));
+        liste_1_ecoles_formations.appendChild(createText('p',"Polytech Dijon, Bourgogne, FRANCE"));
         liste_1_ecoles_formations.appendChild(createImage('Photos/Apropos/Polytech.png'));
         
         text_ecoles_formations.appendChild(liste_1_ecoles_formations);
         var liste_2_ecoles_formations = document.createElement("div");
         liste_2_ecoles_formations.appendChild(createText('p',"Maîtrise (Master) en cybersécurité"));
-        liste_2_ecoles_formations.appendChild(createText('p',"UQAC (Université du Québèc à Chicoutimi, Chicoutimi, Québèc, CANADA)"));
+        liste_2_ecoles_formations.appendChild(createText('p',"UQAC (Université du Québèc à Chicoutimi, Québèc, CANADA)"));
         liste_2_ecoles_formations.appendChild(createImage('Photos/Apropos/UQAC.jpg'));
         
         text_ecoles_formations.appendChild(liste_2_ecoles_formations);
@@ -767,7 +774,7 @@ export async function toggleTeamInfo(id) {
             { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
             { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 14, category: 'Photos Urbaines' },
             { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
-            { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos  Sportives' },
+            { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
             { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
             { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
             { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' }
@@ -860,7 +867,7 @@ export async function toggleTeamInfo(id) {
     else if(id === 'projets'){
         var intro2projects = createElementWithClass('div','section','projet-section');
         var image_intro2projects = createElementWithClass('div','image-projet-presentation');
-        var img_for_image_intro_for_projets = createImage("Photos/image-projet.jpg");
+        var img_for_image_intro_for_projets = createImage("Photos/projets.gif");
         img_for_image_intro_for_projets.id="image-intro-for-projet";
         image_intro2projects.appendChild(img_for_image_intro_for_projets);
         var text_intro2projects = createElementWithClass('div','text-section');
@@ -1040,7 +1047,7 @@ export async function toggleTeamInfo(id) {
             ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Flkprod.github.io", "aleskflkphotos.github.io"  ],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile"]],
-            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma formations",["Mes certifications en réseaux", "Mes formations"], "Informations sur mon profil"],
+            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma formations",["Mes certifications en réseaux", "Mes formations"], "Informations de contact"],
             ["Plan du site"]
         ];
 

@@ -16,7 +16,7 @@
 }
 
 body.mode-nuit .menu {
-    background-color: var(--background-night);
+    background: rgba(20, 20, 20, 0.7);
 }
 
 .fondu{

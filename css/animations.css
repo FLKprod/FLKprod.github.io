@@ -59,14 +59,14 @@
 
 @font-face {
     font-family: 'FLKpolicy';
-    src: url('flkpolicy.ttf') format('truetype');
+    src: url('/ttf/flkpolicy.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
   font-family: 'FLKpolicyEntete';
-  src: url('Hola\ Augusto.ttf') format('truetype');
+  src: url('/ttf/Electro.ttf') format('truetype');
   font-weight: normal;
     font-style: normal;
 
@@ -74,6 +74,6 @@
 
 @font-face {
   font-family: 'FLKpolicySignature';
-  src: url('Rockybilly.ttf') format('truetype');
+  src: url('/ttf/Rockybilly.ttf') format('truetype');
   font-weight: normal;
 }

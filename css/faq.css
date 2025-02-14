@@ -33,14 +33,6 @@
     justify-content: center;
 }
 
-.columns-container > h3 {
-    font-family: Courier, monospace;
-
-}
-
-.columns-container> p {
-    font-family: 'Courier New', Courier, monospace;
-}
 
 .faq-container .hr-plan{
     width: 25%;
@@ -50,8 +42,9 @@
 
 .question {
     cursor: pointer;
+    color: #4f0341;
     margin: 10px 0;
-    font-weight: bold;
+
 }
 .answer {
     display: none;
@@ -78,7 +71,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 1em;
-    transition: background-color 0.5s ease-in-out;
+    transition:  background-color 0.5s ease-in-out;
 }
 
 .question-details{
@@ -110,7 +103,8 @@
 }
 
 .question:hover {
-    background-color: gray;
+    background-color: #4f0341;
+    color: white;
 }
 
 .question h3 {
