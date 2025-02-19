@@ -509,7 +509,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 
     .moicmaxime > .text-section h2:first-of-type{
-        font-size: 4em;
+        font-size: 3em;
         text-shadow: 
                 -1px -1px 0 black,
                 1px -2px 0 black,   
@@ -537,8 +537,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
     .class-certification {
         display: flex;
-        flex-direction: column;
-        margin-left: 0;
+        flex-direction: row;
+        margin: 0 2em;
         align-items: center;
     }
 
@@ -717,5 +717,9 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     .text-section > p {
         font-size: 1em;
         margin-bottom: 3em;
+    }
+
+    .text-section > a {
+        margin-left: 0;
     }
 }

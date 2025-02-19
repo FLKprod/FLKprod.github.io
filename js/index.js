@@ -569,30 +569,32 @@ export async function toggleTeamInfo(id) {
         });
         
         const elements = document.querySelectorAll('.moicmaxime > *');
-        gsap.to(elements, {
-            xPercent: 0,
-            ease: "none",
-            scrollTrigger: {
-            trigger: ".moicmaxime",
-            start: "0%",
-            end: "100%",
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-            }
-        });
-        gsap.to(elements, {
-            xPercent: 0,
-            ease: "none",
-            scrollTrigger: {
-            trigger: ".moicmaxime",
-            start: "0%",
-            end: "100%",
-            scrub: true,
-            pin: true,
-            anticipatePin: 1,
-            }
-        });
+        if (window.innerWidth > 1100) {
+            gsap.to(elements, {
+                xPercent: 0,
+                ease: "none",
+                scrollTrigger: {
+                trigger: ".moicmaxime",
+                start: "0%",
+                end: "100%",
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
+                }
+            });
+            gsap.to(elements, {
+                xPercent: 0,
+                ease: "none",
+                scrollTrigger: {
+                trigger: ".moicmaxime",
+                start: "0%",
+                end: "100%",
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
+                }
+            });
+        }  
 
         var largeElements = aproposdemoiContainer.querySelectorAll(".desc-berkeley");
         if (window.innerWidth > 1100) {
