@@ -101,21 +101,6 @@ export async function toggleTeamInfo(id) {
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
-        var text_intro2services = createElementWithClass('div','text-section');
-        text_intro2services.appendChild(createText('h2',"Création de Portfolio Personnalisé"));
-        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, entrepreneur ou autre.
-            Que ce soit pour un portfolio élégant, un site vitrine ou une présence en ligne unique, je peux vous concevoir des designs esthétiques et optimisés pour une navigation fluide.
-            Ensemble, mettons en valeur votre image et vos projets avec un site qui vous distingue, et rien que pour vous !`));
-        
-            text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
-            intro2services.appendChild(text_intro2services);
-
-        var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/services/portofolio.jpg'));
-        intro2services.appendChild(image_intro2services);
-        servicesContainer.appendChild(intro2services);
-
-        var intro2services = createElementWithClass('div','service');
         var image_intro2services = createElementWithClass('div','image-section');
         image_intro2services.appendChild(createImage('Photos/services/shooting_pro.jpg'));
         intro2services.appendChild(image_intro2services);
@@ -157,6 +142,21 @@ export async function toggleTeamInfo(id) {
             Prêt(e) à immortaliser vos moments dans un cadre urbain unique ? Contactez-moi pour organiser votre séance !        `));
         text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
+        servicesContainer.appendChild(intro2services);
+
+        var intro2services = createElementWithClass('div','service');
+        var text_intro2services = createElementWithClass('div','text-section');
+        text_intro2services.appendChild(createText('h2',"Création de Portfolio Personnalisé"));
+        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, entrepreneur ou autre.
+            Que ce soit pour un portfolio élégant, un site vitrine ou une présence en ligne unique, je peux vous concevoir des designs esthétiques et optimisés pour une navigation fluide.
+            Ensemble, mettons en valeur votre image et vos projets avec un site qui vous distingue, et rien que pour vous !`));
+        
+            text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
+            intro2services.appendChild(text_intro2services);
+
+        var image_intro2services = createElementWithClass('div','image-section');
+        image_intro2services.appendChild(createImage('Photos/services/portofolio.jpg'));
+        intro2services.appendChild(image_intro2services);
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','contact-services');
@@ -305,7 +305,7 @@ export async function toggleTeamInfo(id) {
                 className: "services",
                 text: "Mes services",
                 description: "Travaillons ensemble !",
-                imageUrl: "Photos/menu/services.jpeg",
+                imageUrl: "Photos/menu/services.jpg",
             },
             {
                 id: "faq",
@@ -402,6 +402,11 @@ export async function toggleTeamInfo(id) {
         var intro2lbnl = createElementWithClass('div','section','berkeley');
             var text_intro2lbnl = createElementWithClass('div','text-section','desc-berkeley');
             text_intro2lbnl.appendChild(createText('h2',"Mon Experience à Berkeley"));
+            
+            var logoucberkeley=createElementWithClass('div','section','logoucberkeley');
+            logoucberkeley.appendChild(createImage('Photos/Apropos/FUEGO.png'));
+            text_intro2lbnl.appendChild(logoucberkeley)
+
             text_intro2lbnl.appendChild(createText('p',`En 2023, j'ai eu le privilège d'éfféctuer un stage de 3 mois au Lawrence Berkeley National Laboratory, dans la préstigieuse université de Californie.
                 j'ai été immergé dans un environnement de recherche dynamique et stimulant.
                 Les échanges avec des chercheurs de calibre mondial, comme Carlton Pennypacker, ont été une source d'inspiration constante pour moi.
@@ -463,10 +468,33 @@ export async function toggleTeamInfo(id) {
     
         aproposdemoiContainer.appendChild(intro2quebec);
 
-        var certifications = createElementWithClass('div','formations');
 
-        var text_certifications = createElementWithClass('div','certif-cisco');
-        text_certifications.appendChild(createText('h2',"Mes Certifications en réseaux"));
+        var intro2cybersection = createElementWithClass('div','section','cybersection');
+        var text_intro2cybersection = createElementWithClass('div','text-section','desc-cybersection');
+        text_intro2cybersection.appendChild(createText('h2',"Ma passion pour la Cybersécurité"));
+        text_intro2cybersection.appendChild(createText('p',`La cybersécurité est bien plus qu’une simple discipline pour moi,
+            c’est une véritable passion qui allie ma curiosité pour le monde numérique et mon amour pour le code. 
+            Depuis mes débuts, je me suis toujours émerveillé par la manière dont la technologie peut être à la fois
+             une opportunité incroyable et un terrain de menaces à comprendre et à maîtriser. Ce mélange entre protection,
+              innovation et analyse me pousse constamment à me dépasser.`));
+        text_intro2cybersection.appendChild(createText('p',`Ma passion pour le code s’intègre parfaitement dans cet univers,
+                car chaque programme, chaque script que je développe devient un outil essentiel pour explorer,
+                 détecter des vulnérabilités et concevoir des solutions. Je suis en perpétuelle quête d’apprentissage,
+                  toujours à l’affût des nouvelles avancées dans la cybersécurité, des découvertes inédites et des opportunités 
+                  qui s’offrent dans ce domaine en constante évolution. Qu’il s’agisse d’approfondir mes connaissances, de 
+                  relever des défis techniques ou de m’investir dans des projets innovants, je suis animé par cette volonté de
+                   comprendre et de contribuer à bâtir un monde numérique plus sûr et plus fiable.`));
+
+        text_intro2cybersection.appendChild(createText('h2',"Mes Formations"));
+        text_intro2cybersection.appendChild(createText('p',"Formation au diplome d'ingénieur en Sécurité Qualité Réseaux informatiques"));
+        text_intro2cybersection.appendChild(createText('p',"Polytech Dijon, Bourgogne, FRANCE"));
+        text_intro2cybersection.appendChild(createImage('Photos/Apropos/Polytech.png'));
+        
+        text_intro2cybersection.appendChild(createText('p',"Maîtrise (Master) en cybersécurité"));
+        text_intro2cybersection.appendChild(createText('p',"UQAC (Université du Québèc à Chicoutimi, Québèc, CANADA)"));
+        text_intro2cybersection.appendChild(createImage('Photos/Apropos/UQAC.jpg'));
+
+        text_intro2cybersection.appendChild(createText('h2',"Mes Certifications en Réseaux / Cybersécurité"));
 
         var s1_certifications = createElementWithClass("div","class-certification");
         s1_certifications.appendChild(createImage('Photos/Apropos/CCNA.png'));
@@ -477,16 +505,8 @@ export async function toggleTeamInfo(id) {
         liste_1_certifications.appendChild(createText('li',"Network Defense By Cisco"));
         liste_1_certifications.appendChild(createText('li',"Junior Cybersecurity Analyst Career"));
         s1_certifications.appendChild(liste_1_certifications);
-        text_certifications.appendChild(s1_certifications);
+        text_intro2cybersection.appendChild(s1_certifications);
 
-        var  s5_certifications= createElementWithClass("div","class-certification");
-        s5_certifications.appendChild(createImage('Photos/Apropos/cyberark.png'));
-        var liste_5_certifications = document.createElement("ul");
-        liste_5_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
-        liste_5_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
-        s5_certifications.appendChild(liste_5_certifications);
-        text_certifications.appendChild(s5_certifications);
-    
         var s2_certifications = createElementWithClass("div","class-certification");
         s2_certifications.appendChild(createImage('Photos/Apropos/Fortinet.png'));
         var liste_2_certifications = document.createElement("ul");
@@ -494,7 +514,15 @@ export async function toggleTeamInfo(id) {
         liste_2_certifications.appendChild(createText('li',"Fortinet Certified Fundamentals Cybersecurity"));
         
         s2_certifications.appendChild(liste_2_certifications);
-        text_certifications.appendChild(s2_certifications);
+        text_intro2cybersection.appendChild(s2_certifications);
+
+        var  s5_certifications= createElementWithClass("div","class-certification");
+        s5_certifications.appendChild(createImage('Photos/Apropos/cyberark.png'));
+        var liste_5_certifications = document.createElement("ul");
+        liste_5_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
+        liste_5_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
+        s5_certifications.appendChild(liste_5_certifications);
+        text_intro2cybersection.appendChild(s5_certifications);
 
         var s3_certifications = createElementWithClass("div","class-certification");
         s3_certifications.appendChild(createImage('Photos/Apropos/linux.png'));
@@ -502,7 +530,7 @@ export async function toggleTeamInfo(id) {
         liste_3_certifications.appendChild(createText('li',"BGD Linux Unhatched"));
         liste_3_certifications.appendChild(createText('li',"NDG Linux Essential"));
         s3_certifications.appendChild(liste_3_certifications);
-        text_certifications.appendChild(s3_certifications);
+        text_intro2cybersection.appendChild(s3_certifications);
 
         var  s4_certifications= createElementWithClass("div","class-certification");
         s4_certifications.appendChild(createImage('Photos/Apropos/htmlcssjs.png'));
@@ -510,31 +538,14 @@ export async function toggleTeamInfo(id) {
         liste_4_certifications.appendChild(createText('li',"JSE - Certified Entry-level JavaScript Programmer"));
         liste_4_certifications.appendChild(createText('li',"JSA - Certified Associate JavaScript Programmer"));
         s4_certifications.appendChild(liste_4_certifications);
+        text_intro2cybersection.appendChild(s4_certifications);
+        
+        intro2cybersection.appendChild(text_intro2cybersection);
+        var image_intro2cybersection = createElementWithClass('div','image-section','portrait');
+        image_intro2cybersection.appendChild(createImage('Photos/Apropos/cybersection.jpg'));
+        intro2cybersection.appendChild(image_intro2cybersection);
+        aproposdemoiContainer.appendChild(intro2cybersection);
 
-        
-        
-        text_certifications.appendChild(s4_certifications);
-        text_certifications.appendChild(createLineSpan(1));
-
-        certifications.appendChild(text_certifications);
-        
-        var text_ecoles_formations = createElementWithClass('div','ecoles_formations');
-        text_ecoles_formations.appendChild(createText('h2',"Mes Formations"));
-        var liste_1_ecoles_formations = document.createElement("div");
-        liste_1_ecoles_formations.appendChild(createText('p',"Formation au diplome d'ingénieur en Sécurité Qualité Réseaux informatiques"));
-        liste_1_ecoles_formations.appendChild(createText('p',"Polytech Dijon, Bourgogne, FRANCE"));
-        liste_1_ecoles_formations.appendChild(createImage('Photos/Apropos/Polytech.png'));
-        
-        text_ecoles_formations.appendChild(liste_1_ecoles_formations);
-        var liste_2_ecoles_formations = document.createElement("div");
-        liste_2_ecoles_formations.appendChild(createText('p',"Maîtrise (Master) en cybersécurité"));
-        liste_2_ecoles_formations.appendChild(createText('p',"UQAC (Université du Québèc à Chicoutimi, Québèc, CANADA)"));
-        liste_2_ecoles_formations.appendChild(createImage('Photos/Apropos/UQAC.jpg'));
-        
-        text_ecoles_formations.appendChild(liste_2_ecoles_formations);
-        certifications.appendChild(text_ecoles_formations);
-
-        aproposdemoiContainer.appendChild(certifications);
 
         var cv_section = createElementWithClass('div','section','cv');
 
@@ -654,55 +665,34 @@ export async function toggleTeamInfo(id) {
             });
         }
 
-        // TRANSITION POUR LA SECTION FORMATION            
+        var largeElements = aproposdemoiContainer.querySelectorAll(".desc-cybersection");
         if (window.innerWidth > 1100) {
-            var tl2 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".formations",
-                    scrub: true,
-                    start: "top bottom",
-                    end: "bottom top",
-                    anticipatePin: 1,
-                }
+            largeElements.forEach(large => {
+                gsap.to(large, {
+                    y: () => {
+                        const cybersectionHeight = aproposdemoiContainer.querySelector('.cybersection').offsetHeight;
+                        return Math.min(0, window.innerHeight - large.clientHeight - cybersectionHeight);
+                    },
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: '.cybersection',
+                        pin: true,
+                        start: `top ${6}em`, 
+                        end: () => {
+                            const cybersectionHeight = document.querySelector('.cybersection').offsetHeight;
+                            const largeHeight = large.clientHeight;
+                            return `bottom ${Math.max(0, cybersectionHeight - largeHeight)}px`;
+                        },
+                        scrub: 0.5,
+                        invalidateOnRefresh: true,
+                        anticipatePin: 1,
+                        onUpdate: self => {
+                            console.log(`Progress: ${self.progress}, Direction: ${self.direction}`);
+                        },
+                    }
+                });
             });
         }
-        else { // if (window.innerWidth > 768)
-            var tl2 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".formations",
-                    scrub: true,
-                    start: "top 75%", 
-                    end: "bottom top",
-                    anticipatePin: 1,
-                }
-            });
-        }
-        
-        tl2.from(".formations h2,.formations li, .formations img, .ecoles_formations p", {
-            scale: 0, 
-            rotation: 45, 
-            autoAlpha: 0, 
-            ease: "power2"
-        },0)
-
-        .from(".line1", {scaleX: 0, ease: "none"}, 0)
-        .to(".certif-cisco", {scaleX: 1, ease: "none"})
-        .to(".certif-cisco", {backgroundColor: "#e3d898"}, 0)
-        .to(".ecoles_formations", {backgroundColor: "#192841"}, 0)
-        .to(".quebec", {backgroundColor: "#e3d898"},0
-        );
-
-        // TRANSITION POUR SECTION CV
-        var tl3 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".cv",  
-                start: "top bottom", 
-                end: "top 25%",       
-                scrub: true,              
-            }
-        });
-        tl3.from(".line2", {scaleX: 0, backgroundColor: "#e3d898", ease: "none"}, 0)
-        .to(".cv",{scaleX: 1, backgroundColor: "black", ease: "none"})
     }
     else if(id === 'photos'){
 
@@ -770,16 +760,19 @@ export async function toggleTeamInfo(id) {
         const categoriesData = [
             { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 5, category: 'Photos Urbaines' },
-            { name: 'San Francisco', desc: "California, USA", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 2, category: 'Photos Urbaines' },
+            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 7, category: 'Photos Urbaines' },
+            { name: 'San Francisco', desc: "California, USA", nbrepictures: 6, category: 'Photos Urbaines' },
+            { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 5, category: 'Photos Urbaines' },
+            { name: 'Boston', desc: "Massachusetts, USA", nbrepictures: 5, category: 'Photos Urbaines' },
             { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
             { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 14, category: 'Photos Urbaines' },
             { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
             { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
-            { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
-            { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 5, category: 'Photos Sportives' },
-            { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' }
+            { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 11, category: 'Photos Sportives' },
+            { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 10, category: 'Photos Sportives' },
+            { name: 'JDA Dijon Basket', desc: "Betclic elite saison 2024-2025", nbrepictures: 10, category: 'Photos Sportives' },
+            { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' },
+            { name: 'Rétro Mobile', desc: "Salon du Rétro mobile 2025, Paris, France", nbrepictures: 7, category: 'Photos Événementielles' }
         ];
         
         // TRIE DES SECTIONS EN CATEGORIES POUR FACILITER LE TOUT
@@ -1048,8 +1041,8 @@ export async function toggleTeamInfo(id) {
             ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain"],
             ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Flkprod.github.io", "aleskflkphotos.github.io"  ],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
-            ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile"]],
-            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma formations",["Mes certifications en réseaux", "Mes formations"], "Informations de contact"],
+            ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile","Retro Mobile 2025"]],
+            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma passion pour la cybersécurité", "Informations de contact"],
             ["Plan du site"]
         ];
 

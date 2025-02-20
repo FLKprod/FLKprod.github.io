@@ -9,7 +9,7 @@ import {
   
   export function createCarousel(name, desc, images, index,textoverlay) {
     const carouselContainer = createElementWithClass('div', 'carousel-container');
-    const img_carrousel = createElementWithClass('div', 'image-wrapper');
+    var img_carrousel = createElementWithClass('div', 'image-wrapper');
     const imageElement = createImage(images[0]);
     const prevButton = createIconImage('Photos/gauche.png','gauche-icon' ,() => prevImage());
     const nextButton = createIconImage('Photos/droite.png','droite-icon' , () => nextImage());
@@ -45,14 +45,24 @@ import {
     function openModal(content) {
         const modal = document.getElementById('carousel-modal');
         const modalContent = document.getElementById('modal-content');
+        
         if (modal.style.display === 'flex') {
-            return; 
+            return;
         }
-
+    
         modalContent.innerHTML = '';
-        modalContent.appendChild(content.cloneNode(true)); 
-        modal.style.display = 'flex';
+        modalContent.appendChild(content.cloneNode(true));
+        
+        // Obtenir les dimensions de la première image affichée
+        const img = new Image();
+        img.src = images[currentIndex];
+        img.onload = () => {
+            modalContent.style.width = `${img.width}px`;
+            modalContent.style.height = `${img.height}px`;
+            modal.style.display = 'flex';
+        };
     }
+    
 
     document.addEventListener('click', (event) => {
         const modal = document.getElementById('carousel-modal');
@@ -134,23 +144,32 @@ import {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
         updateImage();
     }
+
     function updateImage() {
         const nextImageElement = createImage(images[currentIndex]);
         nextImageElement.style.position = "absolute";
         nextImageElement.style.opacity = "0";
-        nextImageElement.style.transition = "opacity 0.5s ease";
-
+        nextImageElement.style.transition = "opacity 0.5s ease-in-out";
+        
+        // Ajoute la nouvelle image au carrousel
         img_carrousel.appendChild(nextImageElement);
     
         setTimeout(() => {
             nextImageElement.style.opacity = "1"; // Nouvelle image devient visible
         }, 0);
+    
         setTimeout(() => {
-            // MAJ de la référence de l'image principale
-            imageElement = nextImageElement;
-            img_carrousel.removeChild(imageElement);
-        }, 500);
+            // Récupère et supprime le premier élément <img> du carrousel
+            const firstImageElement = img_carrousel.querySelector("img");
+            if (firstImageElement) {
+                img_carrousel.removeChild(firstImageElement);
+            }
+        }, 50);
     }
+    
+    
+    
+    
     return carouselContainer;
 }
 
@@ -162,24 +181,6 @@ export function generateImagePaths(folderName,nbrepictures) {
   }
   return imagePaths;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
