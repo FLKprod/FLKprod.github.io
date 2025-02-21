@@ -305,7 +305,7 @@ body.mode-nuit .hr {
     
     body.mode-nuit .sections-menu > .select {
         border-bottom:none;
-        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 25%, rgba(227, 216, 152, 0.5) 50%,rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 25%, rgba(79, 3, 65, 1) 50%,rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%);
         margin-right: 0;
     }
 

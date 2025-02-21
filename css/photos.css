@@ -374,4 +374,11 @@ body.mode-nuit .photos-container .text-overlay{
       max-width: 100%;
       max-height: 62.5%;
     }
+
+    .modal-content .carousel-container{
+
+      align-content: center;
+      justify-content: center;
+      display: flex;
+    }
 }
