@@ -39,7 +39,7 @@
 }
 
 .article {
-    width: 100%;
+    width: auto;
     padding: 1em;
     position: relative;
     margin-top:7em;
