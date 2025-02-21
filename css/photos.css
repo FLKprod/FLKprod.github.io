@@ -178,7 +178,7 @@ body.mode-nuit .photos-container .text-overlay{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 2em;
+    width: 4em;
     height: auto;
     cursor: pointer;
     z-index: 10;
