@@ -210,6 +210,9 @@ body.mode-nuit .yellow-dot {
         width: auto;
         height: 8em;
     }
+    .presentation-apropos-presentation {
+        flex-direction: column;
+    }
 
     .text-section-presentation{
         margin: 1em;

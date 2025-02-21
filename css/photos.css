@@ -160,7 +160,7 @@
 
 
 body.mode-nuit .photos-container .text-overlay{
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
 }
   
 .carousel-container i {
@@ -337,6 +337,10 @@ body.mode-nuit .photos-container .text-overlay{
 
     .photos-container .text-photos-presentation {
       width: 90%;
+    }
+
+    .photos-container .category-title {
+      margin-top: 6em;
     }
 
     .category-section{

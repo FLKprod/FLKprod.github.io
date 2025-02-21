@@ -60,6 +60,7 @@
 
 .projets-container .projet {
     overflow: hidden;
+    border: transparent;
     max-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -69,6 +70,7 @@
 
   .projet .carousel-images {
     display: flex;
+    border: transparent;
     transition: transform 0.5s ease;
     width: 100%;
     aspect-ratio: 1/1;
@@ -119,8 +121,6 @@
     height: auto;
   }
 
-
-
 .projet .competences {
     display: flex;
     flex-wrap: wrap;
@@ -136,6 +136,7 @@
 
 .projets-container .carousel-container {
     width: 100%;
+    border: transparent;
     position: relative;
     overflow: hidden;
     border-radius: 2em;
@@ -189,6 +190,7 @@
 
 
 .carousel-slide {
+    border: transparent;
     flex: 0 0 100%;
     height: 100%;
     background-color: black;
