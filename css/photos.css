@@ -352,6 +352,7 @@ body.mode-nuit .photos-container .text-overlay{
   }
 
   .photos-container .category-title {
+    font-size: em;
     margin: 0;
   }
 
@@ -366,7 +367,7 @@ body.mode-nuit .photos-container .text-overlay{
     }
 
     .photos-container .text-overlay >h4 {
-      font-size: 5em;
+      font-size: 2em;
     }
 
     .modal-content {

@@ -630,6 +630,11 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         height: 100% !important;
         
     }
+
+    .logoucberkeley img{
+        width: 5em;
+        height: 5em;
+    }
     .desc-berkeley{
         min-height: auto;
         font-size: 2em;
@@ -726,6 +731,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         width: 100%;
         max-width: 100%;
         margin: 0;
+        border-bottom-left-radius: 2em;
+        border-bottom-right-radius: 2em;
     }
     .cybersection .text-section {
         width: 100%;
@@ -749,7 +756,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
     .cv .image-section > img{
         height: 50%;
-        max-height: 50vh;
+
+        width: 100%;
         border-radius: 2em;
     }
     .cv .image-section {
@@ -778,7 +786,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .cybersection li {
-        font-size: 1em;
+        font-size: 0.7em;
     }
 
     .text-section > p {
