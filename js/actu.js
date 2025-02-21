@@ -45,6 +45,7 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
 
             for (let article of articles) {
                 const title = article.getElementsByTagName("title")[0]?.textContent;
+                const sujet = article.getElementsByTagName("sujet")[0]?.textContent;
                 const date = article.getElementsByTagName("date")[0]?.textContent;
                 const corps = article.getElementsByTagName("corps")[0]?.textContent.split('\n');
                 const button = article.getElementsByTagName("button")[0]?.textContent;
@@ -57,9 +58,12 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
 
                 const detailsContainerTitle = createElementWithClass("div", "article-corps-title");
                 const titleElement = createText("h3", title);
+                const sujetlement = createText("h4", sujet);
+                articleElement.setAttribute("sujet",sujet);
                 const dateElement = createText("p", date);
                 dateElement.className = "date";
                 detailsContainerTitle.appendChild(titleElement);
+                detailsContainerTitle.appendChild(sujetlement);
                 detailsContainerTitle.appendChild(dateElement);
 
                 const detailsContainebody = createElementWithClass("div", "article-corps-body");
@@ -142,8 +146,31 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                     element.style.display = isVisible ? "flex" : "none";
                 });
             });
+
+
+                const filterSelect = document.getElementById("filter-select");
+                console.log("bsdiukfgsdiyfueidbf")
+                filterSelect.addEventListener("change", function () {
+                    const selectedSujet = filterSelect.value;
+                    const allArticles = document.querySelectorAll('.article');
+                    console.log("refiltrage");
+                    allArticles.forEach(article => {
+                        const sujet = article.getAttribute("sujet"); 
+                        console.log(article.getAttribute("sujet"));
+                        if (selectedSujet === "all" || sujet === selectedSujet) {
+                            article.style.display = "block"; // Afficher l'article
+                        } else {
+                            article.style.display = "none"; // Cacher l'article
+                        }
+                    });
+                });
+
         })
         .catch((error) => {
             console.error("Erreur lors du chargement du fichier XML :", error);
         });
 }
+
+
+
+

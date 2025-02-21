@@ -61,6 +61,14 @@
     width: 100%;
 }
 
+.article h4 {
+    margin: 0;
+    font-size: 1.7em;
+    text-align: left;
+    color: #e3d898;
+    width: 100%;
+}
+
 .article .date {
     text-align: left;
     font-size: 1.5em;
@@ -143,6 +151,49 @@
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+
+#filter-select {
+    width: 200px;
+    padding: 10px;
+    font-size: 1em;
+    border: 2px solid #4f0341;
+    border-radius: 8px;
+    background-color: white;
+    color: #4f0341;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Changer la couleur au survol */
+#filter-select:hover {
+    background-color: lightgray;
+}
+
+/* Style pour les options */
+#filter-select option {
+    background-color: white;
+    color: #4f0341;
+    font-size: 1em;
+}
+
+/* Style quand le select est en focus */
+#filter-select:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(79, 3, 65, 0.5);
+}
+
+.actu-container-search-area{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+.actu-container-search-area >select{
+    height: 3em;
+}
+
 
 .article.expanded {
     -webkit-mask-image:none;

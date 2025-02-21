@@ -1,6 +1,7 @@
 <actu>
     <article>
         <title>Photoscape X, un très bon logiciel de retouche photo pour commencer</title>
+        <sujet>Photographie</sujet>
         <date>21 février 2025</date>
         <corps>Photoscape X est un logiciel de retouche photo puissant et accessible, parfait pour les débutants. Avec son interface claire et ses fonctionnalités simples à comprendre, il permet de réaliser des montages et des retouches de qualité professionnelle sans la courbe d’apprentissage abrupte des logiciels plus complexes. Que ce soit pour ajuster la luminosité, ajouter des filtres ou créer des collages, Photoscape X offre des outils pratiques pour tout type de projet visuel.
 
@@ -10,6 +11,7 @@
     </article>
     <article>
         <title>Photos Rétro-Mobile 2025</title>
+        <sujet>Photographie</sujet>
         <date>9 février 2025</date>
         <corps>Je suis ravi de partager avec vous ma toute nouvelle collection de photographies prises lors du Salon Rétromobile 2025, qui s'est tenu récemment à Paris.
            
@@ -20,7 +22,8 @@
     </article>
     <article>
         <title>Les certifications cybersécurité, un bon moyen de se réorienter</title>
-        <date> 15 janvier 2025</date>
+        <sujet>Cybersécurité</sujet>
+        <date>15 janvier 2025</date>
         <corps>Un ami en communication cherche à se réorienter dans un autre domaine. Il souhaite se plonger dans le monde de la cybersécurité, mais ne sait pas comment faire. Si vous êtes dans cette même situation, une des meilleures choses à faire est d'acquérir des certifications. Elles sont un excellent moyen de valider ses compétences et de montrer son savoir-faire de manière reconnue dans l'industrie. Cela permet de se démarquer et d'ouvrir de nombreuses portes professionnelles, notamment dans les secteurs en forte demande.
 
             Pour ceux qui souhaitent se lancer dans des métiers plus techniques, le domaine de l'informatique est particulièrement prometteur. Des certifications Cisco totalement gratuites existent, par exemple, et sont parmi les plus réputées et permettent de se spécialiser dans des domaines comme les réseaux et la cybersécurité. Ces certifications sont très recherchées par les employeurs et offrent de nombreuses opportunités d'évolution.
@@ -34,7 +37,8 @@
     </article>
     <article>
         <title>Verifile, un projet de fin d'étude pour garantir sa sécurité numérique</title>
-        <date> 30 juin 2024</date>
+        <sujet>Cybersécurité</sujet>
+        <date>30 juin 2024</date>
         <corps>Dans un monde où les cyberattaques se multiplient chaque jour, comment garantir sa sécurité contre les fichiers et sites web malveillants ?
 
             C'est dans cette optique que avec 3 collègues de travail, nous avons concu <a href="https://verifileapp.fr/" target="_blank">Verifile</a> !

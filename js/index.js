@@ -767,8 +767,8 @@ export async function toggleTeamInfo(id) {
             { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 5, category: 'Photos Urbaines' },
             { name: 'Boston', desc: "Massachusetts, USA", nbrepictures: 6, category: 'Photos Urbaines' },
             { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 7, category: 'Photos Urbaines' },
-            { name: 'Quebec City', desc: "Quebec, Canada", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 9, category: 'Photos Nature' },
+            { name: 'Quebec City', desc: "Quebec, Canada", nbrepictures: 7, category: 'Photos Urbaines' },
+            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 10, category: 'Photos Nature' },
             { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
             { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 3, category: 'Photos Sportives' },
             { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 11, category: 'Photos Sportives' },
@@ -1078,17 +1078,38 @@ export async function toggleTeamInfo(id) {
 
         actuContainer.appendChild(createText('h2','Les dernières news de FLKprod_'));
         actuContainer.appendChild(createText('p',"Les dernières actualités et mises à jour de FLKprod_, afin de vous tenir informés des nouveautés et des projets à venir. Mais aussi des articles sur des sujets qui m'intéressent : C'est tout ce que vous retrouverez ici !"));
+        var area_search =createElementWithClass("div","actu-container-search-area");
         const searchInput = document.createElement('input');
         searchInput.id = 'search';
         searchInput.placeholder = 'Rechercher un article';
         searchInput.addEventListener('input', searcharticle);
-        actuContainer.appendChild(searchInput);
+        area_search.appendChild(searchInput);
+        actuContainer.appendChild(area_search);
+
+        // Création du <select>
+        const filterSelect = createElementWithClass("select","filter-select");
+        filterSelect.id = "filter-select";
+
+        // Liste des options
+        const options = ["Filtrer les sujets", "Photographie", "Cybersécurité"];
+        const values = ["all", "Photographie", "Cybersécurité"];
+
+        // Ajout des options au <select>
+        options.forEach((optionText, index) => {
+            const option = document.createElement("option");
+            option.value = values[index];
+            option.textContent = optionText;
+            filterSelect.appendChild(option);
+        });
+        area_search.appendChild(filterSelect);
+        actuContainer.appendChild(area_search);
 
         const articleContainer = document.createElement('div');
         articleContainer.className = 'actu-article';
         actuContainer.appendChild(articleContainer);
 
         loadactuFromXML('/xml/actu.xml', actuContainer, searchInput);
+
     }
 
     const callback = function(mutationsList, observer) {
@@ -1109,5 +1130,3 @@ buttons.forEach(button => {
         scrollauto(".entete")
     });
 });
-
-
