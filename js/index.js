@@ -1,6 +1,6 @@
 import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createTextforSommaire, createVideo, createMenuItem } from './createElements.js';
 import {createCarousel, generateImagePaths, createProjetCarousel} from './carroussel.js';
-import { loadFAQFromXML, searchQuestions} from './faq.js';
+import { loadactuFromXML, searcharticle} from './actu.js';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 /************************** GESTION DU MENU EN ENTETE *********************************************/
 
 document.addEventListener('contextmenu', event => event.preventDefault());
-const buttonIds = ['presentation','services','projets', 'videos', 'photos','aproposdemoi','faq'];
+const buttonIds = ['presentation','services','projets', 'videos', 'photos','aproposdemoi','actu'];
 buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
@@ -81,7 +81,7 @@ export async function toggleTeamInfo(id) {
     var projetsContainer = document.querySelector('.projets-container');
     var planContainer = document.querySelector('.plandusite-container');
     var photosContainer = document.querySelector('.photos-container');
-    var faqContainer = document.querySelector('.faq-container');
+    var actuContainer = document.querySelector('.actu-container');
     presentationContainer.innerHTML = '';
     planContainer.innerHTML='';
     servicesContainer.innerHTML = '';
@@ -89,7 +89,7 @@ export async function toggleTeamInfo(id) {
     videosContainer.innerHTML = '';
     projetsContainer.innerHTML = '';
     photosContainer.innerHTML = '';
-    faqContainer.innerHTML = '';
+    actuContainer.innerHTML = '';
 
     if(id=== 'services'){
 
@@ -308,10 +308,10 @@ export async function toggleTeamInfo(id) {
                 imageUrl: "Photos/menu/services.jpg",
             },
             {
-                id: "faq",
-                className: "faq",
-                text: "Questions / Réponses",
-                description: "FAQ sur la photographie",
+                id: "actu",
+                className: "actu",
+                text: "Actualité",
+                description: "Mes dernières news et articles",
                 imageUrl: "Photos/menu/photos.JPG",
             }
             
@@ -728,7 +728,9 @@ export async function toggleTeamInfo(id) {
 
         sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Urbaines', 'Photos-Urbaines'));
         sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Sportives', 'Photos-Sportives'));
+        sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Nature', 'Photos-Nature'));
         sommaire_photos.appendChild(createTextforSommaire('li', 'Photos Événementielles', 'Photos-Événementielles'));
+        
 
         text_intro_for_photos.appendChild(sommaire_photos);
 
@@ -760,19 +762,20 @@ export async function toggleTeamInfo(id) {
         const categoriesData = [
             { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
-            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 7, category: 'Photos Urbaines' },
+            { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 8, category: 'Photos Urbaines' },
             { name: 'San Francisco', desc: "California, USA", nbrepictures: 6, category: 'Photos Urbaines' },
             { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 5, category: 'Photos Urbaines' },
-            { name: 'Boston', desc: "Massachusetts, USA", nbrepictures: 5, category: 'Photos Urbaines' },
+            { name: 'Boston', desc: "Massachusetts, USA", nbrepictures: 6, category: 'Photos Urbaines' },
             { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
-            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 14, category: 'Photos Urbaines' },
+            { name: 'Quebec City', desc: "Quebec, Canada", nbrepictures: 4, category: 'Photos Urbaines' },
+            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 9, category: 'Photos Nature' },
             { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
             { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 3, category: 'Photos Sportives' },
             { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 11, category: 'Photos Sportives' },
             { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 10, category: 'Photos Sportives' },
             { name: 'JDA Dijon Basket', desc: "Betclic elite saison 2024-2025", nbrepictures: 11, category: 'Photos Sportives' },
             { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' },
-            { name: 'Rétro Mobile', desc: "Salon du Rétro mobile 2025, Paris, France", nbrepictures: 7, category: 'Photos Événementielles' }
+            { name: 'Rétro Mobile', desc: "Salon du Rétro mobile 2025, Paris, France", nbrepictures: 8, category: 'Photos Événementielles' }
         ];
         
         // TRIE DES SECTIONS EN CATEGORIES POUR FACILITER LE TOUT
@@ -932,7 +935,7 @@ export async function toggleTeamInfo(id) {
                 videoLink: "Photos/projets/201F.mp4",
                 imageSrc: "Photos/projets/201F.png",
                 desc: `201 Farehein est une parodie du célèbre jeu mobile '94 degrees'. 
-                Explorez un monde rempli de défis, de questions hilarantes et de réponses surprenantes.
+                Explorez un monde rempli de défis, de article hilarantes et de réponses surprenantes.
                 Testez vos connaissances géographiques tout en vous amusant !` ,
                 competences: "Python, Pygame"
             },
@@ -1043,6 +1046,7 @@ export async function toggleTeamInfo(id) {
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile","Retro Mobile 2025"]],
             ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma passion pour la cybersécurité", "Informations de contact"],
+            ["Actu"],
             ["Plan du site"]
         ];
 
@@ -1069,22 +1073,22 @@ export async function toggleTeamInfo(id) {
         });
         planContainer.appendChild(columnsContainer);
     }
-    else if(id === 'faq'){
-        const faqContainer = document.querySelector('.faq-container');
+    else if(id === 'actu'){
+        const actuContainer = document.querySelector('.actu-container');
 
-        faqContainer.appendChild(createText('h2','FAQ Photographie - Conseils et Astuces'));
-
+        actuContainer.appendChild(createText('h2','Les dernières news de FLKprod_'));
+        actuContainer.appendChild(createText('p',"Les dernières actualités et mises à jour de FLKprod_, afin de vous tenir informés des nouveautés et des projets à venir. Mais aussi des articles sur des sujets qui m'intéressent : C'est tout ce que vous retrouverez ici !"));
         const searchInput = document.createElement('input');
         searchInput.id = 'search';
-        searchInput.placeholder = 'Rechercher une question...';
-        searchInput.addEventListener('input', searchQuestions);
-        faqContainer.appendChild(searchInput);
+        searchInput.placeholder = 'Rechercher un article';
+        searchInput.addEventListener('input', searcharticle);
+        actuContainer.appendChild(searchInput);
 
-        const questionsContainer = document.createElement('div');
-        questionsContainer.className = 'faq-questions';
-        faqContainer.appendChild(questionsContainer);
+        const articleContainer = document.createElement('div');
+        articleContainer.className = 'actu-article';
+        actuContainer.appendChild(articleContainer);
 
-        loadFAQFromXML('/xml/faq.xml', faqContainer, searchInput);
+        loadactuFromXML('/xml/actu.xml', actuContainer, searchInput);
     }
 
     const callback = function(mutationsList, observer) {

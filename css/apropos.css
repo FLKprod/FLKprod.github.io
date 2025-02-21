@@ -201,12 +201,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     border-radius: 1em;
 }
 
-.aproposdemoi-container .section:nth-child(4) {
-    background-color: #e3d898;
-    color: white;
-    height: 100%;
-    padding-bottom: 3em;
-}
 
 .section:nth-child(2) {
     align-items: center;
@@ -355,27 +349,31 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 
-.class-certification{
+.cybersection{
     display: flex;
     margin-left: 2em;
     align-items: center;
 }
-
+.class-certification{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .class-certification img {
-    width: 10%;
+    width: 15%;
     margin-bottom: 1em;
-    height: auto;
+    height: 15%;
     align-items: center;
   }
 
-.class-certification ul {
+.cybersection ul {
     margin-left: 1em;
     padding-left: 0;
     text-align: center;
     list-style:none !important;
     list-style-type: none;
 }
-.class-certification ul li{
+.cybersection ul li{
     background-image: url('/Photos/icon_certif.png');
     background-size: 1em 1em;
     padding-left: 1.5em;
@@ -384,7 +382,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 
-.class-certification li  {
+.cybersection li  {
     font-size: 1.25em;
     line-height: 2;
     color:white;
@@ -561,16 +559,16 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
                 1px 1px 0 black; 
     }
 
-    /* Certifications section ----------------------------------------------- */
+    /* Cyber section ----------------------------------------------- */
 
-    .certif-cisco img {
+    .class-certification img {
         width: 30%;
         margin-bottom: 1em;
-        height: auto;
+        height: 30%;
         align-items: center;
     }
 
-    .class-certification {
+    .cybersection {
         display: flex;
         flex-direction: row;
         margin: 0 2em;
@@ -580,19 +578,19 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     .cybersection {
         display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         gap: 0;
         border-radius: 3em;
-        background-color: #e3d898;
         border-top-left-radius: 2em;
         border-top-right-radius: 2em;
         margin-top: -6em;
+        margin-left: 0;
         margin-bottom: 6em;
         position: relative;
         z-index: 10000;
     }
 
-    .certif-cisco{
+    .cybersection{
         z-index: 1000;
         margin-bottom: 6em;
         border-top-left-radius: 2em;
@@ -600,7 +598,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
-    .certif-cisco, .ecoles_cybersection {
+    .cybersection, .ecoles_cybersection {
         width: 100%;
     }
 
@@ -619,13 +617,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
     .section .text-section > ul{
         line-height: 3;
-    }
-
-    .section:nth-child(4){
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        padding: 0 0 ;
     }
     
     .certification .text-section > h2{
@@ -786,7 +777,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         font-size: 1em;
     }
 
-    .class-certification li {
+    .cybersection li {
         font-size: 1em;
     }
 

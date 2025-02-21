@@ -86,7 +86,6 @@ h2:hover {
     align-items:center;
     flex-direction: column;
     justify-content: center;
-    
     background: linear-gradient(150deg, #771f3d, #ffdee9,#fffcfc, #4f0341);
     background-size: 600% 600%; 
     background-repeat: no-repeat;
@@ -107,17 +106,16 @@ h2:hover {
     }
   }
 
-
-
-
-
 .title-entete{
     display: flex;
     width: 100%;
     max-height: 20em;
     margin-left: 3em;
-
     flex-direction: row;
+}
+
+body.mode-nuit .text-entete > h1 {
+    color:whitesmoke
 }
 
 .image-entete{
@@ -168,6 +166,7 @@ h2:hover {
     width: 100%;
     transform: none;
     text-shadow: none;
+    color: #771f3d;
   }
 
 .scrolling-text {
@@ -249,6 +248,7 @@ body.mode-nuit .scrolling-text {
     .text-entete, .image-entete{
         width: 75%;
     }
+
     .text-entete h2:hover {
         transform: none;
         animation:none;
