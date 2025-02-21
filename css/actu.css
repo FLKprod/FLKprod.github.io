@@ -130,9 +130,6 @@
     text-indent: 3em;
 }
 
-
-
-/* Les paragraphes de texte avec indentation */
 .article .corps {
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
@@ -152,11 +149,15 @@
     border-radius: 4px;
 }
 
+#search:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(79, 3, 65, 0.5);}
+
 #filter-select {
     width: 200px;
     padding: 10px;
     font-size: 1em;
-    border: 2px solid #4f0341;
+    border: 2px solid lightgray;
     border-radius: 8px;
     background-color: white;
     color: #4f0341;
@@ -164,12 +165,10 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Changer la couleur au survol */
 #filter-select:hover {
     background-color: lightgray;
 }
 
-/* Style pour les options */
 #filter-select option {
     background-color: white;
     color: #4f0341;
