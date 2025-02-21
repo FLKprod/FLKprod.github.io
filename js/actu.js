@@ -4,11 +4,9 @@ import{toggleTeamInfo} from './index.js';
 function convertLinksToAnchors(text) {
     const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
     return text.replace(urlRegex, (url) => {
-        // Si l'URL commence par www mais sans http:// ou https://, on ajoute https://
         if (!url.startsWith('http://') && !url.startsWith('https://')) {
             url = 'https://' + url;
         }
-        // Créer la balise <a> autour de l'URL
         return `<a href="${url}" target="_blank">${url}</a>`;
     });
 }
@@ -36,7 +34,6 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
             const xmlDoc = parser.parseFromString(xmlText, "application/xml");
             const articles = xmlDoc.getElementsByTagName("article");
 
-            // Trouver ou créer le conteneur pour les articles
             let articleContainer = container.querySelector('.actu-article');
             if (!articleContainer) {
                 articleContainer = document.createElement('div');
@@ -50,7 +47,6 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                 const title = article.getElementsByTagName("title")[0]?.textContent;
                 const date = article.getElementsByTagName("date")[0]?.textContent;
                 const corps = article.getElementsByTagName("corps")[0]?.textContent.split('\n');
-
                 const button = article.getElementsByTagName("button")[0]?.textContent;
                 const buttonId = article.getElementsByTagName("button")[0]?.id;
                 const image = article.getElementsByTagName("image")[0];
@@ -59,7 +55,6 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                 const articleElement = createElementWithClass("div", "article");
                 articleElements.push({ element: articleElement, title });
 
-                // Contenu du titre et de la date
                 const detailsContainerTitle = createElementWithClass("div", "article-corps-title");
                 const titleElement = createText("h3", title);
                 const dateElement = createText("p", date);
@@ -67,10 +62,9 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                 detailsContainerTitle.appendChild(titleElement);
                 detailsContainerTitle.appendChild(dateElement);
 
-                // Contenu du corps
                 const detailsContainebody = createElementWithClass("div", "article-corps-body");
                 const detailsContainebodytext = createElementWithClass("div", "article-corps-body-text");
-                detailsContainebody.style.display = "none"; 
+                detailsContainebody.style.maxHeight = '5em';  // Par défaut, hauteur réduite
 
                 corps.forEach(corpsText => {
                     const corpsTextwithlink = convertLinksToAnchors(corpsText);
@@ -79,6 +73,19 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                     corpsElement.className = "corps";
                     detailsContainebodytext.appendChild(corpsElement);
                 });
+
+                const closeButton = document.createElement('button');
+                closeButton.textContent = '-';
+                closeButton.classList.add('close-button');
+                closeButton.addEventListener("click", (event) => {
+                    event.stopPropagation();  // Empêche la propagation de l'événement click sur l'article
+                    console.log("close article")
+
+                    detailsContainebody.style.maxHeight = '5em'; // Réduire la hauteur du corps de l'article
+                    articleElement.classList.remove('expanded'); // Retirer la classe 'expanded'
+                });
+
+                articleElement.appendChild(closeButton);
             
                 if (button) {
                     const buttonElement = createText("button", button);
@@ -88,6 +95,7 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                     detailsContainebodytext.appendChild(buttonElement);
                 }
                 detailsContainebody.appendChild(detailsContainebodytext);
+                
                 const detailsContainebodyimage = createElementWithClass("div", "article-corps-body-img");
                 if (imageSrc) {
                     const imgElement = createImage(imageSrc);
@@ -95,10 +103,12 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                     detailsContainebodyimage.appendChild(imgElement);
                 }
                 detailsContainebody.appendChild(detailsContainebodyimage);
+
                 // Ajouter le contenu dans l'élément de l'article
                 articleElement.appendChild(detailsContainerTitle);
                 articleElement.appendChild(detailsContainebody);
 
+                // Lorsqu'un article est cliqué, ouvrir cet article et fermer les autres
                 articleElement.addEventListener("click", () => {
                     // Récupérer tous les articles
                     const allArticles = document.querySelectorAll('.article');
@@ -110,18 +120,16 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                             otherArticle.classList.remove('expanded');
                             const otherDetailsContainer = otherArticle.querySelector('.article-corps-body');
                             if (otherDetailsContainer) {
-                                otherDetailsContainer.style.display = "none"; // Cacher leur contenu
+                                otherDetailsContainer.style.maxHeight = '5em'; // Réduire la hauteur du corps de l'article
                             }
                         }
                     });
-                
-                    // Ouvrir le nouvel article en ajoutant la classe 'expanded'
-                    if (!articleElement.classList.contains('expanded')) {
-                        articleElement.classList.add('expanded');
-                        detailsContainebody.style.display = "flex"; // Afficher le contenu du nouvel article
-                    }
+
+                    // Ouvrir cet article
+                    articleElement.classList.add('expanded');
+                    detailsContainebody.style.maxHeight = '100%';  // Étendre la hauteur du corps de l'article
+                    articleElement.style.maxHeight = 'auto';  // Laisser la hauteur de l'article s'adapter à son contenu
                 });
-                
 
                 articleContainer.appendChild(articleElement);
             }

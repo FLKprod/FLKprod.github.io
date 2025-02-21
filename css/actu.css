@@ -34,29 +34,26 @@
     margin-bottom: 2em;
 }
 
+.article:first-of-type {
+    margin-top: 0;
+}
+
 .article {
     width: 100%;
     padding: 1em;
-    margin-top: 1em;
+    position: relative;
+    margin-top:7em;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     border-radius: 1em;
-    transition: background-color 0.5s ease-in-out, box-shadow 0.3s ease;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     border: double #555;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
-
-.article .article-corps-body{
-    display: flex;
-    flex-direction: row;
-
-}
-
-
 .article h3 {
     margin: 0;
     font-size: 2.5em;
@@ -67,13 +64,50 @@
 .article .date {
     text-align: left;
     font-size: 1.5em;
-    color: #4f0341;
+    color: #e3d898;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
 
 .article .corps:first-of-type {
     padding-top: 0;
+}
+
+.article .preview {
+    width: 100%;
+    font-size: 1em;
+    color: #555;
+    max-height: 4em;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 0.8s ease-in-out, max-height 0.8s ease-in-out;
+}
+
+.article-corps-body {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+    width: 100%;
+    transition: max-height 0.5s ease-in-out;
+}
+
+
+.article-corps-body-img {
+    width: 50%;
+    height: auto;
+    flex-shrink: 0; 
+}
+
+.article-corps-body-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 2em;
+}
+
+.article-corps-body-text {
+    flex-grow: 1;
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 .article .corps {
@@ -89,27 +123,19 @@
 }
 
 
-.article .preview {
-    width: 100%;
+
+/* Les paragraphes de texte avec indentation */
+.article .corps {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+    width: 90%;
+    padding-top: 0.45em;
+    margin-left: 1.5em;
+    line-height: 2;
     font-size: 1em;
-    color: #555;
-    max-height: 4em;
-    overflow: hidden;
-    position: relative;
-    transition: opacity 0.8s ease-in-out, max-height 0.8s ease-in-out;
+    text-indent: 3em;
 }
 
-.article .article-corps-body-img, .article .article-corps-body-text {
-    max-width: 50%;
-    height: 100%;
-    border-radius: 2em;
-}
-
-.article .article-corps-body-img img{
-    width: 100%;
-    height: auto;
-    border-radius: 2em;
-}
 #search {
     width: 90%;
     padding: 10px;
@@ -119,19 +145,22 @@
 }
 
 .article.expanded {
-    display: block; /* Quand l'article est ouvert, afficher le corps */
+    -webkit-mask-image:none;
+    display: block; 
+    height: 100%;
     cursor: default;
 }
 
 
+
+
 .actu-container button{
-    width: 25%;
+    padding: 0.5em;
     background-color: #4f0341;
     display: inline-block;
     transition: 0.5s;
-    padding: 10px;
-    font-size: 1.5em;
 
+    font-size: 1.5em;
     border: none;
     border-radius: 1em;
     color: white;
@@ -153,7 +182,41 @@
     color: white;
   }
   
-  .actu-container button:hover:after {
+  .actu-container .close-button:hover:after {
     opacity: 1;
     right: 10px;
   }
+
+  .article .close-button {
+    position: absolute;
+    top: 10px;
+    width: 2em;
+    height: 2em;
+    right: 10px;
+    border: 2px solid #4f0341;
+    background: transparent;
+    font-size: 2em;
+    color: #4f0341;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+/* Effet au survol du bouton de fermeture */
+.article .close-button:hover {
+    color: #e3d898;
+    background-color: transparent;
+    border: #e3d898 2px solid;
+}
+
+  @media screen and (max-width: 768px) {
+  .article-corps-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .article-corps-body-img {
+    height: 100%;
+  }
+}

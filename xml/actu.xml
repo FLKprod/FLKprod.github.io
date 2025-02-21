@@ -2,8 +2,7 @@
     <article>
         <title>Photoscape X, un très bon logiciel de retouche photo pour commencer</title>
         <date>21 février 2025</date>
-        <corps>
-                Photoscape X est un logiciel de retouche photo puissant et accessible, parfait pour les débutants. Avec son interface claire et ses fonctionnalités simples à comprendre, il permet de réaliser des montages et des retouches de qualité professionnelle sans la courbe d’apprentissage abrupte des logiciels plus complexes. Que ce soit pour ajuster la luminosité, ajouter des filtres ou créer des collages, Photoscape X offre des outils pratiques pour tout type de projet visuel.
+        <corps>Photoscape X est un logiciel de retouche photo puissant et accessible, parfait pour les débutants. Avec son interface claire et ses fonctionnalités simples à comprendre, il permet de réaliser des montages et des retouches de qualité professionnelle sans la courbe d’apprentissage abrupte des logiciels plus complexes. Que ce soit pour ajuster la luminosité, ajouter des filtres ou créer des collages, Photoscape X offre des outils pratiques pour tout type de projet visuel.
 
             De plus, bien que le logiciel propose une version gratuite très complète, la version payante ouvre encore plus de possibilités, avec des fonctionnalités avancées telles que des effets supplémentaires, une meilleure gestion des calques et des outils de retouche plus poussés. Si vous débutez dans le domaine de la retouche photo, Photoscape X est définitivement un excellent choix pour vous accompagner tout au long de votre apprentissage.
         </corps>
@@ -12,8 +11,7 @@
     <article>
         <title>Photos Rétro-Mobile 2025</title>
         <date>9 février 2025</date>
-        <corps>
-            Je suis ravi de partager avec vous ma toute nouvelle collection de photographies prises lors du Salon Rétromobile 2025, qui s'est tenu récemment à Paris.
+        <corps>Je suis ravi de partager avec vous ma toute nouvelle collection de photographies prises lors du Salon Rétromobile 2025, qui s'est tenu récemment à Paris.
            
            Je vous invite à plonger dans cette rétrospective visuelle et à revivre, à travers mon objectif, les instants mémorables de cette édition 2025 du Salon Rétromobile. Que vous soyez un amateur éclairé ou simplement curieux, ces images sauront, je l'espère, vous transporter au cœur de cet événement exceptionnel.
         </corps>
@@ -23,16 +21,30 @@
     <article>
         <title>Les certifications cybersécurité, un bon moyen de se réorienter</title>
         <date> 15 janvier 2025</date>
-        <corps>
-            Un ami en communication cherche à se réorienter dans un autre domaine. Il souhaite se plonger dans le monde de la cybersécurité, mais ne sait pas comment faire. Si vous êtes dans cette même situation, une des meilleures choses à faire est d'acquérir des certifications. Elles sont un excellent moyen de valider ses compétences et de montrer son savoir-faire de manière reconnue dans l'industrie. Cela permet de se démarquer et d'ouvrir de nombreuses portes professionnelles, notamment dans les secteurs en forte demande.
+        <corps>Un ami en communication cherche à se réorienter dans un autre domaine. Il souhaite se plonger dans le monde de la cybersécurité, mais ne sait pas comment faire. Si vous êtes dans cette même situation, une des meilleures choses à faire est d'acquérir des certifications. Elles sont un excellent moyen de valider ses compétences et de montrer son savoir-faire de manière reconnue dans l'industrie. Cela permet de se démarquer et d'ouvrir de nombreuses portes professionnelles, notamment dans les secteurs en forte demande.
 
             Pour ceux qui souhaitent se lancer dans des métiers plus techniques, le domaine de l'informatique est particulièrement prometteur. Des certifications Cisco totalement gratuites existent, par exemple, et sont parmi les plus réputées et permettent de se spécialiser dans des domaines comme les réseaux et la cybersécurité. Ces certifications sont très recherchées par les employeurs et offrent de nombreuses opportunités d'évolution.
 
             Par ailleurs, se former en programmation est un atout majeur. Apprendre des langages comme JavaScript ou Python permet de se positionner sur des métiers en plein essor, tout en ajoutant une corde supplémentaire à son arc. Ces compétences sont aujourd'hui essentielles dans le monde du développement et du digital, et acquérir des certificats dans ces langages peut vraiment faire la différence.
 
-            Si vous souhaitez commencer sur les certifications Cisco, c'est par ici : <a href="https://www.netacad.com/fr/" target="_blank">https://www.netacad.com/fr/</a>
+            Si vous souhaitez commencer sur les certifications Cisco, c'est par <a href="https://www.netacad.com/fr/" target="_blank">ici</a> !
         </corps>
         <image src="/Photos/actu/cybersecurity.png" />
         <button id="aproposdemoi">Chechez mes certifications</button>
+    </article>
+    <article>
+        <title>Verifile, un projet de fin d'étude pour garantir sa sécurité numérique</title>
+        <date> 30 juin 2024</date>
+        <corps>Dans un monde où les cyberattaques se multiplient chaque jour, comment garantir sa sécurité contre les fichiers et sites web malveillants ?
+
+            C'est dans cette optique que avec 3 collègues de travail, nous avons concu <a href="https://verifileapp.fr/" target="_blank">Verifile</a> !
+
+            C'est une solution web innovante qui combine protection et éducation en cybersécurité. Elle aide à identifier les menaces et enseigne les meilleures pratiques pour naviguer en toute sécurité.
+
+            Curieux d'en savoir plus ? C'est par <a href="https://www.linkedin.com/posts/yannrogers_cybersaezcuritaez-uqac-innovation-activity-7225788227532529664-7ZQ3?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADaNHMwB76lbc5bjWIwfoMpLXqFsxYhHczc" target="_blank">ici</a> !
+
+        </corps>
+        <image src="/Photos/actu/verifileapp.jpg" />
+        <button id="projets">Plus d'infos sur mes projets</button>
     </article>
 </actu>

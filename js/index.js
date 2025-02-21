@@ -312,7 +312,7 @@ export async function toggleTeamInfo(id) {
                 className: "actu",
                 text: "Actualité",
                 description: "Mes dernières news et articles",
-                imageUrl: "Photos/menu/photos.JPG",
+                imageUrl: "Photos/menu/actu.jpg",
             }
             
         ];
@@ -766,7 +766,7 @@ export async function toggleTeamInfo(id) {
             { name: 'San Francisco', desc: "California, USA", nbrepictures: 6, category: 'Photos Urbaines' },
             { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 5, category: 'Photos Urbaines' },
             { name: 'Boston', desc: "Massachusetts, USA", nbrepictures: 6, category: 'Photos Urbaines' },
-            { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 6, category: 'Photos Urbaines' },
+            { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 7, category: 'Photos Urbaines' },
             { name: 'Quebec City', desc: "Quebec, Canada", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 9, category: 'Photos Nature' },
             { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
@@ -1046,7 +1046,7 @@ export async function toggleTeamInfo(id) {
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile","Retro Mobile 2025"]],
             ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma passion pour la cybersécurité", "Informations de contact"],
-            ["Actu"],
+            ["Actualité"],
             ["Plan du site"]
         ];
 
