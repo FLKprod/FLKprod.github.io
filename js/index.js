@@ -370,7 +370,36 @@ export async function toggleTeamInfo(id) {
         });
 
 
-        gsap.from('.presentation-container > *',{scale:0,stagger:1, duration:1,stagger:1});
+        
+        var tl2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".section-menu-presentation",
+                start: "top bottom", 
+                end: "bottom center",  
+                scrub: 0.5, 
+            }
+        });
+
+        var items_menu = document.querySelectorAll('.menu-item');
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".menu-item",
+                start: "top 80%", 
+                end: "bottom 80%", 
+                scrub: true,
+            }
+        });
+
+        items_menu.forEach((arg, index) => {
+            const fromDirection = index % 2 === 0 ? -100 : 100;
+            tl.from(arg, {
+                opacity: 0,
+                y: fromDirection, 
+                duration: 1, 
+                ease: "power2.out", 
+            }, index * 0.3);
+        });
 
     }
     else if(id=== 'aproposdemoi'){
