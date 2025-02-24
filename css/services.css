@@ -242,6 +242,11 @@ body.mode-nuit .text-contacts-services > a{
       width: 100%;
     }
 
+    .service .text-section {
+      padding: 0;
+      margin-right: 0;
+    }
+
     h2:hover {
       transform: none;
     }
