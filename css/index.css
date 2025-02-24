@@ -384,6 +384,12 @@ body.mode-nuit .scrolling-text {
     transition: opacity 2s ease-in-out;
 }
 
+@media screen and (max-width: 1100px) {
+    #introGif {
+        width: 30%;
+    }
+}
+
 /*****************************************************************************/
 
 #mainContent {
