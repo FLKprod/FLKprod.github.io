@@ -63,6 +63,7 @@
 
 .photos-container .sommaire-photos > li::before {
   content: '\f302';
+  margin-right: 10px;
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }

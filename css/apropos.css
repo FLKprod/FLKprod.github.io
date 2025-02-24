@@ -37,6 +37,8 @@
     margin-left: 1em;
 }
 
+
+
 .aproposdemoi-container .image-section{
     width: auto;
     display: block;
@@ -136,6 +138,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     overflow: hidden; 
 }
 
+.berkeley > .text-section a{
+
+    color:white
+}
 .logoucberkeley{
     background-color: transparent;
     height: 10em;
