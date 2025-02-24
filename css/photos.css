@@ -57,12 +57,25 @@
   flex-direction: column;
 }
 
+.photos-container .sommaire-photos > ul {
+  list-style-type: none;
+}
+
+.photos-container .sommaire-photos > li::before {
+  content: '\f302';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
 .photos-container .sommaire-photos > li {
+  list-style-type: none;
+  line-height:2;
   font-size: 1em;
   color: #e3d898;
   font-style: italic;
   text-align: left;
   transition: color 0.5s ease-in-out;
+
 }
 
 .photos-container .sommaire-photos > li:hover {

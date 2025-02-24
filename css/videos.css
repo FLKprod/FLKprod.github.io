@@ -16,6 +16,14 @@
     height: auto;
 }
 
+.video-section > p {
+    font-size: 1.7em;
+    text-align: justify;
+    right: 0;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
 .galerie-videos {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -89,7 +97,8 @@
 }
 
 .videos-container .text-section p > a {
-    color:var(--cassis)
+    color:white;
+    text-decoration: none;
 }
 
 body.mode-nuit .videos-container .text-section p > a {

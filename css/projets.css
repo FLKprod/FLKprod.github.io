@@ -22,6 +22,7 @@
   .projets-container .sommaire-projets{
     display: flex;
     flex-direction: column;
+    
   }
   
   .projets-container .sommaire-projets > li {
@@ -29,12 +30,21 @@
     color: #e3d898;
     font-style: italic;
     text-align: left;
+    list-style-type: none;
+    
     transition: color 0.5s ease-in-out;
   }
   
   .projets-container .sommaire-projets > li:hover {
     cursor: pointer;
     color:#4f0341;
+  }
+
+  .projets-container .sommaire-projets > li::before {
+    content: '\f542';
+    padding-right: 10px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
   }
 
   
@@ -360,6 +370,8 @@ body.mode-nuit .projets-container .competences span {
     .projets-container .sommaire-projets > li {
         font-size: 1em;
     }
+
+
 
     .projets-container .text-section h2{
         text-align: left;

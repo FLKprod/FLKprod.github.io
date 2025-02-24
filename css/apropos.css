@@ -370,11 +370,11 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     margin-left: 1em;
     padding-left: 0;
     text-align: center;
-    list-style:none !important;
+    list-style: none !important;
     list-style-type: none;
 }
 .cybersection ul li{
-    background-image: url('/Photos/icon_certif.png');
+    background-image: url('/Photos/Apropos/icon_certif.png');
     background-size: 1em 1em;
     padding-left: 1.5em;
     background-repeat: no-repeat;

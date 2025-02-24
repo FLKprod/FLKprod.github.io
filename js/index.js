@@ -194,9 +194,8 @@ export async function toggleTeamInfo(id) {
         var text_intro2videos = createElementWithClass('div', 'text-section', 'video-section');
         text_intro2videos.appendChild(createText('h2', "Mes contenus vidéos"));
         text_intro2videos.appendChild(createText('p', `
-            Jusqu'à présent, je partageais mes créations sur mon compte Instagram
-            <a href='https://www.instagram.com/flkprod_/' target='_blank'>@FLKPROD_</a>, qui reste actif aujourd'hui.
-            Désormais, c'est sur ce site que vous pourrez découvrir l'intégralité de mes réalisations.
+            Jusqu'à présent, je partageais mes créations sur mon compte Instagram <a href='https://www.instagram.com/flkprod_/' target='_blank'>@FLKPROD_</a>, qui reste actif aujourd'hui.
+            Désormais, c'est ici que vous pourrez découvrir l'intégralité de mes réalisations.
             Explorez-les dans la section ci-dessous !`));
         text_intro2videos.appendChild(createText('h2', "Enjoy."));
         intro2videos.appendChild(text_intro2videos);
@@ -1061,11 +1060,11 @@ export async function toggleTeamInfo(id) {
         var columnsContainer = createElementWithClass('div', 'columns-container');
         const planData = [
             ["/", "Bienvenue"],
-            ["Services", "Création de portofolios personnalisés", "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain"],
-            ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Flkprod.github.io", "aleskflkphotos.github.io"  ],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
+            ["Services",  "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain","Création de portofolios personnalisés"],
+            ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Flkprod.github.io", "aleskflkphotos.github.io"],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
-            ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Paris", "Quebec"], "Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball"], "Photos Evenementielles", ["Automobile","Retro Mobile 2025"]],
-            ["A propos de moi", "Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma passion pour la cybersécurité", "Informations de contact"],
+            ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Boston","Paris", "Québèc City"], "Photos Nature",["Quebec"],"Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball","JDA Dijon Basket"], "Photos Evenementielles", ["Automobile","Retro Mobile"]],
+            ["A propos de moi", ["Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma passion pour la cybersécurité", "Informations de contact"]],
             ["Actualité"],
             ["Plan du site"]
         ];
@@ -1099,7 +1098,7 @@ export async function toggleTeamInfo(id) {
         actuContainer.appendChild(createText('h2','Les dernières news de FLKprod_'));
         actuContainer.appendChild(createText('p',"Les dernières actualités et mises à jour de FLKprod_, afin de vous tenir informés des nouveautés et des projets à venir. Mais aussi des articles sur des sujets qui m'intéressent : C'est tout ce que vous retrouverez ici !"));
         var area_search =createElementWithClass("div","actu-container-search-area");
-        
+
         const filterSelect = createElementWithClass("select","filter-select");
         filterSelect.id = "filter-select";
         const options = ["Filtrer les sujets", "Photographie", "Cybersécurité"];
