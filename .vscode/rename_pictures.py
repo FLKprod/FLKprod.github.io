@@ -18,13 +18,20 @@ def rename_images_in_folders(base_path):
             images.sort(key=lambda x: int(re.search(r'\d+', x).group()) if re.search(r'\d+', x) else float('inf'))
             
             for index, image in enumerate(images, start=1):
-                ext = os.path.splitext(image)[1]
-                correct_name = f"{folder}{index}{ext}"
+                name, ext = os.path.splitext(image)
+                
+                # Convertir l'extension en minuscule (.JPG -> .jpg)
+                new_ext = ext.lower()
+                correct_name = f"{folder}{index}{new_ext}"
+                
                 current_path = os.path.join(folder_path, image)
                 new_path = os.path.join(folder_path, correct_name)
+                
+                # Vérifier si un changement de nom ou d'extension est nécessaire
                 if image != correct_name:
                     print(f"Renommage: {image} -> {correct_name}")
                     os.rename(current_path, new_path)
+
 if __name__ == "__main__":
-    chemin_par_defaut = "C:\\Users\\maxfl\\OneDrive\\Documents\\GitHub\\FLKprod.github.io\\Photos\\Carrousel"
+    chemin_par_defaut = "C:\\Users\\maxfl\\Documents\\GitHub\\FLKprod.github.io\\Photos\\Carrousel"
     rename_images_in_folders(chemin_par_defaut)

@@ -779,19 +779,22 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             { name: 'Dijon', desc: "Bourgogne, France", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Strasbourg', desc: "Alsace, France", nbrepictures: 4, category: 'Photos Urbaines' },
             { name: 'Berlin', desc: "Allemagne, Europe", nbrepictures: 8, category: 'Photos Urbaines' },
-            { name: 'San Francisco', desc: "California, USA", nbrepictures: 6, category: 'Photos Urbaines' },
+            { name: 'San Francisco', desc: "California, USA", nbrepictures: 12, category: 'Photos Urbaines' },
             { name: 'Chicago', desc: "Illinois, USA", nbrepictures: 5, category: 'Photos Urbaines' },
-            { name: 'Boston', desc: "Massachusetts, USA", nbrepictures: 6, category: 'Photos Urbaines' },
+            { name: 'Boston', desc: "Massachusetts, USA", nbrepictures: 15, category: 'Photos Urbaines' },
             { name: 'Paris', desc: "Ile-De-France, France", nbrepictures: 7, category: 'Photos Urbaines' },
-            { name: 'Quebec City', desc: "Quebec, Canada", nbrepictures: 7, category: 'Photos Urbaines' },
-            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 10, category: 'Photos Nature' },
-            { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 4, category: 'Photos Sportives' },
+            { name: 'Quebec City', desc: "Quebec, Canada", nbrepictures: 8, category: 'Photos Urbaines' },
+            { name: 'Quebec', desc: "Quebec, Canada", nbrepictures: 16, category: 'Photos Nature' },
+            { name: 'Yosemite', desc: "California, USA", nbrepictures: 7, category: 'Photos Nature' },
+            { name: 'Baseball', desc: "San Francisco Giants, USA, saison 2022-2023", nbrepictures: 6, category: 'Photos Sportives' },
+            { name: 'Boston Red Sox', desc: "Saison MLB 2023-2024", nbrepictures: 12, category: 'Photos Sportives' },
             { name: 'Basket', desc: "Betclic elite saison 2022-2023", nbrepictures: 3, category: 'Photos Sportives' },
             { name: 'Nanterre 92', desc: "Betclic elite saison 2024-2025", nbrepictures: 11, category: 'Photos Sportives' },
             { name: 'Paris Basketball', desc: "Euroleague saison 2024-2025", nbrepictures: 10, category: 'Photos Sportives' },
             { name: 'JDA Dijon Basket', desc: "Betclic elite saison 2024-2025", nbrepictures: 11, category: 'Photos Sportives' },
             { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' },
-            { name: 'Rétro Mobile', desc: "Salon du Rétro mobile 2025, Paris, France", nbrepictures: 8, category: 'Photos Événementielles' }
+            { name: 'Rétro Mobile', desc: "Salon du Rétro mobile 2025, Paris, France", nbrepictures: 8, category: 'Photos Événementielles' },
+            { name: 'Skateboard', desc: "Dijon, France", nbrepictures: 4, category: 'Photos Événementielles' }
         ];
         
         // TRIE DES SECTIONS EN CATEGORIES POUR FACILITER LE TOUT
