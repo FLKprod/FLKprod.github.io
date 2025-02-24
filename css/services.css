@@ -27,18 +27,20 @@
     align-items: center;
   }
 
+
 .text-section-services h2{
     width: 100%;
-    margin: 1em 0;
+    
     transition: transform 0.3s ease;
 }
 .text-section-services h2:first-of-type{
-    margin-top: 2em;
     left: 0;
+    margin-bottom: 0;
     text-align: left;
     transition: transform 0.3s ease;
 }
 .text-section-services p{
+    margin: 0;
     text-align: justify;
     color: white;
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
