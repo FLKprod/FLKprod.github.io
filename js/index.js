@@ -1099,22 +1099,11 @@ export async function toggleTeamInfo(id) {
         actuContainer.appendChild(createText('h2','Les dernières news de FLKprod_'));
         actuContainer.appendChild(createText('p',"Les dernières actualités et mises à jour de FLKprod_, afin de vous tenir informés des nouveautés et des projets à venir. Mais aussi des articles sur des sujets qui m'intéressent : C'est tout ce que vous retrouverez ici !"));
         var area_search =createElementWithClass("div","actu-container-search-area");
-        const searchInput = document.createElement('input');
-        searchInput.id = 'search';
-        searchInput.placeholder = 'Rechercher un article';
-        searchInput.addEventListener('input', searcharticle);
-        area_search.appendChild(searchInput);
-        actuContainer.appendChild(area_search);
-
-        // Création du <select>
+        
         const filterSelect = createElementWithClass("select","filter-select");
         filterSelect.id = "filter-select";
-
-        // Liste des options
         const options = ["Filtrer les sujets", "Photographie", "Cybersécurité"];
         const values = ["all", "Photographie", "Cybersécurité"];
-
-        // Ajout des options au <select>
         options.forEach((optionText, index) => {
             const option = document.createElement("option");
             option.value = values[index];
@@ -1122,6 +1111,15 @@ export async function toggleTeamInfo(id) {
             filterSelect.appendChild(option);
         });
         area_search.appendChild(filterSelect);
+
+        const searchInput = document.createElement('input');
+        searchInput.id = 'search';
+        searchInput.placeholder = 'Rechercher un article';
+        searchInput.addEventListener('input', searcharticle);
+        area_search.appendChild(searchInput);
+        actuContainer.appendChild(area_search);
+
+
         actuContainer.appendChild(area_search);
 
         const articleContainer = document.createElement('div');
