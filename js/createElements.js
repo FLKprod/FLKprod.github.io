@@ -150,3 +150,59 @@ export function createMenuItem(id, className, text, description, imageUrl) {
 
     return menuItem;
 }
+
+export function createImageSlider(imagePaths) {
+    const container = createElementWithClass('div','image-section');
+
+    let currentIndex = 0;
+    let imageElement = document.createElement('img');
+    imageElement.src = imagePaths[currentIndex];
+    imageElement.alt = 'Image slider';
+    imageElement.style.position = 'absolute';
+    imageElement.style.width = '100%'; 
+    imageElement.style.height = '100%'; 
+    imageElement.style.transition = 'transform 1s ease';
+    container.appendChild(imageElement);
+
+    // Fonction pour changer d'image avec l'animation de "slide"
+    function changeImage() {
+        // Créer une nouvelle image
+        const newImage = document.createElement('img');
+        newImage.src = imagePaths[(currentIndex + 1) % imagePaths.length];
+        newImage.alt = 'Image slider';
+        newImage.style.position = 'absolute';
+        newImage.style.width = '100%';
+        newImage.style.height = '100%';
+        newImage.style.transform = 'translateX(100%)';
+        newImage.style.transition = 'transform 1s ease';
+        container.appendChild(newImage);
+
+        // L'ancienne image se déplace à gauche
+        imageElement.style.transform = 'translateX(-100%)';
+
+        // Après la transition de 1 seconde
+        setTimeout(() => {
+            // Déplacer la nouvelle image à sa position
+            newImage.style.transform = 'translateX(0%)';
+
+            // Mettre à jour l'index de l'image
+            currentIndex = (currentIndex + 1) % imagePaths.length;
+
+            // Supprimer l'ancienne image du DOM après la transition
+            setTimeout(() => {
+                // Vérifier si l'image est toujours un enfant du conteneur avant de la supprimer
+                if (container.contains(imageElement)) {
+                    container.removeChild(imageElement);
+                }
+                imageElement = newImage; // Réassigner l'image actuelle
+            }, 1000); // Après la transition
+        }, 50);
+    }
+
+    // Appeler la fonction de changement d'image toutes les 3 secondes
+    setInterval(changeImage, 3000);
+
+    return container; // On retourne le conteneur à ajouter dans l'autre div
+}
+
+

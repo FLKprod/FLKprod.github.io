@@ -1,4 +1,4 @@
-import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createTextforSommaire, createVideo, createMenuItem } from './createElements.js';
+import {createLineSpan,createImage, createText, createIconWithLink, createElementWithClass, createButton, createTextforSommaire, createVideo, createMenuItem,createImageSlider } from './createElements.js';
 import {createCarousel, generateImagePaths, createProjetCarousel} from './carroussel.js';
 import { loadactuFromXML, searcharticle} from './actu.js';
 
@@ -101,14 +101,22 @@ export async function toggleTeamInfo(id) {
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
-        var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/services/shooting_pro.jpg'));
-        intro2services.appendChild(image_intro2services);
+        //var image_intro2services = createElementWithClass('div','image-section');
+
+        const shootings_photos = [
+            'Photos/services/shooting_pro.jpg',
+            'Photos/services/shooting.JPG',
+            'Photos/services/shooting_urbain.jpeg',
+        ];
+        
+        intro2services.appendChild(createImageSlider(shootings_photos));
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Shooting Photo Professionnel"));
-        text_intro2services.appendChild(createText('p',`Offrez-vous un shooting photo professionnel pour sublimer votre image et valoriser vos projets. 
-            Que ce soit pour des portraits, des photos corporate, ou des visuels destinés à votre marque, je vous accompagne avec une approche personnalisée et créative. 
-            Avec des prises de vue soignées et un rendu de haute qualité, mettez votre meilleur atout en lumière.`));
+        text_intro2services.appendChild(createText('p',`Basé en région parisienne et à Dijon, je me déplace partout en France pour vous accompagner dans la valorisation de votre image et de vos projets. Que ce soit pour des portraits professionnels, des photos corporate ou des visuels destinés à votre marque, je vous propose un shooting sur mesure, en intérieur, en extérieur ou en situation de travail.
+
+Avec une approche personnalisée et créative, je mets en lumière votre identité et votre activité à travers des prises de vue soignées et un rendu de haute qualité. Faites la différence avec des images authentiques et impactantes, adaptées à votre communication et à votre secteur.
+
+Contactez-moi pour donner à votre projet l’image qu’il mérite !`));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
@@ -119,10 +127,9 @@ export async function toggleTeamInfo(id) {
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Shootings pour vos événements"));
         text_intro2services.appendChild(createText('p',`
-            Immortalisez vos moments précieux avec des photos naturelles et authentiques. Basé en région parisienne et à Dijon, je me déplace partout en France pour capturer mariages, 
-            anniversaires, événements privés ou professionnels. Je vous propose une couverture complète,
-             des idées originales et des shootings adaptés pour refléter l’ambiance unique de votre journée.
-              Contactez-moi pour créer ensemble des souvenirs inoubliables !     `));
+            Mariages, anniversaires, événements privés... Je vous propose une couverture complète avec des idées originales pour refléter l’ambiance unique de votre journée. Besoin d’un portrait, de photos corporate ou de visuels pour votre marque ? Mon approche personnalisée et créative mettra votre meilleur atout en lumière grâce à des prises de vue soignées et un rendu de haute qualité.
+
+Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour créer ensemble des souvenirs inoubliables !`));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
             intro2services.appendChild(text_intro2services);
 
@@ -154,9 +161,12 @@ export async function toggleTeamInfo(id) {
             text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
             intro2services.appendChild(text_intro2services);
 
-        var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/services/portofolio.jpg'));
-        intro2services.appendChild(image_intro2services);
+        const portofolio_photos = [
+            'Photos/services/aleskflk.png',
+            'Photos/services/portofolio.jpg',
+            'Photos/services/portofolio.png',
+        ];
+        intro2services.appendChild(createImageSlider(portofolio_photos));
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','contact-services');
