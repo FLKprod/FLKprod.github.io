@@ -794,7 +794,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             { name: 'JDA Dijon Basket', desc: "Betclic elite saison 2024-2025", nbrepictures: 11, category: 'Photos Sportives' },
             { name: 'Automobile', desc: "Circuit Dijon-Prenois, 2024", nbrepictures: 7, category: 'Photos Événementielles' },
             { name: 'Rétro Mobile', desc: "Salon du Rétro mobile 2025, Paris, France", nbrepictures: 8, category: 'Photos Événementielles' },
-            { name: 'Skateboard', desc: "Dijon, France", nbrepictures: 4, category: 'Photos Événementielles' }
+            { name: 'Skateboard', desc: "Dijon, France", nbrepictures: 9, category: 'Photos Événementielles' }
         ];
         
         // TRIE DES SECTIONS EN CATEGORIES POUR FACILITER LE TOUT
