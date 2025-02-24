@@ -406,7 +406,7 @@ export async function toggleTeamInfo(id) {
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/Apropos/Maxime_WIZYA.jpg'));
+        image_intro2presentation.appendChild(createImage('Photos/Apropos/maxime_wizya.png'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');

@@ -1,5 +1,24 @@
 <actu>
     <article>
+        <title>Les ERP et leur réponse à la cybersécurité des entreprises</title>
+        <sujet>Cybersécurité</sujet>
+        <date>24 Février 2025</date>
+        <corps>Dans un contexte où les cyberattaques se multiplient, les entreprises cherchent à sécuriser leurs systèmes d'information. Les ERP (Enterprise Resource Planning) jouent un rôle clé dans la protection des données et l'optimisation des mesures de cybersécurité.
+            
+            En tant que consultant dans ce domaine, j’ai rédigé cet article afin de vous éclairer sur ce qu’est un ERP et son importance essentielle dans le domaine de la cybersécurité aujourd’hui.
+
+            Bien que les ERP centralisent les informations stratégiques des entreprises, ils constituent également une cible privilégiée pour les cybercriminels. Les failles de sécurité, les accès non contrôlés et les mises à jour insuffisantes peuvent exposer les systèmes à des attaques telles que le vol de données, les ransomwares ou encore les intrusions malveillantes.
+
+            Pour contrer ces menaces, les éditeurs d’ERP intègrent de plus en plus de fonctionnalités de sécurité avancées, comme l’authentification multi-facteurs, le chiffrement des données, ou encore la surveillance en temps réel des activités suspectes. Ces solutions permettent aux entreprises de renforcer la protection de leurs informations et de se conformer aux réglementations en vigueur.
+            
+            Au-delà des solutions techniques, les entreprises doivent adopter des bonnes pratiques en matière de cybersécurité. Cela passe par la formation des employés, la mise en place de protocoles stricts pour la gestion des accès et l’application régulière des correctifs de sécurité.
+
+            Face aux défis croissants de la cybersécurité, les ERP évoluent pour offrir une protection renforcée aux entreprises. Une approche proactive, alliant technologies de pointe et bonnes pratiques, est essentielle pour garantir la sécurité des systèmes d’information.
+
+        </corps>
+        <image src="/Photos/actu/erp.jpg" />
+    </article>
+    <article>
         <title>Photoscape X, un très bon logiciel de retouche photo pour commencer</title>
         <sujet>Photographie</sujet>
         <date>21 février 2025</date>
@@ -46,7 +65,6 @@
             C'est une solution web innovante qui combine protection et éducation en cybersécurité. Elle aide à identifier les menaces et enseigne les meilleures pratiques pour naviguer en toute sécurité.
 
             Curieux d'en savoir plus ? C'est par <a href="https://www.linkedin.com/posts/yannrogers_cybersaezcuritaez-uqac-innovation-activity-7225788227532529664-7ZQ3?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAADaNHMwB76lbc5bjWIwfoMpLXqFsxYhHczc" target="_blank">ici</a> !
-
         </corps>
         <image src="/Photos/actu/verifileapp.jpg" />
         <button id="projets">Plus d'infos sur mes projets</button>

@@ -82,12 +82,43 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                 closeButton.textContent = '-';
                 closeButton.classList.add('close-button');
                 closeButton.addEventListener("click", (event) => {
-                    event.stopPropagation();  // Empêche la propagation de l'événement click sur l'article
+                    event.stopPropagation();  
                     console.log("close article")
-
-                    detailsContainebody.style.maxHeight = '5em'; // Réduire la hauteur du corps de l'article
-                    articleElement.classList.remove('expanded'); // Retirer la classe 'expanded'
+                    detailsContainebody.style.maxHeight = '5em'; 
+                    articleElement.classList.remove('expanded');
                 });
+
+                titleElement.addEventListener("click", (event) => {
+                    event.stopPropagation(); // Empêche l'événement de se propager et d'ouvrir un autre article
+                
+                    const isExpanded = articleElement.classList.contains('expanded');
+                
+                    document.querySelectorAll('.article').forEach((otherArticle) => {
+                        if (otherArticle !== articleElement) {
+                            otherArticle.classList.remove('expanded');
+                            otherArticle.style.height = '5em';
+                        }
+                    });
+                    
+                    // Vérifier si l'article est déjà ouvert
+                    if (articleElement.classList.contains('expanded')) {
+                        articleElement.classList.remove('expanded');
+                        articleElement.style.height = '5em';
+                    } else {
+                        articleElement.classList.add('expanded');
+                        articleElement.style.height = '100%';
+                    }
+                
+                    if (isExpanded) {
+                        articleElement.classList.remove('expanded');
+                        detailsContainebody.style.maxHeight = '5em';
+                    } else {
+                        articleElement.classList.add('expanded');
+                        detailsContainebody.style.maxHeight = '100%';
+                        console.log("open article")
+                    }
+                });
+                
 
                 articleElement.appendChild(closeButton);
             
@@ -132,7 +163,7 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                     // Ouvrir cet article
                     articleElement.classList.add('expanded');
                     detailsContainebody.style.maxHeight = '100%';  // Étendre la hauteur du corps de l'article
-                    articleElement.style.maxHeight = 'auto';  // Laisser la hauteur de l'article s'adapter à son contenu
+                    articleElement.style.height = '100%';  // Laisser la hauteur de l'article s'adapter à son contenu
                 });
 
                 articleContainer.appendChild(articleElement);
