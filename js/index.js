@@ -370,19 +370,10 @@ export async function toggleTeamInfo(id) {
         });
 
 
-        
-        var tl2 = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".section-menu-presentation",
-                start: "top bottom", 
-                end: "bottom center",  
-                scrub: 0.5, 
-            }
-        });
 
         var items_menu = document.querySelectorAll('.menu-item');
 
-        const tl = gsap.timeline({
+        const tl_menuitems = gsap.timeline({
             scrollTrigger: {
                 trigger: ".menu-item",
                 start: "top 80%", 
@@ -393,7 +384,7 @@ export async function toggleTeamInfo(id) {
 
         items_menu.forEach((arg, index) => {
             const fromDirection = index % 2 === 0 ? -100 : 100;
-            tl.from(arg, {
+            tl_menuitems.from(arg, {
                 opacity: 0,
                 y: fromDirection, 
                 duration: 1, 
@@ -1138,6 +1129,23 @@ export async function toggleTeamInfo(id) {
         actuContainer.appendChild(articleContainer);
 
         loadactuFromXML('/xml/actu.xml', actuContainer, searchInput);
+
+        gsap.utils.toArray(".article").forEach(service => {
+            var tl1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: service,
+                    start: "top center",  
+                    end: "bottom bottom", 
+                    scrub: true,  
+                }
+            });
+            tl1.from(service.querySelectorAll(".actu-article > .article"), { 
+                opacity: 0,
+                y: "100%", 
+                duration: 1 
+            });
+        });
+        
 
     }
 
