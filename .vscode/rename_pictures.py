@@ -33,5 +33,7 @@ def rename_images_in_folders(base_path):
                     os.rename(current_path, new_path)
 
 if __name__ == "__main__":
-    chemin_par_defaut = "C:\\Users\\maxfl\\Documents\\GitHub\\FLKprod.github.io\\Photos\\Carrousel"
+    #chemin_par_defaut = "C:\\Users\\maxfl\\Documents\\GitHub\\FLKprod.github.io\\Photos\\Carrousel"
+    chemin_par_defaut = "C:\\Users\\maxfl\\OneDrive\\Documents\\GitHub\\FLKprod.github.io\\Photos\\Carrousel"
+    
     rename_images_in_folders(chemin_par_defaut)
