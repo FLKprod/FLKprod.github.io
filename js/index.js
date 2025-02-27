@@ -1062,7 +1062,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             ["Services",  "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain","Création de portofolios personnalisés"],
             ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Flkprod.github.io", "aleskflkphotos.github.io"],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
-            ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Boston","Paris", "Québèc City"], "Photos Nature",["Quebec"],"Photos Sportives", ["Baseball", "Basket", "Nanterre 92", "Paris Basketball","JDA Dijon Basket"], "Photos Evenementielles", ["Automobile","Retro Mobile"]],
+            ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Boston","Paris", "Québèc City"], "Photos Nature",["Quebec","Yosemite"],"Photos Sportives", ["Baseball","Boston Red Sox", "Basket", "Nanterre 92", "Paris Basketball","JDA Dijon Basket"], "Photos Evenementielles", ["Automobile","Retro Mobile"]],
             ["A propos de moi", ["Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma passion pour la cybersécurité", "Informations de contact"]],
             ["Actualité"],
             ["Plan du site"]

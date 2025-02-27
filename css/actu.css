@@ -14,8 +14,12 @@
     font-size: 2em;
     text-align: justify;
     right: 0;
+    color: black;
+    
+}
+
+body.mode-nuit .actu-container p {
     color: white;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 .actu-container h2{
