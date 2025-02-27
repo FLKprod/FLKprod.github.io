@@ -92,7 +92,7 @@ h2:hover {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(150deg, #771f3d, #ffdee9,#771f3d, #ffdee9, #fffcfc, #4f0341,#771f3d);
+    background: linear-gradient(150deg, #4f0341, #771f3d, #ffdee9,#771f3d, #ffdee9, #fffcfc, #4f0341,#771f3d);
     background-size: 500% 500%;
     background-repeat: no-repeat;
     animation: gradient-animation 7s ease infinite;
