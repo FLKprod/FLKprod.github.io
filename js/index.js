@@ -623,9 +623,9 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             });
         }  
 
-        var largeElements = aproposdemoiContainer.querySelectorAll(".desc-berkeley");
+        var largeElementsBerkeley = aproposdemoiContainer.querySelectorAll(".desc-berkeley");
         if (window.innerWidth > 1100) {
-            largeElements.forEach(large => {
+            largeElementsBerkeley.forEach(large => {
                 gsap.to(large, {
                     y: () => {
                         const berkeleyHeight = aproposdemoiContainer.querySelector('.berkeley').offsetHeight;
@@ -635,7 +635,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                     scrollTrigger: {
                         trigger: '.berkeley',
                         pin: true,
-                        start: "top top`",
+                        start: `top ${6}em`,
                         end: () => {
                             const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
                             const largeHeight = large.clientHeight;
@@ -652,9 +652,9 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             });
         }
 
-        var largeElements = aproposdemoiContainer.querySelectorAll(".desc-quebec");
+        var largeElementsQuebec = aproposdemoiContainer.querySelectorAll(".desc-quebec");
         if (window.innerWidth > 1100) {
-            largeElements.forEach(large => {
+            largeElementsQuebec.forEach(large => {
                 gsap.to(large, {
                     y: () => {
                         const quebecHeight = aproposdemoiContainer.querySelector('.quebec').offsetHeight;
@@ -681,9 +681,9 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             });
         }
 
-        var largeElements = aproposdemoiContainer.querySelectorAll(".desc-cybersection");
+        var largeElementsCyber = aproposdemoiContainer.querySelectorAll(".desc-cybersection");
         if (window.innerWidth > 1100) {
-            largeElements.forEach(large => {
+            largeElementsCyber.forEach(large => {
                 gsap.to(large, {
                     y: () => {
                         const cybersectionHeight = aproposdemoiContainer.querySelector('.cybersection').offsetHeight;
