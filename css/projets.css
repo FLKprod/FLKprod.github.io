@@ -14,7 +14,7 @@
   }
 
   .image-projet-presentation {
-    width: 40%;
+    width: auto;
     height: 100%;
     margin: 0 2em;
   }
@@ -65,7 +65,18 @@
     color:whitesmoke;
     text-align: left;
 }
+.projet-section > .text-section{
+    width: 70%;
+}
 
+
+.projet-section > .text-section p{
+    font-size: 2em;
+    text-align: justify;
+    right: 0;
+    color: white;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
 
 
 .projets-container .projet {
@@ -120,10 +131,13 @@
 
 .projet-section {
     width: 100%;
+    height: auto;
     margin: 2em 0;
     display: flex;
     flex-direction: row;
     text-align: left;
+    align-items: center;
+    justify-content: center;
   }
 
   .projet-section .text-section img{

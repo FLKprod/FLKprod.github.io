@@ -733,7 +733,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         var text_intro_for_photos = createElementWithClass('div','text-photos-presentation');
        
         intro_for_photos.appendChild(image_intro_for_photos)
-        text_intro_for_photos.appendChild(createText('h3', "Mes contenus photographiques"));
+        text_intro_for_photos.appendChild(createText('h2', "Mes contenus photographiques"));
         text_intro_for_photos.appendChild(createText('p', "Découvrez mes clichés qui reflètent ma passion pour la photographie et la créativité."));
         text_intro_for_photos.appendChild(createText('p',"Scroll légèrement, cette section est loin d'être vide"));
         text_intro_for_photos.appendChild(createImage('Photos/scrolling.gif'));

@@ -35,8 +35,16 @@
   height: auto;
 }
 
-.photos-container .text-photos-presentation > h3{
+.photos-container .text-photos-presentation > h2{
   font-size: 2em;
+}
+
+.photos-container .text-photos-presentation > p{
+  font-size: 1.5em;
+  text-align: justify;
+  right: 0;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
 }
 
 
