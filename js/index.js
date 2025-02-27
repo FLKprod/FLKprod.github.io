@@ -634,7 +634,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 gsap.to(large, {
                     y: () => {
                         const berkeleyHeight = aproposdemoiContainer.querySelector('.berkeley').offsetHeight;
-                        return Math.min(0, window.innerHeight - large.clientHeight - berkeleyHeight);
+                        return Math.min(0, window.innerHeight - 2*large.clientHeight - berkeleyHeight);
                     },
                     ease: "none",
                     scrollTrigger: {
@@ -643,15 +643,14 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                         start: `top ${6}em`,
                         end: () => {
                             const berkeleyHeight = document.querySelector('.berkeley').offsetHeight;
-                            const largeHeight = large.clientHeight;
-                            return `bottom ${Math.max(0, berkeleyHeight - largeHeight)}px`;
+                            const largeHeightBerkeley = large.clientHeight;
+                            console.log("Taille = " + large.clientHeight)
+                            return `bottom ${Math.max(0, berkeleyHeight - largeHeightBerkeley)}px`;
                         },
                         scrub: 0.5,
                         invalidateOnRefresh: true,
                         anticipatePin: 1,
-                        onUpdate: self => {
-                            console.log(`Progress: ${self.progress}, Direction: ${self.direction}`);
-                        },
+
                     }
                 });
             });
@@ -671,9 +670,9 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                         pin: true,
                         start: `top ${6}em`, 
                         end: () => {
-                            const quebecHeight = document.querySelector('.quebec').offsetHeight;
-                            const largeHeight = large.clientHeight;
-                            return `bottom ${Math.max(0, quebecHeight - largeHeight)}px`;
+                            const quebecHeight = aproposdemoiContainer.querySelector('.quebec').offsetHeight;
+                            const largeHeightQuebec = large.clientHeight;
+                            return `bottom ${Math.max(0, quebecHeight - largeHeightQuebec)}px`;
                         },
                         scrub: 0.5,
                         invalidateOnRefresh: true,
@@ -700,9 +699,9 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                         pin: true,
                         start: `top ${6}em`, 
                         end: () => {
-                            const cybersectionHeight = document.querySelector('.cybersection').offsetHeight;
-                            const largeHeight = large.clientHeight;
-                            return `bottom ${Math.max(0, cybersectionHeight - largeHeight)}px`;
+                            const cybersectionHeight = aproposdemoiContainer.querySelector('.cybersection').offsetHeight;
+                            const largeHeightCyber = large.clientHeight;
+                            return `bottom ${Math.max(0, cybersectionHeight - largeHeightCyber)}px`;
                         },
                         scrub: 0.5,
                         invalidateOnRefresh: true,
