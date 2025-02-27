@@ -80,18 +80,24 @@ h2:hover {
 
 /* ----------------- Entete ---------------------- */
 
-.entete{
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.entete {
     display: flex;
     padding: 1em 0;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    background: linear-gradient(150deg, #771f3d, #ffdee9,#fffcfc, #4f0341);
-    background-size: 600% 600%; 
+    background: linear-gradient(150deg, #771f3d, #ffdee9,#771f3d, #ffdee9, #fffcfc, #4f0341,#771f3d);
+    background-size: 500% 500%;
     background-repeat: no-repeat;
-    background-size: cover;
-    animation: gradient-animation 10s ease infinite;
+    animation: gradient-animation 7s ease infinite;
 }
+
 
 
 @keyframes gradient-animation {
@@ -167,11 +173,13 @@ body.mode-nuit .text-entete > h1 {
     transform: none;
     text-shadow: none;
     color: #771f3d;
+    mix-blend-mode:color-dodge;
+    
   }
 
 .scrolling-text {
     text-shadow:none;
-    mix-blend-mode: difference; /* Inverse les couleurs par rapport à l'arrière-plan */
+    mix-blend-mode: difference;
     color: white;
     overflow-x: hidden;
     white-space: nowrap;
@@ -432,12 +440,27 @@ body.mode-nuit .down {
     color: white;
 }
 
-body.mode-nuit .entete {
-    background:  linear-gradient(black, rgba(124, 12, 68, 0.5) 25%,
-    rgb(124, 15, 70) 50%,
-    rgba(124, 12, 68, 0.5) 75%,black);
-    color: white;
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
+
+body.mode-nuit .entete {
+    display: flex;
+    padding: 1em 0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(170deg, #771f3d, black, rgba(124, 12, 68, 0.5),black, rgba(90, 20, 150, 0.5),black,#771f3d,black,rgba(30, 80, 200, 0.5));
+    background-size: 500% 500%;
+    background-repeat: no-repeat;
+    animation: gradient-animation 7s ease infinite;
+}
+
+
+
 
 body.mode-nuit .menu > button {
     color: var(--text-color-night);

@@ -68,7 +68,7 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
 
                 const detailsContainebody = createElementWithClass("div", "article-corps-body");
                 const detailsContainebodytext = createElementWithClass("div", "article-corps-body-text");
-                detailsContainebody.style.maxHeight = '5em';  // Par défaut, hauteur réduite
+                detailsContainebody.style.maxHeight = '5em';
 
                 corps.forEach(corpsText => {
                     const corpsTextwithlink = convertLinksToAnchors(corpsText);
@@ -139,31 +139,27 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
                 }
                 detailsContainebody.appendChild(detailsContainebodyimage);
 
-                // Ajouter le contenu dans l'élément de l'article
                 articleElement.appendChild(detailsContainerTitle);
                 articleElement.appendChild(detailsContainebody);
 
-                // Lorsqu'un article est cliqué, ouvrir cet article et fermer les autres
                 articleElement.addEventListener("click", () => {
-                    // Récupérer tous les articles
                     const allArticles = document.querySelectorAll('.article');
                     
-                    // Fermer tous les autres articles ouverts
+
                     allArticles.forEach((otherArticle) => {
                         if (otherArticle !== articleElement && otherArticle.classList.contains('expanded')) {
-                            // Enlever la classe 'expanded' de tous les autres articles
                             otherArticle.classList.remove('expanded');
                             const otherDetailsContainer = otherArticle.querySelector('.article-corps-body');
                             if (otherDetailsContainer) {
-                                otherDetailsContainer.style.maxHeight = '5em'; // Réduire la hauteur du corps de l'article
+                                otherDetailsContainer.style.maxHeight = '5em'; 
                             }
                         }
                     });
 
-                    // Ouvrir cet article
+
                     articleElement.classList.add('expanded');
-                    detailsContainebody.style.maxHeight = '100%';  // Étendre la hauteur du corps de l'article
-                    articleElement.style.height = '100%';  // Laisser la hauteur de l'article s'adapter à son contenu
+                    detailsContainebody.style.maxHeight = '100%';  
+                    articleElement.style.height = '100%';  
                 });
 
                 articleContainer.appendChild(articleElement);

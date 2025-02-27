@@ -145,30 +145,39 @@ import {
         updateImage();
     }
 
+    function initializeCarousel() {
+        const initialImageElement = createImage(images[currentIndex]); // Crée la première image
+        initialImageElement.style.position = "absolute";
+        initialImageElement.style.opacity = "1";
+    
+        img_carrousel.appendChild(initialImageElement);
+    }
+    
     function updateImage() {
         const nextImageElement = createImage(images[currentIndex]);
         nextImageElement.style.position = "absolute";
         nextImageElement.style.opacity = "0";
-        nextImageElement.style.transition = "opacity 0.5s ease-in-out";
-        
-        // Ajoute la nouvelle image au carrousel
+        nextImageElement.style.transition = "opacity 0.3s ease-in-out";
+    
         img_carrousel.appendChild(nextImageElement);
     
         setTimeout(() => {
             nextImageElement.style.opacity = "1"; // Nouvelle image devient visible
-        }, 0);
+        }, 10);
     
         setTimeout(() => {
-            // Récupère et supprime le premier élément <img> du carrousel
-            const firstImageElement = img_carrousel.querySelector("img");
-            if (firstImageElement) {
-                img_carrousel.removeChild(firstImageElement);
-            }
-        }, 50);
+            // Supprime toutes les images sauf la dernière ajoutée
+            const images = img_carrousel.querySelectorAll("img");
+            images.forEach((img, index) => {
+                if (index < images.length - 1) {
+                    img_carrousel.removeChild(img);
+                }
+            });
+        }, 300);
     }
     
-    
-    
+    // **Appelle d'abord l'initialisation avant de naviguer dans les images**
+    initializeCarousel();
     
     return carouselContainer;
 }
