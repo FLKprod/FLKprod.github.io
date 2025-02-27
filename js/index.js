@@ -889,7 +889,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
     else if(id === 'projets'){
         var intro2projects = createElementWithClass('div','section','projet-section');
         var image_intro2projects = createElementWithClass('div','image-projet-presentation');
-        var img_for_image_intro_for_projets = createImage("Photos/projets.gif");
+        var img_for_image_intro_for_projets = createImage("Photos/image-projet.jpg");
         img_for_image_intro_for_projets.id="image-intro-for-projet";
         image_intro2projects.appendChild(img_for_image_intro_for_projets);
         var text_intro2projects = createElementWithClass('div','text-section');

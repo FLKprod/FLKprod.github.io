@@ -8,13 +8,14 @@
 }
 
 .image-projet-presentation > img {
-    border-radius: 50%;
-    width: auto;
+    border-radius: 2em;
+    width: 100%;
     height: 100%;
+    -webkit-mask-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
   }
 
   .image-projet-presentation {
-    width: auto;
+    width: 50%;
     height: 100%;
     margin: 0 2em;
   }
