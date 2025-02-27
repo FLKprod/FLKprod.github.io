@@ -66,12 +66,13 @@
     text-align: left;
 }
 .projet-section > .text-section{
-    width: 70%;
+    width: 50%;
 }
 
 
 .projet-section > .text-section p{
     font-size: 2em;
+    width: 70%;
     text-align: justify;
     right: 0;
     color: white;
