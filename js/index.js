@@ -890,7 +890,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         image_intro2projects.appendChild(img_for_image_intro_for_projets);
         var text_intro2projects = createElementWithClass('div','text-section');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
-        text_intro2projects.appendChild(createText('p',"j'aime toujours développer de nouveaux programmes, que ce soit à titre personnel ou pour de potentiels clients"));
+        text_intro2projects.appendChild(createText('p',"j'aime toujours développé de nouveaux programmes à titre personnel ou pour de potentiels clients"));
         text_intro2projects.appendChild(createText('p',"(Scroll légèrement, cette section est loin d'être vide)"));
         text_intro2projects.appendChild(createImage('Photos/scrolling.gif'));
 
