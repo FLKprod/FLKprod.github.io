@@ -634,7 +634,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 gsap.to(large, {
                     y: () => {
                         const berkeleyHeight = aproposdemoiContainer.querySelector('.berkeley').offsetHeight;
-                        return Math.min(0, window.innerHeight - 2*large.clientHeight - berkeleyHeight);
+                        return Math.min(0, window.innerHeight - 1.2*large.clientHeight - berkeleyHeight);
                     },
                     ease: "none",
                     scrollTrigger: {
@@ -662,7 +662,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 gsap.to(large, {
                     y: () => {
                         const quebecHeight = aproposdemoiContainer.querySelector('.quebec').offsetHeight;
-                        return Math.min(0, window.innerHeight - large.clientHeight - quebecHeight);
+                        return Math.min(0, window.innerHeight - 1.2*large.clientHeight - quebecHeight);
                     },
                     ease: "none",
                     scrollTrigger: {
@@ -691,13 +691,13 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 gsap.to(large, {
                     y: () => {
                         const cybersectionHeight = aproposdemoiContainer.querySelector('.cybersection').offsetHeight;
-                        return Math.min(0, window.innerHeight - large.clientHeight - cybersectionHeight);
+                        return Math.min(0, window.innerHeight - 1.2*large.clientHeight - cybersectionHeight);
                     },
                     ease: "none",
                     scrollTrigger: {
                         trigger: '.cybersection',
                         pin: true,
-                        start: `top ${6}em`, 
+                        start: `top ${6}em`,
                         end: () => {
                             const cybersectionHeight = aproposdemoiContainer.querySelector('.cybersection').offsetHeight;
                             const largeHeightCyber = large.clientHeight;
@@ -705,10 +705,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                         },
                         scrub: 0.5,
                         invalidateOnRefresh: true,
-                        anticipatePin: 1,
-                        onUpdate: self => {
-                            console.log(`Progress: ${self.progress}, Direction: ${self.direction}`);
-                        },
+                        anticipatePin: 1
                     }
                 });
             });

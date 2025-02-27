@@ -10,6 +10,9 @@
     position: relative;
     background-color: black;
 }
+.aproposdemoi-container > div{
+    margin-left: 0 !important;
+}
 .aproposdemoi-container > .section{
     height: 100vh;
 }
@@ -305,18 +308,18 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     width: 50%;
     text-align: justify;
     overflow-y: auto;
-    padding: 2em;
+
     box-sizing: border-box; 
 }
 
 .cybersection .image-section {
     flex: 0 0 50%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-height: 100%;
-    box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100%;
+  box-sizing: border-box;
 }
 
 .cybersection .image-section > img {
@@ -355,7 +358,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 }
 
 
+
 .cybersection{
+    left: 0 !important;
+    padding-right: 0;
     display: flex;
     margin-left: 2em;
     align-items: center;
@@ -720,6 +726,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         height: 100% !important;
         margin-bottom: 4em;
         z-index: 1;
+        margin-left: 0 !important;
+        padding-left: 0;
     }
     .desc-cybersection{
         min-height: auto;
@@ -801,6 +809,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .text-section > a {
-        margin-left: 0;
+        margin-left: 1em ;
     }
 }
