@@ -104,8 +104,7 @@ export async function toggleTeamInfo(id) {
 
         const shootings_photos = [
             'Photos/services/shooting_pro.jpg',
-            'Photos/services/shooting.JPG',
-            'Photos/services/shooting_urbain.jpeg',
+            'Photos/services/shooting.JPG'
         ];
         
         intro2services.appendChild(createImageSlider(shootings_photos));
@@ -133,12 +132,23 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
             intro2services.appendChild(text_intro2services);
 
-        var image_intro2services = createElementWithClass('div','image-section');
-        image_intro2services.appendChild(createImage('Photos/services/shooting.JPG'));
-        intro2services.appendChild(image_intro2services);
+            const shootings_evenements_photos = [
+                'Photos/services/shooting_mariage.png',
+                'Photos/services/shooting_perso.jpg',
+                'Photos/services/shooting_urbain.jpeg'
+            ];
+            
+            intro2services.appendChild(createImageSlider(shootings_evenements_photos));
+
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','service');
+        const portofolio_photos = [
+            'Photos/services/aleskflk.png',
+            'Photos/services/portofolio.jpg',
+            'Photos/services/portofolio.png',
+        ];
+        intro2services.appendChild(createImageSlider(portofolio_photos));
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Création de Portfolio Personnalisé"));
         text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, entrepreneur ou autre.
@@ -148,12 +158,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
             intro2services.appendChild(text_intro2services);
 
-        const portofolio_photos = [
-            'Photos/services/aleskflk.png',
-            'Photos/services/portofolio.jpg',
-            'Photos/services/portofolio.png',
-        ];
-        intro2services.appendChild(createImageSlider(portofolio_photos));
+        
         servicesContainer.appendChild(intro2services);
 
         var intro2services = createElementWithClass('div','contact-services');
