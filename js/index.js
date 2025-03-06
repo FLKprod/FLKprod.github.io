@@ -398,7 +398,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/Apropos/moi.jpeg'));
+        image_intro2presentation.appendChild(createImage('Photos/Apropos/moi.png'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
