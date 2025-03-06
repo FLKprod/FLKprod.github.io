@@ -398,12 +398,12 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/Apropos/maxime_wizya.png'));
+        image_intro2presentation.appendChild(createImage('Photos/Apropos/moi.jpeg'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
-        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis consultant GRC SAP chez <a href='https://wizya.fr/' target='_blank'>WIZYA</a>, en terres parisiennes.
+        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis consultant GRC en terres parisiennes.
             j'ai étudié en école d'ingénieur en sécurité informatique à Dijon.
             J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec.
             J'ai plusieurs grandes passions telles que la cybersécurité, dommaine dans lequel j'y exerce ma profession, mais aussi la photographie, la vidéo et l'informatique.`));
