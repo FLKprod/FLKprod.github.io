@@ -243,6 +243,7 @@ body.mode-nuit .photos-container .text-overlay{
 
 .modal.active {
   opacity: 1;
+  margin-top: 5em;
   visibility: visible;
 }
 
@@ -390,6 +391,10 @@ body.mode-nuit .photos-container .text-overlay{
       max-width: 100%;
       aspect-ratio: 16/10;
       height: auto;
+    }
+
+    .modal.active {
+      margin-top: 0;
     }
 
     .photos-container .text-overlay >h4 {
