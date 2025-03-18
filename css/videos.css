@@ -25,8 +25,9 @@
 }
 
 .galerie-videos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    display: flex;
+    flex-direction: column;
+    width: 75%;
     gap: 1em; 
     margin-bottom: 5em;
     align-items: center;
@@ -34,6 +35,8 @@
 
 .video-container {
     border-radius: 1em;
+    width: 100%;
+    margin-bottom: 2em;
     aspect-ratio: 16 / 9;
     display: flex;
     text-align: left;
