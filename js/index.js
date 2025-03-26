@@ -404,7 +404,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
-        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis consultant GRC en terres parisiennes.
+        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis administrateur PAM au sein de <a href='https://i-tracing.com/fr/' target='_blank'>I-Tracing</a>, en terres parisiennes.
             j'ai étudié en école d'ingénieur en sécurité informatique à Dijon.
             J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec.
             J'ai plusieurs grandes passions telles que la cybersécurité, dommaine dans lequel j'y exerce ma profession, mais aussi la photographie, la vidéo et l'informatique.`));
@@ -414,8 +414,8 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             C'est sur ce site que vous trouverez toutes mes créations, aussi bien visuelles que informatiques.`));
         text_intro2presentation.appendChild(createLineSpan(0));
         text_intro2presentation.appendChild(createText('h2',"Pour résumer : "))
-        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-briefcase" aria-hidden="true"></i> Consultant SAP GRC`));
-        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-city"></i> WIZYA Consulting`));
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-briefcase" aria-hidden="true"></i> Administrateur PAM CyberArk`));
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-city"></i> I-Tracing`));
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-map-marker"></i> Paris, France`));
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-camera"></i> <i class="fa fa-code"></i> <i class="fa fa-video"></i> <i class="fa fa-shield-alt" aria-hidden="true"></i> Passioné`));
         intro2presentation.appendChild(text_intro2presentation);
