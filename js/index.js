@@ -13,7 +13,7 @@ buttonIds.forEach(buttonId => {
     const button = document.getElementById(buttonId);
     button.addEventListener('click', function() {
         toggleTeamInfo(buttonId);
-        scrollauto(".entete")
+
     });
 });
 
@@ -27,28 +27,12 @@ export function scrollauto(div) {
     const entete = document.querySelector(div);
     const positionHautEntete = entete.offsetTop;
 
-    const startPosition = window.scrollY;
-    const distance = positionHautEntete - startPosition;
-    const duration = 1000;
-    const startTime = performance.now();
-
-    function animateScroll(currentTime) {
-        const elapsedTime = currentTime - startTime;
-        const progress = Math.min(elapsedTime / duration, 1); 
-
-        const easeInOutQuad = progress < 0.5
-            ? 2 * progress * progress
-            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-        const newPosition = startPosition + distance * easeInOutQuad;
-        window.scrollTo(0, newPosition);
-
-        if (elapsedTime < duration) {
-            requestAnimationFrame(animateScroll);
-        }
-    }
-    requestAnimationFrame(animateScroll);
+    window.scrollTo({
+        top: positionHautEntete,
+        behavior: 'smooth' // Utilisation native du défilement fluide
+    });
 }
+
 
 /**************************************************************************************************/
 
@@ -173,6 +157,12 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
 
+        gsap.from('.services-container', {
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut'
+        });
+        
         gsap.utils.toArray(".service").forEach(service => {
             var tl1 = gsap.timeline({
                 scrollTrigger: {
@@ -245,7 +235,12 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
 
         videosContainer.appendChild(galerie);
 
-        gsap.from('.videos-container > *',{scale:0,stagger:1, duration:1});
+        gsap.from('.videos-container', {
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut'
+        });
+        
 
     }
     else if(id=== 'presentation'){
@@ -371,6 +366,12 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         });
 
 
+        gsap.from('.presentation-container', {
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut'
+        });
+        
 
         var items_menu = document.querySelectorAll('.menu-item');
 
@@ -593,6 +594,12 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+        gsap.from('.apropos-container', {
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut'
+        });
+        
 
         gsap.from(".line", {
         scaleX: 0,
@@ -1126,6 +1133,13 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         actuContainer.appendChild(articleContainer);
 
         loadactuFromXML('/xml/actu.xml', actuContainer, searchInput);
+
+        gsap.from('.actu-container', {
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.inOut'
+        });
+        
 
         gsap.utils.toArray(".article").forEach(service => {
             var tl1 = gsap.timeline({

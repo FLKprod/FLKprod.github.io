@@ -116,3 +116,14 @@ window.addEventListener('scroll', () => {
 });
 
 
+let lastScrollY = window.scrollY;
+const menu = document.querySelector('.menu');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+        menu.classList.add('hidden'); // Cache le menu en descendant
+    } else {
+        menu.classList.remove('hidden'); // Montre le menu en remontant
+    }
+    lastScrollY = window.scrollY;
+});
