@@ -326,7 +326,6 @@ body.mode-nuit .hr {
         border-width: 1px;
     }
     .menu {
-        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;

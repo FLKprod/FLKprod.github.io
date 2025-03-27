@@ -116,6 +116,8 @@ window.addEventListener('scroll', () => {
 });
 
 
+if (window.innerWidth > 1100) {
+
 let lastScrollY = window.scrollY;
 const menu = document.querySelector('.menu');
 
@@ -127,3 +129,4 @@ window.addEventListener('scroll', () => {
     }
     lastScrollY = window.scrollY;
 });
+}
