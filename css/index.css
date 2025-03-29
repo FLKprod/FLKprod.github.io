@@ -220,6 +220,7 @@ body.mode-nuit .scrolling-text {
     display: flex;
     height: 12em;
     flex-direction: row;
+    font-family: system-ui;
 }
 
 #down-logo {
