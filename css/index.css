@@ -261,6 +261,10 @@ body.mode-nuit .scrolling-text {
         background-size: 2000% 400% !important;
     }
 
+    .text-entete > h1{
+        font-size: 4em;
+    }
+
     .text-entete, .image-entete{
         width: 75%;
     }
