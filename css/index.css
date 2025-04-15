@@ -523,6 +523,8 @@ body.mode-nuit {
 
 body.mode-nuit .down {
     background:  linear-gradient(black, #4f0341);
+    width: 100%;
+    margin: 0;
     color: white;
 }
 
