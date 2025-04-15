@@ -130,8 +130,9 @@ body.mode-nuit .sections-menu > .select {
 }
 
 .img-down{
-    width: 50%;
     height: 100%;
+    margin-left: 2em;
+    margin-right: 3em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -139,7 +140,6 @@ body.mode-nuit .sections-menu > .select {
     text-align: right;
     box-sizing: border-box;
     text-align: right;
-    margin-right: 1em;
 }
 
 .img-down > img{
@@ -149,22 +149,18 @@ body.mode-nuit .sections-menu > .select {
     align-items:end;
 }
 
-.hr{
-    border-left: 2px solid black;
-    height: 12em;
-}
-
-body.mode-nuit .hr {
-    border-left: 2px solid white;
-}
 
 .text-down{
-    width: 50%;
-    height: 100%;
+    width: calc(100% - 2em);
+    height: auto;
+    font-size: 1.5em;
     margin-left: 2em;
     text-align: left;
-    align-items: left;
     justify-content: center;
+}
+
+.copyright{
+    margin-top:2em;
 }
 
 .down-menu button:first-child, body.mode-nuit .down-menu button:first-child {
@@ -173,7 +169,7 @@ body.mode-nuit .hr {
 }
 .down-menu button, body.mode-nuit > .down-menu button {
     background-color: transparent;
-    color: black;
+    color: white;
     padding:0;
     margin: 0;
     padding: 0 5px;
@@ -182,16 +178,6 @@ body.mode-nuit .hr {
 
 .down-menu button:hover {
     cursor: pointer;
-}
-
-.down-menu{
-    height: 1em !important;
-}
-.down-menu button:not(:last-child)::after {
-    content: "|"; 
-    position: absolute;
-    right: -0.2em;
-    color: black; 
 }
 
 /* SWITCH FOR DAY/NIGHT MODE */
@@ -296,6 +282,9 @@ body.mode-nuit .hr {
 
     .sections-menu{
         width: 100%;
+    }
+    .text-down{
+        font-size: 1em;
     }
 
     .sections-menu > .select {

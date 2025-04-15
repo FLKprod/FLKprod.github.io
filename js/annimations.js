@@ -38,15 +38,9 @@ const daynightCheckbox = document.getElementById('daynight');
 
 function toggleModeNuit() {
     const daynightCheckbox = document.getElementById('daynight');
-    const downlogo =document.getElementById('down-logo');
     const image_intro_for_photo = document.getElementById('image-intro-for-photo');
     if (!daynightCheckbox.checked) {
         document.body.classList.add('mode-nuit');
-        if (downlogo) {
-            downlogo.src = "Photos/logos/flkwhite.png";
-        } else {
-            console.warn("L'élément #down-logo est introuvable pour le mode nuit.");
-        }
 
         if (image_intro_for_photo) {
             image_intro_for_photo.src = "Photos/dark_sommaire_photos.jpg";
@@ -55,12 +49,6 @@ function toggleModeNuit() {
         }
     } else {
         document.body.classList.remove('mode-nuit');
-        
-        if (downlogo) {
-            downlogo.src = "Photos/logos/flkblack.png";
-        } else {
-            console.warn("L'élément #down-logo est introuvable pour le mode jour.");
-        }
 
         if (image_intro_for_photo) {
             image_intro_for_photo.src = "Photos/sommaire_photos.jpg";

@@ -117,28 +117,48 @@
             </div>
         </div>
         <div class="down">
-            <div class="img-down">
-                <img id="down-logo">
+            <div class="down-subscriber">
+                <div class="img-down">
+                    <img id="down-logo" src = "Photos/logos/flkwhite.png">
+                </div>
+                <div class="down-social-networks-area">
+                    <h2>Me suivre</h2>
+                    <div class="down-social-networks">
+                        <button onclick="window.location.href='mailto:maxime.falkowski@free.fr';">
+                            <i class="fa fa-envelope" ></i>
+                        </button>
+                        <button onclick="window.open('https://www.instagram.com/flkprod_/', '_blank');">
+                            <i class="fab fa-instagram" ></i>
+                        </button>
+                        <button onclick="window.open('https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg');">
+                            <i class="fab fa-youtube" ></i>
+                        </button>
+                        <button onclick="window.open('https://github.com/FLKprod');">
+                            <i class="fab fa-github" ></i>
+                        </button>
+                        <button onclick="window.open('https://www.linkedin.com/in/maxime-falkowski-9a4607216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGJJZ%2FAWYSLGq0t%2BQS92TrQ%3D%3D');">
+                            <i class="fab fa-linkedin" ></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="hr"></div>
             <div class="text-down">
+                <div class="text-down-area">
                 <p>Un site créé par et pour FLKprod_</p>
                 <p>🚧 Éternellement en construction 🚧</p>
+                </div>
                 <div class="down-menu" id="down-menu">
                     <button id="presentation">PRÉSENTATION</button>
                     <button id="services">SERVICES</button>
                     <button id="projets">PROJETS</button>
                     <button id="videos">MULTIMÉDIAS</button>
-                </div>
-                <p></p>
-                <div class="down-menu" id="down-menu">
                     <button id="photos">PHOTOGRAPHIES</button>
                     <button id="aproposdemoi">A PROPOS DE MOI</button> 
                     <button id="actu">ACTUALITÉ</button>
                     <button id="plandusite">PLAN DU SITE</button>
                 </div>
-                <p>&copy; 2024 FLKPROD. Tous droits réservés.</p>
             </div>
+            <p class="copyright">&copy; 2024 FLKPROD. Tous droits réservés.</p>
         </div>
         <button id="backToTopButton"><i class="fa fa-angle-up"></i></button>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -146,6 +166,7 @@
         <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
         <script type="module" src="js/index.js"></script>
         <script type="module" src="js/annimations.js"></script>
+        <script type="module" src="js/infos.js"></script>
         <script type="module" src="js/createElements.js"></script>
         <script type="module" src="js/carroussel.js"></script>
         <script type="module" src="js/actu.js"></script>

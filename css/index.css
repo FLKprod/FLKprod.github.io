@@ -15,6 +15,7 @@ html{
     max-width: 100vw;
     height: 100%;
     scroll-behavior: smooth;
+    
 }
 
 body {
@@ -211,19 +212,64 @@ body.mode-nuit .scrolling-text {
 
 /****************************** bar de site en bas **************************************/
 
-.down{
-    background-color: whitesmoke;
-    color: var(--text-color-day);
-    padding: 1em 0;
+.down {
+    background-color: #4f0341;
+    color: var(--text-color-night);
+    padding: 1em;
+    margin: 2em;
+    margin-bottom: 4em;
     font-size: 0.8em;
     line-height: 1.5;
     display: flex;
-    height: 12em;
-    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100% - 8em);
+    height: auto;
+    flex-direction: column;
     font-family: system-ui;
 }
 
+
+.down-subscriber {
+    border-top: white 1px solid;
+    border-bottom: white 1px solid;
+    display: flex;
+    padding: 3em 0;
+    margin: 2em 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    left: 0;
+}
+
+.down-social-networks-area{
+    display: flex;
+    flex-direction: row;
+}
+
+.down-social-networks-area > h2{
+    text-shadow: none;
+    font-weight: 100;
+}
+
+.down-social-networks{
+    justify-content: center;
+}
+
+.down-social-networks > button{
+    color: white;
+    height: 100%;
+    margin: 0 0.5em;
+    font-size: 2.5em;
+    background-color: transparent;
+    border: none;
+}
+
 #down-logo {
+    left: 0;
+    position: inherit;
     transition: transform 0.3s ease;
 }
 
@@ -303,6 +349,28 @@ body.mode-nuit .scrolling-text {
         align-items: center;
         flex-direction: column;
       }
+      .down-social-networks > button{
+        font-size: 1.5em;
+      }
+
+      .down-social-networks-area{
+        font-size: 1.2em;
+      }
+
+      .down-subscriber{
+        flex-direction: column;
+      }
+
+    
+      .down-subscriber {
+        font-size: 2em;
+      }
+      .down-social-networks > button{
+        font-size: 0.6em;
+      }
+      .down-social-networks {
+        font-size: 1em;
+      }
 }
 @media screen and (max-width: 1100px) {
     .up, .entete, .text-entete{
@@ -311,6 +379,9 @@ body.mode-nuit .scrolling-text {
         margin-left: 0;
         width: 100%;
     }
+    .down-social-networks > button{
+        font-size: 1.5em;
+      }
 
     .down > p {
         font-size: 0.7em;
