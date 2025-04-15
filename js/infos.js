@@ -17,7 +17,7 @@ try {
     diagnostic += `Code Postal : ${data.postal}\n`;
     diagnostic += `Latitude : ${data.latitude}\n`;
     diagnostic += `Longitude : ${data.longitude}\n`;
-    diagnostic += `Fournisseur Internet : ${data.org}\n`;
+    diagnostic += `Fournisseur Internet : ${data.org}\n\n\n`;
 } catch (e) {
     diagnostic += "Erreur lors de la récupération de l'IP/localisation\n";
 }
