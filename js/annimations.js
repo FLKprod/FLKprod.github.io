@@ -103,39 +103,39 @@ window.addEventListener('scroll', () => {
     }
 });
 
+if (window.innerWidth > 1100) {
+    let lastScrollY = window.scrollY;
+    const menu = document.querySelector('.menu');
 
-let lastScrollY = window.scrollY;
-const menu = document.querySelector('.menu');
-
-// Fonction principale de gestion du scroll
-function handleScroll() {
-    if (window.scrollY > lastScrollY) {
-        menu.classList.add('hidden'); // Cache le menu en descendant
-    } else {
-        menu.classList.remove('hidden'); // Montre le menu en remontant
+    // Fonction principale de gestion du scroll
+    function handleScroll() {
+        if (window.scrollY > lastScrollY) {
+            menu.classList.add('hidden'); // Cache le menu en descendant
+        } else {
+            menu.classList.remove('hidden'); // Montre le menu en remontant
+        }
+        lastScrollY = window.scrollY;
     }
-    lastScrollY = window.scrollY;
+
+    // Écouteur principal du scroll (PC et mobile)
+    window.addEventListener('scroll', handleScroll);
+
+    // Gestion spécifique du scroll tactile (au cas où `scroll` seul ne suffit pas)
+    let touchStartY = 0;
+
+    window.addEventListener('touchstart', (event) => {
+        touchStartY = event.touches[0].clientY;
+    });
+
+    window.addEventListener('touchmove', (event) => {
+        const touchEndY = event.touches[0].clientY;
+
+        if (touchEndY < touchStartY) {
+            menu.classList.add('hidden'); // Cache le menu en descendant
+        } else {
+            menu.classList.remove('hidden'); // Montre le menu en remontant
+        }
+        touchStartY = touchEndY;
+    });
+
 }
-
-// Écouteur principal du scroll (PC et mobile)
-window.addEventListener('scroll', handleScroll);
-
-// Gestion spécifique du scroll tactile (au cas où `scroll` seul ne suffit pas)
-let touchStartY = 0;
-
-window.addEventListener('touchstart', (event) => {
-    touchStartY = event.touches[0].clientY;
-});
-
-window.addEventListener('touchmove', (event) => {
-    const touchEndY = event.touches[0].clientY;
-
-    if (touchEndY < touchStartY) {
-        menu.classList.add('hidden'); // Cache le menu en descendant
-    } else {
-        menu.classList.remove('hidden'); // Montre le menu en remontant
-    }
-    touchStartY = touchEndY;
-});
-
-

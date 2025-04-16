@@ -125,6 +125,13 @@ body.mode-nuit .sections-menu > .select {
     gap: o.2em;
 }
 
+body.mode-nuit .down-menu {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+}
+
 .down-menu > button:hover{
     color: #4f0341;
 }
@@ -167,12 +174,25 @@ body.mode-nuit .sections-menu > .select {
     padding-left:0;
     padding-right: 5px;
 }
+
+#down-menu button:not(:last-child)::after {
+    content: "|";
+    margin-left: 10px;
+    color: white; /* Couleur du séparateur, tu peux l'adapter */
+}
+
+body.mode-nuit #down-menu button:not(:last-child)::after {
+    content: "";
+    margin-left: 0;
+}
+
+
 .down-menu button, body.mode-nuit > .down-menu button {
     background-color: transparent;
     color: white;
     padding:0;
     margin: 0;
-    padding: 0 5px;
+    padding: 5px 0;
     position: relative;
 }
 
