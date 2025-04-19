@@ -176,7 +176,6 @@ export function loadactuFromXML(xmlPath, container, searchInput) {
 
 
                 const filterSelect = document.getElementById("filter-select");
-                console.log("bsdiukfgsdiyfueidbf")
                 filterSelect.addEventListener("change", function () {
                     const selectedSujet = filterSelect.value;
                     const allArticles = document.querySelectorAll('.article');

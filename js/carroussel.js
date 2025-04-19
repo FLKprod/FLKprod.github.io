@@ -7,53 +7,121 @@ import {
     createIconImage
   } from './createElements.js';
   
-  export function createCarousel(name, desc, images, index,textoverlay) {
+  export function createCarousel(name, desc, images, index, textoverlay) {
     const carouselContainer = createElementWithClass('div', 'carousel-container');
-    var img_carrousel = createElementWithClass('div', 'image-wrapper');
+    const img_carrousel = createElementWithClass('div', 'image-wrapper');
     const imageElement = createImage(images[0]);
     const prevButton = createIconImage('Photos/gauche.png','gauche-icon' ,() => prevImage());
     const nextButton = createIconImage('Photos/droite.png','droite-icon' , () => nextImage());
     const textOverlay = createElementWithClass('div', 'text-overlay');
 
     let currentIndex = 0;
-    let startX = 0;
-    let endX = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     img_carrousel.appendChild(imageElement);
     carouselContainer.appendChild(img_carrousel);
-    // CARROUSEL POUR LE MENU
-    if(textoverlay === true){
+
+    if (textoverlay === true) {
         textOverlay.appendChild(createText('h4', name));
         textOverlay.appendChild(createText('p', desc));
         carouselContainer.appendChild(textOverlay);
-        
-    }
-    // CAROUSSEL POUR LE MODAL
-    else{
-        var text_content_carrousel = createElementWithClass('div','text-content')
-        text_content_carrousel.appendChild(createText('h2', name));
-        text_content_carrousel.appendChild(createText('p', desc));
-        carouselContainer.appendChild(text_content_carrousel);
+    } else {
+        const textContent = createElementWithClass('div','text-content');
+        textContent.appendChild(createText('h2', name));
+        textContent.appendChild(createText('p', desc));
+        carouselContainer.appendChild(textContent);
         carouselContainer.appendChild(prevButton);
         carouselContainer.appendChild(nextButton);
     }
 
+    // ✅ Centralisation des événements pour éviter les clignotements
+    function hideTextOverlay() {
+        textOverlay.classList.add('hidden');
+    }
+
+    function showTextOverlay() {
+        textOverlay.classList.remove('hidden');
+    }
+
+    // ✅ Remplacement par mouseenter/mouseleave uniquement sur le container
+    carouselContainer.addEventListener('mouseenter', hideTextOverlay);
+    carouselContainer.addEventListener('mouseleave', showTextOverlay);
+
+    // ✅ Swipe sur mobile
+    carouselContainer.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+    });
+
+    carouselContainer.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipeDirection();
+    });
+
+    function handleSwipeDirection() {
+        const deltaX = touchEndX - touchStartX;
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX > 0) {
+                prevImage();
+            } else {
+                nextImage();
+            }
+            hideTextOverlay();
+            setTimeout(showTextOverlay, 3000); // ✅ Réaffiche après 3s
+        }
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    }
+
+    function initializeCarousel() {
+        const initialImage = createImage(images[currentIndex]);
+        initialImage.style.position = "absolute";
+        initialImage.style.opacity = "1";
+        img_carrousel.appendChild(initialImage);
+    }
+
+    function updateImage() {
+        const newImage = createImage(images[currentIndex]);
+        newImage.style.position = "absolute";
+        newImage.style.opacity = "0";
+        newImage.style.transition = "opacity 0.3s ease-in-out";
+
+        img_carrousel.appendChild(newImage);
+
+        setTimeout(() => {
+            newImage.style.opacity = "1";
+        }, 10);
+
+        setTimeout(() => {
+            const imgs = img_carrousel.querySelectorAll("img");
+            imgs.forEach((img, index) => {
+                if (index < imgs.length - 1) {
+                    img.remove();
+                }
+            });
+        }, 300);
+    }
+
+    initializeCarousel();
+
+    // ✅ Modal proprement géré
     const modal = document.getElementById('carousel-modal');
     const modalContent = document.getElementById('modal-content');
 
-    // OUVERTURE DU MODAL
     function openModal(content) {
-        const modal = document.getElementById('carousel-modal');
-        const modalContent = document.getElementById('modal-content');
-        
-        if (modal.style.display === 'flex') {
-            return;
-        }
-    
+        if (modal.style.display === 'flex') return;
+
         modalContent.innerHTML = '';
         modalContent.appendChild(content.cloneNode(true));
-        
-        // Obtenir les dimensions de la première image affichée
+
         const img = new Image();
         img.src = images[currentIndex];
         img.onload = () => {
@@ -62,125 +130,19 @@ import {
             modal.style.display = 'flex';
         };
     }
-    
 
-    document.addEventListener('click', (event) => {
-        const modal = document.getElementById('carousel-modal');
-        const modalContent = document.getElementById('modal-content');
-        if (modal.style.display === 'flex') {
-            if (!modalContent.contains(event.target)) {
-                modal.style.display = 'none';
-                modalContent.innerHTML = '';
-            }
+    img_carrousel.addEventListener('click', () => openModal(carouselContainer));
+
+    modal.addEventListener('click', (event) => {
+        if (!modalContent.contains(event.target)) {
+            modal.style.display = 'none';
+            modalContent.innerHTML = '';
         }
     });
 
-    document.querySelectorAll('.carousel-container').forEach((carousel) => {
-        carousel.addEventListener('click', () => {
-            openModal(carousel);
-        });
-    });
-
-    const closeModal = (event) => {
-        if (event.target === modal) {
-            modal.classList.remove('active');
-        }
-    };
-
-    img_carrousel.addEventListener('click', openModal);
-    modal.addEventListener('click', closeModal);
-
-    const hideTextOverlay = () => textOverlay.classList.add('hidden');
-    const showTextOverlay = () => textOverlay.classList.remove('hidden');
-
-    prevButton.addEventListener('mouseover', hideTextOverlay);
-    prevButton.addEventListener('mouseout', showTextOverlay);
-    nextButton.addEventListener('mouseover', hideTextOverlay);
-    nextButton.addEventListener('mouseout', showTextOverlay);
-
-    textOverlay.addEventListener('mouseover', hideTextOverlay);
-    textOverlay.addEventListener('mouseout', showTextOverlay);
-
-    img_carrousel.addEventListener('touchstart', (event) => {
-        startX = event.touches[0].clientX;
-    });
-
-    // SLIDES ON SCREEN
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    carouselContainer.addEventListener('touchstart', (event) => {
-        touchStartX = event.changedTouches[0].screenX; 
-    });
-
-    // Détecter la fin du toucher
-    carouselContainer.addEventListener('touchend', (event) => {
-        touchEndX = event.changedTouches[0].screenX;
-        handleSwipeDirection();
-    });
-
-
-    function handleSwipeDirection() {
-        const deltaX = touchEndX - touchStartX;
-        textOverlay.classList.add('hidden');
-        if (Math.abs(deltaX) > 50) { 
-            if (deltaX > 0) {
-                prevImage()
-            } else {
-                nextImage()
-            }
-            if (element.classList.contains('hidden')) {
-                element.classList.remove('hidden'); 
-            } else {
-                element.classList.add('hidden'); 
-            }
-        }
-    }
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
-    }
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    }
-
-    function initializeCarousel() {
-        const initialImageElement = createImage(images[currentIndex]); // Crée la première image
-        initialImageElement.style.position = "absolute";
-        initialImageElement.style.opacity = "1";
-    
-        img_carrousel.appendChild(initialImageElement);
-    }
-    
-    function updateImage() {
-        const nextImageElement = createImage(images[currentIndex]);
-        nextImageElement.style.position = "absolute";
-        nextImageElement.style.opacity = "0";
-        nextImageElement.style.transition = "opacity 0.3s ease-in-out";
-    
-        img_carrousel.appendChild(nextImageElement);
-    
-        setTimeout(() => {
-            nextImageElement.style.opacity = "1"; // Nouvelle image devient visible
-        }, 10);
-    
-        setTimeout(() => {
-            // Supprime toutes les images sauf la dernière ajoutée
-            const images = img_carrousel.querySelectorAll("img");
-            images.forEach((img, index) => {
-                if (index < images.length - 1) {
-                    img_carrousel.removeChild(img);
-                }
-            });
-        }, 300);
-    }
-    
-    // **Appelle d'abord l'initialisation avant de naviguer dans les images**
-    initializeCarousel();
-    
     return carouselContainer;
 }
+
 
 // Pour recuperer toutes les images d'un dossier afin de gerer le nombres d'image dans les carrousels dynamiquement
 export function generateImagePaths(folderName,nbrepictures) {
