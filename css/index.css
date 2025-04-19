@@ -364,6 +364,9 @@ body.mode-nuit .scrolling-text {
 
       .down-social-networks-area{
         font-size: 1.2em;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
       }
 
       .down-subscriber{
