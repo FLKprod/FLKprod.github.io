@@ -125,12 +125,7 @@ body.mode-nuit .sections-menu > .select {
     gap: o.2em;
 }
 
-body.mode-nuit .down-menu {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
-}
+
 
 .down-menu > button:hover{
     color: #4f0341;
@@ -170,22 +165,16 @@ body.mode-nuit .down-menu {
     margin-top:2em;
 }
 
-.down-menu button:first-child, body.mode-nuit .down-menu button:first-child {
-    padding-left:0;
-    padding-right: 5px;
-}
-
-#down-menu button:not(:last-child)::after {
-    content: "|";
-    margin-left: 10px;
-    color: white; /* Couleur du séparateur, tu peux l'adapter */
-}
-
 body.mode-nuit #down-menu button:not(:last-child)::after {
     content: "";
     margin-left: 0;
 }
-
+.down-menu {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+}
 
 .down-menu button, body.mode-nuit > .down-menu button {
     background-color: transparent;
@@ -394,6 +383,7 @@ body.mode-nuit #down-menu button:not(:last-child)::after {
 
     .img-down{
         width: 25%;
+        margin-bottom: 1em;
     }
     .text-down{
         width: 75%;

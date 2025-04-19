@@ -351,6 +351,13 @@ body.mode-nuit .scrolling-text {
         align-items: center;
         flex-direction: column;
       }
+
+      .down{
+        width: 95%;
+        margin-left: 1.25% !important;
+        margin: 0;
+        align-items: center;
+      }
       .down-social-networks > button{
         font-size: 1.5em;
       }
@@ -361,18 +368,31 @@ body.mode-nuit .scrolling-text {
 
       .down-subscriber{
         flex-direction: column;
+        width: 100%;
+        font-size: 1em;
+        margin-left: -2em;
       }
 
-    
-      .down-subscriber {
-        font-size: 2em;
-      }
+      .text-down {
+        width: 95% !important;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0 !important;
+    }
+
       .down-social-networks > button{
         font-size: 0.6em;
       }
       .down-social-networks {
         font-size: 1em;
       }
+      .down-social-networks-area > h2 {
+        font-size: 1.5em;
+      }
+
+      .down-social-networks > button {
+        margin: 0 0.1em;
+    }
 }
 @media screen and (max-width: 1100px) {
     .up, .entete, .text-entete{
