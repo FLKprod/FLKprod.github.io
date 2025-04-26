@@ -113,6 +113,7 @@ body.mode-nuit .sections-menu > .select {
 }
 .social-networks > button{
     margin:0 0.3em;
+    
 }
 
 .social-networks button:hover{
@@ -122,13 +123,12 @@ body.mode-nuit .sections-menu > .select {
 .down-menu {
     display: flex;
     text-align: left;
-    gap: o.2em;
 }
 
 
 
 .down-menu > button:hover{
-    color: #4f0341;
+    color: #e3d898;
 }
 
 .img-down{
@@ -179,6 +179,7 @@ body.mode-nuit #down-menu button:not(:last-child)::after {
 .down-menu button, body.mode-nuit > .down-menu button {
     background-color: transparent;
     color: white;
+    transition: color 0.3s ease-in-out;
     padding:0;
     margin: 0;
     padding: 5px 0;
