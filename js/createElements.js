@@ -18,6 +18,7 @@ export function createTextforSommaire(tag, text, targetId) {
 export function createImage(src) {
     const element = document.createElement('img');
     element.src = src;
+    element.alt = "By Maxime Falkowski";
     return element;
 }
 
@@ -34,6 +35,7 @@ export function createIcon(iconClass, fontSize, color, cursor, clickHandler) {
 export function createIconImage(src, classname, clickHandler) {
     const icon = document.createElement("img");
     icon.src = src;
+    icon.alt = "By Maxime Falkowski";
     icon.className = classname;
     icon.onclick = clickHandler;
     return icon;
@@ -87,6 +89,7 @@ export function createOption(value, text, disabled, selected) {
 export function createVideo(link) {
     const iframeElement = document.createElement('iframe');
     iframeElement.src = link;
+    iframeElement.alt = "By Maxime Falkowski";
     iframeElement.frameborder = "0";
     iframeElement.allow = "autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframeElement.allowfullscreen = true;
