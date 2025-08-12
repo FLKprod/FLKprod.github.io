@@ -182,3 +182,29 @@ body.mode-nuit .videos-container .competences span {
         height: auto;
     }
 }
+
+  @media screen and (max-width: 2000px) {
+
+    .video-container > h3 {
+        margin-top: 0.5em;
+        margin-bottom: 0;
+        text-shadow: none;
+        text-align: left;
+        color: black;
+        font-size: 4em;
+    }
+    .video-container > p {
+        color: black;
+        text-align: left;
+        font-size: 2em;
+    }
+
+    .videos-container .competences span {
+        background-color: black;
+        border-radius: 2em;
+        color: white;
+        padding: 0.2em 1em;
+        font-size: 2.5em;
+        text-transform: capitalize;
+    }
+}

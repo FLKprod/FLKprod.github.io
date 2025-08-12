@@ -283,3 +283,33 @@ body.mode-nuit .text-contacts-services > a{
     }
     
   }
+
+
+  @media screen and (max-width: 2000px) {
+    .services-container .text-section > p {
+        line-height: 2;
+        font-size: 2.5em;
+        margin: 0 2em;
+        text-align: left;
+    }
+
+    .services-container .text-section > h2 {
+        font-size: 5em;
+        margin-bottom: 1em;
+        right: 0;
+        color: white;
+        text-shadow: -1px -1px 0 black, 4px -1px 0 black, 1px 1px 0 black, 1px 1px 0 black;
+        transition: transform 0.3s ease;
+    }
+
+    .service > .text-section button {
+        margin-top: 0.5em;
+        border: none;
+        background-color: #4f0341;
+        border-radius: 2em;
+        color: white;
+        padding: 0.2em 1em;
+        font-size: 3em;
+        text-transform: capitalize;
+    }
+  }
