@@ -88,17 +88,21 @@ export async function toggleTeamInfo(id) {
 
         const shootings_photos = [
             'Photos/services/shooting_pro.jpg',
-            'Photos/services/shooting.JPG'
+            'Photos/services/shooting.JPG',
+            'Photos/services/shooting_mariage.png',
+            'Photos/services/shooting_perso.jpg',
+            'Photos/services/shooting_urbain.jpeg'
         ];
         
         intro2services.appendChild(createImageSlider(shootings_photos));
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Shooting Photo Professionnel"));
-        text_intro2services.appendChild(createText('p',`Basé en région parisienne et à Dijon, je me déplace partout en France pour vous accompagner dans la valorisation de votre image et de vos projets. Que ce soit pour des portraits professionnels, des photos corporate ou des visuels destinés à votre marque, je vous propose un shooting sur mesure, en intérieur, en extérieur ou en situation de travail.
-
-Faites la différence avec des images authentiques et impactantes, adaptées à votre communication et à votre secteur.
-
-Contactez-moi pour donner à votre projet l’image qu’il mérite !`));
+        text_intro2services.appendChild(createText('p',`Mariages, anniversaires, événements privés ou professionnels…
+            Je vous accompagne pour immortaliser l’authenticité de chaque instant, avec des shootings sur mesure, en ville,
+             en pleine nature, en intérieur ou en extérieur. Que ce soit à Paris ou Dijon,
+             je mets en lumière votre univers à travers des images créatives et percutantes,
+              pensées pour refléter votre identité et sublimer vos projets.
+               Prêt(e) à transformer vos instants en souvenirs uniques ? Contactez-moi et donnons vie ensemble à vos idées photographiques.`));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
@@ -107,19 +111,20 @@ Contactez-moi pour donner à votre projet l’image qu’il mérite !`));
         
         
         var text_intro2services = createElementWithClass('div','text-section');
-        text_intro2services.appendChild(createText('h2',"Shootings pour vos événements"));
+        text_intro2services.appendChild(createText('h2',"Tournage et Montage Vidéo"));
         text_intro2services.appendChild(createText('p',`
-            Mariages, anniversaires, événements privés... Je vous propose une couverture complète avec des idées originales pour refléter l’ambiance unique de votre journée.
-            Des photos authentiques au cœur de la ville, ou en pleine nature, capturant l’essence de votre univers.
-            Que ce soit à Paris, Dijon ou partout en France, je vous propose des shootings adaptés à vos envies et à votre style.
-Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour créer ensemble des souvenirs inoubliables !`));
+            Que ce soit pour un clip musical sur Paris ou Dijon, un événement ou un projet professionnel,
+             je propose de capturer vos moments en vidéo avec une approche créative et adaptée à votre univers.
+              En intérieur, en extérieur, en ville ou en pleine nature,
+               je chercherai au maximum de mettre en valeur vos idées et retranscrire une ambiance authentique.
+                Avec un montage soigné et des images qui racontent une histoire,
+                 l’objectif est de créer ensemble une vidéo qui vous ressemble et qui met en lumière vos projets.`));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
             intro2services.appendChild(text_intro2services);
 
             const shootings_evenements_photos = [
-                'Photos/services/shooting_mariage.png',
-                'Photos/services/shooting_perso.jpg',
-                'Photos/services/shooting_urbain.jpeg'
+                'Photos/services/montage.png',
+                'Photos/services/montage.jpg'
             ];
             
             intro2services.appendChild(createImageSlider(shootings_evenements_photos));
@@ -135,8 +140,8 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         intro2services.appendChild(createImageSlider(portofolio_photos));
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Création de Portfolio Personnalisé"));
-        text_intro2services.appendChild(createText('p',`Un portfolio qui met en valeur votre talent, que vous soyez artiste, photographe, entrepreneur ou autre.
-            Que ce soit pour un portfolio élégant, un site vitrine ou une présence en ligne unique, je peux vous concevoir des designs esthétiques et optimisés pour une navigation fluide.
+        text_intro2services.appendChild(createText('p',`Pour mettre en valeur votre talent, que vous soyez artiste, photographe, entrepreneur ou étudiant.
+            Que ce soit pour un portfolio élégant, un site vitrine ou une présence en ligne unique, je peux concevoir des designs esthétiques et optimisés pour une navigation fluide.
             Ensemble, mettons en valeur votre image et vos projets avec un site qui vous distingue, et rien que pour vous !`));
         
             text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
@@ -249,8 +254,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         var text_intro2presentation = createElementWithClass('div','text-section-presentation');
             text_intro2presentation.appendChild(createText('h2',"Bienvenue"));
             text_intro2presentation.appendChild(createText('p',`Découvrez mon univers dédié à la photographie,
-                 à la vidéo, et à mes projets numériques. Entre créativité visuelle et innovation technologique,
-                  je partage ici mes réalisations, mes inspirations, mes collaborations, bref, ce qui me passionne dans la vie.`));
+                 à la vidéo, et à mes projets numériques, bref, ce qui me passionne dans la vie.`));
             text_intro2presentation.appendChild(createText('h2',"Enjoy."));
         intro2presentation.appendChild(text_intro2presentation);
         presentationContainer.appendChild(intro2presentation);
@@ -404,17 +408,16 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
 
         var text_intro2presentation = createElementWithClass('div','text-section');
         text_intro2presentation.appendChild(createText('h2',"Moi, c’est Maxime"));
-        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis administrateur PAM au sein de <a href='https://i-tracing.com/fr/' target='_blank'>I-Tracing</a>, en terres parisiennes.
-            j'ai étudié en école d'ingénieur en sécurité informatique à Dijon.
-            J'ai aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec.
+        text_intro2presentation.appendChild(createText('p',`J'ai 23 ans et je suis ingénieur PAM au sein de <a href='https://i-tracing.com/fr/' target='_blank'>I-Tracing</a>, en terres parisiennes.
+            j'ai étudié en école d'ingénieur en sécurité informatique à <a href='https://polytech.ube.fr/' target='_blank'>Polytech Dijon</a>, mais aussi suivi une formation en double diplôme en cybersécurité à Chicoutimi, au beau milieu du Québec.
             J'ai plusieurs grandes passions telles que la cybersécurité, dommaine dans lequel j'y exerce ma profession, mais aussi la photographie, la vidéo et l'informatique.`));
-        text_intro2presentation.appendChild(createText('p',`En dehors de mon travail de consultant,
-             je m'investis pleinement dans la création de contenus visuels que je partage sur mes réseaux sociaux,
+        text_intro2presentation.appendChild(createText('p',`En dehors de mon travail,
+             je m'investis pleinement dans la création de contenus que je partage sur mes réseaux sociaux,
             ainsi que dans des projets informatiques à titre personnel ou profesionnel.
-            C'est sur ce site que vous trouverez toutes mes créations, aussi bien visuelles que informatiques.`));
+            C'est sur ce site que vous trouverez toutes mes créations, visuelles ou informatiques.`));
         text_intro2presentation.appendChild(createLineSpan(0));
         text_intro2presentation.appendChild(createText('h2',"Pour résumer : "))
-        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-briefcase" aria-hidden="true"></i> Administrateur PAM CyberArk`));
+        text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-briefcase" aria-hidden="true"></i> Ingénieur PAM Wallix & CyberArk`));
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-city"></i> I-Tracing`));
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-map-marker"></i> Paris, France`));
         text_intro2presentation.appendChild(createText('h6',` <i class="fa fa-camera"></i> <i class="fa fa-code"></i> <i class="fa fa-video"></i> <i class="fa fa-shield-alt" aria-hidden="true"></i> Passioné`));
@@ -429,29 +432,25 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
             logoucberkeley.appendChild(createImage('Photos/Apropos/FUEGO.png'));
             text_intro2lbnl.appendChild(logoucberkeley)
 
-            text_intro2lbnl.appendChild(createText('p',`En 2023, j'ai eu le privilège d'éfféctuer un stage de 3 mois au Lawrence Berkeley National Laboratory, dans la préstigieuse université de Californie.
-                j'ai été immergé dans un environnement de recherche dynamique et stimulant, à travers des échanges avec des chercheurs de classe mondiale, comme <a href='https://fr.wikipedia.org/wiki/Carlton_R._Pennypacker' target='_blank'>Carlton R. Pennypacker</a>
+            text_intro2lbnl.appendChild(createText('p',`En 2023, j'ai eu le privilège d'éfféctuer un stage de 4 mois au Lawrence Berkeley National Laboratory, dans la préstigieuse Université de Californie
+                j'ai été immergé dans un environnement de recherche au plus haut niveau, à travers des échanges avec des chercheurs de classe mondiale, comme <a href='https://fr.wikipedia.org/wiki/Carlton_R._Pennypacker' target='_blank'>Carlton R. Pennypacker</a>
                 ,qui ont été une source d'inspiration constante pour moi.
-                Le Laboratoire National de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel.`));
+                Le Laboratoire National de Berkeley est réputé pour ses avancées dans divers domaines scientifiques, nottament le Projet Manhattan de 1942, et y travailler a été une expérience inestimable pour mon développement professionnel et personnel.`));
 
             text_intro2lbnl.appendChild(createImage('Photos/Apropos/carte_berkeley.png'));
 
-            text_intro2lbnl.appendChild(createText('p',`J'ai eu ainsi l'occasion d'intégrer l'équipe <a href='https://fuego.ssl.berkeley.edu/' target='_blank'>FUEGO</a>, une equipe travaillant sur un projet
+            text_intro2lbnl.appendChild(createText('p',`J'ai eu ainsi l'occasion d'intégrer l'équipe <a href='https://fuego.ssl.berkeley.edu/' target='_blank'>FUEGO</a> afin de travailler sur un projet
                  très innovant. Leur but ultime : concevoir un sattelite,
                  en partenariat avec la NASA, afin de détécter les incendies de forêt dans l'ouest américain.
-                La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides, comme celle ci.
+                La nature en constante évolution des incendies de forêt exigeait des solutions innovantes et rapides, comme celle ci..
                 Contribuer à la conception d'algorithmes de pointe pour l'analyse des données satellitaires m'a confronté à des problématiques complexes,
-                stimulant ainsi ma créativité et ma résolution de problèmes.`));
+                stimulant ma créativité et mes refléxions sur le sujet.`));
 
             text_intro2lbnl.appendChild(createText('p',`Au-delà des aspects techniques, mon passage au LBNL m'a également permis de développer des compétences interpersonnelles essentielles.
-                Travailler en équipe dans un environnement aussi diversifié, avec des personnes ne parlant pas la même langue et aux parcours variés,
+                Travailler en équipe dans un environnement aussi diversifié, avec des personnes ne parlant pas la même langue que moi et aux parcours variés,
                  m'a permis de développer mon anglais au maximum et d'être capable de parler courament cette langue.`));
 
-            text_intro2lbnl.appendChild(createText('p',`En résumé, mon stage au Lawrence Berkeley National Laboratory a été une expérience transformative.
-                Il m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour la société.
-                Les leçons apprises et les souvenirs accumulés lors de cette expérience resteront gravés dans ma mémoire et guideront mes pas dans mes futurs projets professionnels.`));
-
-            text_intro2lbnl.appendChild(createText('p',`Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
+            text_intro2lbnl.appendChild(createText('p',`Cette expérience m'a offert une vision approfondie du processus de recherche scientifique, tout en me permettant de contribuer à un projet d'importance capitale pour le monde de nos jours. Ma collaboration avec le Lawrence Berkeley National Laboratory a été bien plus qu'un simple stage professionnel.
                 Elle a été une véritable immersion dans le monde de la recherche scientifique de pointe et une opportunité de contribuer à des projets ayant un impact tangible sur notre société et notre environnement.`));
             text_intro2lbnl.appendChild(createImage('Photos/Apropos/LBNL.jpg'));
             intro2lbnl.appendChild(text_intro2lbnl);
@@ -467,23 +466,22 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         intro2quebec.appendChild(image_intro2quebec);
         var text_intro2quebec = createElementWithClass('div','text-section','desc-quebec');
         text_intro2quebec.appendChild(createText('h2',"Mon Experience au Québèc"));
-        text_intro2quebec.appendChild(createText('p',`Deux mois après mon expérience enrichissante à Berkeley,
+        text_intro2quebec.appendChild(createText('p',`Deux mois après mon expérience à Berkeley,
             j'ai décidé de retourner en Amérique pour poursuivre un double diplôme dans le cadre d’un partenariat entre l’Université du Québec à Chicoutimi (UQAC)
-            et mon école française, Polytech Dijon. `));
+            et mon école d'ingénieur française, Polytech Dijon. `));
 
         text_intro2quebec.appendChild(createImage('Photos/Apropos/carte_quebec.png'));
 
         text_intro2quebec.appendChild(createText('p',`J'ai ainsi passé 10 mois à l'UQAC, où j'ai suivi une maîtrise (l'équivalent d’un master en France) en cybersécurité.
            Ce qui m'a particulièrement motivé, c'est l'approche pédagogique unique de l'UQAC, axée sur les projets concrets, bien plus nombreux que les cours traditionnels.
-           Cette méthodologie m'a permis de travailler sur des projets très intéressants, ce qui a considérablement enrichi mon apprentissage et renforcé
-           ma passion pour la cybersécurité.`));
+           Cette méthodologie m'a permis de travailler sur des projets très intéressants, qui ont considérablement enrichi mon apprentissage et mes prises de recul sur des sujets en cybersécurité.`));
 
         text_intro2quebec.appendChild(createText('p',`Durant ce cursus, j'ai développé des compétences approfondies dans des domaines clés tels que la gestion des incidents
             de sécurité, l'infonuagique, l'analyse forensique et la sécurité informatique. Cette expérience m'a également permis de découvrir la beauté exceptionnelle du Québec,
             une région où la chaleur humaine des habitants compense largement la rudesse des hivers glacials.`));
 
-        text_intro2quebec.appendChild(createText('p',`En résumé, cette expérience a été aussi enrichissante sur le plan personnel que professionnel,
-            et je la recommande vivement à tous ceux qui souhaitent conjuguer apprentissage et découverte culturelle.`));
+        text_intro2quebec.appendChild(createText('p',`Cette expérience a été aussi enrichissante sur le plan personnel que professionnel,
+            et je la recommande vivement à tous ceux qui souhaitent mélanger apprentissage et découverte culturelle.`));
         text_intro2quebec.appendChild(createImage('Photos/Apropos/UQAC_Quebec.jpg'));
 
         intro2quebec.appendChild(text_intro2quebec);
@@ -495,8 +493,8 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         var text_intro2cybersection = createElementWithClass('div','text-section','desc-cybersection');
         text_intro2cybersection.appendChild(createText('h2',"Ma passion pour la Cybersécurité"));
         text_intro2cybersection.appendChild(createText('p',`La cybersécurité est bien plus qu’une simple discipline pour moi,
-            c’est une véritable passion qui allie ma curiosité pour le monde numérique et mon amour pour le code. 
-            Depuis mes débuts, je me suis toujours émerveillé par la manière dont la technologie peut être à la fois
+            c’est une véritable passion qui allie ma curiosité pour le numérique et le code informatique. 
+            Depuis mes débuts, je me suis toujours interessé sur la manière dont la technologie peut être à la fois
              une opportunité incroyable et un terrain de menaces à comprendre et à maîtriser. Ce mélange entre protection,
               innovation et analyse me pousse constamment à me dépasser.`));
         text_intro2cybersection.appendChild(createText('p',`Ma passion pour le code s’intègre parfaitement dans cet univers,
@@ -508,15 +506,30 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                    comprendre et de contribuer à bâtir un monde numérique plus sûr et plus fiable.`));
 
         text_intro2cybersection.appendChild(createText('h2',"Mes Formations"));
-        text_intro2cybersection.appendChild(createText('p',"Formation au diplome d'ingénieur en Sécurité Qualité Réseaux informatiques"));
-        text_intro2cybersection.appendChild(createText('p',"Polytech Dijon, Bourgogne, FRANCE"));
+        text_intro2cybersection.appendChild(createText('p',""));
+        text_intro2cybersection.appendChild(createText('p',"Formation au diplome d'ingénieur en Sécurité Qualité Réseaux informatiques. Polytech Dijon, Bourgogne, FRANCE"));
         text_intro2cybersection.appendChild(createImage('Photos/Apropos/Polytech.png'));
         
-        text_intro2cybersection.appendChild(createText('p',"Maîtrise (Master) en cybersécurité"));
-        text_intro2cybersection.appendChild(createText('p',"UQAC (Université du Québèc à Chicoutimi, Québèc, CANADA)"));
+        text_intro2cybersection.appendChild(createText('p',""));
+        text_intro2cybersection.appendChild(createText('p',"Maîtrise (Master) en cybersécurité. UQAC (Université du Québèc à Chicoutimi, Québèc, CANADA)"));
         text_intro2cybersection.appendChild(createImage('Photos/Apropos/UQAC.jpg'));
 
         text_intro2cybersection.appendChild(createText('h2',"Mes Certifications en Réseaux / Cybersécurité"));
+
+        var  s5_certifications= createElementWithClass("div","class-certification");
+        s5_certifications.appendChild(createImage('Photos/Apropos/cyberark.png'));
+        var liste_5_certifications = document.createElement("ul");
+        liste_5_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
+        liste_5_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
+        s5_certifications.appendChild(liste_5_certifications);
+        text_intro2cybersection.appendChild(s5_certifications);
+
+        var  s6_certifications= createElementWithClass("div","class-certification");
+        s6_certifications.appendChild(createImage('Photos/Apropos/wallix.png'));
+        var liste_5_certifications = document.createElement("ul");
+        liste_5_certifications.appendChild(createText('li',"WCP-P (Wallix Certified Professional - PAM)"));
+        s6_certifications.appendChild(liste_5_certifications);
+        text_intro2cybersection.appendChild(s6_certifications);
 
         var s1_certifications = createElementWithClass("div","class-certification");
         s1_certifications.appendChild(createImage('Photos/Apropos/CCNA.png'));
@@ -538,13 +551,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         s2_certifications.appendChild(liste_2_certifications);
         text_intro2cybersection.appendChild(s2_certifications);
 
-        var  s5_certifications= createElementWithClass("div","class-certification");
-        s5_certifications.appendChild(createImage('Photos/Apropos/cyberark.png'));
-        var liste_5_certifications = document.createElement("ul");
-        liste_5_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
-        liste_5_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
-        s5_certifications.appendChild(liste_5_certifications);
-        text_intro2cybersection.appendChild(s5_certifications);
+        
 
         var s3_certifications = createElementWithClass("div","class-certification");
         s3_certifications.appendChild(createImage('Photos/Apropos/linux.png'));
@@ -564,7 +571,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         
         intro2cybersection.appendChild(text_intro2cybersection);
         var image_intro2cybersection = createElementWithClass('div','image-section','portrait');
-        image_intro2cybersection.appendChild(createImage('Photos/Apropos/cybersection.jpg'));
+        image_intro2cybersection.appendChild(createImage('Photos/Apropos/cybersection.JPG'));
         intro2cybersection.appendChild(image_intro2cybersection);
         aproposdemoiContainer.appendChild(intro2cybersection);
 
@@ -897,7 +904,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
         image_intro2projects.appendChild(img_for_image_intro_for_projets);
         var text_intro2projects = createElementWithClass('div','text-section');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
-        text_intro2projects.appendChild(createText('p',"j'aime toujours développé de nouveaux programmes à titre personnel ou pour de potentiels clients"));
+        text_intro2projects.appendChild(createText('p',"j'aime toujours développé de nouveaux programmes à titre personnel ou pour de potentiels clients. Enjoy."));
         text_intro2projects.appendChild(createImage('Photos/scrolling.gif'));
 
         var sommaire_projets = createElementWithClass('ul', 'sommaire-projets');
@@ -939,7 +946,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 imageSrc: "Photos/projets/RockRush.jpg",
                 desc: `RockRush est un jeu en langage web créé durant ma formation ingénieur.
                 C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres. \n
-                Ce projet, réalisé durant mon cursus d'ingénieur en informatique, fut un travail très utile à la création de ce site internet.`,
+                Ce projet fut un travail très utile à la création de ce site internet.`,
                 competences: "HTML / CSS, JavaScript"
             },
             {
@@ -948,8 +955,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 github: "https://github.com/FLKprod/Appli_Android_Deepl",
                 videoLink: "Photos/projets/DeepL.mp4",
                 imageSrc: "Photos/projets/DeepL.png",
-                desc: `Ce projet constitue une application Android que j'ai développée dans le cadre de ma formation d'ingénieur.
-                Réalisé à travers l'outil de développement d'application Android Studio, cette application tire parti de l'API DeepL,
+                desc: `Une application Android développée dans le cadre de ma formation d'ingénieur et à travers Android Studio, cette application tire parti de l'API DeepL,
                 une API avec version gratuite permettant d'utiliser les fonctionnalités de Deepl, traducteur mondialement connu.
                 Son objectif principal est de fournir un service de traduction de texte efficace et convivial.`,
                 competences: "Programmation Mobile, API"
@@ -961,7 +967,6 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 videoLink: "Photos/projets/201F.mp4",
                 imageSrc: "Photos/projets/201F.png",
                 desc: `201 Farehein est une parodie du célèbre jeu mobile '94 degrees'. 
-                Explorez un monde rempli de défis, de article hilarantes et de réponses surprenantes.
                 Testez vos connaissances géographiques tout en vous amusant !` ,
                 competences: "Python, Pygame"
             },
@@ -971,9 +976,8 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 github: "https://github.com/FLKprod/Projet-IOT",
                 videoLink: "Photos/projets/Cybersafe.mp4",
                 imageSrc: "Photos/projets/Cybersafe.png",
-                desc: `CyberSafe est une Plateforme de Surveillance des Vulnérabilités de Sécurité des Objets Connectés.
-                 Elle se met à jour automatiquement pour informer les utilisateurs sur les vulnérabilités de sécurité
-                  des objets connectés.`,
+                desc: `CyberSafe est une plateforme dédiée à la détection des failles de sécurité dans les objets connectés.
+                        Elle se met à jour en continu afin d’alerter les utilisateurs sur les nouveaux risques identifiés.`,
                 competences: "HTML / CSS, JavaScript, IOT, JSON"
             },
             {
@@ -982,10 +986,10 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 github: "https://github.com/FLKprod/Verifile",
                 videoLink: "Photos/projets/Verifile.mp4",
                 imageSrc: "Photos/projets/Verifile.png",
-                desc: `Verifile est un site permettant de scanner des URLs et des documents
-                afin de déterminer leur fiabilité. Elle permet ainsi de protéger les utilisateurs des menaces sur le Web.
+                desc: `<a href='https://verifileapp.fr/' target='_blank'>Verifile</a> est un site permettant de scanner des URLs et des documents
+                afin de déterminer leur fiabilité et ainsi protéger les utilisateurs des menaces sur le Web.
                 Si le site ou le document n'a jamais été scanné par Verifile, un système de question réponse permet à l'utilisateur
-                de prendre la meilleur décision quant a la fiabilité de ce dernier. Verifile est disponible sur internet en version d'essai juste <a href='https://verifileapp.fr/' target='_blank'>ici</a> `,
+                de prendre la meilleur décision quant a la fiabilité de ce dernier.   `,
                 competences: "HTML / CSS, JavaScript, Python, API"
             },
             {
@@ -994,8 +998,8 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 github: "https://github.com/FLKprod/CloudProject",
                 videoLink: "Photos/projets/landbacash.mp4",
                 imageSrc: "Photos/projets/landbacash.png",
-                desc: `LanbdaCash Tool est une application pour tester un programme et l'exécuter avec différentes valeurs de RAM afin comparer les prix d'exécution AWS (Amazon Web Services).
-                Elle a pour simple but de guider un utilisateur sur la quantité de RAM nécésaire à emprunter pour avoir une bonne qualité d'éxécution tout en gardant un bon rapport qualité/prix.`,
+                desc: `LanbdaCash Tool est une application pour tester avec différentes valeurs de RAM afin comparer les prix d'exécution sur AWS (Amazon Web Services).
+                et ainsi guider un utilisateur pour avoir une bonne qualité d'éxécution tout en gardant le meilleur rapport qualité/prix.`,
                 competences: "Cloud Computing, AWS, Python, Bash"
             },
             {
@@ -1004,7 +1008,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 github: "https://github.com/FLKprod/FLKprod.github.io",
                 videoLink: "",
                 imageSrc: "Photos/projets/Flkprod.png",
-                desc: `Ce site internet, tout simplement, créé de A à Z par moi-même.`,
+                desc: `Ce site internet, tout simplement, créé de A à Z par mes soins.`,
                 competences: "HTML / CSS, JavaScript, XML"
             },
             {
@@ -1013,7 +1017,7 @@ Prêt(e) à immortaliser vos moments dans un cadre unique ? Contactez-moi pour c
                 github: "https://github.com/aleskflkphotos/aleskflkphotos.github.io",
                 videoLink: "",
                 imageSrc: "Photos/projets/aleskflkphotos.png",
-                desc: `Ce site internet, créé de A à Z par moi-même, pour une connaissance, photographe indépendante. Son instagram est disponible juste ici pour les plus curieux : <a class="fab fa-instagram" onclick="window.open('https://www.instagram.com/aleskflkphotos/', '_blank'"></a>`,
+                desc: `Ce site internet, créé de A à Z par mes soins, pour une connaissance, photographe indépendante. Son instagram est disponible juste ici pour les plus curieux : <a class="fab fa-instagram" href="https://www.instagram.com/aleskflkphotos/', '_blank'"></a>`,
                 competences: "HTML / CSS, JavaScript"
             }
         ];

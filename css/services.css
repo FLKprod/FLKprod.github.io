@@ -309,7 +309,7 @@ body.mode-nuit .text-contacts-services > a{
         border-radius: 2em;
         color: white;
         padding: 0.2em 1em;
-        font-size: 3em;
+        font-size: em;
         text-transform: capitalize;
     }
   }

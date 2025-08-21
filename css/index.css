@@ -545,15 +545,9 @@ body.mode-nuit {
     background-color: var(--background-night);
     color: var(--text-color-night);
 }
-body.mode-nuit .down-subscriber {
-    width: calc(100% - 8em);
-    margin-left: -2em;
-}
 
 body.mode-nuit .down {
     background:  linear-gradient(black, #4f0341);
-    width: 100%;
-    margin: 0;
     color: white;
 }
 

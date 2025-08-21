@@ -94,7 +94,10 @@ body.mode-nuit .moicmaxime .text-section p > a {
 }
 .moicmaxime > .text-section p{
     text-align: left;
-    margin-bottom: 1em;
+    line-height: 2;
+    font-size: 1.6em;
+
+    text-align: left;
 }
 .moicmaxime > .text-section h2{
     text-align: left;

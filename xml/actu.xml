@@ -22,32 +22,17 @@
     </corps>
     <image src="/Photos/actu/PAM.png" />
 </article>
-
-    <article>
-        <title>Les ERP et leur réponse à la cybersécurité des entreprises</title>
-        <sujet>Cybersécurité</sujet>
-        <date>24 Février 2025</date>
-        <corps>Dans un contexte où les cyberattaques se multiplient, les entreprises cherchent à sécuriser leurs systèmes d'information. Les ERP (Enterprise Resource Planning) jouent un rôle clé dans la protection des données et l'optimisation des mesures de cybersécurité.
-            
-            En tant que consultant dans ce domaine, j’ai rédigé cet article afin de vous éclairer sur ce qu’est un ERP et son importance essentielle dans le domaine de la cybersécurité aujourd’hui.
-
-            Bien que les ERP centralisent les informations stratégiques des entreprises, ils constituent également une cible privilégiée pour les cybercriminels. Les failles de sécurité, les accès non contrôlés et les mises à jour insuffisantes peuvent exposer les systèmes à des attaques telles que le vol de données, les ransomwares ou encore les intrusions malveillantes.
-
-            Pour contrer ces menaces, les éditeurs d’ERP intègrent de plus en plus de fonctionnalités de sécurité avancées, comme l’authentification multi-facteurs, le chiffrement des données, ou encore la surveillance en temps réel des activités suspectes. Ces solutions permettent aux entreprises de renforcer la protection de leurs informations et de se conformer aux réglementations en vigueur.
-            
-            Au-delà des solutions techniques, les entreprises doivent adopter des bonnes pratiques en matière de cybersécurité. Cela passe par la formation des employés, la mise en place de protocoles stricts pour la gestion des accès et l’application régulière des correctifs de sécurité.
-
-            Face aux défis croissants de la cybersécurité, les ERP évoluent pour offrir une protection renforcée aux entreprises. Une approche proactive, alliant technologies de pointe et bonnes pratiques, est essentielle pour garantir la sécurité des systèmes d’information.
-        </corps>
-        <image src="/Photos/actu/erp.jpg" />
-    </article>
     <article>
         <title>Photoscape X, un très bon logiciel de retouche photo pour commencer</title>
         <sujet>Photographie</sujet>
         <date>21 février 2025</date>
-        <corps>Photoscape X est un logiciel de retouche photo puissant et accessible, parfait pour les débutants. Avec son interface claire et ses fonctionnalités simples à comprendre, il permet de réaliser des montages et des retouches de qualité professionnelle sans la courbe d’apprentissage abrupte des logiciels plus complexes. Que ce soit pour ajuster la luminosité, ajouter des filtres ou créer des collages, Photoscape X offre des outils pratiques pour tout type de projet visuel.
+        <corps>Photoscape X est un logiciel de retouche photo vraiment pratique, surtout si on débute. Pas besoin d’être un pro pour s’y retrouver : on peut régler la luminosité, améliorer les couleurs, ajouter des filtres sympas ou même créer des collages en quelques clics. Tout est clair et facile à utiliser, ce qui le rend idéal pour commencer sans se prendre la tête.
 
-            De plus, bien que le logiciel propose une version gratuite très complète, la version payante ouvre encore plus de possibilités, avec des fonctionnalités avancées telles que des effets supplémentaires, une meilleure gestion des calques et des outils de retouche plus poussés. Si vous débutez dans le domaine de la retouche photo, Photoscape X est définitivement un excellent choix pour vous accompagner tout au long de votre apprentissage.
+La version gratuite est déjà très complète, mais la version payante, qui coûte environ 40 €, ajoute pas mal d’options intéressantes : plus d’effets, une meilleure gestion des calques et des outils de retouche plus avancés. De quoi aller plus loin sans se ruiner.
+
+En bref, que vous vouliez simplement embellir vos photos ou progresser dans vos créations, Photoscape X est une super alternative accessible.
+
+PS : pour les filous qui veulent craquer Photoshop… franchement, c’est risqué et ça vaut pas le coup. À 40 €, Photoscape X fait très bien le boulot et vous dormirez tranquille 😉.
         </corps>
         <image src="/Photos/actu/photoscape.jpeg" />
     </article>

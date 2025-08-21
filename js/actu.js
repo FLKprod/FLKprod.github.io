@@ -1,15 +1,47 @@
 import { createImage,createText,createElementWithClass } from "./createElements.js";
 import{toggleTeamInfo} from './index.js';
 
-function convertLinksToAnchors(text) {
-    const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+)/g;
-    return text.replace(urlRegex, (url) => {
-        if (!url.startsWith('http://') && !url.startsWith('https://')) {
-            url = 'https://' + url;
+function convertLinksToAnchors(html) {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(`<div>${html}</div>`, "text/html");
+
+    const urlRegex = /(https?:\/\/[^\s<]+|www\.[^\s<]+)/g;
+
+    function processNode(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+            const parts = node.nodeValue.split(urlRegex);
+            if (parts.length > 1) {
+                const frag = document.createDocumentFragment();
+                parts.forEach(part => {
+                    if (urlRegex.test(part)) {
+                        let href = part;
+                        if (!href.startsWith("http://") && !href.startsWith("https://")) {
+                            href = "https://" + href;
+                        }
+                        const a = document.createElement("a");
+                        a.href = href;
+                        a.target = "_blank";
+                        a.textContent = part;
+                        frag.appendChild(a);
+                    } else {
+                        frag.appendChild(document.createTextNode(part));
+                    }
+                });
+                node.replaceWith(frag);
+            }
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+            node.childNodes.forEach(processNode);
         }
-        return `<a href="${url}" target="_blank">${url}</a>`;
-    });
+    }
+
+    doc.body.firstChild.childNodes.forEach(processNode);
+
+    return doc.body.firstChild.innerHTML;
 }
+
+
+
+
 
 
 export function searcharticle() {

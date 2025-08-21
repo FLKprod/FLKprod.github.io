@@ -183,7 +183,7 @@ body.mode-nuit .videos-container .competences span {
     }
 }
 
-  @media screen and (max-width: 2000px) {
+@media screen and (max-width: 2000px) {
 
     .video-container > h3 {
         margin-top: 0.5em;
@@ -196,7 +196,7 @@ body.mode-nuit .videos-container .competences span {
     .video-container > p {
         color: black;
         text-align: left;
-        font-size: 2em;
+        font-size: 1.6em;
     }
 
     .videos-container .competences span {
@@ -204,7 +204,7 @@ body.mode-nuit .videos-container .competences span {
         border-radius: 2em;
         color: white;
         padding: 0.2em 1em;
-        font-size: 2.5em;
+        font-size: 2em;
         text-transform: capitalize;
     }
 }
