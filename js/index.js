@@ -993,11 +993,11 @@ export async function toggleTeamInfo(id) {
                 competences: "HTML / CSS, JavaScript, Python, API"
             },
             {
-                name: "Verifile",
-                category:"Toucreer.com",
+                name: "Toutcreer ",
+                category:"Toucréer.com",
                 github: "https://toutcreer.com",
                 imageSrc: "Photos/projets/toutcreer.png",
-                desc: `<a href='https://toutcreer.com.fr/' target='_blank'>Toutcreer</a>est une association dédiée à l'innovation et à la création de solutions technologiques qui ont un impact positif sur notre société.`,
+                desc: `<a href='https://toutcreer.com.fr/' target='_blank'>Toutcréer</a>est une association dédiée à l'innovation et à la création de solutions technologiques qui ont un impact positif sur notre société.`,
                 competences: "HTML / CSS, JavaScript"
             },
             {
