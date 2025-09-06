@@ -997,7 +997,7 @@ export async function toggleTeamInfo(id) {
                 category:"Projets-Web",
                 github: "https://toutcreer.com",
                 imageSrc: "Photos/projets/toutcreer.png",
-                desc: `<a href='https://toutcreer.com.fr/' target='_blank'>Toutcréer</a>est une association dédiée à l'innovation et à la création de solutions technologiques qui ont un impact positif sur notre société.`,
+                desc: `<a href='https://toutcreer.com.fr/' target='_blank'>Toutcréer</a> est une association dédiée à l'innovation et à la création de solutions technologiques qui ont un impact positif sur notre société.`,
                 competences: "HTML / CSS, JavaScript"
             },
             {
