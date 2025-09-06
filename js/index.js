@@ -135,7 +135,7 @@ export async function toggleTeamInfo(id) {
         const portofolio_photos = [
             'Photos/services/aleskflk.png',
             'Photos/services/portofolio.jpg',
-            'Photos/services/portofolio.png',
+            'Photos/services/toutcreer.png',
         ];
         intro2services.appendChild(createImageSlider(portofolio_photos));
         var text_intro2services = createElementWithClass('div','text-section');
