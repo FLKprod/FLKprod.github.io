@@ -993,6 +993,14 @@ export async function toggleTeamInfo(id) {
                 competences: "HTML / CSS, JavaScript, Python, API"
             },
             {
+                name: "Verifile",
+                category:"Toucreer.com",
+                github: "https://toutcreer.com",
+                imageSrc: "Photos/projets/toutcreer.png",
+                desc: `<a href='https://toutcreer.com.fr/' target='_blank'>Toutcreer</a>est une association dédiée à l'innovation et à la création de solutions technologiques qui ont un impact positif sur notre société.`,
+                competences: "HTML / CSS, JavaScript"
+            },
+            {
                 name: "LanbdaCash Tool",
                 category:"Projets-de-Programmation-Avancée",
                 github: "https://github.com/FLKprod/CloudProject",
