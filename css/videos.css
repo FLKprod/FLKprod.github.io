@@ -183,7 +183,7 @@ body.mode-nuit .videos-container .competences span {
     }
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (min-width: 2000px) {
 
     .video-container > h3 {
         margin-top: 0.5em;

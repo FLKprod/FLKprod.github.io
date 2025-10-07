@@ -90,19 +90,17 @@ export async function toggleTeamInfo(id) {
             'Photos/services/shooting_pro.jpg',
             'Photos/services/shooting.JPG',
             'Photos/services/shooting_mariage.png',
-            'Photos/services/shooting_perso.jpg',
-            'Photos/services/shooting_urbain.jpeg'
+            'Photos/services/shooting_perso.jpg'
         ];
         
         intro2services.appendChild(createImageSlider(shootings_photos));
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Shooting Photo Professionnel"));
         text_intro2services.appendChild(createText('p',`Mariages, anniversaires, événements privés ou professionnels…
-            Je vous accompagne pour immortaliser l’authenticité de chaque instant, avec des shootings sur mesure, en ville,
+            Je peux vous accompagner pour immortaliser l’authenticité de chaque instant, avec des shootings sur mesure, en ville,
              en pleine nature, en intérieur ou en extérieur. Que ce soit à Paris ou Dijon,
-             je mets en lumière votre univers à travers des images créatives et percutantes,
-              pensées pour refléter votre identité et sublimer vos projets.
-               Prêt(e) à transformer vos instants en souvenirs uniques ? Contactez-moi et donnons vie ensemble à vos idées photographiques.`));
+             je peux mettre en lumière votre univers à travers des images créatives et percutantes afin de refléter votre identité et sublimer vos projets.
+               Prêt(e) à transformer vos instants en souvenirs ? Contactez-moi et donnons vie à vos idées !`));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
         intro2services.appendChild(text_intro2services);
         servicesContainer.appendChild(intro2services);
@@ -113,12 +111,12 @@ export async function toggleTeamInfo(id) {
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Tournage et Montage Vidéo"));
         text_intro2services.appendChild(createText('p',`
-            Que ce soit pour un clip musical sur Paris ou Dijon, un événement ou un projet professionnel,
-             je propose de capturer vos moments en vidéo avec une approche créative et adaptée à votre univers.
+            Pour un clip musical sur Paris ou Dijon, un événement ou un projet professionnel,
+             je peux capturer vos moments en vidéo avec une approche créative et adaptée à votre univers.
               En intérieur, en extérieur, en ville ou en pleine nature,
                je chercherai au maximum de mettre en valeur vos idées et retranscrire une ambiance authentique.
                 Avec un montage soigné et des images qui racontent une histoire,
-                 l’objectif est de créer ensemble une vidéo qui vous ressemble et qui met en lumière vos projets.`));
+                 l’objectif sera de créer ensemble une vidéo qui vous ressemble et qui met en lumière vos projets.`));
             text_intro2services.appendChild(createButton("Checkez mes précédentes créations", () => toggleTeamInfo('photos')));
             intro2services.appendChild(text_intro2services);
 
@@ -141,9 +139,7 @@ export async function toggleTeamInfo(id) {
         var text_intro2services = createElementWithClass('div','text-section');
         text_intro2services.appendChild(createText('h2',"Création de Portfolio Personnalisé"));
         text_intro2services.appendChild(createText('p',`Pour mettre en valeur votre talent, que vous soyez artiste, photographe, entrepreneur ou étudiant.
-            Que ce soit pour un portfolio élégant, un site vitrine ou une présence en ligne unique, je peux concevoir des designs esthétiques et optimisés pour une navigation fluide.
-            Ensemble, mettons en valeur votre image et vos projets avec un site qui vous distingue, et rien que pour vous !`));
-        
+            Que ce soit pour un portfolio élégant, un site vitrine ou une présence en ligne unique, je peux mettre en valeur votre image et vos projets à travers un site qui vous distingue, et rien que pour vous !`));       
             text_intro2services.appendChild(createButton("Checkez mes précédentes projets informatiques", () => toggleTeamInfo('projets')));
             intro2services.appendChild(text_intro2services);
 
@@ -403,7 +399,7 @@ export async function toggleTeamInfo(id) {
         
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
-        image_intro2presentation.appendChild(createImage('Photos/Apropos/moi.png'));
+        image_intro2presentation.appendChild(createImage('Photos/Apropos/moi.jpg'));
         intro2presentation.appendChild(image_intro2presentation);
 
         var text_intro2presentation = createElementWithClass('div','text-section');
@@ -521,15 +517,35 @@ export async function toggleTeamInfo(id) {
         var liste_5_certifications = document.createElement("ul");
         liste_5_certifications.appendChild(createText('li',"CyberArk Identity: Introduction to Workforce Password Management"));
         liste_5_certifications.appendChild(createText('li',"Introduction to CyberArk Identity Security"));
+        liste_5_certifications.appendChild(createText('li',"CyberArk PAM : Install And Config"));
+        liste_5_certifications.appendChild(createText('li',"CyberArk PAM : Administration"));
         s5_certifications.appendChild(liste_5_certifications);
         text_intro2cybersection.appendChild(s5_certifications);
 
         var  s6_certifications= createElementWithClass("div","class-certification");
         s6_certifications.appendChild(createImage('Photos/Apropos/wallix.png'));
-        var liste_5_certifications = document.createElement("ul");
-        liste_5_certifications.appendChild(createText('li',"WCP-P (Wallix Certified Professional - PAM)"));
-        s6_certifications.appendChild(liste_5_certifications);
+        var liste_6_certifications = document.createElement("ul");
+        liste_6_certifications.appendChild(createText('li',"WCP-P (Wallix Certified Professional - PAM)"));
+        s6_certifications.appendChild(liste_6_certifications);
         text_intro2cybersection.appendChild(s6_certifications);
+
+        var  s7_certifications= createElementWithClass("div","class-certification");
+        s7_certifications.appendChild(createImage('Photos/Apropos/beyondtrust.png'));
+        var liste_7_certifications = document.createElement("ul");
+        liste_7_certifications.appendChild(createText('li',"Endpoint Privilege Management - Windows: QuickStart Policy Design"));
+        s7_certifications.appendChild(liste_7_certifications);
+        text_intro2cybersection.appendChild(s7_certifications);
+
+        var  s8_certifications= createElementWithClass("div","class-certification");
+        s8_certifications.appendChild(createImage('Photos/Apropos/ad.png'));
+        var liste_8_certifications = document.createElement("ul");
+        liste_8_certifications.appendChild(createText('li',"Introduction à AD DS"));
+        liste_8_certifications.appendChild(createText('li',"Gérer les contrôleurs de domaine AD DS et les rôles FSMO"));
+        liste_8_certifications.appendChild(createText('li',"Implementer des objets de stratégie de groupe"));
+        liste_8_certifications.appendChild(createText('li',"Implémenter et gérer des services de certificats Active Directory"));
+        liste_8_certifications.appendChild(createText('li',"Gérer les fonctionnalités avancées d’AD DS"));
+        s8_certifications.appendChild(liste_8_certifications);
+        text_intro2cybersection.appendChild(s8_certifications);
 
         var s1_certifications = createElementWithClass("div","class-certification");
         s1_certifications.appendChild(createImage('Photos/Apropos/CCNA.png'));
@@ -944,9 +960,8 @@ export async function toggleTeamInfo(id) {
                 github: "https://github.com/FLKprod/RockRush",
                 videoLink: "Photos/projets/RockRush.mp4",
                 imageSrc: "Photos/projets/RockRush.jpg",
-                desc: `RockRush est un jeu en langage web créé durant ma formation ingénieur.
-                C'est une version de Boulder Dash, un jeu classique où un mineur doit collecter tous les diamants sans se faire écraser par des pierres. \n
-                Ce projet fut un travail très utile à la création de ce site internet.`,
+                desc: `RockRush, C'est un jeu inspiré de Boulder Dash, en langage web créé durant ma formation ingénieur.
+                Le concept ? Un mineur doit collecter tous les diamants sans se faire écraser par des pierres.`,
                 competences: "HTML / CSS, JavaScript"
             },
             {
@@ -955,9 +970,8 @@ export async function toggleTeamInfo(id) {
                 github: "https://github.com/FLKprod/Appli_Android_Deepl",
                 videoLink: "Photos/projets/DeepL.mp4",
                 imageSrc: "Photos/projets/DeepL.png",
-                desc: `Une application Android développée dans le cadre de ma formation d'ingénieur et à travers Android Studio, cette application tire parti de l'API DeepL,
-                une API avec version gratuite permettant d'utiliser les fonctionnalités de Deepl, traducteur mondialement connu.
-                Son objectif principal est de fournir un service de traduction de texte efficace et convivial.`,
+                desc: `C'est une application Android développée dans le cadre de ma formation d'ingénieur et à travers Android Studio. Elle tire parti de l'API DeepL,
+                étant gratuite et permettant d'utiliser les fonctionnalités de Deepl, un traducteur mondialement connu.`,
                 competences: "Programmation Mobile, API"
             },
             {
@@ -976,8 +990,8 @@ export async function toggleTeamInfo(id) {
                 github: "https://github.com/FLKprod/Projet-IOT",
                 videoLink: "Photos/projets/Cybersafe.mp4",
                 imageSrc: "Photos/projets/Cybersafe.png",
-                desc: `CyberSafe est une plateforme dédiée à la détection des failles de sécurité dans les objets connectés.
-                        Elle se met à jour en continu afin d’alerter les utilisateurs sur les nouveaux risques identifiés.`,
+                desc: `CyberSafe est une plateforme dédiée à la détection des vulnérabilités dans les objets connectés.
+                        Elle se met à jour en continu afin d’alerter les utilisateurs sur les nouveaux risques identifiés au quotidien.`,
                 competences: "HTML / CSS, JavaScript, IOT, JSON"
             },
             {
@@ -989,7 +1003,7 @@ export async function toggleTeamInfo(id) {
                 desc: `<a href='https://verifileapp.fr/' target='_blank'>Verifile</a> est un site permettant de scanner des URLs et des documents
                 afin de déterminer leur fiabilité et ainsi protéger les utilisateurs des menaces sur le Web.
                 Si le site ou le document n'a jamais été scanné par Verifile, un système de question réponse permet à l'utilisateur
-                de prendre la meilleur décision quant a la fiabilité de ce dernier.   `,
+                de prendre la meilleur décision quant a la fiabilité de ce dernier.`,
                 competences: "HTML / CSS, JavaScript, Python, API"
             },
             {
@@ -1006,8 +1020,8 @@ export async function toggleTeamInfo(id) {
                 github: "https://github.com/FLKprod/CloudProject",
                 videoLink: "Photos/projets/landbacash.mp4",
                 imageSrc: "Photos/projets/landbacash.png",
-                desc: `LanbdaCash Tool est une application pour tester avec différentes valeurs de RAM afin comparer les prix d'exécution sur AWS (Amazon Web Services).
-                et ainsi guider un utilisateur pour avoir une bonne qualité d'éxécution tout en gardant le meilleur rapport qualité/prix.`,
+                desc: `LanbdaCash Tool est une application pour tester des programmes avec différentes valeurs de RAM afin comparer les prix d'exécution sur AWS (Amazon Web Services).
+                et ainsi guider l'utilisateur pour avoir le meilleur rapport qualité/prix sur ce qu'il veut éxecuter avec AWS.`,
                 competences: "Cloud Computing, AWS, Python, Bash"
             },
             {
@@ -1080,7 +1094,7 @@ export async function toggleTeamInfo(id) {
         const planData = [
             ["/", "Bienvenue"],
             ["Services",  "Shootings photo spécialisés", "Shootings pour vos événements", "Shooting photo en milieu urbain","Création de portofolios personnalisés"],
-            ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Flkprod.github.io", "aleskflkphotos.github.io"],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
+            ["Projets", "Projets Web",["RockRush", "Cybersafe", "Verifile","Toutcreer.com","Flkprod.github.io", "aleskflkphotos.github.io"],"Projets de Programmation Avancée",["Application Deepl","201 Farehein","LandbaCash Tool"]],
             ["Multimedia", "Création #1", "Présentation BDE Lepus Sinapis"],
             ["Photographie", "Photos Urbaine", ["Dijon", "Strasbourg", "Berlin", "San Francisco", "Chicago", "Boston","Paris", "Québèc City"], "Photos Nature",["Quebec","Yosemite"],"Photos Sportives", ["Baseball","Boston Red Sox", "Basket", "Nanterre 92", "Paris Basketball","JDA Dijon Basket"], "Photos Evenementielles", ["Automobile","Retro Mobile"]],
             ["A propos de moi", ["Moi C'est Maxime", "Mon expérience à Berkeley","Mon Experience au Québèc", "Ma passion pour la cybersécurité", "Informations de contact"]],

@@ -95,8 +95,6 @@ body.mode-nuit .moicmaxime .text-section p > a {
 .moicmaxime > .text-section p{
     text-align: left;
     line-height: 2;
-    font-size: 1.6em;
-
     text-align: left;
 }
 .moicmaxime > .text-section h2{
@@ -674,7 +672,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .desc-berkeley > img{
-        margin-top: 2em;
+        margin-top: 0;
         width: 100%;
     }
 
@@ -714,7 +712,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .desc-quebec > img{
-        margin-top: 2em;
+        margin-top: 0;
         width: 100%;
     }
 
@@ -758,7 +756,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .desc-cybersection > img{
-        margin-top: 2em;
+        margin-top: 0;
         width: 100%;
     }
 
@@ -812,6 +810,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .text-section > a {
-        margin-left: 1em ;
+        margin-left: 0;
     }
 }
