@@ -789,6 +789,10 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     .contact-section  > p{
         font-size: 1.5em;
     }
+
+        .text-section > a {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -809,7 +813,5 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         margin-bottom: 3em;
     }
 
-    .text-section > a {
-        margin-left: 0;
-    }
+
 }

@@ -587,7 +587,7 @@ export async function toggleTeamInfo(id) {
         
         intro2cybersection.appendChild(text_intro2cybersection);
         var image_intro2cybersection = createElementWithClass('div','image-section','portrait');
-        image_intro2cybersection.appendChild(createImage('Photos/Apropos/cybersection.JPG'));
+        image_intro2cybersection.appendChild(createImage('Photos/Apropos/cybersection.jpg'));
         intro2cybersection.appendChild(image_intro2cybersection);
         aproposdemoiContainer.appendChild(intro2cybersection);
 
