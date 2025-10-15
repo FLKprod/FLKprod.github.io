@@ -488,18 +488,13 @@ export async function toggleTeamInfo(id) {
         var intro2cybersection = createElementWithClass('div','section','cybersection');
         var text_intro2cybersection = createElementWithClass('div','text-section','desc-cybersection');
         text_intro2cybersection.appendChild(createText('h2',"Ma passion pour la Cybersécurité"));
-        text_intro2cybersection.appendChild(createText('p',`La cybersécurité est bien plus qu’une simple discipline pour moi,
-            c’est une véritable passion qui allie ma curiosité pour le numérique et le code informatique. 
+        text_intro2cybersection.appendChild(createText('p',`La cybersécurité,c'est une véritable passion qui allie ma curiosité pour le numérique et le code informatique. 
             Depuis mes débuts, je me suis toujours interessé sur la manière dont la technologie peut être à la fois
-             une opportunité incroyable et un terrain de menaces à comprendre et à maîtriser. Ce mélange entre protection,
-              innovation et analyse me pousse constamment à me dépasser.`));
+             une opportunité incroyable et un terrain de menaces à comprendre et à maîtriser. `));
         text_intro2cybersection.appendChild(createText('p',`Ma passion pour le code s’intègre parfaitement dans cet univers,
                 car chaque programme, chaque script que je développe devient un outil essentiel pour explorer,
-                 détecter des vulnérabilités et concevoir des solutions. Je suis en perpétuelle quête d’apprentissage,
-                  toujours à l’affût des nouvelles avancées dans la cybersécurité, des découvertes inédites et des opportunités 
-                  qui s’offrent dans ce domaine en constante évolution. Qu’il s’agisse d’approfondir mes connaissances, de 
-                  relever des défis techniques ou de m’investir dans des projets innovants, je suis animé par cette volonté de
-                   comprendre et de contribuer à bâtir un monde numérique plus sûr et plus fiable.`));
+                 détecter des vulnérabilités et concevoir des solutions. Je suis quotidiennement animé par cette volonté de
+                   comprendre, d'apprendre davantage et de contribuer à bâtir un monde numérique plus sûr et plus fiable.`));
 
         text_intro2cybersection.appendChild(createText('h2',"Mes Formations"));
         text_intro2cybersection.appendChild(createText('p',""));
@@ -765,7 +760,8 @@ export async function toggleTeamInfo(id) {
        
         intro_for_photos.appendChild(image_intro_for_photos)
         text_intro_for_photos.appendChild(createText('h2', "Mes contenus photographiques"));
-        text_intro_for_photos.appendChild(createText('p', "Découvrez mes clichés qui reflètent ma passion pour la photographie et la créativité."));
+        text_intro_for_photos.appendChild(createText('p', `Depuis que mon père m’a mis un appareil photo entre les mains, la passion ne m’a jamais quitté.
+        Découvrez ici mes images, là où technique et émotion se rencontrent. Enjoy.`));
         text_intro_for_photos.appendChild(createImage('Photos/scrolling.gif'));
         photosContainer.appendChild(modal);
         intro_for_photos.appendChild(text_intro_for_photos)
@@ -920,7 +916,9 @@ export async function toggleTeamInfo(id) {
         image_intro2projects.appendChild(img_for_image_intro_for_projets);
         var text_intro2projects = createElementWithClass('div','text-section');
         text_intro2projects.appendChild(createText('h2',"Mes projets Informatiques"));
-        text_intro2projects.appendChild(createText('p',"j'aime toujours développé de nouveaux programmes à titre personnel ou pour de potentiels clients. Enjoy."));
+        text_intro2projects.appendChild(createText('p',`J’aime concevoir et développer de nouveaux programmes, que ce soit pour mes projets personnels ou pour des clients.
+        Découvrez ici une sélection de ces créations.
+        Enjoy.`));
         text_intro2projects.appendChild(createImage('Photos/scrolling.gif'));
 
         var sommaire_projets = createElementWithClass('ul', 'sommaire-projets');

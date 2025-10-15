@@ -354,7 +354,7 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
 
 .desc-cybersection > img {
     width: 100%;
-    margin: 1em 0;
+    margin: 0;
     border-radius: 1em;
 }
 
@@ -596,6 +596,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         border-radius: 3em;
         border-top-left-radius: 2em;
         border-top-right-radius: 2em;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
         margin-top: -6em;
         margin-left: 0;
         margin-bottom: 6em;
@@ -603,16 +605,12 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         z-index: 10000;
     }
 
-    .cybersection{
-        z-index: 1000;
-        margin-bottom: 6em;
-        border-top-left-radius: 2em;
-        border-top-right-radius: 2em;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
     .cybersection, .ecoles_cybersection {
         width: 100%;
+    }
+
+    .cybersection li {
+        font-size: 0.4em;
     }
 
     .ecoles_cybersection img {
@@ -738,7 +736,8 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
     }
 
     .desc-cybersection > h2 {
-        margin: 2em 0;
+        margin-top: 2em;
+        margin-bottom: 1em;
     }
 
     .cybersection .image-section {
@@ -804,9 +803,6 @@ body.mode-nuit .moicmaxime .text-section h6 > i{
         font-size: 1em;
     }
 
-    .cybersection li {
-        font-size: 0.7em;
-    }
 
     .text-section > p {
         font-size: 1em;

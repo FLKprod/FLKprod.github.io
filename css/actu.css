@@ -74,14 +74,18 @@ body.mode-nuit .actu-container p {
     margin: 0;
     font-size: 1.7em;
     text-align: left;
-    color: #e3d898;
+    color: #4f0341;
     width: 100%;
+}
+
+body.mode-nuit .article h4 {
+    color: #e3d898;
 }
 
 .article .date {
     text-align: left;
     font-size: 1.5em;
-    color: #e3d898;
+    color: #4f0341;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
 }
@@ -152,7 +156,8 @@ body.mode-nuit .actu-container p {
 
 #search {
     width: 90%;
-    border: 1px solid #ccc;
+    height: 4em !important;
+    border: none;
     border-top-right-radius: 1em;
     border-bottom-right-radius: 1em;
     height: 100%;
@@ -164,11 +169,11 @@ body.mode-nuit .actu-container p {
 
 #filter-select {
     width: 20%;
-    height: 100%;
+    height: 3.4em !important;
+    padding: 10px;
     min-width: 10em;
-    padding: 12px;
     font-size: 1em;
-    border: 2px solid lightgray;
+    border: none;
     border-top-left-radius: 1em;
     border-bottom-left-radius: 1em;
     background-color: white;
