@@ -52,6 +52,8 @@ export async function toggleTeamInfo(id) {
             if (selectedButton) {
                 console.log("section " + id);
                 selectedButton.classList.add('select');
+                scrollauto(".entete")
+                console.log('retour en haut')
             } else {
                 console.warn(`Aucun bouton trouvé avec l'ID : ${id} dans ${menuId}`);
             }
@@ -209,6 +211,20 @@ export async function toggleTeamInfo(id) {
                 title:'Présentation BDE Lepus Sinapis',
                 description: "Création d'une vidéo humoristique pour une campagne du Bureau des Élèves de mon école d'ingénieurs, Polytech Dijon.",
                 competences:"Montage vidéo , Tournage Vidéo , Scénarisation"
+            }
+            ,
+            {
+                url: 'https://www.youtube.com/watch?v=QGekZxAxpjQ',
+                title:'LOEWE - FVLKO',
+                description: "Single Electro - Production @Artistiquement",
+                competences:"Creation musicale, Cover"
+            }
+            ,
+            {
+                url: 'https://www.youtube.com/watch?v=Kqe-NDnM0wI',
+                title:'Overflow Me (feat. Jean Misha)',
+                description: "Single Electro - Production @Artistiquement",
+                competences:"Creation musicale, Cover"
             }
         ];
 
@@ -396,7 +412,7 @@ export async function toggleTeamInfo(id) {
 
     }
     else if(id=== 'aproposdemoi'){
-        
+        scrollauto(".up")
         var intro2presentation = createElementWithClass('div','section','moicmaxime');
         var image_intro2presentation = createElementWithClass('div','image-section');
         image_intro2presentation.appendChild(createImage('Photos/Apropos/moi.jpg'));
@@ -612,10 +628,10 @@ export async function toggleTeamInfo(id) {
         
         gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-        gsap.from('.apropos-container', {
+         gsap.from('.aproposdemoi-container', {
             opacity: 0,
             duration: 1,
-            ease: 'power2.inOut'
+            ease: 'power2.out'
         });
         
 

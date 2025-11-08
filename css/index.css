@@ -181,8 +181,7 @@ body.mode-nuit .text-entete > h1 {
 
 .scrolling-text {
     text-shadow:none;
-    mix-blend-mode: difference;
-    color: white;
+    color: black;
     overflow-x: hidden;
     white-space: nowrap;
     font-size: 2em;
