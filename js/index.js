@@ -214,14 +214,14 @@ export async function toggleTeamInfo(id) {
             }
             ,
             {
-                url: 'https://www.youtube.com/watch?v=QGekZxAxpjQ',
+                url: 'https://www.youtube.com/embed/QGekZxAxpjQ',
                 title:'LOEWE - FVLKO',
                 description: "Single Electro - Production @Artistiquement",
                 competences:"Creation musicale, Cover"
             }
             ,
             {
-                url: 'https://www.youtube.com/watch?v=Kqe-NDnM0wI',
+                url: 'https://www.youtube.com/embed/Kqe-NDnM0wI',
                 title:'Overflow Me (feat. Jean Misha)',
                 description: "Single Electro - Production @Artistiquement",
                 competences:"Creation musicale, Cover"
