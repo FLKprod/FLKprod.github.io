@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<galleries>
+    <gallery id="mariage" title="Mariage">
+        <image src="photos/mariage/mariage1.jpg" alt="Cérémonie de mariage"/>
+        <image src="photos/mariage/mariage2.jpg" alt="Les mariés"/>
+        <image src="photos/mariage/mariage3.jpg" alt="Échange des alliances"/>
+        <image src="photos/mariage/mariage4.jpg" alt="Premier baiser"/>
+        <image src="photos/mariage/mariage5.jpg" alt="La fête"/>
+        <image src="photos/mariage/mariage6.jpg" alt="Portrait couple"/>
+    </gallery>
+    <gallery id="sport" title="Sport">
+        <image src="photos/sport/sport1.jpg" alt="Action sportive"/>
+        <image src="photos/sport/sport2.jpg" alt="Compétition"/>
+        <image src="photos/sport/sport3.jpg" alt="Portrait athlète"/>
+        <image src="photos/sport/sport4.jpg" alt="Mouvement"/>
+        <image src="photos/sport/sport5.jpg" alt="Victoire"/>
+    </gallery>
+    <gallery id="portraits" title="Portraits">
+        <image src="photos/portraits/portraits1.jpg" alt="Portrait studio"/>
+        <image src="photos/portraits/portraits2.jpg" alt="Portrait extérieur"/>
+        <image src="photos/portraits/portraits3.jpg" alt="Portrait créatif"/>
+        <image src="photos/portraits/portraits4.jpg" alt="Corporate"/>
+    </gallery>
+    <gallery id="evenements" title="Événements">
+        <image src="photos/evenements/evenements1.jpg" alt="Concert"/>
+        <image src="photos/evenements/evenements2.jpg" alt="Conférence"/>
+        <image src="photos/evenements/evenements3.jpg" alt="Soirée"/>
+    </gallery>
+</galleries>

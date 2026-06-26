@@ -8,9 +8,9 @@
     'use strict';
 
     // --- Configuration ---
-    // Pour GitHub Pages sans backend, tu devras utiliser un fichier JSON
+    // Pour GitHub Pages sans backend, tu devras utiliser un fichier XML
     // qui liste les dossiers et leurs images
-    const GALLERY_CONFIG_URL = 'gallery-config.json';
+    const GALLERY_CONFIG_URL = 'gallery-config.xml';
 
     // --- DOM Elements ---
     const galleryMain = document.getElementById('galleryMain');
@@ -29,13 +29,40 @@
     async function loadGalleryConfig() {
         try {
             const response = await fetch(GALLERY_CONFIG_URL);
-            const config = await response.json();
-            renderGalleries(config.galleries);
+            const xmlText = await response.text();
+            const galleries = parseGalleryXML(xmlText);
+            renderGalleries(galleries);
         } catch (error) {
             console.error('Error loading gallery config:', error);
             // Fallback avec données statiques
             renderGalleries(getStaticGalleryData());
         }
+    }
+
+    // --- Parse le fichier XML en objets JS ({ id, title, images: [{src, alt}] }) ---
+    function parseGalleryXML(xmlText) {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+
+        // En cas de XML malformé, le navigateur insère un <parsererror>
+        const parserError = xmlDoc.querySelector('parsererror');
+        if (parserError) {
+            throw new Error('Invalid XML in gallery-config.xml');
+        }
+
+        const galleryNodes = Array.from(xmlDoc.querySelectorAll('gallery'));
+
+        return galleryNodes.map(galleryNode => {
+            const imageNodes = Array.from(galleryNode.querySelectorAll('image'));
+            return {
+                id: galleryNode.getAttribute('id'),
+                title: galleryNode.getAttribute('title'),
+                images: imageNodes.map(imageNode => ({
+                    src: imageNode.getAttribute('src'),
+                    alt: imageNode.getAttribute('alt')
+                }))
+            };
+        });
     }
 
     // --- Données statiques de fallback ---
