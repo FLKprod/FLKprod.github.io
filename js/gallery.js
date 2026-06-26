@@ -72,30 +72,30 @@
                 id: 'mariage',
                 title: 'Mariage',
                 images: [
-                    { src: 'photos/mariage/photo1.jpg', alt: 'Mariage 1' },
-                    { src: 'photos/mariage/photo2.jpg', alt: 'Mariage 2' },
-                    { src: 'photos/mariage/photo3.jpg', alt: 'Mariage 3' },
-                    { src: 'photos/mariage/photo4.jpg', alt: 'Mariage 4' },
-                    { src: 'photos/mariage/photo5.jpg', alt: 'Mariage 5' }
+                    { src: 'photos/mariage/mariage1.jpg', alt: 'Mariage 1' },
+                    { src: 'photos/mariage/mariage2.jpg', alt: 'Mariage 2' },
+                    { src: 'photos/mariage/mariage3.jpg', alt: 'Mariage 3' },
+                    { src: 'photos/mariage/mariage4.jpg', alt: 'Mariage 4' },
+                    { src: 'photos/mariage/mariage5.jpg', alt: 'Mariage 5' }
                 ]
             },
             {
                 id: 'sport',
                 title: 'Sport',
                 images: [
-                    { src: 'photos/sport/photo1.jpg', alt: 'Sport 1' },
-                    { src: 'photos/sport/photo2.jpg', alt: 'Sport 2' },
-                    { src: 'photos/sport/photo3.jpg', alt: 'Sport 3' },
-                    { src: 'photos/sport/photo4.jpg', alt: 'Sport 4' }
+                    { src: 'photos/sport/sport1.jpg', alt: 'Sport 1' },
+                    { src: 'photos/sport/sport2.jpg', alt: 'Sport 2' },
+                    { src: 'photos/sport/sport3.jpg', alt: 'Sport 3' },
+                    { src: 'photos/sport/sport4.jpg', alt: 'Sport 4' }
                 ]
             },
             {
                 id: 'portraits',
                 title: 'Portraits',
                 images: [
-                    { src: 'photos/portraits/photo1.jpg', alt: 'Portrait 1' },
-                    { src: 'photos/portraits/photo2.jpg', alt: 'Portrait 2' },
-                    { src: 'photos/portraits/photo3.jpg', alt: 'Portrait 3' }
+                    { src: 'photos/portraits/portraits1.jpg', alt: 'Portrait 1' },
+                    { src: 'photos/portraits/portraits2.jpg', alt: 'Portrait 2' },
+                    { src: 'photos/portraits/portraits3.jpg', alt: 'Portrait 3' }
                 ]
             }
         ];
