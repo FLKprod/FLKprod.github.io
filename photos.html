@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie | FLK Production</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="page-gallery">
+    <!-- Navigation -->
+    <nav class="nav nav--solid" id="nav">
+        <div class="nav-logo">
+            <a href="index.html">FLK<span>Production</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="a-propos-de-moi.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="photos.html" class="active">Galerie</a></li>
+            <li><a href="index.html#music">Musique</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#plan-du-site">Plan du site</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="a-propos-de-moi.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="photos.html" class="active">Galerie</a></li>
+            <li><a href="index.html#music">Musique</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#plan-du-site">Plan du site</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title">Galerie</h1>
+            <p class="page-subtitle">Explorez mes travaux</p>
+        </div>
+    </header>
+
+    <!-- Gallery Sections - générées dynamiquement -->
+    <main class="gallery-main" id="galleryMain">
+        <!-- Les sections seront ajoutées ici par JavaScript -->
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+        </div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    FLK<span>Production</span>
+                </div>
+                <p class="footer-copyright">
+                    © 2024 FLK Production. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+</body>
+</html>

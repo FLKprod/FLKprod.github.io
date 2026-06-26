@@ -1,0 +1,46 @@
+{
+    "galleries": [
+        {
+            "id": "mariage",
+            "title": "Mariage",
+            "images": [
+                { "src": "photos/mariage/mariage1.jpg", "alt": "Cérémonie de mariage" },
+                { "src": "photos/mariage/mariage2.jpg", "alt": "Les mariés" },
+                { "src": "photos/mariage/mariage3.jpg", "alt": "Échange des alliances" },
+                { "src": "photos/mariage/mariage4.jpg", "alt": "Premier baiser" },
+                { "src": "photos/mariage/mariage5.jpg", "alt": "La fête" },
+                { "src": "photos/mariage/mariage6.jpg", "alt": "Portrait couple" }
+            ]
+        },
+        {
+            "id": "sport",
+            "title": "Sport",
+            "images": [
+                { "src": "photos/sport/sport1.jpg", "alt": "Action sportive" },
+                { "src": "photos/sport/sport2.jpg", "alt": "Compétition" },
+                { "src": "photos/sport/sport3.jpg", "alt": "Portrait athlète" },
+                { "src": "photos/sport/sport4.jpg", "alt": "Mouvement" },
+                { "src": "photos/sport/sport5.jpg", "alt": "Victoire" }
+            ]
+        },
+        {
+            "id": "portraits",
+            "title": "Portraits",
+            "images": [
+                { "src": "photos/portraits/portraits1.jpg", "alt": "Portrait studio" },
+                { "src": "photos/portraits/portraits2.jpg", "alt": "Portrait extérieur" },
+                { "src": "photos/portraits/portraits3.jpg", "alt": "Portrait créatif" },
+                { "src": "photos/portraits/portraits4.jpg", "alt": "Corporate" }
+            ]
+        },
+        {
+            "id": "evenements",
+            "title": "Événements",
+            "images": [
+                { "src": "photos/evenements/evenements1.jpg", "alt": "Concert" },
+                { "src": "photos/evenements/evenements2.jpg", "alt": "Conférence" },
+                { "src": "photos/evenements/evenements3.jpg", "alt": "Soirée" }
+            ]
+        }
+    ]
+}

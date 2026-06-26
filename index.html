@@ -1,176 +1,460 @@
 <!DOCTYPE html>
-<html lang="fr" alt="By Maxime Falkowski">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Flicks & Lenses Kreations, by Maxime Falkowski. Découvrez mon univers dédié à la photographie, à la vidéo, et à mes projets numériques." alt="By Maxime Falkowski">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/videos.css">
-    <link rel="stylesheet" href="css/apropos.css">
-    <link rel="stylesheet" href="css/presentation.css">
-    <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="css/photos.css">
-    <link rel="stylesheet" href="css/animations.css">
-    <link rel="stylesheet" href="css/projets.css">
-    <link rel="stylesheet" href="css/services.css">
-    <link rel="stylesheet" href="css/plandusite.css">
-    <link rel="stylesheet" href="css/actu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <link rel="icon" href="Photos/logos/logourl.png" type="image/png" alt="By Maxime Falkowski">
-    <title>FLKprod_</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLK Production | Photographe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="introContainer">
-        <img id="introGif" src="Photos/logos/logourl.png" alt="By Maxime Falkowski">
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <span class="loader-text">FLK</span>
+            <div class="loader-line"></div>
+        </div>
     </div>
-    <div id="mainContent" >
-        <div class="up">
-            <div class="menu">
-                <img id="presentation" src="Photos/logos/flkprod.png" alt="By Maxime Falkowski">
-                <label for="daynight" class="switch">
-                    <input id="daynight" type="checkbox" checked>
-                    <span class="slider">
-                        <span class="icon sun">☀︎</span>
-                        <span class="icon moon">🌙</span>
-                    </span>
-                    
-                </label>
-                <button class='menu-mobile'><i class="fa fa-bars"></i></button>
-                <div class="sections-menu" id="section-menu"> 
-                    <button id="services">SERVICES</button>
-                    <button id="projets">PROJETS</button>
-                    <button id="videos">MULTIMÉDIAS</button>
-                    <button id="photos">PHOTOGRAPHIES</button>
-                    <button id="actu">ACTUALITÉ</button>
-                    <button id="aproposdemoi">A PROPOS DE MOI</button>
-                </div>
-                <div class="social-networks">
-                    <button onclick="window.location.href='mailto:maxime.falkowski@free.fr';">
-                        <i class="fa fa-envelope" ></i>
-                    </button>
-                    <button onclick="window.open('https://www.instagram.com/flkprod_/', '_blank');">
-                        <i class="fab fa-instagram" ></i>
-                    </button>
-                    <button onclick="window.open('https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg');">
-                        <i class="fab fa-youtube" ></i>
-                    </button>
-                    <button onclick="window.open('https://github.com/FLKprod');">
-                        <i class="fab fa-github" ></i>
-                    </button>
-                    <button onclick="window.open('https://www.linkedin.com/in/maxime-falkowski-9a4607216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGJJZ%2FAWYSLGq0t%2BQS92TrQ%3D%3D');">
-                        <i class="fab fa-linkedin" ></i>
-                    </button>
-                </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <a href="index.html">FLK<span>Production</span></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="a-propos-de-moi.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="photos.html">Galerie</a></li>
+            <li><a href="#music" data-section="music">Musique</a></li>
+            <li><a href="#contact" data-section="contact">Contact</a></li>
+            <li><a href="#plan-du-site" data-section="plan-du-site">Plan du site</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="a-propos-de-moi.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="photos.html">Galerie</a></li>
+            <li><a href="#music" data-section="music">Musique</a></li>
+            <li><a href="#contact" data-section="contact">Contact</a></li>
+            <li><a href="#plan-du-site" data-section="plan-du-site">Plan du site</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                disablepictureinpicture
+                disableremoteplayback
+                aria-hidden="true"
+                tabindex="-1"
+                poster="photos/portrait-photographer.jpg">
+                <source src="photos/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Photographe</div>
+            <h1 class="hero-title">
+                <span class="title-line">Capturer</span>
+                <span class="title-line">l'émotion</span>
+            </h1>
+            <p class="hero-description">
+                Mariage • Sport • Portrait
+            </p>
+            <a href="#about" class="hero-cta">
+                <span>Découvrir</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M12 5v14M5 12l7 7 7-7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">À propos</h2>
             </div>
-            <div class="entete">
-                <div class="title-entete">
-                    <div class="text-entete">
-                        <h1>Flicks & Lenses Kreations</h1>
-                        <p>"Capturer l’instant, coder l’imaginaire"</p>
+            
+            <div class="about-grid">
+                <div class="about-image-wrapper">
+                    <div class="about-image">
+                        <img src="photos/portrait-photographer.jpg" alt="FLK Production" loading="lazy">
                     </div>
-                    <div class="image-entete">
-                        <img id="baniere" src="Photos/logos/entete.png" alt="By Maxime Falkowski">
-                    </div>
+                    <div class="about-image-decoration"></div>
                 </div>
                 
-            </div>
-        </div>
-        <div class="center">
-            <div id="presentation" class="presentation-container">
-            </div>
-            <div id="services" class="services-container">
-            </div>
-            <div id="projets" class="projets-container">
-            </div>
-            <div id="videos" class="videos-container">
-            </div>
-            <div id="photos" class="photos-container">
-            </div>
-            <div id="aproposdemoi" class="aproposdemoi-container">
-            </div>
-            <div id="plandusite" class="plandusite-container">
-            </div>
-            <div id="actu" class="actu-container">
-            </div>
-            <div class="scrolling-container">
-                <div class="scrolling-text-wrapper">
-                    <h2 class="scrolling-text">
-                        Photographe <span class="separator"></span>
-                        Créateur <span class="separator"></span>
-                        Monteur <span class="separator"></span>
-                        Ingénieur <span class="separator"></span>
-                        Photographe <span class="separator"></span>
-                        Créateur <span class="separator"></span>
-                        Monteur <span class="separator"></span>
-                        Ingénieur <span class="separator"></span>
-                        Photographe <span class="separator"></span>
-                        Créateur <span class="separator"></span>
-                        Monteur <span class="separator"></span>
-                        Ingénieur <span class="separator"></span>
-                        Photographe <span class="separator"></span>
-                        Créateur <span class="separator"></span>
-                        Monteur <span class="separator"></span>
-                        Ingénieur <span class="separator"></span>
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <div class="down">
-            <div class="down-subscriber">
-                <div class="img-down">
-                    <img id="down-logo" src = "Photos/logos/flkwhite.png">
-                </div>
-                <div class="down-social-networks-area">
-                    <h2>Me suivre</h2>
-                    <div class="down-social-networks">
-                        <button onclick="window.location.href='mailto:maxime.falkowski@free.fr';">
-                            <i class="fa fa-envelope" ></i>
-                        </button>
-                        <button onclick="window.open('https://www.instagram.com/flkprod_/', '_blank');">
-                            <i class="fab fa-instagram" ></i>
-                        </button>
-                        <button onclick="window.open('https://www.youtube.com/channel/UCDnY7LTgPRNawy9x5AxnShg');">
-                            <i class="fab fa-youtube" ></i>
-                        </button>
-                        <button onclick="window.open('https://github.com/FLKprod');">
-                            <i class="fab fa-github" ></i>
-                        </button>
-                        <button onclick="window.open('https://www.linkedin.com/in/maxime-falkowski-9a4607216?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGJJZ%2FAWYSLGq0t%2BQS92TrQ%3D%3D');">
-                            <i class="fab fa-linkedin" ></i>
-                        </button>
+                <div class="about-content">
+                    <div class="about-intro">
+                        <h3>Passionné par l'image depuis toujours</h3>
+                        <p>
+                            Je suis photographe professionnel spécialisé dans la capture d'instants 
+                            uniques. Du mariage à l'événement sportif, chaque cliché raconte une histoire.
+                        </p>
+                    </div>
+                    
+                    <div class="about-details">
+                        <div class="about-detail-item">
+                            <span class="detail-number">10+</span>
+                            <span class="detail-label">Années d'expérience</span>
+                        </div>
+                        <div class="about-detail-item">
+                            <span class="detail-number">500+</span>
+                            <span class="detail-label">Projets réalisés</span>
+                        </div>
+                        <div class="about-detail-item">
+                            <span class="detail-number">∞</span>
+                            <span class="detail-label">Passion</span>
+                        </div>
+                    </div>
+
+                    <div class="about-philosophy">
+                        <h4>Ma philosophie</h4>
+                        <p>
+                            Chaque moment mérite d'être immortalisé avec élégance et authenticité. 
+                            Mon approche minimaliste met en valeur l'essentiel : l'émotion pure.
+                        </p>
+                    </div>
+
+                    <div class="about-more">
+                        <a href="a-propos-de-moi.html" class="btn btn--primary">
+                            <span>En savoir plus sur moi</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="text-down">
-                <div class="text-down-area">
-                <p>Un site créé par et pour FLKprod_</p>
-                <p>🚧 Éternellement en construction 🚧</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Services</h2>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card" data-service="mariage">
+                    <div class="service-image">
+                        <img src="photos/mariage/mariage1.jpg" alt="Photographie de mariage" loading="lazy">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-number">01</span>
+                        <h3 class="service-title">Mariage</h3>
+                        <p class="service-description">
+                            Immortalisez votre union avec des images intemporelles. 
+                            De la préparation à la soirée, chaque détail compte.
+                        </p>
+                        <ul class="service-features">
+                            <li>Reportage complet</li>
+                            <li>Séance couple</li>
+                            <li>Album sur mesure</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="service-card" data-service="sport">
+                    <div class="service-image">
+                        <img src="photos/sport/sport1.jpg" alt="Photographie sportive" loading="lazy">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-number">02</span>
+                        <h3 class="service-title">Sport</h3>
+                        <p class="service-description">
+                            Capturer l'intensité, la performance, l'émotion brute de l'effort. 
+                            L'instant décisif figé pour l'éternité.
+                        </p>
+                        <ul class="service-features">
+                            <li>Événements sportifs</li>
+                            <li>Portraits athlètes</li>
+                            <li>Action & mouvement</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="service-card" data-service="portrait">
+                    <div class="service-image">
+                        <img src="photos/portraits/portraits1.jpg" alt="Photographie portrait" loading="lazy">
+                        <div class="service-overlay"></div>
+                    </div>
+                    <div class="service-content">
+                        <span class="service-number">03</span>
+                        <h3 class="service-title">Portrait</h3>
+                        <p class="service-description">
+                            Révéler votre personnalité à travers un portrait authentique. 
+                            Studio ou extérieur, à vous de choisir.
+                        </p>
+                        <ul class="service-features">
+                            <li>Portrait corporate</li>
+                            <li>Séance créative</li>
+                            <li>Personal branding</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <div class="services-more">
+                <a href="services.html" class="btn btn--primary">
+                    <span>Découvrir tous mes services</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Gallery Preview -->
+    <section class="section gallery-preview" id="gallery-preview">
+        <div class="container">
+            <div class="section-header section-header--centered">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Portfolio</h2>
+                <p class="section-subtitle">Une sélection de mes travaux</p>
+            </div>
+
+            <div class="gallery-preview-grid">
+                <div class="gallery-preview-item large" data-reveal="scale">
+                    <img src="photos/mariage/mariage1.jpg" alt="Travail mariage" loading="lazy">
+                    <div class="gallery-preview-overlay">
+                        <span>Mariage</span>
+                    </div>
                 </div>
-                <div class="down-menu" id="down-menu">
-                    <button id="presentation">PRÉSENTATION</button>
-                    <button id="services">SERVICES</button>
-                    <button id="projets">PROJETS</button>
-                    <button id="videos">MULTIMÉDIAS</button>
-                    <button id="photos">PHOTOGRAPHIES</button>
-                    <button id="aproposdemoi">A PROPOS DE MOI</button> 
-                    <button id="actu">ACTUALITÉ</button>
-                    <button id="plandusite">PLAN DU SITE</button>
+                <div class="gallery-preview-item" data-reveal="scale">
+                    <img src="photos/sport/sport2.jpg" alt="Travail sport" loading="lazy">
+                    <div class="gallery-preview-overlay">
+                        <span>Sport</span>
+                    </div>
+                </div>
+                <div class="gallery-preview-item" data-reveal="scale">
+                    <img src="photos/portraits/portraits2.jpg" alt="Travail portrait" loading="lazy">
+                    <div class="gallery-preview-overlay">
+                        <span>Portrait</span>
+                    </div>
                 </div>
             </div>
-            <p class="copyright">&copy; 2024 FLKPROD. Tous droits réservés.</p>
+
+            <div class="gallery-cta">
+                <a href="photos.html" class="btn btn--primary">
+                    <span>Voir la galerie complète</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
         </div>
-        <button id="backToTopButton"><i class="fa fa-angle-up"></i></button>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-        <script type="module" src="js/index.js"></script>
-        <script type="module" src="js/annimations.js"></script>
-        <script type="module" src="js/createElements.js"></script>
-        <script type="module" src="js/carroussel.js"></script>
-        <script type="module" src="js/actu.js"></script>
-        <script type="text/javascript" src="js/state.js"></script>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7614852032110175" crossorigin="anonymous"></script>
-    </div>
+    </section>
+
+    <!-- Music Section -->
+    <section class="section music" id="music">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Musique</h2>
+                <p class="section-subtitle">Mon univers sonore</p>
+            </div>
+
+            <div class="music-grid" id="musicGrid">
+                <div class="music-card" data-reveal="scale">
+                    <div class="music-card-inner">
+                        <div class="music-thumbnail">
+                            <iframe
+                                src="https://www.youtube.com/embed/Kqe-NDnM0wI"
+                                title="Overflow Me (feat. Jean Misha)"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="music-info">
+                            <h4>Overflow Me (feat. Jean Misha)</h4>
+                            <span class="music-duration">5:10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="music-card" data-reveal="scale">
+                    <div class="music-card-inner">
+                        <div class="music-thumbnail">
+                            <iframe
+                                src="https://www.youtube.com/embed/QGekZxAxpjQ"
+                                title="LOEWE - FVLKO"
+                                loading="lazy"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="music-info">
+                            <h4>LOEWE - FVLKO</h4>
+                            <span class="music-duration">3:04</span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header section-header--centered">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Travaillons ensemble</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:contact@flkprod.com" class="contact-value">contact@flkprod.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Téléphone</span>
+                        <a href="tel:+33600000000" class="contact-value">+33 6 00 00 00 00</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Localisation</span>
+                        <span class="contact-value">Paris, France</span>
+                    </div>
+                </div>
+
+                <div class="contact-social">
+                    <span class="contact-label">Réseaux</span>
+                    <div class="social-links">
+                        <a href="https://instagram.com/flkprod" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="18" cy="6" r="1" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@flkprod" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="4" width="20" height="16" rx="4"/>
+                                <path d="M10 9l5 3-5 3V9z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/flkprod" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="3"/>
+                                <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 13v-3"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/flkprod" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4l11.5 16h4.5L8.5 4H4z"/>
+                                <path d="M4 20l7-9.5M20 4l-7 9.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan du site -->
+    <section class="section sitemap" id="plan-du-site">
+        <div class="container">
+            <div class="section-header section-header--centered">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Plan du site</h2>
+                <p class="section-subtitle">Toutes les pages en un coup d'œil</p>
+            </div>
+
+            <div class="sitemap-grid">
+                <div class="sitemap-column" data-reveal>
+                    <h3 class="sitemap-column-title">Accueil</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="index.html">Page d'accueil</a></li>
+                        <li><a href="index.html#about">À propos (aperçu)</a></li>
+                        <li><a href="index.html#services">Services (aperçu)</a></li>
+                        <li><a href="index.html#gallery-preview">Portfolio (aperçu)</a></li>
+                        <li><a href="index.html#music">Musique</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-column" data-reveal style="transition-delay: 0.1s">
+                    <h3 class="sitemap-column-title">À propos de moi</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="a-propos-de-moi.html">Page complète</a></li>
+                        <li><a href="a-propos-de-moi.html#parcours">Mon parcours</a></li>
+                        <li><a href="a-propos-de-moi.html#approche">Mon approche</a></li>
+                        <li><a href="a-propos-de-moi.html#materiel">Mon matériel</a></li>
+                        <li><a href="a-propos-de-moi.html#valeurs">Mes valeurs</a></li>
+                        <li><a href="a-propos-de-moi.html#rencontre">Faisons connaissance</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-column" data-reveal style="transition-delay: 0.2s">
+                    <h3 class="sitemap-column-title">Services</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="services.html">Page complète</a></li>
+                        <li><a href="services.html#mariage">Mariage</a></li>
+                        <li><a href="services.html#sport">Sport</a></li>
+                        <li><a href="services.html#portrait">Portrait</a></li>
+                        <li><a href="services.html#evenementiel">Événementiel</a></li>
+                        <li><a href="services.html#tarifs">Déroulement & tarifs</a></li>
+                    </ul>
+                </div>
+
+                <div class="sitemap-column" data-reveal style="transition-delay: 0.3s">
+                    <h3 class="sitemap-column-title">Galerie</h3>
+                    <ul class="sitemap-links">
+                        <li><a href="photos.html">Toute la galerie</a></li>
+                        <li><a href="photos.html#gallery-mariage">Mariage</a></li>
+                        <li><a href="photos.html#gallery-sport">Sport</a></li>
+                        <li><a href="photos.html#gallery-portraits">Portraits</a></li>
+                        <li><a href="photos.html#gallery-evenements">Événements</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    FLK<span>Production</span>
+                </div>
+                <p class="footer-copyright">
+                    © 2024 FLK Production. Tous droits réservés.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
