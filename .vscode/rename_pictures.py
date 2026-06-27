@@ -18,29 +18,40 @@ def rename_images_in_folders(base_path):
         if not os.path.isdir(folder_path):
             continue
 
-        images = [
+        files = [
             f for f in os.listdir(folder_path)
             if f.lower().endswith((".jpg", ".jpeg", ".png"))
         ]
 
-        images.sort(
-            key=lambda x: int(re.search(r"\d+", x).group())
-            if re.search(r"\d+", x)
-            else float("inf")
-        )
+        # Recherche des fichiers déjà correctement nommés
+        regex = re.compile(rf"^{re.escape(folder)}(\d+)\.(jpg|jpeg|png)$", re.IGNORECASE)
 
-        print(f"{folder} : {len(images)} image(s)")
+        max_index = 0
+        new_files = []
 
-        for index, image in enumerate(images, start=1):
+        for f in files:
+            m = regex.match(f)
+            if m:
+                max_index = max(max_index, int(m.group(1)))
+            else:
+                new_files.append(f)
+
+        print(f"{folder} : {len(files)} image(s), dernier index = {max_index}")
+
+        # On renomme uniquement les nouvelles images
+        new_files.sort()
+
+        for image in new_files:
             _, ext = os.path.splitext(image)
-            new_name = f"{folder}{index}{ext.lower()}"
+            max_index += 1
+
+            new_name = f"{folder}{max_index}{ext.lower()}"
 
             old_path = os.path.join(folder_path, image)
             new_path = os.path.join(folder_path, new_name)
 
-            if image != new_name:
-                print(f"Renommage : {image} -> {new_name}")
-                os.rename(old_path, new_path)
+            print(f"Renommage : {image} -> {new_name}")
+            os.rename(old_path, new_path)
 
 # --------------------------------------------------------
 # Génération automatique du XML

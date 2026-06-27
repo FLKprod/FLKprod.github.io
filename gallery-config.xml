@@ -16,16 +16,32 @@
         <image src="photos/evenements/evenements13.jpg" alt="evenements13"/>
         <image src="photos/evenements/evenements14.jpg" alt="evenements14"/>
     </gallery>
-    <gallery id="logos" title="Logos">
-        <image src="photos/logos/logos1.png" alt="logos1"/>
-    </gallery>
     <gallery id="mariage" title="Mariage">
-        <image src="photos/mariage/mariage1.jpg" alt="mariage1"/>
+        <image src="photos/mariage/mariage1.png" alt="mariage1"/>
+        <image src="photos/mariage/mariage2.png" alt="mariage2"/>
+        <image src="photos/mariage/mariage3.png" alt="mariage3"/>
+        <image src="photos/mariage/mariage4.png" alt="mariage4"/>
+        <image src="photos/mariage/mariage5.png" alt="mariage5"/>
+        <image src="photos/mariage/mariage6.png" alt="mariage6"/>
+        <image src="photos/mariage/mariage7.jpg" alt="mariage7"/>
+        <image src="photos/mariage/mariage8.png" alt="mariage8"/>
+        <image src="photos/mariage/mariage9.png" alt="mariage9"/>
+        <image src="photos/mariage/mariage10.jpg" alt="mariage10"/>
+        <image src="photos/mariage/mariage11.jpg" alt="mariage11"/>
+        <image src="photos/mariage/mariage12.jpg" alt="mariage12"/>
+        <image src="photos/mariage/mariage13.jpg" alt="mariage13"/>
+        <image src="photos/mariage/mariage14.jpg" alt="mariage14"/>
+        <image src="photos/mariage/mariage15.jpg" alt="mariage15"/>
+        <image src="photos/mariage/mariage16.jpg" alt="mariage16"/>
+        <image src="photos/mariage/mariage17.jpg" alt="mariage17"/>
+        <image src="photos/mariage/mariage18.jpg" alt="mariage18"/>
+        <image src="photos/mariage/mariage19.jpg" alt="mariage19"/>
     </gallery>
     <gallery id="portraits" title="Portraits">
         <image src="photos/portraits/portraits1.jpg" alt="portraits1"/>
         <image src="photos/portraits/portraits2.jpg" alt="portraits2"/>
         <image src="photos/portraits/portraits3.jpg" alt="portraits3"/>
+        <image src="photos/portraits/portraits4.jpg" alt="portraits4"/>
     </gallery>
     <gallery id="sport" title="Sport">
         <image src="photos/sport/sport1.jpg" alt="sport1"/>
@@ -41,5 +57,26 @@
         <image src="photos/sport/sport11.jpg" alt="sport11"/>
         <image src="photos/sport/sport12.jpg" alt="sport12"/>
         <image src="photos/sport/sport13.jpg" alt="sport13"/>
+        <image src="photos/sport/sport14.jpg" alt="sport14"/>
+        <image src="photos/sport/sport15.jpg" alt="sport15"/>
+        <image src="photos/sport/sport16.jpg" alt="sport16"/>
+        <image src="photos/sport/sport17.jpg" alt="sport17"/>
+        <image src="photos/sport/sport18.jpg" alt="sport18"/>
+        <image src="photos/sport/sport19.jpg" alt="sport19"/>
+        <image src="photos/sport/sport20.jpg" alt="sport20"/>
+        <image src="photos/sport/sport21.jpg" alt="sport21"/>
+        <image src="photos/sport/sport22.jpg" alt="sport22"/>
+        <image src="photos/sport/sport23.jpg" alt="sport23"/>
+        <image src="photos/sport/sport24.jpg" alt="sport24"/>
+        <image src="photos/sport/sport25.jpg" alt="sport25"/>
+        <image src="photos/sport/sport26.jpg" alt="sport26"/>
+        <image src="photos/sport/sport27.jpg" alt="sport27"/>
+        <image src="photos/sport/sport28.jpg" alt="sport28"/>
+        <image src="photos/sport/sport29.jpg" alt="sport29"/>
+        <image src="photos/sport/sport30.jpg" alt="sport30"/>
+        <image src="photos/sport/sport31.jpg" alt="sport31"/>
+        <image src="photos/sport/sport32.jpg" alt="sport32"/>
+        <image src="photos/sport/sport33.jpg" alt="sport33"/>
+        <image src="photos/sport/sport34.jpg" alt="sport34"/>
     </gallery>
 </galleries>
