@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <galleries>
-    <gallery id="mariage" title="Mariage">
-        <image src="photos/mariage/mariage1.jpg" alt="Cérémonie de mariage"/>
-        <image src="photos/mariage/mariage2.jpg" alt="Les mariés"/>
-        <image src="photos/mariage/mariage3.jpg" alt="Échange des alliances"/>
-        <image src="photos/mariage/mariage4.jpg" alt="Premier baiser"/>
-        <image src="photos/mariage/mariage5.jpg" alt="La fête"/>
-        <image src="photos/mariage/mariage6.jpg" alt="Portrait couple"/>
+    <gallery id="evenements" title="Evenements">
+        <image src="photos/evenements/evenements1.jpg" alt="evenements1"/>
+        <image src="photos/evenements/evenements2.jpg" alt="evenements2"/>
+        <image src="photos/evenements/evenements3.jpg" alt="evenements3"/>
+        <image src="photos/evenements/evenements4.jpg" alt="evenements4"/>
+        <image src="photos/evenements/evenements5.jpg" alt="evenements5"/>
+        <image src="photos/evenements/evenements6.jpg" alt="evenements6"/>
+        <image src="photos/evenements/evenements7.jpg" alt="evenements7"/>
+        <image src="photos/evenements/evenements8.jpg" alt="evenements8"/>
+        <image src="photos/evenements/evenements9.jpg" alt="evenements9"/>
+        <image src="photos/evenements/evenements10.jpg" alt="evenements10"/>
+        <image src="photos/evenements/evenements11.jpg" alt="evenements11"/>
+        <image src="photos/evenements/evenements12.jpg" alt="evenements12"/>
+        <image src="photos/evenements/evenements13.jpg" alt="evenements13"/>
+        <image src="photos/evenements/evenements14.jpg" alt="evenements14"/>
     </gallery>
-    <gallery id="sport" title="Sport">
-        <image src="photos/sport/sport1.jpg" alt="Action sportive"/>
-        <image src="photos/sport/sport2.jpg" alt="Compétition"/>
-        <image src="photos/sport/sport3.jpg" alt="Portrait athlète"/>
-        <image src="photos/sport/sport4.jpg" alt="Mouvement"/>
-        <image src="photos/sport/sport5.jpg" alt="Victoire"/>
+    <gallery id="logos" title="Logos">
+        <image src="photos/logos/logos1.png" alt="logos1"/>
+    </gallery>
+    <gallery id="mariage" title="Mariage">
+        <image src="photos/mariage/mariage1.jpg" alt="mariage1"/>
     </gallery>
     <gallery id="portraits" title="Portraits">
-        <image src="photos/portraits/portraits1.jpg" alt="Portrait studio"/>
-        <image src="photos/portraits/portraits2.jpg" alt="Portrait extérieur"/>
-        <image src="photos/portraits/portraits3.jpg" alt="Portrait créatif"/>
-        <image src="photos/portraits/portraits4.jpg" alt="Corporate"/>
+        <image src="photos/portraits/portraits1.jpg" alt="portraits1"/>
+        <image src="photos/portraits/portraits2.jpg" alt="portraits2"/>
+        <image src="photos/portraits/portraits3.jpg" alt="portraits3"/>
     </gallery>
-    <gallery id="evenements" title="Événements">
-        <image src="photos/evenements/evenements1.jpg" alt="Concert"/>
-        <image src="photos/evenements/evenements2.jpg" alt="Conférence"/>
-        <image src="photos/evenements/evenements3.jpg" alt="Soirée"/>
+    <gallery id="sport" title="Sport">
+        <image src="photos/sport/sport1.jpg" alt="sport1"/>
+        <image src="photos/sport/sport2.jpg" alt="sport2"/>
+        <image src="photos/sport/sport3.jpg" alt="sport3"/>
+        <image src="photos/sport/sport4.jpg" alt="sport4"/>
+        <image src="photos/sport/sport5.jpg" alt="sport5"/>
+        <image src="photos/sport/sport6.jpg" alt="sport6"/>
+        <image src="photos/sport/sport7.jpg" alt="sport7"/>
+        <image src="photos/sport/sport8.jpg" alt="sport8"/>
+        <image src="photos/sport/sport9.jpg" alt="sport9"/>
+        <image src="photos/sport/sport10.jpg" alt="sport10"/>
+        <image src="photos/sport/sport11.jpg" alt="sport11"/>
+        <image src="photos/sport/sport12.jpg" alt="sport12"/>
+        <image src="photos/sport/sport13.jpg" alt="sport13"/>
     </gallery>
 </galleries>
