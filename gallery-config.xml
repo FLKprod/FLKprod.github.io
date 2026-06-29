@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <galleries>
+    <gallery id="evenements" title="Evenements">
+        <image src="photos/evenements/evenements1.jpg" alt="evenements1"/>
+        <image src="photos/evenements/evenements2.jpg" alt="evenements2"/>
+        <image src="photos/evenements/evenements3.jpg" alt="evenements3"/>
+        <image src="photos/evenements/evenements4.jpg" alt="evenements4"/>
+        <image src="photos/evenements/evenements5.jpg" alt="evenements5"/>
+        <image src="photos/evenements/evenements6.jpg" alt="evenements6"/>
+        <image src="photos/evenements/evenements7.jpg" alt="evenements7"/>
+        <image src="photos/evenements/evenements8.jpg" alt="evenements8"/>
+        <image src="photos/evenements/evenements9.jpg" alt="evenements9"/>
+        <image src="photos/evenements/evenements10.jpg" alt="evenements10"/>
+        <image src="photos/evenements/evenements11.jpg" alt="evenements11"/>
+        <image src="photos/evenements/evenements12.jpg" alt="evenements12"/>
+        <image src="photos/evenements/evenements13.jpg" alt="evenements13"/>
+        <image src="photos/evenements/evenements14.jpg" alt="evenements14"/>
+        <image src="photos/evenements/evenements15.jpg" alt="evenements15"/>
+        <image src="photos/evenements/evenements16.jpg" alt="evenements16"/>
+        <image src="photos/evenements/evenements17.jpg" alt="evenements17"/>
+        <image src="photos/evenements/evenements18.jpg" alt="evenements18"/>
+        <image src="photos/evenements/evenements19.jpg" alt="evenements19"/>
+    </gallery>
     <gallery id="mariage" title="Mariage">
         <image src="photos/mariage/mariage1.jpg" alt="mariage1"/>
         <image src="photos/mariage/mariage2.png" alt="mariage2"/>
@@ -21,24 +42,6 @@
         <image src="photos/mariage/mariage18.jpg" alt="mariage18"/>
         <image src="photos/mariage/mariage19.jpg" alt="mariage19"/>
     </gallery>
-    <gallery id="evenements" title="Evenements">
-        <image src="photos/evenements/evenements1.jpg" alt="evenements1"/>
-        <image src="photos/evenements/evenements2.jpg" alt="evenements2"/>
-        <image src="photos/evenements/evenements3.jpg" alt="evenements3"/>
-        <image src="photos/evenements/evenements6.jpg" alt="evenements6"/>
-        <image src="photos/evenements/evenements7.jpg" alt="evenements7"/>
-        <image src="photos/evenements/evenements8.jpg" alt="evenements8"/>
-        <image src="photos/evenements/evenements9.jpg" alt="evenements9"/>
-        <image src="photos/evenements/evenements10.jpg" alt="evenements10"/>
-        <image src="photos/evenements/evenements11.jpg" alt="evenements11"/>
-        <image src="photos/evenements/evenements12.jpg" alt="evenements12"/>
-        <image src="photos/evenements/evenements13.jpg" alt="evenements13"/>
-        <image src="photos/evenements/evenements14.jpg" alt="evenements14"/>
-        <image src="photos/evenements/evenements15.jpg" alt="evenements15"/>
-        <image src="photos/evenements/evenements16.jpg" alt="evenements16"/>
-        <image src="photos/evenements/evenements17.jpg" alt="evenements17"/>
-        <image src="photos/evenements/evenements18.jpeg" alt="evenements18"/>
-    </gallery>
     <gallery id="portraits" title="Portraits">
         <image src="photos/portraits/portraits1.jpg" alt="portraits1"/>
         <image src="photos/portraits/portraits2.jpg" alt="portraits2"/>
@@ -59,6 +62,7 @@
         <image src="photos/portraits/portraits17.jpg" alt="portraits17"/>
         <image src="photos/portraits/portraits18.jpg" alt="portraits18"/>
         <image src="photos/portraits/portraits19.jpg" alt="portraits19"/>
+        <image src="photos/portraits/portraits20.jpg" alt="portraits20"/>
     </gallery>
     <gallery id="sport" title="Sport">
         <image src="photos/sport/sport1.jpg" alt="sport1"/>
