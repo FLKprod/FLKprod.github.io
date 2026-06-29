@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Malveillant Détecté</title>
+    <link rel="stylesheet" href="warning.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Site Malveillant Détecté</h1>
+        <p>Nous avons détecté que ce site est potentiellement malveillant. Il est recommandé de ne pas continuer votre navigation dessus.</p>
+        <p>Merci d'avoir scanné l'URL avec notre extension.</p>
+        <a href="#" class="btn" id="backButton">Retour</a>
+    </div>
+    <script>
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.history.back();
+            window.history.back();
+        });
+    </script>
+</body>
+</html>
