@@ -30,5 +30,5 @@ def compress_images_recursively(base_path, quality=85):
                     print(f"Compression JPEG : {file_path}")
 
 if __name__ == "__main__":
-    chemin_par_defaut = "C:\\Users\\maxfl\\Documents\\GitHub\\FLKprod.github.io\\Photos\\Carrousel"
+    chemin_par_defaut = "C:\\Users\\maxfl\\Documents\\GitHub\\FLKprod.github.io\\photos"
     compress_images_recursively(chemin_par_defaut)
