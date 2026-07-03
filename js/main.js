@@ -16,7 +16,10 @@
     function initLoader() {
         window.addEventListener('load', () => {
             setTimeout(() => {
-                loader.classList.add('hidden');
+                if(loader){
+                    loader.classList.add('hidden');
+                }
+                
                 document.body.classList.remove('no-scroll');
             }, 1000);
         });
