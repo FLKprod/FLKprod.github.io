@@ -457,7 +457,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     margin-bottom: var(--space-lg);
     opacity: 0;
     transform: translateY(30px);
@@ -1616,7 +1616,7 @@ a.contact-value:hover {
 
 /* --- Scroll Reveal Animations --- */
 [data-reveal] {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
